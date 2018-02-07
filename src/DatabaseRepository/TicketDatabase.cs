@@ -3,6 +3,7 @@ using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
 using Dapper;
+
 using ClassLibrary;
 
 namespace TicketSystem.DatabaseRepository
@@ -11,7 +12,7 @@ namespace TicketSystem.DatabaseRepository
     {
         public TicketEvent EventAdd(string name, string description)
         {
-            string connectionString = ConfigurationManager.ConnectionStrings["TicketSystem"].ConnectionString;
+            var connectionString = ConfigurationManager.ConnectionStrings["TicketSystem"].ConnectionString;
             using (var connection = new SqlConnection(connectionString))
             {
                 connection.Open();
@@ -20,10 +21,11 @@ namespace TicketSystem.DatabaseRepository
                 return connection.Query<TicketEvent>("SELECT * FROM TicketEvents WHERE TicketEventID=@Id", new { Id = addedEventQuery }).First();
             }
         }
+     
 
         public Venue VenueAdd(string name, string address, string city, string country)
         {
-            string connectionString = ConfigurationManager.ConnectionStrings["TicketSystem"].ConnectionString;
+            var connectionString =  "Server=(local)\\SqlExpress; Database=TicketSystem; Trusted_connection=true";
             using (var connection = new SqlConnection(connectionString))
             {
                 connection.Open();
@@ -35,7 +37,7 @@ namespace TicketSystem.DatabaseRepository
 
         public List<Venue> VenuesFind(string query)
         {
-            string connectionString = ConfigurationManager.ConnectionStrings["TicketSystem"].ConnectionString;
+            var connectionString = ConfigurationManager.ConnectionStrings["TicketSystem"].ConnectionString;
             using (var connection = new SqlConnection(connectionString))
             {
                 connection.Open();
