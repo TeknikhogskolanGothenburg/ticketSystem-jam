@@ -1,35 +1,33 @@
 ### YamlMime:ManagedReference
 items:
-- uid: TicketSystem.PaymentProvider.PaymentProvider
-  commentId: T:TicketSystem.PaymentProvider.PaymentProvider
-  id: PaymentProvider
-  parent: TicketSystem.PaymentProvider
+- uid: TicketAPI.Startup
+  commentId: T:TicketAPI.Startup
+  id: Startup
+  parent: TicketAPI
   children:
-  - TicketSystem.PaymentProvider.PaymentProvider.Pay(System.Decimal,System.String,System.String)
+  - TicketAPI.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)
+  - TicketAPI.Startup.Configuration
+  - TicketAPI.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IHostingEnvironment)
+  - TicketAPI.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)
   langs:
   - csharp
   - vb
-  name: PaymentProvider
-  nameWithType: PaymentProvider
-  fullName: TicketSystem.PaymentProvider.PaymentProvider
+  name: Startup
+  nameWithType: Startup
+  fullName: TicketAPI.Startup
   type: Class
   source:
-    id: PaymentProvider
-    path: C:\Users\Martin\source\repos\ticketSystem-jam\src\PaymentProvider\PaymentProvider.cs
-    startLine: 4
+    id: Startup
+    path: C:\Users\Martin\source\repos\ticketSystem-jam\src\TicketAPI\Startup.cs
+    startLine: 13
   assemblies:
-  - PaymentProvider
-  namespace: TicketSystem.PaymentProvider
+  - TicketAPI
+  namespace: TicketAPI
   syntax:
-    content: 'public class PaymentProvider : IPaymentProvider'
-    content.vb: >-
-      Public Class PaymentProvider
-
-          Implements IPaymentProvider
+    content: public class Startup
+    content.vb: Public Class Startup
   inheritance:
   - System.Object
-  implements:
-  - TicketSystem.PaymentProvider.IPaymentProvider
   inheritedMembers:
   - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
@@ -44,56 +42,133 @@ items:
   modifiers.vb:
   - Public
   - Class
-- uid: TicketSystem.PaymentProvider.PaymentProvider.Pay(System.Decimal,System.String,System.String)
-  commentId: M:TicketSystem.PaymentProvider.PaymentProvider.Pay(System.Decimal,System.String,System.String)
-  id: Pay(System.Decimal,System.String,System.String)
-  parent: TicketSystem.PaymentProvider.PaymentProvider
+- uid: TicketAPI.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)
+  commentId: M:TicketAPI.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)
+  id: '#ctor(Microsoft.Extensions.Configuration.IConfiguration)'
+  parent: TicketAPI.Startup
   langs:
   - csharp
   - vb
-  name: Pay(Decimal, String, String)
-  nameWithType: PaymentProvider.Pay(Decimal, String, String)
-  fullName: TicketSystem.PaymentProvider.PaymentProvider.Pay(System.Decimal, System.String, System.String)
-  type: Method
+  name: Startup(IConfiguration)
+  nameWithType: Startup.Startup(IConfiguration)
+  fullName: TicketAPI.Startup.Startup(Microsoft.Extensions.Configuration.IConfiguration)
+  type: Constructor
   source:
-    id: Pay
-    path: C:\Users\Martin\source\repos\ticketSystem-jam\src\PaymentProvider\PaymentProvider.cs
+    id: .ctor
+    path: C:\Users\Martin\source\repos\ticketSystem-jam\src\TicketAPI\Startup.cs
     startLine: 15
   assemblies:
-  - PaymentProvider
-  namespace: TicketSystem.PaymentProvider
-  summary: "\nSimulate a payment provider\nOne out of 20 payments results in an unknown error\nThree out of 20 payments results in payment rejected\n"
-  example: []
+  - TicketAPI
+  namespace: TicketAPI
   syntax:
-    content: public Payment Pay(decimal amountToPay, string valuta, string orderReference)
+    content: public Startup(IConfiguration configuration)
     parameters:
-    - id: amountToPay
-      type: System.Decimal
-      description: The amount to pay
-    - id: valuta
-      type: System.String
-      description: A three letter code (following ISO 4217) represending the valuta of the amount
-    - id: orderReference
-      type: System.String
-      description: A Guid which is the internal reference of the payment system
+    - id: configuration
+      type: Microsoft.Extensions.Configuration.IConfiguration
+    content.vb: Public Sub New(configuration As IConfiguration)
+  overload: TicketAPI.Startup.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TicketAPI.Startup.Configuration
+  commentId: P:TicketAPI.Startup.Configuration
+  id: Configuration
+  parent: TicketAPI.Startup
+  langs:
+  - csharp
+  - vb
+  name: Configuration
+  nameWithType: Startup.Configuration
+  fullName: TicketAPI.Startup.Configuration
+  type: Property
+  source:
+    id: Configuration
+    path: C:\Users\Martin\source\repos\ticketSystem-jam\src\TicketAPI\Startup.cs
+    startLine: 20
+  assemblies:
+  - TicketAPI
+  namespace: TicketAPI
+  syntax:
+    content: public IConfiguration Configuration { get; }
+    parameters: []
     return:
-      type: TicketSystem.PaymentProvider.Payment
-      description: A payment object, containging the status of the order
-    content.vb: Public Function Pay(amountToPay As Decimal, valuta As String, orderReference As String) As Payment
-  overload: TicketSystem.PaymentProvider.PaymentProvider.Pay*
-  implements:
-  - TicketSystem.PaymentProvider.IPaymentProvider.Pay(System.Decimal,System.String,System.String)
+      type: Microsoft.Extensions.Configuration.IConfiguration
+    content.vb: Public ReadOnly Property Configuration As IConfiguration
+  overload: TicketAPI.Startup.Configuration*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: TicketAPI.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+  commentId: M:TicketAPI.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+  id: ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+  parent: TicketAPI.Startup
+  langs:
+  - csharp
+  - vb
+  name: ConfigureServices(IServiceCollection)
+  nameWithType: Startup.ConfigureServices(IServiceCollection)
+  fullName: TicketAPI.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+  type: Method
+  source:
+    id: ConfigureServices
+    path: C:\Users\Martin\source\repos\ticketSystem-jam\src\TicketAPI\Startup.cs
+    startLine: 23
+  assemblies:
+  - TicketAPI
+  namespace: TicketAPI
+  syntax:
+    content: public void ConfigureServices(IServiceCollection services)
+    parameters:
+    - id: services
+      type: Microsoft.Extensions.DependencyInjection.IServiceCollection
+    content.vb: Public Sub ConfigureServices(services As IServiceCollection)
+  overload: TicketAPI.Startup.ConfigureServices*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TicketAPI.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IHostingEnvironment)
+  commentId: M:TicketAPI.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IHostingEnvironment)
+  id: Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IHostingEnvironment)
+  parent: TicketAPI.Startup
+  langs:
+  - csharp
+  - vb
+  name: Configure(IApplicationBuilder, IHostingEnvironment)
+  nameWithType: Startup.Configure(IApplicationBuilder, IHostingEnvironment)
+  fullName: TicketAPI.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder, Microsoft.AspNetCore.Hosting.IHostingEnvironment)
+  type: Method
+  source:
+    id: Configure
+    path: C:\Users\Martin\source\repos\ticketSystem-jam\src\TicketAPI\Startup.cs
+    startLine: 29
+  assemblies:
+  - TicketAPI
+  namespace: TicketAPI
+  syntax:
+    content: public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+    parameters:
+    - id: app
+      type: Microsoft.AspNetCore.Builder.IApplicationBuilder
+    - id: env
+      type: Microsoft.AspNetCore.Hosting.IHostingEnvironment
+    content.vb: Public Sub Configure(app As IApplicationBuilder, env As IHostingEnvironment)
+  overload: TicketAPI.Startup.Configure*
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
 references:
-- uid: TicketSystem.PaymentProvider
-  commentId: N:TicketSystem.PaymentProvider
+- uid: TicketAPI
+  commentId: N:TicketAPI
   isExternal: false
-  name: TicketSystem.PaymentProvider
-  nameWithType: TicketSystem.PaymentProvider
-  fullName: TicketSystem.PaymentProvider
+  name: TicketAPI
+  nameWithType: TicketAPI
+  fullName: TicketAPI
 - uid: System.Object
   commentId: T:System.Object
   parent: System
@@ -101,13 +176,6 @@ references:
   name: Object
   nameWithType: Object
   fullName: System.Object
-- uid: TicketSystem.PaymentProvider.IPaymentProvider
-  commentId: T:TicketSystem.PaymentProvider.IPaymentProvider
-  parent: TicketSystem.PaymentProvider
-  isExternal: false
-  name: IPaymentProvider
-  nameWithType: IPaymentProvider
-  fullName: TicketSystem.PaymentProvider.IPaymentProvider
 - uid: System.Object.Equals(System.Object)
   commentId: M:System.Object.Equals(System.Object)
   parent: System.Object
@@ -393,101 +461,79 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: TicketSystem.PaymentProvider.PaymentProvider.Pay*
-  commentId: Overload:TicketSystem.PaymentProvider.PaymentProvider.Pay
+- uid: TicketAPI.Startup.#ctor*
+  commentId: Overload:TicketAPI.Startup.#ctor
   isExternal: false
-  name: Pay
-  nameWithType: PaymentProvider.Pay
-  fullName: TicketSystem.PaymentProvider.PaymentProvider.Pay
-- uid: TicketSystem.PaymentProvider.IPaymentProvider.Pay(System.Decimal,System.String,System.String)
-  commentId: M:TicketSystem.PaymentProvider.IPaymentProvider.Pay(System.Decimal,System.String,System.String)
-  parent: TicketSystem.PaymentProvider.IPaymentProvider
+  name: Startup
+  nameWithType: Startup.Startup
+  fullName: TicketAPI.Startup.Startup
+- uid: Microsoft.Extensions.Configuration.IConfiguration
+  commentId: T:Microsoft.Extensions.Configuration.IConfiguration
+  parent: Microsoft.Extensions.Configuration
   isExternal: true
-  name: Pay(Decimal, String, String)
-  nameWithType: IPaymentProvider.Pay(Decimal, String, String)
-  fullName: TicketSystem.PaymentProvider.IPaymentProvider.Pay(System.Decimal, System.String, System.String)
-  spec.csharp:
-  - uid: TicketSystem.PaymentProvider.IPaymentProvider.Pay(System.Decimal,System.String,System.String)
-    name: Pay
-    nameWithType: IPaymentProvider.Pay
-    fullName: TicketSystem.PaymentProvider.IPaymentProvider.Pay
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Decimal
-    name: Decimal
-    nameWithType: Decimal
-    fullName: System.Decimal
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.String
-    name: String
-    nameWithType: String
-    fullName: System.String
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.String
-    name: String
-    nameWithType: String
-    fullName: System.String
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: TicketSystem.PaymentProvider.IPaymentProvider.Pay(System.Decimal,System.String,System.String)
-    name: Pay
-    nameWithType: IPaymentProvider.Pay
-    fullName: TicketSystem.PaymentProvider.IPaymentProvider.Pay
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Decimal
-    name: Decimal
-    nameWithType: Decimal
-    fullName: System.Decimal
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.String
-    name: String
-    nameWithType: String
-    fullName: System.String
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.String
-    name: String
-    nameWithType: String
-    fullName: System.String
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Decimal
-  commentId: T:System.Decimal
-  parent: System
-  isExternal: true
-  name: Decimal
-  nameWithType: Decimal
-  fullName: System.Decimal
-- uid: System.String
-  commentId: T:System.String
-  parent: System
-  isExternal: true
-  name: String
-  nameWithType: String
-  fullName: System.String
-- uid: TicketSystem.PaymentProvider.Payment
-  commentId: T:TicketSystem.PaymentProvider.Payment
-  parent: TicketSystem.PaymentProvider
+  name: IConfiguration
+  nameWithType: IConfiguration
+  fullName: Microsoft.Extensions.Configuration.IConfiguration
+- uid: Microsoft.Extensions.Configuration
+  commentId: N:Microsoft.Extensions.Configuration
   isExternal: false
-  name: Payment
-  nameWithType: Payment
-  fullName: TicketSystem.PaymentProvider.Payment
+  name: Microsoft.Extensions.Configuration
+  nameWithType: Microsoft.Extensions.Configuration
+  fullName: Microsoft.Extensions.Configuration
+- uid: TicketAPI.Startup.Configuration*
+  commentId: Overload:TicketAPI.Startup.Configuration
+  isExternal: false
+  name: Configuration
+  nameWithType: Startup.Configuration
+  fullName: TicketAPI.Startup.Configuration
+- uid: TicketAPI.Startup.ConfigureServices*
+  commentId: Overload:TicketAPI.Startup.ConfigureServices
+  isExternal: false
+  name: ConfigureServices
+  nameWithType: Startup.ConfigureServices
+  fullName: TicketAPI.Startup.ConfigureServices
+- uid: Microsoft.Extensions.DependencyInjection.IServiceCollection
+  commentId: T:Microsoft.Extensions.DependencyInjection.IServiceCollection
+  parent: Microsoft.Extensions.DependencyInjection
+  isExternal: true
+  name: IServiceCollection
+  nameWithType: IServiceCollection
+  fullName: Microsoft.Extensions.DependencyInjection.IServiceCollection
+- uid: Microsoft.Extensions.DependencyInjection
+  commentId: N:Microsoft.Extensions.DependencyInjection
+  isExternal: false
+  name: Microsoft.Extensions.DependencyInjection
+  nameWithType: Microsoft.Extensions.DependencyInjection
+  fullName: Microsoft.Extensions.DependencyInjection
+- uid: TicketAPI.Startup.Configure*
+  commentId: Overload:TicketAPI.Startup.Configure
+  isExternal: false
+  name: Configure
+  nameWithType: Startup.Configure
+  fullName: TicketAPI.Startup.Configure
+- uid: Microsoft.AspNetCore.Builder.IApplicationBuilder
+  commentId: T:Microsoft.AspNetCore.Builder.IApplicationBuilder
+  parent: Microsoft.AspNetCore.Builder
+  isExternal: true
+  name: IApplicationBuilder
+  nameWithType: IApplicationBuilder
+  fullName: Microsoft.AspNetCore.Builder.IApplicationBuilder
+- uid: Microsoft.AspNetCore.Hosting.IHostingEnvironment
+  commentId: T:Microsoft.AspNetCore.Hosting.IHostingEnvironment
+  parent: Microsoft.AspNetCore.Hosting
+  isExternal: true
+  name: IHostingEnvironment
+  nameWithType: IHostingEnvironment
+  fullName: Microsoft.AspNetCore.Hosting.IHostingEnvironment
+- uid: Microsoft.AspNetCore.Builder
+  commentId: N:Microsoft.AspNetCore.Builder
+  isExternal: false
+  name: Microsoft.AspNetCore.Builder
+  nameWithType: Microsoft.AspNetCore.Builder
+  fullName: Microsoft.AspNetCore.Builder
+- uid: Microsoft.AspNetCore.Hosting
+  commentId: N:Microsoft.AspNetCore.Hosting
+  isExternal: false
+  name: Microsoft.AspNetCore.Hosting
+  nameWithType: Microsoft.AspNetCore.Hosting
+  fullName: Microsoft.AspNetCore.Hosting

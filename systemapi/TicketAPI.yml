@@ -1,0 +1,30 @@
+### YamlMime:ManagedReference
+items:
+- uid: TicketAPI
+  commentId: N:TicketAPI
+  id: TicketAPI
+  children:
+  - TicketAPI.Program
+  - TicketAPI.Startup
+  langs:
+  - csharp
+  - vb
+  name: TicketAPI
+  nameWithType: TicketAPI
+  fullName: TicketAPI
+  type: Namespace
+  assemblies:
+  - TicketAPI
+references:
+- uid: TicketAPI.Program
+  commentId: T:TicketAPI.Program
+  isExternal: false
+  name: Program
+  nameWithType: Program
+  fullName: TicketAPI.Program
+- uid: TicketAPI.Startup
+  commentId: T:TicketAPI.Startup
+  isExternal: false
+  name: Startup
+  nameWithType: Startup
+  fullName: TicketAPI.Startup

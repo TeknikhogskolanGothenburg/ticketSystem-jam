@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using TicketSystem.DatabaseRepository;
+using Newtonsoft.Json;
 
 namespace TicketAPI.Controllers
 {
@@ -20,15 +22,18 @@ namespace TicketAPI.Controllers
 
         // GET: api/TicketEvents/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public List<ClassLibrary.TicketEvent> Get(string id)
         {
-            return "value";
+            TicketDatabase ticket = new TicketDatabase();
+            return ticket.EventFind(id);
         }
         
         // POST: api/TicketEvents
         [HttpPost]
-        public void Post([FromBody]string value)
-        {
+        public void Post([FromBody]ClassLibrary.TicketEvent ticketEvent)
+        {            
+            TicketDatabase ticket = new TicketDatabase();
+            ticket.EventAdd(ticketEvent.EventName, ticketEvent.EventHtmlDescription);
         }
         
         // PUT: api/TicketEvents/5

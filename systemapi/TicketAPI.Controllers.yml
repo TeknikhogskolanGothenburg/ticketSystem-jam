@@ -1,0 +1,37 @@
+### YamlMime:ManagedReference
+items:
+- uid: TicketAPI.Controllers
+  commentId: N:TicketAPI.Controllers
+  id: TicketAPI.Controllers
+  children:
+  - TicketAPI.Controllers.TicketEventDatesController
+  - TicketAPI.Controllers.TicketEventsController
+  - TicketAPI.Controllers.VenuesController
+  langs:
+  - csharp
+  - vb
+  name: TicketAPI.Controllers
+  nameWithType: TicketAPI.Controllers
+  fullName: TicketAPI.Controllers
+  type: Namespace
+  assemblies:
+  - TicketAPI
+references:
+- uid: TicketAPI.Controllers.TicketEventDatesController
+  commentId: T:TicketAPI.Controllers.TicketEventDatesController
+  isExternal: false
+  name: TicketEventDatesController
+  nameWithType: TicketEventDatesController
+  fullName: TicketAPI.Controllers.TicketEventDatesController
+- uid: TicketAPI.Controllers.TicketEventsController
+  commentId: T:TicketAPI.Controllers.TicketEventsController
+  isExternal: false
+  name: TicketEventsController
+  nameWithType: TicketEventsController
+  fullName: TicketAPI.Controllers.TicketEventsController
+- uid: TicketAPI.Controllers.VenuesController
+  commentId: T:TicketAPI.Controllers.VenuesController
+  isExternal: false
+  name: VenuesController
+  nameWithType: VenuesController
+  fullName: TicketAPI.Controllers.VenuesController

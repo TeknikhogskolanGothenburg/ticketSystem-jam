@@ -1,35 +1,34 @@
 ### YamlMime:ManagedReference
 items:
-- uid: TicketSystem.PaymentProvider.PaymentProvider
-  commentId: T:TicketSystem.PaymentProvider.PaymentProvider
-  id: PaymentProvider
-  parent: TicketSystem.PaymentProvider
+- uid: ClassLibrary.Venue
+  commentId: T:ClassLibrary.Venue
+  id: Venue
+  parent: ClassLibrary
   children:
-  - TicketSystem.PaymentProvider.PaymentProvider.Pay(System.Decimal,System.String,System.String)
+  - ClassLibrary.Venue.Address
+  - ClassLibrary.Venue.City
+  - ClassLibrary.Venue.Country
+  - ClassLibrary.Venue.VenueId
+  - ClassLibrary.Venue.VenueName
   langs:
   - csharp
   - vb
-  name: PaymentProvider
-  nameWithType: PaymentProvider
-  fullName: TicketSystem.PaymentProvider.PaymentProvider
+  name: Venue
+  nameWithType: Venue
+  fullName: ClassLibrary.Venue
   type: Class
   source:
-    id: PaymentProvider
-    path: C:\Users\Martin\source\repos\ticketSystem-jam\src\PaymentProvider\PaymentProvider.cs
-    startLine: 4
+    id: Venue
+    path: C:\Users\Martin\source\repos\ticketSystem-jam\src\ClassLibrary\Venue.cs
+    startLine: 6
   assemblies:
-  - PaymentProvider
-  namespace: TicketSystem.PaymentProvider
+  - ClassLibrary
+  namespace: ClassLibrary
   syntax:
-    content: 'public class PaymentProvider : IPaymentProvider'
-    content.vb: >-
-      Public Class PaymentProvider
-
-          Implements IPaymentProvider
+    content: public class Venue
+    content.vb: Public Class Venue
   inheritance:
   - System.Object
-  implements:
-  - TicketSystem.PaymentProvider.IPaymentProvider
   inheritedMembers:
   - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
@@ -44,56 +43,168 @@ items:
   modifiers.vb:
   - Public
   - Class
-- uid: TicketSystem.PaymentProvider.PaymentProvider.Pay(System.Decimal,System.String,System.String)
-  commentId: M:TicketSystem.PaymentProvider.PaymentProvider.Pay(System.Decimal,System.String,System.String)
-  id: Pay(System.Decimal,System.String,System.String)
-  parent: TicketSystem.PaymentProvider.PaymentProvider
+- uid: ClassLibrary.Venue.VenueId
+  commentId: P:ClassLibrary.Venue.VenueId
+  id: VenueId
+  parent: ClassLibrary.Venue
   langs:
   - csharp
   - vb
-  name: Pay(Decimal, String, String)
-  nameWithType: PaymentProvider.Pay(Decimal, String, String)
-  fullName: TicketSystem.PaymentProvider.PaymentProvider.Pay(System.Decimal, System.String, System.String)
-  type: Method
+  name: VenueId
+  nameWithType: Venue.VenueId
+  fullName: ClassLibrary.Venue.VenueId
+  type: Property
   source:
-    id: Pay
-    path: C:\Users\Martin\source\repos\ticketSystem-jam\src\PaymentProvider\PaymentProvider.cs
-    startLine: 15
+    id: VenueId
+    path: C:\Users\Martin\source\repos\ticketSystem-jam\src\ClassLibrary\Venue.cs
+    startLine: 8
   assemblies:
-  - PaymentProvider
-  namespace: TicketSystem.PaymentProvider
-  summary: "\nSimulate a payment provider\nOne out of 20 payments results in an unknown error\nThree out of 20 payments results in payment rejected\n"
-  example: []
+  - ClassLibrary
+  namespace: ClassLibrary
   syntax:
-    content: public Payment Pay(decimal amountToPay, string valuta, string orderReference)
-    parameters:
-    - id: amountToPay
-      type: System.Decimal
-      description: The amount to pay
-    - id: valuta
-      type: System.String
-      description: A three letter code (following ISO 4217) represending the valuta of the amount
-    - id: orderReference
-      type: System.String
-      description: A Guid which is the internal reference of the payment system
+    content: public int VenueId { get; set; }
+    parameters: []
     return:
-      type: TicketSystem.PaymentProvider.Payment
-      description: A payment object, containging the status of the order
-    content.vb: Public Function Pay(amountToPay As Decimal, valuta As String, orderReference As String) As Payment
-  overload: TicketSystem.PaymentProvider.PaymentProvider.Pay*
-  implements:
-  - TicketSystem.PaymentProvider.IPaymentProvider.Pay(System.Decimal,System.String,System.String)
+      type: System.Int32
+    content.vb: Public Property VenueId As Integer
+  overload: ClassLibrary.Venue.VenueId*
   modifiers.csharp:
   - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: ClassLibrary.Venue.VenueName
+  commentId: P:ClassLibrary.Venue.VenueName
+  id: VenueName
+  parent: ClassLibrary.Venue
+  langs:
+  - csharp
+  - vb
+  name: VenueName
+  nameWithType: Venue.VenueName
+  fullName: ClassLibrary.Venue.VenueName
+  type: Property
+  source:
+    id: VenueName
+    path: C:\Users\Martin\source\repos\ticketSystem-jam\src\ClassLibrary\Venue.cs
+    startLine: 9
+  assemblies:
+  - ClassLibrary
+  namespace: ClassLibrary
+  syntax:
+    content: public string VenueName { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property VenueName As String
+  overload: ClassLibrary.Venue.VenueName*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: ClassLibrary.Venue.Address
+  commentId: P:ClassLibrary.Venue.Address
+  id: Address
+  parent: ClassLibrary.Venue
+  langs:
+  - csharp
+  - vb
+  name: Address
+  nameWithType: Venue.Address
+  fullName: ClassLibrary.Venue.Address
+  type: Property
+  source:
+    id: Address
+    path: C:\Users\Martin\source\repos\ticketSystem-jam\src\ClassLibrary\Venue.cs
+    startLine: 10
+  assemblies:
+  - ClassLibrary
+  namespace: ClassLibrary
+  syntax:
+    content: public string Address { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Address As String
+  overload: ClassLibrary.Venue.Address*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: ClassLibrary.Venue.City
+  commentId: P:ClassLibrary.Venue.City
+  id: City
+  parent: ClassLibrary.Venue
+  langs:
+  - csharp
+  - vb
+  name: City
+  nameWithType: Venue.City
+  fullName: ClassLibrary.Venue.City
+  type: Property
+  source:
+    id: City
+    path: C:\Users\Martin\source\repos\ticketSystem-jam\src\ClassLibrary\Venue.cs
+    startLine: 11
+  assemblies:
+  - ClassLibrary
+  namespace: ClassLibrary
+  syntax:
+    content: public string City { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property City As String
+  overload: ClassLibrary.Venue.City*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: ClassLibrary.Venue.Country
+  commentId: P:ClassLibrary.Venue.Country
+  id: Country
+  parent: ClassLibrary.Venue
+  langs:
+  - csharp
+  - vb
+  name: Country
+  nameWithType: Venue.Country
+  fullName: ClassLibrary.Venue.Country
+  type: Property
+  source:
+    id: Country
+    path: C:\Users\Martin\source\repos\ticketSystem-jam\src\ClassLibrary\Venue.cs
+    startLine: 12
+  assemblies:
+  - ClassLibrary
+  namespace: ClassLibrary
+  syntax:
+    content: public string Country { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Country As String
+  overload: ClassLibrary.Venue.Country*
+  modifiers.csharp:
+  - public
+  - get
+  - set
   modifiers.vb:
   - Public
 references:
-- uid: TicketSystem.PaymentProvider
-  commentId: N:TicketSystem.PaymentProvider
+- uid: ClassLibrary
+  commentId: N:ClassLibrary
   isExternal: false
-  name: TicketSystem.PaymentProvider
-  nameWithType: TicketSystem.PaymentProvider
-  fullName: TicketSystem.PaymentProvider
+  name: ClassLibrary
+  nameWithType: ClassLibrary
+  fullName: ClassLibrary
 - uid: System.Object
   commentId: T:System.Object
   parent: System
@@ -101,13 +212,6 @@ references:
   name: Object
   nameWithType: Object
   fullName: System.Object
-- uid: TicketSystem.PaymentProvider.IPaymentProvider
-  commentId: T:TicketSystem.PaymentProvider.IPaymentProvider
-  parent: TicketSystem.PaymentProvider
-  isExternal: false
-  name: IPaymentProvider
-  nameWithType: IPaymentProvider
-  fullName: TicketSystem.PaymentProvider.IPaymentProvider
 - uid: System.Object.Equals(System.Object)
   commentId: M:System.Object.Equals(System.Object)
   parent: System.Object
@@ -393,90 +497,25 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: TicketSystem.PaymentProvider.PaymentProvider.Pay*
-  commentId: Overload:TicketSystem.PaymentProvider.PaymentProvider.Pay
+- uid: ClassLibrary.Venue.VenueId*
+  commentId: Overload:ClassLibrary.Venue.VenueId
   isExternal: false
-  name: Pay
-  nameWithType: PaymentProvider.Pay
-  fullName: TicketSystem.PaymentProvider.PaymentProvider.Pay
-- uid: TicketSystem.PaymentProvider.IPaymentProvider.Pay(System.Decimal,System.String,System.String)
-  commentId: M:TicketSystem.PaymentProvider.IPaymentProvider.Pay(System.Decimal,System.String,System.String)
-  parent: TicketSystem.PaymentProvider.IPaymentProvider
-  isExternal: true
-  name: Pay(Decimal, String, String)
-  nameWithType: IPaymentProvider.Pay(Decimal, String, String)
-  fullName: TicketSystem.PaymentProvider.IPaymentProvider.Pay(System.Decimal, System.String, System.String)
-  spec.csharp:
-  - uid: TicketSystem.PaymentProvider.IPaymentProvider.Pay(System.Decimal,System.String,System.String)
-    name: Pay
-    nameWithType: IPaymentProvider.Pay
-    fullName: TicketSystem.PaymentProvider.IPaymentProvider.Pay
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Decimal
-    name: Decimal
-    nameWithType: Decimal
-    fullName: System.Decimal
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.String
-    name: String
-    nameWithType: String
-    fullName: System.String
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.String
-    name: String
-    nameWithType: String
-    fullName: System.String
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: TicketSystem.PaymentProvider.IPaymentProvider.Pay(System.Decimal,System.String,System.String)
-    name: Pay
-    nameWithType: IPaymentProvider.Pay
-    fullName: TicketSystem.PaymentProvider.IPaymentProvider.Pay
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Decimal
-    name: Decimal
-    nameWithType: Decimal
-    fullName: System.Decimal
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.String
-    name: String
-    nameWithType: String
-    fullName: System.String
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.String
-    name: String
-    nameWithType: String
-    fullName: System.String
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Decimal
-  commentId: T:System.Decimal
+  name: VenueId
+  nameWithType: Venue.VenueId
+  fullName: ClassLibrary.Venue.VenueId
+- uid: System.Int32
+  commentId: T:System.Int32
   parent: System
   isExternal: true
-  name: Decimal
-  nameWithType: Decimal
-  fullName: System.Decimal
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: ClassLibrary.Venue.VenueName*
+  commentId: Overload:ClassLibrary.Venue.VenueName
+  isExternal: false
+  name: VenueName
+  nameWithType: Venue.VenueName
+  fullName: ClassLibrary.Venue.VenueName
 - uid: System.String
   commentId: T:System.String
   parent: System
@@ -484,10 +523,21 @@ references:
   name: String
   nameWithType: String
   fullName: System.String
-- uid: TicketSystem.PaymentProvider.Payment
-  commentId: T:TicketSystem.PaymentProvider.Payment
-  parent: TicketSystem.PaymentProvider
+- uid: ClassLibrary.Venue.Address*
+  commentId: Overload:ClassLibrary.Venue.Address
   isExternal: false
-  name: Payment
-  nameWithType: Payment
-  fullName: TicketSystem.PaymentProvider.Payment
+  name: Address
+  nameWithType: Venue.Address
+  fullName: ClassLibrary.Venue.Address
+- uid: ClassLibrary.Venue.City*
+  commentId: Overload:ClassLibrary.Venue.City
+  isExternal: false
+  name: City
+  nameWithType: Venue.City
+  fullName: ClassLibrary.Venue.City
+- uid: ClassLibrary.Venue.Country*
+  commentId: Overload:ClassLibrary.Venue.Country
+  isExternal: false
+  name: Country
+  nameWithType: Venue.Country
+  fullName: ClassLibrary.Venue.Country

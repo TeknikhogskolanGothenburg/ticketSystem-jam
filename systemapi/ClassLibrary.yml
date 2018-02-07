@@ -1,0 +1,45 @@
+### YamlMime:ManagedReference
+items:
+- uid: ClassLibrary
+  commentId: N:ClassLibrary
+  id: ClassLibrary
+  children:
+  - ClassLibrary.TicketEvent
+  - ClassLibrary.TicketEventDate
+  - ClassLibrary.Venue
+  langs:
+  - csharp
+  - vb
+  name: ClassLibrary
+  nameWithType: ClassLibrary
+  fullName: ClassLibrary
+  type: Namespace
+  assemblies:
+  - ClassLibrary
+references:
+- uid: ClassLibrary.TicketEvent
+  commentId: T:ClassLibrary.TicketEvent
+  parent: ClassLibrary
+  isExternal: false
+  name: TicketEvent
+  nameWithType: TicketEvent
+  fullName: ClassLibrary.TicketEvent
+- uid: ClassLibrary.TicketEventDate
+  commentId: T:ClassLibrary.TicketEventDate
+  isExternal: false
+  name: TicketEventDate
+  nameWithType: TicketEventDate
+  fullName: ClassLibrary.TicketEventDate
+- uid: ClassLibrary.Venue
+  commentId: T:ClassLibrary.Venue
+  parent: ClassLibrary
+  isExternal: false
+  name: Venue
+  nameWithType: Venue
+  fullName: ClassLibrary.Venue
+- uid: ClassLibrary
+  commentId: N:ClassLibrary
+  isExternal: false
+  name: ClassLibrary
+  nameWithType: ClassLibrary
+  fullName: ClassLibrary
