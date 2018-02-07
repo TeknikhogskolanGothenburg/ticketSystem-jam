@@ -44,15 +44,16 @@ namespace TicketSystem.DatabaseRepository
             }
         }
 
-        public List<Venue> VenuesFind(string query)
-        {
-            string connectionString = ConfigurationManager.ConnectionStrings["TicketSystem"].ConnectionString;
-            using (var connection = new SqlConnection(connectionString))
-            {
-                connection.Open();
-                return connection.Query<Venue>("SELECT * FROM Venues WHERE VenueName like '%"+query+ "%' OR Address like '%" + query + "%' OR City like '%" + query + "%' OR Country like '%" + query + "%'").ToList();
-            }
-        }
+        //public List<Venue> VenuesFind(string query)
+        //{
+        //    string connectionString = ConfigurationManager.ConnectionStrings["TicketSystem"].ConnectionString;
+        //    using (var connection = new SqlConnection(connectionString))
+        //    {
+        //        connection.Open();
+        //        return connection.Query<Venue>("SELECT * FROM Venues WHERE VenueName like '%"+query+ "%' OR Address like '%" + query + "%' OR City like '%" + query + "%' OR Country like '%" + query + "%'").ToList();
+        //    }
+        //}
+
         public List<Venue> VenuesFindAll()
         {
             var connectionString = "Server=(local)\\SqlExpress; Database=TicketSystem; Trusted_connection=true";
@@ -62,5 +63,16 @@ namespace TicketSystem.DatabaseRepository
                 return connection.Query<Venue>("SELECT * FROM Venues").ToList();
             }
         }
+
+        public Venue VenuesFind(string query)
+        {
+            var connectionString = "Server=(local)\\SqlExpress; Database=TicketSystem; Trusted_connection=true";
+            using (var connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                return connection.Query<Venue>("SELECT * FROM Venues WHERE VenueName like'%"+query+"%'").First();
+            }
+        }
+
     }
 }
