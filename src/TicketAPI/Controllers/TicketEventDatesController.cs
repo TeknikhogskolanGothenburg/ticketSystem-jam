@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using ClassLibrary;
+using TicketSystem.DatabaseRepository;
 
 namespace TicketAPI.Controllers
 {
@@ -26,11 +28,23 @@ namespace TicketAPI.Controllers
         }
         
         // POST: api/TicketEventDates
+        /// <summary>
+        /// Post-method to link EventId and VenueId with Date.
+        /// </summary>
+        /// <param name="value"></param>
         [HttpPost]
-        public void Post([FromBody]string value)
+        public void Post([FromBody]TicketEventDate value)
         {
+            TicketDatabase addEventDate = new TicketDatabase();
+            addEventDate.EventDateAdd(value.TicketEventID, value.VenueId, value.EventStartDateTime);
+
+            // Förslag på inputsträngar. 
+            // Content-Type: application/json           
+            // Postinput  {"TicketEventID":"1", "VenueId":"1", "EventStartDateTime":"2018-05-20"}
+            // Postinput  {"TicketEventID":"2", "VenueId":"1", "EventStartDateTime":"2018-04-10"}
+            // Postinput  {"TicketEventID":"1", "VenueId":"2", "EventStartDateTime":"2018-06-21"}
         }
-        
+
         // PUT: api/TicketEventDates/5
         [HttpPut("{id}")]
         public void Put(int id, [FromBody]string value)
