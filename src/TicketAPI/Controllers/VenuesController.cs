@@ -16,16 +16,19 @@ namespace TicketAPI.Controllers
         [HttpGet]
         public List<Venue> Get()
         {
-            TicketDatabase findVenues = new TicketDatabase();
-            List<Venue> values = findVenues.VenuesFindAll();
+            TicketDatabase v = new TicketDatabase();
+            List<Venue> values = v.VenuesFindAll();
             return values;
         }
 
         // GET: api/Venues/5
         [HttpGet("{id}")]
-        public string Get(string id)
+        public Venue Get(string id)
         {
-            return "hej";
+            TicketDatabase v = new TicketDatabase();
+            Venue venue = v.VenuesFind(id);
+            return venue;
+
         }
          
 
