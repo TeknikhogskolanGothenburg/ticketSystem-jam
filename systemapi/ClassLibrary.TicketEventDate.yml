@@ -1,35 +1,33 @@
 ### YamlMime:ManagedReference
 items:
-- uid: TicketSystem.PaymentProvider.PaymentProvider
-  commentId: T:TicketSystem.PaymentProvider.PaymentProvider
-  id: PaymentProvider
-  parent: TicketSystem.PaymentProvider
+- uid: ClassLibrary.TicketEventDate
+  commentId: T:ClassLibrary.TicketEventDate
+  id: TicketEventDate
+  parent: ClassLibrary
   children:
-  - TicketSystem.PaymentProvider.PaymentProvider.Pay(System.Decimal,System.String,System.String)
+  - ClassLibrary.TicketEventDate.EventStartDateTime
+  - ClassLibrary.TicketEventDate.TicketEventDateID
+  - ClassLibrary.TicketEventDate.TicketEventID
+  - ClassLibrary.TicketEventDate.VenueId
   langs:
   - csharp
   - vb
-  name: PaymentProvider
-  nameWithType: PaymentProvider
-  fullName: TicketSystem.PaymentProvider.PaymentProvider
+  name: TicketEventDate
+  nameWithType: TicketEventDate
+  fullName: ClassLibrary.TicketEventDate
   type: Class
   source:
-    id: PaymentProvider
-    path: C:\Users\Martin\source\repos\ticketSystem-jam\src\PaymentProvider\PaymentProvider.cs
-    startLine: 4
+    id: TicketEventDate
+    path: C:\Users\Martin\source\repos\ticketSystem-jam\src\ClassLibrary\TicketEventDate.cs
+    startLine: 6
   assemblies:
-  - PaymentProvider
-  namespace: TicketSystem.PaymentProvider
+  - ClassLibrary
+  namespace: ClassLibrary
   syntax:
-    content: 'public class PaymentProvider : IPaymentProvider'
-    content.vb: >-
-      Public Class PaymentProvider
-
-          Implements IPaymentProvider
+    content: public class TicketEventDate
+    content.vb: Public Class TicketEventDate
   inheritance:
   - System.Object
-  implements:
-  - TicketSystem.PaymentProvider.IPaymentProvider
   inheritedMembers:
   - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
@@ -44,56 +42,137 @@ items:
   modifiers.vb:
   - Public
   - Class
-- uid: TicketSystem.PaymentProvider.PaymentProvider.Pay(System.Decimal,System.String,System.String)
-  commentId: M:TicketSystem.PaymentProvider.PaymentProvider.Pay(System.Decimal,System.String,System.String)
-  id: Pay(System.Decimal,System.String,System.String)
-  parent: TicketSystem.PaymentProvider.PaymentProvider
+- uid: ClassLibrary.TicketEventDate.TicketEventDateID
+  commentId: P:ClassLibrary.TicketEventDate.TicketEventDateID
+  id: TicketEventDateID
+  parent: ClassLibrary.TicketEventDate
   langs:
   - csharp
   - vb
-  name: Pay(Decimal, String, String)
-  nameWithType: PaymentProvider.Pay(Decimal, String, String)
-  fullName: TicketSystem.PaymentProvider.PaymentProvider.Pay(System.Decimal, System.String, System.String)
-  type: Method
+  name: TicketEventDateID
+  nameWithType: TicketEventDate.TicketEventDateID
+  fullName: ClassLibrary.TicketEventDate.TicketEventDateID
+  type: Property
   source:
-    id: Pay
-    path: C:\Users\Martin\source\repos\ticketSystem-jam\src\PaymentProvider\PaymentProvider.cs
-    startLine: 15
+    id: TicketEventDateID
+    path: C:\Users\Martin\source\repos\ticketSystem-jam\src\ClassLibrary\TicketEventDate.cs
+    startLine: 8
   assemblies:
-  - PaymentProvider
-  namespace: TicketSystem.PaymentProvider
-  summary: "\nSimulate a payment provider\nOne out of 20 payments results in an unknown error\nThree out of 20 payments results in payment rejected\n"
-  example: []
+  - ClassLibrary
+  namespace: ClassLibrary
   syntax:
-    content: public Payment Pay(decimal amountToPay, string valuta, string orderReference)
-    parameters:
-    - id: amountToPay
-      type: System.Decimal
-      description: The amount to pay
-    - id: valuta
-      type: System.String
-      description: A three letter code (following ISO 4217) represending the valuta of the amount
-    - id: orderReference
-      type: System.String
-      description: A Guid which is the internal reference of the payment system
+    content: public int TicketEventDateID { get; set; }
+    parameters: []
     return:
-      type: TicketSystem.PaymentProvider.Payment
-      description: A payment object, containging the status of the order
-    content.vb: Public Function Pay(amountToPay As Decimal, valuta As String, orderReference As String) As Payment
-  overload: TicketSystem.PaymentProvider.PaymentProvider.Pay*
-  implements:
-  - TicketSystem.PaymentProvider.IPaymentProvider.Pay(System.Decimal,System.String,System.String)
+      type: System.Int32
+    content.vb: Public Property TicketEventDateID As Integer
+  overload: ClassLibrary.TicketEventDate.TicketEventDateID*
   modifiers.csharp:
   - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: ClassLibrary.TicketEventDate.TicketEventID
+  commentId: P:ClassLibrary.TicketEventDate.TicketEventID
+  id: TicketEventID
+  parent: ClassLibrary.TicketEventDate
+  langs:
+  - csharp
+  - vb
+  name: TicketEventID
+  nameWithType: TicketEventDate.TicketEventID
+  fullName: ClassLibrary.TicketEventDate.TicketEventID
+  type: Property
+  source:
+    id: TicketEventID
+    path: C:\Users\Martin\source\repos\ticketSystem-jam\src\ClassLibrary\TicketEventDate.cs
+    startLine: 9
+  assemblies:
+  - ClassLibrary
+  namespace: ClassLibrary
+  syntax:
+    content: public int TicketEventID { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property TicketEventID As Integer
+  overload: ClassLibrary.TicketEventDate.TicketEventID*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: ClassLibrary.TicketEventDate.VenueId
+  commentId: P:ClassLibrary.TicketEventDate.VenueId
+  id: VenueId
+  parent: ClassLibrary.TicketEventDate
+  langs:
+  - csharp
+  - vb
+  name: VenueId
+  nameWithType: TicketEventDate.VenueId
+  fullName: ClassLibrary.TicketEventDate.VenueId
+  type: Property
+  source:
+    id: VenueId
+    path: C:\Users\Martin\source\repos\ticketSystem-jam\src\ClassLibrary\TicketEventDate.cs
+    startLine: 10
+  assemblies:
+  - ClassLibrary
+  namespace: ClassLibrary
+  syntax:
+    content: public int VenueId { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property VenueId As Integer
+  overload: ClassLibrary.TicketEventDate.VenueId*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: ClassLibrary.TicketEventDate.EventStartDateTime
+  commentId: P:ClassLibrary.TicketEventDate.EventStartDateTime
+  id: EventStartDateTime
+  parent: ClassLibrary.TicketEventDate
+  langs:
+  - csharp
+  - vb
+  name: EventStartDateTime
+  nameWithType: TicketEventDate.EventStartDateTime
+  fullName: ClassLibrary.TicketEventDate.EventStartDateTime
+  type: Property
+  source:
+    id: EventStartDateTime
+    path: C:\Users\Martin\source\repos\ticketSystem-jam\src\ClassLibrary\TicketEventDate.cs
+    startLine: 11
+  assemblies:
+  - ClassLibrary
+  namespace: ClassLibrary
+  syntax:
+    content: public DateTime EventStartDateTime { get; set; }
+    parameters: []
+    return:
+      type: System.DateTime
+    content.vb: Public Property EventStartDateTime As Date
+  overload: ClassLibrary.TicketEventDate.EventStartDateTime*
+  modifiers.csharp:
+  - public
+  - get
+  - set
   modifiers.vb:
   - Public
 references:
-- uid: TicketSystem.PaymentProvider
-  commentId: N:TicketSystem.PaymentProvider
+- uid: ClassLibrary
+  commentId: N:ClassLibrary
   isExternal: false
-  name: TicketSystem.PaymentProvider
-  nameWithType: TicketSystem.PaymentProvider
-  fullName: TicketSystem.PaymentProvider
+  name: ClassLibrary
+  nameWithType: ClassLibrary
+  fullName: ClassLibrary
 - uid: System.Object
   commentId: T:System.Object
   parent: System
@@ -101,13 +180,6 @@ references:
   name: Object
   nameWithType: Object
   fullName: System.Object
-- uid: TicketSystem.PaymentProvider.IPaymentProvider
-  commentId: T:TicketSystem.PaymentProvider.IPaymentProvider
-  parent: TicketSystem.PaymentProvider
-  isExternal: false
-  name: IPaymentProvider
-  nameWithType: IPaymentProvider
-  fullName: TicketSystem.PaymentProvider.IPaymentProvider
 - uid: System.Object.Equals(System.Object)
   commentId: M:System.Object.Equals(System.Object)
   parent: System.Object
@@ -393,101 +465,41 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: TicketSystem.PaymentProvider.PaymentProvider.Pay*
-  commentId: Overload:TicketSystem.PaymentProvider.PaymentProvider.Pay
+- uid: ClassLibrary.TicketEventDate.TicketEventDateID*
+  commentId: Overload:ClassLibrary.TicketEventDate.TicketEventDateID
   isExternal: false
-  name: Pay
-  nameWithType: PaymentProvider.Pay
-  fullName: TicketSystem.PaymentProvider.PaymentProvider.Pay
-- uid: TicketSystem.PaymentProvider.IPaymentProvider.Pay(System.Decimal,System.String,System.String)
-  commentId: M:TicketSystem.PaymentProvider.IPaymentProvider.Pay(System.Decimal,System.String,System.String)
-  parent: TicketSystem.PaymentProvider.IPaymentProvider
-  isExternal: true
-  name: Pay(Decimal, String, String)
-  nameWithType: IPaymentProvider.Pay(Decimal, String, String)
-  fullName: TicketSystem.PaymentProvider.IPaymentProvider.Pay(System.Decimal, System.String, System.String)
-  spec.csharp:
-  - uid: TicketSystem.PaymentProvider.IPaymentProvider.Pay(System.Decimal,System.String,System.String)
-    name: Pay
-    nameWithType: IPaymentProvider.Pay
-    fullName: TicketSystem.PaymentProvider.IPaymentProvider.Pay
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Decimal
-    name: Decimal
-    nameWithType: Decimal
-    fullName: System.Decimal
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.String
-    name: String
-    nameWithType: String
-    fullName: System.String
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.String
-    name: String
-    nameWithType: String
-    fullName: System.String
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: TicketSystem.PaymentProvider.IPaymentProvider.Pay(System.Decimal,System.String,System.String)
-    name: Pay
-    nameWithType: IPaymentProvider.Pay
-    fullName: TicketSystem.PaymentProvider.IPaymentProvider.Pay
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Decimal
-    name: Decimal
-    nameWithType: Decimal
-    fullName: System.Decimal
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.String
-    name: String
-    nameWithType: String
-    fullName: System.String
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.String
-    name: String
-    nameWithType: String
-    fullName: System.String
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Decimal
-  commentId: T:System.Decimal
+  name: TicketEventDateID
+  nameWithType: TicketEventDate.TicketEventDateID
+  fullName: ClassLibrary.TicketEventDate.TicketEventDateID
+- uid: System.Int32
+  commentId: T:System.Int32
   parent: System
   isExternal: true
-  name: Decimal
-  nameWithType: Decimal
-  fullName: System.Decimal
-- uid: System.String
-  commentId: T:System.String
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: ClassLibrary.TicketEventDate.TicketEventID*
+  commentId: Overload:ClassLibrary.TicketEventDate.TicketEventID
+  isExternal: false
+  name: TicketEventID
+  nameWithType: TicketEventDate.TicketEventID
+  fullName: ClassLibrary.TicketEventDate.TicketEventID
+- uid: ClassLibrary.TicketEventDate.VenueId*
+  commentId: Overload:ClassLibrary.TicketEventDate.VenueId
+  isExternal: false
+  name: VenueId
+  nameWithType: TicketEventDate.VenueId
+  fullName: ClassLibrary.TicketEventDate.VenueId
+- uid: ClassLibrary.TicketEventDate.EventStartDateTime*
+  commentId: Overload:ClassLibrary.TicketEventDate.EventStartDateTime
+  isExternal: false
+  name: EventStartDateTime
+  nameWithType: TicketEventDate.EventStartDateTime
+  fullName: ClassLibrary.TicketEventDate.EventStartDateTime
+- uid: System.DateTime
+  commentId: T:System.DateTime
   parent: System
   isExternal: true
-  name: String
-  nameWithType: String
-  fullName: System.String
-- uid: TicketSystem.PaymentProvider.Payment
-  commentId: T:TicketSystem.PaymentProvider.Payment
-  parent: TicketSystem.PaymentProvider
-  isExternal: false
-  name: Payment
-  nameWithType: Payment
-  fullName: TicketSystem.PaymentProvider.Payment
+  name: DateTime
+  nameWithType: DateTime
+  fullName: System.DateTime

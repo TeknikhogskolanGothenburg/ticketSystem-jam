@@ -1,34 +1,29 @@
 ### YamlMime:ManagedReference
 items:
-- uid: TicketSystem.DatabaseRepository.Model.TicketEvent
-  commentId: T:TicketSystem.DatabaseRepository.Model.TicketEvent
-  id: TicketEvent
-  parent: TicketSystem.DatabaseRepository.Model
+- uid: TicketAPI.Program
+  commentId: T:TicketAPI.Program
+  id: Program
+  parent: TicketAPI
   children:
-  - TicketSystem.DatabaseRepository.Model.TicketEvent.EventHtmlDescription
-  - TicketSystem.DatabaseRepository.Model.TicketEvent.EventName
-  - TicketSystem.DatabaseRepository.Model.TicketEvent.TicketEventId
+  - TicketAPI.Program.BuildWebHost(System.String[])
+  - TicketAPI.Program.Main(System.String[])
   langs:
   - csharp
   - vb
-  name: TicketEvent
-  nameWithType: TicketEvent
-  fullName: TicketSystem.DatabaseRepository.Model.TicketEvent
+  name: Program
+  nameWithType: Program
+  fullName: TicketAPI.Program
   type: Class
   source:
-    remote:
-      path: src/DatabaseRepository/Model/TicketEvent.cs
-      branch: master
-      repo: https://github.com/skjohansen/AssignmentTicketSystem.git
-    id: TicketEvent
-    path: src/DatabaseRepository/Model/TicketEvent.cs
-    startLine: 2
+    id: Program
+    path: C:\Users\Martin\source\repos\ticketSystem-jam\src\TicketAPI\Program.cs
+    startLine: 12
   assemblies:
-  - DatabaseRepository
-  namespace: TicketSystem.DatabaseRepository.Model
+  - TicketAPI
+  namespace: TicketAPI
   syntax:
-    content: public class TicketEvent
-    content.vb: Public Class TicketEvent
+    content: public class Program
+    content.vb: Public Class Program
   inheritance:
   - System.Object
   inheritedMembers:
@@ -45,118 +40,83 @@ items:
   modifiers.vb:
   - Public
   - Class
-- uid: TicketSystem.DatabaseRepository.Model.TicketEvent.TicketEventId
-  commentId: P:TicketSystem.DatabaseRepository.Model.TicketEvent.TicketEventId
-  id: TicketEventId
-  parent: TicketSystem.DatabaseRepository.Model.TicketEvent
+- uid: TicketAPI.Program.Main(System.String[])
+  commentId: M:TicketAPI.Program.Main(System.String[])
+  id: Main(System.String[])
+  parent: TicketAPI.Program
   langs:
   - csharp
   - vb
-  name: TicketEventId
-  nameWithType: TicketEvent.TicketEventId
-  fullName: TicketSystem.DatabaseRepository.Model.TicketEvent.TicketEventId
-  type: Property
+  name: Main(String[])
+  nameWithType: Program.Main(String[])
+  fullName: TicketAPI.Program.Main(System.String[])
+  type: Method
   source:
-    remote:
-      path: src/DatabaseRepository/Model/TicketEvent.cs
-      branch: master
-      repo: https://github.com/skjohansen/AssignmentTicketSystem.git
-    id: TicketEventId
-    path: src/DatabaseRepository/Model/TicketEvent.cs
-    startLine: 4
+    id: Main
+    path: C:\Users\Martin\source\repos\ticketSystem-jam\src\TicketAPI\Program.cs
+    startLine: 14
   assemblies:
-  - DatabaseRepository
-  namespace: TicketSystem.DatabaseRepository.Model
+  - TicketAPI
+  namespace: TicketAPI
   syntax:
-    content: public int TicketEventId { get; set; }
-    parameters: []
-    return:
-      type: System.Int32
-    content.vb: Public Property TicketEventId As Integer
-  overload: TicketSystem.DatabaseRepository.Model.TicketEvent.TicketEventId*
+    content: public static void Main(string[] args)
+    parameters:
+    - id: args
+      type: System.String[]
+    content.vb: Public Shared Sub Main(args As String())
+  overload: TicketAPI.Program.Main*
+  nameWithType.vb: Program.Main(String())
   modifiers.csharp:
   - public
-  - get
-  - set
+  - static
   modifiers.vb:
   - Public
-- uid: TicketSystem.DatabaseRepository.Model.TicketEvent.EventName
-  commentId: P:TicketSystem.DatabaseRepository.Model.TicketEvent.EventName
-  id: EventName
-  parent: TicketSystem.DatabaseRepository.Model.TicketEvent
+  - Shared
+  fullName.vb: TicketAPI.Program.Main(System.String())
+  name.vb: Main(String())
+- uid: TicketAPI.Program.BuildWebHost(System.String[])
+  commentId: M:TicketAPI.Program.BuildWebHost(System.String[])
+  id: BuildWebHost(System.String[])
+  parent: TicketAPI.Program
   langs:
   - csharp
   - vb
-  name: EventName
-  nameWithType: TicketEvent.EventName
-  fullName: TicketSystem.DatabaseRepository.Model.TicketEvent.EventName
-  type: Property
+  name: BuildWebHost(String[])
+  nameWithType: Program.BuildWebHost(String[])
+  fullName: TicketAPI.Program.BuildWebHost(System.String[])
+  type: Method
   source:
-    remote:
-      path: src/DatabaseRepository/Model/TicketEvent.cs
-      branch: master
-      repo: https://github.com/skjohansen/AssignmentTicketSystem.git
-    id: EventName
-    path: src/DatabaseRepository/Model/TicketEvent.cs
-    startLine: 5
+    id: BuildWebHost
+    path: C:\Users\Martin\source\repos\ticketSystem-jam\src\TicketAPI\Program.cs
+    startLine: 19
   assemblies:
-  - DatabaseRepository
-  namespace: TicketSystem.DatabaseRepository.Model
+  - TicketAPI
+  namespace: TicketAPI
   syntax:
-    content: public string EventName { get; set; }
-    parameters: []
+    content: public static IWebHost BuildWebHost(string[] args)
+    parameters:
+    - id: args
+      type: System.String[]
     return:
-      type: System.String
-    content.vb: Public Property EventName As String
-  overload: TicketSystem.DatabaseRepository.Model.TicketEvent.EventName*
+      type: Microsoft.AspNetCore.Hosting.IWebHost
+    content.vb: Public Shared Function BuildWebHost(args As String()) As IWebHost
+  overload: TicketAPI.Program.BuildWebHost*
+  nameWithType.vb: Program.BuildWebHost(String())
   modifiers.csharp:
   - public
-  - get
-  - set
+  - static
   modifiers.vb:
   - Public
-- uid: TicketSystem.DatabaseRepository.Model.TicketEvent.EventHtmlDescription
-  commentId: P:TicketSystem.DatabaseRepository.Model.TicketEvent.EventHtmlDescription
-  id: EventHtmlDescription
-  parent: TicketSystem.DatabaseRepository.Model.TicketEvent
-  langs:
-  - csharp
-  - vb
-  name: EventHtmlDescription
-  nameWithType: TicketEvent.EventHtmlDescription
-  fullName: TicketSystem.DatabaseRepository.Model.TicketEvent.EventHtmlDescription
-  type: Property
-  source:
-    remote:
-      path: src/DatabaseRepository/Model/TicketEvent.cs
-      branch: master
-      repo: https://github.com/skjohansen/AssignmentTicketSystem.git
-    id: EventHtmlDescription
-    path: src/DatabaseRepository/Model/TicketEvent.cs
-    startLine: 6
-  assemblies:
-  - DatabaseRepository
-  namespace: TicketSystem.DatabaseRepository.Model
-  syntax:
-    content: public string EventHtmlDescription { get; set; }
-    parameters: []
-    return:
-      type: System.String
-    content.vb: Public Property EventHtmlDescription As String
-  overload: TicketSystem.DatabaseRepository.Model.TicketEvent.EventHtmlDescription*
-  modifiers.csharp:
-  - public
-  - get
-  - set
-  modifiers.vb:
-  - Public
+  - Shared
+  fullName.vb: TicketAPI.Program.BuildWebHost(System.String())
+  name.vb: BuildWebHost(String())
 references:
-- uid: TicketSystem.DatabaseRepository.Model
-  commentId: N:TicketSystem.DatabaseRepository.Model
+- uid: TicketAPI
+  commentId: N:TicketAPI
   isExternal: false
-  name: TicketSystem.DatabaseRepository.Model
-  nameWithType: TicketSystem.DatabaseRepository.Model
-  fullName: TicketSystem.DatabaseRepository.Model
+  name: TicketAPI
+  nameWithType: TicketAPI
+  fullName: TicketAPI
 - uid: System.Object
   commentId: T:System.Object
   parent: System
@@ -449,35 +409,53 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: TicketSystem.DatabaseRepository.Model.TicketEvent.TicketEventId*
-  commentId: Overload:TicketSystem.DatabaseRepository.Model.TicketEvent.TicketEventId
+- uid: TicketAPI.Program.Main*
+  commentId: Overload:TicketAPI.Program.Main
   isExternal: false
-  name: TicketEventId
-  nameWithType: TicketEvent.TicketEventId
-  fullName: TicketSystem.DatabaseRepository.Model.TicketEvent.TicketEventId
-- uid: System.Int32
-  commentId: T:System.Int32
-  parent: System
+  name: Main
+  nameWithType: Program.Main
+  fullName: TicketAPI.Program.Main
+- uid: System.String[]
+  name: String[]
+  nameWithType: String[]
+  fullName: System.String[]
+  nameWithType.vb: String()
+  fullName.vb: System.String()
+  name.vb: String()
+  spec.csharp:
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: TicketAPI.Program.BuildWebHost*
+  commentId: Overload:TicketAPI.Program.BuildWebHost
+  isExternal: false
+  name: BuildWebHost
+  nameWithType: Program.BuildWebHost
+  fullName: TicketAPI.Program.BuildWebHost
+- uid: Microsoft.AspNetCore.Hosting.IWebHost
+  commentId: T:Microsoft.AspNetCore.Hosting.IWebHost
+  parent: Microsoft.AspNetCore.Hosting
   isExternal: true
-  name: Int32
-  nameWithType: Int32
-  fullName: System.Int32
-- uid: TicketSystem.DatabaseRepository.Model.TicketEvent.EventName*
-  commentId: Overload:TicketSystem.DatabaseRepository.Model.TicketEvent.EventName
+  name: IWebHost
+  nameWithType: IWebHost
+  fullName: Microsoft.AspNetCore.Hosting.IWebHost
+- uid: Microsoft.AspNetCore.Hosting
+  commentId: N:Microsoft.AspNetCore.Hosting
   isExternal: false
-  name: EventName
-  nameWithType: TicketEvent.EventName
-  fullName: TicketSystem.DatabaseRepository.Model.TicketEvent.EventName
-- uid: System.String
-  commentId: T:System.String
-  parent: System
-  isExternal: true
-  name: String
-  nameWithType: String
-  fullName: System.String
-- uid: TicketSystem.DatabaseRepository.Model.TicketEvent.EventHtmlDescription*
-  commentId: Overload:TicketSystem.DatabaseRepository.Model.TicketEvent.EventHtmlDescription
-  isExternal: false
-  name: EventHtmlDescription
-  nameWithType: TicketEvent.EventHtmlDescription
-  fullName: TicketSystem.DatabaseRepository.Model.TicketEvent.EventHtmlDescription
+  name: Microsoft.AspNetCore.Hosting
+  nameWithType: Microsoft.AspNetCore.Hosting
+  fullName: Microsoft.AspNetCore.Hosting

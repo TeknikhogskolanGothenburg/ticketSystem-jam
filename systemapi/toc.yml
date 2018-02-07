@@ -1,4 +1,29 @@
 ### YamlMime:TableOfContent
+- uid: ClassLibrary
+  name: ClassLibrary
+  items:
+  - uid: ClassLibrary.TicketEvent
+    name: TicketEvent
+  - uid: ClassLibrary.TicketEventDate
+    name: TicketEventDate
+  - uid: ClassLibrary.Venue
+    name: Venue
+- uid: TicketAPI
+  name: TicketAPI
+  items:
+  - uid: TicketAPI.Program
+    name: Program
+  - uid: TicketAPI.Startup
+    name: Startup
+- uid: TicketAPI.Controllers
+  name: TicketAPI.Controllers
+  items:
+  - uid: TicketAPI.Controllers.TicketEventDatesController
+    name: TicketEventDatesController
+  - uid: TicketAPI.Controllers.TicketEventsController
+    name: TicketEventsController
+  - uid: TicketAPI.Controllers.VenuesController
+    name: VenuesController
 - uid: TicketSystem.DatabaseRepository
   name: TicketSystem.DatabaseRepository
   items:
@@ -6,15 +31,6 @@
     name: ITicketDatabase
   - uid: TicketSystem.DatabaseRepository.TicketDatabase
     name: TicketDatabase
-- uid: TicketSystem.DatabaseRepository.Model
-  name: TicketSystem.DatabaseRepository.Model
-  items:
-  - uid: TicketSystem.DatabaseRepository.Model.TicketEvent
-    name: TicketEvent
-  - uid: TicketSystem.DatabaseRepository.Model.TicketEventDate
-    name: TicketEventDate
-  - uid: TicketSystem.DatabaseRepository.Model.Venue
-    name: Venue
 - uid: TicketSystem.PaymentProvider
   name: TicketSystem.PaymentProvider
   items:
