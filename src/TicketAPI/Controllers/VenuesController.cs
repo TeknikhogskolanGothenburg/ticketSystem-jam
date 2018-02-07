@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using ClassLibrary;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using TicketSystem.DatabaseRepository;
 
@@ -13,6 +9,9 @@ namespace TicketAPI.Controllers
     [Route("api/Venues")]
     public class VenuesController : Controller
     {
+        
+        private TicketDatabase tdb;
+
         // GET: api/Venues
         [HttpGet]
         public List<Venue> Get()
@@ -31,13 +30,25 @@ namespace TicketAPI.Controllers
             return venue;
 
         }
-        
+         
+
         // POST: api/Venues
+        /// <summary>
+        /// Post-method for Administrators to insert Venues to the SQL-database.
+        /// </summary>
+        /// <param name="values"></param>
         [HttpPost]
-        public void Post([FromBody]string value)
+        public void Post([FromBody]Venue values)
         {
+            tdb = new TicketDatabase();          
+            tdb.VenueAdd(values.VenueName, values.Address, values.City, values.Country);
+
+            // Förslag på inputsträngar. OBS! ANVÄND INTE Å Ä Ö, med nedan kod.
+            // Content-Type: application/json           
+            // Postinput  {"VenueName":"Frihamnen arena", "Address":"Frihamnen 1", "City":"Goteborg", "Country":"Sverige"}
+
         }
-        
+
         // PUT: api/Venues/5
         [HttpPut("{id}")]
         public void Put(int id, [FromBody]string value)
