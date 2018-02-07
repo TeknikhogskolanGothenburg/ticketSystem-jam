@@ -5,21 +5,25 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Admin.Models;
+using ClassLibrary;
+using TicketSystem.RestApiClient;
 
 namespace Admin.Controllers
 {
     public class HomeController : Controller
     {
+
         public IActionResult Index()
         {
             return View();
         }
 
-        public IActionResult About()
+        public IActionResult Venues()
         {
-            ViewData["Message"] = "Your application description page.";
-
-            return View();
+            Value value = new Value();
+            TicketApi a = new TicketApi();
+            value.Venues = a.VenueGet();
+            return View(value);
         }
 
         public IActionResult Contact()
