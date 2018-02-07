@@ -8,7 +8,27 @@ using ClassLibrary;
 namespace TicketSystem.DatabaseRepository
 {
     public class TicketDatabase : ITicketDatabase
-    {
+    {        
+        public IEnumerable<string> GetAllEvents()
+        {
+            string connectionString = "Server=(local)\\SqlExpress; Database=TicketSystem; Trusted_connection=true";
+            using (var connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                return connection.Query<string>("SELECT EventName FROM TicketEvents").ToList();
+            }
+        }
+        
+        public List<TicketEvent> GetEvents(string query)
+        {
+            string connectionString = "Server=(local)\\SqlExpress; Database=TicketSystem; Trusted_connection=true";
+            using (var connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                return connection.Query<TicketEvent>("SELECT * FROM TicketEvents WHERE EventName like '%" + query + "%' OR EventHtmlDescription like '%" + query +  "%'").ToList();
+            }
+        }
+
         public TicketEvent EventAdd(string name, string description)
         {
             //string connectionString = ConfigurationManager.ConnectionStrings["TicketSystem"].ConnectionString;
@@ -19,16 +39,6 @@ namespace TicketSystem.DatabaseRepository
                 connection.Query("insert into TicketEvents(EventName, EventHtmlDescription) values(@Name, @Description)", new { Name = name, Description = description });
                 var addedEventQuery = connection.Query<int>("SELECT IDENT_CURRENT ('TicketEvents') AS Current_Identity").First();
                 return connection.Query<TicketEvent>("SELECT * FROM TicketEvents WHERE TicketEventID=@Id", new { Id = addedEventQuery }).First();
-            }
-        }
-
-        public List<TicketEvent> EventFind(string query)
-        {
-            string connectionString = "Server=(local)\\SqlExpress; Database=TicketSystem; Trusted_connection=true";
-            using (var connection = new SqlConnection(connectionString))
-            {
-                connection.Open();
-                return connection.Query<TicketEvent>("SELECT * FROM TicketEvents WHERE EventName like '%" + query + "%' OR EventHtmlDescription like '%" + query +  "%'").ToList();
             }
         }
 
