@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using ClassLibrary;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using TicketSystem.DatabaseRepository;
 
 namespace TicketAPI.Controllers
 {
@@ -14,16 +15,18 @@ namespace TicketAPI.Controllers
     {
         // GET: api/Venues
         [HttpGet]
-        public IEnumerable<string> Get()
+        public List<Venue> Get()
         {
-            return new string[] { "value1", "value2" };
+            TicketDatabase findVenues = new TicketDatabase();
+            List<Venue> values = findVenues.VenuesFindAll();
+            return values;
         }
 
         // GET: api/Venues/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public string Get(string id)
         {
-            return "value";
+            return "hej";
         }
         
         // POST: api/Venues
