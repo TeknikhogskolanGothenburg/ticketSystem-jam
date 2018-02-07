@@ -56,16 +56,17 @@ namespace TicketSystem.DatabaseRepository
             }
         }
 
-        public List<Venue> VenuesFind(string query)
+        public Venue VenuesFind(string query)
         {
             //string connectionString = ConfigurationManager.ConnectionStrings["TicketSystem"].ConnectionString;
             string connectionString = "Server=(local)\\SqlExpress; Database=TicketSystem; Trusted_connection=true";
             using (var connection = new SqlConnection(connectionString))
             {
                 connection.Open();
-                return connection.Query<Venue>("SELECT * FROM Venues WHERE VenueName like '%"+query+ "%' OR Address like '%" + query + "%' OR City like '%" + query + "%' OR Country like '%" + query + "%'").ToList();
+                return connection.Query<Venue>("SELECT * FROM Venues WHERE VenueName like '%"+query+"%'").First();
             }
         }
+
         public List<Venue> VenuesFindAll()
         {
             var connectionString = "Server=(local)\\SqlExpress; Database=TicketSystem; Trusted_connection=true";
