@@ -35,12 +35,13 @@ namespace TicketAPI.Controllers
         [HttpPost]
         public void Post([FromBody]Venue values)
         {
-            tdb = new TicketDatabase();
-
-            // Content-Type: application/json           
-            // Postinput  {"VenueName":"Frihamnen", "Address":"Frihamnen", "City":"Goteborg", "Country":"Sverige"}
+            tdb = new TicketDatabase();          
             tdb.VenueAdd(values.VenueName, values.Address, values.City, values.Country);
-           
+
+            // Förslag på inputsträngar. OBS! ANVÄND INTE Å Ä Ö, med nedan kod.
+            // Content-Type: application/json           
+            // Postinput  {"VenueName":"Frihamnen arena", "Address":"Frihamnen 1", "City":"Goteborg", "Country":"Sverige"}
+
         }
 
         // PUT: api/Venues/5
