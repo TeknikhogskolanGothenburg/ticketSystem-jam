@@ -9,25 +9,24 @@ namespace TicketAPI.Controllers
     [Route("api/Venues")]
     public class VenuesController : Controller
     {
-        
-        private TicketDatabase tdb;
 
+        TicketDatabase tdb = new TicketDatabase();
         // GET: api/Venues
         [HttpGet]
         public List<Venue> Get()
         {
-            TicketDatabase findVenues = new TicketDatabase();
-            List<Venue> values = findVenues.VenuesFindAll();
+            List<Venue> values = tdb.VenuesFindAll();
             return values;
         }
 
         // GET: api/Venues/5
         [HttpGet("{id}")]
-        public string Get(string id)
+        public Venue Get(string id)
         {
-            return "hej";
+            Venue venue = tdb.VenuesFind(id);
+            return venue;
         }
-         
+
 
         // POST: api/Venues
         /// <summary>
@@ -36,16 +35,21 @@ namespace TicketAPI.Controllers
         /// <param name="values"></param>
         [HttpPost]
         public void Post([FromBody]Venue values)
+
         {
-            tdb = new TicketDatabase();          
             tdb.VenueAdd(values.VenueName, values.Address, values.City, values.Country);
 
-            // Förslag på inputsträngar. OBS! ANVÄND INTE Å Ä Ö, med nedan kod.
-            // Content-Type: application/json           
-            // Postinput  {"VenueName":"Frihamnen arena", "Address":"Frihamnen 1", "City":"Goteborg", "Country":"Sverige"}
+            {
+                TicketDatabase addVenue = new TicketDatabase();
+                addVenue.VenueAdd(values.VenueName, values.Address, values.City, values.Country);
 
+
+                // Förslag på inputsträngar. OBS! ANVÄND INTE Å Ä Ö, med nedan kod.
+                // Content-Type: application/json           
+                // Postinput  {"VenueName":"Frihamnen arena", "Address":"Frihamnen 1", "City":"Goteborg", "Country":"Sverige"}
+
+            }
         }
-
         // PUT: api/Venues/5
         [HttpPut("{id}")]
         public void Put(int id, [FromBody]string value)
