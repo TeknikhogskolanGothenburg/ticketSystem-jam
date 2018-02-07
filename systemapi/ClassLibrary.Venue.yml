@@ -18,6 +18,10 @@ items:
   fullName: ClassLibrary.Venue
   type: Class
   source:
+    remote:
+      path: src/DatabaseRepository/Model/Venue.cs
+      branch: master
+      repo: https://github.com/skjohansen/AssignmentTicketSystem.git
     id: Venue
     path: C:\Users\Martin\source\repos\ticketSystem-jam\src\ClassLibrary\Venue.cs
     startLine: 6
@@ -25,18 +29,13 @@ items:
   - ClassLibrary
   namespace: ClassLibrary
   syntax:
-    content: public class Venue
-    content.vb: Public Class Venue
+    content: 'public class Venue : object'
+    content.vb: >-
+      Public Class Venue
+
+          Inherits Object
   inheritance:
   - System.Object
-  inheritedMembers:
-  - System.Object.Equals(System.Object)
-  - System.Object.Equals(System.Object,System.Object)
-  - System.Object.GetHashCode
-  - System.Object.GetType
-  - System.Object.MemberwiseClone
-  - System.Object.ReferenceEquals(System.Object,System.Object)
-  - System.Object.ToString
   modifiers.csharp:
   - public
   - class
@@ -55,6 +54,10 @@ items:
   fullName: ClassLibrary.Venue.VenueId
   type: Property
   source:
+    remote:
+      path: src/DatabaseRepository/Model/Venue.cs
+      branch: master
+      repo: https://github.com/skjohansen/AssignmentTicketSystem.git
     id: VenueId
     path: C:\Users\Martin\source\repos\ticketSystem-jam\src\ClassLibrary\Venue.cs
     startLine: 8
@@ -86,6 +89,10 @@ items:
   fullName: ClassLibrary.Venue.VenueName
   type: Property
   source:
+    remote:
+      path: src/DatabaseRepository/Model/Venue.cs
+      branch: master
+      repo: https://github.com/skjohansen/AssignmentTicketSystem.git
     id: VenueName
     path: C:\Users\Martin\source\repos\ticketSystem-jam\src\ClassLibrary\Venue.cs
     startLine: 9
@@ -117,6 +124,10 @@ items:
   fullName: ClassLibrary.Venue.Address
   type: Property
   source:
+    remote:
+      path: src/DatabaseRepository/Model/Venue.cs
+      branch: master
+      repo: https://github.com/skjohansen/AssignmentTicketSystem.git
     id: Address
     path: C:\Users\Martin\source\repos\ticketSystem-jam\src\ClassLibrary\Venue.cs
     startLine: 10
@@ -148,6 +159,10 @@ items:
   fullName: ClassLibrary.Venue.City
   type: Property
   source:
+    remote:
+      path: src/DatabaseRepository/Model/Venue.cs
+      branch: master
+      repo: https://github.com/skjohansen/AssignmentTicketSystem.git
     id: City
     path: C:\Users\Martin\source\repos\ticketSystem-jam\src\ClassLibrary\Venue.cs
     startLine: 11
@@ -179,6 +194,10 @@ items:
   fullName: ClassLibrary.Venue.Country
   type: Property
   source:
+    remote:
+      path: src/DatabaseRepository/Model/Venue.cs
+      branch: master
+      repo: https://github.com/skjohansen/AssignmentTicketSystem.git
     id: Country
     path: C:\Users\Martin\source\repos\ticketSystem-jam\src\ClassLibrary\Venue.cs
     startLine: 12
@@ -202,9 +221,9 @@ references:
 - uid: ClassLibrary
   commentId: N:ClassLibrary
   isExternal: false
-  name: ClassLibrary
-  nameWithType: ClassLibrary
-  fullName: ClassLibrary
+  name: TicketSystem.DatabaseRepository.Model
+  nameWithType: TicketSystem.DatabaseRepository.Model
+  fullName: TicketSystem.DatabaseRepository.Model
 - uid: System.Object
   commentId: T:System.Object
   parent: System
@@ -497,15 +516,13 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: ClassLibrary.Venue.VenueId*
-  commentId: Overload:ClassLibrary.Venue.VenueId
+- uid: TicketSystem.DatabaseRepository.Model.Venue.VenueId*
+  commentId: Overload:TicketSystem.DatabaseRepository.Model.Venue.VenueId
   isExternal: false
   name: VenueId
   nameWithType: Venue.VenueId
   fullName: ClassLibrary.Venue.VenueId
 - uid: System.Int32
-  commentId: T:System.Int32
-  parent: System
   isExternal: true
   name: Int32
   nameWithType: Int32
@@ -517,8 +534,6 @@ references:
   nameWithType: Venue.VenueName
   fullName: ClassLibrary.Venue.VenueName
 - uid: System.String
-  commentId: T:System.String
-  parent: System
   isExternal: true
   name: String
   nameWithType: String
