@@ -1,33 +1,29 @@
 ### YamlMime:ManagedReference
 items:
-- uid: TicketSystem.DatabaseRepository.Model.Venue
-  commentId: T:TicketSystem.DatabaseRepository.Model.Venue
+- uid: ClassLibrary.Venue
+  commentId: T:ClassLibrary.Venue
   id: Venue
-  parent: TicketSystem.DatabaseRepository.Model
+  parent: ClassLibrary
   children:
-  - TicketSystem.DatabaseRepository.Model.Venue.Address
-  - TicketSystem.DatabaseRepository.Model.Venue.City
-  - TicketSystem.DatabaseRepository.Model.Venue.Country
-  - TicketSystem.DatabaseRepository.Model.Venue.VenueId
-  - TicketSystem.DatabaseRepository.Model.Venue.VenueName
+  - ClassLibrary.Venue.Address
+  - ClassLibrary.Venue.City
+  - ClassLibrary.Venue.Country
+  - ClassLibrary.Venue.VenueId
+  - ClassLibrary.Venue.VenueName
   langs:
   - csharp
   - vb
   name: Venue
   nameWithType: Venue
-  fullName: TicketSystem.DatabaseRepository.Model.Venue
+  fullName: ClassLibrary.Venue
   type: Class
   source:
-    remote:
-      path: src/DatabaseRepository/Model/Venue.cs
-      branch: master
-      repo: https://github.com/skjohansen/AssignmentTicketSystem.git
     id: Venue
-    path: src/DatabaseRepository/Model/Venue.cs
-    startLine: 2
+    path: C:\Users\Martin\source\repos\ticketSystem-jam\src\ClassLibrary\Venue.cs
+    startLine: 6
   assemblies:
-  - DatabaseRepository
-  namespace: TicketSystem.DatabaseRepository.Model
+  - ClassLibrary
+  namespace: ClassLibrary
   syntax:
     content: public class Venue
     content.vb: Public Class Venue
@@ -47,175 +43,155 @@ items:
   modifiers.vb:
   - Public
   - Class
-- uid: TicketSystem.DatabaseRepository.Model.Venue.VenueId
-  commentId: P:TicketSystem.DatabaseRepository.Model.Venue.VenueId
+- uid: ClassLibrary.Venue.VenueId
+  commentId: P:ClassLibrary.Venue.VenueId
   id: VenueId
-  parent: TicketSystem.DatabaseRepository.Model.Venue
+  parent: ClassLibrary.Venue
   langs:
   - csharp
   - vb
   name: VenueId
   nameWithType: Venue.VenueId
-  fullName: TicketSystem.DatabaseRepository.Model.Venue.VenueId
+  fullName: ClassLibrary.Venue.VenueId
   type: Property
   source:
-    remote:
-      path: src/DatabaseRepository/Model/Venue.cs
-      branch: master
-      repo: https://github.com/skjohansen/AssignmentTicketSystem.git
     id: VenueId
-    path: src/DatabaseRepository/Model/Venue.cs
-    startLine: 4
+    path: C:\Users\Martin\source\repos\ticketSystem-jam\src\ClassLibrary\Venue.cs
+    startLine: 8
   assemblies:
-  - DatabaseRepository
-  namespace: TicketSystem.DatabaseRepository.Model
+  - ClassLibrary
+  namespace: ClassLibrary
   syntax:
     content: public int VenueId { get; set; }
     parameters: []
     return:
       type: System.Int32
     content.vb: Public Property VenueId As Integer
-  overload: TicketSystem.DatabaseRepository.Model.Venue.VenueId*
+  overload: ClassLibrary.Venue.VenueId*
   modifiers.csharp:
   - public
   - get
   - set
   modifiers.vb:
   - Public
-- uid: TicketSystem.DatabaseRepository.Model.Venue.VenueName
-  commentId: P:TicketSystem.DatabaseRepository.Model.Venue.VenueName
+- uid: ClassLibrary.Venue.VenueName
+  commentId: P:ClassLibrary.Venue.VenueName
   id: VenueName
-  parent: TicketSystem.DatabaseRepository.Model.Venue
+  parent: ClassLibrary.Venue
   langs:
   - csharp
   - vb
   name: VenueName
   nameWithType: Venue.VenueName
-  fullName: TicketSystem.DatabaseRepository.Model.Venue.VenueName
+  fullName: ClassLibrary.Venue.VenueName
   type: Property
   source:
-    remote:
-      path: src/DatabaseRepository/Model/Venue.cs
-      branch: master
-      repo: https://github.com/skjohansen/AssignmentTicketSystem.git
     id: VenueName
-    path: src/DatabaseRepository/Model/Venue.cs
-    startLine: 5
+    path: C:\Users\Martin\source\repos\ticketSystem-jam\src\ClassLibrary\Venue.cs
+    startLine: 9
   assemblies:
-  - DatabaseRepository
-  namespace: TicketSystem.DatabaseRepository.Model
+  - ClassLibrary
+  namespace: ClassLibrary
   syntax:
     content: public string VenueName { get; set; }
     parameters: []
     return:
       type: System.String
     content.vb: Public Property VenueName As String
-  overload: TicketSystem.DatabaseRepository.Model.Venue.VenueName*
+  overload: ClassLibrary.Venue.VenueName*
   modifiers.csharp:
   - public
   - get
   - set
   modifiers.vb:
   - Public
-- uid: TicketSystem.DatabaseRepository.Model.Venue.Address
-  commentId: P:TicketSystem.DatabaseRepository.Model.Venue.Address
+- uid: ClassLibrary.Venue.Address
+  commentId: P:ClassLibrary.Venue.Address
   id: Address
-  parent: TicketSystem.DatabaseRepository.Model.Venue
+  parent: ClassLibrary.Venue
   langs:
   - csharp
   - vb
   name: Address
   nameWithType: Venue.Address
-  fullName: TicketSystem.DatabaseRepository.Model.Venue.Address
+  fullName: ClassLibrary.Venue.Address
   type: Property
   source:
-    remote:
-      path: src/DatabaseRepository/Model/Venue.cs
-      branch: master
-      repo: https://github.com/skjohansen/AssignmentTicketSystem.git
     id: Address
-    path: src/DatabaseRepository/Model/Venue.cs
-    startLine: 6
+    path: C:\Users\Martin\source\repos\ticketSystem-jam\src\ClassLibrary\Venue.cs
+    startLine: 10
   assemblies:
-  - DatabaseRepository
-  namespace: TicketSystem.DatabaseRepository.Model
+  - ClassLibrary
+  namespace: ClassLibrary
   syntax:
     content: public string Address { get; set; }
     parameters: []
     return:
       type: System.String
     content.vb: Public Property Address As String
-  overload: TicketSystem.DatabaseRepository.Model.Venue.Address*
+  overload: ClassLibrary.Venue.Address*
   modifiers.csharp:
   - public
   - get
   - set
   modifiers.vb:
   - Public
-- uid: TicketSystem.DatabaseRepository.Model.Venue.City
-  commentId: P:TicketSystem.DatabaseRepository.Model.Venue.City
+- uid: ClassLibrary.Venue.City
+  commentId: P:ClassLibrary.Venue.City
   id: City
-  parent: TicketSystem.DatabaseRepository.Model.Venue
+  parent: ClassLibrary.Venue
   langs:
   - csharp
   - vb
   name: City
   nameWithType: Venue.City
-  fullName: TicketSystem.DatabaseRepository.Model.Venue.City
+  fullName: ClassLibrary.Venue.City
   type: Property
   source:
-    remote:
-      path: src/DatabaseRepository/Model/Venue.cs
-      branch: master
-      repo: https://github.com/skjohansen/AssignmentTicketSystem.git
     id: City
-    path: src/DatabaseRepository/Model/Venue.cs
-    startLine: 7
+    path: C:\Users\Martin\source\repos\ticketSystem-jam\src\ClassLibrary\Venue.cs
+    startLine: 11
   assemblies:
-  - DatabaseRepository
-  namespace: TicketSystem.DatabaseRepository.Model
+  - ClassLibrary
+  namespace: ClassLibrary
   syntax:
     content: public string City { get; set; }
     parameters: []
     return:
       type: System.String
     content.vb: Public Property City As String
-  overload: TicketSystem.DatabaseRepository.Model.Venue.City*
+  overload: ClassLibrary.Venue.City*
   modifiers.csharp:
   - public
   - get
   - set
   modifiers.vb:
   - Public
-- uid: TicketSystem.DatabaseRepository.Model.Venue.Country
-  commentId: P:TicketSystem.DatabaseRepository.Model.Venue.Country
+- uid: ClassLibrary.Venue.Country
+  commentId: P:ClassLibrary.Venue.Country
   id: Country
-  parent: TicketSystem.DatabaseRepository.Model.Venue
+  parent: ClassLibrary.Venue
   langs:
   - csharp
   - vb
   name: Country
   nameWithType: Venue.Country
-  fullName: TicketSystem.DatabaseRepository.Model.Venue.Country
+  fullName: ClassLibrary.Venue.Country
   type: Property
   source:
-    remote:
-      path: src/DatabaseRepository/Model/Venue.cs
-      branch: master
-      repo: https://github.com/skjohansen/AssignmentTicketSystem.git
     id: Country
-    path: src/DatabaseRepository/Model/Venue.cs
-    startLine: 8
+    path: C:\Users\Martin\source\repos\ticketSystem-jam\src\ClassLibrary\Venue.cs
+    startLine: 12
   assemblies:
-  - DatabaseRepository
-  namespace: TicketSystem.DatabaseRepository.Model
+  - ClassLibrary
+  namespace: ClassLibrary
   syntax:
     content: public string Country { get; set; }
     parameters: []
     return:
       type: System.String
     content.vb: Public Property Country As String
-  overload: TicketSystem.DatabaseRepository.Model.Venue.Country*
+  overload: ClassLibrary.Venue.Country*
   modifiers.csharp:
   - public
   - get
@@ -223,12 +199,12 @@ items:
   modifiers.vb:
   - Public
 references:
-- uid: TicketSystem.DatabaseRepository.Model
-  commentId: N:TicketSystem.DatabaseRepository.Model
+- uid: ClassLibrary
+  commentId: N:ClassLibrary
   isExternal: false
-  name: TicketSystem.DatabaseRepository.Model
-  nameWithType: TicketSystem.DatabaseRepository.Model
-  fullName: TicketSystem.DatabaseRepository.Model
+  name: ClassLibrary
+  nameWithType: ClassLibrary
+  fullName: ClassLibrary
 - uid: System.Object
   commentId: T:System.Object
   parent: System
@@ -521,12 +497,12 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: TicketSystem.DatabaseRepository.Model.Venue.VenueId*
-  commentId: Overload:TicketSystem.DatabaseRepository.Model.Venue.VenueId
+- uid: ClassLibrary.Venue.VenueId*
+  commentId: Overload:ClassLibrary.Venue.VenueId
   isExternal: false
   name: VenueId
   nameWithType: Venue.VenueId
-  fullName: TicketSystem.DatabaseRepository.Model.Venue.VenueId
+  fullName: ClassLibrary.Venue.VenueId
 - uid: System.Int32
   commentId: T:System.Int32
   parent: System
@@ -534,12 +510,12 @@ references:
   name: Int32
   nameWithType: Int32
   fullName: System.Int32
-- uid: TicketSystem.DatabaseRepository.Model.Venue.VenueName*
-  commentId: Overload:TicketSystem.DatabaseRepository.Model.Venue.VenueName
+- uid: ClassLibrary.Venue.VenueName*
+  commentId: Overload:ClassLibrary.Venue.VenueName
   isExternal: false
   name: VenueName
   nameWithType: Venue.VenueName
-  fullName: TicketSystem.DatabaseRepository.Model.Venue.VenueName
+  fullName: ClassLibrary.Venue.VenueName
 - uid: System.String
   commentId: T:System.String
   parent: System
@@ -547,21 +523,21 @@ references:
   name: String
   nameWithType: String
   fullName: System.String
-- uid: TicketSystem.DatabaseRepository.Model.Venue.Address*
-  commentId: Overload:TicketSystem.DatabaseRepository.Model.Venue.Address
+- uid: ClassLibrary.Venue.Address*
+  commentId: Overload:ClassLibrary.Venue.Address
   isExternal: false
   name: Address
   nameWithType: Venue.Address
-  fullName: TicketSystem.DatabaseRepository.Model.Venue.Address
-- uid: TicketSystem.DatabaseRepository.Model.Venue.City*
-  commentId: Overload:TicketSystem.DatabaseRepository.Model.Venue.City
+  fullName: ClassLibrary.Venue.Address
+- uid: ClassLibrary.Venue.City*
+  commentId: Overload:ClassLibrary.Venue.City
   isExternal: false
   name: City
   nameWithType: Venue.City
-  fullName: TicketSystem.DatabaseRepository.Model.Venue.City
-- uid: TicketSystem.DatabaseRepository.Model.Venue.Country*
-  commentId: Overload:TicketSystem.DatabaseRepository.Model.Venue.Country
+  fullName: ClassLibrary.Venue.City
+- uid: ClassLibrary.Venue.Country*
+  commentId: Overload:ClassLibrary.Venue.Country
   isExternal: false
   name: Country
   nameWithType: Venue.Country
-  fullName: TicketSystem.DatabaseRepository.Model.Venue.Country
+  fullName: ClassLibrary.Venue.Country
