@@ -13,27 +13,26 @@ namespace TicketAPI.Controllers
     [Route("api/TicketEvents")]
     public class TicketEventsController : Controller
     {
+        TicketDatabase tdb = new TicketDatabase { };
         // GET: api/TicketEvents
         [HttpGet]
         public IEnumerable<string> Get()
-        {
-            return new string[] { "value", "value2" };
+        {          
+            return tdb.GetAllEvents();
         }
 
         // GET: api/TicketEvents/5
         [HttpGet("{id}")]
         public List<ClassLibrary.TicketEvent> Get(string id)
-        {
-            TicketDatabase ticket = new TicketDatabase();
-            return ticket.EventFind(id);
+        {           
+            return tdb.GetEvents(id);
         }
         
         // POST: api/TicketEvents
         [HttpPost]
         public void Post([FromBody]ClassLibrary.TicketEvent ticketEvent)
-        {            
-            TicketDatabase ticket = new TicketDatabase();
-            ticket.EventAdd(ticketEvent.EventName, ticketEvent.EventHtmlDescription);
+        {           
+            tdb.EventAdd(ticketEvent.EventName, ticketEvent.EventHtmlDescription);
         }
         
         // PUT: api/TicketEvents/5
