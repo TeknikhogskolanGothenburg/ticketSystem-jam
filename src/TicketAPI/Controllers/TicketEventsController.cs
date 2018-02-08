@@ -44,9 +44,10 @@ namespace TicketAPI.Controllers
         }
 
         // DELETE: api/ApiWithActions/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        [HttpDelete("{eventName}")]
+        public void Delete(string eventName)
         {
+            tdb.DeleteEvent(eventName);
         }
     }
 }
