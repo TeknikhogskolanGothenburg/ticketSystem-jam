@@ -8,6 +8,5 @@ namespace ClassLibrary
     public class Value
     {
         public List<Venue> Venues { get; set; } = new List<Venue>();
-        public List<SelectItem> Items { get; set; } = new List<SelectItem>();
     }
 }

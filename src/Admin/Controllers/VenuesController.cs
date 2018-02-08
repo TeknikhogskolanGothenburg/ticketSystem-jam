@@ -21,5 +21,13 @@ namespace Admin.Controllers
             return View(value);
         }
 
+        [HttpPost]
+        public IActionResult DeleteVenue(int Foo)
+        {
+            TicketApi a = new TicketApi();
+            a.VenueDelete(Foo);
+            return View();
+        }
+
     }
 }

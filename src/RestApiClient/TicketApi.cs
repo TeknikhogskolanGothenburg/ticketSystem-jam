@@ -26,6 +26,14 @@ namespace TicketSystem.RestApiClient
             return response.Data;
         }
 
+        public void VenueDelete(int id)
+        {
+            var client = new RestClient("http://localhost:60234/api/");
+            var request = new RestRequest("venues/{id}", Method.DELETE);
+            request.AddUrlSegment("id", id);
+            var response = client.Execute(request);
+        }
+
         public Ticket TicketTicketIdGet(int ticketId)
         {
             var client = new RestClient("http://localhost:18001/");
