@@ -53,26 +53,14 @@ namespace TicketSystem.DatabaseRepository
                 var addedEventQuery = connection.Query<int>("SELECT IDENT_CURRENT ('TicketEvents') AS Current_Identity").First();
                 return connection.Query<TicketEvent>("SELECT * FROM TicketEvents WHERE TicketEventID=@Id", new { Id = addedEventQuery }).First();
             }
-        }
+        }        
 
-        public Venue VenuesUpdate(string nameInput, Venue venue)
+        public void DeleteEvent(int id)
         {
             using (var connection = new SqlConnection(connectionString))
             {
                 connection.Open();
-                connection.Query("UPDATE Venues SET VenueName = @venueName, " + " Address = @address, " + " City = @city, " + " Country = @country, " + " Seats = @seats " + "WHERE VenueName = @name",
-                    new { venueName = venue.VenueName, address = venue.Address, city = venue.City, country = venue.Country, seats = venue.Seats, name = nameInput });
-                var addedVenueQuery = connection.Query<int>("SELECT IDENT_CURRENT ('Venues') AS Current_Identity").First();
-                return connection.Query<Venue>("SELECT * FROM Venues WHERE VenueID=@Id", new { Id = addedVenueQuery }).First();
-            }
-        }
-
-        public void DeleteEvent(string nameInput)
-        {
-            using (var connection = new SqlConnection(connectionString))
-            {
-                connection.Open();
-                connection.Query("DELETE FROM TicketEvents WHERE EventName = @eventName", new { eventName = nameInput });
+                connection.Query("DELETE FROM TicketEvents WHERE TicketEventID = @ID", new { ID = id });
             }
         }
 
@@ -109,7 +97,17 @@ namespace TicketSystem.DatabaseRepository
             }
         }
 
-
+        public Venue VenuesUpdate(string nameInput, Venue venue)
+        {
+            using (var connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                connection.Query("UPDATE Venues SET VenueName = @venueName, " + " Address = @address, " + " City = @city, " + " Country = @country, " + " Seats = @seats " + "WHERE VenueName = @name",
+                    new { venueName = venue.VenueName, address = venue.Address, city = venue.City, country = venue.Country, seats = venue.Seats, name = nameInput });
+                var addedVenueQuery = connection.Query<int>("SELECT IDENT_CURRENT ('Venues') AS Current_Identity").First();
+                return connection.Query<Venue>("SELECT * FROM Venues WHERE VenueID=@Id", new { Id = addedVenueQuery }).First();
+            }
+        }
 
         public void DeleteVenue(int id)
         {
@@ -120,6 +118,7 @@ namespace TicketSystem.DatabaseRepository
             }
         }
 
+        //EventDate Methods
         public TicketEventDate EventDateAdd(int eventId, int dateId, System.DateTime date)
         {
             using (var connection = new SqlConnection(connectionString))
