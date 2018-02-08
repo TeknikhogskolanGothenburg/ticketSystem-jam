@@ -1,7 +1,79 @@
-﻿
+﻿@model ClassLibrary.Value
+
 @{
     ViewData["Title"] = "Shop";
 }
 
 <h2>Shop</h2>
+@using (Html.BeginForm("Shop", "Home"))
+{
+    <fieldset>
+        <select multiple id="Event" name="Event">
 
+            @foreach (ClassLibrary.TicketEvent x in Model.Events)
+            {
+                <option label="Event" selected="" value="">@x.EventName</option>
+
+
+            }
+        </select>
+    </fieldset>
+    <select multiple>
+        <option label="Filter Date" selected=""></option>
+    </select>
+
+
+
+
+        <select></select>
+
+        <p><input type="submit" value="Submit" /> </p>
+
+
+        <br />
+
+
+
+
+}
+
+@* <table border="1" align="center" font-family:'Courier New'">
+        <tr>
+            <td colspan="2" style="text-align:center"><h3></h3></td>
+        </tr>
+        <tr>
+            <td  >
+                <br />
+                @using (Html.BeginForm("", ""))
+                {
+                   <div>
+        @Html.LabelFor(m => m.Name, "Enter Name")<br />
+        @Html.TextBoxFor(m => m.Name, new { @required = true })
+    </div>
+    <br />
+    <div>
+        @Html.LabelFor(m => m.Email, "Enter Email")<br />
+        @Html.TextBoxFor(m => m.Email, new { @required = true })
+        <br />
+        <br />
+        <br />
+        <input type="submit" name="startbtn" value="Start a game">
+        @if (Gameengine.Lobby.PendingGame.Count > 0)
+        {
+            <input type="submit" name="joinbtn" value="Join an existing game">
+        }
+
+    </div>
+                }
+
+            <td />
+
+        </tr>
+        <tr>
+            <td colspan="2" >
+                <h5></h5>
+
+            </td>
+        </tr>
+
+    </table>*@
