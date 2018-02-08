@@ -19,7 +19,7 @@ namespace TicketAPI.Controllers
             return values;
         }
 
-        // GET: api/Venues/5
+        // GET: api/Venues/Arenans namn
         [HttpGet("{id}")]
         public Venue Get(string id)
         {
