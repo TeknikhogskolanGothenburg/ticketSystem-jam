@@ -15,4 +15,16 @@
 }
 <h1>@ViewBag.Message</h1>
 
+@using (Html.BeginForm("DeleteVenue", "Venues", FormMethod.Post))
+{
+    @Html.DropDownList(
+            "Foo",
+            new SelectList(
+                Model.Venues.Select(x => new { Value = x.VenueId, Text = x.VenueName }),
+                "Value",
+                "Text"
+            )
+        )
 
+    <input type="submit" value="Delete"/>
+}
