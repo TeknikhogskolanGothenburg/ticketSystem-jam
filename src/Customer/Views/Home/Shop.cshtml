@@ -1,16 +1,16 @@
-﻿@model ClassLibrary.AllModels
+﻿@model ClassLibrary.Value
 
 @{
     ViewData["Title"] = "Shop";
 }
 
 <h2>Shop</h2>
-@using (Html.BeginForm("", ""))
+@using (Html.BeginForm("Shop", "Home"))
 {
     <fieldset>
         <select multiple id="Event" name="Event">
 
-            @foreach (ClassLibrary.TicketEvent x in Model.ticketEvent.EventName)
+            @foreach (ClassLibrary.TicketEvent x in Model.Events)
             {
                 <option label="Event" selected="" value="">@x.EventName</option>
 

@@ -34,9 +34,9 @@ namespace Customer.Controllers
 
         public IActionResult Shop()
         {
-            TicketEvent value = new TicketEvent();
+            Value value = new Value();
             TicketApi a = new TicketApi();
-            value.EventName = a.TicketGet();
+            value.Events = a.EventGet();
            
             return View(value);
         }
