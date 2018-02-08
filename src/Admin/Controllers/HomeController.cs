@@ -13,18 +13,12 @@ namespace Admin.Controllers
     public class HomeController : Controller
     {
 
+
         public IActionResult Index()
         {
             return View();
         }
 
-        public IActionResult Venues()
-        {
-            Value value = new Value();
-            TicketApi a = new TicketApi();
-            value.Venues = a.VenueGet();
-            return View(value);
-        }
         [HttpPost]
         public IActionResult DeleteVenue(string venueName)
         {
@@ -34,7 +28,6 @@ namespace Admin.Controllers
         public IActionResult Contact()
         {
             ViewData["Message"] = "Your contact page.";
-
             return View();
         }
 

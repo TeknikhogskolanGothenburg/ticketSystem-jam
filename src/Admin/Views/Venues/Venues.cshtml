@@ -1,0 +1,18 @@
+﻿@{
+    ViewData["Title"] = "Venues";
+}
+
+@model ClassLibrary.Value;
+
+
+
+<h2>Manage your venues here</h2>
+
+
+@foreach (ClassLibrary.Venue x in Model.Venues)
+{
+    <button href="/Home/DeleteVenue" name="@x">@x.VenueName</button><br />
+}
+<h1>@ViewBag.Message</h1>
+
+
