@@ -24,7 +24,7 @@ namespace Admin.Controllers
             TicketApi a = new TicketApi();
             value.Venues = a.VenueGet();
             return View(value);
-        }
+        } 
 
         public IActionResult Contact()
         {
