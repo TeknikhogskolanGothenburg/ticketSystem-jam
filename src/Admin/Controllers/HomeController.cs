@@ -5,20 +5,29 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Admin.Models;
+using ClassLibrary;
+using TicketSystem.RestApiClient;
 
 namespace Admin.Controllers
 {
     public class HomeController : Controller
     {
+
         public IActionResult Index()
         {
             return View();
         }
 
-        public IActionResult About()
+        public IActionResult Venues()
         {
-            ViewData["Message"] = "Your application description page.";
-
+            Value value = new Value();
+            TicketApi a = new TicketApi();
+            value.Venues = a.VenueGet();
+            return View(value);
+        }
+        [HttpPost]
+        public IActionResult DeleteVenue(string venueName)
+        {
             return View();
         }
 
@@ -32,6 +41,11 @@ namespace Admin.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+        public IActionResult Hej()
+        {
+            return View();
         }
     }
 }
