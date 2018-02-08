@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Customer.Models;
+using ClassLibrary;
+using TicketSystem.RestApiClient;
 
 namespace Customer.Controllers
 {
@@ -36,7 +34,11 @@ namespace Customer.Controllers
 
         public IActionResult Shop()
         {
-            return View();
+            TicketEvent value = new TicketEvent();
+            TicketApi a = new TicketApi();
+            value.EventName = a.TicketGet();
+           
+            return View(value);
         }
     }
 }
