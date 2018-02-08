@@ -12,7 +12,7 @@ namespace TicketSystem.RestApiClient
 
         public List<Ticket> TicketGet()
         {
-            var client = new RestClient("http://localhost:64771/");
+            var client = new RestClient("http://localhost:64771");
             var request = new RestRequest("ticket", Method.GET);
             var response = client.Execute<List<Ticket>>(request);
             return response.Data;
