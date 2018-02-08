@@ -24,7 +24,12 @@ namespace Admin.Controllers
             TicketApi a = new TicketApi();
             value.Venues = a.VenueGet();
             return View(value);
-        } 
+        }
+        [HttpPost]
+        public IActionResult DeleteVenue(string venueName)
+        {
+            return View();
+        }
 
         public IActionResult Contact()
         {
@@ -36,6 +41,11 @@ namespace Admin.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+        public IActionResult Hej()
+        {
+            return View();
         }
     }
 }
