@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using TicketSystem.DatabaseRepository;
 using Newtonsoft.Json;
+using Dapper;
 
 namespace TicketAPI.Controllers
 {
@@ -13,38 +14,41 @@ namespace TicketAPI.Controllers
     [Route("api/TicketEvents")]
     public class TicketEventsController : Controller
     {
-        TicketDatabase tdb = new TicketDatabase { };
+        TicketDatabase tdb = new TicketDatabase ();
+
         // GET: api/TicketEvents
         [HttpGet]
         public IEnumerable<string> Get()
-        {          
+        {
             return tdb.GetAllEvents();
         }
 
         // GET: api/TicketEvents/5
         [HttpGet("{id}")]
         public List<ClassLibrary.TicketEvent> Get(string id)
-        {           
+        {
             return tdb.GetEvents(id);
         }
-        
+
         // POST: api/TicketEvents
         [HttpPost]
-        public void Post([FromBody]ClassLibrary.TicketEvent ticketEvent)
-        {           
-            tdb.EventAdd(ticketEvent.EventName, ticketEvent.EventHtmlDescription);
+        public ClassLibrary.TicketEvent Post([FromBody]ClassLibrary.TicketEvent ticketEvent)
+        {
+            return tdb.EventAdd(ticketEvent.EventName, ticketEvent.EventHtmlDescription);
         }
-        
+
         // PUT: api/TicketEvents/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
+        [HttpPut("{eventName}")]
+        public void Put(string eventName, [FromBody]ClassLibrary.TicketEvent ticketEvent)
         {
+            tdb.EventUpdate(eventName, ticketEvent);
         }
-        
+
         // DELETE: api/ApiWithActions/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        [HttpDelete("{eventName}")]
+        public void Delete(string eventName)
         {
+            tdb.DeleteEvent(eventName);
         }
     }
 }
