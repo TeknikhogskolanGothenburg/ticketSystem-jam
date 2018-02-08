@@ -11,7 +11,7 @@ namespace TicketSystem.DatabaseRepository
         /// <param name="name">Name of the event</param>
         /// <param name="description">A desription of the event, html markup of the event is allowed</param>
         /// <returns>An object representing the newly created TicketEvent</returns>
-        TicketEvent EventAdd(string name, string description);
+        TicketEvent EventAdd(TicketEvent ticketEvent);
 
         /// <summary>
         /// Add a new venue to the database
@@ -21,7 +21,7 @@ namespace TicketSystem.DatabaseRepository
         /// <param name="city">City part of the adress</param>
         /// <param name="country">Country part of the adress</param>
         /// <returns>An object representing the newly created Venue</returns>
-        Venue VenueAdd(string name, string address, string city, string country);
+        Venue VenuesAdd(Venue venue);
 
 
         /// <summary>
@@ -29,6 +29,6 @@ namespace TicketSystem.DatabaseRepository
         /// </summary>
         /// <param name="query">A text which is user i looking for in the venues</param>
         /// <returns>A list of venus matching the query</returns>
-        Venue VenuesFind(string query);
+        Venue GetVenues(string query);
     }
 }
