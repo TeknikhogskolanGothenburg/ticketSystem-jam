@@ -14,7 +14,8 @@ namespace TicketAPI.Controllers
     [Route("api/TicketEvents")]
     public class TicketEventsController : Controller
     {
-        TicketDatabase tdb = new TicketDatabase { };
+        TicketDatabase tdb = new TicketDatabase ();
+
         // GET: api/TicketEvents
         [HttpGet]
         public IEnumerable<string> Get()

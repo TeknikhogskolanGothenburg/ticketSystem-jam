@@ -43,7 +43,7 @@ namespace TicketSystem.DatabaseRepository
             }
         }
 
-        public TicketEvent EventUpdate(string nameInput, ClassLibrary.TicketEvent ticketEvent)
+        public TicketEvent EventUpdate(string nameInput, TicketEvent ticketEvent)
         {
             using (var connection = new SqlConnection(connectionString))
             {
@@ -65,6 +65,7 @@ namespace TicketSystem.DatabaseRepository
                 return connection.Query<Venue>("SELECT * FROM Venues WHERE VenueID=@Id", new { Id = addedVenueQuery }).First();
             }
         }
+
         public TicketEventDate EventDateAdd(int eventId, int dateId, System.DateTime date)
         {
             using (var connection = new SqlConnection(connectionString))
