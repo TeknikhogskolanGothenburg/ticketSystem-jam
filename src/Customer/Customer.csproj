@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ClassLibrary\ClassLibrary.csproj" />
+    <ProjectReference Include="..\RestApiClient\RestApiClient.csproj" />
   </ItemGroup>
 
 </Project>

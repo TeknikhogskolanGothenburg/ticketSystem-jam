@@ -17,6 +17,13 @@ namespace TicketSystem.RestApiClient
             var response = client.Execute<List<Ticket>>(request);
             return response.Data;
         }
+        public List<TicketEvent> EventGet()
+        {
+            var client = new RestClient("http://localhost:49270/api/");
+            var request = new RestRequest("TicketEvents", Method.GET);
+            var response = client.Execute<List<TicketEvent>>(request);
+            return response.Data;
+        }
 
         public List<Venue> VenueGet()
         {
