@@ -16,8 +16,12 @@ items:
   fullName: TicketSystem.PaymentProvider.PaymentStatus
   type: Enum
   source:
+    remote:
+      path: src/PaymentProvider/PaymentStatus.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
     id: PaymentStatus
-    path: C:\Users\Martin\source\repos\ticketSystem-jam\src\PaymentProvider\PaymentStatus.cs
+    path: src/PaymentProvider/PaymentStatus.cs
     startLine: 2
   assemblies:
   - PaymentProvider
@@ -43,8 +47,12 @@ items:
   fullName: TicketSystem.PaymentProvider.PaymentStatus.PaymentApproved
   type: Field
   source:
+    remote:
+      path: src/PaymentProvider/PaymentStatus.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
     id: PaymentApproved
-    path: C:\Users\Martin\source\repos\ticketSystem-jam\src\PaymentProvider\PaymentStatus.cs
+    path: src/PaymentProvider/PaymentStatus.cs
     startLine: 4
   assemblies:
   - PaymentProvider
@@ -71,8 +79,12 @@ items:
   fullName: TicketSystem.PaymentProvider.PaymentStatus.PaymentRejected
   type: Field
   source:
+    remote:
+      path: src/PaymentProvider/PaymentStatus.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
     id: PaymentRejected
-    path: C:\Users\Martin\source\repos\ticketSystem-jam\src\PaymentProvider\PaymentStatus.cs
+    path: src/PaymentProvider/PaymentStatus.cs
     startLine: 5
   assemblies:
   - PaymentProvider
@@ -99,8 +111,12 @@ items:
   fullName: TicketSystem.PaymentProvider.PaymentStatus.UnknownError
   type: Field
   source:
+    remote:
+      path: src/PaymentProvider/PaymentStatus.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
     id: UnknownError
-    path: C:\Users\Martin\source\repos\ticketSystem-jam\src\PaymentProvider\PaymentStatus.cs
+    path: src/PaymentProvider/PaymentStatus.cs
     startLine: 6
   assemblies:
   - PaymentProvider

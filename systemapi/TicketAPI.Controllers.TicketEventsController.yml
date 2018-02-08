@@ -5,11 +5,11 @@ items:
   id: TicketEventsController
   parent: TicketAPI.Controllers
   children:
-  - TicketAPI.Controllers.TicketEventsController.Delete(System.Int32)
+  - TicketAPI.Controllers.TicketEventsController.Delete(System.String)
   - TicketAPI.Controllers.TicketEventsController.Get
-  - TicketAPI.Controllers.TicketEventsController.Get(System.Int32)
-  - TicketAPI.Controllers.TicketEventsController.Post(System.String)
-  - TicketAPI.Controllers.TicketEventsController.Put(System.Int32,System.String)
+  - TicketAPI.Controllers.TicketEventsController.Get(System.String)
+  - TicketAPI.Controllers.TicketEventsController.Post(ClassLibrary.TicketEvent)
+  - TicketAPI.Controllers.TicketEventsController.Put(System.String,ClassLibrary.TicketEvent)
   langs:
   - csharp
   - vb
@@ -18,9 +18,13 @@ items:
   fullName: TicketAPI.Controllers.TicketEventsController
   type: Class
   source:
+    remote:
+      path: src/TicketAPI/Controllers/TicketEventsController.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
     id: TicketEventsController
-    path: C:\Users\Martin\source\repos\ticketSystem-jam\src\TicketAPI\Controllers\TicketEventsController.cs
-    startLine: 9
+    path: src/TicketAPI/Controllers/TicketEventsController.cs
+    startLine: 12
   assemblies:
   - TicketAPI
   namespace: TicketAPI.Controllers
@@ -37,9 +41,7 @@ items:
       <Route("api/TicketEvents")>
 
       Public Class TicketEventsController
-
           Inherits Controller
-
           Implements IActionFilter, IAsyncActionFilter, IFilterMetadata, IDisposable
   inheritance:
   - System.Object
@@ -241,9 +243,13 @@ items:
   fullName: TicketAPI.Controllers.TicketEventsController.Get()
   type: Method
   source:
+    remote:
+      path: src/TicketAPI/Controllers/TicketEventsController.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
     id: Get
-    path: C:\Users\Martin\source\repos\ticketSystem-jam\src\TicketAPI\Controllers\TicketEventsController.cs
-    startLine: 14
+    path: src/TicketAPI/Controllers/TicketEventsController.cs
+    startLine: 19
   assemblies:
   - TicketAPI
   namespace: TicketAPI.Controllers
@@ -267,21 +273,25 @@ items:
   - public
   modifiers.vb:
   - Public
-- uid: TicketAPI.Controllers.TicketEventsController.Get(System.Int32)
-  commentId: M:TicketAPI.Controllers.TicketEventsController.Get(System.Int32)
-  id: Get(System.Int32)
+- uid: TicketAPI.Controllers.TicketEventsController.Get(System.String)
+  commentId: M:TicketAPI.Controllers.TicketEventsController.Get(System.String)
+  id: Get(System.String)
   parent: TicketAPI.Controllers.TicketEventsController
   langs:
   - csharp
   - vb
-  name: Get(Int32)
-  nameWithType: TicketEventsController.Get(Int32)
-  fullName: TicketAPI.Controllers.TicketEventsController.Get(System.Int32)
+  name: Get(String)
+  nameWithType: TicketEventsController.Get(String)
+  fullName: TicketAPI.Controllers.TicketEventsController.Get(System.String)
   type: Method
   source:
+    remote:
+      path: src/TicketAPI/Controllers/TicketEventsController.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
     id: Get
-    path: C:\Users\Martin\source\repos\ticketSystem-jam\src\TicketAPI\Controllers\TicketEventsController.cs
-    startLine: 21
+    path: src/TicketAPI/Controllers/TicketEventsController.cs
+    startLine: 26
   assemblies:
   - TicketAPI
   namespace: TicketAPI.Controllers
@@ -289,16 +299,16 @@ items:
     content: >-
       [HttpGet("{id}")]
 
-      public string Get(int id)
+      public List<TicketEvent> Get(string id)
     parameters:
     - id: id
-      type: System.Int32
-    return:
       type: System.String
+    return:
+      type: System.Collections.Generic.List{ClassLibrary.TicketEvent}
     content.vb: >-
       <HttpGet("{id}")>
 
-      Public Function Get(id As Integer) As String
+      Public Function Get(id As String) As List(Of TicketEvent)
   overload: TicketAPI.Controllers.TicketEventsController.Get*
   attributes:
   - type: Microsoft.AspNetCore.Mvc.HttpGetAttribute
@@ -310,21 +320,25 @@ items:
   - public
   modifiers.vb:
   - Public
-- uid: TicketAPI.Controllers.TicketEventsController.Post(System.String)
-  commentId: M:TicketAPI.Controllers.TicketEventsController.Post(System.String)
-  id: Post(System.String)
+- uid: TicketAPI.Controllers.TicketEventsController.Post(ClassLibrary.TicketEvent)
+  commentId: M:TicketAPI.Controllers.TicketEventsController.Post(ClassLibrary.TicketEvent)
+  id: Post(ClassLibrary.TicketEvent)
   parent: TicketAPI.Controllers.TicketEventsController
   langs:
   - csharp
   - vb
-  name: Post(String)
-  nameWithType: TicketEventsController.Post(String)
-  fullName: TicketAPI.Controllers.TicketEventsController.Post(System.String)
+  name: Post(TicketEvent)
+  nameWithType: TicketEventsController.Post(TicketEvent)
+  fullName: TicketAPI.Controllers.TicketEventsController.Post(ClassLibrary.TicketEvent)
   type: Method
   source:
+    remote:
+      path: src/TicketAPI/Controllers/TicketEventsController.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
     id: Post
-    path: C:\Users\Martin\source\repos\ticketSystem-jam\src\TicketAPI\Controllers\TicketEventsController.cs
-    startLine: 28
+    path: src/TicketAPI/Controllers/TicketEventsController.cs
+    startLine: 33
   assemblies:
   - TicketAPI
   namespace: TicketAPI.Controllers
@@ -332,18 +346,20 @@ items:
     content: >-
       [HttpPost]
 
-      public void Post([FromBody] string value)
+      public TicketEvent Post([FromBody] TicketEvent ticketEvent)
     parameters:
-    - id: value
-      type: System.String
+    - id: ticketEvent
+      type: ClassLibrary.TicketEvent
       attributes:
       - type: Microsoft.AspNetCore.Mvc.FromBodyAttribute
         ctor: Microsoft.AspNetCore.Mvc.FromBodyAttribute.#ctor
         arguments: []
+    return:
+      type: ClassLibrary.TicketEvent
     content.vb: >-
       <HttpPost>
 
-      Public Sub Post(value As String)
+      Public Function Post(ticketEvent As TicketEvent) As TicketEvent
   overload: TicketAPI.Controllers.TicketEventsController.Post*
   attributes:
   - type: Microsoft.AspNetCore.Mvc.HttpPostAttribute
@@ -353,90 +369,98 @@ items:
   - public
   modifiers.vb:
   - Public
-- uid: TicketAPI.Controllers.TicketEventsController.Put(System.Int32,System.String)
-  commentId: M:TicketAPI.Controllers.TicketEventsController.Put(System.Int32,System.String)
-  id: Put(System.Int32,System.String)
+- uid: TicketAPI.Controllers.TicketEventsController.Put(System.String,ClassLibrary.TicketEvent)
+  commentId: M:TicketAPI.Controllers.TicketEventsController.Put(System.String,ClassLibrary.TicketEvent)
+  id: Put(System.String,ClassLibrary.TicketEvent)
   parent: TicketAPI.Controllers.TicketEventsController
   langs:
   - csharp
   - vb
-  name: Put(Int32, String)
-  nameWithType: TicketEventsController.Put(Int32, String)
-  fullName: TicketAPI.Controllers.TicketEventsController.Put(System.Int32, System.String)
+  name: Put(String, TicketEvent)
+  nameWithType: TicketEventsController.Put(String, TicketEvent)
+  fullName: TicketAPI.Controllers.TicketEventsController.Put(System.String, ClassLibrary.TicketEvent)
   type: Method
   source:
+    remote:
+      path: src/TicketAPI/Controllers/TicketEventsController.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
     id: Put
-    path: C:\Users\Martin\source\repos\ticketSystem-jam\src\TicketAPI\Controllers\TicketEventsController.cs
-    startLine: 34
-  assemblies:
-  - TicketAPI
-  namespace: TicketAPI.Controllers
-  syntax:
-    content: >-
-      [HttpPut("{id}")]
-
-      public void Put(int id, [FromBody] string value)
-    parameters:
-    - id: id
-      type: System.Int32
-    - id: value
-      type: System.String
-      attributes:
-      - type: Microsoft.AspNetCore.Mvc.FromBodyAttribute
-        ctor: Microsoft.AspNetCore.Mvc.FromBodyAttribute.#ctor
-        arguments: []
-    content.vb: >-
-      <HttpPut("{id}")>
-
-      Public Sub Put(id As Integer, value As String)
-  overload: TicketAPI.Controllers.TicketEventsController.Put*
-  attributes:
-  - type: Microsoft.AspNetCore.Mvc.HttpPutAttribute
-    ctor: Microsoft.AspNetCore.Mvc.HttpPutAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: '{id}'
-  modifiers.csharp:
-  - public
-  modifiers.vb:
-  - Public
-- uid: TicketAPI.Controllers.TicketEventsController.Delete(System.Int32)
-  commentId: M:TicketAPI.Controllers.TicketEventsController.Delete(System.Int32)
-  id: Delete(System.Int32)
-  parent: TicketAPI.Controllers.TicketEventsController
-  langs:
-  - csharp
-  - vb
-  name: Delete(Int32)
-  nameWithType: TicketEventsController.Delete(Int32)
-  fullName: TicketAPI.Controllers.TicketEventsController.Delete(System.Int32)
-  type: Method
-  source:
-    id: Delete
-    path: C:\Users\Martin\source\repos\ticketSystem-jam\src\TicketAPI\Controllers\TicketEventsController.cs
+    path: src/TicketAPI/Controllers/TicketEventsController.cs
     startLine: 40
   assemblies:
   - TicketAPI
   namespace: TicketAPI.Controllers
   syntax:
     content: >-
-      [HttpDelete("{id}")]
+      [HttpPut("{eventName}")]
 
-      public void Delete(int id)
+      public void Put(string eventName, [FromBody] TicketEvent ticketEvent)
     parameters:
-    - id: id
-      type: System.Int32
+    - id: eventName
+      type: System.String
+    - id: ticketEvent
+      type: ClassLibrary.TicketEvent
+      attributes:
+      - type: Microsoft.AspNetCore.Mvc.FromBodyAttribute
+        ctor: Microsoft.AspNetCore.Mvc.FromBodyAttribute.#ctor
+        arguments: []
     content.vb: >-
-      <HttpDelete("{id}")>
+      <HttpPut("{eventName}")>
 
-      Public Sub Delete(id As Integer)
+      Public Sub Put(eventName As String, ticketEvent As TicketEvent)
+  overload: TicketAPI.Controllers.TicketEventsController.Put*
+  attributes:
+  - type: Microsoft.AspNetCore.Mvc.HttpPutAttribute
+    ctor: Microsoft.AspNetCore.Mvc.HttpPutAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: '{eventName}'
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TicketAPI.Controllers.TicketEventsController.Delete(System.String)
+  commentId: M:TicketAPI.Controllers.TicketEventsController.Delete(System.String)
+  id: Delete(System.String)
+  parent: TicketAPI.Controllers.TicketEventsController
+  langs:
+  - csharp
+  - vb
+  name: Delete(String)
+  nameWithType: TicketEventsController.Delete(String)
+  fullName: TicketAPI.Controllers.TicketEventsController.Delete(System.String)
+  type: Method
+  source:
+    remote:
+      path: src/TicketAPI/Controllers/TicketEventsController.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
+    id: Delete
+    path: src/TicketAPI/Controllers/TicketEventsController.cs
+    startLine: 47
+  assemblies:
+  - TicketAPI
+  namespace: TicketAPI.Controllers
+  syntax:
+    content: >-
+      [HttpDelete("{eventName}")]
+
+      public void Delete(string eventName)
+    parameters:
+    - id: eventName
+      type: System.String
+    content.vb: >-
+      <HttpDelete("{eventName}")>
+
+      Public Sub Delete(eventName As String)
   overload: TicketAPI.Controllers.TicketEventsController.Delete*
   attributes:
   - type: Microsoft.AspNetCore.Mvc.HttpDeleteAttribute
     ctor: Microsoft.AspNetCore.Mvc.HttpDeleteAttribute.#ctor(System.String)
     arguments:
     - type: System.String
-      value: '{id}'
+      value: '{eventName}'
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -10613,13 +10637,6 @@ references:
   name: System.Collections.Generic
   nameWithType: System.Collections.Generic
   fullName: System.Collections.Generic
-- uid: System.Int32
-  commentId: T:System.Int32
-  parent: System
-  isExternal: true
-  name: Int32
-  nameWithType: Int32
-  fullName: System.Int32
 - uid: System.String
   commentId: T:System.String
   parent: System
@@ -10627,12 +10644,106 @@ references:
   name: String
   nameWithType: String
   fullName: System.String
+- uid: System.Collections.Generic.List{ClassLibrary.TicketEvent}
+  commentId: T:System.Collections.Generic.List{ClassLibrary.TicketEvent}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<TicketEvent>
+  nameWithType: List<TicketEvent>
+  fullName: System.Collections.Generic.List<ClassLibrary.TicketEvent>
+  nameWithType.vb: List(Of TicketEvent)
+  fullName.vb: System.Collections.Generic.List(Of ClassLibrary.TicketEvent)
+  name.vb: List(Of TicketEvent)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: ClassLibrary.TicketEvent
+    name: TicketEvent
+    nameWithType: TicketEvent
+    fullName: ClassLibrary.TicketEvent
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: ClassLibrary.TicketEvent
+    name: TicketEvent
+    nameWithType: TicketEvent
+    fullName: ClassLibrary.TicketEvent
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: TicketAPI.Controllers.TicketEventsController.Post*
   commentId: Overload:TicketAPI.Controllers.TicketEventsController.Post
   isExternal: false
   name: Post
   nameWithType: TicketEventsController.Post
   fullName: TicketAPI.Controllers.TicketEventsController.Post
+- uid: ClassLibrary.TicketEvent
+  commentId: T:ClassLibrary.TicketEvent
+  parent: ClassLibrary
+  isExternal: false
+  name: TicketEvent
+  nameWithType: TicketEvent
+  fullName: ClassLibrary.TicketEvent
+- uid: ClassLibrary
+  commentId: N:ClassLibrary
+  isExternal: false
+  name: ClassLibrary
+  nameWithType: ClassLibrary
+  fullName: ClassLibrary
 - uid: TicketAPI.Controllers.TicketEventsController.Put*
   commentId: Overload:TicketAPI.Controllers.TicketEventsController.Put
   isExternal: false

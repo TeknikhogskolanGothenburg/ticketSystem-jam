@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: Admin.Models
+  commentId: N:Admin.Models
+  id: Admin.Models
+  children:
+  - Admin.Models.ErrorViewModel
+  langs:
+  - csharp
+  - vb
+  name: Admin.Models
+  nameWithType: Admin.Models
+  fullName: Admin.Models
+  type: Namespace
+  assemblies:
+  - Admin
+references:
+- uid: Admin.Models.ErrorViewModel
+  commentId: T:Admin.Models.ErrorViewModel
+  isExternal: false
+  name: ErrorViewModel
+  nameWithType: ErrorViewModel
+  fullName: Admin.Models.ErrorViewModel

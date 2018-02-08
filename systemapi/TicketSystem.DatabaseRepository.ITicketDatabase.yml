@@ -16,8 +16,12 @@ items:
   fullName: TicketSystem.DatabaseRepository.ITicketDatabase
   type: Interface
   source:
+    remote:
+      path: src/DatabaseRepository/ITicketDatabase.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
     id: ITicketDatabase
-    path: C:\Users\Martin\source\repos\ticketSystem-jam\src\DatabaseRepository\ITicketDatabase.cs
+    path: src/DatabaseRepository/ITicketDatabase.cs
     startLine: 5
   assemblies:
   - DatabaseRepository
@@ -43,8 +47,12 @@ items:
   fullName: TicketSystem.DatabaseRepository.ITicketDatabase.EventAdd(System.String, System.String)
   type: Method
   source:
+    remote:
+      path: src/DatabaseRepository/ITicketDatabase.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
     id: EventAdd
-    path: C:\Users\Martin\source\repos\ticketSystem-jam\src\DatabaseRepository\ITicketDatabase.cs
+    path: src/DatabaseRepository/ITicketDatabase.cs
     startLine: 13
   assemblies:
   - DatabaseRepository
@@ -77,8 +85,12 @@ items:
   fullName: TicketSystem.DatabaseRepository.ITicketDatabase.VenueAdd(System.String, System.String, System.String, System.String)
   type: Method
   source:
+    remote:
+      path: src/DatabaseRepository/ITicketDatabase.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
     id: VenueAdd
-    path: C:\Users\Martin\source\repos\ticketSystem-jam\src\DatabaseRepository\ITicketDatabase.cs
+    path: src/DatabaseRepository/ITicketDatabase.cs
     startLine: 23
   assemblies:
   - DatabaseRepository
@@ -117,8 +129,12 @@ items:
   fullName: TicketSystem.DatabaseRepository.ITicketDatabase.VenuesFind(System.String)
   type: Method
   source:
+    remote:
+      path: src/DatabaseRepository/ITicketDatabase.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
     id: VenuesFind
-    path: C:\Users\Martin\source\repos\ticketSystem-jam\src\DatabaseRepository\ITicketDatabase.cs
+    path: src/DatabaseRepository/ITicketDatabase.cs
     startLine: 31
   assemblies:
   - DatabaseRepository
@@ -126,15 +142,15 @@ items:
   summary: "\nFind all venus matching the query\n"
   example: []
   syntax:
-    content: List<Venue> VenuesFind(string query)
+    content: Venue VenuesFind(string query)
     parameters:
     - id: query
       type: System.String
       description: A text which is user i looking for in the venues
     return:
-      type: System.Collections.Generic.List{ClassLibrary.Venue}
+      type: ClassLibrary.Venue
       description: A list of venus matching the query
-    content.vb: Function VenuesFind(query As String) As List(Of Venue)
+    content.vb: Function VenuesFind(query As String) As Venue
   overload: TicketSystem.DatabaseRepository.ITicketDatabase.VenuesFind*
 references:
 - uid: TicketSystem.DatabaseRepository
@@ -194,90 +210,3 @@ references:
   name: VenuesFind
   nameWithType: ITicketDatabase.VenuesFind
   fullName: TicketSystem.DatabaseRepository.ITicketDatabase.VenuesFind
-- uid: System.Collections.Generic.List{ClassLibrary.Venue}
-  commentId: T:System.Collections.Generic.List{ClassLibrary.Venue}
-  parent: System.Collections.Generic
-  definition: System.Collections.Generic.List`1
-  name: List<Venue>
-  nameWithType: List<Venue>
-  fullName: System.Collections.Generic.List<ClassLibrary.Venue>
-  nameWithType.vb: List(Of Venue)
-  fullName.vb: System.Collections.Generic.List(Of ClassLibrary.Venue)
-  name.vb: List(Of Venue)
-  spec.csharp:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    nameWithType: List
-    fullName: System.Collections.Generic.List
-    isExternal: true
-  - name: <
-    nameWithType: <
-    fullName: <
-  - uid: ClassLibrary.Venue
-    name: Venue
-    nameWithType: Venue
-    fullName: ClassLibrary.Venue
-  - name: '>'
-    nameWithType: '>'
-    fullName: '>'
-  spec.vb:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    nameWithType: List
-    fullName: System.Collections.Generic.List
-    isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
-  - uid: ClassLibrary.Venue
-    name: Venue
-    nameWithType: Venue
-    fullName: ClassLibrary.Venue
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Collections.Generic.List`1
-  commentId: T:System.Collections.Generic.List`1
-  isExternal: true
-  name: List<T>
-  nameWithType: List<T>
-  fullName: System.Collections.Generic.List<T>
-  nameWithType.vb: List(Of T)
-  fullName.vb: System.Collections.Generic.List(Of T)
-  name.vb: List(Of T)
-  spec.csharp:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    nameWithType: List
-    fullName: System.Collections.Generic.List
-    isExternal: true
-  - name: <
-    nameWithType: <
-    fullName: <
-  - name: T
-    nameWithType: T
-    fullName: T
-  - name: '>'
-    nameWithType: '>'
-    fullName: '>'
-  spec.vb:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    nameWithType: List
-    fullName: System.Collections.Generic.List
-    isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
-  - name: T
-    nameWithType: T
-    fullName: T
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Collections.Generic
-  commentId: N:System.Collections.Generic
-  isExternal: false
-  name: System.Collections.Generic
-  nameWithType: System.Collections.Generic
-  fullName: System.Collections.Generic
