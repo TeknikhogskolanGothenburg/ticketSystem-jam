@@ -32,7 +32,7 @@ namespace TicketSystem.DatabaseRepository
             }
         }
 
-        public TicketEvent EventAdd(TicketEvent ticketEvent)
+        public TicketEvent EventsAdd(TicketEvent ticketEvent)
         {
             using (var connection = new SqlConnection(connectionString))
             {
@@ -44,7 +44,7 @@ namespace TicketSystem.DatabaseRepository
             }
         }
 
-        public TicketEvent EventUpdate(string nameInput, TicketEvent ticketEvent)
+        public TicketEvent EventsUpdate(string nameInput, TicketEvent ticketEvent)
         {
             using (var connection = new SqlConnection(connectionString))
             {
@@ -55,7 +55,7 @@ namespace TicketSystem.DatabaseRepository
             }
         }        
 
-        public void DeleteEvent(int id)
+        public void DeleteEvents(int id)
         {
             using (var connection = new SqlConnection(connectionString))
             {

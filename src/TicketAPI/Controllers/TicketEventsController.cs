@@ -34,21 +34,21 @@ namespace TicketAPI.Controllers
         [HttpPost]
         public ClassLibrary.TicketEvent Post([FromBody]ClassLibrary.TicketEvent ticketEvent)
         {
-            return tdb.EventAdd(ticketEvent);
+            return tdb.EventsAdd(ticketEvent);
         }
 
         // PUT: api/TicketEvents/5
         [HttpPut("{eventName}")]
         public void Put(string eventName, [FromBody]ClassLibrary.TicketEvent ticketEvent)
         {
-            tdb.EventUpdate(eventName, ticketEvent);
+            tdb.EventsUpdate(eventName, ticketEvent);
         }
 
         // DELETE: api/ApiWithActions/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
-            tdb.DeleteEvent(id);
+            tdb.DeleteEvents(id);
         }
     }
 }
