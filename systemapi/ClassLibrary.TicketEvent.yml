@@ -16,8 +16,12 @@ items:
   fullName: ClassLibrary.TicketEvent
   type: Class
   source:
+    remote:
+      path: src/ClassLibrary/TicketEvent.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
     id: TicketEvent
-    path: C:\Users\Martin\source\repos\ticketSystem-jam\src\ClassLibrary\TicketEvent.cs
+    path: src/ClassLibrary/TicketEvent.cs
     startLine: 6
   assemblies:
   - ClassLibrary
@@ -53,8 +57,12 @@ items:
   fullName: ClassLibrary.TicketEvent.TicketEventId
   type: Property
   source:
+    remote:
+      path: src/ClassLibrary/TicketEvent.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
     id: TicketEventId
-    path: C:\Users\Martin\source\repos\ticketSystem-jam\src\ClassLibrary\TicketEvent.cs
+    path: src/ClassLibrary/TicketEvent.cs
     startLine: 8
   assemblies:
   - ClassLibrary
@@ -84,8 +92,12 @@ items:
   fullName: ClassLibrary.TicketEvent.EventName
   type: Property
   source:
+    remote:
+      path: src/ClassLibrary/TicketEvent.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
     id: EventName
-    path: C:\Users\Martin\source\repos\ticketSystem-jam\src\ClassLibrary\TicketEvent.cs
+    path: src/ClassLibrary/TicketEvent.cs
     startLine: 9
   assemblies:
   - ClassLibrary
@@ -115,8 +127,12 @@ items:
   fullName: ClassLibrary.TicketEvent.EventHtmlDescription
   type: Property
   source:
+    remote:
+      path: src/ClassLibrary/TicketEvent.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
     id: EventHtmlDescription
-    path: C:\Users\Martin\source\repos\ticketSystem-jam\src\ClassLibrary\TicketEvent.cs
+    path: src/ClassLibrary/TicketEvent.cs
     startLine: 10
   assemblies:
   - ClassLibrary

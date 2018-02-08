@@ -17,8 +17,12 @@ items:
   fullName: ClassLibrary.TicketEventDate
   type: Class
   source:
+    remote:
+      path: src/ClassLibrary/TicketEventDate.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
     id: TicketEventDate
-    path: C:\Users\Martin\source\repos\ticketSystem-jam\src\ClassLibrary\TicketEventDate.cs
+    path: src/ClassLibrary/TicketEventDate.cs
     startLine: 6
   assemblies:
   - ClassLibrary
@@ -54,8 +58,12 @@ items:
   fullName: ClassLibrary.TicketEventDate.TicketEventDateID
   type: Property
   source:
+    remote:
+      path: src/ClassLibrary/TicketEventDate.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
     id: TicketEventDateID
-    path: C:\Users\Martin\source\repos\ticketSystem-jam\src\ClassLibrary\TicketEventDate.cs
+    path: src/ClassLibrary/TicketEventDate.cs
     startLine: 8
   assemblies:
   - ClassLibrary
@@ -85,8 +93,12 @@ items:
   fullName: ClassLibrary.TicketEventDate.TicketEventID
   type: Property
   source:
+    remote:
+      path: src/ClassLibrary/TicketEventDate.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
     id: TicketEventID
-    path: C:\Users\Martin\source\repos\ticketSystem-jam\src\ClassLibrary\TicketEventDate.cs
+    path: src/ClassLibrary/TicketEventDate.cs
     startLine: 9
   assemblies:
   - ClassLibrary
@@ -116,8 +128,12 @@ items:
   fullName: ClassLibrary.TicketEventDate.VenueId
   type: Property
   source:
+    remote:
+      path: src/ClassLibrary/TicketEventDate.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
     id: VenueId
-    path: C:\Users\Martin\source\repos\ticketSystem-jam\src\ClassLibrary\TicketEventDate.cs
+    path: src/ClassLibrary/TicketEventDate.cs
     startLine: 10
   assemblies:
   - ClassLibrary
@@ -147,8 +163,12 @@ items:
   fullName: ClassLibrary.TicketEventDate.EventStartDateTime
   type: Property
   source:
+    remote:
+      path: src/ClassLibrary/TicketEventDate.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
     id: EventStartDateTime
-    path: C:\Users\Martin\source\repos\ticketSystem-jam\src\ClassLibrary\TicketEventDate.cs
+    path: src/ClassLibrary/TicketEventDate.cs
     startLine: 11
   assemblies:
   - ClassLibrary

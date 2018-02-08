@@ -1,79 +1,147 @@
-﻿@model ClassLibrary.Value
+﻿
 
 @{
     ViewData["Title"] = "Shop";
 }
+<style type="text/css">
+    #wrap {
+        width: 1000px;
+    }
 
-<h2>Shop</h2>
-@using (Html.BeginForm("Shop", "Home"))
-{
-    <fieldset>
-        <select multiple id="Event" name="Event">
+    .left {
+        width: 480px;
+        float: left;
+        text-align: center;
+    }
 
-            @foreach (ClassLibrary.TicketEvent x in Model.Events)
-            {
-                <option label="Event" selected="" value="">@x.EventName</option>
+    .right {
+        width: 480px;
+        float: right;
+        text-align:center;
+    }
+</style>
+<style>
+    table, th, td {
+        border: 2px solid black;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        padding: 5px;
+        text-align: left;
+    }
+
+    table#jam tr:nth-child(even) {
+        background-color: #eee;
+    }
+
+    table#jam tr:nth-child(odd) {
+        background-color: #fff;
+    }
+
+    table#jam th {
+        background-color: black;
+        color: white;
+    }
+
+</style>
+
+<body>
+    <div id="wrap">
+        <div class="left">
+            <h2>Team Jam´s Ticket Shop</h2>
+
+            <table id="jam">
+                <tr>
+                    <th>Event</th>
+                    <th>Location</th>
+                    <th>Date</th>
+                    <th>Tickets left</th>
+                    <th></th>
+                </tr>
+
+                <tr>
+                    @*Här får vi göra en foreach-loop, som rullar ut alla events.*@
+                    <td>Bruce Springsteen</td>
+                    <td>Ullevi</td>
+                    <td>2018-07-03</td>
+                    <td>55</td>
+                    <td align='center'><form><input type=submit value="Buy" label="Buy" style="width:100%"></form></td>
+                </tr>
+                <tr>
+                    @*Dessa ska bort när looen är klar.*@
+                    <td>Frölunda - Luleå</td>
+                    <td>Scandinavium</td>
+                    <td>2018-03-05</td>
+                    <td>26</td>
+                    <td align='center'><form><input type=submit value="Buy" label="Buy" style="width:100%"></form></td>
+                </tr>
+                <tr>
+                    <td>Way Out West</td>
+                    <td>Frihamnen</td>
+                    <td>2018-08-15</td>
+                    <td>2</td>
+                    <td align='center'><form><input type=submit value="Buy" label="Buy" style="width:100%"></form></td>
+                </tr>
+                <tr>
+                    <td>Disney on ice</td>
+                    <td>Scandinavium</td>
+                    <td>2018-04-15</td>
+                    <td>2</td>
+                    <td align='center'><form><input type=submit value="Buy" label="Buy" style="width:100%"></form></td>
+                </tr>
+                <tr>
+                    <td>Speedway</td>
+                    <td>Ullevi</td>
+                    <td>2018-09-25</td>
+                    <td>2</td>
+                    <td align='center'><form><input type=submit value="Buy" label="Buy" style="width:100%"></form></td>
+                </tr>
+
+            </table>
+        </div>
+        <div class="right">
+            <h2 >Shoppingcart</h2>
+            <table id="jam" style="width:100%" align="right">
+                <tr >
+                    <th>Event</th>
+                    <th>Amount</th>
+                   
+                </tr>
+
+                <tr>
+                    @*Här får vi göra en foreach-loop, som rullar ut alla events.*@
+                    <td>Bruce Springsteen</td>
+                    <td>2</td>
+
+                </tr>
+                <tr>
+                    @*Dessa ska bort när looen är klar.*@
+                    <td>Frölunda - Luleå</td>
+                    <td>1</td>
+   
+                </tr>
+                <tr>
+                    <td>Way Out West</td>
+                    <td>3</td>
+              
+                </tr>
+                
+               
+
+            </table>
+            <tr align='center'><input type=submit value="CheckOut" label="CheckOut" style="width:100%"></tr>
+        </div>
 
 
-            }
-        </select>
-    </fieldset>
-    <select multiple>
-        <option label="Filter Date" selected=""></option>
-    </select>
+</body>
 
 
 
 
-        <select></select>
-
-        <p><input type="submit" value="Submit" /> </p>
-
-
-        <br />
 
 
 
 
-}
 
-@* <table border="1" align="center" font-family:'Courier New'">
-        <tr>
-            <td colspan="2" style="text-align:center"><h3></h3></td>
-        </tr>
-        <tr>
-            <td  >
-                <br />
-                @using (Html.BeginForm("", ""))
-                {
-                   <div>
-        @Html.LabelFor(m => m.Name, "Enter Name")<br />
-        @Html.TextBoxFor(m => m.Name, new { @required = true })
-    </div>
-    <br />
-    <div>
-        @Html.LabelFor(m => m.Email, "Enter Email")<br />
-        @Html.TextBoxFor(m => m.Email, new { @required = true })
-        <br />
-        <br />
-        <br />
-        <input type="submit" name="startbtn" value="Start a game">
-        @if (Gameengine.Lobby.PendingGame.Count > 0)
-        {
-            <input type="submit" name="joinbtn" value="Join an existing game">
-        }
 
-    </div>
-                }
-
-            <td />
-
-        </tr>
-        <tr>
-            <td colspan="2" >
-                <h5></h5>
-
-            </td>
-        </tr>
-
-    </table>*@

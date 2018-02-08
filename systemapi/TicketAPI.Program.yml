@@ -15,8 +15,12 @@ items:
   fullName: TicketAPI.Program
   type: Class
   source:
+    remote:
+      path: src/TicketAPI/Program.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
     id: Program
-    path: C:\Users\Martin\source\repos\ticketSystem-jam\src\TicketAPI\Program.cs
+    path: src/TicketAPI/Program.cs
     startLine: 12
   assemblies:
   - TicketAPI
@@ -52,8 +56,12 @@ items:
   fullName: TicketAPI.Program.Main(System.String[])
   type: Method
   source:
+    remote:
+      path: src/TicketAPI/Program.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
     id: Main
-    path: C:\Users\Martin\source\repos\ticketSystem-jam\src\TicketAPI\Program.cs
+    path: src/TicketAPI/Program.cs
     startLine: 14
   assemblies:
   - TicketAPI
@@ -86,8 +94,12 @@ items:
   fullName: TicketAPI.Program.BuildWebHost(System.String[])
   type: Method
   source:
+    remote:
+      path: src/TicketAPI/Program.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
     id: BuildWebHost
-    path: C:\Users\Martin\source\repos\ticketSystem-jam\src\TicketAPI\Program.cs
+    path: src/TicketAPI/Program.cs
     startLine: 19
   assemblies:
   - TicketAPI

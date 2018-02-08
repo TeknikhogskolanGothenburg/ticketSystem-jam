@@ -1,35 +1,33 @@
 ### YamlMime:ManagedReference
 items:
-- uid: TicketAPI.Startup
-  commentId: T:TicketAPI.Startup
-  id: Startup
-  parent: TicketAPI
+- uid: ClassLibrary.Value
+  commentId: T:ClassLibrary.Value
+  id: Value
+  parent: ClassLibrary
   children:
-  - TicketAPI.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)
-  - TicketAPI.Startup.Configuration
-  - TicketAPI.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IHostingEnvironment)
-  - TicketAPI.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+  - ClassLibrary.Value.Events
+  - ClassLibrary.Value.Venues
   langs:
   - csharp
   - vb
-  name: Startup
-  nameWithType: Startup
-  fullName: TicketAPI.Startup
+  name: Value
+  nameWithType: Value
+  fullName: ClassLibrary.Value
   type: Class
   source:
     remote:
-      path: src/TicketAPI/Startup.cs
+      path: src/ClassLibrary/Value.cs
       branch: master
       repo: https://github.com/agngus/ticketSystem-jam.git
-    id: Startup
-    path: src/TicketAPI/Startup.cs
-    startLine: 13
+    id: Value
+    path: src/ClassLibrary/Value.cs
+    startLine: 6
   assemblies:
-  - TicketAPI
-  namespace: TicketAPI
+  - ClassLibrary
+  namespace: ClassLibrary
   syntax:
-    content: public class Startup
-    content.vb: Public Class Startup
+    content: public class Value
+    content.vb: Public Class Value
   inheritance:
   - System.Object
   inheritedMembers:
@@ -46,149 +44,79 @@ items:
   modifiers.vb:
   - Public
   - Class
-- uid: TicketAPI.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)
-  commentId: M:TicketAPI.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)
-  id: '#ctor(Microsoft.Extensions.Configuration.IConfiguration)'
-  parent: TicketAPI.Startup
+- uid: ClassLibrary.Value.Venues
+  commentId: P:ClassLibrary.Value.Venues
+  id: Venues
+  parent: ClassLibrary.Value
   langs:
   - csharp
   - vb
-  name: Startup(IConfiguration)
-  nameWithType: Startup.Startup(IConfiguration)
-  fullName: TicketAPI.Startup.Startup(Microsoft.Extensions.Configuration.IConfiguration)
-  type: Constructor
-  source:
-    remote:
-      path: src/TicketAPI/Startup.cs
-      branch: master
-      repo: https://github.com/agngus/ticketSystem-jam.git
-    id: .ctor
-    path: src/TicketAPI/Startup.cs
-    startLine: 15
-  assemblies:
-  - TicketAPI
-  namespace: TicketAPI
-  syntax:
-    content: public Startup(IConfiguration configuration)
-    parameters:
-    - id: configuration
-      type: Microsoft.Extensions.Configuration.IConfiguration
-    content.vb: Public Sub New(configuration As IConfiguration)
-  overload: TicketAPI.Startup.#ctor*
-  modifiers.csharp:
-  - public
-  modifiers.vb:
-  - Public
-- uid: TicketAPI.Startup.Configuration
-  commentId: P:TicketAPI.Startup.Configuration
-  id: Configuration
-  parent: TicketAPI.Startup
-  langs:
-  - csharp
-  - vb
-  name: Configuration
-  nameWithType: Startup.Configuration
-  fullName: TicketAPI.Startup.Configuration
+  name: Venues
+  nameWithType: Value.Venues
+  fullName: ClassLibrary.Value.Venues
   type: Property
   source:
     remote:
-      path: src/TicketAPI/Startup.cs
+      path: src/ClassLibrary/Value.cs
       branch: master
       repo: https://github.com/agngus/ticketSystem-jam.git
-    id: Configuration
-    path: src/TicketAPI/Startup.cs
-    startLine: 20
+    id: Venues
+    path: src/ClassLibrary/Value.cs
+    startLine: 8
   assemblies:
-  - TicketAPI
-  namespace: TicketAPI
+  - ClassLibrary
+  namespace: ClassLibrary
   syntax:
-    content: public IConfiguration Configuration { get; }
+    content: public List<Venue> Venues { get; set; }
     parameters: []
     return:
-      type: Microsoft.Extensions.Configuration.IConfiguration
-    content.vb: Public ReadOnly Property Configuration As IConfiguration
-  overload: TicketAPI.Startup.Configuration*
+      type: System.Collections.Generic.List{ClassLibrary.Venue}
+    content.vb: Public Property Venues As List(Of Venue)
+  overload: ClassLibrary.Value.Venues*
   modifiers.csharp:
   - public
   - get
+  - set
   modifiers.vb:
   - Public
-  - ReadOnly
-- uid: TicketAPI.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)
-  commentId: M:TicketAPI.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)
-  id: ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)
-  parent: TicketAPI.Startup
+- uid: ClassLibrary.Value.Events
+  commentId: F:ClassLibrary.Value.Events
+  id: Events
+  parent: ClassLibrary.Value
   langs:
   - csharp
   - vb
-  name: ConfigureServices(IServiceCollection)
-  nameWithType: Startup.ConfigureServices(IServiceCollection)
-  fullName: TicketAPI.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)
-  type: Method
+  name: Events
+  nameWithType: Value.Events
+  fullName: ClassLibrary.Value.Events
+  type: Field
   source:
     remote:
-      path: src/TicketAPI/Startup.cs
+      path: src/ClassLibrary/Value.cs
       branch: master
       repo: https://github.com/agngus/ticketSystem-jam.git
-    id: ConfigureServices
-    path: src/TicketAPI/Startup.cs
-    startLine: 23
+    id: Events
+    path: src/ClassLibrary/Value.cs
+    startLine: 10
   assemblies:
-  - TicketAPI
-  namespace: TicketAPI
+  - ClassLibrary
+  namespace: ClassLibrary
   syntax:
-    content: public void ConfigureServices(IServiceCollection services)
-    parameters:
-    - id: services
-      type: Microsoft.Extensions.DependencyInjection.IServiceCollection
-    content.vb: Public Sub ConfigureServices(services As IServiceCollection)
-  overload: TicketAPI.Startup.ConfigureServices*
-  modifiers.csharp:
-  - public
-  modifiers.vb:
-  - Public
-- uid: TicketAPI.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IHostingEnvironment)
-  commentId: M:TicketAPI.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IHostingEnvironment)
-  id: Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IHostingEnvironment)
-  parent: TicketAPI.Startup
-  langs:
-  - csharp
-  - vb
-  name: Configure(IApplicationBuilder, IHostingEnvironment)
-  nameWithType: Startup.Configure(IApplicationBuilder, IHostingEnvironment)
-  fullName: TicketAPI.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder, Microsoft.AspNetCore.Hosting.IHostingEnvironment)
-  type: Method
-  source:
-    remote:
-      path: src/TicketAPI/Startup.cs
-      branch: master
-      repo: https://github.com/agngus/ticketSystem-jam.git
-    id: Configure
-    path: src/TicketAPI/Startup.cs
-    startLine: 29
-  assemblies:
-  - TicketAPI
-  namespace: TicketAPI
-  syntax:
-    content: public void Configure(IApplicationBuilder app, IHostingEnvironment env)
-    parameters:
-    - id: app
-      type: Microsoft.AspNetCore.Builder.IApplicationBuilder
-    - id: env
-      type: Microsoft.AspNetCore.Hosting.IHostingEnvironment
-    content.vb: Public Sub Configure(app As IApplicationBuilder, env As IHostingEnvironment)
-  overload: TicketAPI.Startup.Configure*
+    content: public List<TicketEvent> Events
+    return:
+      type: System.Collections.Generic.List{ClassLibrary.TicketEvent}
+    content.vb: Public Events As List(Of TicketEvent)
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
 references:
-- uid: TicketAPI
-  commentId: N:TicketAPI
+- uid: ClassLibrary
+  commentId: N:ClassLibrary
   isExternal: false
-  name: TicketAPI
-  nameWithType: TicketAPI
-  fullName: TicketAPI
+  name: ClassLibrary
+  nameWithType: ClassLibrary
+  fullName: ClassLibrary
 - uid: System.Object
   commentId: T:System.Object
   parent: System
@@ -481,79 +409,138 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: TicketAPI.Startup.#ctor*
-  commentId: Overload:TicketAPI.Startup.#ctor
+- uid: ClassLibrary.Value.Venues*
+  commentId: Overload:ClassLibrary.Value.Venues
   isExternal: false
-  name: Startup
-  nameWithType: Startup.Startup
-  fullName: TicketAPI.Startup.Startup
-- uid: Microsoft.Extensions.Configuration.IConfiguration
-  commentId: T:Microsoft.Extensions.Configuration.IConfiguration
-  parent: Microsoft.Extensions.Configuration
+  name: Venues
+  nameWithType: Value.Venues
+  fullName: ClassLibrary.Value.Venues
+- uid: System.Collections.Generic.List{ClassLibrary.Venue}
+  commentId: T:System.Collections.Generic.List{ClassLibrary.Venue}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<Venue>
+  nameWithType: List<Venue>
+  fullName: System.Collections.Generic.List<ClassLibrary.Venue>
+  nameWithType.vb: List(Of Venue)
+  fullName.vb: System.Collections.Generic.List(Of ClassLibrary.Venue)
+  name.vb: List(Of Venue)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: ClassLibrary.Venue
+    name: Venue
+    nameWithType: Venue
+    fullName: ClassLibrary.Venue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: ClassLibrary.Venue
+    name: Venue
+    nameWithType: Venue
+    fullName: ClassLibrary.Venue
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
   isExternal: true
-  name: IConfiguration
-  nameWithType: IConfiguration
-  fullName: Microsoft.Extensions.Configuration.IConfiguration
-- uid: Microsoft.Extensions.Configuration
-  commentId: N:Microsoft.Extensions.Configuration
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
   isExternal: false
-  name: Microsoft.Extensions.Configuration
-  nameWithType: Microsoft.Extensions.Configuration
-  fullName: Microsoft.Extensions.Configuration
-- uid: TicketAPI.Startup.Configuration*
-  commentId: Overload:TicketAPI.Startup.Configuration
-  isExternal: false
-  name: Configuration
-  nameWithType: Startup.Configuration
-  fullName: TicketAPI.Startup.Configuration
-- uid: TicketAPI.Startup.ConfigureServices*
-  commentId: Overload:TicketAPI.Startup.ConfigureServices
-  isExternal: false
-  name: ConfigureServices
-  nameWithType: Startup.ConfigureServices
-  fullName: TicketAPI.Startup.ConfigureServices
-- uid: Microsoft.Extensions.DependencyInjection.IServiceCollection
-  commentId: T:Microsoft.Extensions.DependencyInjection.IServiceCollection
-  parent: Microsoft.Extensions.DependencyInjection
-  isExternal: true
-  name: IServiceCollection
-  nameWithType: IServiceCollection
-  fullName: Microsoft.Extensions.DependencyInjection.IServiceCollection
-- uid: Microsoft.Extensions.DependencyInjection
-  commentId: N:Microsoft.Extensions.DependencyInjection
-  isExternal: false
-  name: Microsoft.Extensions.DependencyInjection
-  nameWithType: Microsoft.Extensions.DependencyInjection
-  fullName: Microsoft.Extensions.DependencyInjection
-- uid: TicketAPI.Startup.Configure*
-  commentId: Overload:TicketAPI.Startup.Configure
-  isExternal: false
-  name: Configure
-  nameWithType: Startup.Configure
-  fullName: TicketAPI.Startup.Configure
-- uid: Microsoft.AspNetCore.Builder.IApplicationBuilder
-  commentId: T:Microsoft.AspNetCore.Builder.IApplicationBuilder
-  parent: Microsoft.AspNetCore.Builder
-  isExternal: true
-  name: IApplicationBuilder
-  nameWithType: IApplicationBuilder
-  fullName: Microsoft.AspNetCore.Builder.IApplicationBuilder
-- uid: Microsoft.AspNetCore.Hosting.IHostingEnvironment
-  commentId: T:Microsoft.AspNetCore.Hosting.IHostingEnvironment
-  parent: Microsoft.AspNetCore.Hosting
-  isExternal: true
-  name: IHostingEnvironment
-  nameWithType: IHostingEnvironment
-  fullName: Microsoft.AspNetCore.Hosting.IHostingEnvironment
-- uid: Microsoft.AspNetCore.Builder
-  commentId: N:Microsoft.AspNetCore.Builder
-  isExternal: false
-  name: Microsoft.AspNetCore.Builder
-  nameWithType: Microsoft.AspNetCore.Builder
-  fullName: Microsoft.AspNetCore.Builder
-- uid: Microsoft.AspNetCore.Hosting
-  commentId: N:Microsoft.AspNetCore.Hosting
-  isExternal: false
-  name: Microsoft.AspNetCore.Hosting
-  nameWithType: Microsoft.AspNetCore.Hosting
-  fullName: Microsoft.AspNetCore.Hosting
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: System.Collections.Generic.List{ClassLibrary.TicketEvent}
+  commentId: T:System.Collections.Generic.List{ClassLibrary.TicketEvent}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<TicketEvent>
+  nameWithType: List<TicketEvent>
+  fullName: System.Collections.Generic.List<ClassLibrary.TicketEvent>
+  nameWithType.vb: List(Of TicketEvent)
+  fullName.vb: System.Collections.Generic.List(Of ClassLibrary.TicketEvent)
+  name.vb: List(Of TicketEvent)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: ClassLibrary.TicketEvent
+    name: TicketEvent
+    nameWithType: TicketEvent
+    fullName: ClassLibrary.TicketEvent
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: ClassLibrary.TicketEvent
+    name: TicketEvent
+    nameWithType: TicketEvent
+    fullName: ClassLibrary.TicketEvent
+  - name: )
+    nameWithType: )
+    fullName: )

@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: Customer.Models
+  commentId: N:Customer.Models
+  id: Customer.Models
+  children:
+  - Customer.Models.ErrorViewModel
+  langs:
+  - csharp
+  - vb
+  name: Customer.Models
+  nameWithType: Customer.Models
+  fullName: Customer.Models
+  type: Namespace
+  assemblies:
+  - Customer
+references:
+- uid: Customer.Models.ErrorViewModel
+  commentId: T:Customer.Models.ErrorViewModel
+  isExternal: false
+  name: ErrorViewModel
+  nameWithType: ErrorViewModel
+  fullName: Customer.Models.ErrorViewModel

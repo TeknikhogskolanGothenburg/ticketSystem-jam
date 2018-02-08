@@ -1,0 +1,30 @@
+### YamlMime:ManagedReference
+items:
+- uid: Customer
+  commentId: N:Customer
+  id: Customer
+  children:
+  - Customer.Program
+  - Customer.Startup
+  langs:
+  - csharp
+  - vb
+  name: Customer
+  nameWithType: Customer
+  fullName: Customer
+  type: Namespace
+  assemblies:
+  - Customer
+references:
+- uid: Customer.Program
+  commentId: T:Customer.Program
+  isExternal: false
+  name: Program
+  nameWithType: Program
+  fullName: Customer.Program
+- uid: Customer.Startup
+  commentId: T:Customer.Startup
+  isExternal: false
+  name: Startup
+  nameWithType: Startup
+  fullName: Customer.Startup

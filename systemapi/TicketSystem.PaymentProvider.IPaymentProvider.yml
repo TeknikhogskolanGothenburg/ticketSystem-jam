@@ -14,8 +14,12 @@ items:
   fullName: TicketSystem.PaymentProvider.IPaymentProvider
   type: Interface
   source:
+    remote:
+      path: src/PaymentProvider/IPaymentProvider.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
     id: IPaymentProvider
-    path: C:\Users\Martin\source\repos\ticketSystem-jam\src\PaymentProvider\IPaymentProvider.cs
+    path: src/PaymentProvider/IPaymentProvider.cs
     startLine: 2
   assemblies:
   - PaymentProvider
@@ -41,8 +45,12 @@ items:
   fullName: TicketSystem.PaymentProvider.IPaymentProvider.Pay(System.Decimal, System.String, System.String)
   type: Method
   source:
+    remote:
+      path: src/PaymentProvider/IPaymentProvider.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
     id: Pay
-    path: C:\Users\Martin\source\repos\ticketSystem-jam\src\PaymentProvider\IPaymentProvider.cs
+    path: src/PaymentProvider/IPaymentProvider.cs
     startLine: 11
   assemblies:
   - PaymentProvider
