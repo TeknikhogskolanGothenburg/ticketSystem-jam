@@ -8,7 +8,7 @@ using ClassLibrary;
 namespace TicketSystem.DatabaseRepository
 {
     public class TicketDatabase : ITicketDatabase
-    {        
+    {
         public IEnumerable<string> GetAllEvents()
         {
             string connectionString = "Server=(local)\\SqlExpress; Database=TicketSystem; Trusted_connection=true";
@@ -18,14 +18,14 @@ namespace TicketSystem.DatabaseRepository
                 return connection.Query<string>("SELECT EventName FROM TicketEvents").ToList();
             }
         }
-        
+
         public List<TicketEvent> GetEvents(string query)
         {
             string connectionString = "Server=(local)\\SqlExpress; Database=TicketSystem; Trusted_connection=true";
             using (var connection = new SqlConnection(connectionString))
             {
                 connection.Open();
-                return connection.Query<TicketEvent>("SELECT * FROM TicketEvents WHERE EventName like '%" + query + "%' OR EventHtmlDescription like '%" + query +  "%'").ToList();
+                return connection.Query<TicketEvent>("SELECT * FROM TicketEvents WHERE EventName like '%" + query + "%' OR EventHtmlDescription like '%" + query + "%'").ToList();
             }
         }
 
@@ -42,13 +42,25 @@ namespace TicketSystem.DatabaseRepository
             }
         }
 
+        public TicketEvent EventUpdate(string Name2, ClassLibrary.TicketEvent ticketEvent)
+        {
+            string connectionString = "Server=(local)\\SqlExpress; Database=TicketSystem; Trusted_connection=true";
+            using (var connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                connection.Query("UPDATE TicketEvents SET EventName = @name, " + " EventHtmlDescription = @description " + "WHERE EventName = @name2", new { name = ticketEvent.EventName, description = ticketEvent.EventHtmlDescription, name2 = Name2 });
+                var addedEventQuery = connection.Query<int>("SELECT IDENT_CURRENT ('TicketEvents') AS Current_Identity").First();
+                return connection.Query<TicketEvent>("SELECT * FROM TicketEvents WHERE TicketEventID=@Id", new { Id = addedEventQuery }).First();
+            }
+        }
+
         public Venue VenueAdd(string name, string address, string city, string country)
         {
             string connectionString = "Server=(local)\\SqlExpress; Database=TicketSystem; Trusted_connection=true";
             using (var connection = new SqlConnection(connectionString))
             {
                 connection.Open();
-                connection.Query("insert into Venues([VenueName],[Address],[City],[Country]) values(@Name,@Address, @City, @Country)", new { Name = name, Address= address, City = city, Country = country });
+                connection.Query("insert into Venues([VenueName],[Address],[City],[Country]) values(@Name,@Address, @City, @Country)", new { Name = name, Address = address, City = city, Country = country });
                 var addedVenueQuery = connection.Query<int>("SELECT IDENT_CURRENT ('Venues') AS Current_Identity").First();
                 return connection.Query<Venue>("SELECT * FROM Venues WHERE VenueID=@Id", new { Id = addedVenueQuery }).First();
             }
@@ -60,7 +72,7 @@ namespace TicketSystem.DatabaseRepository
             using (var connection = new SqlConnection(connectionString))
             {
                 connection.Open();
-                connection.Query("insert into TicketEventDates([TicketEventID],[VenueId],[EventStartDateTime]) values(@TicketEventID,@VenueId, @EventStartDateTime)", new { TicketEventID = eventId, VenueId = dateId, EventStartDateTime = date});
+                connection.Query("insert into TicketEventDates([TicketEventID],[VenueId],[EventStartDateTime]) values(@TicketEventID,@VenueId, @EventStartDateTime)", new { TicketEventID = eventId, VenueId = dateId, EventStartDateTime = date });
                 var addedTicketEventDateQuery = connection.Query<int>("SELECT IDENT_CURRENT ('TicketEventDates') AS Current_Identity").First();
                 return connection.Query<TicketEventDate>("SELECT * FROM TicketEventDates WHERE TicketEventDateID=@Id", new { Id = addedTicketEventDateQuery }).First();
             }
@@ -73,7 +85,7 @@ namespace TicketSystem.DatabaseRepository
             using (var connection = new SqlConnection(connectionString))
             {
                 connection.Open();
-                return connection.Query<Venue>("SELECT * FROM Venues WHERE VenueName like '%"+query+"%'").First();
+                return connection.Query<Venue>("SELECT * FROM Venues WHERE VenueName like '%" + query + "%'").First();
             }
         }
 
