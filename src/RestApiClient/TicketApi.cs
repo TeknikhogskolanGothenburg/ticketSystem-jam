@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using TicketSystem.RestApiClient.Model;
+using ClassLibrary;
 
 namespace TicketSystem.RestApiClient
 {
@@ -11,9 +12,17 @@ namespace TicketSystem.RestApiClient
 
         public List<Ticket> TicketGet()
         {
-            var client = new RestClient("http://localhost:18001/");
+            var client = new RestClient("http://localhost:64771/");
             var request = new RestRequest("ticket", Method.GET);
             var response = client.Execute<List<Ticket>>(request);
+            return response.Data;
+        }
+
+        public List<Venue> VenueGet()
+        {
+            var client = new RestClient("http://localhost:60234/api/"); 
+            var request = new RestRequest("venues", Method.GET);
+            var response = client.Execute<List<Venue>>(request);
             return response.Data;
         }
 

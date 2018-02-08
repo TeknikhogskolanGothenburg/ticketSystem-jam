@@ -1,0 +1,14 @@
+﻿@{
+    ViewData["Title"] = "Venues";
+}
+
+@model ClassLibrary.Value;
+
+<h1>Manage your venues here</h1>
+
+
+@foreach (ClassLibrary.Venue v in @Model.Venues)
+{
+    <li>@v.VenueName</li>
+
+}
