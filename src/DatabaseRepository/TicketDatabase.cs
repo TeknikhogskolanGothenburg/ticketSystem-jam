@@ -54,6 +54,15 @@ namespace TicketSystem.DatabaseRepository
             }
         }
 
+        public void DeleteEvent(string nameInput)
+        {
+            using (var connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                connection.Query("DELETE FROM TicketEvents WHERE EventName = @eventName", new { eventName = nameInput });
+            }
+        }
+
         public Venue VenueAdd(string name, string address, string city, string country)
         {
             using (var connection = new SqlConnection(connectionString))
