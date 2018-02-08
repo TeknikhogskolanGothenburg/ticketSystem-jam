@@ -34,7 +34,7 @@ namespace TicketAPI.Controllers
         [HttpPost]
         public ClassLibrary.TicketEvent Post([FromBody]ClassLibrary.TicketEvent ticketEvent)
         {
-            return tdb.EventAdd(ticketEvent.EventName, ticketEvent.EventHtmlDescription);
+            return tdb.EventAdd(ticketEvent);
         }
 
         // PUT: api/TicketEvents/5
