@@ -37,7 +37,7 @@ namespace Admin.Controllers
 
         public IActionResult AddVenue(Venue venue)
         {
-            ticketApi.VenueAdd();
+            ticketApi.VenueAdd(venue);
             return RedirectToAction("Venues", "Venues");
         }
 
