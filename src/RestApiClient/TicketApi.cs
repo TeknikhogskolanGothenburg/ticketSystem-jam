@@ -12,14 +12,14 @@ namespace TicketSystem.RestApiClient
 
         public List<Ticket> TicketGet()
         {
-            var client = new RestClient("http://localhost:64771");
+            var client = new RestClient("http://localhost:50638");
             var request = new RestRequest("ticket", Method.GET);
             var response = client.Execute<List<Ticket>>(request);
             return response.Data;
         }
         public List<TicketEvent> EventGet()
         {
-            var client = new RestClient("http://localhost:49270/api/");
+            var client = new RestClient("http://localhost:50638/api/");
             var request = new RestRequest("TicketEvents", Method.GET);
             var response = client.Execute<List<TicketEvent>>(request);
             return response.Data;
@@ -27,7 +27,7 @@ namespace TicketSystem.RestApiClient
 
         public List<Venue> VenueGet()
         {
-            var client = new RestClient("http://localhost:60234/api/"); 
+            var client = new RestClient("http://localhost:50638/api/"); 
             var request = new RestRequest("venues", Method.GET);
             var response = client.Execute<List<Venue>>(request);
             return response.Data;
@@ -43,7 +43,7 @@ namespace TicketSystem.RestApiClient
 
         public void VenueDelete(int id)
         {
-            var client = new RestClient("http://localhost:60234/api/");
+            var client = new RestClient("http://localhost:50638/api/");
             var request = new RestRequest("venues/{id}", Method.DELETE);
             request.AddUrlSegment("id", id);
             var response = client.Execute(request);
