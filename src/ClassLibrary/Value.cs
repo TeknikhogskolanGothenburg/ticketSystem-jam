@@ -8,7 +8,10 @@ namespace ClassLibrary
     {
         public List<Venue> Venues { get; set; } = new List<Venue>();
 
+        public Venue Venue { get; set; }
+
         public List<TicketEvent> Events  = new List<TicketEvent>();
+
 
     }
 }

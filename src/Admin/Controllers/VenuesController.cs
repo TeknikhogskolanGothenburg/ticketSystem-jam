@@ -13,7 +13,6 @@ namespace Admin.Controllers
     {
         private static Value value;
         private static TicketApi ticketApi;
-        // GET: Venues
 
         public IActionResult Venues()
         {
@@ -38,17 +37,15 @@ namespace Admin.Controllers
 
         public IActionResult AddVenue(Venue venue)
         {
-            
+            ticketApi.VenueAdd();
             return RedirectToAction("Venues", "Venues");
         }
-        //TicketApi a = new TicketApi();
-        //a.VenueDelete(Foo);
-        //    value.Venues = a.VenueGet();
-        //    return View(value);
-
-        //a.VenueDelete(Foo);
-        //        value.Venues = a.VenueGet();
-        //        return View(value);
 
     }
 }
+
+
+
+// Är du från Africa eller?
+
+// - Det Angola inte daj!
