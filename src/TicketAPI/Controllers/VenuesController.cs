@@ -27,7 +27,6 @@ namespace TicketAPI.Controllers
             return venue;
         }
 
-        //test
         // POST: api/Venues
         /// <summary>
         /// Post-method for Administrators to insert Venues to the SQL-database.

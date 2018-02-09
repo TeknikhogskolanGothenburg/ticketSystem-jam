@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using TicketSystem.RestApiClient.Model;
 using ClassLibrary;
+using Newtonsoft.Json;
 
 namespace TicketSystem.RestApiClient
 {
@@ -27,23 +28,33 @@ namespace TicketSystem.RestApiClient
 
         public List<Venue> VenueGet()
         {
-            var client = new RestClient("http://localhost:50638/api/"); 
+            var client = new RestClient("http://localhost:60234/api/"); 
             var request = new RestRequest("venues", Method.GET);
             var response = client.Execute<List<Venue>>(request);
             return response.Data;
         }
 
-        public Venue VenueAdd()
+        public void VenueAdd(Venue venue)
         {
+            var json = JsonConvert.SerializeObject(venue);
             var client = new RestClient("http://localhost:60234/api/");
             var request = new RestRequest("venues", Method.POST);
+            request.AddParameter("application/json", json, ParameterType.RequestBody);
             var response = client.Execute<Venue>(request);
-            return response.Data;
         }
+
+        //public static IRestResponse Create<T>(object objectToUpdate, string apiEndPoint) where T : new()
+        //{
+        //    var json = JsonConvert.SerializeObject(objectToUpdate);
+        //    var request = new RestRequest(apiEndPoint, Method.POST);
+        //    request.AddParameter("text/json", json, ParameterType.RequestBody);
+        //    var response = client.Execute<T>(request);
+        //    return response;
+        //}
 
         public void VenueDelete(int id)
         {
-            var client = new RestClient("http://localhost:50638/api/");
+            var client = new RestClient("http://localhost:60234/api/");
             var request = new RestRequest("venues/{id}", Method.DELETE);
             request.AddUrlSegment("id", id);
             var response = client.Execute(request);
