@@ -9,8 +9,8 @@ namespace TicketAPI.Controllers
     [Route("api/Venues")]
     public class VenuesController : Controller
     {
-
         TicketDatabase tdb = new TicketDatabase();
+
         // GET: api/Venues
         [HttpGet]
         public List<Venue> Get()
