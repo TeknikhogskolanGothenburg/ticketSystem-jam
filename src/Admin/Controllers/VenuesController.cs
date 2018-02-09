@@ -11,23 +11,29 @@ namespace Admin.Controllers
 {
     public class VenuesController : Controller
     {
+        Value value = new Value();
         // GET: Venues
 
-        public IActionResult Venues()
+        public IActionResult Venues(int Foo)
         {
-            Value value = new Value();
             TicketApi a = new TicketApi();
-            value.Venues = a.VenueGet();
-            return View(value);
+            if (Foo == 0)
+            {
+                value.Venues = a.VenueGet();
+                return View(value);
+            }
+            else
+            {
+                a.VenueDelete(Foo);
+                value.Venues = a.VenueGet();
+                return View(value);
+            }
         }
 
-        [HttpPost]
-        public IActionResult DeleteVenue(int Foo)
-        {
-            TicketApi a = new TicketApi();
-            a.VenueDelete(Foo);
-            return View();
-        }
+        //TicketApi a = new TicketApi();
+        //a.VenueDelete(Foo);
+        //    value.Venues = a.VenueGet();
+        //    return View(value);
 
     }
 }
