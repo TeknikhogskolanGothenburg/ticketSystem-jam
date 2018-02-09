@@ -13,48 +13,40 @@ namespace TicketAPI.Controllers
     [Route("api/TicketEventDates")]
     public class TicketEventDatesController : Controller
     {
+        TicketDatabase tdb = new TicketDatabase { };
+
         // GET: api/TicketEventDates
         [HttpGet]
         public IEnumerable<string> Get()
         {
-            return new string[] { "value1", "value2" };
+            return tdb.GetAllEventDates();
         }
 
         // GET: api/TicketEventDates/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public TicketEventDate Get(string id)
         {
-            return "value";
-        }
-        
-        // POST: api/TicketEventDates
-        /// <summary>
-        /// Post-method to link EventId and VenueId with Date.
-        /// </summary>
-        /// <param name="value"></param>
-        [HttpPost]
-        public void Post([FromBody]TicketEventDate value)
-        {
-            TicketDatabase addEventDate = new TicketDatabase();
-            addEventDate.EventDateAdd(value.TicketEventID, value.VenueId, value.EventStartDateTime);
+            return tdb.GetEventDates(id);
+        }        
 
-            // Förslag på inputsträngar. 
-            // Content-Type: application/json           
-            // Postinput  {"TicketEventID":"1", "VenueId":"1", "EventStartDateTime":"2018-05-20"}
-            // Postinput  {"TicketEventID":"2", "VenueId":"1", "EventStartDateTime":"2018-04-10"}
-            // Postinput  {"TicketEventID":"1", "VenueId":"2", "EventStartDateTime":"2018-06-21"}
+        [HttpPost]
+        public TicketEventDate Post([FromBody]TicketEventDate ticketEventDate)
+        {
+            return tdb.EventDatesAdd(ticketEventDate);                      
         }
 
         // PUT: api/TicketEventDates/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
+        public void Put(int id, [FromBody]TicketEventDate ticketEventDate)
         {
+            tdb.EventDatesUpdate(id, ticketEventDate);
         }
         
         // DELETE: api/ApiWithActions/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+            tdb.DeleteEventDates(id);
         }
     }
 }
