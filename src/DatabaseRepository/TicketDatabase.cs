@@ -114,7 +114,7 @@ namespace TicketSystem.DatabaseRepository
             using (var connection = new SqlConnection(connectionString))
             {
                 connection.Open();
-                connection.Query("DELETE FROM Venues WHERE VenueID = @ID", new { ID = id });
+                connection.Query<int>("DELETE FROM Venues WHERE VenueID = @ID", new { ID = id });
             }
         }
 
@@ -128,6 +128,34 @@ namespace TicketSystem.DatabaseRepository
                 connection.Query(queryString, new { TicketEventID = eventId, VenueId = dateId, EventStartDateTime = date });
                 var addedTicketEventDateQuery = connection.Query<int>("SELECT IDENT_CURRENT ('TicketEventDates') AS Current_Identity").First();
                 return connection.Query<TicketEventDate>("SELECT * FROM TicketEventDates WHERE TicketEventDateID=@Id", new { Id = addedTicketEventDateQuery }).First();
+            }
+        }
+
+        //Info to payment provider Methods
+        public Tickets PurchasedTickets(int seatID, int ticketEventId, int transactionId)
+        {
+            using (var connection = new SqlConnection(connectionString))
+            {
+                string queryStringTicket = "insert into Tickets([SeatID]) values(@SeatID)";                
+                connection.Open();
+                connection.Query(queryStringTicket, new { SeatID = seatID});
+                var addedTicketQuery = connection.Query<int>("SELECT IDENT_CURRENT ('Tickets') AS Current_Identity").First();
+
+                return connection.Query<Tickets>("SELECT * FROM Tickets", new { Id = addedTicketQuery }).First();
+               
+            }
+        }
+        public SeatsAtEventDate PurchasedSeats(int seatID, int ticketEventId, int transactionId)
+        {
+            using (var connection = new SqlConnection(connectionString))
+            {                
+                string queryStringSeat = "UPDATE SeatsAtEventDate SET[TicketEventDateID]= @ticketEventId  + WHERE SeatID = @seatID";
+                connection.Open();
+                connection.Query(queryStringSeat, new { SeatID = seatID });
+                var addedSeatsAtEventDateQuery = connection.Query<int>("SELECT IDENT_CURRENT ('SeatsAtEventDate') AS Current_Identity").First();
+
+                return connection.Query<SeatsAtEventDate>("SELECT * FROM SeatsAtEventDate WHERE SeatID=@seatID", new { Id = addedSeatsAtEventDateQuery }).First();
+               
             }
         }
     }
