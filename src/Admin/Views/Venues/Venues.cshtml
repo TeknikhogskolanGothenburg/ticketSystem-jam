@@ -5,27 +5,27 @@
 @model ClassLibrary.Value;
 
 
-
-<h2>Manage your venues here</h2>
-
-
 <h1>@ViewBag.Message</h1>
-<div class="addVenue">
-    <h2>Delete Venue</h2>
+<div class="venueDiv">
+    <h3 style="margin-top:0px">Delete Venue</h3>
+    <hr />
     @using (Html.BeginForm("DeleteVenue", "Venues", FormMethod.Post))
     {
         @Html.DropDownList(
-                    "id",
-                    new SelectList(Model.Venues.Select(x => new { Value = x.VenueId, Text = x.VenueName }),
-                    "Value",
-                    "Text"))
-        <input type="submit" value="Delete" />
+                                        "id",
+                                        new SelectList(Model.Venues.Select(x => new { Value = x.VenueId, Text = x.VenueName }),
+                                        "Value",
+                                        "Text"))
+        
+        <input type="submit" value="Delete" style="background-color:red" />
     }
+    <hr />
 </div>
 
 
-<div class="addVenue">
-    <h2>Add Venue</h2>
+<div class="venueDiv">
+    <h3 style="margin-top:0px">Add Venue</h3>
+    <hr />
     @using (Html.BeginForm("AddVenue", "Venues", FormMethod.Post))
     {
 
@@ -39,9 +39,13 @@
         @Html.TextBoxFor(m => m.Venue.Country, new { @required = true })<br />
         @Html.LabelFor(m => m.Venue.Seats, "Seats")<br />
         @Html.TextBoxFor(m => m.Venue.Seats, new { @required = true })<br />
-
-        <input type="submit" value="Add" style="width:50%" />
+       
+        <input type="submit" value="Add" />
+        <hr />
     }
-    <br />
-
+ 
+</div>
+<div class="venueDiv">
+    <h3 style="margin-top:0px">Edit Venue</h3>
+    <hr />
 </div>
