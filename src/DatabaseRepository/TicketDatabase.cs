@@ -22,13 +22,13 @@ namespace TicketSystem.DatabaseRepository
             }
         }
 
-        public List<TicketEvent> GetEvents(string query)
+        public TicketEvent GetEvents(string query)
         {
             using (var connection = new SqlConnection(connectionString))
             {
                 string queryString = "SELECT * FROM TicketEvents WHERE EventName like '%" + query + "%' OR EventHtmlDescription like '%" + query + "%'";
                 connection.Open();
-                return connection.Query<TicketEvent>(queryString).ToList();
+                return connection.Query<TicketEvent>(queryString).First();
             }
         }
 
@@ -53,7 +53,7 @@ namespace TicketSystem.DatabaseRepository
                 var addedEventQuery = connection.Query<int>("SELECT IDENT_CURRENT ('TicketEvents') AS Current_Identity").First();
                 return connection.Query<TicketEvent>("SELECT * FROM TicketEvents WHERE TicketEventID=@Id", new { Id = addedEventQuery }).First();
             }
-        }        
+        }
 
         public void DeleteEvents(int id)
         {
@@ -89,7 +89,7 @@ namespace TicketSystem.DatabaseRepository
         {
             using (var connection = new SqlConnection(connectionString))
             {
-                string queryString = "insert into Venues([VenueName],[Address],[City],[Country]) values(@Name,@Address, @City, @Country)";
+                string queryString = "insert into Venues(VenueName, Address, City, Country) values(@Name,@Address, @City, @Country)";
                 connection.Open();
                 connection.Query(queryString, new { Name = venue.VenueName, Address = venue.Address, City = venue.City, Country = venue.Country });
                 var addedVenueQuery = connection.Query<int>("SELECT IDENT_CURRENT ('Venues') AS Current_Identity").First();
@@ -119,16 +119,58 @@ namespace TicketSystem.DatabaseRepository
         }
 
         //EventDate Methods
-        public TicketEventDate EventDateAdd(int eventId, int dateId, System.DateTime date)
+        public IEnumerable<string> GetAllEventDates()
+        {
+            using (var connection = new SqlConnection(connectionString))
+            {
+                string queryString = "SELECT * FROM TicketEventDate";
+                connection.Open();
+                return connection.Query<string>(queryString).ToList();
+            }
+        }
+
+        public TicketEventDate GetEventDates(string query)
+        {
+            using (var connection = new SqlConnection(connectionString))
+            {
+                string queryString = "SELECT * FROM TicketEventDates WHERE TicketEventDateID LIKE '%" + query + "%'";
+                connection.Open();
+                return connection.Query<TicketEventDate>(queryString).First();
+            }
+        }
+
+        public TicketEventDate EventDatesAdd(TicketEventDate ticketEventDate)
         {
             using (var connection = new SqlConnection(connectionString))
             {
                 string queryString = "insert into TicketEventDates([TicketEventID],[VenueId],[EventStartDateTime]) values(@TicketEventID,@VenueId, @EventStartDateTime)";
                 connection.Open();
-                connection.Query(queryString, new { TicketEventID = eventId, VenueId = dateId, EventStartDateTime = date });
+                connection.Query(queryString, new { TicketEventID = ticketEventDate.TicketEventID, VenueId = ticketEventDate.VenueId, EventStartDateTime = ticketEventDate.EventStartDateTime });
                 var addedTicketEventDateQuery = connection.Query<int>("SELECT IDENT_CURRENT ('TicketEventDates') AS Current_Identity").First();
                 return connection.Query<TicketEventDate>("SELECT * FROM TicketEventDates WHERE TicketEventDateID=@Id", new { Id = addedTicketEventDateQuery }).First();
             }
         }
+
+        public TicketEventDate EventDatesUpdate(int id, TicketEventDate ticketEventDate)
+        {
+            using (var connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                connection.Query("UPDATE TicketEventDate SET TicketEventID = @ticketEventID, " + "VenueId = @venueID, " + "EventStartDateTime = @eventStartDateTime " + "WHERE TicketEventDateID = @ID",
+                    new { ticketEventID = ticketEventDate.TicketEventID, venueID = ticketEventDate.VenueId, eventStartDateTime = ticketEventDate.EventStartDateTime, ID = id });
+                return connection.Query<TicketEventDate>("SELECT * FROM TicketEventDates WHERE TicketEventDateID=@Id", new { Id = id }).First();
+            }
+        }
+
+        public void DeleteEventDates(int id)
+        {
+            using (var connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                connection.Query("DELETE FROM TicketEventDate WHERE TicketEventID = @ID", new { ID = id });
+            }
+        }
+
     }
 }
+
