@@ -115,8 +115,7 @@ namespace TicketSystem.DatabaseRepository
             {
                 connection.Open();
                 connection.Query("DELETE FROM Venues WHERE VenueID = @ID", new { ID = id });
-<<<<<<< HEAD
-=======
+
             }
         }
 
@@ -130,7 +129,6 @@ namespace TicketSystem.DatabaseRepository
                 connection.Query(queryString, new { TicketEventID = eventId, VenueId = dateId, EventStartDateTime = date });
                 var addedTicketEventDateQuery = connection.Query<int>("SELECT IDENT_CURRENT ('TicketEventDates') AS Current_Identity").First();
                 return connection.Query<TicketEventDate>("SELECT * FROM TicketEventDates WHERE TicketEventDateID=@Id", new { Id = addedTicketEventDateQuery }).First();
->>>>>>> upstream/master
             }
         }
     }
