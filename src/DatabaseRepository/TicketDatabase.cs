@@ -115,6 +115,7 @@ namespace TicketSystem.DatabaseRepository
             {
                 connection.Open();
                 connection.Query("DELETE FROM Venues WHERE VenueID = @ID", new { ID = id });
+
             }
         }
 
