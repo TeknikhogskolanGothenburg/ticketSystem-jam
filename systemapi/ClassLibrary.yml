@@ -4,8 +4,10 @@ items:
   commentId: N:ClassLibrary
   id: ClassLibrary
   children:
+  - ClassLibrary.AllModels
   - ClassLibrary.TicketEvent
   - ClassLibrary.TicketEventDate
+  - ClassLibrary.Value
   - ClassLibrary.Venue
   langs:
   - csharp
@@ -17,6 +19,12 @@ items:
   assemblies:
   - ClassLibrary
 references:
+- uid: ClassLibrary.AllModels
+  commentId: T:ClassLibrary.AllModels
+  isExternal: false
+  name: AllModels
+  nameWithType: AllModels
+  fullName: ClassLibrary.AllModels
 - uid: ClassLibrary.TicketEvent
   commentId: T:ClassLibrary.TicketEvent
   parent: ClassLibrary
@@ -26,10 +34,18 @@ references:
   fullName: ClassLibrary.TicketEvent
 - uid: ClassLibrary.TicketEventDate
   commentId: T:ClassLibrary.TicketEventDate
+  parent: ClassLibrary
   isExternal: false
   name: TicketEventDate
   nameWithType: TicketEventDate
   fullName: ClassLibrary.TicketEventDate
+- uid: ClassLibrary.Value
+  commentId: T:ClassLibrary.Value
+  parent: ClassLibrary
+  isExternal: false
+  name: Value
+  nameWithType: Value
+  fullName: ClassLibrary.Value
 - uid: ClassLibrary.Venue
   commentId: T:ClassLibrary.Venue
   parent: ClassLibrary

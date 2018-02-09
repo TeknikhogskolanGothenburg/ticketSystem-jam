@@ -1,32 +1,32 @@
 ### YamlMime:ManagedReference
 items:
-- uid: TicketAPI.Startup
-  commentId: T:TicketAPI.Startup
+- uid: Admin.Startup
+  commentId: T:Admin.Startup
   id: Startup
-  parent: TicketAPI
+  parent: Admin
   children:
-  - TicketAPI.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)
-  - TicketAPI.Startup.Configuration
-  - TicketAPI.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IHostingEnvironment)
-  - TicketAPI.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+  - Admin.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)
+  - Admin.Startup.Configuration
+  - Admin.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IHostingEnvironment)
+  - Admin.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)
   langs:
   - csharp
   - vb
   name: Startup
   nameWithType: Startup
-  fullName: TicketAPI.Startup
+  fullName: Admin.Startup
   type: Class
   source:
     remote:
-      path: src/TicketAPI/Startup.cs
+      path: src/Admin/Startup.cs
       branch: master
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: Startup
-    path: src/TicketAPI/Startup.cs
-    startLine: 13
+    path: src/Admin/Startup.cs
+    startLine: 11
   assemblies:
-  - TicketAPI
-  namespace: TicketAPI
+  - Admin
+  namespace: Admin
   syntax:
     content: public class Startup
     content.vb: Public Class Startup
@@ -46,129 +46,129 @@ items:
   modifiers.vb:
   - Public
   - Class
-- uid: TicketAPI.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)
-  commentId: M:TicketAPI.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)
+- uid: Admin.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)
+  commentId: M:Admin.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)
   id: '#ctor(Microsoft.Extensions.Configuration.IConfiguration)'
-  parent: TicketAPI.Startup
+  parent: Admin.Startup
   langs:
   - csharp
   - vb
   name: Startup(IConfiguration)
   nameWithType: Startup.Startup(IConfiguration)
-  fullName: TicketAPI.Startup.Startup(Microsoft.Extensions.Configuration.IConfiguration)
+  fullName: Admin.Startup.Startup(Microsoft.Extensions.Configuration.IConfiguration)
   type: Constructor
   source:
     remote:
-      path: src/TicketAPI/Startup.cs
+      path: src/Admin/Startup.cs
       branch: master
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: .ctor
-    path: src/TicketAPI/Startup.cs
-    startLine: 15
+    path: src/Admin/Startup.cs
+    startLine: 13
   assemblies:
-  - TicketAPI
-  namespace: TicketAPI
+  - Admin
+  namespace: Admin
   syntax:
     content: public Startup(IConfiguration configuration)
     parameters:
     - id: configuration
       type: Microsoft.Extensions.Configuration.IConfiguration
     content.vb: Public Sub New(configuration As IConfiguration)
-  overload: TicketAPI.Startup.#ctor*
+  overload: Admin.Startup.#ctor*
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
-- uid: TicketAPI.Startup.Configuration
-  commentId: P:TicketAPI.Startup.Configuration
+- uid: Admin.Startup.Configuration
+  commentId: P:Admin.Startup.Configuration
   id: Configuration
-  parent: TicketAPI.Startup
+  parent: Admin.Startup
   langs:
   - csharp
   - vb
   name: Configuration
   nameWithType: Startup.Configuration
-  fullName: TicketAPI.Startup.Configuration
+  fullName: Admin.Startup.Configuration
   type: Property
   source:
     remote:
-      path: src/TicketAPI/Startup.cs
+      path: src/Admin/Startup.cs
       branch: master
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: Configuration
-    path: src/TicketAPI/Startup.cs
-    startLine: 20
+    path: src/Admin/Startup.cs
+    startLine: 18
   assemblies:
-  - TicketAPI
-  namespace: TicketAPI
+  - Admin
+  namespace: Admin
   syntax:
     content: public IConfiguration Configuration { get; }
     parameters: []
     return:
       type: Microsoft.Extensions.Configuration.IConfiguration
     content.vb: Public ReadOnly Property Configuration As IConfiguration
-  overload: TicketAPI.Startup.Configuration*
+  overload: Admin.Startup.Configuration*
   modifiers.csharp:
   - public
   - get
   modifiers.vb:
   - Public
   - ReadOnly
-- uid: TicketAPI.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)
-  commentId: M:TicketAPI.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+- uid: Admin.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+  commentId: M:Admin.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)
   id: ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)
-  parent: TicketAPI.Startup
+  parent: Admin.Startup
   langs:
   - csharp
   - vb
   name: ConfigureServices(IServiceCollection)
   nameWithType: Startup.ConfigureServices(IServiceCollection)
-  fullName: TicketAPI.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+  fullName: Admin.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)
   type: Method
   source:
     remote:
-      path: src/TicketAPI/Startup.cs
+      path: src/Admin/Startup.cs
       branch: master
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: ConfigureServices
-    path: src/TicketAPI/Startup.cs
-    startLine: 23
+    path: src/Admin/Startup.cs
+    startLine: 21
   assemblies:
-  - TicketAPI
-  namespace: TicketAPI
+  - Admin
+  namespace: Admin
   syntax:
     content: public void ConfigureServices(IServiceCollection services)
     parameters:
     - id: services
       type: Microsoft.Extensions.DependencyInjection.IServiceCollection
     content.vb: Public Sub ConfigureServices(services As IServiceCollection)
-  overload: TicketAPI.Startup.ConfigureServices*
+  overload: Admin.Startup.ConfigureServices*
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
-- uid: TicketAPI.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IHostingEnvironment)
-  commentId: M:TicketAPI.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IHostingEnvironment)
+- uid: Admin.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IHostingEnvironment)
+  commentId: M:Admin.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IHostingEnvironment)
   id: Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IHostingEnvironment)
-  parent: TicketAPI.Startup
+  parent: Admin.Startup
   langs:
   - csharp
   - vb
   name: Configure(IApplicationBuilder, IHostingEnvironment)
   nameWithType: Startup.Configure(IApplicationBuilder, IHostingEnvironment)
-  fullName: TicketAPI.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder, Microsoft.AspNetCore.Hosting.IHostingEnvironment)
+  fullName: Admin.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder, Microsoft.AspNetCore.Hosting.IHostingEnvironment)
   type: Method
   source:
     remote:
-      path: src/TicketAPI/Startup.cs
+      path: src/Admin/Startup.cs
       branch: master
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: Configure
-    path: src/TicketAPI/Startup.cs
-    startLine: 29
+    path: src/Admin/Startup.cs
+    startLine: 27
   assemblies:
-  - TicketAPI
-  namespace: TicketAPI
+  - Admin
+  namespace: Admin
   syntax:
     content: public void Configure(IApplicationBuilder app, IHostingEnvironment env)
     parameters:
@@ -177,18 +177,18 @@ items:
     - id: env
       type: Microsoft.AspNetCore.Hosting.IHostingEnvironment
     content.vb: Public Sub Configure(app As IApplicationBuilder, env As IHostingEnvironment)
-  overload: TicketAPI.Startup.Configure*
+  overload: Admin.Startup.Configure*
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
 references:
-- uid: TicketAPI
-  commentId: N:TicketAPI
+- uid: Admin
+  commentId: N:Admin
   isExternal: false
-  name: TicketAPI
-  nameWithType: TicketAPI
-  fullName: TicketAPI
+  name: Admin
+  nameWithType: Admin
+  fullName: Admin
 - uid: System.Object
   commentId: T:System.Object
   parent: System
@@ -481,12 +481,12 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: TicketAPI.Startup.#ctor*
-  commentId: Overload:TicketAPI.Startup.#ctor
+- uid: Admin.Startup.#ctor*
+  commentId: Overload:Admin.Startup.#ctor
   isExternal: false
   name: Startup
   nameWithType: Startup.Startup
-  fullName: TicketAPI.Startup.Startup
+  fullName: Admin.Startup.Startup
 - uid: Microsoft.Extensions.Configuration.IConfiguration
   commentId: T:Microsoft.Extensions.Configuration.IConfiguration
   parent: Microsoft.Extensions.Configuration
@@ -500,18 +500,18 @@ references:
   name: Microsoft.Extensions.Configuration
   nameWithType: Microsoft.Extensions.Configuration
   fullName: Microsoft.Extensions.Configuration
-- uid: TicketAPI.Startup.Configuration*
-  commentId: Overload:TicketAPI.Startup.Configuration
+- uid: Admin.Startup.Configuration*
+  commentId: Overload:Admin.Startup.Configuration
   isExternal: false
   name: Configuration
   nameWithType: Startup.Configuration
-  fullName: TicketAPI.Startup.Configuration
-- uid: TicketAPI.Startup.ConfigureServices*
-  commentId: Overload:TicketAPI.Startup.ConfigureServices
+  fullName: Admin.Startup.Configuration
+- uid: Admin.Startup.ConfigureServices*
+  commentId: Overload:Admin.Startup.ConfigureServices
   isExternal: false
   name: ConfigureServices
   nameWithType: Startup.ConfigureServices
-  fullName: TicketAPI.Startup.ConfigureServices
+  fullName: Admin.Startup.ConfigureServices
 - uid: Microsoft.Extensions.DependencyInjection.IServiceCollection
   commentId: T:Microsoft.Extensions.DependencyInjection.IServiceCollection
   parent: Microsoft.Extensions.DependencyInjection
@@ -525,12 +525,12 @@ references:
   name: Microsoft.Extensions.DependencyInjection
   nameWithType: Microsoft.Extensions.DependencyInjection
   fullName: Microsoft.Extensions.DependencyInjection
-- uid: TicketAPI.Startup.Configure*
-  commentId: Overload:TicketAPI.Startup.Configure
+- uid: Admin.Startup.Configure*
+  commentId: Overload:Admin.Startup.Configure
   isExternal: false
   name: Configure
   nameWithType: Startup.Configure
-  fullName: TicketAPI.Startup.Configure
+  fullName: Admin.Startup.Configure
 - uid: Microsoft.AspNetCore.Builder.IApplicationBuilder
   commentId: T:Microsoft.AspNetCore.Builder.IApplicationBuilder
   parent: Microsoft.AspNetCore.Builder

@@ -15,15 +15,15 @@ namespace TicketAPI.Controllers
         [HttpGet]
         public List<Venue> Get()
         {
-            List<Venue> values = tdb.VenuesFindAll();
+            List<Venue> values = tdb.GetAllVenues();
             return values;
         }
 
         // GET: api/Venues/Arenans namn
-        [HttpGet("{id}")]
-        public Venue Get(string id)
+        [HttpGet("{venueName}")]
+        public Venue Get(string venueName)
         {
-            Venue venue = tdb.VenuesFind(id);
+            Venue venue = tdb.GetVenues(venueName);
             return venue;
         }
 
@@ -34,24 +34,18 @@ namespace TicketAPI.Controllers
         /// </summary>
         /// <param name="values"></param>
         [HttpPost]
-        public void Post([FromBody]Venue values)
+        public void Post([FromBody]Venue venue)
         {
-            tdb.VenueAdd(values.VenueName, values.Address, values.City, values.Country);
-
-            {
-                TicketDatabase addVenue = new TicketDatabase();
-                addVenue.VenueAdd(values.VenueName, values.Address, values.City, values.Country);
-            }
-
+            tdb.VenuesAdd(venue);
         }
 
         // PUT: api/Venues/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
+        [HttpPut("{venueName}")]
+        public void Put(string venueName, [FromBody]ClassLibrary.Venue venue)
         {
-
+            tdb.VenuesUpdate(venueName, venue);
         }
-        
+
         // DELETE: api/ApiWithActions/5
         [HttpDelete("{id}")]
         public void Delete(int id)

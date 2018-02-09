@@ -19,23 +19,28 @@ items:
   type: Class
   source:
     remote:
-      path: src/DatabaseRepository/Model/Venue.cs
+      path: src/ClassLibrary/Venue.cs
       branch: master
-      repo: https://github.com/skjohansen/AssignmentTicketSystem.git
+      repo: https://github.com/agngus/ticketSystem-jam.git
     id: Venue
-    path: C:\Users\Martin\source\repos\ticketSystem-jam\src\ClassLibrary\Venue.cs
+    path: src/ClassLibrary/Venue.cs
     startLine: 6
   assemblies:
   - ClassLibrary
   namespace: ClassLibrary
   syntax:
-    content: 'public class Venue : object'
-    content.vb: >-
-      Public Class Venue
-
-          Inherits Object
+    content: public class Venue
+    content.vb: Public Class Venue
   inheritance:
   - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
   modifiers.csharp:
   - public
   - class
@@ -55,11 +60,11 @@ items:
   type: Property
   source:
     remote:
-      path: src/DatabaseRepository/Model/Venue.cs
+      path: src/ClassLibrary/Venue.cs
       branch: master
-      repo: https://github.com/skjohansen/AssignmentTicketSystem.git
+      repo: https://github.com/agngus/ticketSystem-jam.git
     id: VenueId
-    path: C:\Users\Martin\source\repos\ticketSystem-jam\src\ClassLibrary\Venue.cs
+    path: src/ClassLibrary/Venue.cs
     startLine: 8
   assemblies:
   - ClassLibrary
@@ -90,11 +95,11 @@ items:
   type: Property
   source:
     remote:
-      path: src/DatabaseRepository/Model/Venue.cs
+      path: src/ClassLibrary/Venue.cs
       branch: master
-      repo: https://github.com/skjohansen/AssignmentTicketSystem.git
+      repo: https://github.com/agngus/ticketSystem-jam.git
     id: VenueName
-    path: C:\Users\Martin\source\repos\ticketSystem-jam\src\ClassLibrary\Venue.cs
+    path: src/ClassLibrary/Venue.cs
     startLine: 9
   assemblies:
   - ClassLibrary
@@ -125,11 +130,11 @@ items:
   type: Property
   source:
     remote:
-      path: src/DatabaseRepository/Model/Venue.cs
+      path: src/ClassLibrary/Venue.cs
       branch: master
-      repo: https://github.com/skjohansen/AssignmentTicketSystem.git
+      repo: https://github.com/agngus/ticketSystem-jam.git
     id: Address
-    path: C:\Users\Martin\source\repos\ticketSystem-jam\src\ClassLibrary\Venue.cs
+    path: src/ClassLibrary/Venue.cs
     startLine: 10
   assemblies:
   - ClassLibrary
@@ -160,11 +165,11 @@ items:
   type: Property
   source:
     remote:
-      path: src/DatabaseRepository/Model/Venue.cs
+      path: src/ClassLibrary/Venue.cs
       branch: master
-      repo: https://github.com/skjohansen/AssignmentTicketSystem.git
+      repo: https://github.com/agngus/ticketSystem-jam.git
     id: City
-    path: C:\Users\Martin\source\repos\ticketSystem-jam\src\ClassLibrary\Venue.cs
+    path: src/ClassLibrary/Venue.cs
     startLine: 11
   assemblies:
   - ClassLibrary
@@ -195,11 +200,11 @@ items:
   type: Property
   source:
     remote:
-      path: src/DatabaseRepository/Model/Venue.cs
+      path: src/ClassLibrary/Venue.cs
       branch: master
-      repo: https://github.com/skjohansen/AssignmentTicketSystem.git
+      repo: https://github.com/agngus/ticketSystem-jam.git
     id: Country
-    path: C:\Users\Martin\source\repos\ticketSystem-jam\src\ClassLibrary\Venue.cs
+    path: src/ClassLibrary/Venue.cs
     startLine: 12
   assemblies:
   - ClassLibrary
@@ -221,9 +226,9 @@ references:
 - uid: ClassLibrary
   commentId: N:ClassLibrary
   isExternal: false
-  name: TicketSystem.DatabaseRepository.Model
-  nameWithType: TicketSystem.DatabaseRepository.Model
-  fullName: TicketSystem.DatabaseRepository.Model
+  name: ClassLibrary
+  nameWithType: ClassLibrary
+  fullName: ClassLibrary
 - uid: System.Object
   commentId: T:System.Object
   parent: System
@@ -516,13 +521,15 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: TicketSystem.DatabaseRepository.Model.Venue.VenueId*
-  commentId: Overload:TicketSystem.DatabaseRepository.Model.Venue.VenueId
+- uid: ClassLibrary.Venue.VenueId*
+  commentId: Overload:ClassLibrary.Venue.VenueId
   isExternal: false
   name: VenueId
   nameWithType: Venue.VenueId
   fullName: ClassLibrary.Venue.VenueId
 - uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
   isExternal: true
   name: Int32
   nameWithType: Int32
@@ -534,6 +541,8 @@ references:
   nameWithType: Venue.VenueName
   fullName: ClassLibrary.Venue.VenueName
 - uid: System.String
+  commentId: T:System.String
+  parent: System
   isExternal: true
   name: String
   nameWithType: String

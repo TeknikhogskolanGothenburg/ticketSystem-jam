@@ -8,7 +8,7 @@ items:
   - TicketAPI.Controllers.TicketEventDatesController.Delete(System.Int32)
   - TicketAPI.Controllers.TicketEventDatesController.Get
   - TicketAPI.Controllers.TicketEventDatesController.Get(System.Int32)
-  - TicketAPI.Controllers.TicketEventDatesController.Post(System.String)
+  - TicketAPI.Controllers.TicketEventDatesController.Post(ClassLibrary.TicketEventDate)
   - TicketAPI.Controllers.TicketEventDatesController.Put(System.Int32,System.String)
   langs:
   - csharp
@@ -18,9 +18,13 @@ items:
   fullName: TicketAPI.Controllers.TicketEventDatesController
   type: Class
   source:
+    remote:
+      path: src/TicketAPI/Controllers/TicketEventDatesController.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
     id: TicketEventDatesController
-    path: C:\Users\Martin\source\repos\ticketSystem-jam\src\TicketAPI\Controllers\TicketEventDatesController.cs
-    startLine: 9
+    path: src/TicketAPI/Controllers/TicketEventDatesController.cs
+    startLine: 11
   assemblies:
   - TicketAPI
   namespace: TicketAPI.Controllers
@@ -37,9 +41,7 @@ items:
       <Route("api/TicketEventDates")>
 
       Public Class TicketEventDatesController
-
           Inherits Controller
-
           Implements IActionFilter, IAsyncActionFilter, IFilterMetadata, IDisposable
   inheritance:
   - System.Object
@@ -241,9 +243,13 @@ items:
   fullName: TicketAPI.Controllers.TicketEventDatesController.Get()
   type: Method
   source:
+    remote:
+      path: src/TicketAPI/Controllers/TicketEventDatesController.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
     id: Get
-    path: C:\Users\Martin\source\repos\ticketSystem-jam\src\TicketAPI\Controllers\TicketEventDatesController.cs
-    startLine: 14
+    path: src/TicketAPI/Controllers/TicketEventDatesController.cs
+    startLine: 16
   assemblies:
   - TicketAPI
   namespace: TicketAPI.Controllers
@@ -279,9 +285,13 @@ items:
   fullName: TicketAPI.Controllers.TicketEventDatesController.Get(System.Int32)
   type: Method
   source:
+    remote:
+      path: src/TicketAPI/Controllers/TicketEventDatesController.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
     id: Get
-    path: C:\Users\Martin\source\repos\ticketSystem-jam\src\TicketAPI\Controllers\TicketEventDatesController.cs
-    startLine: 21
+    path: src/TicketAPI/Controllers/TicketEventDatesController.cs
+    startLine: 23
   assemblies:
   - TicketAPI
   namespace: TicketAPI.Controllers
@@ -310,32 +320,39 @@ items:
   - public
   modifiers.vb:
   - Public
-- uid: TicketAPI.Controllers.TicketEventDatesController.Post(System.String)
-  commentId: M:TicketAPI.Controllers.TicketEventDatesController.Post(System.String)
-  id: Post(System.String)
+- uid: TicketAPI.Controllers.TicketEventDatesController.Post(ClassLibrary.TicketEventDate)
+  commentId: M:TicketAPI.Controllers.TicketEventDatesController.Post(ClassLibrary.TicketEventDate)
+  id: Post(ClassLibrary.TicketEventDate)
   parent: TicketAPI.Controllers.TicketEventDatesController
   langs:
   - csharp
   - vb
-  name: Post(String)
-  nameWithType: TicketEventDatesController.Post(String)
-  fullName: TicketAPI.Controllers.TicketEventDatesController.Post(System.String)
+  name: Post(TicketEventDate)
+  nameWithType: TicketEventDatesController.Post(TicketEventDate)
+  fullName: TicketAPI.Controllers.TicketEventDatesController.Post(ClassLibrary.TicketEventDate)
   type: Method
   source:
+    remote:
+      path: src/TicketAPI/Controllers/TicketEventDatesController.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
     id: Post
-    path: C:\Users\Martin\source\repos\ticketSystem-jam\src\TicketAPI\Controllers\TicketEventDatesController.cs
-    startLine: 28
+    path: src/TicketAPI/Controllers/TicketEventDatesController.cs
+    startLine: 34
   assemblies:
   - TicketAPI
   namespace: TicketAPI.Controllers
+  summary: "\nPost-method to link EventId and VenueId with Date.\n"
+  example: []
   syntax:
     content: >-
       [HttpPost]
 
-      public void Post([FromBody] string value)
+      public void Post([FromBody] TicketEventDate value)
     parameters:
     - id: value
-      type: System.String
+      type: ClassLibrary.TicketEventDate
+      description: ''
       attributes:
       - type: Microsoft.AspNetCore.Mvc.FromBodyAttribute
         ctor: Microsoft.AspNetCore.Mvc.FromBodyAttribute.#ctor
@@ -343,7 +360,7 @@ items:
     content.vb: >-
       <HttpPost>
 
-      Public Sub Post(value As String)
+      Public Sub Post(value As TicketEventDate)
   overload: TicketAPI.Controllers.TicketEventDatesController.Post*
   attributes:
   - type: Microsoft.AspNetCore.Mvc.HttpPostAttribute
@@ -365,9 +382,13 @@ items:
   fullName: TicketAPI.Controllers.TicketEventDatesController.Put(System.Int32, System.String)
   type: Method
   source:
+    remote:
+      path: src/TicketAPI/Controllers/TicketEventDatesController.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
     id: Put
-    path: C:\Users\Martin\source\repos\ticketSystem-jam\src\TicketAPI\Controllers\TicketEventDatesController.cs
-    startLine: 34
+    path: src/TicketAPI/Controllers/TicketEventDatesController.cs
+    startLine: 48
   assemblies:
   - TicketAPI
   namespace: TicketAPI.Controllers
@@ -412,9 +433,13 @@ items:
   fullName: TicketAPI.Controllers.TicketEventDatesController.Delete(System.Int32)
   type: Method
   source:
+    remote:
+      path: src/TicketAPI/Controllers/TicketEventDatesController.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
     id: Delete
-    path: C:\Users\Martin\source\repos\ticketSystem-jam\src\TicketAPI\Controllers\TicketEventDatesController.cs
-    startLine: 40
+    path: src/TicketAPI/Controllers/TicketEventDatesController.cs
+    startLine: 54
   assemblies:
   - TicketAPI
   namespace: TicketAPI.Controllers
@@ -10633,6 +10658,19 @@ references:
   name: Post
   nameWithType: TicketEventDatesController.Post
   fullName: TicketAPI.Controllers.TicketEventDatesController.Post
+- uid: ClassLibrary.TicketEventDate
+  commentId: T:ClassLibrary.TicketEventDate
+  parent: ClassLibrary
+  isExternal: false
+  name: TicketEventDate
+  nameWithType: TicketEventDate
+  fullName: ClassLibrary.TicketEventDate
+- uid: ClassLibrary
+  commentId: N:ClassLibrary
+  isExternal: false
+  name: ClassLibrary
+  nameWithType: ClassLibrary
+  fullName: ClassLibrary
 - uid: TicketAPI.Controllers.TicketEventDatesController.Put*
   commentId: Overload:TicketAPI.Controllers.TicketEventDatesController.Put
   isExternal: false

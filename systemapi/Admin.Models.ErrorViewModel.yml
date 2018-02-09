@@ -1,35 +1,33 @@
 ### YamlMime:ManagedReference
 items:
-- uid: TicketAPI.Startup
-  commentId: T:TicketAPI.Startup
-  id: Startup
-  parent: TicketAPI
+- uid: Admin.Models.ErrorViewModel
+  commentId: T:Admin.Models.ErrorViewModel
+  id: ErrorViewModel
+  parent: Admin.Models
   children:
-  - TicketAPI.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)
-  - TicketAPI.Startup.Configuration
-  - TicketAPI.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IHostingEnvironment)
-  - TicketAPI.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+  - Admin.Models.ErrorViewModel.RequestId
+  - Admin.Models.ErrorViewModel.ShowRequestId
   langs:
   - csharp
   - vb
-  name: Startup
-  nameWithType: Startup
-  fullName: TicketAPI.Startup
+  name: ErrorViewModel
+  nameWithType: ErrorViewModel
+  fullName: Admin.Models.ErrorViewModel
   type: Class
   source:
     remote:
-      path: src/TicketAPI/Startup.cs
+      path: src/Admin/Models/ErrorViewModel.cs
       branch: master
       repo: https://github.com/agngus/ticketSystem-jam.git
-    id: Startup
-    path: src/TicketAPI/Startup.cs
-    startLine: 13
+    id: ErrorViewModel
+    path: src/Admin/Models/ErrorViewModel.cs
+    startLine: 4
   assemblies:
-  - TicketAPI
-  namespace: TicketAPI
+  - Admin
+  namespace: Admin.Models
   syntax:
-    content: public class Startup
-    content.vb: Public Class Startup
+    content: public class ErrorViewModel
+    content.vb: Public Class ErrorViewModel
   inheritance:
   - System.Object
   inheritedMembers:
@@ -46,149 +44,83 @@ items:
   modifiers.vb:
   - Public
   - Class
-- uid: TicketAPI.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)
-  commentId: M:TicketAPI.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)
-  id: '#ctor(Microsoft.Extensions.Configuration.IConfiguration)'
-  parent: TicketAPI.Startup
+- uid: Admin.Models.ErrorViewModel.RequestId
+  commentId: P:Admin.Models.ErrorViewModel.RequestId
+  id: RequestId
+  parent: Admin.Models.ErrorViewModel
   langs:
   - csharp
   - vb
-  name: Startup(IConfiguration)
-  nameWithType: Startup.Startup(IConfiguration)
-  fullName: TicketAPI.Startup.Startup(Microsoft.Extensions.Configuration.IConfiguration)
-  type: Constructor
-  source:
-    remote:
-      path: src/TicketAPI/Startup.cs
-      branch: master
-      repo: https://github.com/agngus/ticketSystem-jam.git
-    id: .ctor
-    path: src/TicketAPI/Startup.cs
-    startLine: 15
-  assemblies:
-  - TicketAPI
-  namespace: TicketAPI
-  syntax:
-    content: public Startup(IConfiguration configuration)
-    parameters:
-    - id: configuration
-      type: Microsoft.Extensions.Configuration.IConfiguration
-    content.vb: Public Sub New(configuration As IConfiguration)
-  overload: TicketAPI.Startup.#ctor*
-  modifiers.csharp:
-  - public
-  modifiers.vb:
-  - Public
-- uid: TicketAPI.Startup.Configuration
-  commentId: P:TicketAPI.Startup.Configuration
-  id: Configuration
-  parent: TicketAPI.Startup
-  langs:
-  - csharp
-  - vb
-  name: Configuration
-  nameWithType: Startup.Configuration
-  fullName: TicketAPI.Startup.Configuration
+  name: RequestId
+  nameWithType: ErrorViewModel.RequestId
+  fullName: Admin.Models.ErrorViewModel.RequestId
   type: Property
   source:
     remote:
-      path: src/TicketAPI/Startup.cs
+      path: src/Admin/Models/ErrorViewModel.cs
       branch: master
       repo: https://github.com/agngus/ticketSystem-jam.git
-    id: Configuration
-    path: src/TicketAPI/Startup.cs
-    startLine: 20
+    id: RequestId
+    path: src/Admin/Models/ErrorViewModel.cs
+    startLine: 6
   assemblies:
-  - TicketAPI
-  namespace: TicketAPI
+  - Admin
+  namespace: Admin.Models
   syntax:
-    content: public IConfiguration Configuration { get; }
+    content: public string RequestId { get; set; }
     parameters: []
     return:
-      type: Microsoft.Extensions.Configuration.IConfiguration
-    content.vb: Public ReadOnly Property Configuration As IConfiguration
-  overload: TicketAPI.Startup.Configuration*
+      type: System.String
+    content.vb: Public Property RequestId As String
+  overload: Admin.Models.ErrorViewModel.RequestId*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Admin.Models.ErrorViewModel.ShowRequestId
+  commentId: P:Admin.Models.ErrorViewModel.ShowRequestId
+  id: ShowRequestId
+  parent: Admin.Models.ErrorViewModel
+  langs:
+  - csharp
+  - vb
+  name: ShowRequestId
+  nameWithType: ErrorViewModel.ShowRequestId
+  fullName: Admin.Models.ErrorViewModel.ShowRequestId
+  type: Property
+  source:
+    remote:
+      path: src/Admin/Models/ErrorViewModel.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
+    id: ShowRequestId
+    path: src/Admin/Models/ErrorViewModel.cs
+    startLine: 8
+  assemblies:
+  - Admin
+  namespace: Admin.Models
+  syntax:
+    content: public bool ShowRequestId { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly Property ShowRequestId As Boolean
+  overload: Admin.Models.ErrorViewModel.ShowRequestId*
   modifiers.csharp:
   - public
   - get
   modifiers.vb:
   - Public
   - ReadOnly
-- uid: TicketAPI.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)
-  commentId: M:TicketAPI.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)
-  id: ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)
-  parent: TicketAPI.Startup
-  langs:
-  - csharp
-  - vb
-  name: ConfigureServices(IServiceCollection)
-  nameWithType: Startup.ConfigureServices(IServiceCollection)
-  fullName: TicketAPI.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)
-  type: Method
-  source:
-    remote:
-      path: src/TicketAPI/Startup.cs
-      branch: master
-      repo: https://github.com/agngus/ticketSystem-jam.git
-    id: ConfigureServices
-    path: src/TicketAPI/Startup.cs
-    startLine: 23
-  assemblies:
-  - TicketAPI
-  namespace: TicketAPI
-  syntax:
-    content: public void ConfigureServices(IServiceCollection services)
-    parameters:
-    - id: services
-      type: Microsoft.Extensions.DependencyInjection.IServiceCollection
-    content.vb: Public Sub ConfigureServices(services As IServiceCollection)
-  overload: TicketAPI.Startup.ConfigureServices*
-  modifiers.csharp:
-  - public
-  modifiers.vb:
-  - Public
-- uid: TicketAPI.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IHostingEnvironment)
-  commentId: M:TicketAPI.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IHostingEnvironment)
-  id: Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IHostingEnvironment)
-  parent: TicketAPI.Startup
-  langs:
-  - csharp
-  - vb
-  name: Configure(IApplicationBuilder, IHostingEnvironment)
-  nameWithType: Startup.Configure(IApplicationBuilder, IHostingEnvironment)
-  fullName: TicketAPI.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder, Microsoft.AspNetCore.Hosting.IHostingEnvironment)
-  type: Method
-  source:
-    remote:
-      path: src/TicketAPI/Startup.cs
-      branch: master
-      repo: https://github.com/agngus/ticketSystem-jam.git
-    id: Configure
-    path: src/TicketAPI/Startup.cs
-    startLine: 29
-  assemblies:
-  - TicketAPI
-  namespace: TicketAPI
-  syntax:
-    content: public void Configure(IApplicationBuilder app, IHostingEnvironment env)
-    parameters:
-    - id: app
-      type: Microsoft.AspNetCore.Builder.IApplicationBuilder
-    - id: env
-      type: Microsoft.AspNetCore.Hosting.IHostingEnvironment
-    content.vb: Public Sub Configure(app As IApplicationBuilder, env As IHostingEnvironment)
-  overload: TicketAPI.Startup.Configure*
-  modifiers.csharp:
-  - public
-  modifiers.vb:
-  - Public
 references:
-- uid: TicketAPI
-  commentId: N:TicketAPI
+- uid: Admin.Models
+  commentId: N:Admin.Models
   isExternal: false
-  name: TicketAPI
-  nameWithType: TicketAPI
-  fullName: TicketAPI
+  name: Admin.Models
+  nameWithType: Admin.Models
+  fullName: Admin.Models
 - uid: System.Object
   commentId: T:System.Object
   parent: System
@@ -481,79 +413,29 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: TicketAPI.Startup.#ctor*
-  commentId: Overload:TicketAPI.Startup.#ctor
+- uid: Admin.Models.ErrorViewModel.RequestId*
+  commentId: Overload:Admin.Models.ErrorViewModel.RequestId
   isExternal: false
-  name: Startup
-  nameWithType: Startup.Startup
-  fullName: TicketAPI.Startup.Startup
-- uid: Microsoft.Extensions.Configuration.IConfiguration
-  commentId: T:Microsoft.Extensions.Configuration.IConfiguration
-  parent: Microsoft.Extensions.Configuration
+  name: RequestId
+  nameWithType: ErrorViewModel.RequestId
+  fullName: Admin.Models.ErrorViewModel.RequestId
+- uid: System.String
+  commentId: T:System.String
+  parent: System
   isExternal: true
-  name: IConfiguration
-  nameWithType: IConfiguration
-  fullName: Microsoft.Extensions.Configuration.IConfiguration
-- uid: Microsoft.Extensions.Configuration
-  commentId: N:Microsoft.Extensions.Configuration
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: Admin.Models.ErrorViewModel.ShowRequestId*
+  commentId: Overload:Admin.Models.ErrorViewModel.ShowRequestId
   isExternal: false
-  name: Microsoft.Extensions.Configuration
-  nameWithType: Microsoft.Extensions.Configuration
-  fullName: Microsoft.Extensions.Configuration
-- uid: TicketAPI.Startup.Configuration*
-  commentId: Overload:TicketAPI.Startup.Configuration
-  isExternal: false
-  name: Configuration
-  nameWithType: Startup.Configuration
-  fullName: TicketAPI.Startup.Configuration
-- uid: TicketAPI.Startup.ConfigureServices*
-  commentId: Overload:TicketAPI.Startup.ConfigureServices
-  isExternal: false
-  name: ConfigureServices
-  nameWithType: Startup.ConfigureServices
-  fullName: TicketAPI.Startup.ConfigureServices
-- uid: Microsoft.Extensions.DependencyInjection.IServiceCollection
-  commentId: T:Microsoft.Extensions.DependencyInjection.IServiceCollection
-  parent: Microsoft.Extensions.DependencyInjection
+  name: ShowRequestId
+  nameWithType: ErrorViewModel.ShowRequestId
+  fullName: Admin.Models.ErrorViewModel.ShowRequestId
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
   isExternal: true
-  name: IServiceCollection
-  nameWithType: IServiceCollection
-  fullName: Microsoft.Extensions.DependencyInjection.IServiceCollection
-- uid: Microsoft.Extensions.DependencyInjection
-  commentId: N:Microsoft.Extensions.DependencyInjection
-  isExternal: false
-  name: Microsoft.Extensions.DependencyInjection
-  nameWithType: Microsoft.Extensions.DependencyInjection
-  fullName: Microsoft.Extensions.DependencyInjection
-- uid: TicketAPI.Startup.Configure*
-  commentId: Overload:TicketAPI.Startup.Configure
-  isExternal: false
-  name: Configure
-  nameWithType: Startup.Configure
-  fullName: TicketAPI.Startup.Configure
-- uid: Microsoft.AspNetCore.Builder.IApplicationBuilder
-  commentId: T:Microsoft.AspNetCore.Builder.IApplicationBuilder
-  parent: Microsoft.AspNetCore.Builder
-  isExternal: true
-  name: IApplicationBuilder
-  nameWithType: IApplicationBuilder
-  fullName: Microsoft.AspNetCore.Builder.IApplicationBuilder
-- uid: Microsoft.AspNetCore.Hosting.IHostingEnvironment
-  commentId: T:Microsoft.AspNetCore.Hosting.IHostingEnvironment
-  parent: Microsoft.AspNetCore.Hosting
-  isExternal: true
-  name: IHostingEnvironment
-  nameWithType: IHostingEnvironment
-  fullName: Microsoft.AspNetCore.Hosting.IHostingEnvironment
-- uid: Microsoft.AspNetCore.Builder
-  commentId: N:Microsoft.AspNetCore.Builder
-  isExternal: false
-  name: Microsoft.AspNetCore.Builder
-  nameWithType: Microsoft.AspNetCore.Builder
-  fullName: Microsoft.AspNetCore.Builder
-- uid: Microsoft.AspNetCore.Hosting
-  commentId: N:Microsoft.AspNetCore.Hosting
-  isExternal: false
-  name: Microsoft.AspNetCore.Hosting
-  nameWithType: Microsoft.AspNetCore.Hosting
-  fullName: Microsoft.AspNetCore.Hosting
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean

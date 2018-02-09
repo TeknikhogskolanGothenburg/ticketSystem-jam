@@ -1,0 +1,30 @@
+### YamlMime:ManagedReference
+items:
+- uid: Admin
+  commentId: N:Admin
+  id: Admin
+  children:
+  - Admin.Program
+  - Admin.Startup
+  langs:
+  - csharp
+  - vb
+  name: Admin
+  nameWithType: Admin
+  fullName: Admin
+  type: Namespace
+  assemblies:
+  - Admin
+references:
+- uid: Admin.Program
+  commentId: T:Admin.Program
+  isExternal: false
+  name: Program
+  nameWithType: Program
+  fullName: Admin.Program
+- uid: Admin.Startup
+  commentId: T:Admin.Startup
+  isExternal: false
+  name: Startup
+  nameWithType: Startup
+  fullName: Admin.Startup

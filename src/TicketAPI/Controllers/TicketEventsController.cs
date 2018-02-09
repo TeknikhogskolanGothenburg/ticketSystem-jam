@@ -34,7 +34,7 @@ namespace TicketAPI.Controllers
         [HttpPost]
         public ClassLibrary.TicketEvent Post([FromBody]ClassLibrary.TicketEvent ticketEvent)
         {
-            return tdb.EventAdd(ticketEvent.EventName, ticketEvent.EventHtmlDescription);
+            return tdb.EventAdd(ticketEvent);
         }
 
         // PUT: api/TicketEvents/5
@@ -45,10 +45,10 @@ namespace TicketAPI.Controllers
         }
 
         // DELETE: api/ApiWithActions/5
-        [HttpDelete("{eventName}")]
-        public void Delete(string eventName)
+        [HttpDelete("{id}")]
+        public void Delete(int id)
         {
-            tdb.DeleteEvent(eventName);
+            tdb.DeleteEvent(id);
         }
     }
 }
