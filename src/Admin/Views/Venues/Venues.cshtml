@@ -11,32 +11,36 @@
 
 <h1>@ViewBag.Message</h1>
 <div class="addVenue">
-    <h2>Add Venue</h2>
+    <h2>Delete Venue</h2>
     @using (Html.BeginForm("DeleteVenue", "Venues", FormMethod.Post))
     {
         @Html.DropDownList(
-                                                    "id",
-                                                    new SelectList(
-                                                        Model.Venues.Select(x => new { Value = x.VenueId, Text = x.VenueName }),
-                                                        "Value",
-                                                        "Text"
-                                                    )
-                                                )
-
+                    "id",
+                    new SelectList(Model.Venues.Select(x => new { Value = x.VenueId, Text = x.VenueName }),
+                    "Value",
+                    "Text"))
         <input type="submit" value="Delete" />
-
     }
 </div>
-@using (Html.BeginForm("AddVenue", "Venues", FormMethod.Post))
-{
-    <div class="addVenue">
-        <h2>Add Venue</h2>
-        Name:<br /><input type="text"><br />
-        Address:<br /><input type="text"><br />
-        City:<br /><input type="text"><br />
-        Country:<br /><input type="text"><br />
-        Seats:<br /><input type="text"><br /><br />
 
-        <input type="submit" value="Add" style="width:50%" />
-    </div>
-}
+
+<div class="addVenue">
+    <h2>Add Venue</h2>
+    @using (Html.BeginForm("AddVenue", "Venues", FormMethod.Post))
+    {
+
+        @Html.LabelFor(m => m.Venue.VenueName, "Name")<br />
+        @Html.TextBoxFor(m => m.Venue.VenueName, new { @required = true })<br />
+        @Html.LabelFor(m => m.Venue.Address, "Address")<br />
+        @Html.TextBoxFor(m => m.Venue.Address, new { @required = true })<br />
+        @Html.LabelFor(m => m.Venue.City, "City")<br />
+        @Html.TextBoxFor(m => m.Venue.City, new { @required = true })<br />
+        @Html.LabelFor(m => m.Venue.Country, "Country")<br />
+        @Html.TextBoxFor(m => m.Venue.Country, new { @required = true })<br />
+        @Html.LabelFor(m => m.Venue.Seats, "Seats")<br />
+        @Html.TextBoxFor(m => m.Venue.Seats, new { @required = true })<br />
+
+    }
+    <br />
+    <input type="submit" value="Add" style="width:50%" />
+</div>
