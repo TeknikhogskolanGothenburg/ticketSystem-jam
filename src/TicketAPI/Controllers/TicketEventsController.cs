@@ -18,14 +18,14 @@ namespace TicketAPI.Controllers
 
         // GET: api/TicketEvents
         [HttpGet]
-        public IEnumerable<string> Get()
+        public List<TicketEvent> Get()
         {
             return tdb.GetAllEvents();
         }
 
         // GET: api/TicketEvents/5
         [HttpGet("{id}")]
-        public TicketEvent Get(string id)
+        public TicketEvent Get(int id)
         {
             return tdb.GetEvents(id);
         }

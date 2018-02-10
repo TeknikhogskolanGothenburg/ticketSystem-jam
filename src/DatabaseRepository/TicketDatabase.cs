@@ -12,23 +12,24 @@ namespace TicketSystem.DatabaseRepository
         string connectionString = "Server=(local)\\SqlExpress; Database=TicketSystem; Trusted_connection=true";
 
         // TicketEventController Methods
-        public IEnumerable<string> GetAllEvents()
+        public List<TicketEvent> GetAllEvents()
         {
             using (var connection = new SqlConnection(connectionString))
             {
                 string queryString = "SELECT * FROM TicketEvents";
                 connection.Open();
-                return connection.Query<string>(queryString).ToList();
+                return connection.Query<TicketEvent>(queryString).ToList();
             }
         }
 
-        public TicketEvent GetEvents(string query)
+        public TicketEvent GetEvents(int id)
         {
             using (var connection = new SqlConnection(connectionString))
             {
-                string queryString = "SELECT * FROM TicketEvents WHERE EventName like '%" + query + "%' OR EventHtmlDescription like '%" + query + "%'";
+                //string queryString = "SELECT * FROM TicketEvents WHERE EventName like '%" + query + "%' OR EventHtmlDescription like '%" + query + "%'";
+                string queryString = "SELECT * FROM TicketEvents WHERE TicketEventID = @ID";
                 connection.Open();
-                return connection.Query<TicketEvent>(queryString).First();
+                return connection.Query<TicketEvent>(queryString, new { ID = id }).First();
             }
         }
 

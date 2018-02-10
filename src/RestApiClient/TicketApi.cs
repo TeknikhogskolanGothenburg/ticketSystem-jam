@@ -11,20 +11,44 @@ namespace TicketSystem.RestApiClient
     {
         // Implemented using RestSharp: http://restsharp.org/
 
-        public List<Ticket> TicketGet()
+        //TicketEvent Calls
+        public List<TicketEvent> GetAllEvents()
         {
-            var client = new RestClient("http://localhost:50638");
-            var request = new RestRequest("ticket", Method.GET);
-            var response = client.Execute<List<Ticket>>(request);
-            return response.Data;
-        }
-        public List<TicketEvent> EventGet()
-        {
-            var client = new RestClient("http://localhost:50638/api/");
+            var client = new RestClient("http://localhost:61835/api/");
             var request = new RestRequest("TicketEvents", Method.GET);
             var response = client.Execute<List<TicketEvent>>(request);
             return response.Data;
         }
+
+        public List<TicketEvent> GetEvents(int id)
+        {            
+            var client = new RestClient("http://localhost:61835/api/");
+            var request = new RestRequest("TicketEvents/{id}", Method.GET);
+            request.AddUrlSegment("id", id);
+            var response = client.Execute<List<TicketEvent>>(request);
+            return response.Data;
+        }
+
+        public void EventsAdd(TicketEvent ticketEvent)
+        {
+            var output = JsonConvert.SerializeObject(ticketEvent);
+            var client = new RestClient("http://localhost:61835/api");
+            var request = new RestRequest("TicketEvents", Method.POST);
+            request.AddParameter("application/json", output, ParameterType.RequestBody);
+            var response = client.Execute<TicketEvent>(request); //Vad gör den här raden?
+        }
+
+        
+
+
+
+        public List<Ticket> TicketGet()
+        {
+            var client = new RestClient("http://localhost:61835");
+            var request = new RestRequest("ticket", Method.GET);
+            var response = client.Execute<List<Ticket>>(request);
+            return response.Data;
+        }        
 
         public List<Venue> VenueGet()
         {
