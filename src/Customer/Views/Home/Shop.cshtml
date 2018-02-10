@@ -1,4 +1,4 @@
-﻿
+﻿@model ClassLibrary.Value;
 
 @{
     ViewData["Title"] = "Shop";
@@ -47,94 +47,106 @@
 </style>
 
 <body>
-    <div id="wrap">
-        <div class="left">
-            <h2>Team Jam´s Ticket Shop</h2>
+    @using (Html.BeginForm("BookSeat", "Shop", FormMethod.Post))
+    {
 
-            <table id="jam">
-                <tr>
-                    <th>Event</th>
-                    <th>Location</th>
-                    <th>Date</th>
-                    <th>Tickets left</th>
-                    <th></th>
-                </tr>
+        <div id="wrap">
+            <div class="left">
+                <h2>Team Jam´s Ticket Shop</h2>
 
-                <tr>
-                    @*Här får vi göra en foreach-loop, som rullar ut alla events.*@
-                    <td>Bruce Springsteen</td>
-                    <td>Ullevi</td>
-                    <td>2018-07-03</td>
-                    <td>55</td>
-                    <td align='center'><form><input type=submit value="Buy" label="Buy" style="width:100%"></form></td>
-                </tr>
-                <tr>
-                    @*Dessa ska bort när looen är klar.*@
-                    <td>Frölunda - Luleå</td>
-                    <td>Scandinavium</td>
-                    <td>2018-03-05</td>
-                    <td>26</td>
-                    <td align='center'><form><input type=submit value="Buy" label="Buy" style="width:100%"></form></td>
-                </tr>
-                <tr>
-                    <td>Way Out West</td>
-                    <td>Frihamnen</td>
-                    <td>2018-08-15</td>
-                    <td>2</td>
-                    <td align='center'><form><input type=submit value="Buy" label="Buy" style="width:100%"></form></td>
-                </tr>
-                <tr>
-                    <td>Disney on ice</td>
-                    <td>Scandinavium</td>
-                    <td>2018-04-15</td>
-                    <td>2</td>
-                    <td align='center'><form><input type=submit value="Buy" label="Buy" style="width:100%"></form></td>
-                </tr>
-                <tr>
-                    <td>Speedway</td>
-                    <td>Ullevi</td>
-                    <td>2018-09-25</td>
-                    <td>2</td>
-                    <td align='center'><form><input type=submit value="Buy" label="Buy" style="width:100%"></form></td>
-                </tr>
+                <table id="jam">
+                    <tr>
+                        <th>TEDID</th>
+                        <th>Event</th>
+                        <th>Location</th>
+                        <th>Date</th>
+                        <th>Tickets left</th>
+                        <th></th>
+                    </tr>
 
-            </table>
-        </div>
-        <div class="right">
-            <h2 >Shoppingcart</h2>
-            <table id="jam" style="width:100%" align="right">
-                <tr >
-                    <th>Event</th>
-                    <th>Amount</th>
-                   
-                </tr>
+                    <tr>
+                        @*Här får vi göra en foreach-loop, som rullar ut alla events.*@
+                        <td>1</td>
+                        <td>Bruce Springsteen</td>
+                        <td>Ullevi</td>
+                        <td>2018-07-03</td>
+                        <td>55</td>
+                        <td align='center'><form><input type="submit" value="1" label="Buy" style="width:100%"></form></td>
+                    </tr>
+                    <tr>
+                        @*Dessa ska bort när looen är klar.*@
+                        <td>2</td>
+                        <td>Frölunda - Luleå</td>
+                        <td>Scandinavium</td>
+                        <td>2018-03-05</td>
+                        <td>26</td>
+                        <td align='center'><form><input type=submit value="Buy" label="Buy" style="width:100%"></form></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Way Out West</td>
+                        <td>Frihamnen</td>
+                        <td>2018-08-15</td>
+                        <td>2</td>
+                        <td align='center'><form><input type=submit value="Buy" label="Buy" style="width:100%"></form></td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Disney on ice</td>
+                        <td>Scandinavium</td>
+                        <td>2018-04-15</td>
+                        <td>2</td>
+                        <td align='center'><form><input type=submit value="Buy" label="Buy" style="width:100%"></form></td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Speedway</td>
+                        <td>Ullevi</td>
+                        <td>2018-09-25</td>
+                        <td>2</td>
+                        <td align='center'><form><input type=submit value="Buy" label="Buy" style="width:100%"></form></td>
+                    </tr>
 
-                <tr>
-                    @*Här får vi göra en foreach-loop, som rullar ut alla events.*@
-                    <td>Bruce Springsteen</td>
-                    <td>2</td>
-
-                </tr>
-                <tr>
-                    @*Dessa ska bort när looen är klar.*@
-                    <td>Frölunda - Luleå</td>
-                    <td>1</td>
-   
-                </tr>
-                <tr>
-                    <td>Way Out West</td>
-                    <td>3</td>
-              
-                </tr>
-                
-               
-
-            </table>
-            <tr align='center'><input type=submit value="CheckOut" label="CheckOut" style="width:100%"></tr>
+                </table>
+            </div>
         </div>
 
+    }
+            <div class="right">
+                <h2>Shoppingcart</h2>
+                <table id="jam" style="width:100%" align="right">
+                    <tr>
+                        <th>Event</th>
+                        <th>Amount</th>
 
-</body>
+                    </tr>
+
+                    <tr>
+                        @*Här får vi göra en foreach-loop, som rullar ut alla events.*@
+                        <td>Bruce Springsteen</td>
+                        <td>2</td>
+
+                    </tr>
+                    <tr>
+                        @*Dessa ska bort när looen är klar.*@
+                        <td>Frölunda - Luleå</td>
+                        <td>1</td>
+
+                    </tr>
+                    <tr>
+                        <td>Way Out West</td>
+                        <td>3</td>
+
+                    </tr>
+
+
+
+                </table>
+                <tr align='center'><input type=submit value="CheckOut" label="CheckOut" style="width:100%"></tr>
+            </div>
+
+
+    </body>
 
 
 
