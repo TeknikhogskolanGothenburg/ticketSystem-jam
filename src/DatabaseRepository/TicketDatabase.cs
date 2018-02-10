@@ -171,7 +171,30 @@ namespace TicketSystem.DatabaseRepository
                 connection.Query("DELETE FROM TicketEventDate WHERE TicketEventID = @ID", new { ID = id });
             }
         }
+        public Tickets PurchasedTickets(TicketEventDate ticketEventDateId) //int seatID, int ticketEventId
+        {
+            using (var connection = new SqlConnection(connectionString))
+            {
+                string queryStringTicket = "insert into Tickets([SeatID]) values(@SeatID)";
+                connection.Open();
+                connection.Query(queryStringTicket, new { SeatID = "null" });  // Tänkte att databasen ska räkna upp från 1 till MaxSeats-antal
+                var addedTicketQuery = connection.Query<int>("SELECT IDENT_CURRENT ('Tickets') AS Current_Identity").First();
+                return connection.Query<Tickets>("SELECT * FROM Tickets", new { Id = addedTicketQuery }).First();
+            }
 
+        }
+        public SeatsAtEventDate PurchasedSeats(int seatID, int ticketEventId)
+        {
+            using (var connection = new SqlConnection(connectionString))
+            {
+                string queryStringSeat = "UPDATE SeatsAtEventDate SET[TicketEventDateID]= @ticketEventId  + WHERE SeatID = @seatID";
+                connection.Open();
+                connection.Query(queryStringSeat, new { SeatID = seatID });
+                var addedSeatsAtEventDateQuery = connection.Query<int>("SELECT IDENT_CURRENT ('SeatsAtEventDate') AS Current_Identity").First();
+                return connection.Query<SeatsAtEventDate>("SELECT * FROM SeatsAtEventDate WHERE SeatID=@seatID", new { Id = addedSeatsAtEventDateQuery }).First();
+
+            }
+        }
     }
-}
 
+}

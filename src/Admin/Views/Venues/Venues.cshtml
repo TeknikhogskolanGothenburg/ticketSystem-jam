@@ -16,7 +16,7 @@
                                         new SelectList(Model.Venues.Select(x => new { Value = x.VenueId, Text = x.VenueName }),
                                         "Value",
                                         "Text"))
-        
+
         <input type="submit" value="Delete" style="background-color:red" />
     }
     <hr />
@@ -39,11 +39,11 @@
         @Html.TextBoxFor(m => m.Venue.Country, new { @required = true })<br />
         @Html.LabelFor(m => m.Venue.Seats, "Seats")<br />
         @Html.TextBoxFor(m => m.Venue.Seats, new { @required = true })<br />
-       
+
         <input type="submit" value="Add" />
         <hr />
     }
- 
+
 </div>
 <div class="venueDiv">
     <h3 style="margin-top:0px">Edit Venue</h3>
