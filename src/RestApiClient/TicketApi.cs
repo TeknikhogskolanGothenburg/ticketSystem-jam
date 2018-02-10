@@ -94,7 +94,7 @@ namespace TicketSystem.RestApiClient
 
         public void VenueDelete(int id)
         {
-            var client = new RestClient("http://localhost:60234/api/");
+            var client = new RestClient("http://localhost:50904/api/");
             var request = new RestRequest("venues/{id}", Method.DELETE);
             request.AddUrlSegment("id", id);
             var response = client.Execute(request);
@@ -114,5 +114,15 @@ namespace TicketSystem.RestApiClient
 
             return response.Data;
         }
+        public Tickets PurchasedTickets( SeatsAtEventDate eventId)
+        {
+            var json = JsonConvert.SerializeObject(eventId);
+            var client = new RestClient("http://localhost:49270/api/");
+            var request = new RestRequest("shop", Method.POST);
+            request.AddParameter("application/json", json, ParameterType.RequestBody);
+            var response = client.Execute<Tickets>(request);
+            return response.Data;
+        }
     }
 }
+
