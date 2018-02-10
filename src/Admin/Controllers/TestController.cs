@@ -18,12 +18,7 @@ namespace Admin.Controllers
         public IActionResult Index()
         {
             TicketApi ticketApi = new TicketApi();
-            TicketEvent addThis = new TicketEvent
-            {
-                EventName = "Mamma Mia",
-                EventHtmlDescription = "Musical 'bout Mommas"
-            };
-            ticketApi.EventsUpdate(7, addThis);
+            ticketApi.DeleteEvent(7);
             return View();
         }
 

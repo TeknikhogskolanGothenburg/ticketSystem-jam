@@ -48,6 +48,14 @@ namespace TicketSystem.RestApiClient
             var response = client.Execute<TicketEvent>(request);
         }
 
+        public void DeleteEvent(int id)
+        {
+            var client = new RestClient("http://localhost:61835/api");
+            var request = new RestRequest("TicketEvents/{id}", Method.DELETE);
+            request.AddUrlSegment("id", id);
+            var respons = client.Execute<TicketEvent>(request);
+        }
+
 
 
         public List<Ticket> TicketGet()
