@@ -20,11 +20,10 @@ namespace Admin.Controllers
             TicketApi ticketApi = new TicketApi();
             TicketEvent addThis = new TicketEvent
             {
-                TicketEventId = 1,
-                EventName = "Test",
-                EventHtmlDescription = "fdfdfdf"
+                EventName = "Mamma Mia",
+                EventHtmlDescription = "Musical 'bout Mommas"
             };
-            ticketApi.EventsAdd(addThis);
+            ticketApi.EventsUpdate(7, addThis);
             return View();
         }
 

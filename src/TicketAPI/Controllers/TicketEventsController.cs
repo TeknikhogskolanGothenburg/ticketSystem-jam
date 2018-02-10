@@ -38,10 +38,10 @@ namespace TicketAPI.Controllers
         }
 
         // PUT: api/TicketEvents/5
-        [HttpPut("{eventName}")]
-        public void Put(string eventName, [FromBody]TicketEvent ticketEvent)
+        [HttpPut("{id}")]
+        public void Put(int id, [FromBody]TicketEvent ticketEvent)
         {
-            tdb.EventsUpdate(eventName, ticketEvent);
+            tdb.EventsUpdate(id, ticketEvent);
         }
 
         // DELETE: api/ApiWithActions/5

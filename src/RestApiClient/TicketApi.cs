@@ -38,7 +38,15 @@ namespace TicketSystem.RestApiClient
             var response = client.Execute<TicketEvent>(request); //Vad gör den här raden?
         }
 
-        
+        public void EventsUpdate(int id, TicketEvent ticketEvent)
+        {
+            var output = JsonConvert.SerializeObject(ticketEvent);
+            var client = new RestClient("http://localhost:61835/api");
+            var request = new RestRequest("TicketEvents/{id}", Method.PUT);
+            request.AddUrlSegment("id", id);
+            request.AddParameter("application/json", output, ParameterType.RequestBody);
+            var response = client.Execute<TicketEvent>(request);
+        }
 
 
 
