@@ -13,14 +13,21 @@ namespace Admin.Controllers
     {
         //private static Value value;
         //private static TicketApi ticketApi;
-        
-              
+
+
         // GET: Test
         public IActionResult Index()
         {
             TicketApi ticketApi = new TicketApi();
-            Value value = new Value();
-            value.Venues = ticketApi.GetVenues(5);
+            Venue test = new Venue()
+            {
+                VenueName = "VattenPalatset",
+                Address = "WaterGate",
+                City = "Lerum",
+                Country = "Sweden",
+                Seats = 8000
+            };
+            ticketApi.VenuesUpdate(7, test);
             return View();
         }
 
