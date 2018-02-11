@@ -4,30 +4,38 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using ClassLibrary;
+using TicketSystem.RestApiClient;
 
-namespace Customer.Controllers
+namespace Admin.Controllers
 {
-    public class ShoppingCartController : Controller
+    public class TestController : Controller
     {
-        // GET: Shop
-        public ActionResult Index()
+        //private static Value value;
+        //private static TicketApi ticketApi;
+
+
+        // GET: Test
+        public IActionResult Index()
         {
+            TicketApi ticketApi = new TicketApi();
+            ticketApi.DeleteVenues(7);
             return View();
         }
 
-        // GET: Shop/Details/5
+        // GET: Test/Details/5
         public ActionResult Details(int id)
         {
             return View();
         }
 
-        // GET: Shop/Create
+        // GET: Test/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Shop/Create
+        // POST: Test/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(IFormCollection collection)
@@ -44,13 +52,13 @@ namespace Customer.Controllers
             }
         }
 
-        // GET: Shop/Edit/5
+        // GET: Test/Edit/5
         public ActionResult Edit(int id)
         {
             return View();
         }
 
-        //// POST: Shop/Edit/5
+        // POST: Test/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(int id, IFormCollection collection)
@@ -67,13 +75,13 @@ namespace Customer.Controllers
             }
         }
 
-        // GET: Shop/Delete/5
+        // GET: Test/Delete/5
         public ActionResult Delete(int id)
         {
             return View();
         }
 
-        // POST: Shop/Delete/5
+        // POST: Test/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Delete(int id, IFormCollection collection)

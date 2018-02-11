@@ -8,6 +8,10 @@ namespace Customer.Controllers
 {
     public class HomeController : Controller
     {
+        private static Value value;
+        private static TicketApi ticketApi;
+        public SeatsAtEventDate SeatsAtEventDate;
+
         public IActionResult Index()
         {
             return View();
@@ -37,8 +41,36 @@ namespace Customer.Controllers
             Value value = new Value();
             TicketApi a = new TicketApi();
             value.Events = a.EventGet();
-           
+
             return View(value);
+        }
+        [HttpPost]  //Min tanke är att när kunden klickar på BUY-knappen slussas man till "Tickets PurchasedTickets" och en Seat läggs till i sql.
+        // sen ska den Redirecta till "ConfirmEventWithSeat" och göra en "Http.Put" och koppla TicketEventDateID med SeatID.
+        public IActionResult BookSeat(TicketEventDate ticketEventDate)
+        {
+            try
+            {
+                SeatsAtEventDate.TicketEventDateId = ticketEventDate.TicketEventDateID;
+                // int SeatID = 1;
+
+                if (value == null)
+                {
+                    value = new Value();
+                }
+                if (ticketApi == null)
+                {
+                    ticketApi = new TicketApi();
+                }
+
+                value.Tickets = ticketApi.PurchasedTickets(SeatsAtEventDate);
+                return View();
+                //return RedirectToAction(ConfirmEventWithSeat(value.Tickets.SeatId));
+            }
+            catch
+            {
+                return View();
+
+            }
         }
     }
 }

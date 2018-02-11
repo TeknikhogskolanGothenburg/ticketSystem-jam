@@ -7,6 +7,6 @@ namespace ClassLibrary
    public class SeatsAtEventDate
     {
         public int SeatId { get; set; }
-        public int TicketEventId { get; set; }
+        public int TicketEventDateId { get; set; }
     }
 }

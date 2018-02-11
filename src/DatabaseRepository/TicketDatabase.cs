@@ -12,23 +12,24 @@ namespace TicketSystem.DatabaseRepository
         string connectionString = "Server=(local)\\SqlExpress; Database=TicketSystem; Trusted_connection=true";
 
         // TicketEventController Methods
-        public IEnumerable<string> GetAllEvents()
+        public List<TicketEvent> GetAllEvents()
         {
             using (var connection = new SqlConnection(connectionString))
             {
                 string queryString = "SELECT * FROM TicketEvents";
                 connection.Open();
-                return connection.Query<string>(queryString).ToList();
+                return connection.Query<TicketEvent>(queryString).ToList();
             }
         }
 
-        public TicketEvent GetEvents(string query)
+        public TicketEvent GetEvents(int id)
         {
             using (var connection = new SqlConnection(connectionString))
             {
-                string queryString = "SELECT * FROM TicketEvents WHERE EventName like '%" + query + "%' OR EventHtmlDescription like '%" + query + "%'";
+                //string queryString = "SELECT * FROM TicketEvents WHERE EventName like '%" + query + "%' OR EventHtmlDescription like '%" + query + "%'";
+                string queryString = "SELECT * FROM TicketEvents WHERE TicketEventID = @ID";
                 connection.Open();
-                return connection.Query<TicketEvent>(queryString).First();
+                return connection.Query<TicketEvent>(queryString, new { ID = id }).First();
             }
         }
 
@@ -44,12 +45,12 @@ namespace TicketSystem.DatabaseRepository
             }
         }
 
-        public TicketEvent EventsUpdate(string nameInput, TicketEvent ticketEvent)
+        public TicketEvent EventsUpdate(int id, TicketEvent ticketEvent)
         {
             using (var connection = new SqlConnection(connectionString))
             {
                 connection.Open();
-                connection.Query("UPDATE TicketEvents SET EventName = @eventName, " + " EventHtmlDescription = @description " + "WHERE EventName = @name", new { eventName = ticketEvent.EventName, description = ticketEvent.EventHtmlDescription, name = nameInput });
+                connection.Query("UPDATE TicketEvents SET EventName = @eventName, " + " EventHtmlDescription = @description " + "WHERE TicketEventID = @ID", new { eventName = ticketEvent.EventName, description = ticketEvent.EventHtmlDescription, ID = id });
                 var addedEventQuery = connection.Query<int>("SELECT IDENT_CURRENT ('TicketEvents') AS Current_Identity").First();
                 return connection.Query<TicketEvent>("SELECT * FROM TicketEvents WHERE TicketEventID=@Id", new { Id = addedEventQuery }).First();
             }
@@ -75,13 +76,13 @@ namespace TicketSystem.DatabaseRepository
             }
         }
 
-        public Venue GetVenues(string query)
+        public Venue GetVenues(int id)
         {
             using (var connection = new SqlConnection(connectionString))
             {
-                string queryString = "SELECT * FROM Venues WHERE VenueName like '%" + query + "%'";
+                string queryString = "SELECT * FROM Venues WHERE VenueID = @ID";
                 connection.Open();
-                return connection.Query<Venue>(queryString).First();
+                return connection.Query<Venue>(queryString, new { ID = id }).First();
             }
         }
 
@@ -97,13 +98,13 @@ namespace TicketSystem.DatabaseRepository
             }
         }
 
-        public Venue VenuesUpdate(string nameInput, Venue venue)
+        public Venue VenuesUpdate(int id, Venue venue)
         {
             using (var connection = new SqlConnection(connectionString))
             {
                 connection.Open();
-                connection.Query("UPDATE Venues SET VenueName = @venueName, " + " Address = @address, " + " City = @city, " + " Country = @country, " + " Seats = @seats " + "WHERE VenueName = @name",
-                    new { venueName = venue.VenueName, address = venue.Address, city = venue.City, country = venue.Country, seats = venue.Seats, name = nameInput });
+                connection.Query("UPDATE Venues SET VenueName = @venueName, " + " Address = @address, " + " City = @city, " + " Country = @country, " + " Seats = @seats " + "WHERE VenueID = @ID",
+                    new { venueName = venue.VenueName, address = venue.Address, city = venue.City, country = venue.Country, seats = venue.Seats, ID = id });
                 var addedVenueQuery = connection.Query<int>("SELECT IDENT_CURRENT ('Venues') AS Current_Identity").First();
                 return connection.Query<Venue>("SELECT * FROM Venues WHERE VenueID=@Id", new { Id = addedVenueQuery }).First();
             }
@@ -171,7 +172,30 @@ namespace TicketSystem.DatabaseRepository
                 connection.Query("DELETE FROM TicketEventDate WHERE TicketEventID = @ID", new { ID = id });
             }
         }
+        public Tickets PurchasedTickets(TicketEventDate ticketEventDateId) //int seatID, int ticketEventId
+        {
+            using (var connection = new SqlConnection(connectionString))
+            {
+                string queryStringTicket = "insert into Tickets([SeatID]) values(@SeatID)";
+                connection.Open();
+                connection.Query(queryStringTicket, new { SeatID = "null" });  // Tänkte att databasen ska räkna upp från 1 till MaxSeats-antal
+                var addedTicketQuery = connection.Query<int>("SELECT IDENT_CURRENT ('Tickets') AS Current_Identity").First();
+                return connection.Query<Tickets>("SELECT * FROM Tickets", new { Id = addedTicketQuery }).First();
+            }
 
+        }
+        public SeatsAtEventDate PurchasedSeats(int seatID, int ticketEventId)
+        {
+            using (var connection = new SqlConnection(connectionString))
+            {
+                string queryStringSeat = "UPDATE SeatsAtEventDate SET[TicketEventDateID]= @ticketEventId  + WHERE SeatID = @seatID";
+                connection.Open();
+                connection.Query(queryStringSeat, new { SeatID = seatID });
+                var addedSeatsAtEventDateQuery = connection.Query<int>("SELECT IDENT_CURRENT ('SeatsAtEventDate') AS Current_Identity").First();
+                return connection.Query<SeatsAtEventDate>("SELECT * FROM SeatsAtEventDate WHERE SeatID=@seatID", new { Id = addedSeatsAtEventDateQuery }).First();
+
+            }
+        }
     }
-}
 
+}

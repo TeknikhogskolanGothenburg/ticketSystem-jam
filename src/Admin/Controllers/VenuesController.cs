@@ -25,13 +25,13 @@ namespace Admin.Controllers
                 ticketApi = new TicketApi();
             }
 
-            value.Venues = ticketApi.VenueGet();
+            value.Venues = ticketApi.GetAllVenues();
             return View(value);
         }
 
         public IActionResult DeleteVenue(int id)
         {
-            ticketApi.VenueDelete(id);
+            ticketApi.DeleteVenues(id);
             return RedirectToAction("Venues", "Venues");
         }
 

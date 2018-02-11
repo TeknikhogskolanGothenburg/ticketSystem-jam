@@ -12,6 +12,10 @@ namespace ClassLibrary
 
         public List<TicketEvent> Events  = new List<TicketEvent>();
 
+        public List<Tickets> BookTicket = new List<Tickets>();
+
+        public Tickets Tickets { get; set; }
+
 
     }
 }
