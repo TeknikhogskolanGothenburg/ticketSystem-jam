@@ -76,13 +76,13 @@ namespace TicketSystem.DatabaseRepository
             }
         }
 
-        public Venue GetVenues(string query)
+        public Venue GetVenues(int id)
         {
             using (var connection = new SqlConnection(connectionString))
             {
-                string queryString = "SELECT * FROM Venues WHERE VenueName like '%" + query + "%'";
+                string queryString = "SELECT * FROM Venues WHERE VenueID = @ID";
                 connection.Open();
-                return connection.Query<Venue>(queryString).First();
+                return connection.Query<Venue>(queryString, new { ID = id }).First();
             }
         }
 
@@ -98,13 +98,13 @@ namespace TicketSystem.DatabaseRepository
             }
         }
 
-        public Venue VenuesUpdate(string nameInput, Venue venue)
+        public Venue VenuesUpdate(int id, Venue venue)
         {
             using (var connection = new SqlConnection(connectionString))
             {
                 connection.Open();
-                connection.Query("UPDATE Venues SET VenueName = @venueName, " + " Address = @address, " + " City = @city, " + " Country = @country, " + " Seats = @seats " + "WHERE VenueName = @name",
-                    new { venueName = venue.VenueName, address = venue.Address, city = venue.City, country = venue.Country, seats = venue.Seats, name = nameInput });
+                connection.Query("UPDATE Venues SET VenueName = @venueName, " + " Address = @address, " + " City = @city, " + " Country = @country, " + " Seats = @seats " + "WHERE VenueID = @ID",
+                    new { venueName = venue.VenueName, address = venue.Address, city = venue.City, country = venue.Country, seats = venue.Seats, ID = id });
                 var addedVenueQuery = connection.Query<int>("SELECT IDENT_CURRENT ('Venues') AS Current_Identity").First();
                 return connection.Query<Venue>("SELECT * FROM Venues WHERE VenueID=@Id", new { Id = addedVenueQuery }).First();
             }
