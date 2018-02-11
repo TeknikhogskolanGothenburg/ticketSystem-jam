@@ -121,13 +121,13 @@ namespace TicketSystem.DatabaseRepository
         }
 
         //EventDate Methods
-        public IEnumerable<string> GetAllEventDates()
+        public List<TicketEventDate> GetAllEventDates()
         {
             using (var connection = new SqlConnection(connectionString))
             {
                 string queryString = "SELECT * FROM TicketEventDate";
                 connection.Open();
-                return connection.Query<string>(queryString).ToList();
+                return connection.Query<TicketEventDate>(queryString).ToList();
             }
         }
 

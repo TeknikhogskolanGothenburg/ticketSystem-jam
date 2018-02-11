@@ -17,7 +17,7 @@ namespace TicketAPI.Controllers
 
         // GET: api/TicketEventDates
         [HttpGet]
-        public IEnumerable<string> Get()
+        public List<TicketEventDate> Get()
         {
             return tdb.GetAllEventDates();
         }
