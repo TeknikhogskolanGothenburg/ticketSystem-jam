@@ -137,6 +137,16 @@ namespace TicketSystem.RestApiClient
             request.AddParameter("application/json", output, ParameterType.RequestBody);    //content-type, data, det är request body vi skickar.
             var response = client.Execute<TicketEventDate>(request);                        //Exekuterar request med client och sparar i reponse.
         }
+
+        public void DeleteEventDates(int id)
+        {
+            var client = new RestClient("http://localhost:61835");
+            var request = new RestRequest("ticketeventdates/{id}", Method.DELETE);
+            request.AddUrlSegment("id", id);
+            var response = client.Execute<TicketEventDate>(request); 
+        }
+
+
         //Ticket Calls 
         public List<Ticket> TicketGet()
         {
