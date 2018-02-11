@@ -110,7 +110,14 @@ namespace TicketSystem.RestApiClient
             return response.Data;
         }
 
-        public List<TicketEventDate> GetEventDates
+        public List<TicketEventDate> GetEventDates(int id)
+        {
+            var client = new RestClient("http://localhost:61835");
+            var request = new RestRequest("ticketeventdates/{id}", Method.GET);
+            request.AddUrlSegment("id", id);
+            var response = client.Execute<List<TicketEventDate>>(request);
+            return response.Data;
+        }
 
 
         //Ticket Calls 
