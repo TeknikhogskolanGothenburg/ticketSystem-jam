@@ -31,7 +31,7 @@ namespace Admin.Controllers
 
         public IActionResult DeleteVenue(int id)
         {
-            ticketApi.VenueDelete(id);
+            ticketApi.DeleteVenues(id);
             return RedirectToAction("Venues", "Venues");
         }
 

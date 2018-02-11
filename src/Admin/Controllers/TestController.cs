@@ -19,15 +19,7 @@ namespace Admin.Controllers
         public IActionResult Index()
         {
             TicketApi ticketApi = new TicketApi();
-            Venue test = new Venue()
-            {
-                VenueName = "VattenPalatset",
-                Address = "WaterGate",
-                City = "Lerum",
-                Country = "Sweden",
-                Seats = 8000
-            };
-            ticketApi.VenuesUpdate(7, test);
+            ticketApi.DeleteVenues(7);
             return View();
         }
 
