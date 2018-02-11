@@ -125,7 +125,7 @@ namespace TicketSystem.DatabaseRepository
         {
             using (var connection = new SqlConnection(connectionString))
             {
-                string queryString = "SELECT * FROM TicketEventDate";
+                string queryString = "SELECT * FROM TicketEventDates";
                 connection.Open();
                 return connection.Query<TicketEventDate>(queryString).ToList();
             }
@@ -158,7 +158,7 @@ namespace TicketSystem.DatabaseRepository
             using (var connection = new SqlConnection(connectionString))
             {
                 connection.Open();
-                connection.Query("UPDATE TicketEventDate SET TicketEventID = @ticketEventID, " + "VenueId = @venueID, " + "EventStartDateTime = @eventStartDateTime " + "WHERE TicketEventDateID = @ID",
+                connection.Query("UPDATE TicketEventDates SET TicketEventID = @ticketEventID, " + "VenueId = @venueID, " + "EventStartDateTime = @eventStartDateTime " + "WHERE TicketEventDateID = @ID",
                     new { ticketEventID = ticketEventDate.TicketEventID, venueID = ticketEventDate.VenueId, eventStartDateTime = ticketEventDate.EventStartDateTime, ID = id });
                 return connection.Query<TicketEventDate>("SELECT * FROM TicketEventDates WHERE TicketEventDateID=@Id", new { Id = id }).First();
             }
@@ -169,9 +169,11 @@ namespace TicketSystem.DatabaseRepository
             using (var connection = new SqlConnection(connectionString))
             {
                 connection.Open();
-                connection.Query("DELETE FROM TicketEventDate WHERE TicketEventID = @ID", new { ID = id });
+                connection.Query("DELETE FROM TicketEventDates WHERE TicketEventDateID = @ID", new { ID = id });
             }
         }
+
+
         public Tickets PurchasedTickets(TicketEventDate ticketEventDateId) //int seatID, int ticketEventId
         {
             using (var connection = new SqlConnection(connectionString))

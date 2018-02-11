@@ -24,7 +24,7 @@ namespace TicketAPI.Controllers
 
         // GET: api/TicketEventDates/5
         [HttpGet("{id}")]
-        public TicketEventDate Get(string id)
+        public TicketEventDate Get(int id)
         {
             return tdb.GetEventDates(id);
         }        
