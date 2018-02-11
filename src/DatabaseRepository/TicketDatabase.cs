@@ -131,13 +131,13 @@ namespace TicketSystem.DatabaseRepository
             }
         }
 
-        public TicketEventDate GetEventDates(string query)
+        public TicketEventDate GetEventDates(int id)
         {
             using (var connection = new SqlConnection(connectionString))
             {
-                string queryString = "SELECT * FROM TicketEventDates WHERE TicketEventDateID LIKE '%" + query + "%'";
+                string queryString = "SELECT * FROM TicketEventDates WHERE TicketEventDateID = @ID";
                 connection.Open();
-                return connection.Query<TicketEventDate>(queryString).First();
+                return connection.Query<TicketEventDate>(queryString, new { ID = id }).First();
             }
         }
 

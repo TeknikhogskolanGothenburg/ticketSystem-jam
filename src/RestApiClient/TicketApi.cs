@@ -119,6 +119,15 @@ namespace TicketSystem.RestApiClient
             return response.Data;
         }
 
+        public void EventDatesAdd(TicketEventDate ticketEventDate)
+        {
+            var output = JsonConvert.SerializeObject(ticketEventDate);
+            var client = new RestClient("http://localhost:61835");
+            var request = new RestRequest("ticketeventdates", Method.POST);
+            request.AddParameter("application/json", output, ParameterType.RequestBody);
+            var response = client.Execute<TicketEventDate>(request);
+        }
+
 
         //Ticket Calls 
         public List<Ticket> TicketGet()
