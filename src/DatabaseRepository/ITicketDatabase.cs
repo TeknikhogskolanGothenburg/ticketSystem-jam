@@ -27,8 +27,8 @@ namespace TicketSystem.DatabaseRepository
         /// <summary>
         /// Find all venus matching the query
         /// </summary>
-        /// <param name="query">A text which is user i looking for in the venues</param>
+        /// <param name="id">A text which is user i looking for in the venues</param>
         /// <returns>A list of venus matching the query</returns>
-        Venue GetVenues(string query);
+        Venue GetVenues(int id);
     }
 }

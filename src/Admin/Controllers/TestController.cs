@@ -20,7 +20,7 @@ namespace Admin.Controllers
         {
             TicketApi ticketApi = new TicketApi();
             Value value = new Value();
-            value.Venues = ticketApi.GetAllVenues();
+            value.Venues = ticketApi.GetVenues(5);
             return View();
         }
 

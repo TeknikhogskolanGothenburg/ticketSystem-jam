@@ -76,13 +76,13 @@ namespace TicketSystem.DatabaseRepository
             }
         }
 
-        public Venue GetVenues(string query)
+        public Venue GetVenues(int id)
         {
             using (var connection = new SqlConnection(connectionString))
             {
-                string queryString = "SELECT * FROM Venues WHERE VenueName like '%" + query + "%'";
+                string queryString = "SELECT * FROM Venues WHERE VenueID = @ID";
                 connection.Open();
-                return connection.Query<Venue>(queryString).First();
+                return connection.Query<Venue>(queryString, new { ID = id }).First();
             }
         }
 

@@ -20,10 +20,10 @@ namespace TicketAPI.Controllers
         }
 
         // GET: api/Venues/Arenans namn
-        [HttpGet("{venueName}")]
-        public Venue Get(string venueName)
+        [HttpGet("{id}")]
+        public Venue Get(int id)
         {
-            Venue venue = tdb.GetVenues(venueName);
+            Venue venue = tdb.GetVenues(id);
             return venue;
         }
 
