@@ -25,7 +25,7 @@ namespace Admin.Controllers
                 ticketApi = new TicketApi();
             }
 
-            value.Venues = ticketApi.VenueGet();
+            value.Venues = ticketApi.GetAllVenues();
             return View(value);
         }
 

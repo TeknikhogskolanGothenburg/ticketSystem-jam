@@ -11,14 +11,16 @@ namespace Admin.Controllers
 {
     public class TestController : Controller
     {
-        private static Value value;
-        private static TicketApi ticketApi;
-
+        //private static Value value;
+        //private static TicketApi ticketApi;
+        
+              
         // GET: Test
         public IActionResult Index()
         {
             TicketApi ticketApi = new TicketApi();
-            ticketApi.DeleteEvent(7);
+            Value value = new Value();
+            value.Venues = ticketApi.GetAllVenues();
             return View();
         }
 
