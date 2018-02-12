@@ -19,7 +19,13 @@ namespace Admin.Controllers
         public IActionResult Index()
         {
             TicketApi ticketApi = new TicketApi();
-            ticketApi.DeleteEventDates(7);
+            Value value = new Value();
+            TicketEvent test = new TicketEvent()
+            {
+                EventName = "RubberDuckJack",
+                EventHtmlDescription = "Where rubber meets the road"
+            };
+            ticketApi.EventsUpdate(6, test);
             return View();
         }
 
