@@ -30,7 +30,7 @@ namespace TicketAPI
             var supportedCultures = new[]
             {
                 new CultureInfo("en"),
-                new CultureInfo("sv")
+                new CultureInfo("sv-SE")
 
             };
 
