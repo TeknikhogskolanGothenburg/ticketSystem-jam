@@ -16,6 +16,8 @@ namespace ClassLibrary
 
         public Tickets Tickets { get; set; }
 
+
         public List<TicketEventDate> TicketEventDate { get; set; } = new List<TicketEventDate>(); //behöver lite att testa med
+
     }
 }
