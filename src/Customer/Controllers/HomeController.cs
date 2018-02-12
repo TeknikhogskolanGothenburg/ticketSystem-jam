@@ -40,7 +40,7 @@ namespace Customer.Controllers
         {
             Value value = new Value();
             TicketApi a = new TicketApi();
-            value.Events = a.EventGet();
+            value.Events = a.GetAllEvents();
 
             return View(value);
         }

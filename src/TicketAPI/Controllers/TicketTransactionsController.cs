@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using ClassLibrary;
+using TicketSystem.DatabaseRepository;
 
 namespace TicketAPI.Controllers
 {
@@ -13,34 +15,37 @@ namespace TicketAPI.Controllers
     {
         // GET: api/TicketTransactions
         [HttpGet]
-        public IEnumerable<string> Get()
+        public List<TicketTransaction> Get()
         {
-            return new string[] { "value1", "value2" };
+            return GetAllTicketTransactions();
         }
 
         // GET: api/TicketTransactions/5
-        [HttpGet("{id}", Name = "Get")]
+        [HttpGet("{id}")]
         public string Get(int id)
         {
-            return "value";
+            return GetTicketTransactions(id);
         }
         
         // POST: api/TicketTransactions
         [HttpPost]
-        public void Post([FromBody]string value)
+        public void Post([FromBody]TicketTransaction ticketTransaction)
         {
+            return TicketTransactionsAdd(ticketTransaction);
         }
         
         // PUT: api/TicketTransactions/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
+        public void Put(int id, [FromBody]TicketTransaction ticketTransaction)
         {
+            return TicketTransactionUpdate(id, ticketTransaction);
         }
         
         // DELETE: api/ApiWithActions/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+            return DeleteTicketTransactions(id);
         }
     }
 }

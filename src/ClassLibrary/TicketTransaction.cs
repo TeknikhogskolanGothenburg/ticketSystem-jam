@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ClassLibrary
 {
-    public class TicketTransactions
+    public class TicketTransaction
     {
         int TransactionID { get; set; }
         string BuyerLastName { get; set; }
