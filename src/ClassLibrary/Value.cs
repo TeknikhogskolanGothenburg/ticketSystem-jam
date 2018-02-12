@@ -10,7 +10,9 @@ namespace ClassLibrary
 
         public Venue Venue { get; set; }
 
-        public List<TicketEvent> Events = new List<TicketEvent>();
+        public TicketEvent TicketEvent { get; set; }
+
+        public List<TicketEvent> Events  = new List<TicketEvent>();
 
         public List<Tickets> BookTicket = new List<Tickets>();
 
@@ -20,8 +22,5 @@ namespace ClassLibrary
 
         public TicketEventDate TicketEventDates { get; set; }
 
-        public TicketEvent TicketEvent { get; set; }
-
-       
     }
 }
