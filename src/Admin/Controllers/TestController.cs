@@ -26,10 +26,10 @@ namespace Admin.Controllers
                 BuyerFirstName = "Hansson",
                 BuyerAddress = "FlingGatan 17",
                 BuyerCity = "Floda",
-                PaymentStatus = "test",
+                PaymentStatus = "update fungerar",
                 PaymentReferenceId = "test"
             };
-            ticketApi.TicketTransactionAdd(test);
+            ticketApi.TicketTransactionUpdate(1, test);
             return View();
         }
 
