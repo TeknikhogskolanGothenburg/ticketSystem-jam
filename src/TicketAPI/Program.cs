@@ -7,6 +7,9 @@ using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.DependencyInjection;
+using System.Resources;
+using System.Reflection;
 
 namespace TicketAPI
 {
@@ -20,6 +23,12 @@ namespace TicketAPI
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>()
+            .ConfigureServices(serviceCollection =>
+            {
+                serviceCollection.AddSingleton(new ResourceManager("TicketAPI.Resources.Controllers.TicketControllers", typeof(Startup).GetTypeInfo().Assembly));
+            })
+
+
                 .Build();
     }
 }

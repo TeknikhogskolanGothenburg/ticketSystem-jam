@@ -1,7 +1,7 @@
 ﻿@model ClassLibrary.Value;
 
 @{
-    ViewData["Title"] = "Shop";
+    ViewData["Title"] = "Events";
 }
 <style type="text/css">
     #wrap {
@@ -46,93 +46,71 @@
 
 </style>
 
-@*<div >
-    <h3 style="margin-top:0px">Events</h3>
+<h1>@ViewBag.Message</h1>
+<div id="content">
+    <button onclick="location.href='@Url.Action("GetAllEvents", "Home")'">Select Event</button>
+    <button type="button" onclick="location.href='@Url.Action("GetAllEventDates", "Home")'">Select EventDate</button>
+    @*<button onclick="location.href='@Url.Action("GetAllVenues", "Home")'">Select Arena</button>*@
+
+
+
+
+    @*<div class="venueDiv" id="getEvent" style="display:none">
+        <h3>Get Events</h3>
+        <hr />
+        @using (Html.BeginForm("GetAllEvents", "Home", FormMethod.Get))
+        {
+            @Html.DropDownList(
+                                                                          "id",
+                                                                          new SelectList(Model.Events.Select(x => new { Value = x.EventName , Text = x.EventName }),
+                                                                          "Value",
+                                                                          "Text"), "- Select Event")
+
+            <input type="submit" value="Get" style="background-color:green" />
+        }
+        <hr />
+    </div>
+</div>*@
+
+<div class="venueDiv" id="getEventDate" style="display:none">
+    <h3>Choose Event Date</h3>
     <hr />
-    @using (Html.BeginForm("Shop", "Home", FormMethod.Get))
+    @using (Html.BeginForm("GetAllEvents", "Home", FormMethod.Get))
     {
         @Html.DropDownList(
-                                        "id",
-                                        new SelectList(Model.Events.Select(x => new { Value = x.EventName}),
-                                        "Event"))
-                                     
+                                                                          "id",
+                                                                          new SelectList(Model.TicketEventDate.Select(x => new { Value = x.EventStartDateTime, Text = x.EventStartDateTime }),
+                                                                          "Value",
+                                                                          "Text"), "- Select Event")
 
-        <input type="submit" value="Choose Event" style="background-color:green" />
+        <input type="submit" value="Get" style="background-color:green" />
+    }
+    <hr />
+</div>
+
+
+@*<div class="venueDiv" id="getEvent" style="display:none">
+    <h3>Select Arena</h3>
+    <hr />
+    @using (Html.BeginForm("GetAllVenues", "Home", FormMethod.Get))
+    {
+        @Html.DropDownList(
+                                                                          "id",
+                                                                          new SelectList(Model.Venues.Select(x => new { Value = x.VenueName, Text = x.VenueName }),
+                                                                          "Value",
+                                                                          "Text"), "- Select Event")
+
+        <input type="submit" value="Get" style="background-color:green" />
     }
     <hr />
 </div>*@
 
-<div >
-    <h3 style="margin-top:0px">Choose Event</h3>
-    <hr />
-    @using (Html.BeginForm("GetAllEvents", "Home", FormMethod.Get))
+
+@section Scripts
     {
-
-        @Html.LabelFor(m => m.TicketEvent.EventName, "ID")
-      //  @Html.TextBoxFor(m => new { Value = m.TicketEvent.EventName})
-
-
-        @Html.LabelFor(m => m.TicketEvent.EventHtmlDescription, "Description")
-       // @Html.TextBoxFor(m => new { Value = m.TicketEvent.EventHtmlDescription })
-
-        //  @Html.LabelFor(m => m.Venue.VenueName, "Arena")
-
-        <input type="submit" value="Buy" name="Buy" />
-        <hr />
-        
-    }
-
-</div>
-
-<div>
-    <h3 style="margin-top:0px">Get All Event Dates</h3>
-    <hr />
-    @using (Html.BeginForm("GetAllEventDates", "Home", FormMethod.Get))
-    {
-
-        @Html.LabelFor(m => m.TicketEventDates.TicketEventDateID, "ID")
-
-        @Html.LabelFor(m => m.TicketEventDates.TicketEventID, "TicketId")
-
-        @Html.LabelFor(m => m.TicketEventDates.VenueId, "VenuesId")
-
-        @Html.LabelFor(m => m.TicketEventDates.EventStartDateTime, "Date")
-        
-
-        <input type="submit" value="Buy" name="Buy" />
-        <hr />
-    }
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-            
-
-
-
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <script>
+        function dropdown(value) {
+            window.location.href = "/Shop/DropDownChanged?id=" + value;
+        }
+    </script>
+}
