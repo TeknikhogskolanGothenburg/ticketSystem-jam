@@ -20,16 +20,7 @@ namespace Admin.Controllers
         {
             TicketApi ticketApi = new TicketApi();
             Value value = new Value();
-            TicketTransaction test = new TicketTransaction()
-            {
-                BuyerLastName = "Frej",
-                BuyerFirstName = "Hansson",
-                BuyerAddress = "FlingGatan 17",
-                BuyerCity = "Floda",
-                PaymentStatus = "update fungerar",
-                PaymentReferenceId = "test"
-            };
-            ticketApi.TicketTransactionUpdate(1, test);
+            ticketApi.DeleteTicketTransaction(1);
             return View();
         }
 

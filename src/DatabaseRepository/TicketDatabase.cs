@@ -225,7 +225,7 @@ namespace TicketSystem.DatabaseRepository
             using (var connection = new SqlConnection(connectionString))
             {
                 connection.Open();
-                string queryString = "DELETE * FROM TicketTransaction WHERE TransactionID = @ID";
+                string queryString = "DELETE FROM TicketTransactions WHERE TransactionID = @ID";
                 connection.Query(queryString, new { ID = id });
             }
         }
