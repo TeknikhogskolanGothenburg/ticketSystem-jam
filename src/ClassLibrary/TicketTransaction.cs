@@ -6,12 +6,12 @@ namespace ClassLibrary
 {
     public class TicketTransaction
     {
-        int TransactionID { get; set; }
-        string BuyerLastName { get; set; }
-        string BuyerFirstName { get; set; }
-        string BuyerAddress { get; set; }
-        string BuyerCity { get; set; }
-        string PaymentStatus { get; set; }
-        string PaymentReferenceId { get; set; }
+       public int TransactionID { get; set; }
+       public string BuyerLastName { get; set; }
+       public string BuyerFirstName { get; set; }
+       public string BuyerAddress { get; set; }
+       public string BuyerCity { get; set; }
+       public string PaymentStatus { get; set; }
+       public string PaymentReferenceId { get; set; }
     }
 }

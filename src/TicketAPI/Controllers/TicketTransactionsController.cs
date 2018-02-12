@@ -13,32 +13,33 @@ namespace TicketAPI.Controllers
     [Route("api/TicketTransactions")]
     public class TicketTransactionsController : Controller
     {
+        TicketDatabase tdb = new TicketDatabase { };
         // GET: api/TicketTransactions
         [HttpGet]
         public List<TicketTransaction> Get()
         {
-            return GetAllTicketTransactions();
+            return tdb.GetAllTicketTransactions();
         }
 
         // GET: api/TicketTransactions/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public TicketTransaction Get(int id)
         {
-            return GetTicketTransactions(id);
+            return tdb.GetTicketTransactions(id);
         }
         
         // POST: api/TicketTransactions
         [HttpPost]
-        public void Post([FromBody]TicketTransaction ticketTransaction)
+        public TicketTransaction Post([FromBody]TicketTransaction ticketTransaction)
         {
-            return TicketTransactionsAdd(ticketTransaction);
+            return tdb.TicketTransactionsAdd(ticketTransaction);
         }
         
         // PUT: api/TicketTransactions/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody]TicketTransaction ticketTransaction)
+        public TicketTransaction Put(int id, [FromBody]TicketTransaction ticketTransaction)
         {
-            return TicketTransactionUpdate(id, ticketTransaction);
+            return tdb.TicketTransactionUpdate(id, ticketTransaction);
         }
         
         // DELETE: api/ApiWithActions/5
