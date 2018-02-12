@@ -9,15 +9,19 @@
 }
 
 
-
+h3 {
+    margin:0;
+}
 
 .venueDiv{
     width:30%;
     display:inline-block;
-    float:left;
     margin:10px;
     padding:10px;
+    margin: 0 auto;
+    margin-top:20px;
     text-align:center;
+    display:none;
 }
 
 input[type=text] {
@@ -45,6 +49,24 @@ select {
     margin-bottom: 8px;
     width: 100%;
 }
+
+#content{
+    text-align:center;
+    margin:0 auto;
+}
+button {
+    background-color: #101010;
+    border: none;
+    color: white;
+    padding: 10px 27px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
 /* Hide/rearrange for smaller screens */
 @media screen and (max-width: 767px) {
 

@@ -1,0 +1,7 @@
+﻿INSERT INTO Venues(VenueName, Address, City, Country, Seats)
+VALUES ('Rungrado 1st of May Stadium','South Korea Street', 'Pyongyang','South Korea', 114000),
+('Michigan Stadium','Ann Arbor', 'Michigan','USA', 107601),
+('Beaver Stadium','State College', 'Pennsylvania','USA', 106572),
+('Ohio Stadium','Columbus', 'Ohio','USA', 104944),
+('Camp Nou','La Rambla', 'Barcelona','Spain', 99354),
+('Soccer City','SA Street', 'Johannesburg','South Africa', 94736)
