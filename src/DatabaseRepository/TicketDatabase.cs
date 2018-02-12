@@ -213,13 +213,22 @@ namespace TicketSystem.DatabaseRepository
             {
                 string queryString = "UPDATE TicketTransaction SET BuyerLastName = @LastName, " + "BuyerFirstName = @FirstName, " + "BuyerAddress = @Address, "
                     + "BuyerCity = @City, " + "PaymentStatus = @Status, " + "PaymentReferenceId = @ReferenceID " + "WHERE TransactionID = @ID";
+                connection.Open();
                 connection.Query(queryString, new { LastName = ticketTransaction.BuyerLastName, FirstName = ticketTransaction.BuyerLastName, Address = ticketTransaction.BuyerAddress,
                 City = ticketTransaction.BuyerAddress, Status = ticketTransaction.PaymentStatus, ReferenceID = ticketTransaction.PaymentReferenceId, TransactionID = id});
                 return connection.Query<TicketTransaction>("SELECT * from TicketTransaction WHERE TransactionID=@Id", new { ID = id }).First();
             }
         }
 
-
+        public void DeleteTicketTransactions(int id)
+        {
+            using (var connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                string queryString = "DELETE * FROM TicketTransaction WHERE TransactionID = @ID";
+                connection.Query(queryString, new { ID = id });
+            }
+        }
 
         public Tickets PurchasedTickets(TicketEventDate ticketEventDateId) //int seatID, int ticketEventId
         {
