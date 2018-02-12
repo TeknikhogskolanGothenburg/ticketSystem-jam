@@ -131,7 +131,7 @@ namespace TicketSystem.RestApiClient
         public void EventDatesUpdate(int id, TicketEventDate ticketEventDate)
         {
             var output = JsonConvert.SerializeObject(ticketEventDate);                      //Serialiaze'a objektet vi skickar in
-            var client = new RestClient(localhost);                          //En instans av Restclient med adress
+            var client = new RestClient(localhost);                                         //En instans av Restclient med adress
             var request = new RestRequest("ticketeventdates/{id}", Method.PUT);             //En instans av Restrequest med routing och metod info.
             request.AddUrlSegment("id", id);                                                //Addar id parametern till URL segementet
             request.AddParameter("application/json", output, ParameterType.RequestBody);    //content-type, data, det är request body vi skickar.
