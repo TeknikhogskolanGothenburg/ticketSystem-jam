@@ -12,25 +12,26 @@
     <button onclick="location.href='@Url.Action("DeleteVenues", "Venues")'">Delete Venue</button>
 
     <div class="venueDiv" id="addVenue" style="display:block">
+        <hr />
         <h3>Add Venue</h3>
         <hr />
         @using (Html.BeginForm("AddVenues", "Venues", FormMethod.Post))
-        {
+    {
 
-            @Html.LabelFor(m => m.Venue.VenueName, "Name")<br />
-            @Html.TextBoxFor(m => m.Venue.VenueName, new { @required = true })<br />
-            @Html.LabelFor(m => m.Venue.Address, "Address")<br />
-            @Html.TextBoxFor(m => m.Venue.Address, new { @required = true })<br />
-            @Html.LabelFor(m => m.Venue.City, "City")<br />
-            @Html.TextBoxFor(m => m.Venue.City, new { @required = true })<br />
-            @Html.LabelFor(m => m.Venue.Country, "Country")<br />
-            @Html.TextBoxFor(m => m.Venue.Country, new { @required = true })<br />
-            @Html.LabelFor(m => m.Venue.Seats, "Seats")<br />
-            @Html.TextBoxFor(m => m.Venue.Seats, new { @required = true })<br />
+        @Html.LabelFor(m => m.Venue.VenueName, "Name")<br />
+        @Html.TextBoxFor(m => m.Venue.VenueName, new { @required = true })<br />
+        @Html.LabelFor(m => m.Venue.Address, "Address")<br />
+        @Html.TextBoxFor(m => m.Venue.Address, new { @required = true })<br />
+        @Html.LabelFor(m => m.Venue.City, "City")<br />
+        @Html.TextBoxFor(m => m.Venue.City, new { @required = true })<br />
+        @Html.LabelFor(m => m.Venue.Country, "Country")<br />
+        @Html.TextBoxFor(m => m.Venue.Country, new { @required = true })<br />
+        @Html.LabelFor(m => m.Venue.Seats, "Seats")<br />
+        @Html.TextBoxFor(m => m.Venue.Seats, new { @required = true })<br />
 
-            <input type="submit" value="Add" />
-            <hr />
-        }
+        <input type="submit" value="Add" />
+        <hr />
+}
 
     </div>
 </div>

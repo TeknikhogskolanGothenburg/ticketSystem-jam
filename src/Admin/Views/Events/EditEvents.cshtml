@@ -12,15 +12,16 @@
     <button onclick="location.href='@Url.Action("DeleteEvents", "Events")'">Delete Event</button>
 
     <div class="venueDiv" id="addVenue" style="display:block">
+        <hr />
         <h3>Edit Event</h3>
         <hr />
         @using (Html.BeginForm("EditEvents", "Events", FormMethod.Post))
     {
         @Html.DropDownList(
-                   "id",
-                   new SelectList(Model.Events.Select(x => new { Value = x.TicketEventId, Text = x.EventName }),
-                   "Value",
-                   "Text"))
+                    "id",
+                    new SelectList(Model.Events.Select(x => new { Value = x.TicketEventId, Text = x.EventName }),
+                    "Value",
+                    "Text"))
 
         @Html.LabelFor(m => m.TicketEvent.EventName, "Name")<br />
         @Html.TextBoxFor(m => m.TicketEvent.EventName)<br />
