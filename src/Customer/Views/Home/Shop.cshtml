@@ -46,107 +46,86 @@
 
 </style>
 
-<body>
-    @using (Html.BeginForm("BookSeat", "Shop", FormMethod.Post))
+@*<div >
+    <h3 style="margin-top:0px">Events</h3>
+    <hr />
+    @using (Html.BeginForm("Shop", "Home", FormMethod.Get))
+    {
+        @Html.DropDownList(
+                                        "id",
+                                        new SelectList(Model.Events.Select(x => new { Value = x.EventName}),
+                                        "Event"))
+                                     
+
+        <input type="submit" value="Choose Event" style="background-color:green" />
+    }
+    <hr />
+</div>*@
+
+<div >
+    <h3 style="margin-top:0px">Choose Event</h3>
+    <hr />
+    @using (Html.BeginForm("GetAllEvents", "Home", FormMethod.Get))
     {
 
-        <div id="wrap">
-            <div class="left">
-                <h2>Team Jam´s Ticket Shop</h2>
+        @Html.LabelFor(m => m.TicketEvent.EventName, "ID")
+      //  @Html.TextBoxFor(m => new { Value = m.TicketEvent.EventName})
 
-                <table id="jam">
-                    <tr>
-                        <th>TEDID</th>
-                        <th>Event</th>
-                        <th>Location</th>
-                        <th>Date</th>
-                        <th>Tickets left</th>
-                        <th></th>
-                    </tr>
 
-                    <tr>
-                        @*Här får vi göra en foreach-loop, som rullar ut alla events.*@
-                        <td>1</td>
-                        <td>Bruce Springsteen</td>
-                        <td>Ullevi</td>
-                        <td>2018-07-03</td>
-                        <td>55</td>
-                        <td align='center'><form><input type="submit" value="1" label="Buy" style="width:100%"></form></td>
-                    </tr>
-                    <tr>
-                        @*Dessa ska bort när looen är klar.*@
-                        <td>2</td>
-                        <td>Frölunda - Luleå</td>
-                        <td>Scandinavium</td>
-                        <td>2018-03-05</td>
-                        <td>26</td>
-                        <td align='center'><form><input type=submit value="Buy" label="Buy" style="width:100%"></form></td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Way Out West</td>
-                        <td>Frihamnen</td>
-                        <td>2018-08-15</td>
-                        <td>2</td>
-                        <td align='center'><form><input type=submit value="Buy" label="Buy" style="width:100%"></form></td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>Disney on ice</td>
-                        <td>Scandinavium</td>
-                        <td>2018-04-15</td>
-                        <td>2</td>
-                        <td align='center'><form><input type=submit value="Buy" label="Buy" style="width:100%"></form></td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td>Speedway</td>
-                        <td>Ullevi</td>
-                        <td>2018-09-25</td>
-                        <td>2</td>
-                        <td align='center'><form><input type=submit value="Buy" label="Buy" style="width:100%"></form></td>
-                    </tr>
+        @Html.LabelFor(m => m.TicketEvent.EventHtmlDescription, "Description")
+       // @Html.TextBoxFor(m => new { Value = m.TicketEvent.EventHtmlDescription })
 
-                </table>
-            </div>
-        </div>
+        //  @Html.LabelFor(m => m.Venue.VenueName, "Arena")
 
+        <input type="submit" value="Buy" name="Buy" />
+        <hr />
+        
     }
-            <div class="right">
-                <h2>Shoppingcart</h2>
-                <table id="jam" style="width:100%" align="right">
-                    <tr>
-                        <th>Event</th>
-                        <th>Amount</th>
 
-                    </tr>
+</div>
 
-                    <tr>
-                        @*Här får vi göra en foreach-loop, som rullar ut alla events.*@
-                        <td>Bruce Springsteen</td>
-                        <td>2</td>
+<div>
+    <h3 style="margin-top:0px">Get All Event Dates</h3>
+    <hr />
+    @using (Html.BeginForm("GetAllEventDates", "Home", FormMethod.Get))
+    {
 
-                    </tr>
-                    <tr>
-                        @*Dessa ska bort när looen är klar.*@
-                        <td>Frölunda - Luleå</td>
-                        <td>1</td>
+        @Html.LabelFor(m => m.TicketEventDates.TicketEventDateID, "ID")
 
-                    </tr>
-                    <tr>
-                        <td>Way Out West</td>
-                        <td>3</td>
+        @Html.LabelFor(m => m.TicketEventDates.TicketEventID, "TicketId")
 
-                    </tr>
+        @Html.LabelFor(m => m.TicketEventDates.VenueId, "VenuesId")
+
+        @Html.LabelFor(m => m.TicketEventDates.EventStartDateTime, "Date")
+        
+
+        <input type="submit" value="Buy" name="Buy" />
+        <hr />
+    }
+
+</div>
 
 
 
-                </table>
-                <tr align='center'><input type=submit value="CheckOut" label="CheckOut" style="width:100%"></tr>
-            </div>
 
 
-    </body>
+
+
+
+
+
+
+
+            
+
+
+
+        
+
+
+
+
+
 
 
 

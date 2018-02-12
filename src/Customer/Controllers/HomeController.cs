@@ -36,41 +36,34 @@ namespace Customer.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
+
         public IActionResult Shop()
         {
-            Value value = new Value();
-            TicketApi a = new TicketApi();
-            value.Events = a.EventGet();
+            if (value == null)
+            {
+                value = new Value();
+            }
+            if (ticketApi == null)
+            {
+                ticketApi = new TicketApi();
+            }
 
+            value.Events = ticketApi.GetAllEvents();
             return View(value);
         }
-        [HttpPost]  //Min tanke är att när kunden klickar på BUY-knappen slussas man till "Tickets PurchasedTickets" och en Seat läggs till i sql.
-        // sen ska den Redirecta till "ConfirmEventWithSeat" och göra en "Http.Put" och koppla TicketEventDateID med SeatID.
-        public IActionResult BookSeat(TicketEventDate ticketEventDate)
+        public IActionResult GetAllEvents()
         {
-            try
-            {
-                SeatsAtEventDate.TicketEventDateId = ticketEventDate.TicketEventDateID;
-                // int SeatID = 1;
-
-                if (value == null)
-                {
-                    value = new Value();
-                }
-                if (ticketApi == null)
-                {
-                    ticketApi = new TicketApi();
-                }
-
-                value.Tickets = ticketApi.PurchasedTickets(SeatsAtEventDate);
-                return View();
-                //return RedirectToAction(ConfirmEventWithSeat(value.Tickets.SeatId));
-            }
-            catch
-            {
-                return View();
-
-            }
+         
+            ticketApi.GetAllEvents();
+            return RedirectToAction("Shop", "Home");
         }
+        public IActionResult GetAllEventDates()
+        {
+  
+            ticketApi.GetAllEventDates();
+            return RedirectToAction("Shop", "Home");
+        }
+
+
     }
 }
