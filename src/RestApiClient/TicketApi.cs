@@ -101,6 +101,51 @@ namespace TicketSystem.RestApiClient
             var response = client.Execute(request);
         }
 
+        //TicketEventDates calls
+        public List<TicketEventDate> GetAllEventDates()
+        {
+            var client = new RestClient("http://localhost:61835/api/");
+            var request = new RestRequest("ticketeventdates", Method.GET);
+            var response = client.Execute<List<TicketEventDate>>(request);
+            return response.Data;
+        }
+
+        public List<TicketEventDate> GetEventDates(int id)
+        {
+            var client = new RestClient("http://localhost:61835/api/");
+            var request = new RestRequest("ticketeventdates/{id}", Method.GET);
+            request.AddUrlSegment("id", id);
+            var response = client.Execute<List<TicketEventDate>>(request);
+            return response.Data;
+        }
+
+        public void EventDatesAdd(TicketEventDate ticketEventDate)
+        {
+            var output = JsonConvert.SerializeObject(ticketEventDate);
+            var client = new RestClient("http://localhost:61835/api/");
+            var request = new RestRequest("ticketeventdates", Method.POST);
+            request.AddParameter("application/json", output, ParameterType.RequestBody);
+            var response = client.Execute<TicketEventDate>(request);
+        }
+
+        public void EventDatesUpdate(int id, TicketEventDate ticketEventDate)
+        {
+            var output = JsonConvert.SerializeObject(ticketEventDate);                      //Serialiaze'a objektet vi skickar in
+            var client = new RestClient("http://localhost:61835/api/");                          //En instans av Restclient med adress
+            var request = new RestRequest("ticketeventdates/{id}", Method.PUT);             //En instans av Restrequest med routing och metod info.
+            request.AddUrlSegment("id", id);                                                //Addar id parametern till URL segementet
+            request.AddParameter("application/json", output, ParameterType.RequestBody);    //content-type, data, det är request body vi skickar.
+            var response = client.Execute<TicketEventDate>(request);                        //Exekuterar request med client och sparar i reponse.
+        }
+
+        public void DeleteEventDates(int id)
+        {
+            var client = new RestClient("http://localhost:61835/api/");
+            var request = new RestRequest("ticketeventdates/{id}", Method.DELETE);
+            request.AddUrlSegment("id", id);
+            var response = client.Execute<TicketEventDate>(request); 
+        }
+
 
         //Ticket Calls 
         public List<Ticket> TicketGet()

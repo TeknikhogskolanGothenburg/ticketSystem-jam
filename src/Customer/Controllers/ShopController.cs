@@ -20,11 +20,11 @@ namespace Customer.Controllers
         // POST: Home/Shop
         [HttpPost]  //Min tanke är att när kunden klickar på BUY-knappen slussas man till "Tickets PurchasedTickets" och en Seat läggs till i sql.
         // sen ska den Redirecta till "ConfirmEventWithSeat" och göra en "Http.Put" och koppla TicketEventDateID med SeatID.
-        public IActionResult BookSeat(TicketEventDate ticketEventDate)
+        public ActionResult BookSeat(int buttonclick)
         {
             try
             {
-               SeatsAtEventDate.TicketEventDateId = ticketEventDate.TicketEventDateID;
+                SeatsAtEventDate.TicketEventDateId = buttonclick;
                // int SeatID = 1;
 
                 if (value == null)
