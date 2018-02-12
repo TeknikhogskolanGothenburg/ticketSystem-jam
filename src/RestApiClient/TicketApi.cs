@@ -150,15 +150,15 @@ namespace TicketSystem.RestApiClient
         public List<TicketTransaction> GetAllTicketTransactions()
         {
             var client = new RestClient(localhost);
-            var request = new RestRequest("TicketTransaction", Method.GET);
+            var request = new RestRequest("TicketTransactions", Method.GET);
             var response = client.Execute<List<TicketTransaction>>(request);
             return response.Data;
         }
 
-        public TicketTransaction GetTicketTransaction(int id)
+        public TicketTransaction GetTicketTransactions(int id)
         {
             var client = new RestClient(localhost);
-            var request = new RestRequest("TicketTransaction/{id}", Method.GET);
+            var request = new RestRequest("TicketTransactions/{id}", Method.GET);
             request.AddUrlSegment("id", id);
             var response = client.Execute<TicketTransaction>(request);
             return response.Data;
@@ -168,7 +168,7 @@ namespace TicketSystem.RestApiClient
         {
             var output = JsonConvert.SerializeObject(ticketTransaction);
             var client = new RestClient(localhost);
-            var request = new RestRequest("TicketTransaction", Method.POST);
+            var request = new RestRequest("TicketTransactions", Method.POST);
             request.AddParameter("application/json", output, ParameterType.RequestBody);
             var response = client.Execute<TicketTransaction>(request);
         }
@@ -177,7 +177,7 @@ namespace TicketSystem.RestApiClient
         {
             var output = JsonConvert.SerializeObject(ticketTransaction);
             var client = new RestClient(localhost);
-            var request = new RestRequest("TicketTransaction/{id}", Method.PUT);
+            var request = new RestRequest("TicketTransactions/{id}", Method.PUT);
             request.AddUrlSegment("id", id);
             request.AddParameter("application/json", output, ParameterType.RequestBody);
             var response = client.Execute<TicketTransaction>(request);
@@ -186,7 +186,7 @@ namespace TicketSystem.RestApiClient
         public void DeleteTicketTransaction(int id)
         {
             var client = new RestClient(localhost);
-            var request = new RestRequest("TicketTransaction", Method.DELETE);
+            var request = new RestRequest("TicketTransactions/{id}", Method.DELETE);
             request.AddUrlSegment("id", id);
             var response = client.Execute<TicketTransaction>(request);
         }

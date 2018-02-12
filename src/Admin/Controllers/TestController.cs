@@ -20,12 +20,7 @@ namespace Admin.Controllers
         {
             TicketApi ticketApi = new TicketApi();
             Value value = new Value();
-            TicketEvent test = new TicketEvent()
-            {
-                EventName = "RubberDuckJack",
-                EventHtmlDescription = "Where rubber meets the road"
-            };
-            ticketApi.EventsUpdate(6, test);
+            ticketApi.DeleteTicketTransaction(1);
             return View();
         }
 
