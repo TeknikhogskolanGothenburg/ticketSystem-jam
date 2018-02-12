@@ -73,9 +73,10 @@ namespace Admin.Controllers
             }
         }
 
+
         public IActionResult DropdownChanged(int id)
         {
-            value.Venue = ticketApi.GetVenue(id);
+            value.Venue = ticketApi.GetVenues(id);
             return RedirectToAction("EditVenues", "Venues");
         }
     }
