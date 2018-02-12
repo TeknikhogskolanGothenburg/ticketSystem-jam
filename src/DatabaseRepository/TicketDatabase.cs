@@ -202,7 +202,7 @@ namespace TicketSystem.DatabaseRepository
                 string queryString = "INSERT INTO TicketTransactions(BuyerLastName, BuyerFirstName, BuyerAddress, BuyerCity, PaymentStatus, PaymentReferenceId)" +
                     "VALUES (@LastName, @FirstName, @Address, @City, @Status, @ReferenceID)";
                 connection.Open();
-                connection.Query(queryString, new { LastName = ticketTransaction.BuyerLastName, FirstName = ticketTransaction.BuyerFirstName, Adress = ticketTransaction.BuyerAddress, City = ticketTransaction.BuyerCity, Status = ticketTransaction.PaymentStatus, ReferenceID = ticketTransaction.PaymentReferenceId });
+                connection.Query(queryString, new { LastName = ticketTransaction.BuyerLastName, FirstName = ticketTransaction.BuyerFirstName, Address = ticketTransaction.BuyerAddress, City = ticketTransaction.BuyerCity, Status = ticketTransaction.PaymentStatus, ReferenceID = ticketTransaction.PaymentReferenceId });
                 var addedTicketEventDateQuery = connection.Query<int>("SELECT IDENT_CURRENT ('TicketTransactions') AS Current_Identity").First();
                 return connection.Query<TicketTransaction>("SELECT * FROM TicketTransactions WHERE TransactionID=@Id", new { Id = addedTicketEventDateQuery }).First();
             }

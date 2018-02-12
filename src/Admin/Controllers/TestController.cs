@@ -20,12 +20,16 @@ namespace Admin.Controllers
         {
             TicketApi ticketApi = new TicketApi();
             Value value = new Value();
-            TicketEvent test = new TicketEvent()
+            TicketTransaction test = new TicketTransaction()
             {
-                EventName = "RubberDuckJack",
-                EventHtmlDescription = "Where rubber meets the road"
+                BuyerLastName = "Frej",
+                BuyerFirstName = "Hansson",
+                BuyerAddress = "FlingGatan 17",
+                BuyerCity = "Floda",
+                PaymentStatus = "test",
+                PaymentReferenceId = "test"
             };
-            ticketApi.EventsUpdate(6, test);
+            ticketApi.TicketTransactionAdd(test);
             return View();
         }
 
