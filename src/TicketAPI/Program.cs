@@ -23,11 +23,11 @@ namespace TicketAPI
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>()
-            //.ConfigureServices(serviceCollection =>
-            //{
-            //    serviceCollection.AddSingleton(new ResourceManager("TicketAPI.Resources.Controllers.TicketControllers", typeof(Startup).GetTypeInfo().Assembly));
-            //})
-            
+            .ConfigureServices(serviceCollection =>
+            {
+                serviceCollection.AddSingleton(new ResourceManager("TicketAPI.Resources.Controllers.TicketControllers", typeof(Startup).GetTypeInfo().Assembly));
+            })
+
 
                 .Build();
     }
