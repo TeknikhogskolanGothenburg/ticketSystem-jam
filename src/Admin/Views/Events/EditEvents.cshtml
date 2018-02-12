@@ -1,0 +1,81 @@
+﻿@{
+    ViewData["Title"] = "DeleteEvents";
+}
+
+@model ClassLibrary.Value;
+
+
+<h1>@ViewBag.Message</h1>
+<div id="content">
+    <button onclick="location.href='@Url.Action("AddEvents", "Events")'">Add Event</button>
+    <button>Edit Event</button>
+    <button onclick="location.href='@Url.Action("DeleteEvents", "Events")'">Delete Event</button>
+
+    <div class="venueDiv" id="addVenue" style="display:block">
+        <h3>Edit Event</h3>
+        <hr />
+        @using (Html.BeginForm("EditEvents", "Events", FormMethod.Post))
+    {
+        @Html.DropDownList(
+                   "id",
+                   new SelectList(Model.Events.Select(x => new { Value = x.TicketEventId, Text = x.EventName }),
+                   "Value",
+                   "Text"))
+
+        @Html.LabelFor(m => m.TicketEvent.EventName, "Name")<br />
+        @Html.TextBoxFor(m => m.TicketEvent.EventName)<br />
+        @Html.LabelFor(m => m.TicketEvent.EventHtmlDescription, "Description")<br />
+        @Html.TextBoxFor(m => m.TicketEvent.EventHtmlDescription)<br />
+        <input type="submit" style="background-color:dodgerblue" />
+}
+        <hr />
+    </div>
+</div>
+
+
+
+@section Scripts
+    {
+    <script>
+        function edit() {
+            var edit = document.getElementById("editVenue");
+            var add = document.getElementById("addVenue");
+            var del = document.getElementById("deleteVenue");
+
+            if (edit.style.display === "none") {
+                edit.style.display = "block";
+                add.style.display = "none";
+                del.style.display = "none";
+            }
+
+        }
+        function add() {
+            var add = document.getElementById("addVenue");
+            var edit = document.getElementById("editVenue");
+            var del = document.getElementById("deleteVenue");
+
+            if (add.style.display === "none") {
+                add.style.display = "block";
+                edit.style.display = "none";
+                del.style.display = "none";
+            }
+
+        }
+        function del() {
+            var del = document.getElementById("deleteVenue");
+            var add = document.getElementById("addVenue");
+            var edit = document.getElementById("editVenue");
+
+            if (del.style.display === "none") {
+                del.style.display = "block";
+                add.style.display = "none";
+                edit.style.display = "none";
+            }
+
+        }
+
+        function dropdown(value) {
+            window.location.href = "/Venues/DropDownChanged?id=" + value;
+        }
+    </script>
+}
