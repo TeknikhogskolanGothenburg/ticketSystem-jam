@@ -10,7 +10,7 @@ namespace TicketSystem.RestApiClient
     public class TicketApi : ITicketApi
     {
         // Implemented using RestSharp: http://restsharp.org/
-        string localhost = "http://localhost:60234/api/";
+        string localhost = "http://localhost:61835/api/";
         //TicketEvent Calls
         public List<TicketEvent> GetAllEvents()
         {
@@ -21,7 +21,7 @@ namespace TicketSystem.RestApiClient
         }
 
         public List<TicketEvent> GetEvents(int id)
-        {            
+        {
             var client = new RestClient(localhost);
             var request = new RestRequest("TicketEvents/{id}", Method.GET);
             request.AddUrlSegment("id", id);
@@ -143,9 +143,53 @@ namespace TicketSystem.RestApiClient
             var client = new RestClient(localhost);
             var request = new RestRequest("ticketeventdates/{id}", Method.DELETE);
             request.AddUrlSegment("id", id);
-            var response = client.Execute<TicketEventDate>(request); 
+            var response = client.Execute<TicketEventDate>(request);
         }
 
+        //TicketTransaction calls
+        public List<TicketTransaction> GetAllTicketTransactions()
+        {
+            var client = new RestClient(localhost);
+            var request = new RestRequest("TicketTransaction", Method.GET);
+            var response = client.Execute<List<TicketTransaction>>(request);
+            return response.Data;
+        }
+
+        public TicketTransaction GetTicketTransaction(int id)
+        {
+            var client = new RestClient(localhost);
+            var request = new RestRequest("TicketTransaction/{id}", Method.GET);
+            request.AddUrlSegment("id", id);
+            var response = client.Execute<TicketTransaction>(request);
+            return response.Data;
+        }
+
+        public void TicketTransactionAdd(TicketTransaction ticketTransaction)
+        {
+            var output = JsonConvert.SerializeObject(ticketTransaction);
+            var client = new RestClient(localhost);
+            var request = new RestRequest("TicketTransaction", Method.POST);
+            request.AddParameter("application/json", output, ParameterType.RequestBody);
+            var response = client.Execute<TicketTransaction>(request);
+        }
+
+        public void TicketTransactionUpdate(int id, TicketTransaction ticketTransaction)
+        {
+            var output = JsonConvert.SerializeObject(ticketTransaction);
+            var client = new RestClient(localhost);
+            var request = new RestRequest("TicketTransaction/{id}", Method.PUT);
+            request.AddUrlSegment("id", id);
+            request.AddParameter("application/json", output, ParameterType.RequestBody);
+            var response = client.Execute<TicketTransaction>(request);
+        }
+
+        public void DeleteTicketTransaction(int id)
+        {
+            var client = new RestClient(localhost);
+            var request = new RestRequest("TicketTransaction", Method.DELETE);
+            request.AddUrlSegment("id", id);
+            var response = client.Execute<TicketTransaction>(request);
+        }
 
         //Ticket Calls 
         public List<Ticket> TicketGet()
@@ -154,8 +198,8 @@ namespace TicketSystem.RestApiClient
             var request = new RestRequest("ticket", Method.GET);
             var response = client.Execute<List<Ticket>>(request);
             return response.Data;
-        }      
-             
+        }
+
         public Ticket TicketTicketIdGet(int ticketId)
         {
             var client = new RestClient(localhost);
@@ -171,7 +215,7 @@ namespace TicketSystem.RestApiClient
             return response.Data;
         }
 
-        public Tickets PurchasedTickets( SeatsAtEventDate eventId)
+        public Tickets PurchasedTickets(SeatsAtEventDate eventId)
         {
             var json = JsonConvert.SerializeObject(eventId);
             var client = new RestClient(localhost);
