@@ -24,28 +24,60 @@ namespace Admin.Controllers
             {
                 ticketApi = new TicketApi();
             }
-
             value.Venues = ticketApi.GetAllVenues();
             return View(value);
         }
 
-        public IActionResult DeleteVenue(int id)
+        // Delete
+        public IActionResult DeleteVenues(int id)
         {
-            ticketApi.DeleteVenues(id);
-            return RedirectToAction("Venues", "Venues");
+            if(id != 0)
+            {
+                ticketApi.DeleteVenues(id);
+                value.Venues = ticketApi.GetAllVenues();
+                return View(value);
+            }
+            else
+            {
+                return View(value);
+            }
         }
 
-        public IActionResult AddVenue(Venue venue)
+        // Add
+        public IActionResult AddVenues(Venue venue)
         {
-            ticketApi.VenueAdd(venue);
-            return RedirectToAction("Venues", "Venues");
+            if(venue.VenueName == null)
+            {
+                return View(value);
+            }
+            else
+            {
+                ticketApi.VenueAdd(venue);
+                value.Venues = ticketApi.GetAllVenues();
+                return View(value);
+            }
         }
 
+        // Edit
+        public IActionResult EditVenues(int id, Venue venue)
+        {
+            if(id == 0)
+            {
+                return View(value);
+            }
+            else
+            {
+                ticketApi.VenuesUpdate(id, venue);
+                value.Venues = ticketApi.GetAllVenues();
+                return View(value);
+            }
+        }
+
+        public IActionResult DropdownChanged(int id)
+        {
+            value.Venue = ticketApi.GetVenue(id);
+            return RedirectToAction("EditVenues", "Venues");
+        }
     }
 }
 
-
-// Hej
-// Är du från Africa eller?
-
-// - Det Angola inte daj!

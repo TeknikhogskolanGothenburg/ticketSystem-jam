@@ -16,6 +16,5 @@ namespace ClassLibrary
 
         public Tickets Tickets { get; set; }
 
-
     }
 }

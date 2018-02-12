@@ -40,7 +40,7 @@ namespace TicketAPI.Controllers
 
         // PUT: api/Venues/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody]ClassLibrary.Venue venue)
+        public void Put(int id, [FromBody]Venue venue)
         {
             tdb.VenuesUpdate(id, venue);
         }
@@ -49,7 +49,6 @@ namespace TicketAPI.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
-            
             tdb.DeleteVenue(id);
         }
     }
