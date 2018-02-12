@@ -3,6 +3,9 @@ using Microsoft.AspNetCore.Mvc;
 using Customer.Models;
 using ClassLibrary;
 using TicketSystem.RestApiClient;
+using System.Resources;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Localization;
 
 namespace Customer.Controllers
 {
@@ -11,6 +14,23 @@ namespace Customer.Controllers
         private static Value value;
         private static TicketApi ticketApi;
         public SeatsAtEventDate SeatsAtEventDate;
+        public TicketEvent TicketEvent;
+        //private readonly IHomeDataProvider _homeDataProvider;
+        //private readonly ResourceManager _resourceManager;
+        //private readonly IStringLocalizer _localizer;
+        //private readonly ILogger _logger;
+
+        //public HomeController(IHomeDataProvider homeDataProvider,
+        //    ResourceManager resourceManager, 
+        //    IStringLocalizer<HomeController> localizer, 
+        //    ILogger<HomeController> logger)
+        //{
+        //    _homeDataProvider = homeDataProvider;
+        //    _resourceManager = resourceManager;
+        //    _localizer = localizer;
+        //    _logger = logger;
+
+        //}
 
         public IActionResult Index()
         {
@@ -19,8 +39,10 @@ namespace Customer.Controllers
 
         public IActionResult About()
         {
-            ViewData["Message"] = "Your application description page.";
-
+            var resourceManager = HttpContext.RequestServices.GetService(typeof(ResourceManager)) as ResourceManager;
+          //  _logger.LogInformation(BuildLogInfo(nameof(), "Message"));
+          //  ViewData["Message"] = (_localizer["Message"]);
+            ViewData["Message"] = "About";
             return View();
         }
 
@@ -51,34 +73,70 @@ namespace Customer.Controllers
             value.Events = ticketApi.GetAllEvents();
             return View(value);
         }
-
-        public IActionResult GetAllEvents()
+        public IActionResult English()
         {
-         
-            ticketApi.GetAllEvents();
-            return View( value);// testat både Redirect och View på alla . Vi får gå igenom vad skillnaden är.
+           
+            return View();
         }
 
-        public IActionResult GetAllEventDates()
+        public IActionResult Svenska()
+        {
+
+            return View();
+        }
+
+        public IActionResult GetEvents(TicketEvent ticketEvent)
+        {
+            if (ticketEvent.EventName != null)
+            {
+               
+                value.Events = ticketApi.GetAllEvents();
+                if (Response.StatusCode == 200)
+                {
+                    ViewBag.StatusMessage = "Here are the events!";
+                }
+                else
+                {
+                    ViewBag.StatusMessage = "Something went wrong...";
+                }
+                return View(value);
+            }
+            else
+            {
+                ViewBag.StatusMessage = "";
+                return View(value);
+            }
+        }
+
+        public IActionResult GetAllEventDates(TicketEventDate TicketEventDates)
         {
   
             ticketApi.GetAllEventDates();
-            return RedirectToAction("Shop", "Home");
-        }
-
-        public IActionResult GetAllVenues()
-        {
-            if (value == null)
-            {
-                value = new Value();
-            }
-            if (ticketApi == null)
-            {
-                ticketApi = new TicketApi();
-            }
-            value.Venues = ticketApi.GetAllVenues();
             return View(value);
         }
+
+        //public IActionResult GetAllVenues()
+        //{
+        //    if (value == null)
+        //    {
+        //        value = new Value();
+        //    }
+        //    if (ticketApi == null)
+        //    {
+        //        ticketApi = new TicketApi();
+        //    }
+        //    value.Venues = ticketApi.GetAllVenues();
+        //    return View(value);
+        //}
+        //public ActionResult GetAllEvents()
+        //{
+        //    ticketApi = new TicketApi();
+        //    value = new Value();
+
+        //    ticketApi.GetAllEvents();
+
+        //    return View(value);
+        //}
 
 
     }
