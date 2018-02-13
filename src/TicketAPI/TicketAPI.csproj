@@ -5,7 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Resources\" />
     <Folder Include="wwwroot\" />
   </ItemGroup>
 
@@ -23,6 +22,75 @@
     <ProjectReference Include="..\ClassLibrary\ClassLibrary.csproj" />
     <ProjectReference Include="..\DatabaseRepository\DatabaseRepository.csproj" />
     <ProjectReference Include="..\PaymentProvider\PaymentProvider.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Resources\Controllers\TicketEventDatesController_en.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>TicketEventDatesController_en.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\Controllers\TicketEventsController_en.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>TicketEventsController_en.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\Controllers\TicketEventsController_se-SV.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>TicketEventsController_se-SV.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\Controllers\TicketTransactionController_se-SV.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>TicketTransactionController_se-SV.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\Controllers\TicketTransactionsController_en.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>TicketTransactionsController_en.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\Controllers\VenuesController_en.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>VenuesController_en.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\Controllers\VenuesController_se-SV.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>VenuesController_se-SV.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Resources\Controllers\TicketEventDatesController_en.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>TicketEventDatesController_en.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Controllers\TicketEventsController_en.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>TicketEventsController_en.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Controllers\TicketEventsController_se-SV.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>TicketEventsController_se-SV.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Controllers\TicketTransactionController_se-SV.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>TicketTransactionController_se-SV.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Controllers\TicketTransactionsController_en.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>TicketTransactionsController_en.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Controllers\VenuesController_en.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>VenuesController_en.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Controllers\VenuesController_se-SV.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>VenuesController_se-SV.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
 
 </Project>

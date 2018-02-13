@@ -10,7 +10,7 @@ namespace TicketSystem.RestApiClient
     public class TicketApi : ITicketApi
     {
         // Implemented using RestSharp: http://restsharp.org/
-        string localhost = "http://localhost:49270/api/";
+        string localhost = "http://localhost:50638/api/";
         //TicketEvent Calls
         public List<TicketEvent> GetAllEvents()
         {

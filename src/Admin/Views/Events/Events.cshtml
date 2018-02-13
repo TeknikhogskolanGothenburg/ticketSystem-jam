@@ -3,13 +3,17 @@
 }
 
 @model ClassLibrary.Value;
+@using Microsoft.AspNetCore.Mvc.Localization
+
+    @inject IViewLocalizer Localizer
 
 
 <h1>@ViewBag.Message</h1>
 <div id="content">
     <button onclick="location.href='@Url.Action("AddEvents", "Events")'">Add Event</button>
     <button onclick="location.href='@Url.Action("EditEvents", "Events")'">Edit Event</button>
-    <button onclick="location.href='@Url.Action("DeleteEvents", "Events")'">Delete Event</button>
+  @*//  <button onclick="location.href='@Url.Action("DeleteEvents", "Events")'">Delete Event</button>*@
+    <button onclick="location.href='@Url.Action("DeleteEvents", "Events")'">@Localizer["Delete Event"]</button>
 
 </div>
 

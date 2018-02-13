@@ -10,11 +10,14 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using System.Globalization;
 using Microsoft.AspNetCore.Localization;
+using Microsoft.AspNetCore.Mvc.Razor;
 
 namespace TicketAPI
 {
     public class Startup
     {
+        private RequestLocalizationOptions requestLocalizationOptions;
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -22,6 +25,9 @@ namespace TicketAPI
 
         public IConfiguration Configuration { get; }
 
+
+        //public IServiceProvider ConfigurationServices(IServiceCollection services)
+        //{ }
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
@@ -41,11 +47,13 @@ namespace TicketAPI
                 SupportedUICultures = supportedCultures
             };
 
-
-            services.AddMvc();
+            
+            services.AddMvc()
+            .AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix)
+            .AddDataAnnotationsLocalization();
         }
-        
 
+        
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
@@ -53,6 +61,7 @@ namespace TicketAPI
             {
                 app.UseDeveloperExceptionPage();
             }
+            //app.UseRequestLocalization(requestLocalizationOptions);
 
             app.UseMvc();
         }
