@@ -10,7 +10,9 @@ namespace TicketSystem.RestApiClient
     public class TicketApi : ITicketApi
     {
         // Implemented using RestSharp: http://restsharp.org/
-        string localhost = "http://localhost:50638/api/";
+
+        string localhost = "http://localhost:60234/api/";
+
         //TicketEvent Calls
         public List<TicketEvent> GetAllEvents()
         {
@@ -222,6 +224,16 @@ namespace TicketSystem.RestApiClient
             var request = new RestRequest("shop", Method.POST);
             request.AddParameter("application/json", json, ParameterType.RequestBody);
             var response = client.Execute<Tickets>(request);
+            return response.Data;
+        }
+
+        //Join table calls
+        public EventSummary GetSummary(int id)
+        {
+            var client = new RestClient(localhost);
+            var request = new RestRequest("TicketEventDates/{id}/Summary", Method.GET);
+            request.AddUrlSegment("id", id);
+            var response = client.Execute<EventSummary>(request);
             return response.Data;
         }
     }

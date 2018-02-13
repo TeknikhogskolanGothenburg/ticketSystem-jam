@@ -50,10 +50,9 @@ namespace TicketSystem.DatabaseRepository
             using (var connection = new SqlConnection(connectionString))
             {
                 connection.Open();
-                connection.Query("UPDATE TicketEvents SET EventName = @eventName, " + " EventHtmlDescription = @description " + "WHERE TicketEventID = @ID", new { eventName = ticketEvent.EventName, description = ticketEvent.EventHtmlDescription, ID = id });
+                connection.Query("UPDATE TicketEvents SET EventName = @eventName, " + " EventHtmlDescription = @description " + "WHERE TicketEventID = @ID",new { eventName = ticketEvent.EventName, description = ticketEvent.EventHtmlDescription, ID = id });
                 var addedEventQuery = connection.Query<int>("SELECT IDENT_CURRENT ('TicketEvents') AS Current_Identity").First();
                 return connection.Query<TicketEvent>("SELECT * FROM TicketEvents WHERE TicketEventID=@Id", new { Id = id }).First();
-                //return connection.Query<TicketEvent>("SELECT * FROM TicketEvents WHERE TicketEventID=@Id", new { Id = addedEventQuery }).First();
             }
         }
 
@@ -93,7 +92,14 @@ namespace TicketSystem.DatabaseRepository
             {
                 string queryString = "INSERT INTO Venues(VenueName, Address, City, Country, Seats) VALUES(@Name,@Address, @City, @Country, @Seats)";
                 connection.Open();
-                connection.Query(queryString, new { Name = venue.VenueName, Address = venue.Address, City = venue.City, Country = venue.Country, Seats = venue.Seats });
+                connection.Query(queryString, new
+                {
+                    Name = venue.VenueName,
+                    venue.Address,
+                    venue.City,
+                    venue.Country,
+                    venue.Seats
+                });
                 var addedVenueQuery = connection.Query<int>("SELECT IDENT_CURRENT ('Venues') AS Current_Identity").First();
                 return connection.Query<Venue>("SELECT * FROM Venues WHERE VenueID=@Id", new { Id = addedVenueQuery }).First();
             }
@@ -106,8 +112,7 @@ namespace TicketSystem.DatabaseRepository
                 connection.Open();
                 connection.Query("UPDATE Venues SET VenueName = @venueName, " + " Address = @address, " + " City = @city, " + " Country = @country, " + " Seats = @seats " + "WHERE VenueID = @ID",
                     new { venueName = venue.VenueName, address = venue.Address, city = venue.City, country = venue.Country, seats = venue.Seats, ID = id });
-                var addedVenueQuery = connection.Query<int>("SELECT IDENT_CURRENT ('Venues') AS Current_Identity").First();
-                return connection.Query<Venue>("SELECT * FROM Venues WHERE VenueID=@Id", new { Id = addedVenueQuery }).First();
+                return connection.Query<Venue>("SELECT * FROM Venues WHERE VenueID=@Id", new { Id = id }).First();
             }
         }
 
@@ -255,6 +260,24 @@ namespace TicketSystem.DatabaseRepository
                 return connection.Query<SeatsAtEventDate>("SELECT * FROM SeatsAtEventDate WHERE SeatID=@seatID", new { Id = addedSeatsAtEventDateQuery }).First();
             }
         }
+
+
+        // Join table Methods
+        public EventSummary GetEventSummary(int id)
+        {
+            using (var connection = new SqlConnection(connectionString))
+            {
+                string queryString = "SELECT TicketEventDates.EventStartDateTime, TicketEvents.EventName, TicketEvents.EventHtmlDescription,  Venues.VenueName FROM" +
+                    " TicketEventDates" +
+                    " JOIN TicketEvents ON TicketEventDates.TicketEventID = TicketEvents.TicketEventID" +
+                    " JOIN Venues ON TicketEventDates.TicketEventDateID = Venues.VenueID" +
+                    " WHERE TicketEventDates.TicketEventDateID = @ID";
+                connection.Open();
+                var response = connection.Query<EventSummary>(queryString, new { ID = id }).First();
+                return response;
+            }
+        }
+
     }
 
 }
