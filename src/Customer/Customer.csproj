@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="Views\Home\GetEvent.cshtml" />
+    <Content Remove="Views\Tickets\GetEvent.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -33,20 +33,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>HomeController_se.resx</DependentUpon>
     </Compile>
-    <Compile Update="Views\Home\About_se.Designer.cs">
+    <Compile Update="Views\Tickets\Tickets_se.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>About_se.resx</DependentUpon>
-    </Compile>
-    <Compile Update="Views\Home\Contact_se.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Contact_se.resx</DependentUpon>
-    </Compile>
-    <Compile Update="Views\Home\Shop_se.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Shop_se.resx</DependentUpon>
+      <DependentUpon>Tickets_se.resx</DependentUpon>
     </Compile>
   </ItemGroup>
 
@@ -59,17 +49,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>HomeController_se.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\Home\About_se.resx">
+    <EmbeddedResource Update="Views\Tickets\Tickets_se.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>About_se.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Views\Home\Contact_se.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Contact_se.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Views\Home\Shop_se.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Shop_se.Designer.cs</LastGenOutput>
+      <LastGenOutput>Tickets_se.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
 
