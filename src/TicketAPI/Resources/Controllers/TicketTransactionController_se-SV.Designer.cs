@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Customer.Views.Home {
+namespace TicketAPI.Resources.Controllers {
     using System;
     
     
@@ -22,14 +22,14 @@ namespace Customer.Views.Home {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Contact_se {
+    internal class TicketTransactionController_se_SV {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Contact_se() {
+        internal TicketTransactionController_se_SV() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace Customer.Views.Home {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Customer.Views.Home.Contact_se", typeof(Contact_se).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("TicketAPI.Resources.Controllers.TicketTransactionController_se-SV", typeof(TicketTransactionController_se_SV).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -57,15 +57,6 @@ namespace Customer.Views.Home {
             }
             set {
                 resourceCulture = value;
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Kontakt.
-        /// </summary>
-        internal static string Contact {
-            get {
-                return ResourceManager.GetString("Contact", resourceCulture);
             }
         }
     }

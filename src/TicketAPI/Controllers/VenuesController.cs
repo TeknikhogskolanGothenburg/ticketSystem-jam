@@ -2,6 +2,9 @@
 using ClassLibrary;
 using Microsoft.AspNetCore.Mvc;
 using TicketSystem.DatabaseRepository;
+using System.Resources;
+using Microsoft.Extensions.Localization;
+using Microsoft.Extensions.Logging;
 
 namespace TicketAPI.Controllers
 {
@@ -9,6 +12,23 @@ namespace TicketAPI.Controllers
     [Route("api/Venues")]
     public class VenuesController : Controller
     {
+
+        //private readonly IVenuesDataProvider _venuesDataProvider;
+        //private readonly ResourceManager _resourceManager;
+        //private readonly IStringLocalizer<VenuesController> _localizer;
+        //private readonly ILogger _logger;
+
+        //public VenuesController(IVenuesDataProvider homeDataProvider,
+        //    ResourceManager resourceManager,
+        //    IStringLocalizer<VenuesController> localizer,
+        //    ILogger<VenuesController> logger)
+        //{
+        //    _venuesDataProvider = homeDataProvider;
+        //    _resourceManager = resourceManager;
+        //    _localizer = localizer;
+        //    _logger = logger;
+
+        //}
         TicketDatabase tdb = new TicketDatabase();
 
         // GET: api/Venues

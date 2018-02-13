@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Admin.Resources.Controllers {
+namespace Customer.Views.Tickets {
     using System;
     
     
@@ -22,14 +22,14 @@ namespace Admin.Resources.Controllers {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class EventsController_en {
+    internal class Tickets_se {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal EventsController_en() {
+        internal Tickets_se() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace Admin.Resources.Controllers {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Admin.Resources.Controllers.EventsController_en", typeof(EventsController_en).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Customer.Views.Tickets.Tickets_se", typeof(Tickets_se).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
