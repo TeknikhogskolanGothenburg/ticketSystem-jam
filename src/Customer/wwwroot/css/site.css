@@ -3,33 +3,71 @@
     padding-bottom: 20px;
 }
 
-/* Wrapping element */
-/* Set some basic padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
 }
 
-/* Carousel */
-.carousel-caption p {
-    font-size: 20px;
-    line-height: 1.4;
+
+h3 {
+    margin: 0;
 }
 
-/* Make .svg files in the carousel display properly in older browsers */
-.carousel-inner .item img[src$=".svg"] {
+.venueDiv {
+    width: 30%;
+    display: inline-block;
+    margin: 10px;
+    padding: 10px;
+    margin: 0 auto;
+    margin-top: 20px;
+    text-align: center;
+    display: none;
+}
+
+input[type=text] {
+    width: 100%;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+select {
+    padding: 10px;
+    margin-top: 8px;
+    margin-bottom: 8px;
     width: 100%;
 }
 
-/* QR code generator */
-#qrCode {
-    margin: 15px;
+#content {
+    text-align: center;
+    margin: 0 auto;
+}
+
+button {
+    background-color: #101010;
+    border: none;
+    color: white;
+    padding: 10px 27px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 4px 2px;
+    cursor: pointer;
 }
 
 /* Hide/rearrange for smaller screens */
 @media screen and (max-width: 767px) {
-    /* Hide captions */
-    .carousel-caption {
-        display: none;
-    }
 }
