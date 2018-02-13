@@ -50,7 +50,7 @@ namespace TicketSystem.DatabaseRepository
             using (var connection = new SqlConnection(connectionString))
             {
                 connection.Open();
-                connection.Query("UPDATE TicketEvents SET EventName = @eventName, " + " EventHtmlDescription = @description " + "WHERE TicketEventID = @ID", new { eventName = ticketEvent.EventName, description = ticketEvent.EventHtmlDescription, ID = id });
+                connection.Query("UPDATE TicketEvents SET EventName = @eventName, " + " EventHtmlDescription = @description " + "WHERE TicketEventID = @ID",new { eventName = ticketEvent.EventName, description = ticketEvent.EventHtmlDescription, ID = id });
                 var addedEventQuery = connection.Query<int>("SELECT IDENT_CURRENT ('TicketEvents') AS Current_Identity").First();
                 return connection.Query<TicketEvent>("SELECT * FROM TicketEvents WHERE TicketEventID=@Id", new { Id = id }).First();
                 //return connection.Query<TicketEvent>("SELECT * FROM TicketEvents WHERE TicketEventID=@Id", new { Id = addedEventQuery }).First();
@@ -93,7 +93,14 @@ namespace TicketSystem.DatabaseRepository
             {
                 string queryString = "INSERT INTO Venues(VenueName, Address, City, Country, Seats) VALUES(@Name,@Address, @City, @Country, @Seats)";
                 connection.Open();
-                connection.Query(queryString, new { Name = venue.VenueName, Address = venue.Address, City = venue.City, Country = venue.Country, Seats = venue.Seats });
+                connection.Query(queryString, new
+                {
+                    Name = venue.VenueName,
+                    venue.Address,
+                    venue.City,
+                    venue.Country,
+                    venue.Seats
+                });
                 var addedVenueQuery = connection.Query<int>("SELECT IDENT_CURRENT ('Venues') AS Current_Identity").First();
                 return connection.Query<Venue>("SELECT * FROM Venues WHERE VenueID=@Id", new { Id = addedVenueQuery }).First();
             }

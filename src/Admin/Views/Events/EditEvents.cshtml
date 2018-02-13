@@ -1,5 +1,5 @@
 ﻿@{
-    ViewData["Title"] = "AddVenues";
+    ViewData["Title"] = "DeleteEvents";
 }
 
 @model ClassLibrary.Value;
@@ -7,34 +7,34 @@
 
 <h1>@ViewBag.Message</h1>
 <div id="content">
-    <button>Add Venue</button>
-    <button type="button" onclick="location.href='@Url.Action("EditVenues", "Venues")'">Edit Venue</button>
-    <button onclick="location.href='@Url.Action("DeleteVenues", "Venues")'">Delete Venue</button>
+    <button onclick="location.href='@Url.Action("AddEvents", "Events")'">Add Event</button>
+    <button>Edit Event</button>
+    <button onclick="location.href='@Url.Action("DeleteEvents", "Events")'">Delete Event</button>
 
     <div class="venueDiv" id="addVenue" style="display:block">
         <hr />
-        <h3>Add Venue</h3>
+        <h3>Edit Event</h3>
         <hr />
-        @using (Html.BeginForm("AddVenues", "Venues", FormMethod.Post))
+        @using (Html.BeginForm("EditEvents", "Events", FormMethod.Post))
     {
+        @Html.DropDownList(
+                    "id",
+                    new SelectList(Model.Events.Select(x => new { Value = x.TicketEventId, Text = x.EventName }),
+                    "Value",
+                    "Text"))
 
-        @Html.LabelFor(m => m.Venue.VenueName, "Name")<br />
-        @Html.TextBoxFor(m => m.Venue.VenueName, new { @required = true })<br />
-        @Html.LabelFor(m => m.Venue.Address, "Address")<br />
-        @Html.TextBoxFor(m => m.Venue.Address, new { @required = true })<br />
-        @Html.LabelFor(m => m.Venue.City, "City")<br />
-        @Html.TextBoxFor(m => m.Venue.City, new { @required = true })<br />
-        @Html.LabelFor(m => m.Venue.Country, "Country")<br />
-        @Html.TextBoxFor(m => m.Venue.Country, new { @required = true })<br />
-        @Html.LabelFor(m => m.Venue.Seats, "Seats")<br />
-        @Html.TextBoxFor(m => m.Venue.Seats, new { @required = true })<br />
-
-        <input type="submit" value="Add" />
-        <hr />
+        @Html.LabelFor(m => m.TicketEvent.EventName, "Name")<br />
+        @Html.TextBoxFor(m => m.TicketEvent.EventName)<br />
+        @Html.LabelFor(m => m.TicketEvent.EventHtmlDescription, "Description")<br />
+        @Html.TextBoxFor(m => m.TicketEvent.EventHtmlDescription)<br />
+        <input type="submit" style="background-color:dodgerblue" />
 }
-
+        <hr />
     </div>
 </div>
+
+
+
 @section Scripts
     {
     <script>
