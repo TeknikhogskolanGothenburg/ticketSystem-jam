@@ -1,0 +1,37 @@
+﻿@model ClassLibrary.Value;
+
+@{
+    ViewData["Title"] = "Events";
+}
+
+@*@using Microsoft.AspNetCore.Mvc.Localization
+
+@inject IViewLocalizer Localizer*@
+
+<h1>@ViewBag.Message</h1>
+<div id="content">
+ 
+    <div class="venueDiv" id="getEvent" style="display:block">
+                <h3>Get Events</h3>
+                <hr />
+                @using (Html.BeginForm("GetEvents", "Home", FormMethod.Get))
+                {
+                    @Html.DropDownList(
+                                                                                  "id",
+                                                                                  new SelectList(Model.Events.Select(x => new { Value = x.TicketEventId , Text = x.EventName }),
+                                                                                  "Value",
+                                                                                  "Text"))
+
+                    <input type="submit" value="Get" style="background-color:green" />
+                }
+                <hr />
+            </div>
+        </div>
+            @section Scripts
+                {
+                <script>
+                    function dropdown(value) {
+                        window.location.href = "/Shop/DropDownChanged?id=" + value;
+                    }
+                </script>
+            }
