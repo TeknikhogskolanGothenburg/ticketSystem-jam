@@ -58,7 +58,7 @@
 
 
 
-    <div class="venueDiv" id="getEvent" style="display:none">
+    <div class="venueDiv" id="getEvent" style="display:block">
                 <h3>Get Events</h3>
                 <hr />
                 @using (Html.BeginForm("GetEvents", "Home", FormMethod.Get))
@@ -67,7 +67,7 @@
                                                                                   "id",
                                                                                   new SelectList(Model.Events.Select(x => new { Value = x.TicketEventId , Text = x.EventName }),
                                                                                   "Value",
-                                                                                  "Text"), "- Select Event")
+                                                                                  "Text"))
 
                     <input type="submit" value="Get" style="background-color:green" />
                 }

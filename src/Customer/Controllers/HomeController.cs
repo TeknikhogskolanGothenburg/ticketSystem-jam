@@ -21,8 +21,8 @@ namespace Customer.Controllers
         //private readonly ILogger _logger;
 
         //public HomeController(IHomeDataProvider homeDataProvider,
-        //    ResourceManager resourceManager, 
-        //    IStringLocalizer<HomeController> localizer, 
+        //    ResourceManager resourceManager,
+        //    IStringLocalizer<HomeController> localizer,
         //    ILogger<HomeController> logger)
         //{
         //    _homeDataProvider = homeDataProvider;
@@ -85,27 +85,16 @@ namespace Customer.Controllers
             return View();
         }
 
-        public IActionResult GetEvents(TicketEvent ticketEvent)
+        public IActionResult GetEvents()
         {
-            if (ticketEvent.EventName != null)
-            {
+            
+            
                
                 value.Events = ticketApi.GetAllEvents();
-                if (Response.StatusCode == 200)
-                {
-                    ViewBag.StatusMessage = "Here are the events!";
-                }
-                else
-                {
-                    ViewBag.StatusMessage = "Something went wrong...";
-                }
+            
                 return View(value);
-            }
-            else
-            {
-                ViewBag.StatusMessage = "";
-                return View(value);
-            }
+            
+         
         }
 
         public IActionResult GetAllEventDates(TicketEventDate TicketEventDates)
