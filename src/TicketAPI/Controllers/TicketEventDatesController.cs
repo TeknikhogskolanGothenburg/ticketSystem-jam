@@ -48,7 +48,13 @@ namespace TicketAPI.Controllers
         {
             tdb.DeleteEventDates(id);
         }
-        
+
+        [HttpGet("Summary")]
+        public List<EventSummary> GetAllSummary()
+        {
+            return tdb.GetAllEventSummary();
+        }
+
         [HttpGet("{id}/Summary")]
         public EventSummary GetSummary(int id)
         {
