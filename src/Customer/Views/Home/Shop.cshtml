@@ -17,7 +17,7 @@
     .right {
         width: 480px;
         float: right;
-        text-align:center;
+        text-align: center;
     }
 </style>
 <style>
@@ -43,11 +43,10 @@
         background-color: black;
         color: white;
     }
-
 </style>
 @*@using Microsoft.AspNetCore.Mvc.Localization
 
-@inject IViewLocalizer Localizer*@
+    @inject IViewLocalizer Localizer*@
 
 <h1>@ViewBag.Message</h1>
 <div id="content">
@@ -59,63 +58,63 @@
 
 
     <div class="venueDiv" id="getEvent" style="display:none">
-                <h3>Get Events</h3>
-                <hr />
-                @using (Html.BeginForm("GetEvents", "Home", FormMethod.Get))
-                {
-                    @Html.DropDownList(
-                                                                                  "id",
-                                                                                  new SelectList(Model.Events.Select(x => new { Value = x.TicketEventId , Text = x.EventName }),
-                                                                                  "Value",
-                                                                                  "Text"), "- Select Event")
-
-                    <input type="submit" value="Get" style="background-color:green" />
-                }
-                <hr />
-            </div>
-        </div>
-
-    @*<div class="venueDiv" id="getEventDate" style="display:none">
-        <h3>Choose Event Date</h3>
+        <h3>Get Events</h3>
         <hr />
-        @using (Html.BeginForm("GetAllEvents", "Home", FormMethod.Get))
-        {*@
-            @*@Html.DropDownList(
-                "id",
-                new SelectList(Model.TicketEventDate.Select(x => new { Value = x.EventStartDateTime, Text = x.EventStartDateTime }),
-                "Value",
-                "Text"), "- Select Event")*@
+        @using (Html.BeginForm("GetEvents", "Home", FormMethod.Get))
+        {
+            @Html.DropDownList(
+                                                                                                   "id",
+                                                                                                   new SelectList(Model.Events.Select(x => new { Value = x.TicketEventId, Text = x.EventName }),
+                                                                                                   "Value",
+                                                                                                   "Text"), "- Select Event")
 
-            @*@Html.ListBoxFor(model => model.Events, "id", new MultiSelectList(Model.TicketEvent, "Value", "Text"), new { SelectionMode = "Single" })*@
+            <input type="submit" value="Get" style="background-color:green" />
+        }
+        <hr />
+    </div>
+</div>
 
-            @*//< input type = submit" value="Get" style="background - color:green" />
+@*<div class="venueDiv" id="getEventDate" style="display:none">
+    <h3>Choose Event Date</h3>
+    <hr />
+    @using (Html.BeginForm("GetAllEvents", "Home", FormMethod.Get))
+    {*@
+@*@Html.DropDownList(
+    "id",
+    new SelectList(Model.TicketEventDate.Select(x => new { Value = x.EventStartDateTime, Text = x.EventStartDateTime }),
+    "Value",
+    "Text"), "- Select Event")*@
+
+@*@Html.ListBoxFor(model => model.Events, "id", new MultiSelectList(Model.TicketEvent, "Value", "Text"), new { SelectionMode = "Single" })*@
+
+@*//< input type = submit" value="Get" style="background - color:green" />
 
     < hr />
             </ div >*@
 
 
-            @*<div class="venueDiv" id="getEvent" style="display:none">
-                    <h3>Select Arena</h3>
-                    <hr />
-                    @using (Html.BeginForm("GetAllVenues", "Home", FormMethod.Get))
-                    {
-                        @Html.DropDownList(
-                                                                                          "id",
-                                                                                          new SelectList(Model.Venues.Select(x => new { Value = x.VenueName, Text = x.VenueName }),
-                                                                                          "Value",
-                                                                                          "Text"), "- Select Event")
+@*<div class="venueDiv" id="getEvent" style="display:none">
+        <h3>Select Arena</h3>
+        <hr />
+        @using (Html.BeginForm("GetAllVenues", "Home", FormMethod.Get))
+        {
+            @Html.DropDownList(
+                                                                              "id",
+                                                                              new SelectList(Model.Venues.Select(x => new { Value = x.VenueName, Text = x.VenueName }),
+                                                                              "Value",
+                                                                              "Text"), "- Select Event")
 
-                        <input type="submit" value="Get" style="background-color:green" />
-                    }
-                    <hr />
-                </div>*@
+            <input type="submit" value="Get" style="background-color:green" />
+        }
+        <hr />
+    </div>*@
 
 
-            @section Scripts
-                {
-                <script>
-                    function dropdown(value) {
-                        window.location.href = "/Shop/DropDownChanged?id=" + value;
-                    }
-                </script>
-            }
+@section Scripts
+    {
+    <script>
+        function dropdown(value) {
+            window.location.href = "/Shop/DropDownChanged?id=" + value;
+        }
+    </script>
+}

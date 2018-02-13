@@ -11,7 +11,7 @@ namespace TicketSystem.DatabaseRepository
     {
         string connectionString = "Server=(local)\\SqlExpress; Database=TicketSystem; Trusted_connection=true";
 
-        // TicketEventController Methods
+        // TicketEventController Queries
         public List<TicketEvent> GetAllEvents()
         {
             using (var connection = new SqlConnection(connectionString))
@@ -50,7 +50,7 @@ namespace TicketSystem.DatabaseRepository
             using (var connection = new SqlConnection(connectionString))
             {
                 connection.Open();
-                connection.Query("UPDATE TicketEvents SET EventName = @eventName, " + " EventHtmlDescription = @description " + "WHERE TicketEventID = @ID",new { eventName = ticketEvent.EventName, description = ticketEvent.EventHtmlDescription, ID = id });
+                connection.Query("UPDATE TicketEvents SET EventName = @eventName, " + " EventHtmlDescription = @description " + "WHERE TicketEventID = @ID", new { eventName = ticketEvent.EventName, description = ticketEvent.EventHtmlDescription, ID = id });
                 var addedEventQuery = connection.Query<int>("SELECT IDENT_CURRENT ('TicketEvents') AS Current_Identity").First();
                 return connection.Query<TicketEvent>("SELECT * FROM TicketEvents WHERE TicketEventID=@Id", new { Id = id }).First();
             }
@@ -65,7 +65,7 @@ namespace TicketSystem.DatabaseRepository
             }
         }
 
-        //VenuesController Methods
+        //VenuesController Queries
         public List<Venue> GetAllVenues()
         {
             using (var connection = new SqlConnection(connectionString))
@@ -126,7 +126,7 @@ namespace TicketSystem.DatabaseRepository
             }
         }
 
-        //EventDate Methods
+        //EventDate Queries
         public List<TicketEventDate> GetAllEventDates()
         {
             using (var connection = new SqlConnection(connectionString))
@@ -179,7 +179,7 @@ namespace TicketSystem.DatabaseRepository
             }
         }
 
-        //TicketTransaction methods
+        //TicketTransaction Queries
         public List<TicketTransaction> GetAllTicketTransactions()
         {
             using (var connection = new SqlConnection(connectionString))
@@ -236,7 +236,7 @@ namespace TicketSystem.DatabaseRepository
         }
 
 
-
+        //Ticket Queries
         public Tickets PurchasedTickets(TicketEventDate ticketEventDateId) //int seatID, int ticketEventId
         {
             using (var connection = new SqlConnection(connectionString))
@@ -262,7 +262,24 @@ namespace TicketSystem.DatabaseRepository
         }
 
 
-        // Join table Methods
+        // Join table Queries
+        public List<EventSummary> GetAllEventSummary()
+        {
+            using (var connection = new SqlConnection(connectionString))
+            {
+                string queryString = "SELECT TicketEventDates.EventStartDateTime, TicketEvents.EventName, TicketEvents.EventHtmlDescription,  Venues.VenueName FROM" +
+                    " TicketEventDates" +
+                    " JOIN TicketEvents ON TicketEventDates.TicketEventID = TicketEvents.TicketEventID" +
+                    " JOIN Venues ON TicketEventDates.TicketEventDateID = Venues.VenueID";
+                    //+ " WHERE TicketEventDates.TicketEventDateID = @ID";
+                connection.Open();
+                var response = connection.Query<EventSummary>(queryString).ToList();
+                return response;
+            }
+        }
+
+
+
         public EventSummary GetEventSummary(int id)
         {
             using (var connection = new SqlConnection(connectionString))
@@ -277,7 +294,6 @@ namespace TicketSystem.DatabaseRepository
                 return response;
             }
         }
-
     }
 
 }
