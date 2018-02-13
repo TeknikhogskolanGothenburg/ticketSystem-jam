@@ -20,7 +20,9 @@ namespace Admin.Controllers
         {
             TicketApi ticketApi = new TicketApi();
             Value value = new Value();
-            ticketApi.DeleteTicketTransaction(1);
+            EventSummary test = new EventSummary();
+
+            test = ticketApi.GetSummary(6);
             return View();
         }
 
