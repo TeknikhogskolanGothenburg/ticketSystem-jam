@@ -25,6 +25,6 @@ namespace ClassLibrary
 
         public TicketEventDate TicketEventDates { get; set; }
 
-        public int Id { get; set; }
+       public EventSummary EventSummarys { get; set; }
     }
 }
