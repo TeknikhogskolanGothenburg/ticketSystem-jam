@@ -12,29 +12,30 @@
     <button onclick="location.href='@Url.Action("DeleteVenues", "Venues")'">Delete Venue</button>
 
     <div class="venueDiv" id="editVenue" style="display:block">
+        <hr />
         <h3>Edit Venue</h3>
         <hr />
         @using (Html.BeginForm("EditVenues", "Venues", FormMethod.Post))
-        {
-            @Html.DropDownList(
-                      "id",
-                      new SelectList(Model.Venues.Select(x => new { Value = x.VenueId, Text = x.VenueName }),
-                      "Value",
-                      "Text"))
+    {
+        @Html.DropDownList(
+                   "id",
+                   new SelectList(Model.Venues.Select(x => new { Value = x.VenueId, Text = x.VenueName }),
+                   "Value",
+                   "Text"))
 
 
-            @Html.LabelFor(m => m.Venue.VenueName, "Name")<br />
-            @Html.TextBoxFor(m => m.Venue.VenueName)<br />
-            @Html.LabelFor(m => m.Venue.Address, "Address")<br />
-            @Html.TextBoxFor(m => m.Venue.Address)<br />
-            @Html.LabelFor(m => m.Venue.City, "City")<br />
-            @Html.TextBoxFor(m => m.Venue.City)<br />
-            @Html.LabelFor(m => m.Venue.Country, "Country")<br />
-            @Html.TextBoxFor(m => m.Venue.Country)<br />
-            @Html.LabelFor(m => m.Venue.Seats, "Seats")<br />
-            @Html.TextBoxFor(m => m.Venue.Seats)<br />
-            <input type="submit" style="background-color:dodgerblue" />
-        }
+        @Html.LabelFor(m => m.Venue.VenueName, "Name")<br />
+        @Html.TextBoxFor(m => m.Venue.VenueName)<br />
+        @Html.LabelFor(m => m.Venue.Address, "Address")<br />
+        @Html.TextBoxFor(m => m.Venue.Address)<br />
+        @Html.LabelFor(m => m.Venue.City, "City")<br />
+        @Html.TextBoxFor(m => m.Venue.City)<br />
+        @Html.LabelFor(m => m.Venue.Country, "Country")<br />
+        @Html.TextBoxFor(m => m.Venue.Country)<br />
+        @Html.LabelFor(m => m.Venue.Seats, "Seats")<br />
+        @Html.TextBoxFor(m => m.Venue.Seats)<br />
+        <input type="submit" style="background-color:dodgerblue" />
+}
         <hr />
     </div>
 

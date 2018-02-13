@@ -13,6 +13,7 @@ namespace Admin.Controllers
     {
         private static Value value;
         private static TicketApi ticketApi;
+
         // GET: Events
         public IActionResult Events()
         {
@@ -50,14 +51,6 @@ namespace Admin.Controllers
             {
                 ticketApi.EventsAdd(ticketEvent);
                 value.Events = ticketApi.GetAllEvents();
-                if (Response.StatusCode == 200)
-                {
-                    ViewBag.StatusMessage = "Event Added!";
-                }
-                else
-                {
-                    ViewBag.StatusMessage = "Something went wrong...";
-                }
                 return View(value);
             }
             else
@@ -67,11 +60,21 @@ namespace Admin.Controllers
             }
         }
 
-        // GET: Events/Edit/5
-        public IActionResult Edit(int id)
+        // Edit
+        public IActionResult EditEvents(int id, TicketEvent ticketEvent)
         {
-            return View();
+            if (id == 0)
+            {
+                return View(value);
+            }
+            else
+            {
+                ticketApi.EventsUpdate(id, ticketEvent);
+                value.Events = ticketApi.GetAllEvents();
+                return View(value);
+            }
         }
+
 
     }
 }

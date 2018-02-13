@@ -16,12 +16,13 @@ namespace ClassLibrary
 
         public List<Tickets> BookTicket = new List<Tickets>();
 
-        public Tickets Tickets { get; set; }
 
         public List<TicketEventDate> TicketEventDate { get; set; } = new List<TicketEventDate>(); //behöver lite att testa med..
 
         public List<TicketTransaction> TicketTransaction { get; set; } = new List<TicketTransaction>(); //..och lite mer.
 
         public TicketEventDate TicketEventDates { get; set; }
+
+        public int Id { get; set; }
     }
 }
