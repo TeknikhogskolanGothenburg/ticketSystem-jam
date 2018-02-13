@@ -11,7 +11,7 @@ namespace TicketSystem.RestApiClient
     {
         // Implemented using RestSharp: http://restsharp.org/
 
-        string localhost = "http://localhost:49270/api/";
+        string localhost = "http://localhost:61835/api/";
 
         //TicketEvent Calls
         public List<TicketEvent> GetAllEvents()
@@ -228,6 +228,14 @@ namespace TicketSystem.RestApiClient
         }
 
         //Join table calls
+        public List<EventSummary> GetAllSummary()
+        {
+            var client = new RestClient(localhost);
+            var request = new RestRequest("TicketEventDates/Summary/", Method.GET);
+            var response = client.Execute<List<EventSummary>>(request);
+            return response.Data;
+        }
+
         public EventSummary GetSummary(int id)
         {
             var client = new RestClient(localhost);

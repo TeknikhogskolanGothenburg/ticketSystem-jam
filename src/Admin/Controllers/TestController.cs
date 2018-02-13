@@ -13,17 +13,14 @@ namespace Admin.Controllers
     {
         //private static Value value;
         //private static TicketApi ticketApi;
-
+        TicketApi ticketApi = new TicketApi() { };
 
         // GET: Test
         public IActionResult Index()
         {
-            TicketApi ticketApi = new TicketApi();
-            Value value = new Value();
-            EventSummary test = new EventSummary();
-
-            test = ticketApi.GetSummary(6);
-            return View();
+            EventSummary sum = new EventSummary();
+            List<EventSummary> test = ticketApi.GetAllSummary();
+            return View(sum);
         }
 
         // GET: Test/Details/5
