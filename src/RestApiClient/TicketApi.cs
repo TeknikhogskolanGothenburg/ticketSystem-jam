@@ -224,6 +224,16 @@ namespace TicketSystem.RestApiClient
             var response = client.Execute<Tickets>(request);
             return response.Data;
         }
+
+        //Join table calls
+        public EventSummary GetSummary(int id)
+        {
+            var client = new RestClient(localhost);
+            var request = new RestRequest("TicketEventDates/{id}/Summary", Method.GET);
+            request.AddUrlSegment("id", id);
+            var response = client.Execute<EventSummary>(request);
+            return response.Data;
+        }
     }
 }
 
