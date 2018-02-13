@@ -58,11 +58,12 @@
 
 
 
-    <div class="venueDiv" id="getEvent" style="display:block">
+    @*<div class="venueDiv" id="getEvent" style="display:block">
                 <h3>Get Events</h3>
                 <hr />
                 @using (Html.BeginForm("GetEvents", "Home", FormMethod.Get))
                 {
+                   
                     @Html.DropDownList(
                                                                                   "id",
                                                                                   new SelectList(Model.Events.Select(x => new { Value = x.TicketEventId , Text = x.EventName }),
@@ -73,7 +74,84 @@
                 }
                 <hr />
             </div>
-        </div>
+        </div>*@
+<html>
+<head>
+    <title>HTML datagrid tag</title>
+</head>
+<body>
+    <datagrid>
+        <ol style="list-style-type:decimal;">
+            <li> (Row.1) </li>
+            <ol style="list-style-type:lower-alpha;">
+                <li> (Row 1,1) </li>
+                <li> (Row 1,2) </li>
+            </ol>
+            <li>
+                (Row.2)
+                <ol style="list-style-type:lower-alpha;">
+                    <li> (Row 2,1) </li>
+                    <li> (Row 2,2) </li>
+                </ol>
+            </li>
+        </ol>
+    </datagrid>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*@Html.ListBoxFor(model => model.Events, new MultiSelectList(Model.Events, "Value", "Text"))*@
 
     @*<div class="venueDiv" id="getEventDate" style="display:none">
         <h3>Choose Event Date</h3>
@@ -86,7 +164,8 @@
                 "Value",
                 "Text"), "- Select Event")*@
 
-            @*@Html.ListBoxFor(model => model.Events, "id", new MultiSelectList(Model.TicketEvent, "Value", "Text"), new { SelectionMode = "Single" })*@
+           
+
 
             @*//< input type = submit" value="Get" style="background - color:green" />
 
