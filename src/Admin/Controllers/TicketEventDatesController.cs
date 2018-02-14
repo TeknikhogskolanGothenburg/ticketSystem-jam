@@ -31,11 +31,30 @@ namespace Admin.Controllers
             return View(value);
         }
 
-        // GET: TicketEventDates/Details/5
+        // GET: TicketEventDates/Details/5        
         public ActionResult AddTicketEventDate()
         {
+            value.EventSummaries = ticketApi.GetAllSummary();
             return View(value);
         }
 
+        [HttpPost]
+        public ActionResult CreateTicketEventDate(int eventID, int venueID, DateTime dateTime)
+        {
+            TicketEventDate newDate = new TicketEventDate
+            {
+                TicketEventID = eventID,
+                VenueId = venueID,
+                EventStartDateTime = dateTime
+            };
+            ticketApi.EventDatesAdd(newDate);
+            return Redirect("AddTicketEventDate");
+        }
+
+        [HttpPost]
+        public ActionResult DeleteTicketEventDate(int eventID)
+        {
+            return View();
+        }
     }
 }

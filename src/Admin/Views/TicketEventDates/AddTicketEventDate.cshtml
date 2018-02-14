@@ -6,25 +6,33 @@
 
 
 <center><h1>Add TicketEventDates</h1></center>
-<div>
-    @using (Html.BeginForm("AddTicketEventDates", "TicketEventDates", FormMethod.Post))
+<div class="venueDiv" id="CreateTicketEventDate" style="display:block">
+    @using (Html.BeginForm("CreateTicketEventDate", "TicketEventDates", FormMethod.Post))
     {
-        @Html.DropDownList(
-                   "id",
-                   new SelectList(Model.Events.Select(x => new { Value = x.TicketEventId, Text = x.EventName }),
-                   "Value",
-                   "Text"), "- Select Event")
-    }
+        @Html.DropDownList("eventID", new SelectList(Model.Events.Select(x => new { Value = x.TicketEventId, Text = x.EventName }), "Value", "Text"), "- Select Event")
 
-    @using (Html.BeginForm("AddTicketEventDates", "TicketEventDates", FormMethod.Post))
-    {
-        @Html.DropDownList(
-                   "id",
-                   new SelectList(Model.Venues.Select(x => new { Value = x.VenueId, Text = x.VenueId }),
-                   "Value",
-                   "Text"), "- Select Venue")
+        @Html.DropDownList("venueID", new SelectList(Model.Venues.Select(x => new { Value = x.VenueId, Text = x.VenueName }), "Value", "Text"), "- Select Venue")
+
+        @Html.TextBox("dateTime", Model.TicketEventDate, new { @class = "datepicker", @type = "datetime-local" })
+
+        <input type="submit" value="Add" />
     }
 </div>
+@using (Html.BeginForm("DeleteTicketEventDate", "TicketEventDates", FormMethod.Post))
+{
+    @foreach (var row in Model.EventSummaries)
+    {
+        <table align="center" >
+            <tr>
+                <td>@row.EventName</td>
+                <td>@row.VenueName</td>
+                <td>@row.EventHtmlDescription</td>
+                <td>@row.EventStartDateTime</td>                
+            </tr>
+        </table>
+        <br />
+    }
+}
 
 
 
