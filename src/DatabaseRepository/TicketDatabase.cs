@@ -270,7 +270,7 @@ namespace TicketSystem.DatabaseRepository
                 string queryString = "SELECT TicketEventDates.EventStartDateTime, TicketEvents.EventName, TicketEvents.EventHtmlDescription,  Venues.VenueName FROM" +
                     " TicketEventDates" +
                     " JOIN TicketEvents ON TicketEventDates.TicketEventID = TicketEvents.TicketEventID" +
-                    " JOIN Venues ON TicketEventDates.TicketEventDateID = Venues.VenueID";
+                    " JOIN Venues ON TicketEventDates.VenueID = Venues.VenueID";
                     //+ " WHERE TicketEventDates.TicketEventDateID = @ID";
                 connection.Open();
                 var response = connection.Query<EventSummary>(queryString).ToList();
@@ -287,7 +287,7 @@ namespace TicketSystem.DatabaseRepository
                 string queryString = "SELECT TicketEventDates.EventStartDateTime, TicketEvents.EventName, TicketEvents.EventHtmlDescription,  Venues.VenueName FROM" +
                     " TicketEventDates" +
                     " JOIN TicketEvents ON TicketEventDates.TicketEventID = TicketEvents.TicketEventID" +
-                    " JOIN Venues ON TicketEventDates.TicketEventDateID = Venues.VenueID" +
+                    " JOIN Venues ON TicketEventDates.VenueID = Venues.VenueID" +
                     " WHERE TicketEventDates.TicketEventDateID = @ID";
                 connection.Open();
                 var response = connection.Query<EventSummary>(queryString, new { ID = id }).First();
