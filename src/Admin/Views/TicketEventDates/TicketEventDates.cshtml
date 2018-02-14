@@ -1,0 +1,78 @@
+﻿
+@{
+    ViewData["Title"] = "TicketEventDate";
+}
+
+@model ClassLibrary.Value;
+
+
+<h1>TicketEventDate</h1>
+
+<div id="content">
+    <button onclick="location.href='@Url.Action("AddTicketEventDate", "TicketEventDates")'">Test1</button>
+   
+        <h3>Add Venue</h3>
+        <hr />
+        @using (Html.BeginForm("AddVenue", "Venues", FormMethod.Post))
+        {
+
+            @Html.LabelFor(m => m.Venue.VenueName, "Name")<br />
+            @Html.TextBoxFor(m => m.Venue.VenueName, new { @required = true })<br />
+            @Html.LabelFor(m => m.Venue.Address, "Address")<br />
+            @Html.TextBoxFor(m => m.Venue.Address, new { @required = true })<br />
+            @Html.LabelFor(m => m.Venue.City, "City")<br />
+            @Html.TextBoxFor(m => m.Venue.City, new { @required = true })<br />
+            @Html.LabelFor(m => m.Venue.Country, "Country")<br />
+            @Html.TextBoxFor(m => m.Venue.Country, new { @required = true })<br />
+            @Html.LabelFor(m => m.Venue.Seats, "Seats")<br />
+            @Html.TextBoxFor(m => m.Venue.Seats, new { @required = true })<br />
+
+            <input type="submit" value="Add" />
+            <hr />
+        }
+
+    @*</div>
+    <div class="venueDiv" id="editVenue" style="display:none">
+        <h3>Edit Venue</h3>
+        <hr />
+        @using (Html.BeginForm("EditVenue", "Venues", FormMethod.Post))
+        {
+            @Html.DropDownList(
+                 "id",
+                 new SelectList(Model.Venues.Select(x => new { Value = x.VenueId, Text = x.VenueName }),
+                 "Value",
+                 "Text"), "- Select Venue",
+                 new { @onchange = "dropdown(this.value)" })
+
+
+            @Html.LabelFor(m => m.Venue.VenueName, "Name")<br />
+            @Html.TextBoxFor(m => m.Venue.VenueName)<br />
+            @Html.LabelFor(m => m.Venue.Address, "Address")<br />
+            @Html.TextBoxFor(m => m.Venue.Address)<br />
+            @Html.LabelFor(m => m.Venue.City, "City")<br />
+            @Html.TextBoxFor(m => m.Venue.City)<br />
+            @Html.LabelFor(m => m.Venue.Country, "Country")<br />
+            @Html.TextBoxFor(m => m.Venue.Country)<br />
+            @Html.LabelFor(m => m.Venue.Seats, "Seats")<br />
+            @Html.TextBoxFor(m => m.Venue.Seats)<br />
+            <input type="submit" style="background-color:dodgerblue" />
+        }
+        <hr />
+    </div>
+
+    <div class="venueDiv" id="deleteVenue" style="display:none">
+        <h3>Delete Venue</h3>
+        <hr />
+        @using (Html.BeginForm("DeleteVenue", "Venues", FormMethod.Post))
+        {
+            @Html.DropDownList(
+                                                                               "id",
+                                                                               new SelectList(Model.Venues.Select(x => new { Value = x.VenueId, Text = x.VenueName }),
+                                                                               "Value",
+                                                                               "Text"), "- Select Venue")
+
+            <input type="submit" value="Delete" style="background-color:red" />
+        }
+        <hr />
+    </div>*@
+</div>
