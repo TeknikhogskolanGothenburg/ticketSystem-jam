@@ -16,7 +16,7 @@ namespace Customer.Controllers
         private static TicketApi ticketApi;
         public SeatsAtEventDate SeatsAtEventDate;
         public TicketEvent TicketEvent;
-   
+
         public IActionResult Index()
         {
             return View();
@@ -33,8 +33,18 @@ namespace Customer.Controllers
                 ticketApi = new TicketApi();
             }
 
-             List<EventSummary> sum = ticketApi.GetAllSummary();
-            return View(sum);
+            value.EventSummaries = ticketApi.GetAllSummary();
+            ViewBag.Message = "";
+            return View(value);
+        }
+        public IActionResult TicketsAdd(int id)
+        {
+            TicketEventDate e = ticketApi.GetEventDates(id);
+            value.Cart.Add(e);
+            EventSummary es = ticketApi.GetSummary(id);
+            value.CartSummary.Add(es);
+
+            return View("Tickets",value);
         }
 
         public IActionResult GetAllEventDates()
