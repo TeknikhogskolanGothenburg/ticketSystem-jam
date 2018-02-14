@@ -35,7 +35,7 @@ namespace Customer.Controllers
         }
         public IActionResult TicketsAdd(int id)
         {
-            TicketEventDate e = ticketApi.GetEventDates(2);
+            TicketEventDate e = ticketApi.GetEventDates(2);  // att göra: fixa att buttonclicket får med sig id
             value.Cart.Add(e);
             EventSummary es = ticketApi.GetSummary(2);
             value.CartSummary.Add(es);

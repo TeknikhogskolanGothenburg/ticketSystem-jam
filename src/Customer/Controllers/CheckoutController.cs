@@ -33,7 +33,7 @@ namespace Customer.Controllers
             }
             if (ticketApi == null)          // detta är en nödlösning för att komma vidare.
             {
-                ticketApi = new TicketApi();
+                ticketApi = new TicketApi();  // måste hitta en lösning på detta.
             }
             EventSummary es = ticketApi.GetSummary(1);
             TicketEventDate b = ticketApi.GetEventDates(1);
