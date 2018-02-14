@@ -1,4 +1,4 @@
-﻿@@{
+﻿@{
     ViewData["Title"] = "Venues";
 }
 
@@ -16,9 +16,14 @@
         <h3>Delete Venue</h3>
         <hr />
         @using (Html.BeginForm("DeleteVenues", "Venues", FormMethod.Post))
-    {
-        @Html.DropDownList("id", new SelectList(Model.Venues.Select(x => new { Value = x.VenueId, Text = x.VenueName }), "Value", "Text"), "- Select Venue") <input type="submit" value="Delete" style="background-color:red" />
-}
+        {
+            @Html.DropDownList(
+            "id", 
+            new SelectList(Model.Venues.Select(x => new { Value = x.VenueId, Text = x.VenueName }),
+            "Value", "Text"), "- Select Venue")
+
+            <input type="submit" value="Delete" style="background-color:red" />
+        }
         <hr />
     </div>
 </div>

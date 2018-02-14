@@ -267,7 +267,7 @@ namespace TicketSystem.DatabaseRepository
         {
             using (var connection = new SqlConnection(connectionString))
             {
-                string queryString = "SELECT TicketEventDates.EventStartDateTime, TicketEvents.EventName, TicketEvents.EventHtmlDescription,  Venues.VenueName FROM" +
+                string queryString = "SELECT TicketEventDates.TicketEventDateID, TicketEventDates.EventStartDateTime, TicketEvents.EventName, TicketEvents.EventHtmlDescription,  Venues.VenueName FROM" +
                     " TicketEventDates" +
                     " JOIN TicketEvents ON TicketEventDates.TicketEventID = TicketEvents.TicketEventID" +
                     " JOIN Venues ON TicketEventDates.VenueID = Venues.VenueID";
@@ -284,7 +284,7 @@ namespace TicketSystem.DatabaseRepository
         {
             using (var connection = new SqlConnection(connectionString))
             {
-                string queryString = "SELECT TicketEventDates.EventStartDateTime, TicketEvents.EventName, TicketEvents.EventHtmlDescription,  Venues.VenueName FROM" +
+                string queryString = "SELECT TicketEventDates.TicketEventDateID, TicketEventDates.EventStartDateTime, TicketEvents.EventName, TicketEvents.EventHtmlDescription,  Venues.VenueName FROM" +
                     " TicketEventDates" +
                     " JOIN TicketEvents ON TicketEventDates.TicketEventID = TicketEvents.TicketEventID" +
                     " JOIN Venues ON TicketEventDates.VenueID = Venues.VenueID" +

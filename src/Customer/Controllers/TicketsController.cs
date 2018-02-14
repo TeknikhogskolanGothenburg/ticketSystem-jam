@@ -17,7 +17,12 @@ namespace Customer.Controllers
         private static TicketApi ticketApi;
         public SeatsAtEventDate SeatsAtEventDate;
         public TicketEvent TicketEvent;
-   
+<<<<<<< HEAD
+=======
+        private EventSummary sum;
+        private List<EventSummary> shoppingCart;
+>>>>>>> upstream/master
+
         public IActionResult Index()
         {
             return View();
@@ -34,10 +39,25 @@ namespace Customer.Controllers
                 ticketApi = new TicketApi();
             }
 
+<<<<<<< HEAD
+            value.EventSummaries = ticketApi.GetAllSummary();
+            ViewBag.Message = "";
+            return View(value);
+        }
+        public IActionResult TicketsAdd(int id)
+        {
+            TicketEventDate e = ticketApi.GetEventDates(id);
+            value.Cart.Add(e);
+            EventSummary es = ticketApi.GetSummary(id);
+            value.CartSummary.Add(es);
+
+            return View("Tickets",value);
+=======
             value.EventSummarylist = ticketApi.GetAllSummary();
 
            //  List<EventSummary> sum = ticketApi.GetAllSummary();
             return View(value);
+>>>>>>> upstream/master
         }
 
         public IActionResult GetAllEventDates()
@@ -47,9 +67,14 @@ namespace Customer.Controllers
         }
         public IActionResult GetSummary(int id)
         {
-            id = 1;
-            value.EventSummaryprop = ticketApi.GetSummary(id);
-            return View(value);
+           var  ShoppingCart = new List<EventSummary>();
+            shoppingCart = ShoppingCart;
+             sum = ticketApi.GetSummary(2);//byt id manuellt tills vi löst länken från View till hit.
+            shoppingCart.Add(sum);
+           
+            //skapa shoppingcart och adda (value)
+            // return View(); för att fortsätta shoppa.
+            return RedirectToAction("Tickets");
         }
 
 
