@@ -1,27 +1,17 @@
-﻿using System.Diagnostics;
-using Microsoft.AspNetCore.Mvc;
-using Customer.Models;
+﻿using Microsoft.AspNetCore.Mvc;
 using ClassLibrary;
 using TicketSystem.RestApiClient;
-using System.Resources;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Localization;
-using System.Collections.Generic;
 
 
 namespace Customer.Controllers
 {
     public class TicketsController : Controller
     {
-        private static Value value;
-        private static TicketApi ticketApi;
+        public static Value value;
+        public static TicketApi ticketApi;
         public SeatsAtEventDate SeatsAtEventDate;
         public TicketEvent TicketEvent;
-<<<<<<< HEAD
-=======
-        private EventSummary sum;
-        private List<EventSummary> shoppingCart;
->>>>>>> upstream/master
+
 
         public IActionResult Index()
         {
@@ -39,25 +29,29 @@ namespace Customer.Controllers
                 ticketApi = new TicketApi();
             }
 
-<<<<<<< HEAD
             value.EventSummaries = ticketApi.GetAllSummary();
             ViewBag.Message = "";
             return View(value);
         }
         public IActionResult TicketsAdd(int id)
         {
-            TicketEventDate e = ticketApi.GetEventDates(id);
+            TicketEventDate e = ticketApi.GetEventDates(2);
             value.Cart.Add(e);
-            EventSummary es = ticketApi.GetSummary(id);
+            EventSummary es = ticketApi.GetSummary(2);
             value.CartSummary.Add(es);
+            //return RedirectToRoute(
+            //    (new
+            //    {
+            //        controller = "Checkout",
+            //        action = "Checkout"
 
-            return View("Tickets",value);
-=======
-            value.EventSummarylist = ticketApi.GetAllSummary();
+            //    }, value));
 
-           //  List<EventSummary> sum = ticketApi.GetAllSummary();
-            return View(value);
->>>>>>> upstream/master
+
+
+             return View("Tickets",value);
+
+
         }
 
         public IActionResult GetAllEventDates()
@@ -67,10 +61,10 @@ namespace Customer.Controllers
         }
         public IActionResult GetSummary(int id)
         {
-           var  ShoppingCart = new List<EventSummary>();
-            shoppingCart = ShoppingCart;
-             sum = ticketApi.GetSummary(2);//byt id manuellt tills vi löst länken från View till hit.
-            shoppingCart.Add(sum);
+           ////var  ShoppingCart = new List<EventSummary>();
+           //// shoppingCart = ShoppingCart;
+           ////  sum = ticketApi.GetSummary(2);//byt id manuellt tills vi löst länken från View till hit.
+           //// shoppingCart.Add(sum);
            
             //skapa shoppingcart och adda (value)
             // return View(); för att fortsätta shoppa.

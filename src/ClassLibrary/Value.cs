@@ -21,7 +21,7 @@ namespace ClassLibrary
 
         public List<TicketTransaction> TicketTransaction { get; set; } = new List<TicketTransaction>(); //..och lite mer.
 
-<<<<<<< HEAD
+
         public List<EventSummary> EventSummaries { get; set; } = new List<EventSummary>(); // ...nu nu .. nu är det den sista.
 
         public TicketEventDate TicketEventDates { get; set; }
@@ -31,18 +31,9 @@ namespace ClassLibrary
         public List<EventSummary> CartSummary { get; set; } = new List<EventSummary>();
 
         public int Id { get; set; }
-=======
-        public List<EventSummary> EventSummarylist { get; set; } = new List<EventSummary>(); // ...nu nu .. nu är det den sista.
-
-        public TicketEventDate TicketEventDates { get; set; }
-
-       public EventSummary EventSummaryprop { get; set; }
-
-     public    List<EventSummary> sum { get; set; }
-        public List<EventSummary> shoppingCart { get; set; }
+        public TicketTransaction  TicketByuer { get; set; }
 
 
 
->>>>>>> upstream/master
     }
 }
