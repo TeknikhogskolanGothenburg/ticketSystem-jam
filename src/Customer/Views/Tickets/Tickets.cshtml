@@ -16,7 +16,7 @@
             <h1>Ticketshop</h1>
             <table border="1" width="100%">
 
-                @*@using (Html.BeginForm("GetAllSummary", "Tickets")) {*@
+               
                 <tr>
                     <th>Id</th>
                     <th>Product</th>
@@ -33,9 +33,9 @@
                         <td>@row.VenueName</td>
                         <td>@row.EventHtmlDescription</td>
                         <td>@row.EventStartDateTime</td>
-                        <td><button id="1" type="submit" value="ska länka till Id" name="BUY" type="submit">BUY</button></td>
+                        <td><button id="1" onclick="location.href='@Url.Action("GetSummary", "Tickets")'" value="1" name="BUY" type="submit">BUY</button></td>
                     </tr>
-                    @*}*@
+                   
                 }
             </table>
         </div>

@@ -47,7 +47,7 @@ namespace Customer.Controllers
         }
         public IActionResult GetSummary(int id)
         {
-            
+            id = 1;
             value.EventSummaryprop = ticketApi.GetSummary(id);
             return View(value);
         }
