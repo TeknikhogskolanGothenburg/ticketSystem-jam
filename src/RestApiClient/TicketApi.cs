@@ -112,12 +112,12 @@ namespace TicketSystem.RestApiClient
             return response.Data;
         }
 
-        public List<TicketEventDate> GetEventDates(int id)
+        public TicketEventDate GetEventDates(int id)
         {
             var client = new RestClient(localhost);
             var request = new RestRequest("ticketeventdates/{id}", Method.GET);
             request.AddUrlSegment("id", id);
-            var response = client.Execute<List<TicketEventDate>>(request);
+            var response = client.Execute<TicketEventDate>(request);
             return response.Data;
         }
 

@@ -47,10 +47,33 @@
 <h1>@ViewBag.Message</h1>
 <div id="content">
 
+<<<<<<< HEAD
+    <div class="venueDiv" id="getEvent" style="display:block">
+        <hr />
+        <table>
+            @foreach (ClassLibrary.EventSummary x in Model.EventSummaries)
+            {
+                <tr>
+                    <td>@x.EventName</td>
+                    <td>@x.EventHtmlDescription</td>
+                    <td>@x.EventStartDateTime</td>
+                    <td>@x.VenueName</td>
+                    <td>
+                        
+                        <a href="/Tickets/TicketsAdd?id=@x.TicketEventDateID"> ADD</a>
+
+                </tr>
+
+            }
+            </table>
+            <h3>@ViewBag.Message</h3>
+    </div>
+=======
     @*<div class="venueDiv" id="getEvent" style="display:block">*@
     @*<h3>Get Events</h3>*@
 
 
+>>>>>>> upstream/master
 </div>
 
 </div>
