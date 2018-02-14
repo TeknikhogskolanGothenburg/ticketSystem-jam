@@ -62,17 +62,28 @@
         <hr />
         @using (Html.BeginForm("GetEvents", "Home", FormMethod.Get))
         {
-            @Html.DropDownList(
-                                                                                                   "id",
-                                                                                                   new SelectList(Model.Events.Select(x => new { Value = x.TicketEventId, Text = x.EventName }),
-                                                                                                   "Value",
-                                                                                                   "Text"), "- Select Event")
-
-            <input type="submit" value="Get" style="background-color:green" />
+            <tr>
+                @*Dessa ska bort när looen är klar.*@
+                <td>@Html.LabelFor(m => m.Venue.VenueName, "Name")</td>
+                <td>Frölunda - Luleå</td>
+                <td>Scandinavium</td>
+                <td>2018-03-05</td>
+                <td>26</td>
+                <td align='center'><form><input type=submit value="Buy" label="Buy" style="width:100%"></form></td>
+            </tr>
         }
         <hr />
     </div>
 </div>
+<tr>
+    @*Dessa ska bort när looen är klar.*@
+    <td>2</td>
+    <td>Frölunda - Luleå</td>
+    <td>Scandinavium</td>
+    <td>2018-03-05</td>
+    <td>26</td>
+    <td align='center'><form><input type=submit value="Buy" label="Buy" style="width:100%"></form></td>
+</tr>
 
 @*<div class="venueDiv" id="getEventDate" style="display:none">
     <h3>Choose Event Date</h3>
