@@ -1,8 +1,5 @@
 ﻿@model ClassLibrary.Value;
 
-
-
-
 @*@using Microsoft.AspNetCore.Mvc.Localization
 
     @inject IViewLocalizer Localizer*@
@@ -12,42 +9,49 @@
 }
 <html>
 <body>
-    <h1>Ticketshop</h1>
-    <table border="1" width="100%">
+    <div id="content">
 
-@using (Html.BeginForm("GetSummary", "Tickets")) {
-        <tr>
-            
-            <th>Product</th>
-            <th>Description</th>
-            <th>Price</th>
-            <th>Date</th>
-            <th>Choose Ticket</th>
-        </tr>
-        @foreach (var row in db)
-        {
-            <tr>
-                
-                <td>@row.EventName</td>
-                <td>@row.VenueName</td>
-                <td>@row.EventHtmlDescription</td>
-                <td>@row.EventStartDateTime</td>
-                <td><button id= @row.EventName type="submit">BUY</button></td>
-            </tr>
-        }
-}
-    </table>
+     
+         
+            <h1>Ticketshop</h1>
+            <table border="1" width="100%">
+
+                @*@using (Html.BeginForm("GetAllSummary", "Tickets")) {*@
+                <tr>
+                    <th>Id</th>
+                    <th>Product</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>Date</th>
+                    <th>Choose Ticket</th>
+                </tr>
+                @foreach (var row in db)
+                {
+                    <tr>
+                        <td>"Vår query verkar inte ha något id"</td>
+                        <td>@row.EventName</td>
+                        <td>@row.VenueName</td>
+                        <td>@row.EventHtmlDescription</td>
+                        <td>@row.EventStartDateTime</td>
+                        <td><button id="1" type="submit" value="ska länka till Id" name="BUY" type="submit">BUY</button></td>
+                    </tr>
+                    @*}*@
+                }
+            </table>
+        </div>
+
+
 </body>
-</html> 
+</html>
 
 <h1>@ViewBag.Message</h1>
 <div id="content">
 
     @*<div class="venueDiv" id="getEvent" style="display:block">*@
-        @*<h3>Get Events</h3>*@
+    @*<h3>Get Events</h3>*@
 
 
-    </div>
+</div>
 
 </div>
 @section Scripts
