@@ -19,9 +19,9 @@
                
                 <tr>
                     <th>Id</th>
-                    <th>Product</th>
+                    <th>Event</th>
+                    <th>Venue</th>
                     <th>Description</th>
-                    <th>Price</th>
                     <th>Date</th>
                     <th>Choose Ticket</th>
                 </tr>
@@ -33,7 +33,7 @@
                         <td>@row.VenueName</td>
                         <td>@row.EventHtmlDescription</td>
                         <td>@row.EventStartDateTime</td>
-                        <td><button id="1" onclick="location.href='@Url.Action("GetSummary", "Tickets")'" value="1" name="BUY" type="submit">BUY</button></td>
+                        <td><button id="2" onclick="location.href='@Url.Action("GetSummary", "Tickets")'" value="2" name="BUY" type="submit">BUY</button></td>
                     </tr>
                    
                 }
