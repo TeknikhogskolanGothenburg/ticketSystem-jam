@@ -17,7 +17,9 @@ namespace Customer.Controllers
         private static TicketApi ticketApi;
         public SeatsAtEventDate SeatsAtEventDate;
         public TicketEvent TicketEvent;
-   
+        private EventSummary sum;
+        private List<EventSummary> shoppingCart;
+
         public IActionResult Index()
         {
             return View();
@@ -47,9 +49,14 @@ namespace Customer.Controllers
         }
         public IActionResult GetSummary(int id)
         {
-            id = 1;
-            value.EventSummaryprop = ticketApi.GetSummary(id);
-            return View(value);
+           var  ShoppingCart = new List<EventSummary>();
+            shoppingCart = ShoppingCart;
+             sum = ticketApi.GetSummary(2);//byt id manuellt tills vi löst länken från View till hit.
+            shoppingCart.Add(sum);
+           
+            //skapa shoppingcart och adda (value)
+            // return View(); för att fortsätta shoppa.
+            return RedirectToAction("Tickets");
         }
 
 

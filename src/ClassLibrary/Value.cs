@@ -28,6 +28,10 @@ namespace ClassLibrary
 
        public EventSummary EventSummaryprop { get; set; }
 
-        
+     public    List<EventSummary> sum { get; set; }
+        public List<EventSummary> shoppingCart { get; set; }
+
+
+
     }
 }
