@@ -6,24 +6,35 @@
 
 
 <center><h1>Add TicketEventDates</h1></center>
-<div>
+<div class="venueDiv" id="deleteVenue" style="display:block">
     @using (Html.BeginForm("AddTicketEventDates", "TicketEventDates", FormMethod.Post))
     {
         @Html.DropDownList(
-                   "id",
-                   new SelectList(Model.Events.Select(x => new { Value = x.TicketEventId, Text = x.EventName }),
-                   "Value",
-                   "Text"), "- Select Event")
+                                  "id",
+                                  new SelectList(Model.Events.Select(x => new { Value = x.TicketEventId, Text = x.EventName }),
+                                  "Value",
+                                  "Text"), "- Select Event")
     }
 
     @using (Html.BeginForm("AddTicketEventDates", "TicketEventDates", FormMethod.Post))
     {
         @Html.DropDownList(
-                   "id",
-                   new SelectList(Model.Venues.Select(x => new { Value = x.VenueId, Text = x.VenueId }),
-                   "Value",
-                   "Text"), "- Select Venue")
+                                  "id",
+                                  new SelectList(Model.Venues.Select(x => new { Value = x.VenueId, Text = x.VenueName }),
+                                  "Value",
+                                  "Text"), "- Select Venue")
     }
+    
+    @using (Html.BeginForm("AddTicketEventDates", "TicketEventDates", FormMethod.Post))
+    {
+        <input type = "datetime-local" name = "eventTime">
+        <input type = "submit" value = "Send">
+    }
+    @*<form action="AddTicketEventDates">
+        <input type="datetime-local" name="eventTime">
+        <input type="submit" value="Send">
+    </form>*@
+
 </div>
 
 
