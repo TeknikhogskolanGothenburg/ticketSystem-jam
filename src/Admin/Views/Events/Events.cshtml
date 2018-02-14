@@ -12,55 +12,6 @@
 <div id="content">
     <button onclick="location.href='@Url.Action("AddEvents", "Events")'">Add Event</button>
     <button onclick="location.href='@Url.Action("EditEvents", "Events")'">Edit Event</button>
-  @*//  <button onclick="location.href='@Url.Action("DeleteEvents", "Events")'">Delete Event</button>*@
     <button onclick="location.href='@Url.Action("DeleteEvents", "Events")'">@Localizer["Delete Event"]</button>
 
 </div>
-
-
-
-@section Scripts
-    {
-    <script>
-        function edit() {
-            var edit = document.getElementById("editVenue");
-            var add = document.getElementById("addVenue");
-            var del = document.getElementById("deleteVenue");
-
-            if (edit.style.display === "none") {
-                edit.style.display = "block";
-                add.style.display = "none";
-                del.style.display = "none";
-            }
-
-        }
-        function add() {
-            var add = document.getElementById("addVenue");
-            var edit = document.getElementById("editVenue");
-            var del = document.getElementById("deleteVenue");
-
-            if (add.style.display === "none") {
-                add.style.display = "block";
-                edit.style.display = "none";
-                del.style.display = "none";
-            }
-
-        }
-        function del() {
-            var del = document.getElementById("deleteVenue");
-            var add = document.getElementById("addVenue");
-            var edit = document.getElementById("editVenue");
-
-            if (del.style.display === "none") {
-                del.style.display = "block";
-                add.style.display = "none";
-                edit.style.display = "none";
-            }
-
-        }
-
-        function dropdown(value) {
-            window.location.href = "/Venues/DropDownChanged?id=" + value;
-        }
-    </script>
-}

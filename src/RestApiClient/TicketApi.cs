@@ -11,7 +11,7 @@ namespace TicketSystem.RestApiClient
     {
         // Implemented using RestSharp: http://restsharp.org/
 
-        string localhost = "http://localhost:50638/api/";  // Agnetas port 50638. Låt Stå!
+        string localhost = "http://localhost:60234/api/";
 
         //TicketEvent Calls
         public List<TicketEvent> GetAllEvents()
