@@ -12,7 +12,7 @@ namespace Admin.Controllers
     public class TicketEventDatesController : Controller
     {
         TicketApi ticketApi = new TicketApi();
-        Value value = new Value();
+        static Value value;
 
         // GET: TicketEventDates
         public ActionResult TicketEventDates()
@@ -25,14 +25,16 @@ namespace Admin.Controllers
             {
                 ticketApi = new TicketApi();
             }
+            value.Events = ticketApi.GetAllEvents();
             value.Venues = ticketApi.GetAllVenues();
+            value.TicketEventDate = ticketApi.GetAllEventDates();
             return View(value);
         }
 
         // GET: TicketEventDates/Details/5
-        public ActionResult AddTicketEventDate(TicketEventDate ticketEventDate)
+        public ActionResult AddTicketEventDate()
         {
-            return View();
+            return View(value);
         }
 
     }
