@@ -18,7 +18,7 @@ namespace Admin.Controllers
         // GET: Test
         public IActionResult Index()
         {
-            EventSummary sum = ticketApi.GetSummary(6);
+            List<EventSummary> sum = ticketApi.GetAllSummary();
             
             return View(sum);
         }
