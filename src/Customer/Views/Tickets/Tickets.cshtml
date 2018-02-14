@@ -1,18 +1,64 @@
 ﻿@model ClassLibrary.Value;
 
-@{
-    ViewData["Title"] = "Events";
-}
-
 @*@using Microsoft.AspNetCore.Mvc.Localization
 
     @inject IViewLocalizer Localizer*@
+@{
+    var db = Model.EventSummarylist;
+    
+}
+<html>
+<body>
+    <div id="content">
+
+     
+         
+            <h1>Ticketshop</h1>
+            <table border="1" width="100%">
+
+               
+                <tr>
+                    <th>Id</th>
+                    <th>Product</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>Date</th>
+                    <th>Choose Ticket</th>
+                </tr>
+                @foreach (var row in db)
+                {
+                    <tr>
+                        <td>"Vår query verkar inte ha något id"</td>
+                        <td>@row.EventName</td>
+                        <td>@row.VenueName</td>
+                        <td>@row.EventHtmlDescription</td>
+                        <td>@row.EventStartDateTime</td>
+                        <td><button id="1" onclick="location.href='@Url.Action("GetSummary", "Tickets")'" value="1" name="BUY" type="submit">BUY</button></td>
+                    </tr>
+                   
+                }
+            </table>
+        </div>
+
+
+</body>
+</html>
 
 <h1>@ViewBag.Message</h1>
 <div id="content">
 
-    <div class="venueDiv" id="getEvent" style="display:block">
-        <hr />
+    @*<div class="venueDiv" id="getEvent" style="display:block">*@
+    @*<h3>Get Events</h3>*@
 
-    </div>
+
 </div>
+
+</div>
+@section Scripts
+    {
+    <script>
+        function dropdown(value) {
+            window.location.href = "/Shop/DropDownChanged?id=" + value;
+        }
+    </script>
+}
