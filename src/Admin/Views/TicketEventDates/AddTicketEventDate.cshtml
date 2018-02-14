@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "AddTicketEventDates";
+}
+
+@model ClassLibrary.Value;
+
+
+<center><h1>Add TicketEventDates</h1></center>
+<div>
+    @using (Html.BeginForm("AddTicketEventDates", "TicketEventDates", FormMethod.Post))
+    {
+        @Html.DropDownList(
+                   "id",
+                   new SelectList(Model.Events.Select(x => new { Value = x.TicketEventId, Text = x.EventName }),
+                   "Value",
+                   "Text"), "- Select Event")
+    }
+
+    @using (Html.BeginForm("AddTicketEventDates", "TicketEventDates", FormMethod.Post))
+    {
+        @Html.DropDownList(
+                   "id",
+                   new SelectList(Model.Venues.Select(x => new { Value = x.VenueId, Text = x.VenueId }),
+                   "Value",
+                   "Text"), "- Select Venue")
+    }
+</div>
+
+
+
+
+
