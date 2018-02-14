@@ -6,6 +6,7 @@ using TicketSystem.RestApiClient;
 using System.Resources;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Localization;
+using System.Collections.Generic;
 
 namespace Customer.Controllers
 {
@@ -32,8 +33,8 @@ namespace Customer.Controllers
                 ticketApi = new TicketApi();
             }
 
-            value.Events = ticketApi.GetAllEvents();
-            return View(value);
+             List<EventSummary> sum = ticketApi.GetAllSummary();
+            return View(sum);
         }
 
         public IActionResult GetAllEventDates()
