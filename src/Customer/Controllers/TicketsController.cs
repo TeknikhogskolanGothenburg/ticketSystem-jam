@@ -8,6 +8,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Localization;
 using System.Collections.Generic;
 
+
 namespace Customer.Controllers
 {
     public class TicketsController : Controller
@@ -33,13 +34,21 @@ namespace Customer.Controllers
                 ticketApi = new TicketApi();
             }
 
-             List<EventSummary> sum = ticketApi.GetAllSummary();
-            return View(sum);
+            value.EventSummarylist = ticketApi.GetAllSummary();
+
+           //  List<EventSummary> sum = ticketApi.GetAllSummary();
+            return View(value);
         }
 
         public IActionResult GetAllEventDates()
         {
             ticketApi.GetAllEventDates();
+            return View(value);
+        }
+        public IActionResult GetSummary(int id)
+        {
+            
+            value.EventSummaryprop = ticketApi.GetSummary(id);
             return View(value);
         }
 

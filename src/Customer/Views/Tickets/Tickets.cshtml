@@ -1,26 +1,60 @@
 ﻿@model ClassLibrary.Value;
 
-@{
-    ViewData["Title"] = "Events";
-}
+
+
 
 @*@using Microsoft.AspNetCore.Mvc.Localization
 
-@inject IViewLocalizer Localizer*@
+    @inject IViewLocalizer Localizer*@
+@{
+    var db = Model.EventSummarylist;
+    //var query = "SELECT * FROM Product";
+}
+<html>
+<body>
+    <h1>Ticketshop</h1>
+    <table border="1" width="100%">
+
+@using (Html.BeginForm("GetSummary", "Tickets")) {
+        <tr>
+            
+            <th>Product</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Date</th>
+            <th>Choose Ticket</th>
+        </tr>
+        @foreach (var row in db)
+        {
+            <tr>
+                
+                <td>@row.EventName</td>
+                <td>@row.VenueName</td>
+                <td>@row.EventHtmlDescription</td>
+                <td>@row.EventStartDateTime</td>
+                <td><button id= @row.EventName type="submit">BUY</button></td>
+            </tr>
+        }
+}
+    </table>
+</body>
+</html> 
 
 <h1>@ViewBag.Message</h1>
 <div id="content">
- 
-    <div class="venueDiv" id="getEvent" style="display:block">
-        <h3>Get Events</h3>
+
+    @*<div class="venueDiv" id="getEvent" style="display:block">*@
+        @*<h3>Get Events</h3>*@
+
 
     </div>
-        </div>
-            @section Scripts
-                {
-                <script>
-                    function dropdown(value) {
-                        window.location.href = "/Shop/DropDownChanged?id=" + value;
-                    }
-                </script>
-            }
+
+</div>
+@section Scripts
+    {
+    <script>
+        function dropdown(value) {
+            window.location.href = "/Shop/DropDownChanged?id=" + value;
+        }
+    </script>
+}
