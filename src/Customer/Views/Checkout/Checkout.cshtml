@@ -17,6 +17,7 @@
             <th>Venue</th>
             <th>Description</th>
             <th>Date</th>
+            <th></th>
         </tr>
         @for (int i = 0; i < cart.Count; i++)
         {
@@ -32,15 +33,7 @@
     </table>
     <div id="cartButtons">
         <button style="width:100%" onclick="location.href='@Url.Action("Tickets", "Tickets")'" type="submit">Continue Shopping</button>
-        @using (Html.BeginForm("GoToPayment", "Checkout"))
-    {
-        @foreach (var row in cart)
-    {
-        var cartListId = new List<int>();
-        cartListId.Add(row.TicketEventDateID);
 
-    }
-}
         <button id="@Model.CartSummary" onclick="dropDown()" style="width:100%" value="2" name="cart" type="submit">Go To Payment</button>
     </div>
 
@@ -51,17 +44,17 @@
         <hr />
 
         @using (Html.BeginForm("EditEvents", "Events", FormMethod.Post))
-    {
-        @Html.LabelFor(m => m.TicketByuer.BuyerFirstName, "Firstname")<br />
-        @Html.TextBoxFor(m => m.TicketByuer.BuyerFirstName)<br />
-        @Html.LabelFor(m => m.TicketByuer.BuyerLastName, "Lastname")<br />
-        @Html.TextBoxFor(m => m.TicketByuer.BuyerLastName)<br />
-        @Html.LabelFor(m => m.TicketByuer.BuyerAddress, "Address")<br />
-        @Html.TextBoxFor(m => m.TicketByuer.BuyerAddress)<br />
-        @Html.LabelFor(m => m.TicketByuer.BuyerCity, "City")<br />
-        @Html.TextBoxFor(m => m.TicketByuer.BuyerCity)<br />
-        <input type="submit" style="background-color:dodgerblue" />
-}
+        {
+            @Html.LabelFor(m => m.TicketByuer.BuyerFirstName, "Firstname")<br />
+            @Html.TextBoxFor(m => m.TicketByuer.BuyerFirstName)<br />
+            @Html.LabelFor(m => m.TicketByuer.BuyerLastName, "Lastname")<br />
+            @Html.TextBoxFor(m => m.TicketByuer.BuyerLastName)<br />
+            @Html.LabelFor(m => m.TicketByuer.BuyerAddress, "Address")<br />
+            @Html.TextBoxFor(m => m.TicketByuer.BuyerAddress)<br />
+            @Html.LabelFor(m => m.TicketByuer.BuyerCity, "City")<br />
+            @Html.TextBoxFor(m => m.TicketByuer.BuyerCity)<br />
+            <input type="submit" style="background-color:dodgerblue" />
+        }
     </div>
 
 </div>
