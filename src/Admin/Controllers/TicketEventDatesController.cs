@@ -50,11 +50,18 @@ namespace Admin.Controllers
             ticketApi.EventDatesAdd(newDate);
             return Redirect("AddTicketEventDate");
         }
+        
+        public ActionResult DeleteTicketEventDate()
+        {
+            value.EventSummaries = ticketApi.GetAllSummary();
+            return View(value);
+        }
 
         [HttpPost]
-        public ActionResult DeleteTicketEventDate(int eventID)
+        public ActionResult RemoveTicketEventDate(int id)
         {
-            return View();
+            ticketApi.DeleteEventDates(id);
+            return Redirect("DeleteTicketEventDate");
         }
     }
 }
