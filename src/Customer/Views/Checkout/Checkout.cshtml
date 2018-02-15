@@ -43,16 +43,16 @@
         <h3>Customer Information</h3>
         <hr />
 
-        @using (Html.BeginForm("EditEvents", "Events", FormMethod.Post))
+        @using (Html.BeginForm("GoToPayment", "Checkout", FormMethod.Post))
         {
-            @Html.LabelFor(m => m.TicketByuer.BuyerFirstName, "Firstname")<br />
-            @Html.TextBoxFor(m => m.TicketByuer.BuyerFirstName)<br />
-            @Html.LabelFor(m => m.TicketByuer.BuyerLastName, "Lastname")<br />
-            @Html.TextBoxFor(m => m.TicketByuer.BuyerLastName)<br />
-            @Html.LabelFor(m => m.TicketByuer.BuyerAddress, "Address")<br />
-            @Html.TextBoxFor(m => m.TicketByuer.BuyerAddress)<br />
-            @Html.LabelFor(m => m.TicketByuer.BuyerCity, "City")<br />
-            @Html.TextBoxFor(m => m.TicketByuer.BuyerCity)<br />
+            @Html.LabelFor(m => m.TicketBuyer.BuyerFirstName, "Firstname")<br />
+            @Html.TextBoxFor(m => m.TicketBuyer.BuyerFirstName)<br />
+            @Html.LabelFor(m => m.TicketBuyer.BuyerLastName, "Lastname")<br />
+            @Html.TextBoxFor(m => m.TicketBuyer.BuyerLastName)<br />
+            @Html.LabelFor(m => m.TicketBuyer.BuyerAddress, "Address")<br />
+            @Html.TextBoxFor(m => m.TicketBuyer.BuyerAddress)<br />
+            @Html.LabelFor(m => m.TicketBuyer.BuyerCity, "City")<br />
+            @Html.TextBoxFor(m => m.TicketBuyer.BuyerCity)<br />
             <input type="submit" style="background-color:dodgerblue" />
         }
     </div>
