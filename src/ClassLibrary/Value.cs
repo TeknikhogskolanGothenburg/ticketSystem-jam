@@ -33,6 +33,8 @@ namespace ClassLibrary
         public int Id { get; set; }
         public TicketTransaction  TicketByuer { get; set; }
 
+        public AllModels AllModels { get; set; }
+
 
 
     }

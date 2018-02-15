@@ -15,34 +15,38 @@
         <h1>Ticketshop</h1>
         <table border="1" width="100%">
 
-
-            <tr>
-                <th>Id</th>
-                <th>Event</th>
-                <th>Venue</th>
-                <th>Description</th>
-                <th>Date</th>
-                <th>Choose Ticket</th>
-            </tr>
-            @foreach (var row in db)
+            @using (Html.BeginForm("Checkout", "Checkout"))
             {
                 <tr>
-                    <td>"Vår query verkar inte ha något id"</td>
-                    <td>@row.EventName</td>
-                    <td>@row.VenueName</td>
-                    <td>@row.EventHtmlDescription</td>
-                    <td>@row.EventStartDateTime</td>
-                    <td><button id="2" onclick="location.href='@Url.Action("TicketsAdd", "Tickets")'" value="2" name="BUY" type="submit">Add to cart</button></td>
+                    <th>Id</th>
+                    <th>Event</th>
+                    <th>Venue</th>
+                    <th>Description</th>
+                    <th>Date</th>
+                    <th>Choose Ticket</th>
                 </tr>
+                @foreach (var row in db)
+                {
+                    <tr>
+                        <td>@row.TicketEventDateID</td>
+                        <td>@row.EventName</td>
+                        <td>@row.VenueName</td>
+                        <td>@row.EventHtmlDescription</td>
+                        <td>@row.EventStartDateTime</td>
+                        <td><button id="@row.TicketEventDateID" type="submit" onclick="location.href='@Url.Action("TicketsAdd", "Tickets")'" value="@row.TicketEventDateID" name="buttonclick">Add to cart</button></td>
+                    </tr>
 
+                }
             }
-
         </table>
-        <td><button id="2" style="width:100%" onclick="location.href='@Url.Action("Checkout", "Checkout", Model.EventSummaries)'" value="2" name="Cart" type="submit">Go To Cart</button></td>
+        @*@using (Html.BeginForm("Checkout", "Checkout", Model.EventSummaries))
+        {
+            <td><button id="2" style="width:100%" onclick="location.href='@Url.Action("Checkout", "Checkout")'" value="2" name="Cart" type="submit">Go To Cart</button></td>
+
+        }*@
     </div>
 
-
-</body>
+    </body>
 </html>
 
 @*<h1>@ViewBag.Message</h1>

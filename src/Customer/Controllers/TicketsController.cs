@@ -33,11 +33,12 @@ namespace Customer.Controllers
             ViewBag.Message = "";
             return View(value);
         }
-        public IActionResult TicketsAdd(int id)
+        public IActionResult TicketsAdd(string buttonclick)
         {
-            TicketEventDate e = ticketApi.GetEventDates(2);  // att göra: fixa att buttonclicket får med sig id
+            int id = int.Parse(buttonclick);
+            TicketEventDate e = ticketApi.GetEventDates(id);  // att göra: fixa att buttonclicket får med sig id
             value.Cart.Add(e);
-            EventSummary es = ticketApi.GetSummary(2);
+            EventSummary es = ticketApi.GetSummary(id);
             value.CartSummary.Add(es);
             //return RedirectToRoute(
             //    (new

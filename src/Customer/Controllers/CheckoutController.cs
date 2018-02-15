@@ -25,7 +25,7 @@ namespace Customer.Controllers
             return View();
         }
 
-        public IActionResult Checkout(int id)
+        public IActionResult Checkout(string buttonclick)
         {
             if (value == null)
             {
@@ -35,8 +35,9 @@ namespace Customer.Controllers
             {
                 ticketApi = new TicketApi();  // måste hitta en lösning på detta.
             }
-            EventSummary es = ticketApi.GetSummary(1);
-            TicketEventDate b = ticketApi.GetEventDates(1);
+            int id = int.Parse(buttonclick);
+            EventSummary es = ticketApi.GetSummary(id);
+            TicketEventDate b = ticketApi.GetEventDates(id);
             value.Cart.Add(b);
 
             value.CartSummary.Add(es);
@@ -51,9 +52,9 @@ namespace Customer.Controllers
 
             return View();
         }
-        public IActionResult TicketsAddToCart(int id)
+        public IActionResult TicketsAddToCart(string buttonclick)
         {
-            id = 1;
+            int id = int.Parse(buttonclick);
             EventSummary es = ticketApi.GetSummary(id);  // försökte lägga Jakobs metod i denna Controller. Tänkte att det skulle underlätta
             TicketEventDate b = ticketApi.GetEventDates(id); // att få med sig innehållet i value, men jag fastnar hela tiden
             value.Cart.Add(b);                      // på rad 57 "object not set to an instance of...."

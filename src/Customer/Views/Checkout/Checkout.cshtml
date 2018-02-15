@@ -15,29 +15,31 @@
 
         <h1>ShoppingCart</h1>
         <table border="1" width="100%">
-
-            <tr>
-                <th>Id</th>
-                <th>Event</th>
-                <th>Venue</th>
-                <th>Description</th>
-                <th>Date</th>
-                <th>Delete Ticket</th>
-            </tr>
-            @foreach (var row in cart)
+            @using (Html.BeginForm("DeleteTicketFromCart", "Checkout"))
             {
                 <tr>
-                    <td>"Vår query verkar inte ha något id"</td>
-                    <td>@row.EventName</td>
-                    <td>@row.VenueName</td>
-                    <td>@row.EventHtmlDescription</td>
-                    <td>@row.EventStartDateTime</td>
-                    <td><button id="2" onclick="location.href='@Url.Action("DeleteTicketFromCart", "Tickets")'" value="2" name="BUY" type="submit">Delete ticket</button></td>
+                    <th>Id</th>
+                    <th>Event</th>
+                    <th>Venue</th>
+                    <th>Description</th>
+                    <th>Date</th>
+                    <th>Delete Ticket</th>
                 </tr>
+                @foreach (var row in cart)
+                {
+                    <tr>
+                        <td>@row.TicketEventDateID</td>
+                        <td>@row.EventName</td>
+                        <td>@row.VenueName</td>
+                        <td>@row.EventHtmlDescription</td>
+                        <td>@row.EventStartDateTime</td>
+                        <td><button id="@row.TicketEventDateID" onclick="location.href='@Url.Action("DeleteTicketFromCart", "Checkout")'" value="2" name="buttonclick" type="submit">Delete ticket</button></td>
+                    </tr>
+                }
             }
-
         </table>
-        <td><button id="2" style="width:100%" onclick="location.href='@Url.Action("Tickets", "Tickets")'" value="2" name="Cart" type="submit">Continue Shopping</button></td>
+
+        <td><button id="1" style="width:100%" onclick="location.href='@Url.Action("Tickets", "Tickets")'" value="2" name="" type="submit">Continue Shopping</button></td>
         <td><button id="2" style="width:100%" onclick="location.href='@Url.Action("gotopayment", "checkout")'" value="2" name="cart" type="submit">Go To Payment</button></td>
         @*<td><input type="button" name="answer" value="Go To Payment" style="width:100% " onclick="showDiv()"></td>*@
     </div>
@@ -51,12 +53,12 @@
     @*}
         </script>*@
 
-                <h3>Customer Information</h3>
-                <hr />
+    <h3>Customer Information</h3>
+    <hr />
 
-                @using (Html.BeginForm("EditEvents", "Events", FormMethod.Post))
-             {
-            @Html.LabelFor(m => m.TicketByuer.BuyerFirstName, "Firstname")<br />
+    @using (Html.BeginForm("EditEvents", "Events", FormMethod.Post))
+    {
+        @Html.LabelFor(m => m.TicketByuer.BuyerFirstName, "Firstname")<br />
             @Html.TextBoxFor(m => m.TicketByuer.BuyerFirstName)<br />
             @Html.LabelFor(m => m.TicketByuer.BuyerLastName, "Lastname")<br />
             @Html.TextBoxFor(m => m.TicketByuer.BuyerLastName)<br />
@@ -66,8 +68,8 @@
             @Html.TextBoxFor(m => m.TicketByuer.BuyerCity)<br />
 
             <input type="submit" style="background-color:dodgerblue" />
-                }
-            </div>
+    }
+    </div>
 
 
 </body>

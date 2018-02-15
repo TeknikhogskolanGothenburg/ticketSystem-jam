@@ -12,5 +12,6 @@ namespace ClassLibrary
         public Value value;
         public Venue venue;
 
+        public List<EventSummary> EventSummaries;
     }
 }
