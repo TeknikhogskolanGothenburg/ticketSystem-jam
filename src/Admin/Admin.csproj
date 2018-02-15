@@ -31,52 +31,52 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Resources\View.TicketEventDates.AddVenues.en.resx">
+    <EmbeddedResource Update="Resources\Views.TicketEventDates.AddVenues.en.resx">
       <Generator>ResXFileCodeGenerator</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Resources\View.Venues.AddVenues.sv-SE.resx">
+    <EmbeddedResource Update="Resources\Views.Venues.AddVenues.sv-SE.resx">
       <Generator>ResXFileCodeGenerator</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Resources\View.Venues.DeleteVenues.en.resx">
+    <EmbeddedResource Update="Resources\Views.Venues.DeleteVenues.en.resx">
       <Generator>ResXFileCodeGenerator</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Resources\View.Venues.DeleteVenues.sv-SE.resx">
+    <EmbeddedResource Update="Resources\Views.Venues.DeleteVenues.sv-SE.resx">
       <Generator>ResXFileCodeGenerator</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Resources\View.Venues.EditVenues.en.resx">
+    <EmbeddedResource Update="Resources\Views.Venues.EditVenues.en.resx">
       <Generator>ResXFileCodeGenerator</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Resources\View.Venues.EditVenues.sv-SE.resx">
+    <EmbeddedResource Update="Resources\Views.Venues.EditVenues.sv-SE.resx">
       <Generator>ResXFileCodeGenerator</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Resources\View.TicketEventDates.TicketEventDates.sv-SE.resx">
+    <EmbeddedResource Update="Resources\ViewsTicketEventDates.TicketEventDates.sv-SE.resx">
       <Generator>ResXFileCodeGenerator</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Resources\Views.TicketEventDates.TicketEventDates.en.resx">
       <Generator>ResXFileCodeGenerator</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Resources\View.Events.AddEvent.en.resx">
+    <EmbeddedResource Update="Resources\Views.Events.AddEvent.en.resx">
       <Generator>ResXFileCodeGenerator</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Resources\View.Events.AddEvent.sv-SE.resx">
+    <EmbeddedResource Update="Resources\Views.Events.AddEvent.sv-SE.resx">
       <Generator>ResXFileCodeGenerator</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Resources\View.TicketEventDates.AddTicketEventDate.en.resx">
+    <EmbeddedResource Update="Resources\Views.TicketEventDates.AddTicketEventDate.en.resx">
       <Generator>ResXFileCodeGenerator</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Resources\View.TicketEventDates.AddTicketEventDate.sv-SE.resx">
+    <EmbeddedResource Update="Resources\Views.TicketEventDates.AddTicketEventDate.sv-SE.resx">
       <Generator>ResXFileCodeGenerator</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Resources\View.Events.DeleteEvents.en.resx">
+    <EmbeddedResource Update="Resources\Views.Events.DeleteEvents.en.resx">
       <Generator>ResXFileCodeGenerator</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Resources\View.Events.DeleteEvents.sv-SE.resx">
+    <EmbeddedResource Update="Resources\Views.Events.DeleteEvents.sv-SE.resx">
       <Generator>ResXFileCodeGenerator</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Resources\View.Events.EditEvents.en.resx">
+    <EmbeddedResource Update="Resources\Views.Events.EditEvents.en.resx">
       <Generator>ResXFileCodeGenerator</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Resources\View.Events.EditEvents.sv-SE.resx">
+    <EmbeddedResource Update="Resources\Views.Events.EditEvents.sv-SE.resx">
       <Generator>ResXFileCodeGenerator</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Resources\Views.Home.Contact.en.resx">
