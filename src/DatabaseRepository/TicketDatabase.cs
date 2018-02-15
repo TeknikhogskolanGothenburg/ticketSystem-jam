@@ -200,14 +200,27 @@ namespace TicketSystem.DatabaseRepository
             }
         }
 
+        //public TicketTransaction TicketTransactionsAdd(TicketTransaction ticketTransaction)
+        //{
+        //    using (var connection = new SqlConnection(connectionString))
+        //    {
+        //        string queryString = "INSERT INTO TicketTransactions(BuyerLastName, BuyerFirstName, BuyerAddress, BuyerCity, PaymentStatus, PaymentReferenceId)" +
+        //            "VALUES (@LastName, @FirstName, @Address, @City, @Status, @ReferenceID)";
+        //        connection.Open();
+        //        connection.Query(queryString, new { LastName = ticketTransaction.BuyerLastName, FirstName = ticketTransaction.BuyerFirstName, Address = ticketTransaction.BuyerAddress, City = ticketTransaction.BuyerCity, Status = ticketTransaction.PaymentStatus, ReferenceID = ticketTransaction.PaymentReferenceId });
+        //        var addedTicketEventDateQuery = connection.Query<int>("SELECT IDENT_CURRENT ('TicketTransactions') AS Current_Identity").First();
+        //        return connection.Query<TicketTransaction>("SELECT * FROM TicketTransactions WHERE TransactionID=@Id", new { Id = addedTicketEventDateQuery }).First();
+        //    }
+        //}
+
         public TicketTransaction TicketTransactionsAdd(TicketTransaction ticketTransaction)
         {
             using (var connection = new SqlConnection(connectionString))
             {
-                string queryString = "INSERT INTO TicketTransactions(BuyerLastName, BuyerFirstName, BuyerAddress, BuyerCity, PaymentStatus, PaymentReferenceId)" +
-                    "VALUES (@LastName, @FirstName, @Address, @City, @Status, @ReferenceID)";
+                string queryString = "INSERT INTO TicketTransactions(BuyerLastName, BuyerFirstName, BuyerAddress, BuyerCity)" +
+                    "VALUES (@LastName, @FirstName, @Address, @City)";
                 connection.Open();
-                connection.Query(queryString, new { LastName = ticketTransaction.BuyerLastName, FirstName = ticketTransaction.BuyerFirstName, Address = ticketTransaction.BuyerAddress, City = ticketTransaction.BuyerCity, Status = ticketTransaction.PaymentStatus, ReferenceID = ticketTransaction.PaymentReferenceId });
+                connection.Query(queryString, new { LastName = ticketTransaction.BuyerLastName, FirstName = ticketTransaction.BuyerFirstName, Address = ticketTransaction.BuyerAddress, City = ticketTransaction.BuyerCity});
                 var addedTicketEventDateQuery = connection.Query<int>("SELECT IDENT_CURRENT ('TicketTransactions') AS Current_Identity").First();
                 return connection.Query<TicketTransaction>("SELECT * FROM TicketTransactions WHERE TransactionID=@Id", new { Id = addedTicketEventDateQuery }).First();
             }
@@ -291,6 +304,18 @@ namespace TicketSystem.DatabaseRepository
                 connection.Open();
                 var response = connection.Query<EventSummary>(queryString, new { ID = id }).First();
                 return response;
+            }
+        }
+        public TicketToTransaction AddTicketBuyer(TicketTransaction ticketTransaction, Tickets tickets)
+        {
+            using (var connection = new SqlConnection(connectionString))
+            {
+                string queryString = "INSERT INTO TicketToTransactions(TicketID, TransactionID)" +
+                    "VALUES (@TicketID, @TransactionID)";
+                connection.Open();
+                connection.Query(queryString, new { TicketID = tickets.TicketId, TransactionID = ticketTransaction.TransactionID});
+                var addedTicketToTransactionQuery = connection.Query<int>("SELECT IDENT_CURRENT ('TicketToTransaction') AS Current_Identity").First();
+                return connection.Query<TicketToTransaction>("SELECT * FROM TicketToTransaction WHERE TicketID=@Id", new { Id = addedTicketToTransactionQuery }).First();
             }
         }
     }

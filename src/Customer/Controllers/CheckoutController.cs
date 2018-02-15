@@ -26,37 +26,31 @@ namespace Customer.Controllers
         }
 
         public IActionResult Checkout(string buttonclick)
-        {
-          
+        {          
             if (value == null)
             {
-                value = new Value();    // får inte med mig Cart och CartSummary vid buttonclick till Go To Cart
+                value = new Value();    
             }
-            if (ticketApi == null)          // detta är en nödlösning för att komma vidare.
+            if (ticketApi == null)          
             {
-                ticketApi = new TicketApi();  // måste hitta en lösning på detta.
+                ticketApi = new TicketApi();  
             }
-
-           
+          
             if (buttonclick != null)
             {
                 int id = int.Parse(buttonclick);
                 EventSummary eventSummary = ticketApi.GetSummary(id);
                 value.CartSummary.Add(eventSummary);
                 return View("Checkout", value);
-
             }
-
             else
             {
                 return View("Checkout", value);
             }
-
         }
 
         public IActionResult DeleteTicketFromCart(int eventID)
-        {
-  
+        {  
                 for (int i = 0; i < value.CartSummary.Count; i++)
                 {
                     if (i == eventID)
@@ -65,33 +59,24 @@ namespace Customer.Controllers
                         return View("Checkout", value);
                     }
                 }
-
             return View("Checkout", value);
         }
-        public IActionResult TicketsAddToCart(string buttonclick)
+
+        public IActionResult GoToPayment(TicketTransaction TicketBuyer)  
         {
-            int id = int.Parse(buttonclick);
-            EventSummary es = ticketApi.GetSummary(id);  // försökte lägga Jakobs metod i denna Controller. Tänkte att det skulle underlätta
-            TicketEventDate b = ticketApi.GetEventDates(id); // att få med sig innehållet i value, men jag fastnar hela tiden
-            value.Cart.Add(b);                      // på rad 57 "object not set to an instance of...."
-
-            value.CartSummary.Add(es);
-            // return RedirectToRoute("Checkout/Checkout", value);
-
-            return View("Checkout", value);
-
-
-        }
-        public IActionResult GoToPayment()  //CartSummary.TicketEventDateId
-        {
-
-            foreach(EventSummary id in value.CartSummary)
-            {
-                SeatsAtEventDate e = ticketApi.PurchasedSeats(id);
-                 ticketApi.PurchasedTickets(e);
-            }
             
-            // Här får anropet till TicketsTransactions komma.
+           
+            ticketApi.TicketTransactionAdd(TicketBuyer);  // Lägger till köpare = TransactionID
+            
+
+            foreach (EventSummary id in value.CartSummary)
+            {
+                SeatsAtEventDate e = ticketApi.PurchasedSeats(id);  // Lägger till SeatID
+               ticketApi.PurchasedTickets(e);                          // Lägger till TicketID
+                
+                ticketApi.AddTicketBuyer(value.TicketBuyer, value.Tickets);  // Kopplar TicketID + TransactionID  FUNKAR EJ
+            }
+          
 
             return View("Checkout", value);
         }
