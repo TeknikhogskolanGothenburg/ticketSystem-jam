@@ -48,5 +48,11 @@ namespace TicketAPI.Controllers
         {
             tdb.DeleteTicketTransactions(id);
         }
+
+        [HttpPost("Seat")]
+        public TicketTransaction Post(int id)
+        {
+            return tdb.PurchasedSeats(id);
+        }
     }
 }

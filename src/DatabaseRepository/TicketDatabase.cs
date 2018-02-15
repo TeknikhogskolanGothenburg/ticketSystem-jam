@@ -249,13 +249,14 @@ namespace TicketSystem.DatabaseRepository
             }
 
         }
-        public SeatsAtEventDate PurchasedSeats(int seatID, int ticketEventId)
+
+        public SeatsAtEventDate PurchasedSeats(int ticketEventId)   ////HÄR ÄR JAG NU
         {
             using (var connection = new SqlConnection(connectionString))
             {
-                string queryStringSeat = "UPDATE SeatsAtEventDate SET[TicketEventDateID]= @ticketEventId  + WHERE SeatID = @seatID";
+                string queryStringSeat = "INSERT INTO SeatsAtEventDate SET[TicketEventDateID]= @ticketEventId  VALUES(@ticketEventId)";
                 connection.Open();
-                connection.Query(queryStringSeat, new { SeatID = seatID });
+                connection.Query(queryStringSeat, new { TicketEventDateID = ticketEventId });
                 var addedSeatsAtEventDateQuery = connection.Query<int>("SELECT IDENT_CURRENT ('SeatsAtEventDate') AS Current_Identity").First();
                 return connection.Query<SeatsAtEventDate>("SELECT * FROM SeatsAtEventDate WHERE SeatID=@seatID", new { Id = addedSeatsAtEventDateQuery }).First();
             }

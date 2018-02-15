@@ -39,7 +39,7 @@ namespace Customer.Controllers
             if (buttonclick != null)
             {
                 int id = int.Parse(buttonclick);
-                EventSummary eventSummary= ticketApi.GetSummary(id);
+                EventSummary eventSummary = ticketApi.GetSummary(id);
                 value.CartSummary.Add(eventSummary);
                 return View("Checkout", value);
             }
@@ -48,16 +48,22 @@ namespace Customer.Controllers
             {
                 return View("Checkout", value);
             }
-            
+
         }
 
-        public IActionResult DeleteTicketFromCart(List<EventSummary> item)
+        public IActionResult DeleteTicketFromCart(int eventID)
         {
+  
+                for (int i = 0; i < value.CartSummary.Count; i++)
+                {
+                    if (i == eventID)
+                    {
+                        value.CartSummary.Remove(value.CartSummary[i]);
+                        return View("Checkout", value);
+                    }
+                }
 
-            // gör metod
-
-
-            return View();
+            return View("Checkout", value);
         }
         public IActionResult TicketsAddToCart(string buttonclick)
         {

@@ -217,14 +217,13 @@ namespace TicketSystem.RestApiClient
             return response.Data;
         }
 
-        public Tickets PurchasedTickets(SeatsAtEventDate eventId)
+        public void PurchasedSeats(EventSummary eventSummary)
         {
-            var json = JsonConvert.SerializeObject(eventId);
+            var json = JsonConvert.SerializeObject(eventSummary);
             var client = new RestClient(localhost);
-            var request = new RestRequest("shop", Method.POST);
+            var request = new RestRequest("TicketTransactions/Seat/", Method.POST);
             request.AddParameter("application/json", json, ParameterType.RequestBody);
-            var response = client.Execute<Tickets>(request);
-            return response.Data;
+            var response = client.Execute<SeatsAtEventDate>(request);
         }
 
         //Join table calls
