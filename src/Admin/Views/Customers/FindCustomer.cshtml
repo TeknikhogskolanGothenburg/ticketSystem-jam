@@ -12,3 +12,16 @@
         <input type="submit" value="Search" />
     }
 </div>
+
+<div>
+    @foreach (var customer in Model.TicketTransaction)
+    {
+        <center>
+            <adress>
+                <b>@customer.BuyerFirstName  @customer.BuyerLastName</b><br />
+                <b>@customer.BuyerAddress</b><br />
+                <b>@customer.BuyerCity</b><br />
+            </adress>
+        </center>
+    }
+</div>

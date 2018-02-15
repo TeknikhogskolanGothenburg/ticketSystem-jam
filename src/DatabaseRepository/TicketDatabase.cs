@@ -235,13 +235,13 @@ namespace TicketSystem.DatabaseRepository
             }
         }
 
-        public TicketTransaction GetCustomer(string query)
+        public List<TicketTransaction> GetCustomer(string query)
         {
             using (var connection = new SqlConnection(connectionString))
             {
                 string queryString = "SELECT * FROM TicketTransactions WHERE BuyerFirstName + ' ' + BuyerLastName LIKE '%' + @Query + '%'";
                 connection.Open();
-                return connection.Query<TicketTransaction>(queryString, new { Query = query }).First();
+                return connection.Query<TicketTransaction>(queryString, new { Query = query }).ToList();
             }
         }
         

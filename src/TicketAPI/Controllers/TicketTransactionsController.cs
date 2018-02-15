@@ -49,8 +49,8 @@ namespace TicketAPI.Controllers
             tdb.DeleteTicketTransactions(id);
         }
 
-        [HttpGet("user/{query}")]
-        public TicketTransaction Get(string query)
+        [HttpGet("User/{query}")]
+        public List<TicketTransaction> Get(string query)
         {
             return tdb.GetCustomer(query);
         }

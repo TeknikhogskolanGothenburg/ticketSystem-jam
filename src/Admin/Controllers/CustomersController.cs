@@ -16,25 +16,22 @@ namespace Admin.Controllers
 
         // GET: Customer
         public ActionResult Customers()
-        {
-            value.TicketTransaction = ticketApi.GetAllTicketTransactions();
-            return View(value);
+        {                       
+            return View();
         }
                 
-        public ActionResult FindCustomer(string name)
-        {
-            value.TicketTransaction = ticketApi.GetAllTicketTransactions();
-            if (name )
-            return View();
+        public ActionResult FindCustomer(string searchString)
+        {            
+            value = new Value();
+            if (searchString != null)
+            {
+                value.TicketTransaction = ticketApi.GetCustomer(searchString);
+            }
+            return View(value);
         }
 
-
-        // GET: Customer/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
-
+        
+        
 
 
         // GET: Customer/Delete/5
