@@ -16,7 +16,7 @@ namespace Customer.Controllers
         public static TicketApi ticketApi;
         public SeatsAtEventDate SeatsAtEventDate;
         public TicketEvent TicketEvent;
-        public  EventSummary b;
+        public EventSummary b;
         public TicketEventDate es;
 
 
@@ -35,19 +35,26 @@ namespace Customer.Controllers
             {
                 ticketApi = new TicketApi();  // måste hitta en lösning på detta.
             }
-            int id = int.Parse(buttonclick);
-            EventSummary es = ticketApi.GetSummary(id);
-            TicketEventDate b = ticketApi.GetEventDates(id);
-            value.Cart.Add(b);
 
-            value.CartSummary.Add(es);
-            return View("Checkout", value);
+            if (buttonclick != null)
+            {
+                int id = int.Parse(buttonclick);
+                EventSummary eventSummary= ticketApi.GetSummary(id);
+                value.CartSummary.Add(eventSummary);
+                return View("Checkout", value);
+            }
+
+            else
+            {
+                return View("Checkout", value);
+            }
+            
         }
 
         public IActionResult DeleteTicketFromCart(List<EventSummary> item)
         {
 
-             // gör metod
+            // gör metod
 
 
             return View();
@@ -58,7 +65,7 @@ namespace Customer.Controllers
             EventSummary es = ticketApi.GetSummary(id);  // försökte lägga Jakobs metod i denna Controller. Tänkte att det skulle underlätta
             TicketEventDate b = ticketApi.GetEventDates(id); // att få med sig innehållet i value, men jag fastnar hela tiden
             value.Cart.Add(b);                      // på rad 57 "object not set to an instance of...."
-           
+
             value.CartSummary.Add(es);
             // return RedirectToRoute("Checkout/Checkout", value);
 
@@ -69,7 +76,7 @@ namespace Customer.Controllers
         public IActionResult GoToPayment()
         {
 
-           
+
             //gör metod
 
             return View();
