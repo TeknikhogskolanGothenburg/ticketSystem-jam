@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewData["Title"] = "DeleteTicketEventDate";
+}
+
+@model ClassLibrary.Value;
+
+<h2>Delete TicketEventDate</h2>
+
+@foreach (var row in Model.EventSummaries)
+{
+    @using (Html.BeginForm("RemoveTicketEventDate", "TicketEventDates", FormMethod.Post))
+    {
+        <table align="center">
+            <tr>
+                <td>@row.EventName</td>
+                <td>@row.VenueName</td>
+                <td>@row.EventHtmlDescription</td>
+                <td>@row.EventStartDateTime</td>
+                <td><button type="submit" name="id" style ="color:crimson" value=@row.TicketEventDateID>Delete</button></td>
+            </tr>
+        </table>
+    }
+    <br />
+}
