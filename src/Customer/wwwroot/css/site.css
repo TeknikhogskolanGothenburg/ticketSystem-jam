@@ -84,6 +84,17 @@ td {
     margin:5px;
     border:1px solid black;
 }
+
+th {
+    text-align:center;
+    padding:10px;
+}
+
+#customerInfo {
+    text-align:center;
+    margin:0 auto;
+    border:1px solid black;
+}
 /* Hide/rearrange for smaller screens */
 @media screen and (max-width: 767px) {
 }

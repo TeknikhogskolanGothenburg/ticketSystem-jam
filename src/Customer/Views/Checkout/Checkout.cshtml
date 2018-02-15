@@ -13,30 +13,29 @@
 <body>
     <div id="content">
 
-        <h1>ShoppingCart</h1>
+        <h1>Shopping Cart</h1>
         <table border="1" width="100%">
-            @using (Html.BeginForm("DeleteTicketFromCart", "Checkout"))
-            {
+
                 <tr>
-                    <th>Id</th>
+                    <th>ID</th>
                     <th>Event</th>
                     <th>Venue</th>
                     <th>Description</th>
                     <th>Date</th>
                     <th>Delete Ticket</th>
                 </tr>
-                @foreach (var row in cart)
+                @for (int i = 0; i < cart.Count; i++)
                 {
                     <tr>
-                        <td>@row.TicketEventDateID</td>
-                        <td>@row.EventName</td>
-                        <td>@row.VenueName</td>
-                        <td>@row.EventHtmlDescription</td>
-                        <td>@row.EventStartDateTime</td>
-                        <td><button id="@row.TicketEventDateID" onclick="location.href='@Url.Action("DeleteTicketFromCart", "Checkout")'" value="2" name="buttonclick" type="submit">Delete ticket</button></td>
+                        <td>@cart[i].TicketEventDateID</td>
+                        <td>@cart[i].EventName</td>
+                        <td>@cart[i].VenueName</td>
+                        <td>@cart[i].EventHtmlDescription</td>
+                        <td>@cart[i].EventStartDateTime</td>
+                        <td><a href="/Checkout/DeleteTicketFromCart?eventID=@i">Delete ticket</a></td>
                     </tr>
                 }
-            }
+      
         </table>
 
         <td><button id="1" style="width:100%" onclick="location.href='@Url.Action("Tickets", "Tickets")'" value="2" name="" type="submit">Continue Shopping</button></td>
@@ -63,7 +62,7 @@
             <div id="welcomeDiv" style="display:none;" class="answer_list">*@
     @*}
         </script>*@
-
+    <div id="customerInfo">
     <h3>Customer Information</h3>
     <hr />
 
