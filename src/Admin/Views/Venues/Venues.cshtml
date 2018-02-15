@@ -1,5 +1,8 @@
-﻿@{
-    ViewData["Title"] = "Venues";
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+
+@inject IViewLocalizer Localizer
+@{
+    ViewData["Title"] = Localizer["Venues"];
 }
 
 @model ClassLibrary.Value;
