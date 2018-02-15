@@ -39,7 +39,18 @@
         </table>
 
         <td><button id="1" style="width:100%" onclick="location.href='@Url.Action("Tickets", "Tickets")'" value="2" name="" type="submit">Continue Shopping</button></td>
-        <td><button id="2" style="width:100%" onclick="location.href='@Url.Action("gotopayment", "checkout")'" value="2" name="cart" type="submit">Go To Payment</button></td>
+@using (Html.BeginForm("GoToPayment", "Checkout"))
+{
+    @foreach(var row in cart)
+    {
+        var cartListId = new List<int>();
+        cartListId.Add(row.TicketEventDateID);
+
+    }
+    <td><button id="@Model.CartSummary" style="width:100%" value="2" name="cart" type="submit">Go To Payment</button></td>
+
+}
+        @*<td><button id="2" style="width:100%" onclick="location.href='@Url.Action("gotopayment", "checkout")'" value="2" name="cart" type="submit">Go To Payment</button></td>*@
         @*<td><input type="button" name="answer" value="Go To Payment" style="width:100% " onclick="showDiv()"></td>*@
     </div>
 
