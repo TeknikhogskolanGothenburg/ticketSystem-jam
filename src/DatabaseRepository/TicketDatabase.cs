@@ -254,11 +254,11 @@ namespace TicketSystem.DatabaseRepository
         {
             using (var connection = new SqlConnection(connectionString))
             {
-                string queryStringSeat = "INSERT INTO SeatsAtEventDate SET[TicketEventDateID]= @ticketEventId  VALUES(@ticketEventId)"; 
+                string queryStringSeat = "INSERT INTO SeatsAtEventDate  (TicketEventDateID) VALUES(@TicketEventDateID)"; 
                 connection.Open();
                 connection.Query(queryStringSeat, new { TicketEventDateID = eventSummary.TicketEventDateID });
                 var addedSeatsAtEventDateQuery = connection.Query<int>("SELECT IDENT_CURRENT ('SeatsAtEventDate') AS Current_Identity").First();
-                return connection.Query<SeatsAtEventDate>("SELECT * FROM SeatsAtEventDate WHERE SeatID=@seatID", new { Id = addedSeatsAtEventDateQuery }).First();
+                return connection.Query<SeatsAtEventDate>("SELECT * FROM SeatsAtEventDate WHERE SeatID=@Id", new { Id = addedSeatsAtEventDateQuery }).First();
             }
         }
 

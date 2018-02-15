@@ -50,9 +50,9 @@ namespace TicketAPI.Controllers
         }
 
         [HttpPost("Seat")]
-        public TicketTransaction Post(int id)
+        public SeatsAtEventDate Post([FromBody]EventSummary eventSummary)
         {
-            return tdb.PurchasedSeats(id);
+            return tdb.PurchasedSeats(eventSummary);
         }
     }
 }

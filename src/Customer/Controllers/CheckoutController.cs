@@ -27,6 +27,7 @@ namespace Customer.Controllers
 
         public IActionResult Checkout(string buttonclick)
         {
+          
             if (value == null)
             {
                 value = new Value();    // får inte med mig Cart och CartSummary vid buttonclick till Go To Cart
@@ -36,6 +37,7 @@ namespace Customer.Controllers
                 ticketApi = new TicketApi();  // måste hitta en lösning på detta.
             }
 
+           
             if (buttonclick != null)
             {
                 int id = int.Parse(buttonclick);
@@ -86,7 +88,7 @@ namespace Customer.Controllers
             foreach(EventSummary id in value.CartSummary)
             {
                 ticketApi.PurchasedSeats(id);
-              
+                //SeatsAtEventDate e = ticketApi.PurchasedTickets(id);
             }
             
 
