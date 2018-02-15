@@ -1,0 +1,14 @@
+﻿
+@{
+    ViewData["Title"] = "FindCustomer";
+}
+@model ClassLibrary.Value;
+<center><h2>FindCustomer</h2></center>
+
+<div class="venueDiv" id="CreateTicketEventDate" style="display:block">
+    @using (Html.BeginForm("FindCustomer", "Customers", FormMethod.Get))
+    {
+        @Html.TextBox("SearchString")
+        <input type="submit" value="Search" />
+    }
+</div>
