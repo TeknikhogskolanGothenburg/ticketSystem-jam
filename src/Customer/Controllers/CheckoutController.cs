@@ -42,6 +42,7 @@ namespace Customer.Controllers
                 EventSummary eventSummary= ticketApi.GetSummary(id);
                 value.CartSummary.Add(eventSummary);
                 return View("Checkout", value);
+
             }
 
             else
@@ -73,11 +74,15 @@ namespace Customer.Controllers
 
 
         }
-        public IActionResult GoToPayment()
+        public IActionResult GoToPayment()  //CartSummary.TicketEventDateId
         {
 
-
-            //gör metod
+            foreach(EventSummary id in value.CartSummary)
+            {
+                ticketApi.PurchasedSeats(id);
+              
+            }
+            
 
             return View();
         }
