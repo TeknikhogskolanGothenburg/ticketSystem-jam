@@ -54,5 +54,12 @@ namespace TicketAPI.Controllers
         {
             return tdb.PurchasedSeats(eventSummary);
         }
+
+
+        [HttpPost("Ticket")]
+        public Tickets Post([FromBody]SeatsAtEventDate seatsAtEventDate)
+        {
+            return tdb.PurchasedTickets(seatsAtEventDate);
+        }
     }
 }
