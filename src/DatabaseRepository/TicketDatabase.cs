@@ -237,20 +237,20 @@ namespace TicketSystem.DatabaseRepository
 
 
         //Ticket Queries
-        public Tickets PurchasedTickets(TicketEventDate ticketEventDateId) //int seatID, int ticketEventId
+        public Tickets PurchasedTickets(SeatsAtEventDate seatsAtEventDate) 
         {
             using (var connection = new SqlConnection(connectionString))
             {
-                string queryStringTicket = "insert into Tickets([SeatID]) values(@SeatID)"; 
+                string queryStringTicket = "insert into Tickets(SeatID) values(@SeatID)"; 
                 connection.Open();
-                connection.Query(queryStringTicket, new { SeatID = "null" });  // Tänkte att databasen ska räkna upp från 1 till MaxSeats-antal
-                var addedTicketQuery = connection.Query<int>("SELECT IDENT_CURRENT ('Tickets') AS Current_Identity").First();
-                return connection.Query<Tickets>("SELECT * FROM Tickets", new { Id = addedTicketQuery }).First();
+                connection.Query(queryStringTicket, new { SeatID = seatsAtEventDate.SeatId });  
+                var addedTicketsQuery = connection.Query<int>("SELECT IDENT_CURRENT ('Tickets') AS Current_Identity").First();
+                return connection.Query<Tickets>("SELECT * FROM Tickets", new { Id = addedTicketsQuery }).First();
             }
 
         }
 
-        public SeatsAtEventDate PurchasedSeats(EventSummary eventSummary)   ////HÄR ÄR JAG NU
+        public SeatsAtEventDate PurchasedSeats(EventSummary eventSummary)   
         {
             using (var connection = new SqlConnection(connectionString))
             {

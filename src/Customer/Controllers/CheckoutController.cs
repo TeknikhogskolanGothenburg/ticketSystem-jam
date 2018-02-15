@@ -87,12 +87,13 @@ namespace Customer.Controllers
 
             foreach(EventSummary id in value.CartSummary)
             {
-                ticketApi.PurchasedSeats(id);
-                //SeatsAtEventDate e = ticketApi.PurchasedTickets(id);
+                SeatsAtEventDate e = ticketApi.PurchasedSeats(id);
+                 ticketApi.PurchasedTickets(e);
             }
             
+            // Här får anropet till TicketsTransactions komma.
 
-            return View();
+            return View("Checkout", value);
         }
 
     }

@@ -41,12 +41,7 @@
         <td><button id="1" style="width:100%" onclick="location.href='@Url.Action("Tickets", "Tickets")'" value="2" name="" type="submit">Continue Shopping</button></td>
 @using (Html.BeginForm("GoToPayment", "Checkout"))
 {
-    @foreach(var row in cart)
-    {
-        var cartListId = new List<int>();
-        cartListId.Add(row.TicketEventDateID);
-
-    }
+    
     <td><button id="@Model.CartSummary" style="width:100%" value="2" name="cart" type="submit">Go To Payment</button></td>
 
 }
@@ -66,7 +61,7 @@
     <h3>Customer Information</h3>
     <hr />
 
-    @using (Html.BeginForm("EditEvents", "Events", FormMethod.Post))
+    @using (Html.BeginForm("GoToPayment", "Checkout", FormMethod.Post))
     {
         @Html.LabelFor(m => m.TicketByuer.BuyerFirstName, "Firstname")<br />
             @Html.TextBoxFor(m => m.TicketByuer.BuyerFirstName)<br />
@@ -77,7 +72,7 @@
             @Html.LabelFor(m => m.TicketByuer.BuyerCity, "City")<br />
             @Html.TextBoxFor(m => m.TicketByuer.BuyerCity)<br />
 
-            <input type="submit" style="background-color:dodgerblue" />
+            <input type="submit" id="@Model.CartSummary" style="background-color:dodgerblue" />
     }
     </div>
 
