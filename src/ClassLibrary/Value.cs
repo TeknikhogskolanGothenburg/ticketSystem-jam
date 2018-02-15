@@ -34,7 +34,9 @@ namespace ClassLibrary
 
         public AllModels AllModels { get; set; }
 
+        public List<int> cartListId  { get; set; }
 
 
-    }
+
+}
 }

@@ -11,7 +11,7 @@ namespace TicketSystem.RestApiClient
     {
         // Implemented using RestSharp: http://restsharp.org/
 
-        string localhost = "http://localhost:61835/api/";
+        string localhost = "http://localhost:50248/api/";
 
         //TicketEvent Calls
         public List<TicketEvent> GetAllEvents()
@@ -201,7 +201,16 @@ namespace TicketSystem.RestApiClient
             var response = client.Execute<List<Ticket>>(request);
             return response.Data;
         }
-
+        
+        public Ticket PurchasedTickets(SeatsAtEventDate seatsAtEventDate)
+        {
+            var json = JsonConvert.SerializeObject(seatsAtEventDate);
+            var client = new RestClient(localhost);
+            var request = new RestRequest("TicketTransactions/Ticket/", Method.POST);
+            request.AddParameter("application/json", json, ParameterType.RequestBody);
+            var response = client.Execute<Ticket>(request);
+            return response.Data;
+        }
         public Ticket TicketTicketIdGet(int ticketId)
         {
             var client = new RestClient(localhost);
@@ -217,15 +226,7 @@ namespace TicketSystem.RestApiClient
             return response.Data;
         }
 
-        public Tickets PurchasedTickets(SeatsAtEventDate eventId)
-        {
-            var json = JsonConvert.SerializeObject(eventId);
-            var client = new RestClient(localhost);
-            var request = new RestRequest("shop", Method.POST);
-            request.AddParameter("application/json", json, ParameterType.RequestBody);
-            var response = client.Execute<Tickets>(request);
-            return response.Data;
-        }
+   
 
         //Join table calls
         public List<EventSummary> GetAllSummary()
@@ -242,6 +243,16 @@ namespace TicketSystem.RestApiClient
             var request = new RestRequest("TicketEventDates/{id}/Summary", Method.GET);
             request.AddUrlSegment("id", id);
             var response = client.Execute<EventSummary>(request);
+            return response.Data;
+        }
+
+        public SeatsAtEventDate PurchasedSeats(EventSummary eventSummary)
+        {
+            var json = JsonConvert.SerializeObject(eventSummary);
+            var client = new RestClient(localhost);
+            var request = new RestRequest("TicketTransactions/Seat/", Method.POST);
+            request.AddParameter("application/json", json, ParameterType.RequestBody);
+            var response = client.Execute<SeatsAtEventDate>(request);
             return response.Data;
         }
     }

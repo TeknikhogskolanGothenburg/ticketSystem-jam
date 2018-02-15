@@ -48,5 +48,18 @@ namespace TicketAPI.Controllers
         {
             tdb.DeleteTicketTransactions(id);
         }
+
+        [HttpPost("Seat")]
+        public SeatsAtEventDate Post([FromBody]EventSummary eventSummary)
+        {
+            return tdb.PurchasedSeats(eventSummary);
+        }
+
+
+        [HttpPost("Ticket")]
+        public Tickets Post([FromBody]SeatsAtEventDate seatsAtEventDate)
+        {
+            return tdb.PurchasedTickets(seatsAtEventDate);
+        }
     }
 }

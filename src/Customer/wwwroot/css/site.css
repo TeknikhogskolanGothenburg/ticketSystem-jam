@@ -80,10 +80,35 @@ button {
 }
 
 td {
-    padding:5px;
-    margin:5px;
-    border:1px solid black;
+    padding: 5px;
+    margin: 5px;
+    border: 2px solid black;
 }
+
+th {
+    text-align: center;
+    padding: 10px;
+    border: 2px solid black;
+}
+
+#customerInfo, #cartButtons {
+    text-align:center;
+    margin:0 auto;
+    width:30%;
+    transition:1s ease-in;
+}
+
+#shoppingCartTable {
+    margin:0 auto;
+    border:2px solid black;
+}
+
+#deleteBtn {
+    text-decoration:none;
+    height:100%;
+    color:red;
+}
+
 /* Hide/rearrange for smaller screens */
 @media screen and (max-width: 767px) {
 }

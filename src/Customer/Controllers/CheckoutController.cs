@@ -27,6 +27,7 @@ namespace Customer.Controllers
 
         public IActionResult Checkout(string buttonclick)
         {
+          
             if (value == null)
             {
                 value = new Value();    // får inte med mig Cart och CartSummary vid buttonclick till Go To Cart
@@ -36,28 +37,36 @@ namespace Customer.Controllers
                 ticketApi = new TicketApi();  // måste hitta en lösning på detta.
             }
 
+           
             if (buttonclick != null)
             {
                 int id = int.Parse(buttonclick);
-                EventSummary eventSummary= ticketApi.GetSummary(id);
+                EventSummary eventSummary = ticketApi.GetSummary(id);
                 value.CartSummary.Add(eventSummary);
                 return View("Checkout", value);
+
             }
 
             else
             {
                 return View("Checkout", value);
             }
-            
+
         }
 
-        public IActionResult DeleteTicketFromCart(List<EventSummary> item)
+        public IActionResult DeleteTicketFromCart(int eventID)
         {
+  
+                for (int i = 0; i < value.CartSummary.Count; i++)
+                {
+                    if (i == eventID)
+                    {
+                        value.CartSummary.Remove(value.CartSummary[i]);
+                        return View("Checkout", value);
+                    }
+                }
 
-            // gör metod
-
-
-            return View();
+            return View("Checkout", value);
         }
         public IActionResult TicketsAddToCart(string buttonclick)
         {
@@ -73,13 +82,18 @@ namespace Customer.Controllers
 
 
         }
-        public IActionResult GoToPayment()
+        public IActionResult GoToPayment()  //CartSummary.TicketEventDateId
         {
 
+            foreach(EventSummary id in value.CartSummary)
+            {
+                SeatsAtEventDate e = ticketApi.PurchasedSeats(id);
+                 ticketApi.PurchasedTickets(e);
+            }
+            
+            // Här får anropet till TicketsTransactions komma.
 
-            //gör metod
-
-            return View();
+            return View("Checkout", value);
         }
 
     }

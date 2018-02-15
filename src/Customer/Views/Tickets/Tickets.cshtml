@@ -1,4 +1,5 @@
 ﻿@model ClassLibrary.Value;
+
 @*@using Microsoft.AspNetCore.Mvc.Localization
 
     @inject IViewLocalizer Localizer*@
@@ -10,15 +11,12 @@
 <body>
     <div id="content">
 
-
-
         <h1>Ticketshop</h1>
         <table border="1" width="100%">
 
             @using (Html.BeginForm("Checkout", "Checkout"))
             {
                 <tr>
-                    <th>Id</th>
                     <th>Event</th>
                     <th>Venue</th>
                     <th>Description</th>
@@ -28,7 +26,6 @@
                 @foreach (var row in db)
                 {
                     <tr>
-                        <td>@row.TicketEventDateID</td>
                         <td>@row.EventName</td>
                         <td>@row.VenueName</td>
                         <td>@row.EventHtmlDescription</td>
@@ -39,21 +36,10 @@
                 }
             }
         </table>
-        @*@using (Html.BeginForm("Checkout", "Checkout", Model.EventSummaries))
-        {
-            <td><button id="2" style="width:100%" onclick="location.href='@Url.Action("Checkout", "Checkout")'" value="2" name="Cart" type="submit">Go To Cart</button></td>
-
-        }*@
     </div>
 
     </body>
 </html>
-
-@*<h1>@ViewBag.Message</h1>
-    <div id="content">
-
-        @*<div class="venueDiv" id="getEvent" style="display:block">*@
-@*<h3>Get Events</h3>*@
 
 
 

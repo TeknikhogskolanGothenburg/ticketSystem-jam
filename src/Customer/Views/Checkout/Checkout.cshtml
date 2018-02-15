@@ -7,70 +7,75 @@
 
 }
 
-<h2>Checkout</h2>
+<div id="content">
 
-<html>
-<body>
-    <div id="content">
+    <h1>Shopping Cart</h1>
+    <table id="shoppingCartTable" width="100%">
 
-        <h1>ShoppingCart</h1>
-        <table border="1" width="100%">
-            @using (Html.BeginForm("DeleteTicketFromCart", "Checkout"))
-            {
-                <tr>
-                    <th>Id</th>
-                    <th>Event</th>
-                    <th>Venue</th>
-                    <th>Description</th>
-                    <th>Date</th>
-                    <th>Delete Ticket</th>
-                </tr>
-                @foreach (var row in cart)
-                {
-                    <tr>
-                        <td>@row.TicketEventDateID</td>
-                        <td>@row.EventName</td>
-                        <td>@row.VenueName</td>
-                        <td>@row.EventHtmlDescription</td>
-                        <td>@row.EventStartDateTime</td>
-                        <td><button id="@row.TicketEventDateID" onclick="location.href='@Url.Action("DeleteTicketFromCart", "Checkout")'" value="2" name="buttonclick" type="submit">Delete ticket</button></td>
-                    </tr>
-                }
-            }
-        </table>
+        <tr>
+            <th>Event</th>
+            <th>Venue</th>
+            <th>Description</th>
+            <th>Date</th>
+        </tr>
+        @for (int i = 0; i < cart.Count; i++)
+        {
+            <tr>
+                <td>@cart[i].EventName</td>
+                <td>@cart[i].EventHtmlDescription</td>
+                <td>@cart[i].VenueName</td>
+                <td>@cart[i].EventStartDateTime</td>
+                <td id="deleteCell"><a href="/Checkout/DeleteTicketFromCart?eventID=@i" id="deleteBtn">Remove</a></td>
+            </tr>
+        }
 
-        <td><button id="1" style="width:100%" onclick="location.href='@Url.Action("Tickets", "Tickets")'" value="2" name="" type="submit">Continue Shopping</button></td>
-        <td><button id="2" style="width:100%" onclick="location.href='@Url.Action("gotopayment", "checkout")'" value="2" name="cart" type="submit">Go To Payment</button></td>
-        @*<td><input type="button" name="answer" value="Go To Payment" style="width:100% " onclick="showDiv()"></td>*@
+    </table>
+    <div id="cartButtons">
+        <button style="width:100%" onclick="location.href='@Url.Action("Tickets", "Tickets")'" type="submit">Continue Shopping</button>
+        @using (Html.BeginForm("GoToPayment", "Checkout"))
+    {
+        @foreach (var row in cart)
+    {
+        var cartListId = new List<int>();
+        cartListId.Add(row.TicketEventDateID);
+
+    }
+}
+        <button id="@Model.CartSummary" onclick="dropDown()" style="width:100%" value="2" name="cart" type="submit">Go To Payment</button>
     </div>
 
 
-    @*<script language="javascript">
-        function showDiv() {
-            document.getElementById('welcomeDiv').style.display = "block";
+    <div id="customerInfo" style="display:none">
+        <hr />
+        <h3>Customer Information</h3>
+        <hr />
 
-            <div id="welcomeDiv" style="display:none;" class="answer_list">*@
-    @*}
-        </script>*@
-
-    <h3>Customer Information</h3>
-    <hr />
-
-    @using (Html.BeginForm("EditEvents", "Events", FormMethod.Post))
+        @using (Html.BeginForm("EditEvents", "Events", FormMethod.Post))
     {
         @Html.LabelFor(m => m.TicketByuer.BuyerFirstName, "Firstname")<br />
-            @Html.TextBoxFor(m => m.TicketByuer.BuyerFirstName)<br />
-            @Html.LabelFor(m => m.TicketByuer.BuyerLastName, "Lastname")<br />
-            @Html.TextBoxFor(m => m.TicketByuer.BuyerLastName)<br />
-            @Html.LabelFor(m => m.TicketByuer.BuyerAddress, "Address")<br />
-            @Html.TextBoxFor(m => m.TicketByuer.BuyerAddress)<br />
-            @Html.LabelFor(m => m.TicketByuer.BuyerCity, "City")<br />
-            @Html.TextBoxFor(m => m.TicketByuer.BuyerCity)<br />
-
-            <input type="submit" style="background-color:dodgerblue" />
-    }
+        @Html.TextBoxFor(m => m.TicketByuer.BuyerFirstName)<br />
+        @Html.LabelFor(m => m.TicketByuer.BuyerLastName, "Lastname")<br />
+        @Html.TextBoxFor(m => m.TicketByuer.BuyerLastName)<br />
+        @Html.LabelFor(m => m.TicketByuer.BuyerAddress, "Address")<br />
+        @Html.TextBoxFor(m => m.TicketByuer.BuyerAddress)<br />
+        @Html.LabelFor(m => m.TicketByuer.BuyerCity, "City")<br />
+        @Html.TextBoxFor(m => m.TicketByuer.BuyerCity)<br />
+        <input type="submit" style="background-color:dodgerblue" />
+}
     </div>
 
+</div>
 
-</body>
-</html>
+@section Scripts
+    {
+    <script>
+        function dropDown() {
+            var x = document.getElementById("customerInfo");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+    </script>
+}

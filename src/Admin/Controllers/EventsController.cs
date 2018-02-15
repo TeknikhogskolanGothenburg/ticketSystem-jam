@@ -35,6 +35,7 @@ namespace Admin.Controllers
         {
             if (id == 0)
             {
+                value.Events = ticketApi.GetAllEvents();
                 return View(value);
             }
             else
