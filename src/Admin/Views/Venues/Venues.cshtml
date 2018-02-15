@@ -1,5 +1,8 @@
-﻿@{
-    ViewData["Title"] = "Venues";
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+
+@inject IViewLocalizer Localizer
+@{
+    ViewData["Title"] = Localizer["Venues"];
 }
 
 @model ClassLibrary.Value;
@@ -7,7 +10,7 @@
 
 <h1>@ViewBag.Message</h1>
 <div id="content">
-    <button onclick="location.href='@Url.Action("AddVenues", "Venues")'">Add Venue</button>
+    <button onclick="location.href='@Url.Action("AddVenues", "Venues")'">@Localizer["Add Venue"]</button>
     <button onclick="location.href='@Url.Action("EditVenues", "Venues")'">Edit Venue</button>
     <button onclick="location.href='@Url.Action("DeleteVenues", "Venues")'">Delete Venue</button>
 </div>

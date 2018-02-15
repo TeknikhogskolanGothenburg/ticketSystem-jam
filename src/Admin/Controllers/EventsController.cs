@@ -26,7 +26,7 @@ namespace Admin.Controllers
                 ticketApi = new TicketApi();
             }
 
-            EventSummary sum = ticketApi.GetSummary(3);
+          //  EventSummary sum = ticketApi.GetSummary(3);
             return View(value);
         }
 
