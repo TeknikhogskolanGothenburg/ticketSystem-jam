@@ -235,7 +235,16 @@ namespace TicketSystem.DatabaseRepository
             }
         }
 
-
+        public TicketTransaction GetCustomer(string query)
+        {
+            using (var connection = new SqlConnection(connectionString))
+            {
+                string queryString = "SELECT * FROM TicketTransactions WHERE BuyerFirstName + ' ' + BuyerLastName LIKE '%' + @Query + '%'";
+                connection.Open();
+                return connection.Query<TicketTransaction>(queryString, new { Query = query }).First();
+            }
+        }
+        
         //Ticket Queries
         public Tickets PurchasedTickets(SeatsAtEventDate seatsAtEventDate) 
         {
