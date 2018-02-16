@@ -7,12 +7,12 @@
     var db = Model.EventSummaries;
 
 }
-<html>
-<body>
+
     <div id="content">
 
-        <h1>Ticketshop</h1>
-        <table border="1" width="100%">
+        <h1 style="font-family: 'Agency FB'">Ticketshop</h1>
+        <hr />
+        <table id="shoppingCartTable">
 
             @using (Html.BeginForm("Checkout", "Checkout"))
             {
@@ -22,7 +22,6 @@
                     <th>Description</th>
                     <th>Date</th>
                     <th>Choose Ticket</th>
-                    
                 </tr>
                 @foreach (var row in db)
                 {
@@ -31,7 +30,7 @@
                         <td>@row.VenueName</td>
                         <td>@row.EventHtmlDescription</td>
                         <td>@row.EventStartDateTime</td>
-                        <td><button id="@row.TicketEventDateID" type="submit" value="@row.TicketEventDateID" name="buttonclick">Add to cart</button></td>
+                        <td><button class="addToCartBtn" type="submit" value="@row.TicketEventDateID" name="buttonclick">Add to cart</button></td>
                     </tr>
 
                 }
@@ -39,8 +38,6 @@
         </table>
     </div>
 
-    </body>
-</html>
 
 
 

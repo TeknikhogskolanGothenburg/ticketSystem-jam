@@ -26,16 +26,16 @@ namespace Customer.Controllers
         }
 
         public IActionResult Checkout(string buttonclick)
-        {          
+        {
             if (value == null)
             {
-                value = new Value();    
+                value = new Value();
             }
-            if (ticketApi == null)          
+            if (ticketApi == null)
             {
-                ticketApi = new TicketApi();  
+                ticketApi = new TicketApi();
             }
-          
+
             if (buttonclick != null)
             {
                 int id = int.Parse(buttonclick);
@@ -50,39 +50,36 @@ namespace Customer.Controllers
         }
 
         public IActionResult DeleteTicketFromCart(int eventID)
-        {  
-                for (int i = 0; i < value.CartSummary.Count; i++)
+        {
+            for (int i = 0; i < value.CartSummary.Count; i++)
+            {
+                if (i == eventID)
                 {
-                    if (i == eventID)
-                    {
-                        value.CartSummary.Remove(value.CartSummary[i]);
-                        return View("Checkout", value);
-                    }
+                    value.CartSummary.Remove(value.CartSummary[i]);
+                    return View("Checkout", value);
                 }
+            }
             return View("Checkout", value);
         }
 
-        public IActionResult GoToPayment(TicketTransaction ticketBuyer)  
+        public IActionResult GoToPayment(TicketTransaction ticketBuyer)
         {
-            
-           
-          TicketTransaction t=  ticketApi.TicketTransactionAdd(ticketBuyer);  // Lägger till köpare = TransactionID
-            
+
+            value.TicketBuyer = ticketApi.TicketTransactionAdd(ticketBuyer);  // Lägger till köpare = TransactionID
 
             foreach (EventSummary id in value.CartSummary)
             {
-               SeatsAtEventDate e = ticketApi.PurchasedSeats(id);  // Lägger till SeatID
-             Tickets x= ticketApi.PurchasedTickets(e);  
-                // Lägger till TicketID
+                SeatsAtEventDate e = ticketApi.PurchasedSeats(id);  // Lägger till SeatID
+                Tickets x = ticketApi.PurchasedTickets(e);
+
                 TicketToTransaction ticketToTransaction = new TicketToTransaction();
-                ticketToTransaction.TransactionID = t.TransactionID;
+                ticketToTransaction.TransactionID = value.TicketBuyer.TransactionID;
                 ticketToTransaction.TicketID = x.TicketId;
 
-                ticketApi.AddTicketBuyer( ticketToTransaction);  // Kopplar TicketID + TransactionID  FUNKAR EJ
+                ticketApi.AddTicketBuyer(ticketToTransaction);  // Kopplar TicketID + TransactionID  FUNKAR EJ
             }
-          
 
-            return View("Checkout", value);
+            return View("PurchaseCompleted", value);
         }
 
     }

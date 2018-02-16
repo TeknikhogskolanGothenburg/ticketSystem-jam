@@ -9,15 +9,16 @@
 
 <div id="content">
 
-    <h1>Shopping Cart</h1>
-    <table id="shoppingCartTable" style=" width:80%">
+    <h1 style="font-family: 'Agency FB'">Shopping Cart</h1>
+    <hr />
+    <table id="shoppingCartTable">
 
         <tr>
             <th>Event</th>
             <th>Venue</th>
             <th>Description</th>
             <th>Date</th>
-            <th></th>
+            <th>Remove Ticket</th>
         </tr>
         @for (int i = 0; i < cart.Count; i++)
         {
@@ -32,9 +33,9 @@
 
     </table>
     <div id="cartButtons">
-        <button style="width:100%" onclick="location.href='@Url.Action("Tickets", "Tickets")'" type="submit">Continue Shopping</button>
+        <button class="checkOutBtn"  onclick="location.href='@Url.Action("Tickets", "Tickets")'" type="submit">Continue Shopping</button>
 
-        <button id="@Model.CartSummary" onclick="dropDown()" style="width:100%" value="2" name="cart" type="submit">Go To Payment</button>
+        <button class="checkOutBtn" id="@Model.CartSummary" onclick="dropDown()" value="2" name="cart" type="submit">Go To Payment</button>
     </div>
 
 
@@ -44,19 +45,19 @@
         <hr />
 
         @using (Html.BeginForm("GoToPayment", "Checkout", FormMethod.Post))
-    {
-        @Html.LabelFor(m => m.TicketBuyer.BuyerFirstName, "Firstname")<br />
-        @Html.TextBoxFor(m => m.TicketBuyer.BuyerFirstName, new { type = "text", placeholder = "jammy", @required = true })<br />
-        @Html.LabelFor(m => m.TicketBuyer.BuyerLastName, "Lastname")<br />
-        @Html.TextBoxFor(m => m.TicketBuyer.BuyerLastName, new { type = "text", placeholder = "svensson", @required = true })<br />
-        @Html.LabelFor(m => m.TicketBuyer.BuyerEmail, "Email")<br />
-        @Html.TextBoxFor(m => m.TicketBuyer.BuyerEmail, new { type = "email", placeholder = "jam.svensson@jam.se", @required = true })<br />
-        @Html.LabelFor(m => m.TicketBuyer.BuyerAddress, "Address")<br />
-        @Html.TextBoxFor(m => m.TicketBuyer.BuyerAddress, new { type = "text", placeholder = "Jam Street 1337", @required = true })<br />
-        @Html.LabelFor(m => m.TicketBuyer.BuyerCity, "City")<br />
-        @Html.TextBoxFor(m => m.TicketBuyer.BuyerCity, new { type = "text", placeholder = "Gothenburg", @required = true })<br />
-        <input type="submit" style="background-color:dodgerblue" />
-}
+        {
+            @Html.LabelFor(m => m.TicketBuyer.BuyerFirstName, "Firstname")<br />
+            @Html.TextBoxFor(m => m.TicketBuyer.BuyerFirstName, new { type = "text", placeholder = "jammy", @required = true })<br />
+            @Html.LabelFor(m => m.TicketBuyer.BuyerLastName, "Lastname")<br />
+            @Html.TextBoxFor(m => m.TicketBuyer.BuyerLastName, new { type = "text", placeholder = "svensson", @required = true })<br />
+            @Html.LabelFor(m => m.TicketBuyer.BuyerEmail, "Email")<br />
+            @Html.TextBoxFor(m => m.TicketBuyer.BuyerEmail, new { type = "email", placeholder = "jam.svensson@jam.se", @required = true })<br />
+            @Html.LabelFor(m => m.TicketBuyer.BuyerAddress, "Address")<br />
+            @Html.TextBoxFor(m => m.TicketBuyer.BuyerAddress, new { type = "text", placeholder = "Jam Street 1337", @required = true })<br />
+            @Html.LabelFor(m => m.TicketBuyer.BuyerCity, "City")<br />
+            @Html.TextBoxFor(m => m.TicketBuyer.BuyerCity, new { type = "text", placeholder = "Gothenburg", @required = true })<br />
+            <input type="submit" style="background-color:dodgerblue" />
+        }
     </div>
 
 </div>

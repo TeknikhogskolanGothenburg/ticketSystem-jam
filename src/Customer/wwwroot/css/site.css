@@ -57,18 +57,7 @@ select {
     margin: 0 auto;
 }
 
-button {
-    background-color: #101010;
-    border: none;
-    color: white;
-    padding: 10px 27px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 12px;
-    margin: 4px 2px;
-    cursor: pointer;
-}
+
 
 
 #row {
@@ -81,17 +70,49 @@ button {
     color: white;
 }
 
+/* table styles*/
+
+tr:nth-child(even) td {
+    background: #F1F1F1;
+}
+tr:nth-child(odd) td {
+    background: #FEFEFE;
+}  
+#shoppingCartTable {
+    color: #333;
+    font-family: Helvetica, Arial, sans-serif;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin:0 auto;
+    margin-top:20px;
+}
+
 td {
-    padding: 5px;
+    padding: 10px;
     margin: 5px;
-    border: 2px solid black;
+    border: 1px solid #CCC;
+    background: #FAFAFA;
+    text-align: center;
+    
 }
 
 th {
     text-align: center;
     padding: 10px;
-    border: 2px solid black;
+    border: 1px solid #CCC;
+    background: #DFDFDF; 
+    font-weight: bold;
+    transition: all 0.3s;
 }
+tr td:hover {
+    background: #666;
+    color: #FFF;
+}
+tr td:hover > .addToCartBtn {
+    background: #666;
+    color: #FFF;
+} 
+
 
 #customerInfo, #cartButtons {
     text-align: center;
@@ -100,30 +121,59 @@ th {
     transition: 1s ease-in;
 }
 
-#shoppingCartTable {
-    margin: 0 auto;
-    border: 2px solid black;
+#cartButtons{
+    margin-top:20px;
+    width:100%;
 }
 
+.checkOutBtn {
+    background-color: black;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    opacity: 0.8;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+  
+}
+.checkOutBtn:hover {
+    opacity:1;
+}
 #deleteBtn {
     text-decoration: none;
     height: 100%;
     color: red;
 }
 
-#bigLetter, #jam {
-    font-family: 'Agency FB';
-    margin-top: 0px;
-    display: inline-block;
+.addToCartBtn {
+    border: none;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: inherit;
+    font-family: Helvetica, Arial, sans-serif;
 }
+    .addToCartBtn:hover {
+        opacity:0.5;
+    }
+    #bigLetter, #jam {
+        font-family: 'Agency FB';
+        margin-top: 0px;
+        display: inline-block;
+        font-size: 120%;
+    }
 
 #jam {
-    font-size: 500%;
+    font-size: 600%;
 }
 
-#bigLetter::first-letter {
-    font-size: 500%;
-}
 
 #backGround {
     height: 650px;
@@ -134,14 +184,15 @@ th {
     text-align: center;
     margin: 0 auto;
     margin-top: 75px;
-    width: 60%;
-    background-color: black;
-    color: white;
-    opacity: 0.8;
+    width: 40%;
+    color: floralwhite;
+    opacity: 0.9;
     display: block;
-    padding: 100px;
+    padding: 50px;
     padding-top: 300px;
-    border-radius: 50%;
+    border-radius:50%;
+    background-color:black;
+    
 }
 
 .navbar {
