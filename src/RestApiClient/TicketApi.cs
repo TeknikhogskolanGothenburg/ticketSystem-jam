@@ -277,7 +277,7 @@ namespace TicketSystem.RestApiClient
         public List<EventSummary> FindTicketBuyer(int id)
         {
             var client = new RestClient(localhost);
-            var request = new RestRequest("TicketTransactions/User/{id}", Method.GET);
+            var request = new RestRequest("TicketTransactions/Ticket/{id}", Method.GET);
             request.AddUrlSegment("id", id);
             var response = client.Execute<List<EventSummary>>(request);
             return response.Data;

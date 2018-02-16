@@ -55,11 +55,11 @@ namespace TicketAPI.Controllers
             return tdb.GetCustomer(query);
         }
 
-        //[HttpGet("User/{id}")]
-        //public List<EventSummary> GetTickets(int id)
-        //{
-        //    return tdb.FindTicketBuyer(id);
-        //}
+        [HttpGet("Ticket/{id}")]
+        public List<EventSummary> GetTickets(int id)
+        {
+            return tdb.FindTicketBuyer(id);
+        }
 
         [HttpPost("Seat")]
         public SeatsAtEventDate Post([FromBody]EventSummary eventSummary)

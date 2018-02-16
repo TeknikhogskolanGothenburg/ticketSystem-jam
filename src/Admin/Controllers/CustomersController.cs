@@ -30,12 +30,12 @@ namespace Admin.Controllers
             return View(value);
         }
 
-        //[HttpPost]
-        //public ActionResult CustomerInfo(int id)
-        //{
-        //    value.TicketBuyer = ticketApi.GetTicketTransactions(id);
-        //    value.EventSummaries = ticketApi.FindTicketBuyer(id);
-        //    return View();
-        //}
+        [HttpPost]
+        public ActionResult CustomerInfo(int id)
+        {
+            value.TicketBuyer = ticketApi.GetTicketTransactions(id);
+            value.EventSummaries = ticketApi.FindTicketBuyer(id);
+            return View(value);
+        }
     }
 }
