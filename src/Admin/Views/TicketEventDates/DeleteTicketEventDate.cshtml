@@ -7,19 +7,43 @@
 
 <center><h2>Delete TicketEventDate</h2></center>
 
-@foreach (var row in Model.EventSummaries)
-{
+<table id="shoppingCartTable" align="center" style=" width:80%">
+
+    <tr>
+        <th>Event</th>
+        <th>Venue</th>
+        <th>Description</th>
+        <th>Date</th>
+        <th></th>
+    </tr>
     @using (Html.BeginForm("RemoveTicketEventDate", "TicketEventDates", FormMethod.Post))
     {
-        <table align="center">
+        @foreach (var row in Model.EventSummaries)
+        {
             <tr>
                 <td>@row.EventName</td>
                 <td>@row.VenueName</td>
                 <td>@row.EventHtmlDescription</td>
                 <td>@row.EventStartDateTime</td>
-                <td><button type="submit" name="id" style ="color:crimson" value=@row.TicketEventDateID>Delete</button></td>
+                <td><button type="submit" name="id" style="background-color:crimson" value=@row.TicketEventDateID>Delete</button></td>
             </tr>
-        </table>
+        }
     }
-    <br />
-}
+</table>
+
+@*@foreach (var row in Model.EventSummaries)
+    {
+        @using (Html.BeginForm("RemoveTicketEventDate", "TicketEventDates", FormMethod.Post))
+        {
+            <table align="center">
+                <tr>
+                    <td>@row.EventName</td>
+                    <td>@row.VenueName</td>
+                    <td>@row.EventHtmlDescription</td>
+                    <td>@row.EventStartDateTime</td>
+                    <td><button type="submit" name="id" style ="color:crimson" value=@row.TicketEventDateID>Delete</button></td>
+                </tr>
+            </table>
+        }
+        <br />
+    }*@

@@ -323,11 +323,7 @@ namespace TicketSystem.DatabaseRepository
                 connection.Open();
                 connection.Query(queryString, new { TicketID = ticketToTransaction.TicketID, TransactionID = ticketToTransaction.TransactionID });
                 return connection.Query<TicketToTransaction>("SELECT * FROM TicketsToTransactions WHERE TicketID=@Id", new { Id = ticketToTransaction.TicketID }).First();
-                //var addedTicketToTransactionQuery = connection.Query<int>("SELECT IDENT_CURRENT ('TicketsToTransactions') AS Current_Identity").First();
-                //   return connection.Query<TicketToTransaction>("SELECT * FROM TicketsToTransactions WHERE TicketID=@Id", new { Id = ticketToTransaction.TicketID }).First();
-                //return connection.Query<TicketToTransaction>(queryString).First();
             }
-
         }
 
         public List<EventSummary> FindTicketBuyer(int id)
