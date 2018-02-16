@@ -24,12 +24,14 @@ h3 {
     display: none;
 }
 
-input[type=text] {
+input[type=text],input[type=email] {
     width: 100%;
     margin: 8px 0;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+    padding:5px;
+    text-align:center;
 }
 
 input[type=submit] {
@@ -142,6 +144,8 @@ th {
     padding-top: 300px;
     border-radius: 50%;
 }
+
+
 /* Hide/rearrange for smaller screens */
 @media screen and (max-width: 767px) {
 }
