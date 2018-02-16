@@ -10,7 +10,7 @@
 <div id="content">
 
     <h1>Shopping Cart</h1>
-    <table id="shoppingCartTable" width="100%">
+    <table id="shoppingCartTable" style=" width:80%">
 
         <tr>
             <th>Event</th>
@@ -44,17 +44,19 @@
         <hr />
 
         @using (Html.BeginForm("GoToPayment", "Checkout", FormMethod.Post))
-        {
-            @Html.LabelFor(m => m.TicketBuyer.BuyerFirstName, "Firstname")<br />
-            @Html.TextBoxFor(m => m.TicketBuyer.BuyerFirstName)<br />
-            @Html.LabelFor(m => m.TicketBuyer.BuyerLastName, "Lastname")<br />
-            @Html.TextBoxFor(m => m.TicketBuyer.BuyerLastName)<br />
-            @Html.LabelFor(m => m.TicketBuyer.BuyerAddress, "Address")<br />
-            @Html.TextBoxFor(m => m.TicketBuyer.BuyerAddress)<br />
-            @Html.LabelFor(m => m.TicketBuyer.BuyerCity, "City")<br />
-            @Html.TextBoxFor(m => m.TicketBuyer.BuyerCity)<br />
-            <input type="submit" style="background-color:dodgerblue" />
-        }
+    {
+        @Html.LabelFor(m => m.TicketBuyer.BuyerFirstName, "Firstname")<br />
+        @Html.TextBoxFor(m => m.TicketBuyer.BuyerFirstName, new { type = "text", placeholder = "jammy", @required = true })<br />
+        @Html.LabelFor(m => m.TicketBuyer.BuyerLastName, "Lastname")<br />
+        @Html.TextBoxFor(m => m.TicketBuyer.BuyerLastName, new { type = "text", placeholder = "svensson", @required = true })<br />
+        @Html.LabelFor(m => m.TicketBuyer.BuyerEmail, "Email")<br />
+        @Html.TextBoxFor(m => m.TicketBuyer.BuyerEmail, new { type = "email", placeholder = "jam.svensson@jam.se", @required = true })<br />
+        @Html.LabelFor(m => m.TicketBuyer.BuyerAddress, "Address")<br />
+        @Html.TextBoxFor(m => m.TicketBuyer.BuyerAddress, new { type = "text", placeholder = "Jam Street 1337", @required = true })<br />
+        @Html.LabelFor(m => m.TicketBuyer.BuyerCity, "City")<br />
+        @Html.TextBoxFor(m => m.TicketBuyer.BuyerCity, new { type = "text", placeholder = "Gothenburg", @required = true })<br />
+        <input type="submit" style="background-color:dodgerblue" />
+}
     </div>
 
 </div>
