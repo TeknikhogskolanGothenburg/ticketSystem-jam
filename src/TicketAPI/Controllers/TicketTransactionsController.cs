@@ -34,14 +34,14 @@ namespace TicketAPI.Controllers
         {
             return tdb.TicketTransactionsAdd(ticketTransaction);
         }
-        
-        // PUT: api/TicketTransactions/5
+
+        //PUT: api/TicketTransactions/5
         [HttpPut("{id}")]
         public TicketTransaction Put(int id, [FromBody]TicketTransaction ticketTransaction)
         {
             return tdb.TicketTransactionUpdate(id, ticketTransaction);
         }
-        
+
         // DELETE: api/ApiWithActions/5
         [HttpDelete("{id}")]
         public void Delete(int id)
@@ -68,7 +68,7 @@ namespace TicketAPI.Controllers
             return tdb.PurchasedTickets(seatsAtEventDate);
         }
 
-        [HttpPost]
+        [HttpPost("To")]
         public TicketToTransaction Post([FromBody]TicketTransaction ticketTransaction, Tickets ticket)
         {
             return tdb.AddTicketBuyer(ticketTransaction, ticket);
