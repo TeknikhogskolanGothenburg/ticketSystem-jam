@@ -11,7 +11,7 @@ namespace TicketSystem.RestApiClient
     {
         // Implemented using RestSharp: http://restsharp.org/
 
-        string localhost = "http://localhost:50148/api/";
+        string localhost = "http://localhost:50248/api/";
 
         //TicketEvent Calls
         public List<TicketEvent> GetAllEvents()
@@ -166,13 +166,14 @@ namespace TicketSystem.RestApiClient
             return response.Data;
         }
 
-        public void TicketTransactionAdd(TicketTransaction ticketTransaction)
+        public TicketTransaction TicketTransactionAdd(TicketTransaction ticketTransaction)
         {
             var output = JsonConvert.SerializeObject(ticketTransaction);
             var client = new RestClient(localhost);
             var request = new RestRequest("TicketTransactions", Method.POST);
             request.AddParameter("application/json", output, ParameterType.RequestBody);
             var response = client.Execute<TicketTransaction>(request);
+            return response.Data;
         }
 
 
@@ -211,13 +212,13 @@ namespace TicketSystem.RestApiClient
             return response.Data;
         }
         
-        public Ticket PurchasedTickets(SeatsAtEventDate seatsAtEventDate)
+        public Tickets PurchasedTickets(SeatsAtEventDate seatsAtEventDate)
         {
             var json = JsonConvert.SerializeObject(seatsAtEventDate);
             var client = new RestClient(localhost);
             var request = new RestRequest("TicketTransactions/Ticket/", Method.POST);
             request.AddParameter("application/json", json, ParameterType.RequestBody);
-            var response = client.Execute<Ticket>(request);
+            var response = client.Execute<Tickets>(request);
             return response.Data;
         }
         public Ticket TicketTicketIdGet(int ticketId)
@@ -265,14 +266,14 @@ namespace TicketSystem.RestApiClient
             return response.Data;
         }
 
-        public TicketToTransaction AddTicketBuyer(TicketTransaction ticketTransaction, Tickets ticket)
+        public void  AddTicketBuyer(TicketToTransaction ticketToTransaction)
         {
-            var json = JsonConvert.SerializeObject(ticketTransaction);
+            var json = JsonConvert.SerializeObject(ticketToTransaction);
             var client = new RestClient(localhost);
-            var request = new RestRequest("TicketToTransactions", Method.POST);
+            var request = new RestRequest("TicketTransactions/To/", Method.POST);
             request.AddParameter("application/json", json, ParameterType.RequestBody);
             var response = client.Execute<TicketToTransaction>(request);
-            return response.Data;
+            
         }
     }
 }
