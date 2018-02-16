@@ -16,12 +16,12 @@ namespace Admin.Controllers
 
         // GET: Customer
         public ActionResult Customers()
-        {                       
+        {
             return View();
         }
-                
+
         public ActionResult FindCustomer(string searchString)
-        {            
+        {
             value = new Value();
             if (searchString != null)
             {
@@ -30,15 +30,12 @@ namespace Admin.Controllers
             return View(value);
         }
 
-        
-        
-
-
-        // GET: Customer/Delete/5
-        public ActionResult Delete(int id)
+        [HttpPost]
+        public ActionResult CustomerInfo(int id)
         {
-            return View();
+            value.TicketBuyer = ticketApi.GetTicketTransactions(id);
+            value.EventSummaries = ticketApi.FindTicketBuyer(id);
+            return View(value);
         }
-
     }
 }
