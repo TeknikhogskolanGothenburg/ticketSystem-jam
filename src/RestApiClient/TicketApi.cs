@@ -275,6 +275,15 @@ namespace TicketSystem.RestApiClient
             var response = client.Execute<TicketToTransaction>(request);
             
         }
+
+        public List<EventSummary> FindTicketBuyer(int id)
+        {
+            var client = new RestClient(localhost);
+            var request = new RestRequest("TicketTransactions/Ticket/{id}", Method.GET);
+            request.AddUrlSegment("id", id);
+            var response = client.Execute<List<EventSummary>>(request);
+            return response.Data;
+        }
     }
 }
 
