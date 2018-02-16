@@ -62,16 +62,16 @@ namespace Customer.Controllers
             return View("Checkout", value);
         }
 
-        public IActionResult GoToPayment(TicketTransaction TicketBuyer)  
+        public IActionResult GoToPayment(TicketTransaction ticketBuyer)  
         {
             
            
-            ticketApi.TicketTransactionAdd(TicketBuyer);  // Lägger till köpare = TransactionID
+            ticketApi.TicketTransactionAdd(ticketBuyer);  // Lägger till köpare = TransactionID
             
 
             foreach (EventSummary id in value.CartSummary)
             {
-                SeatsAtEventDate e = ticketApi.PurchasedSeats(id);  // Lägger till SeatID
+               SeatsAtEventDate e = ticketApi.PurchasedSeats(id);  // Lägger till SeatID
                ticketApi.PurchasedTickets(e);                          // Lägger till TicketID
                 
                 ticketApi.AddTicketBuyer(value.TicketBuyer, value.Tickets);  // Kopplar TicketID + TransactionID  FUNKAR EJ

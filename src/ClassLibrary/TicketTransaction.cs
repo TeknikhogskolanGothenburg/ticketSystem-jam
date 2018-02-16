@@ -11,7 +11,7 @@ namespace ClassLibrary
        public string BuyerFirstName { get; set; }
        public string BuyerAddress { get; set; }
        public string BuyerCity { get; set; }
-       public string PaymentStatus { get; set; }
-       public string PaymentReferenceId { get; set; }
+        public string PaymentStatus { get; set; }
+        public string PaymentReferenceId { get; set; }
     }
 }
