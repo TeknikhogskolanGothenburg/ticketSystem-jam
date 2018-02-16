@@ -11,7 +11,7 @@ namespace TicketSystem.RestApiClient
     {
         // Implemented using RestSharp: http://restsharp.org/
 
-        string localhost = "http://localhost:50248/api/";
+        string localhost = "http://localhost:61835/api/";
 
         //TicketEvent Calls
         public List<TicketEvent> GetAllEvents()
@@ -193,6 +193,14 @@ namespace TicketSystem.RestApiClient
             var response = client.Execute<TicketTransaction>(request);
         }
 
+        public List<TicketTransaction> GetCustomer(string query)
+        {
+            var client = new RestClient(localhost);
+            var request = new RestRequest("TicketTransactions/User/{query}", Method.GET);
+            request.AddUrlSegment("query", query);
+            var response = client.Execute<List<TicketTransaction>>(request);
+            return response.Data;
+        }
         //Ticket Calls 
         public List<Ticket> TicketGet()
         {

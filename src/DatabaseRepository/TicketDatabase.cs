@@ -233,7 +233,7 @@ namespace TicketSystem.DatabaseRepository
                 string queryString = "UPDATE TicketTransactions SET BuyerLastName = @LastName, " + "BuyerFirstName = @FirstName, " + "BuyerAddress = @Address, "
                     + "BuyerCity = @City, " + "PaymentStatus = @Status, " + "PaymentReferenceId = @ReferenceID " + "WHERE TransactionID = @ID";
                 connection.Open();
-                connection.Query(queryString, new { LastName = ticketTransaction.BuyerLastName, FirstName = ticketTransaction.BuyerLastName, Address = ticketTransaction.BuyerAddress, City = ticketTransaction.BuyerAddress, Status = ticketTransaction.PaymentStatus, ReferenceID = ticketTransaction.PaymentReferenceId, ID = id });
+                connection.Query(queryString, new { LastName = ticketTransaction.BuyerLastName, FirstName = ticketTransaction.BuyerFirstName, Address = ticketTransaction.BuyerAddress, City = ticketTransaction.BuyerAddress, Status = ticketTransaction.PaymentStatus, ReferenceID = ticketTransaction.PaymentReferenceId, ID = id });
                 return connection.Query<TicketTransaction>("SELECT * from TicketTransactions WHERE TransactionID=@Id", new { ID = id }).First();
             }
         }
@@ -248,7 +248,16 @@ namespace TicketSystem.DatabaseRepository
             }
         }
 
-
+        public List<TicketTransaction> GetCustomer(string query)
+        {
+            using (var connection = new SqlConnection(connectionString))
+            {
+                string queryString = "SELECT * FROM TicketTransactions WHERE BuyerFirstName + ' ' + BuyerLastName LIKE '%' + @Query + '%'";
+                connection.Open();
+                return connection.Query<TicketTransaction>(queryString, new { Query = query }).ToList();
+            }
+        }
+        
         //Ticket Queries
         public Tickets PurchasedTickets(SeatsAtEventDate seatsAtEventDate) 
         {

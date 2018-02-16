@@ -49,6 +49,12 @@ namespace TicketAPI.Controllers
             tdb.DeleteTicketTransactions(id);
         }
 
+        [HttpGet("User/{query}")]
+        public List<TicketTransaction> Get(string query)
+        {
+            return tdb.GetCustomer(query);
+        }
+
         [HttpPost("Seat")]
         public SeatsAtEventDate Post([FromBody]EventSummary eventSummary)
         {
