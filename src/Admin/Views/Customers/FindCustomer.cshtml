@@ -13,15 +13,24 @@
     }
 </div>
 
-<div>
+<div class="venueDiv" style="display:block">
+
     @foreach (var customer in Model.TicketTransaction)
     {
-        <center>
+        @using (Html.BeginForm("CustomerInfo", "Customers", FormMethod.Post))
+        {
             <adress>
                 <b>@customer.BuyerFirstName  @customer.BuyerLastName</b><br />
                 <b>@customer.BuyerAddress</b><br />
                 <b>@customer.BuyerCity</b><br />
             </adress>
-        </center>
+            <button type="submit" name="id" style="background-color:goldenrod" value=@customer.TransactionID>INFO</button>
+        }
     }
+
 </div>
+
+
+
+
+

@@ -27,7 +27,7 @@ namespace TicketAPI.Controllers
         {
             return tdb.GetTicketTransactions(id);
         }
-        
+
         // POST: api/TicketTransactions
         [HttpPost]
         public TicketTransaction Post([FromBody]TicketTransaction ticketTransaction)
@@ -53,6 +53,12 @@ namespace TicketAPI.Controllers
         public List<TicketTransaction> Get(string query)
         {
             return tdb.GetCustomer(query);
+        }
+
+        [HttpGet("Ticket/{id}")]
+        public List<EventSummary> GetTickets(int id)
+        {
+            return tdb.FindTicketBuyer(id);
         }
 
         [HttpPost("Seat")]

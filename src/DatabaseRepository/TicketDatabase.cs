@@ -220,7 +220,7 @@ namespace TicketSystem.DatabaseRepository
                 string queryString = "INSERT INTO TicketTransactions(BuyerLastName, BuyerFirstName, BuyerAddress, BuyerCity)" +
                     "VALUES (@LastName, @FirstName, @Address, @City)";
                 connection.Open();
-                connection.Query(queryString, new { LastName = ticketTransaction.BuyerLastName, FirstName = ticketTransaction.BuyerFirstName, Address = ticketTransaction.BuyerAddress, City = ticketTransaction.BuyerCity});
+                connection.Query(queryString, new { LastName = ticketTransaction.BuyerLastName, FirstName = ticketTransaction.BuyerFirstName, Address = ticketTransaction.BuyerAddress, City = ticketTransaction.BuyerCity });
                 var addedTicketEventDateQuery = connection.Query<int>("SELECT IDENT_CURRENT ('TicketTransactions') AS Current_Identity").First();
                 return connection.Query<TicketTransaction>("SELECT * FROM TicketTransactions WHERE TransactionID=@Id", new { Id = addedTicketEventDateQuery }).First();
             }
@@ -257,26 +257,26 @@ namespace TicketSystem.DatabaseRepository
                 return connection.Query<TicketTransaction>(queryString, new { Query = query }).ToList();
             }
         }
-        
+
         //Ticket Queries
-        public Tickets PurchasedTickets(SeatsAtEventDate seatsAtEventDate) 
+        public Tickets PurchasedTickets(SeatsAtEventDate seatsAtEventDate)
         {
             using (var connection = new SqlConnection(connectionString))
             {
-                string queryStringTicket = "insert into Tickets(SeatID) values(@SeatID)"; 
+                string queryStringTicket = "insert into Tickets(SeatID) values(@SeatID)";
                 connection.Open();
-                connection.Query(queryStringTicket, new { SeatID = seatsAtEventDate.SeatId });  
+                connection.Query(queryStringTicket, new { SeatID = seatsAtEventDate.SeatId });
                 var addedTicketsQuery = connection.Query<int>("SELECT IDENT_CURRENT ('Tickets') AS Current_Identity").First();
                 return connection.Query<Tickets>("SELECT * FROM Tickets", new { Id = addedTicketsQuery }).First();
             }
 
         }
 
-        public SeatsAtEventDate PurchasedSeats(EventSummary eventSummary)   
+        public SeatsAtEventDate PurchasedSeats(EventSummary eventSummary)
         {
             using (var connection = new SqlConnection(connectionString))
             {
-                string queryStringSeat = "INSERT INTO SeatsAtEventDate  (TicketEventDateID) VALUES(@TicketEventDateID)"; 
+                string queryStringSeat = "INSERT INTO SeatsAtEventDate  (TicketEventDateID) VALUES(@TicketEventDateID)";
                 connection.Open();
                 connection.Query(queryStringSeat, new { TicketEventDateID = eventSummary.TicketEventDateID });
                 var addedSeatsAtEventDateQuery = connection.Query<int>("SELECT IDENT_CURRENT ('SeatsAtEventDate') AS Current_Identity").First();
@@ -294,7 +294,7 @@ namespace TicketSystem.DatabaseRepository
                     " TicketEventDates" +
                     " JOIN TicketEvents ON TicketEventDates.TicketEventID = TicketEvents.TicketEventID" +
                     " JOIN Venues ON TicketEventDates.VenueID = Venues.VenueID";
-                    //+ " WHERE TicketEventDates.TicketEventDateID = @ID";
+                //+ " WHERE TicketEventDates.TicketEventDateID = @ID";
                 connection.Open();
                 var response = connection.Query<EventSummary>(queryString).ToList();
                 return response;
@@ -325,6 +325,24 @@ namespace TicketSystem.DatabaseRepository
                 connection.Query(queryString, new {TicketID = ticketToTransaction.TicketID, TransactionID = ticketToTransaction.TransactionID });
               //  var addedTicketToTransactionQuery = connection.Query<int>("SELECT IDENT_CURRENT ('TicketToTransaction') AS Current_Identity").First();
                 return connection.Query<TicketToTransaction>("SELECT * FROM TicketsToTransactions WHERE TicketID=@TicketId", new { Id = ticketToTransaction.TicketID }).First();
+            }
+        }
+
+        public List<EventSummary> FindTicketBuyer(int id)
+        {
+            using (var connection = new SqlConnection(connectionString))
+            {
+                string queryString = "SELECT BuyerFirstName, BuyerLastName, EventName, VenueName, EventStartDateTime  FROM TicketTransactions" +
+                    " JOIN TicketsToTransactions ON TicketTransactions.TransactionID = TicketsToTransactions.TransactionID" +
+                    " JOIN Tickets ON TicketsToTransactions.TicketID = Tickets.TicketID" +
+                    " JOIN SeatsAtEventDate ON Tickets.SeatID = SeatsAtEventDate.SeatID" +
+                    " JOIN TicketEventDates ON SeatsAtEventDate.TicketEventDateID = TicketEventDates.TicketEventDateID" +
+                    " JOIN TicketEvents ON TicketEventDates.TicketEventID = TicketEvents.TicketEventID" +
+                    " JOIN Venues ON TicketEventDates.VenueId = Venues.VenueID" +
+                    " WHERE TicketTransactions.TransactionID = @Id";
+                connection.Open();
+                var response = connection.Query<EventSummary>(queryString, new { Id = id }).ToList();
+                return response;
             }
         }
     }
