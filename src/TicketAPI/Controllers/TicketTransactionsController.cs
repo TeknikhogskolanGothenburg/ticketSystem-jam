@@ -27,21 +27,21 @@ namespace TicketAPI.Controllers
         {
             return tdb.GetTicketTransactions(id);
         }
-        
+
         // POST: api/TicketTransactions
         [HttpPost]
         public TicketTransaction Post([FromBody]TicketTransaction ticketTransaction)
         {
             return tdb.TicketTransactionsAdd(ticketTransaction);
         }
-        
+
         // PUT: api/TicketTransactions/5
         [HttpPut("{id}")]
         public TicketTransaction Put(int id, [FromBody]TicketTransaction ticketTransaction)
         {
             return tdb.TicketTransactionUpdate(id, ticketTransaction);
         }
-        
+
         // DELETE: api/ApiWithActions/5
         [HttpDelete("{id}")]
         public void Delete(int id)
@@ -54,6 +54,12 @@ namespace TicketAPI.Controllers
         {
             return tdb.GetCustomer(query);
         }
+
+        //[HttpGet("User/{id}")]
+        //public List<EventSummary> GetTickets(int id)
+        //{
+        //    return tdb.FindTicketBuyer(id);
+        //}
 
         [HttpPost("Seat")]
         public SeatsAtEventDate Post([FromBody]EventSummary eventSummary)
