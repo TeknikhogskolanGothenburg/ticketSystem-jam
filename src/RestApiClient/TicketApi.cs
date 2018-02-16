@@ -263,6 +263,16 @@ namespace TicketSystem.RestApiClient
             var response = client.Execute<SeatsAtEventDate>(request);
             return response.Data;
         }
+
+        public TicketToTransaction AddTicketBuyer(TicketTransaction ticketTransaction, Tickets ticket)
+        {
+            var json = JsonConvert.SerializeObject(ticketTransaction);
+            var client = new RestClient(localhost);
+            var request = new RestRequest("TicketToTransactions", Method.POST);
+            request.AddParameter("application/json", json, ParameterType.RequestBody);
+            var response = client.Execute<TicketToTransaction>(request);
+            return response.Data;
+        }
     }
 }
 
