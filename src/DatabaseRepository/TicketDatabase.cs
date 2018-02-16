@@ -315,16 +315,16 @@ namespace TicketSystem.DatabaseRepository
                 return response;
             }
         }
-        public TicketToTransaction AddTicketBuyer(TicketTransaction ticketTransaction, Tickets tickets)
+        public TicketToTransaction AddTicketBuyer(TicketToTransaction   ticketToTransaction)
         {
             using (var connection = new SqlConnection(connectionString))
             {
-                string queryString = "INSERT INTO TicketToTransactions(TicketID, TransactionID)" +
+                string queryString = "INSERT INTO TicketsToTransactions(TicketID, TransactionID)" +
                     "VALUES (@TicketID, @TransactionID)";
                 connection.Open();
-                connection.Query(queryString, new { TicketID = tickets.TicketId, TransactionID = ticketTransaction.TransactionID });
-                var addedTicketToTransactionQuery = connection.Query<int>("SELECT IDENT_CURRENT ('TicketToTransaction') AS Current_Identity").First();
-                return connection.Query<TicketToTransaction>("SELECT * FROM TicketToTransaction WHERE TicketID=@Id", new { Id = addedTicketToTransactionQuery }).First();
+                connection.Query(queryString, new {TicketID = ticketToTransaction.TicketID, TransactionID = ticketToTransaction.TransactionID });
+              //  var addedTicketToTransactionQuery = connection.Query<int>("SELECT IDENT_CURRENT ('TicketToTransaction') AS Current_Identity").First();
+                return connection.Query<TicketToTransaction>("SELECT * FROM TicketsToTransactions WHERE TicketID=@TicketId", new { Id = ticketToTransaction.TicketID }).First();
             }
         }
 

@@ -35,7 +35,7 @@ namespace TicketAPI.Controllers
             return tdb.TicketTransactionsAdd(ticketTransaction);
         }
 
-        // PUT: api/TicketTransactions/5
+        //PUT: api/TicketTransactions/5
         [HttpPut("{id}")]
         public TicketTransaction Put(int id, [FromBody]TicketTransaction ticketTransaction)
         {
@@ -74,10 +74,10 @@ namespace TicketAPI.Controllers
             return tdb.PurchasedTickets(seatsAtEventDate);
         }
 
-        [HttpPost]
-        public TicketToTransaction Post([FromBody]TicketTransaction ticketTransaction, Tickets ticket)
+        [HttpPost("To")]
+        public TicketToTransaction Post([FromBody]TicketToTransaction ticketToTransaction)
         {
-            return tdb.AddTicketBuyer(ticketTransaction, ticket);
+            return tdb.AddTicketBuyer(ticketToTransaction);
         }
     }
 }

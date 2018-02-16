@@ -43,7 +43,7 @@ namespace Customer
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Tickets}/{action=Tickets}/{id?}");
+                    template: "{controller=Home}/{action=Home}/{id?}");
             });
         }
     }

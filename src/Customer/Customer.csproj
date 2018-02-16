@@ -41,6 +41,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Update="wwwroot\images\jam.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\images\martin.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <EmbeddedResource Update="Resources\Controllers\HomeController_en.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>HomeController_en.Designer.cs</LastGenOutput>

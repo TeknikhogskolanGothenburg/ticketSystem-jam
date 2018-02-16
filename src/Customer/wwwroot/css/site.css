@@ -24,12 +24,14 @@ h3 {
     display: none;
 }
 
-input[type=text] {
+input[type=text],input[type=email] {
     width: 100%;
     margin: 8px 0;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+    padding:5px;
+    text-align:center;
 }
 
 input[type=submit] {
@@ -70,13 +72,13 @@ button {
 
 
 #row {
-    border:1px solid black;
-    display:inline-block;
-    margin:0;
-    padding:5px;
-    line-height:4;
-    background-color:black;
-    color:white;
+    border: 1px solid black;
+    display: inline-block;
+    margin: 0;
+    padding: 5px;
+    line-height: 4;
+    background-color: black;
+    color: white;
 }
 
 td {
@@ -92,22 +94,57 @@ th {
 }
 
 #customerInfo, #cartButtons {
-    text-align:center;
-    margin:0 auto;
-    width:30%;
-    transition:1s ease-in;
+    text-align: center;
+    margin: 0 auto;
+    width: 30%;
+    transition: 1s ease-in;
 }
 
 #shoppingCartTable {
-    margin:0 auto;
-    border:2px solid black;
+    margin: 0 auto;
+    border: 2px solid black;
 }
 
 #deleteBtn {
-    text-decoration:none;
-    height:100%;
-    color:red;
+    text-decoration: none;
+    height: 100%;
+    color: red;
 }
+
+#bigLetter, #jam {
+    font-family: 'Agency FB';
+    margin-top: 0px;
+    display: inline-block;
+}
+
+#jam {
+    font-size: 500%;
+}
+
+#bigLetter::first-letter {
+    font-size: 500%;
+}
+
+#backGround {
+    background-image: url("../images/jam.jpg");
+    height: 650px;
+    margin-top: 50px;
+    overflow: auto;
+}
+
+#homeContent {
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 75px;
+    width: 60%;
+    background-color: white;
+    opacity: 0.5;
+    display: block;
+    padding: 100px;
+    padding-top: 300px;
+    border-radius: 50%;
+}
+
 
 /* Hide/rearrange for smaller screens */
 @media screen and (max-width: 767px) {
