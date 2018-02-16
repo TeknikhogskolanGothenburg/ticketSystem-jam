@@ -267,7 +267,7 @@ namespace TicketSystem.DatabaseRepository
                 connection.Open();
                 connection.Query(queryStringTicket, new { SeatID = seatsAtEventDate.SeatId });
                 var addedTicketsQuery = connection.Query<int>("SELECT IDENT_CURRENT ('Tickets') AS Current_Identity").First();
-                return connection.Query<Tickets>("SELECT * FROM Tickets", new { Id = addedTicketsQuery }).First();
+                return connection.Query<Tickets>("SELECT * FROM Tickets WHERE TicketID=@Id", new { Id = addedTicketsQuery }).First();
             }
 
         }
@@ -315,7 +315,7 @@ namespace TicketSystem.DatabaseRepository
                 return response;
             }
         }
-        public TicketToTransaction AddTicketBuyer(TicketToTransaction   ticketToTransaction)
+        public void AddTicketBuyer(TicketToTransaction   ticketToTransaction)
         {
             using (var connection = new SqlConnection(connectionString))
             {
@@ -323,9 +323,12 @@ namespace TicketSystem.DatabaseRepository
                     "VALUES (@TicketID, @TransactionID)";
                 connection.Open();
                 connection.Query(queryString, new {TicketID = ticketToTransaction.TicketID, TransactionID = ticketToTransaction.TransactionID });
-              //  var addedTicketToTransactionQuery = connection.Query<int>("SELECT IDENT_CURRENT ('TicketToTransaction') AS Current_Identity").First();
-                return connection.Query<TicketToTransaction>("SELECT * FROM TicketsToTransactions WHERE TicketID=@TicketId", new { Id = ticketToTransaction.TicketID }).First();
+                //var addedTicketToTransactionQuery = connection.Query<int>("SELECT IDENT_CURRENT ('TicketsToTransactions') AS Current_Identity").First();
+             //   return connection.Query<TicketToTransaction>("SELECT * FROM TicketsToTransactions WHERE TicketID=@Id", new { Id = ticketToTransaction.TicketID }).First();
+                //return connection.Query<TicketToTransaction>(queryString).First();
             }
+//            CONSTRAINT FK_GroupMember_Group FOREIGN KEY(GroupId) References Group(GroupId),
+//CONSTRAINT FK_GroupMember_Person FOREIGN KEY(PersonId) References Person(PersonId),
         }
 
         public List<EventSummary> FindTicketBuyer(int id)
