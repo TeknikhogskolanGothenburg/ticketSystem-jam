@@ -28,7 +28,7 @@ namespace Customer.Controllers
             {
                 ticketApi = new TicketApi();
             }
-            TicketTransaction TicketBuyer = new TicketTransaction();
+           
             value.EventSummaries = ticketApi.GetAllSummary();
             ViewBag.Message = "";
             return View(value);

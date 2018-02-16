@@ -69,9 +69,9 @@ namespace TicketAPI.Controllers
         }
 
         [HttpPost("To")]
-        public TicketToTransaction Post([FromBody]TicketTransaction ticketTransaction, Tickets ticket)
+        public TicketToTransaction Post([FromBody]TicketToTransaction ticketToTransaction)
         {
-            return tdb.AddTicketBuyer(ticketTransaction, ticket);
+            return tdb.AddTicketBuyer(ticketToTransaction);
         }
     }
 }
