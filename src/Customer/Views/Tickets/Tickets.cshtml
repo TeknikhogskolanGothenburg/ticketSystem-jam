@@ -1,5 +1,4 @@
 ﻿@model ClassLibrary.Value;
-
 @*@using Microsoft.AspNetCore.Mvc.Localization
 
     @inject IViewLocalizer Localizer*@
@@ -7,40 +6,42 @@
     var db = Model.EventSummaries;
 
 }
-<html>
-<body>
-    <div id="content">
 
-        <h1>Ticketshop</h1>
-        <table border="1" width="100%">
+<div id="content">
 
-            @using (Html.BeginForm("Checkout", "Checkout"))
+    <h1 style="font-family: 'Agency FB'">Ticketshop</h1>
+    <hr />
+    @using (Html.BeginForm("Search", "Tickets"))
+    {
+        <input type="search" id="searchTextBox" name="searchText" />
+        <input type="submit" id="searchBtn" value="Search" />
+    }
+    <table id="shoppingCartTable">
+
+        @using (Html.BeginForm("Checkout", "Checkout"))
+        {
+            <tr>
+                <th>Event</th>
+                <th>Venue</th>
+                <th>Description</th>
+                <th>Date</th>
+                <th>Choose Ticket</th>
+            </tr>
+            @foreach (var row in db)
             {
                 <tr>
-                    <th>Event</th>
-                    <th>Venue</th>
-                    <th>Description</th>
-                    <th>Date</th>
-                    <th>Choose Ticket</th>
-                    
+                    <td>@row.EventName</td>
+                    <td>@row.VenueName</td>
+                    <td>@row.EventHtmlDescription</td>
+                    <td>@row.EventStartDateTime</td>
+                    <td id="btnTD"><button class="addToCartBtn" type="submit" value="@row.TicketEventDateID" name="buttonclick">Buy</button></td>
                 </tr>
-                @foreach (var row in db)
-                {
-                    <tr>
-                        <td>@row.EventName</td>
-                        <td>@row.VenueName</td>
-                        <td>@row.EventHtmlDescription</td>
-                        <td>@row.EventStartDateTime</td>
-                        <td><button id="@row.TicketEventDateID" type="submit" value="@row.TicketEventDateID" name="buttonclick">Add to cart</button></td>
-                    </tr>
 
-                }
             }
-        </table>
-    </div>
+        }
+    </table>
+</div>
 
-    </body>
-</html>
 
 
 

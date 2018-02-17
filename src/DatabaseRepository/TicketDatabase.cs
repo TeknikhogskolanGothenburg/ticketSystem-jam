@@ -315,7 +315,26 @@ namespace TicketSystem.DatabaseRepository
                 return response;
             }
         }
+
+        public List<EventSummary> GetSearchSummary(string id)
+        {
+            using (var connection = new SqlConnection(connectionString))
+            {
+                string queryString = "SELECT TicketEventDates.TicketEventDateID, TicketEventDates.EventStartDateTime, TicketEvents.EventName, TicketEvents.EventHtmlDescription,  Venues.VenueName FROM" +
+                    " TicketEventDates" +
+                    " JOIN TicketEvents ON TicketEventDates.TicketEventID = TicketEvents.TicketEventID" +
+                    " JOIN Venues ON TicketEventDates.VenueID = Venues.VenueID" +
+                    " WHERE TicketEvents.EventName LIKE '%' + @id + '%'";
+                connection.Open();
+                var response = connection.Query<EventSummary>(queryString, new { ID = id }).ToList();
+                return response;
+            }
+        }
+
+        //public void AddTicketBuyer(TicketToTransaction   ticketToTransaction)
+
         public TicketToTransaction AddTicketBuyer(TicketToTransaction ticketToTransaction)
+
         {
             using (var connection = new SqlConnection(connectionString))
             {

@@ -247,6 +247,16 @@ namespace TicketSystem.RestApiClient
             return response.Data;
         }
 
+        public List<EventSummary> GetSearchSummary(string id)
+        {
+            var client = new RestClient(localhost);
+            var request = new RestRequest("TicketEventDates/{id}/Search", Method.GET);
+            request.AddUrlSegment("id", id);
+            var response = client.Execute<List<EventSummary>>(request);
+            return response.Data;
+        }
+
+
         public EventSummary GetSummary(int id)
         {
             var client = new RestClient(localhost);
