@@ -85,17 +85,19 @@ tr:nth-child(odd) td {
     border-spacing: 0;
     margin:0 auto;
     margin-top:20px;
+    width:50%;
 }
 
 td {
     padding: 10px;
-    margin: 5px;
+ 
     border: 1px solid #CCC;
     background: #FAFAFA;
     text-align: center;
-    
 }
-
+#btnTD {
+    padding:0px;
+}
 th {
     text-align: center;
     padding: 10px;
@@ -144,21 +146,22 @@ tr td:hover > .addToCartBtn {
 .checkOutBtn:hover {
     opacity:1;
 }
-#deleteBtn {
-    text-decoration: none;
-    height: 100%;
-    color: red;
-}
 
-.addToCartBtn {
+
+.addToCartBtn, #deleteBtn {
     border: none;
     color: black;
     text-align: center;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 18px;
     cursor: pointer;
     background-color: inherit;
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: 'Agency FB';
+    display: block;
+    margin: 0;
+    width: 100%;
+    padding: 10px;
+    font-weight: bold;
 }
     .addToCartBtn:hover {
         opacity:0.5;
@@ -228,6 +231,30 @@ tr td:hover > .addToCartBtn {
     list-style: none;
     padding: 0;
     margin: 0;
+}
+
+#searchBtn {
+    text-decoration: none;
+    color: white;
+    margin-left: 5px;
+    width: 8%;
+    background-color: black;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#searchTextBox {
+    width: 42%;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('searchicon.png');
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding: 8px 16px 8px 28px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
 }
 /* Hide/rearrange for smaller screens */
 @media screen and (max-width: 767px) {

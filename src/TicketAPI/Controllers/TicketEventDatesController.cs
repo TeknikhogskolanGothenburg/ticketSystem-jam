@@ -60,5 +60,12 @@ namespace TicketAPI.Controllers
         {
             return tdb.GetEventSummary(id);
         }
+
+        [HttpGet("{id}/Search")]
+        public List<EventSummary> GetSearchSummary(string id)
+        {
+            return tdb.GetSearchSummary(id);
+        }
+
     }
 }
