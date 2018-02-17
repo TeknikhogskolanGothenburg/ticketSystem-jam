@@ -64,24 +64,24 @@ namespace Customer.Controllers
 
         public IActionResult GoToPayment(TicketTransaction ticketBuyer)  
         {
-            
-           
-          TicketTransaction t=  ticketApi.TicketTransactionAdd(ticketBuyer);  // Lägger till köpare = TransactionID
+            List<TicketToTransaction> TickToTrans = new List<TicketToTransaction>();
+
+            TicketToTransaction ticketToTransaction = new TicketToTransaction();
+            TicketTransaction t=  ticketApi.TicketTransactionAdd(ticketBuyer);  // Lägger till köpare = TransactionID
             
 
             foreach (EventSummary id in value.CartSummary)
             {
-               SeatsAtEventDate e = ticketApi.PurchasedSeats(id);  // Lägger till SeatID
-             Tickets x= ticketApi.PurchasedTickets(e);  
-                // Lägger till TicketID
-                TicketToTransaction ticketToTransaction = new TicketToTransaction();
+               
+                SeatsAtEventDate e = ticketApi.PurchasedSeats(id);  // Lägger till SeatID
+               Tickets x= ticketApi.PurchasedTickets(e);  // Lägger till TicketID
+
                 ticketToTransaction.TransactionID = t.TransactionID;
                 ticketToTransaction.TicketID = x.TicketId;
-
-                ticketApi.AddTicketBuyer( ticketToTransaction);  // Kopplar TicketID + TransactionID  FUNKAR EJ
+                TickToTrans.Add(ticketToTransaction);  // spara båda värdena i en List.
+               
             }
-          
-
+            ticketApi.AddTicketBuyer(ticketToTransaction);//  Loopar genom Listan och Kopplar TicketID + TransactionID  
             return View("Checkout", value);
         }
 
