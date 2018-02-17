@@ -11,7 +11,7 @@ namespace TicketSystem.RestApiClient
     {
         // Implemented using RestSharp: http://restsharp.org/
 
-        string localhost = "http://localhost:61835/api/";
+        string localhost = "http://localhost:50248/api/";
 
         //TicketEvent Calls
         public List<TicketEvent> GetAllEvents()
@@ -276,14 +276,14 @@ namespace TicketSystem.RestApiClient
             return response.Data;
         }
 
-        public void  AddTicketBuyer(TicketToTransaction ticketToTransaction)
+        public TicketToTransaction AddTicketBuyer(TicketToTransaction ticketToTransaction)
         {
             var json = JsonConvert.SerializeObject(ticketToTransaction);
             var client = new RestClient(localhost);
-            var request = new RestRequest("TicketTransactions/To/", Method.POST);
+            var request = new RestRequest("TicketTransactions/TicketBuyer/", Method.POST);
             request.AddParameter("application/json", json, ParameterType.RequestBody);
             var response = client.Execute<TicketToTransaction>(request);
-            
+            return response.Data;
         }
 
         public List<EventSummary> FindTicketBuyer(int id)

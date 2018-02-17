@@ -1,5 +1,5 @@
 ﻿@{
-    ViewData["Title"] = "Events";
+    ViewData["Title"] = Localizer["Events"];
 }
 
 @model ClassLibrary.Value;
@@ -10,8 +10,8 @@
 
 <h1>@ViewBag.Message</h1>
 <div id="content">
-    <button onclick="location.href='@Url.Action("AddEvents", "Events")'">Add Event</button>
-    <button onclick="location.href='@Url.Action("EditEvents", "Events")'">Edit Event</button>
-    <button onclick="location.href='@Url.Action("DeleteEvents", "Events")'">@Localizer["Delete Event"]</button>
+    <button onclick="location.href='@Url.Action("AddEvents", "Events")'">@Localizer["AddEvent"]</button>
+    <button onclick="location.href='@Url.Action("EditEvents", "Events")'">@Localizer["EditEvent"]</button>
+    <button onclick="location.href='@Url.Action("DeleteEvents", "Events")'">@Localizer["DeleteEvent"]</button>
 
 </div>

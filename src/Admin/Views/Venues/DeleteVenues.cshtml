@@ -2,7 +2,7 @@
 
 @inject IViewLocalizer Localizer
 @{
-    ViewData["Title"] = "Venues";
+    ViewData["Title"] = Localizer["Venues"];
 }
 
 @model ClassLibrary.Value;
@@ -10,13 +10,13 @@
 
 <h1>@ViewBag.Message</h1>
 <div id="content">
-    <button onclick="location.href='@Url.Action("AddVenues", "Venues")'">Add Venue</button>
-    <button type="button" onclick="location.href='@Url.Action("EditVenues", "Venues")'">Edit Venue</button>
+    <button onclick="location.href='@Url.Action("AddVenues", "Venues")'">@Localizer["AddVenue"]</button>
+    <button type="button" onclick="location.href='@Url.Action("EditVenues", "Venues")'">@Localizer["EditVenue"]</button>
     <button>Delete Venue</button>
 
     <div class="venueDiv" id="deleteVenue" style="display:block">
         <hr />
-        <h3>Delete Venue</h3>
+        <h3>@Localizer["DeleteVenue"]</h3>
         <hr />
         @using (Html.BeginForm("DeleteVenues", "Venues", FormMethod.Post))
         {
@@ -25,7 +25,7 @@
             new SelectList(Model.Venues.Select(x => new { Value = x.VenueId, Text = x.VenueName }),
             "Value", "Text"), "- Select Venue")
 
-            <input type="submit" value="Delete" style="background-color:red" />
+            <input type="submit" value=@Localizer["Delete"] style="background-color:red" />
         }
         <hr />
     </div>

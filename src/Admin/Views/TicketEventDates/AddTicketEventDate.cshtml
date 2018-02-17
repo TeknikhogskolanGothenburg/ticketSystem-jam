@@ -3,13 +3,13 @@
 @inject IViewLocalizer Localizer
 
 @{
-    ViewData["Title"] = "AddTicketEventDates";
+    ViewData["Title"] = Localizer["AddTicketEventDates"];
 }
 
 @model ClassLibrary.Value;
 
 
-<center><h1>Add TicketEventDates</h1></center>
+<center><h1>@Localizer["AddTicketEventDates"]</h1></center>
 <div class="venueDiv" id="CreateTicketEventDate" style="display:block">
     @using (Html.BeginForm("CreateTicketEventDate", "TicketEventDates", FormMethod.Post))
     {
@@ -19,17 +19,17 @@
 
         @Html.TextBox("dateTime", Model.TicketEventDate, new { @class = "datepicker", @type = "datetime-local" })
 
-        <input type="submit" value="Add" />
+        <input type="submit" value=@Localizer["Add"] />
     }
 </div>
 
 <table id="shoppingCartTable" align="center" style=" width:80%">
 
     <tr>
-        <th>Event</th>
-        <th>Venue</th>
-        <th>Description</th>
-        <th>Date</th>
+        <th>@Localizer["Event"]</th>
+        <th>@Localizer["Venue"]</th>
+        <th>@Localizer["Description"]</th>
+        <th>@Localizer["Date"]</th>
         <th></th>
     </tr>
     @foreach (var row in Model.EventSummaries)

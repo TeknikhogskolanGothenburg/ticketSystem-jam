@@ -24,16 +24,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Resources\Controllers\HomeController_en.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>HomeController_en.resx</DependentUpon>
-    </Compile>
-    <Compile Update="Resources\Controllers\HomeController_se.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>HomeController_se.resx</DependentUpon>
-    </Compile>
     <Compile Update="Views\Tickets\Tickets_se.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -54,13 +44,23 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Resources\Controllers\HomeController_en.resx">
+    <EmbeddedResource Update="Resources\Views.Checkout.Checkout.en.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>HomeController_en.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Update="Resources\Controllers\HomeController_se.resx">
+    <EmbeddedResource Update="Resources\Views.Checkout.Checkout.sv-SE.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>HomeController_se.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Views.Checkout.PurchaseCompleted.en.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Views.Checkout.PurchaseCompleted.sv-SE.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Views.Tickets.Tickets.en.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Views.Tickets.Tickets.sv-SE.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\Tickets\Tickets_se.resx">
       <Generator>ResXFileCodeGenerator</Generator>

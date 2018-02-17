@@ -117,16 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Add Venue" xml:space="preserve">
-    <value>Lägg till arena-sv</value>
+  <data name="AddEvent" xml:space="preserve">
+    <value>Add Event</value>
   </data>
-  <data name="Delete Venue" xml:space="preserve">
-    <value>Radera arena</value>
+  <data name="DeleteEvent" xml:space="preserve">
+    <value>Delete Event</value>
   </data>
-  <data name="Edit Venue" xml:space="preserve">
-    <value>Redigera arena</value>
+  <data name="DeleteEvents" xml:space="preserve">
+    <value>DeleteEvents</value>
   </data>
-  <data name="Venues" xml:space="preserve">
-    <value>Arenor</value>
+  <data name="EditEvent" xml:space="preserve">
+    <value>Edit Event</value>
+  </data>
+  <data name="Events" xml:space="preserve">
+    <value>Events</value>
   </data>
 </root>
