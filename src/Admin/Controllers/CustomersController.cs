@@ -37,5 +37,12 @@ namespace Admin.Controllers
             value.EventSummaries = ticketApi.FindTicketBuyer(id);
             return View(value);
         }
+                
+        [HttpPost]
+        public ActionResult RemoveCustomerTicket(int id)
+        {
+            ticketApi.DeleteEventDates(id);
+            return Redirect("FindCustomer");
+        }
     }
 }
