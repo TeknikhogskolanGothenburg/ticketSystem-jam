@@ -1,22 +1,22 @@
 ﻿@{
-    ViewData["Title"] = "DeleteEvents";
+    ViewData["Title"] = Localizer["AddEvents"];
 }
 
 @model ClassLibrary.Value;
-@*@using Microsoft.AspNetCore.Mvc.Localization
+@using Microsoft.AspNetCore.Mvc.Localization
 
-    @inject IViewLocalizer Localizer*@
+    @inject IViewLocalizer Localizer
 
 
 <h1>@ViewBag.Message</h1>
 <div id="content">
-    <button>Add Event</button>
-    <button onclick="location.href='@Url.Action("EditEvents", "Events")'">Edit Event</button>
-    <button onclick="location.href='@Url.Action("DeleteEvents", "Events")'">Delete Event</button>
+    <button>@Localizer["AddEvent"]</button>
+    <button onclick="location.href='@Url.Action("EditEvents", "Events")'">@Localizer["EditEvent"]</button>
+    <button onclick="location.href='@Url.Action("DeleteEvents", "Events")'">@Localizer["DeleteEvent"]</button>
 
     <div class="venueDiv" id="addVenue" style="display:block">
         <hr />
-        <h3>Add Event</h3>
+        <h3>@Localizer["AddEvent"]</h3>
         <hr />
         @using (Html.BeginForm("AddEvents", "Events", FormMethod.Post))
         {
@@ -26,7 +26,7 @@
             @Html.LabelFor(m => m.TicketEvent.EventHtmlDescription, "Description")<br />
             @Html.TextBoxFor(m => m.TicketEvent.EventHtmlDescription, new { @required = true })<br />
 
-            <input type="submit" value="Add" />
+            <input type="submit" value=@Localizer["Add"] />
             <hr />
         }
 

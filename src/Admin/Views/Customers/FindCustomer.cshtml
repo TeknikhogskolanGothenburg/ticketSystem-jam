@@ -1,15 +1,17 @@
-﻿
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+
+@inject IViewLocalizer Localizer
 @{
-    ViewData["Title"] = "FindCustomer";
+    ViewData["Title"] = Localizer["FindCustomer"];
 }
 @model ClassLibrary.Value;
-<center><h2>FindCustomer</h2></center>
+<center><h2>@Localizer["FindCustomer"]</h2></center>
 
 <div class="venueDiv" id="CreateTicketEventDate" style="display:block">
     @using (Html.BeginForm("FindCustomer", "Customers", FormMethod.Get))
     {
         @Html.TextBox("SearchString")
-        <input type="submit" value="Search" />
+        <input type="submit" value=@Localizer["Search"] />
     }
 </div>
 

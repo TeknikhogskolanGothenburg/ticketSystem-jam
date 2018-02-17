@@ -1,17 +1,21 @@
-﻿
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+
+@inject IViewLocalizer Localizer
+
 @{
-    ViewData["Title"] = "CustomerInfo";
+    ViewData["Title"] = Localizer["CustomerInfo"];
 }
+
 @model ClassLibrary.Value;
 
-<center><h2>CustomerInfo</h2></center>
+<center><h2>@Localizer["CustomerInfo"]</h2></center>
 
 <table id="shoppingCartTable" align="center" style=" width:80%">
     <tr>
-        <th>Event</th>
-        <th>Venue</th>
-        <th>Description</th>
-        <th>Date</th>
+        <th>@Localizer["Event"]</th>
+        <th>@Localizer["Venue"]</th>
+        <th>@Localizer["Description"]</th>
+        <th>@Localizer["Date"]</th>
         <th></th>
     </tr>
     @foreach (var row in Model.EventSummaries)

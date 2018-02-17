@@ -2,14 +2,14 @@
 
 @inject IViewLocalizer Localizer
 @{
-    ViewData["Title"] = "TicketEventDate";
+    ViewData["Title"] = @Localizer["TicketEventDate"];
 }
 
 @model ClassLibrary.Value;
 
-<center><h1>TicketEventDate</h1></center>
+<center><h1>@Localizer["TicketEventDate"]</h1></center>
 
 <div id="content">
-    <button onclick="location.href='@Url.Action("AddTicketEventDate", "TicketEventDates")'">Add TicketEventDates</button>
-    <button onclick="location.href='@Url.Action("DeleteTicketEventDate", "TicketEventDates")'">Delete TicketEventDates</button>
+    <button onclick="location.href='@Url.Action("AddTicketEventDate", "TicketEventDates")'">@Localizer["AddTicketEventDates"]</button>
+    <button onclick="location.href='@Url.Action("DeleteTicketEventDate", "TicketEventDates")'">@Localizer["DeleteTicketEventDates"]</button>
 </div>
