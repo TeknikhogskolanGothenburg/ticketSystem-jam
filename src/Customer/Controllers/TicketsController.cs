@@ -34,6 +34,19 @@ namespace Customer.Controllers
             return View(value);
         }
 
+        public IActionResult Search(string searchText)
+        {
+            if (searchText != null)
+            {
+                value.EventSummaries = ticketApi.GetSearchSummary(searchText);
+                return View("Tickets", value);
+            }
+            else
+            {
+                return View("Tickets", value);
+            }
+        }
+
         public IActionResult GetAllEventDates()
         {
             ticketApi.GetAllEventDates();
