@@ -3,13 +3,11 @@
     ViewData["Title"] = "PurchaseCompleted";
 }
 
-<h2>Tack för din beställning!</h2>
 
+<hr>
+<div style=" text-align: center"  >
+    <h2>Thank you for using JAM</h2>
+    <p>It was a pleasure doing business with you <h3>@Model.TicketBuyer.BuyerFirstName @Model.TicketBuyer.BuyerLastName</h3></p>
 
-@*<p>It was a pleasure doing business with you @Model.TicketBuyer.BuyerFirstName @Model.TicketBuyer.BuyerLastName</p>
-
-@foreach (ClassLibrary.EventSummary x in Model.EventSummaries)
-{
-
-
-}*@
+    <div id="pic"><img src="~/images/thumbsup.png" /></div>
+</div>
