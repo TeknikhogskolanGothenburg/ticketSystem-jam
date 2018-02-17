@@ -117,19 +117,61 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Add" xml:space="preserve">
-    <value>Spara</value>
+  <data name="Buy" xml:space="preserve">
+    <value>Buy</value>
   </data>
-  <data name="AddVenue" xml:space="preserve">
-    <value>Lägg till arena</value>
+  <data name="Checkout" xml:space="preserve">
+    <value>Checkout</value>
   </data>
-  <data name="DeleteVenue" xml:space="preserve">
-    <value>Radera arena</value>
+  <data name="ChooseTicket" xml:space="preserve">
+    <value>Choose Ticket</value>
   </data>
-  <data name="EditVenue" xml:space="preserve">
-    <value>Redigera arena</value>
+  <data name="ContinueShopping" xml:space="preserve">
+    <value>Continue Shopping</value>
   </data>
-  <data name="EditVenues" xml:space="preserve">
-    <value>Redigera arenor</value>
+  <data name="CustomerInformation" xml:space="preserve">
+    <value>Customer Information</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="Event" xml:space="preserve">
+    <value>Event</value>
+  </data>
+  <data name="GoToShipping" xml:space="preserve">
+    <value>Go To Shipping Details</value>
+  </data>
+  <data name="It" xml:space="preserve">
+    <value>It was a pleasure doing business with you</value>
+  </data>
+  <data name="Payment" xml:space="preserve">
+    <value>Go To Payment</value>
+  </data>
+  <data name="PurchaseCompleted" xml:space="preserve">
+    <value>Purchase Completed</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="RemoveTicket" xml:space="preserve">
+    <value>Remove Ticket</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="ShoppingCart" xml:space="preserve">
+    <value>Shopping Cart</value>
+  </data>
+  <data name="Thank" xml:space="preserve">
+    <value>Thank you for using JAM</value>
+  </data>
+  <data name="Ticketshop" xml:space="preserve">
+    <value>Ticketshop</value>
+  </data>
+  <data name="Venue" xml:space="preserve">
+    <value>Venue</value>
   </data>
 </root>

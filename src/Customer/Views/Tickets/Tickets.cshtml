@@ -1,7 +1,8 @@
-﻿@model ClassLibrary.Value;
-@*@using Microsoft.AspNetCore.Mvc.Localization
+﻿@using Microsoft.AspNetCore.Mvc.Localization
 
-    @inject IViewLocalizer Localizer*@
+@inject IViewLocalizer Localizer
+@model ClassLibrary.Value;
+
 @{
     var db = Model.EventSummaries;
 
@@ -9,23 +10,23 @@
 
 <div id="content">
 
-    <h1 style="font-family: 'Agency FB'">Ticketshop</h1>
+    <h1 style="font-family: 'Agency FB'">@Localizer["Ticketshop"]</h1>
     <hr />
     @using (Html.BeginForm("Search", "Tickets"))
     {
         <input type="search" id="searchTextBox" name="searchText" />
-        <input type="submit" id="searchBtn" value="Search" />
+        <input type="submit" id="searchBtn" value=@Localizer["Search"] />
     }
     <table id="shoppingCartTable">
 
         @using (Html.BeginForm("Checkout", "Checkout"))
         {
             <tr>
-                <th>Event</th>
-                <th>Venue</th>
-                <th>Description</th>
-                <th>Date</th>
-                <th>Choose Ticket</th>
+                <th>@Localizer["Event"]</th>
+                <th>@Localizer["Venue"]</th>
+                <th>@Localizer["Description"]</th>
+                <th>@Localizer["Date"]</th>
+                <th>@Localizer["ChooseTicket"]</th>
             </tr>
             @foreach (var row in db)
             {
@@ -34,7 +35,7 @@
                     <td>@row.VenueName</td>
                     <td>@row.EventHtmlDescription</td>
                     <td>@row.EventStartDateTime</td>
-                    <td id="btnTD"><button class="addToCartBtn" type="submit" value="@row.TicketEventDateID" name="buttonclick">Buy</button></td>
+                    <td id="btnTD"><button class="addToCartBtn" type="submit" value="@row.TicketEventDateID" name="buttonclick">@Localizer["Buy"]</button></td>
                 </tr>
 
             }

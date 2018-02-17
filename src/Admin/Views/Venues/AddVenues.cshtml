@@ -2,7 +2,7 @@
 
 @inject IViewLocalizer Localizer
 @{
-    ViewData["Title"] = "AddVenues";
+    ViewData["Title"] = Localizer["AddVenues"];
 }
 
 @model ClassLibrary.Value;
@@ -10,13 +10,13 @@
 
 <h1>@ViewBag.Message</h1>
 <div id="content">
-    <button>Add Venue</button>
-    <button type="button" onclick="location.href='@Url.Action("EditVenues", "Venues")'">Edit Venue</button>
-    <button onclick="location.href='@Url.Action("DeleteVenues", "Venues")'">Delete Venue</button>
+    <button>@Localizer["AddVenue"]</button>
+    <button type="button" onclick="location.href='@Url.Action("EditVenues", "Venues")'">@Localizer["EditVenue"]</button>
+    <button onclick="location.href='@Url.Action("DeleteVenues", "Venues")'">@Localizer["DeleteVenue"]</button>
 
     <div class="venueDiv" id="addVenue" style="display:block">
         <hr />
-        <h3>Add Venue</h3>
+        <h3>@Localizer["AddVenue"]</h3>
         <hr />
         @using (Html.BeginForm("AddVenues", "Venues", FormMethod.Post))
     {
@@ -32,7 +32,7 @@
         @Html.LabelFor(m => m.Venue.Seats, "Seats")<br />
         @Html.TextBoxFor(m => m.Venue.Seats, new { @required = true })<br />
 
-        <input type="submit" value="Add" />
+        <input type="submit" value=@Localizer["Add"] />
         <hr />
 }
 

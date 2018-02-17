@@ -70,13 +70,13 @@ namespace Customer.Controllers
             foreach (EventSummary id in value.CartSummary)
             {
                 SeatsAtEventDate e = ticketApi.PurchasedSeats(id);  // Lägger till SeatID
-                Tickets x = ticketApi.PurchasedTickets(e);
+                Tickets x = ticketApi.PurchasedTickets(e);         // Lägger till TicketID
 
                 TicketToTransaction ticketToTransaction = new TicketToTransaction();
                 ticketToTransaction.TransactionID = value.TicketBuyer.TransactionID;
                 ticketToTransaction.TicketID = x.TicketId;
 
-                ticketApi.AddTicketBuyer(ticketToTransaction);  // Kopplar TicketID + TransactionID  FUNKAR EJ
+                ticketApi.AddTicketBuyer(ticketToTransaction);  // Kopplar TicketID + TransactionID  
             }
 
             return View("PurchaseCompleted", value);

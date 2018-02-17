@@ -1,11 +1,13 @@
-﻿
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+
+@inject IViewLocalizer Localizer
 @{
-    ViewData["Title"] = "Customers";
+    ViewData["Title"] = ;
 }
 @*@model ClassLibrary.Value;*@
-<center><h2>Customers</h2></center>
+<center><h2>@Localizer["Customers"]</h2></center>
 
 <div id="content">
-    <button onclick="location.href='@Url.Action("FindCustomer", "Customers")'">Find Customer</button>
+    <button onclick="location.href='@Url.Action("FindCustomer", "Customers")'">@Localizer["FindCustomer"]</button>
 </div>
 

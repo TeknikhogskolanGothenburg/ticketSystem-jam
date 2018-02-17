@@ -40,6 +40,7 @@ namespace ClassLibrary
         public TicketToTransaction TicketToTransaction { get; set; }
 
         public Tickets Tickets { get; set; }
+        public List <TicketToTransaction> TickToTrans { get; set; }
 
 
     }
