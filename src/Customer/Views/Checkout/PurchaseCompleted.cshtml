@@ -6,14 +6,8 @@
 
 <hr>
 <div style=" text-align: center"  >
-    <h2>Thank you for using JAM!</h2>
-    <p>It was a pleasure doing business with you @Model.TicketBuyer.BuyerFirstName @Model.TicketBuyer.BuyerLastName</p>
-    <ul style="list-style-type:none">
-        @foreach (ClassLibrary.EventSummary x in Model.CartSummary)
-        {
-            <li>@x.EventName</li>
-        }
+    <h2>Thank you for using JAM</h2>
+    <p>It was a pleasure doing business with you <h3>@Model.TicketBuyer.BuyerFirstName @Model.TicketBuyer.BuyerLastName</h3></p>
 
-    </ul>
     <div id="pic"><img src="~/images/thumbsup.png" /></div>
 </div>
