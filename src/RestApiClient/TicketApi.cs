@@ -280,7 +280,7 @@ namespace TicketSystem.RestApiClient
         {
             var json = JsonConvert.SerializeObject(ticketToTransaction);
             var client = new RestClient(localhost);
-            var request = new RestRequest("TicketTransactions/To/", Method.POST);
+            var request = new RestRequest("TicketTransactions/TicketBuyer/", Method.POST);
             request.AddParameter("application/json", json, ParameterType.RequestBody);
             var response = client.Execute<TicketToTransaction>(request);
             return response.Data;
