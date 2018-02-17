@@ -1,11 +1,12 @@
-﻿@using Microsoft.AspNetCore.Mvc.Localization
+﻿@model ClassLibrary.Value;
+@using Microsoft.AspNetCore.Mvc.Localization
 
 @inject IViewLocalizer Localizer
 
-@model ClassLibrary.Value;
-@*@{
+
+@{
         ViewData["Title"] = Localizer["Checkout"];
-    }*@
+    }
 @{
     var cart = Model.CartSummary;
 
@@ -62,7 +63,7 @@
             @Html.TextBoxFor(m => m.TicketBuyer.BuyerAddress, new { type = "text", placeholder = "Jam Street 1337", @required = true })<br />
             @Html.LabelFor(m => m.TicketBuyer.BuyerCity, "City")<br />
             @Html.TextBoxFor(m => m.TicketBuyer.BuyerCity, new { type = "text", placeholder = "Gothenburg", @required = true })<br />
-            <input type="submit" style="background-color:dodgerblue" value=@Localizer["Payment"] />
+            <input type="submit" style="background-color:dodgerblue"  />  @*value=@Localizer["Payment"]*@
         }
     </div>
 
