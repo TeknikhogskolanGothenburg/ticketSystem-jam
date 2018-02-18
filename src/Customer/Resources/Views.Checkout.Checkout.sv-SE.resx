@@ -118,16 +118,16 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Buy" xml:space="preserve">
-    <value>Shoppa</value>
+    <value>Köp</value>
   </data>
   <data name="Checkout" xml:space="preserve">
-    <value>Slutfor kop</value>
+    <value>Slutför köp</value>
   </data>
   <data name="ChooseTicket" xml:space="preserve">
-    <value>Valj Biljett</value>
+    <value>Välj Biljett</value>
   </data>
   <data name="ContinueShopping" xml:space="preserve">
-    <value>Fortsatt handla</value>
+    <value>Fortsätt handla</value>
   </data>
   <data name="CustomerInformation" xml:space="preserve">
     <value>Kund Information</value>

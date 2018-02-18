@@ -1,12 +1,15 @@
 ﻿@model ClassLibrary.Value
+@using Microsoft.AspNetCore.Mvc.Localization
+
+@inject IViewLocalizer Localizer
 @{
-    ViewData["Title"] = "PurchaseCompleted";
+    ViewData["Title"] = Localizer["PurchaseCompleted"];
 }
 
 <hr>
 <div style=" text-align: center">
-    <h2>Thank you for using JAM</h2>
-    <p>It was a pleasure doing business with you <h3>@Model.TicketBuyer.BuyerFirstName @Model.TicketBuyer.BuyerLastName</h3></p>
+    <h2>@Localizer["Thank"]</h2>
+    <p>@Localizer["It"] <h3>@Model.TicketBuyer.BuyerFirstName @Model.TicketBuyer.BuyerLastName</h3></p>
 
     <div id="pic"><img src="~/images/thumbsup.png" /></div>
 </div>

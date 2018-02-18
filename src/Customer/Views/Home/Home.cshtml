@@ -1,14 +1,18 @@
-﻿
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+
+@inject IViewLocalizer Localizer
 @{
-    ViewData["Title"] = "Home";
+    ViewData["Title"] = Localizer["Home"];
 }
 <div id="backGround">
     <div id="homeContent" style="padding-top: 20px">
         <br />   <br />   <br />
-        <h1 id="jam">J A M</h1><br /><h3 style=" font-family:'Agency FB'">Ticket Shop</h3><br />
-        <hr style="  border: 2px groove white" />
+
+        <h1 id="jam">@Localizer["JAM"]</h1><br /><h3 style=" font - family:'Agency FB'">@Localizer["TicketShop"]</h3><br />
+        <hr style="  border: 2px groove white"  />
+
         <br />
-        <p id="bigLetter">made by: Jakob, Agneta & Martin</p>
+        <p id="bigLetter">@Localizer["made"]</p>
         <br />
         <br />
         <br />

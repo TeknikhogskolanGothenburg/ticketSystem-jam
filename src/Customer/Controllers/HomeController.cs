@@ -6,6 +6,10 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Customer.Controllers
 {
+
+    /// <summary>
+    /// Shows the StartPage to the Consumer.
+    /// </summary>
     public class HomeController : Controller
     {
         public IActionResult Home()
