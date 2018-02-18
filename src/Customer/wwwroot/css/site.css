@@ -109,13 +109,16 @@ th {
 tr td:hover {
     background: #666;
     color: #FFF;
+    cursor:context-menu;
 }
 tr td:hover > .addToCartBtn {
     background: #666;
     color: #FFF;
 } 
 
-
+th:hover {
+    cursor:context-menu;
+}
 #customerInfo, #cartButtons {
     text-align: center;
     margin: 0 auto;
@@ -199,6 +202,7 @@ tr td:hover > .addToCartBtn {
     height: 650px;
     overflow: auto;
 }
+
 
 #homeContent {
     text-align: center;
