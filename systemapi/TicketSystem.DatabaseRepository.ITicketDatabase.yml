@@ -5,9 +5,9 @@ items:
   id: ITicketDatabase
   parent: TicketSystem.DatabaseRepository
   children:
-  - TicketSystem.DatabaseRepository.ITicketDatabase.EventAdd(System.String,System.String)
-  - TicketSystem.DatabaseRepository.ITicketDatabase.VenueAdd(System.String,System.String,System.String,System.String)
-  - TicketSystem.DatabaseRepository.ITicketDatabase.VenuesFind(System.String)
+  - TicketSystem.DatabaseRepository.ITicketDatabase.EventsAdd(ClassLibrary.TicketEvent)
+  - TicketSystem.DatabaseRepository.ITicketDatabase.GetVenues(System.Int32)
+  - TicketSystem.DatabaseRepository.ITicketDatabase.VenuesAdd(ClassLibrary.Venue)
   langs:
   - csharp
   - vb
@@ -35,23 +35,23 @@ items:
   modifiers.vb:
   - Public
   - Interface
-- uid: TicketSystem.DatabaseRepository.ITicketDatabase.EventAdd(System.String,System.String)
-  commentId: M:TicketSystem.DatabaseRepository.ITicketDatabase.EventAdd(System.String,System.String)
-  id: EventAdd(System.String,System.String)
+- uid: TicketSystem.DatabaseRepository.ITicketDatabase.EventsAdd(ClassLibrary.TicketEvent)
+  commentId: M:TicketSystem.DatabaseRepository.ITicketDatabase.EventsAdd(ClassLibrary.TicketEvent)
+  id: EventsAdd(ClassLibrary.TicketEvent)
   parent: TicketSystem.DatabaseRepository.ITicketDatabase
   langs:
   - csharp
   - vb
-  name: EventAdd(String, String)
-  nameWithType: ITicketDatabase.EventAdd(String, String)
-  fullName: TicketSystem.DatabaseRepository.ITicketDatabase.EventAdd(System.String, System.String)
+  name: EventsAdd(TicketEvent)
+  nameWithType: ITicketDatabase.EventsAdd(TicketEvent)
+  fullName: TicketSystem.DatabaseRepository.ITicketDatabase.EventsAdd(ClassLibrary.TicketEvent)
   type: Method
   source:
     remote:
       path: src/DatabaseRepository/ITicketDatabase.cs
       branch: master
       repo: https://github.com/agngus/ticketSystem-jam.git
-    id: EventAdd
+    id: EventsAdd
     path: src/DatabaseRepository/ITicketDatabase.cs
     startLine: 13
   assemblies:
@@ -60,36 +60,32 @@ items:
   summary: "\nAdd a new Event to the database\n"
   example: []
   syntax:
-    content: TicketEvent EventAdd(string name, string description)
+    content: TicketEvent EventsAdd(TicketEvent ticketEvent)
     parameters:
-    - id: name
-      type: System.String
-      description: Name of the event
-    - id: description
-      type: System.String
-      description: A desription of the event, html markup of the event is allowed
+    - id: ticketEvent
+      type: ClassLibrary.TicketEvent
     return:
       type: ClassLibrary.TicketEvent
       description: An object representing the newly created TicketEvent
-    content.vb: Function EventAdd(name As String, description As String) As TicketEvent
-  overload: TicketSystem.DatabaseRepository.ITicketDatabase.EventAdd*
-- uid: TicketSystem.DatabaseRepository.ITicketDatabase.VenueAdd(System.String,System.String,System.String,System.String)
-  commentId: M:TicketSystem.DatabaseRepository.ITicketDatabase.VenueAdd(System.String,System.String,System.String,System.String)
-  id: VenueAdd(System.String,System.String,System.String,System.String)
+    content.vb: Function EventsAdd(ticketEvent As TicketEvent) As TicketEvent
+  overload: TicketSystem.DatabaseRepository.ITicketDatabase.EventsAdd*
+- uid: TicketSystem.DatabaseRepository.ITicketDatabase.VenuesAdd(ClassLibrary.Venue)
+  commentId: M:TicketSystem.DatabaseRepository.ITicketDatabase.VenuesAdd(ClassLibrary.Venue)
+  id: VenuesAdd(ClassLibrary.Venue)
   parent: TicketSystem.DatabaseRepository.ITicketDatabase
   langs:
   - csharp
   - vb
-  name: VenueAdd(String, String, String, String)
-  nameWithType: ITicketDatabase.VenueAdd(String, String, String, String)
-  fullName: TicketSystem.DatabaseRepository.ITicketDatabase.VenueAdd(System.String, System.String, System.String, System.String)
+  name: VenuesAdd(Venue)
+  nameWithType: ITicketDatabase.VenuesAdd(Venue)
+  fullName: TicketSystem.DatabaseRepository.ITicketDatabase.VenuesAdd(ClassLibrary.Venue)
   type: Method
   source:
     remote:
       path: src/DatabaseRepository/ITicketDatabase.cs
       branch: master
       repo: https://github.com/agngus/ticketSystem-jam.git
-    id: VenueAdd
+    id: VenuesAdd
     path: src/DatabaseRepository/ITicketDatabase.cs
     startLine: 23
   assemblies:
@@ -98,42 +94,32 @@ items:
   summary: "\nAdd a new venue to the database\n"
   example: []
   syntax:
-    content: Venue VenueAdd(string name, string address, string city, string country)
+    content: Venue VenuesAdd(Venue venue)
     parameters:
-    - id: name
-      type: System.String
-      description: Name of the venue
-    - id: address
-      type: System.String
-      description: Physical address of the venue
-    - id: city
-      type: System.String
-      description: City part of the adress
-    - id: country
-      type: System.String
-      description: Country part of the adress
+    - id: venue
+      type: ClassLibrary.Venue
     return:
       type: ClassLibrary.Venue
       description: An object representing the newly created Venue
-    content.vb: Function VenueAdd(name As String, address As String, city As String, country As String) As Venue
-  overload: TicketSystem.DatabaseRepository.ITicketDatabase.VenueAdd*
-- uid: TicketSystem.DatabaseRepository.ITicketDatabase.VenuesFind(System.String)
-  commentId: M:TicketSystem.DatabaseRepository.ITicketDatabase.VenuesFind(System.String)
-  id: VenuesFind(System.String)
+    content.vb: Function VenuesAdd(venue As Venue) As Venue
+  overload: TicketSystem.DatabaseRepository.ITicketDatabase.VenuesAdd*
+- uid: TicketSystem.DatabaseRepository.ITicketDatabase.GetVenues(System.Int32)
+  commentId: M:TicketSystem.DatabaseRepository.ITicketDatabase.GetVenues(System.Int32)
+  id: GetVenues(System.Int32)
   parent: TicketSystem.DatabaseRepository.ITicketDatabase
   langs:
   - csharp
   - vb
-  name: VenuesFind(String)
-  nameWithType: ITicketDatabase.VenuesFind(String)
-  fullName: TicketSystem.DatabaseRepository.ITicketDatabase.VenuesFind(System.String)
+  name: GetVenues(Int32)
+  nameWithType: ITicketDatabase.GetVenues(Int32)
+  fullName: TicketSystem.DatabaseRepository.ITicketDatabase.GetVenues(System.Int32)
   type: Method
   source:
     remote:
       path: src/DatabaseRepository/ITicketDatabase.cs
       branch: master
       repo: https://github.com/agngus/ticketSystem-jam.git
-    id: VenuesFind
+    id: GetVenues
     path: src/DatabaseRepository/ITicketDatabase.cs
     startLine: 31
   assemblies:
@@ -142,16 +128,16 @@ items:
   summary: "\nFind all venus matching the query\n"
   example: []
   syntax:
-    content: Venue VenuesFind(string query)
+    content: Venue GetVenues(int id)
     parameters:
-    - id: query
-      type: System.String
+    - id: id
+      type: System.Int32
       description: A text which is user i looking for in the venues
     return:
       type: ClassLibrary.Venue
       description: A list of venus matching the query
-    content.vb: Function VenuesFind(query As String) As Venue
-  overload: TicketSystem.DatabaseRepository.ITicketDatabase.VenuesFind*
+    content.vb: Function GetVenues(id As Integer) As Venue
+  overload: TicketSystem.DatabaseRepository.ITicketDatabase.GetVenues*
 references:
 - uid: TicketSystem.DatabaseRepository
   commentId: N:TicketSystem.DatabaseRepository
@@ -159,19 +145,12 @@ references:
   name: TicketSystem.DatabaseRepository
   nameWithType: TicketSystem.DatabaseRepository
   fullName: TicketSystem.DatabaseRepository
-- uid: TicketSystem.DatabaseRepository.ITicketDatabase.EventAdd*
-  commentId: Overload:TicketSystem.DatabaseRepository.ITicketDatabase.EventAdd
+- uid: TicketSystem.DatabaseRepository.ITicketDatabase.EventsAdd*
+  commentId: Overload:TicketSystem.DatabaseRepository.ITicketDatabase.EventsAdd
   isExternal: false
-  name: EventAdd
-  nameWithType: ITicketDatabase.EventAdd
-  fullName: TicketSystem.DatabaseRepository.ITicketDatabase.EventAdd
-- uid: System.String
-  commentId: T:System.String
-  parent: System
-  isExternal: true
-  name: String
-  nameWithType: String
-  fullName: System.String
+  name: EventsAdd
+  nameWithType: ITicketDatabase.EventsAdd
+  fullName: TicketSystem.DatabaseRepository.ITicketDatabase.EventsAdd
 - uid: ClassLibrary.TicketEvent
   commentId: T:ClassLibrary.TicketEvent
   parent: ClassLibrary
@@ -179,24 +158,18 @@ references:
   name: TicketEvent
   nameWithType: TicketEvent
   fullName: ClassLibrary.TicketEvent
-- uid: System
-  commentId: N:System
-  isExternal: false
-  name: System
-  nameWithType: System
-  fullName: System
 - uid: ClassLibrary
   commentId: N:ClassLibrary
   isExternal: false
   name: ClassLibrary
   nameWithType: ClassLibrary
   fullName: ClassLibrary
-- uid: TicketSystem.DatabaseRepository.ITicketDatabase.VenueAdd*
-  commentId: Overload:TicketSystem.DatabaseRepository.ITicketDatabase.VenueAdd
+- uid: TicketSystem.DatabaseRepository.ITicketDatabase.VenuesAdd*
+  commentId: Overload:TicketSystem.DatabaseRepository.ITicketDatabase.VenuesAdd
   isExternal: false
-  name: VenueAdd
-  nameWithType: ITicketDatabase.VenueAdd
-  fullName: TicketSystem.DatabaseRepository.ITicketDatabase.VenueAdd
+  name: VenuesAdd
+  nameWithType: ITicketDatabase.VenuesAdd
+  fullName: TicketSystem.DatabaseRepository.ITicketDatabase.VenuesAdd
 - uid: ClassLibrary.Venue
   commentId: T:ClassLibrary.Venue
   parent: ClassLibrary
@@ -204,9 +177,22 @@ references:
   name: Venue
   nameWithType: Venue
   fullName: ClassLibrary.Venue
-- uid: TicketSystem.DatabaseRepository.ITicketDatabase.VenuesFind*
-  commentId: Overload:TicketSystem.DatabaseRepository.ITicketDatabase.VenuesFind
+- uid: TicketSystem.DatabaseRepository.ITicketDatabase.GetVenues*
+  commentId: Overload:TicketSystem.DatabaseRepository.ITicketDatabase.GetVenues
   isExternal: false
-  name: VenuesFind
-  nameWithType: ITicketDatabase.VenuesFind
-  fullName: TicketSystem.DatabaseRepository.ITicketDatabase.VenuesFind
+  name: GetVenues
+  nameWithType: ITicketDatabase.GetVenues
+  fullName: TicketSystem.DatabaseRepository.ITicketDatabase.GetVenues
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System

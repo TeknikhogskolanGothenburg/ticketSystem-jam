@@ -4,7 +4,9 @@ items:
   commentId: N:Customer.Controllers
   id: Customer.Controllers
   children:
+  - Customer.Controllers.CheckoutController
   - Customer.Controllers.HomeController
+  - Customer.Controllers.TicketsController
   langs:
   - csharp
   - vb
@@ -15,9 +17,21 @@ items:
   assemblies:
   - Customer
 references:
+- uid: Customer.Controllers.CheckoutController
+  commentId: T:Customer.Controllers.CheckoutController
+  isExternal: false
+  name: CheckoutController
+  nameWithType: CheckoutController
+  fullName: Customer.Controllers.CheckoutController
 - uid: Customer.Controllers.HomeController
   commentId: T:Customer.Controllers.HomeController
   isExternal: false
   name: HomeController
   nameWithType: HomeController
   fullName: Customer.Controllers.HomeController
+- uid: Customer.Controllers.TicketsController
+  commentId: T:Customer.Controllers.TicketsController
+  isExternal: false
+  name: TicketsController
+  nameWithType: TicketsController
+  fullName: Customer.Controllers.TicketsController

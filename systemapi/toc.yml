@@ -9,8 +9,14 @@
 - uid: Admin.Controllers
   name: Admin.Controllers
   items:
+  - uid: Admin.Controllers.CustomersController
+    name: CustomersController
+  - uid: Admin.Controllers.EventsController
+    name: EventsController
   - uid: Admin.Controllers.HomeController
     name: HomeController
+  - uid: Admin.Controllers.TicketEventDatesController
+    name: TicketEventDatesController
   - uid: Admin.Controllers.VenuesController
     name: VenuesController
 - uid: Admin.Models
@@ -18,15 +24,27 @@
   items:
   - uid: Admin.Models.ErrorViewModel
     name: ErrorViewModel
+  - uid: Admin.Models.TicketEvent
+    name: TicketEvent
 - uid: ClassLibrary
   name: ClassLibrary
   items:
   - uid: ClassLibrary.AllModels
     name: AllModels
+  - uid: ClassLibrary.EventSummary
+    name: EventSummary
+  - uid: ClassLibrary.SeatsAtEventDate
+    name: SeatsAtEventDate
   - uid: ClassLibrary.TicketEvent
     name: TicketEvent
   - uid: ClassLibrary.TicketEventDate
     name: TicketEventDate
+  - uid: ClassLibrary.Tickets
+    name: Tickets
+  - uid: ClassLibrary.TicketToTransaction
+    name: TicketToTransaction
+  - uid: ClassLibrary.TicketTransaction
+    name: TicketTransaction
   - uid: ClassLibrary.Value
     name: Value
   - uid: ClassLibrary.Venue
@@ -41,8 +59,12 @@
 - uid: Customer.Controllers
   name: Customer.Controllers
   items:
+  - uid: Customer.Controllers.CheckoutController
+    name: CheckoutController
   - uid: Customer.Controllers.HomeController
     name: HomeController
+  - uid: Customer.Controllers.TicketsController
+    name: TicketsController
 - uid: Customer.Models
   name: Customer.Models
   items:
@@ -62,6 +84,8 @@
     name: TicketEventDatesController
   - uid: TicketAPI.Controllers.TicketEventsController
     name: TicketEventsController
+  - uid: TicketAPI.Controllers.TicketTransactionsController
+    name: TicketTransactionsController
   - uid: TicketAPI.Controllers.VenuesController
     name: VenuesController
 - uid: TicketSystem.DatabaseRepository

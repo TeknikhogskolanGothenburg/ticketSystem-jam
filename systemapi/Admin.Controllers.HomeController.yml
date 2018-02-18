@@ -234,7 +234,7 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: Index
     path: src/Admin/Controllers/HomeController.cs
-    startLine: 16
+    startLine: 14
   assemblies:
   - Admin
   namespace: Admin.Controllers
@@ -266,7 +266,7 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: DeleteVenue
     path: src/Admin/Controllers/HomeController.cs
-    startLine: 21
+    startLine: 19
   assemblies:
   - Admin
   namespace: Admin.Controllers
@@ -311,7 +311,7 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: Contact
     path: src/Admin/Controllers/HomeController.cs
-    startLine: 27
+    startLine: 25
   assemblies:
   - Admin
   namespace: Admin.Controllers
@@ -343,7 +343,7 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: Error
     path: src/Admin/Controllers/HomeController.cs
-    startLine: 33
+    startLine: 31
   assemblies:
   - Admin
   namespace: Admin.Controllers
@@ -375,7 +375,7 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: Hej
     path: src/Admin/Controllers/HomeController.cs
-    startLine: 38
+    startLine: 36
   assemblies:
   - Admin
   namespace: Admin.Controllers

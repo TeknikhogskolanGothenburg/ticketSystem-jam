@@ -30,17 +30,16 @@ namespace ClassLibrary
 
         public List<EventSummary> CartSummary { get; set; } = new List<EventSummary>();
 
-        public int Id { get; set; }
+    
         public TicketTransaction TicketBuyer { get; set; }
 
-        public AllModels AllModels { get; set; }
 
         public List<int> cartListId  { get; set; }
 
         public TicketToTransaction TicketToTransaction { get; set; }
 
         public Tickets Tickets { get; set; }
-        public List <TicketToTransaction> TickToTrans { get; set; }
+       
 
 
     }

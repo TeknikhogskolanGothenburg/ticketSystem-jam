@@ -8,8 +8,11 @@ items:
   - TicketAPI.Controllers.TicketEventDatesController.Delete(System.Int32)
   - TicketAPI.Controllers.TicketEventDatesController.Get
   - TicketAPI.Controllers.TicketEventDatesController.Get(System.Int32)
+  - TicketAPI.Controllers.TicketEventDatesController.GetAllSummary
+  - TicketAPI.Controllers.TicketEventDatesController.GetSearchSummary(System.String)
+  - TicketAPI.Controllers.TicketEventDatesController.GetSummary(System.Int32)
   - TicketAPI.Controllers.TicketEventDatesController.Post(ClassLibrary.TicketEventDate)
-  - TicketAPI.Controllers.TicketEventDatesController.Put(System.Int32,System.String)
+  - TicketAPI.Controllers.TicketEventDatesController.Put(System.Int32,ClassLibrary.TicketEventDate)
   langs:
   - csharp
   - vb
@@ -249,7 +252,7 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: Get
     path: src/TicketAPI/Controllers/TicketEventDatesController.cs
-    startLine: 16
+    startLine: 18
   assemblies:
   - TicketAPI
   namespace: TicketAPI.Controllers
@@ -257,13 +260,13 @@ items:
     content: >-
       [HttpGet]
 
-      public IEnumerable<string> Get()
+      public List<TicketEventDate> Get()
     return:
-      type: System.Collections.Generic.IEnumerable{System.String}
+      type: System.Collections.Generic.List{ClassLibrary.TicketEventDate}
     content.vb: >-
       <HttpGet>
 
-      Public Function Get As IEnumerable(Of String)
+      Public Function Get As List(Of TicketEventDate)
   overload: TicketAPI.Controllers.TicketEventDatesController.Get*
   attributes:
   - type: Microsoft.AspNetCore.Mvc.HttpGetAttribute
@@ -291,7 +294,7 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: Get
     path: src/TicketAPI/Controllers/TicketEventDatesController.cs
-    startLine: 23
+    startLine: 25
   assemblies:
   - TicketAPI
   namespace: TicketAPI.Controllers
@@ -299,16 +302,16 @@ items:
     content: >-
       [HttpGet("{id}")]
 
-      public string Get(int id)
+      public TicketEventDate Get(int id)
     parameters:
     - id: id
       type: System.Int32
     return:
-      type: System.String
+      type: ClassLibrary.TicketEventDate
     content.vb: >-
       <HttpGet("{id}")>
 
-      Public Function Get(id As Integer) As String
+      Public Function Get(id As Integer) As TicketEventDate
   overload: TicketAPI.Controllers.TicketEventDatesController.Get*
   attributes:
   - type: Microsoft.AspNetCore.Mvc.HttpGetAttribute
@@ -338,29 +341,28 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: Post
     path: src/TicketAPI/Controllers/TicketEventDatesController.cs
-    startLine: 34
+    startLine: 31
   assemblies:
   - TicketAPI
   namespace: TicketAPI.Controllers
-  summary: "\nPost-method to link EventId and VenueId with Date.\n"
-  example: []
   syntax:
     content: >-
       [HttpPost]
 
-      public void Post([FromBody] TicketEventDate value)
+      public TicketEventDate Post([FromBody] TicketEventDate ticketEventDate)
     parameters:
-    - id: value
+    - id: ticketEventDate
       type: ClassLibrary.TicketEventDate
-      description: ''
       attributes:
       - type: Microsoft.AspNetCore.Mvc.FromBodyAttribute
         ctor: Microsoft.AspNetCore.Mvc.FromBodyAttribute.#ctor
         arguments: []
+    return:
+      type: ClassLibrary.TicketEventDate
     content.vb: >-
       <HttpPost>
 
-      Public Sub Post(value As TicketEventDate)
+      Public Function Post(ticketEventDate As TicketEventDate) As TicketEventDate
   overload: TicketAPI.Controllers.TicketEventDatesController.Post*
   attributes:
   - type: Microsoft.AspNetCore.Mvc.HttpPostAttribute
@@ -370,16 +372,16 @@ items:
   - public
   modifiers.vb:
   - Public
-- uid: TicketAPI.Controllers.TicketEventDatesController.Put(System.Int32,System.String)
-  commentId: M:TicketAPI.Controllers.TicketEventDatesController.Put(System.Int32,System.String)
-  id: Put(System.Int32,System.String)
+- uid: TicketAPI.Controllers.TicketEventDatesController.Put(System.Int32,ClassLibrary.TicketEventDate)
+  commentId: M:TicketAPI.Controllers.TicketEventDatesController.Put(System.Int32,ClassLibrary.TicketEventDate)
+  id: Put(System.Int32,ClassLibrary.TicketEventDate)
   parent: TicketAPI.Controllers.TicketEventDatesController
   langs:
   - csharp
   - vb
-  name: Put(Int32, String)
-  nameWithType: TicketEventDatesController.Put(Int32, String)
-  fullName: TicketAPI.Controllers.TicketEventDatesController.Put(System.Int32, System.String)
+  name: Put(Int32, TicketEventDate)
+  nameWithType: TicketEventDatesController.Put(Int32, TicketEventDate)
+  fullName: TicketAPI.Controllers.TicketEventDatesController.Put(System.Int32, ClassLibrary.TicketEventDate)
   type: Method
   source:
     remote:
@@ -388,7 +390,7 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: Put
     path: src/TicketAPI/Controllers/TicketEventDatesController.cs
-    startLine: 48
+    startLine: 38
   assemblies:
   - TicketAPI
   namespace: TicketAPI.Controllers
@@ -396,12 +398,12 @@ items:
     content: >-
       [HttpPut("{id}")]
 
-      public void Put(int id, [FromBody] string value)
+      public void Put(int id, [FromBody] TicketEventDate ticketEventDate)
     parameters:
     - id: id
       type: System.Int32
-    - id: value
-      type: System.String
+    - id: ticketEventDate
+      type: ClassLibrary.TicketEventDate
       attributes:
       - type: Microsoft.AspNetCore.Mvc.FromBodyAttribute
         ctor: Microsoft.AspNetCore.Mvc.FromBodyAttribute.#ctor
@@ -409,7 +411,7 @@ items:
     content.vb: >-
       <HttpPut("{id}")>
 
-      Public Sub Put(id As Integer, value As String)
+      Public Sub Put(id As Integer, ticketEventDate As TicketEventDate)
   overload: TicketAPI.Controllers.TicketEventDatesController.Put*
   attributes:
   - type: Microsoft.AspNetCore.Mvc.HttpPutAttribute
@@ -439,7 +441,7 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: Delete
     path: src/TicketAPI/Controllers/TicketEventDatesController.cs
-    startLine: 54
+    startLine: 45
   assemblies:
   - TicketAPI
   namespace: TicketAPI.Controllers
@@ -462,6 +464,144 @@ items:
     arguments:
     - type: System.String
       value: '{id}'
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TicketAPI.Controllers.TicketEventDatesController.GetAllSummary
+  commentId: M:TicketAPI.Controllers.TicketEventDatesController.GetAllSummary
+  id: GetAllSummary
+  parent: TicketAPI.Controllers.TicketEventDatesController
+  langs:
+  - csharp
+  - vb
+  name: GetAllSummary()
+  nameWithType: TicketEventDatesController.GetAllSummary()
+  fullName: TicketAPI.Controllers.TicketEventDatesController.GetAllSummary()
+  type: Method
+  source:
+    remote:
+      path: src/TicketAPI/Controllers/TicketEventDatesController.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
+    id: GetAllSummary
+    path: src/TicketAPI/Controllers/TicketEventDatesController.cs
+    startLine: 51
+  assemblies:
+  - TicketAPI
+  namespace: TicketAPI.Controllers
+  syntax:
+    content: >-
+      [HttpGet("Summary")]
+
+      public List<EventSummary> GetAllSummary()
+    return:
+      type: System.Collections.Generic.List{ClassLibrary.EventSummary}
+    content.vb: >-
+      <HttpGet("Summary")>
+
+      Public Function GetAllSummary As List(Of EventSummary)
+  overload: TicketAPI.Controllers.TicketEventDatesController.GetAllSummary*
+  attributes:
+  - type: Microsoft.AspNetCore.Mvc.HttpGetAttribute
+    ctor: Microsoft.AspNetCore.Mvc.HttpGetAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: Summary
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TicketAPI.Controllers.TicketEventDatesController.GetSummary(System.Int32)
+  commentId: M:TicketAPI.Controllers.TicketEventDatesController.GetSummary(System.Int32)
+  id: GetSummary(System.Int32)
+  parent: TicketAPI.Controllers.TicketEventDatesController
+  langs:
+  - csharp
+  - vb
+  name: GetSummary(Int32)
+  nameWithType: TicketEventDatesController.GetSummary(Int32)
+  fullName: TicketAPI.Controllers.TicketEventDatesController.GetSummary(System.Int32)
+  type: Method
+  source:
+    remote:
+      path: src/TicketAPI/Controllers/TicketEventDatesController.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
+    id: GetSummary
+    path: src/TicketAPI/Controllers/TicketEventDatesController.cs
+    startLine: 57
+  assemblies:
+  - TicketAPI
+  namespace: TicketAPI.Controllers
+  syntax:
+    content: >-
+      [HttpGet("{id}/Summary")]
+
+      public EventSummary GetSummary(int id)
+    parameters:
+    - id: id
+      type: System.Int32
+    return:
+      type: ClassLibrary.EventSummary
+    content.vb: >-
+      <HttpGet("{id}/Summary")>
+
+      Public Function GetSummary(id As Integer) As EventSummary
+  overload: TicketAPI.Controllers.TicketEventDatesController.GetSummary*
+  attributes:
+  - type: Microsoft.AspNetCore.Mvc.HttpGetAttribute
+    ctor: Microsoft.AspNetCore.Mvc.HttpGetAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: '{id}/Summary'
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TicketAPI.Controllers.TicketEventDatesController.GetSearchSummary(System.String)
+  commentId: M:TicketAPI.Controllers.TicketEventDatesController.GetSearchSummary(System.String)
+  id: GetSearchSummary(System.String)
+  parent: TicketAPI.Controllers.TicketEventDatesController
+  langs:
+  - csharp
+  - vb
+  name: GetSearchSummary(String)
+  nameWithType: TicketEventDatesController.GetSearchSummary(String)
+  fullName: TicketAPI.Controllers.TicketEventDatesController.GetSearchSummary(System.String)
+  type: Method
+  source:
+    remote:
+      path: src/TicketAPI/Controllers/TicketEventDatesController.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
+    id: GetSearchSummary
+    path: src/TicketAPI/Controllers/TicketEventDatesController.cs
+    startLine: 63
+  assemblies:
+  - TicketAPI
+  namespace: TicketAPI.Controllers
+  syntax:
+    content: >-
+      [HttpGet("{id}/Search")]
+
+      public List<EventSummary> GetSearchSummary(string id)
+    parameters:
+    - id: id
+      type: System.String
+    return:
+      type: System.Collections.Generic.List{ClassLibrary.EventSummary}
+    content.vb: >-
+      <HttpGet("{id}/Search")>
+
+      Public Function GetSearchSummary(id As String) As List(Of EventSummary)
+  overload: TicketAPI.Controllers.TicketEventDatesController.GetSearchSummary*
+  attributes:
+  - type: Microsoft.AspNetCore.Mvc.HttpGetAttribute
+    ctor: Microsoft.AspNetCore.Mvc.HttpGetAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: '{id}/Search'
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -10549,64 +10689,62 @@ references:
   name: Get
   nameWithType: TicketEventDatesController.Get
   fullName: TicketAPI.Controllers.TicketEventDatesController.Get
-- uid: System.Collections.Generic.IEnumerable{System.String}
-  commentId: T:System.Collections.Generic.IEnumerable{System.String}
+- uid: System.Collections.Generic.List{ClassLibrary.TicketEventDate}
+  commentId: T:System.Collections.Generic.List{ClassLibrary.TicketEventDate}
   parent: System.Collections.Generic
-  definition: System.Collections.Generic.IEnumerable`1
-  name: IEnumerable<String>
-  nameWithType: IEnumerable<String>
-  fullName: System.Collections.Generic.IEnumerable<System.String>
-  nameWithType.vb: IEnumerable(Of String)
-  fullName.vb: System.Collections.Generic.IEnumerable(Of System.String)
-  name.vb: IEnumerable(Of String)
+  definition: System.Collections.Generic.List`1
+  name: List<TicketEventDate>
+  nameWithType: List<TicketEventDate>
+  fullName: System.Collections.Generic.List<ClassLibrary.TicketEventDate>
+  nameWithType.vb: List(Of TicketEventDate)
+  fullName.vb: System.Collections.Generic.List(Of ClassLibrary.TicketEventDate)
+  name.vb: List(Of TicketEventDate)
   spec.csharp:
-  - uid: System.Collections.Generic.IEnumerable`1
-    name: IEnumerable
-    nameWithType: IEnumerable
-    fullName: System.Collections.Generic.IEnumerable
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - uid: System.String
-    name: String
-    nameWithType: String
-    fullName: System.String
-    isExternal: true
+  - uid: ClassLibrary.TicketEventDate
+    name: TicketEventDate
+    nameWithType: TicketEventDate
+    fullName: ClassLibrary.TicketEventDate
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: System.Collections.Generic.IEnumerable`1
-    name: IEnumerable
-    nameWithType: IEnumerable
-    fullName: System.Collections.Generic.IEnumerable
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - uid: System.String
-    name: String
-    nameWithType: String
-    fullName: System.String
-    isExternal: true
+  - uid: ClassLibrary.TicketEventDate
+    name: TicketEventDate
+    nameWithType: TicketEventDate
+    fullName: ClassLibrary.TicketEventDate
   - name: )
     nameWithType: )
     fullName: )
-- uid: System.Collections.Generic.IEnumerable`1
-  commentId: T:System.Collections.Generic.IEnumerable`1
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
   isExternal: true
-  name: IEnumerable<T>
-  nameWithType: IEnumerable<T>
-  fullName: System.Collections.Generic.IEnumerable<T>
-  nameWithType.vb: IEnumerable(Of T)
-  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
-  name.vb: IEnumerable(Of T)
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
   spec.csharp:
-  - uid: System.Collections.Generic.IEnumerable`1
-    name: IEnumerable
-    nameWithType: IEnumerable
-    fullName: System.Collections.Generic.IEnumerable
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
     isExternal: true
   - name: <
     nameWithType: <
@@ -10618,10 +10756,10 @@ references:
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: System.Collections.Generic.IEnumerable`1
-    name: IEnumerable
-    nameWithType: IEnumerable
-    fullName: System.Collections.Generic.IEnumerable
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -10645,19 +10783,6 @@ references:
   name: Int32
   nameWithType: Int32
   fullName: System.Int32
-- uid: System.String
-  commentId: T:System.String
-  parent: System
-  isExternal: true
-  name: String
-  nameWithType: String
-  fullName: System.String
-- uid: TicketAPI.Controllers.TicketEventDatesController.Post*
-  commentId: Overload:TicketAPI.Controllers.TicketEventDatesController.Post
-  isExternal: false
-  name: Post
-  nameWithType: TicketEventDatesController.Post
-  fullName: TicketAPI.Controllers.TicketEventDatesController.Post
 - uid: ClassLibrary.TicketEventDate
   commentId: T:ClassLibrary.TicketEventDate
   parent: ClassLibrary
@@ -10671,6 +10796,12 @@ references:
   name: ClassLibrary
   nameWithType: ClassLibrary
   fullName: ClassLibrary
+- uid: TicketAPI.Controllers.TicketEventDatesController.Post*
+  commentId: Overload:TicketAPI.Controllers.TicketEventDatesController.Post
+  isExternal: false
+  name: Post
+  nameWithType: TicketEventDatesController.Post
+  fullName: TicketAPI.Controllers.TicketEventDatesController.Post
 - uid: TicketAPI.Controllers.TicketEventDatesController.Put*
   commentId: Overload:TicketAPI.Controllers.TicketEventDatesController.Put
   isExternal: false
@@ -10683,3 +10814,77 @@ references:
   name: Delete
   nameWithType: TicketEventDatesController.Delete
   fullName: TicketAPI.Controllers.TicketEventDatesController.Delete
+- uid: TicketAPI.Controllers.TicketEventDatesController.GetAllSummary*
+  commentId: Overload:TicketAPI.Controllers.TicketEventDatesController.GetAllSummary
+  isExternal: false
+  name: GetAllSummary
+  nameWithType: TicketEventDatesController.GetAllSummary
+  fullName: TicketAPI.Controllers.TicketEventDatesController.GetAllSummary
+- uid: System.Collections.Generic.List{ClassLibrary.EventSummary}
+  commentId: T:System.Collections.Generic.List{ClassLibrary.EventSummary}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<EventSummary>
+  nameWithType: List<EventSummary>
+  fullName: System.Collections.Generic.List<ClassLibrary.EventSummary>
+  nameWithType.vb: List(Of EventSummary)
+  fullName.vb: System.Collections.Generic.List(Of ClassLibrary.EventSummary)
+  name.vb: List(Of EventSummary)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: ClassLibrary.EventSummary
+    name: EventSummary
+    nameWithType: EventSummary
+    fullName: ClassLibrary.EventSummary
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: ClassLibrary.EventSummary
+    name: EventSummary
+    nameWithType: EventSummary
+    fullName: ClassLibrary.EventSummary
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TicketAPI.Controllers.TicketEventDatesController.GetSummary*
+  commentId: Overload:TicketAPI.Controllers.TicketEventDatesController.GetSummary
+  isExternal: false
+  name: GetSummary
+  nameWithType: TicketEventDatesController.GetSummary
+  fullName: TicketAPI.Controllers.TicketEventDatesController.GetSummary
+- uid: ClassLibrary.EventSummary
+  commentId: T:ClassLibrary.EventSummary
+  parent: ClassLibrary
+  isExternal: false
+  name: EventSummary
+  nameWithType: EventSummary
+  fullName: ClassLibrary.EventSummary
+- uid: TicketAPI.Controllers.TicketEventDatesController.GetSearchSummary*
+  commentId: Overload:TicketAPI.Controllers.TicketEventDatesController.GetSearchSummary
+  isExternal: false
+  name: GetSearchSummary
+  nameWithType: TicketEventDatesController.GetSearchSummary
+  fullName: TicketAPI.Controllers.TicketEventDatesController.GetSearchSummary
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String

@@ -7,9 +7,9 @@ items:
   children:
   - TicketAPI.Controllers.VenuesController.Delete(System.Int32)
   - TicketAPI.Controllers.VenuesController.Get
-  - TicketAPI.Controllers.VenuesController.Get(System.String)
+  - TicketAPI.Controllers.VenuesController.Get(System.Int32)
   - TicketAPI.Controllers.VenuesController.Post(ClassLibrary.Venue)
-  - TicketAPI.Controllers.VenuesController.Put(System.Int32,System.String)
+  - TicketAPI.Controllers.VenuesController.Put(System.Int32,ClassLibrary.Venue)
   langs:
   - csharp
   - vb
@@ -24,7 +24,7 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: VenuesController
     path: src/TicketAPI/Controllers/VenuesController.cs
-    startLine: 7
+    startLine: 10
   assemblies:
   - TicketAPI
   namespace: TicketAPI.Controllers
@@ -249,7 +249,7 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: Get
     path: src/TicketAPI/Controllers/VenuesController.cs
-    startLine: 14
+    startLine: 34
   assemblies:
   - TicketAPI
   namespace: TicketAPI.Controllers
@@ -273,16 +273,16 @@ items:
   - public
   modifiers.vb:
   - Public
-- uid: TicketAPI.Controllers.VenuesController.Get(System.String)
-  commentId: M:TicketAPI.Controllers.VenuesController.Get(System.String)
-  id: Get(System.String)
+- uid: TicketAPI.Controllers.VenuesController.Get(System.Int32)
+  commentId: M:TicketAPI.Controllers.VenuesController.Get(System.Int32)
+  id: Get(System.Int32)
   parent: TicketAPI.Controllers.VenuesController
   langs:
   - csharp
   - vb
-  name: Get(String)
-  nameWithType: VenuesController.Get(String)
-  fullName: TicketAPI.Controllers.VenuesController.Get(System.String)
+  name: Get(Int32)
+  nameWithType: VenuesController.Get(Int32)
+  fullName: TicketAPI.Controllers.VenuesController.Get(System.Int32)
   type: Method
   source:
     remote:
@@ -291,7 +291,7 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: Get
     path: src/TicketAPI/Controllers/VenuesController.cs
-    startLine: 22
+    startLine: 42
   assemblies:
   - TicketAPI
   namespace: TicketAPI.Controllers
@@ -299,16 +299,16 @@ items:
     content: >-
       [HttpGet("{id}")]
 
-      public Venue Get(string id)
+      public Venue Get(int id)
     parameters:
     - id: id
-      type: System.String
+      type: System.Int32
     return:
       type: ClassLibrary.Venue
     content.vb: >-
       <HttpGet("{id}")>
 
-      Public Function Get(id As String) As Venue
+      Public Function Get(id As Integer) As Venue
   overload: TicketAPI.Controllers.VenuesController.Get*
   attributes:
   - type: Microsoft.AspNetCore.Mvc.HttpGetAttribute
@@ -338,7 +338,7 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: Post
     path: src/TicketAPI/Controllers/VenuesController.cs
-    startLine: 35
+    startLine: 54
   assemblies:
   - TicketAPI
   namespace: TicketAPI.Controllers
@@ -348,11 +348,10 @@ items:
     content: >-
       [HttpPost]
 
-      public void Post([FromBody] Venue values)
+      public void Post([FromBody] Venue venue)
     parameters:
-    - id: values
+    - id: venue
       type: ClassLibrary.Venue
-      description: ''
       attributes:
       - type: Microsoft.AspNetCore.Mvc.FromBodyAttribute
         ctor: Microsoft.AspNetCore.Mvc.FromBodyAttribute.#ctor
@@ -360,7 +359,7 @@ items:
     content.vb: >-
       <HttpPost>
 
-      Public Sub Post(values As Venue)
+      Public Sub Post(venue As Venue)
   overload: TicketAPI.Controllers.VenuesController.Post*
   attributes:
   - type: Microsoft.AspNetCore.Mvc.HttpPostAttribute
@@ -370,16 +369,16 @@ items:
   - public
   modifiers.vb:
   - Public
-- uid: TicketAPI.Controllers.VenuesController.Put(System.Int32,System.String)
-  commentId: M:TicketAPI.Controllers.VenuesController.Put(System.Int32,System.String)
-  id: Put(System.Int32,System.String)
+- uid: TicketAPI.Controllers.VenuesController.Put(System.Int32,ClassLibrary.Venue)
+  commentId: M:TicketAPI.Controllers.VenuesController.Put(System.Int32,ClassLibrary.Venue)
+  id: Put(System.Int32,ClassLibrary.Venue)
   parent: TicketAPI.Controllers.VenuesController
   langs:
   - csharp
   - vb
-  name: Put(Int32, String)
-  nameWithType: VenuesController.Put(Int32, String)
-  fullName: TicketAPI.Controllers.VenuesController.Put(System.Int32, System.String)
+  name: Put(Int32, Venue)
+  nameWithType: VenuesController.Put(Int32, Venue)
+  fullName: TicketAPI.Controllers.VenuesController.Put(System.Int32, ClassLibrary.Venue)
   type: Method
   source:
     remote:
@@ -388,7 +387,7 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: Put
     path: src/TicketAPI/Controllers/VenuesController.cs
-    startLine: 48
+    startLine: 61
   assemblies:
   - TicketAPI
   namespace: TicketAPI.Controllers
@@ -396,12 +395,12 @@ items:
     content: >-
       [HttpPut("{id}")]
 
-      public void Put(int id, [FromBody] string value)
+      public void Put(int id, [FromBody] Venue venue)
     parameters:
     - id: id
       type: System.Int32
-    - id: value
-      type: System.String
+    - id: venue
+      type: ClassLibrary.Venue
       attributes:
       - type: Microsoft.AspNetCore.Mvc.FromBodyAttribute
         ctor: Microsoft.AspNetCore.Mvc.FromBodyAttribute.#ctor
@@ -409,7 +408,7 @@ items:
     content.vb: >-
       <HttpPut("{id}")>
 
-      Public Sub Put(id As Integer, value As String)
+      Public Sub Put(id As Integer, venue As Venue)
   overload: TicketAPI.Controllers.VenuesController.Put*
   attributes:
   - type: Microsoft.AspNetCore.Mvc.HttpPutAttribute
@@ -439,7 +438,7 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: Delete
     path: src/TicketAPI/Controllers/VenuesController.cs
-    startLine: 55
+    startLine: 68
   assemblies:
   - TicketAPI
   namespace: TicketAPI.Controllers
@@ -10636,13 +10635,13 @@ references:
   name: System.Collections.Generic
   nameWithType: System.Collections.Generic
   fullName: System.Collections.Generic
-- uid: System.String
-  commentId: T:System.String
+- uid: System.Int32
+  commentId: T:System.Int32
   parent: System
   isExternal: true
-  name: String
-  nameWithType: String
-  fullName: System.String
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
 - uid: ClassLibrary.Venue
   commentId: T:ClassLibrary.Venue
   parent: ClassLibrary
@@ -10668,13 +10667,6 @@ references:
   name: Put
   nameWithType: VenuesController.Put
   fullName: TicketAPI.Controllers.VenuesController.Put
-- uid: System.Int32
-  commentId: T:System.Int32
-  parent: System
-  isExternal: true
-  name: Int32
-  nameWithType: Int32
-  fullName: System.Int32
 - uid: TicketAPI.Controllers.VenuesController.Delete*
   commentId: Overload:TicketAPI.Controllers.VenuesController.Delete
   isExternal: false
