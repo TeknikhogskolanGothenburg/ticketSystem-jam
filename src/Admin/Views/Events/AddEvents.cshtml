@@ -20,12 +20,10 @@
         <hr />
         @using (Html.BeginForm("AddEvents", "Events", FormMethod.Post))
         {
-
             @Html.LabelFor(m => m.TicketEvent.EventName, "EventName")<br />
             @Html.TextBoxFor(m => m.TicketEvent.EventName, new { @required = true })<br />
             @Html.LabelFor(m => m.TicketEvent.EventHtmlDescription, "Description")<br />
             @Html.TextBoxFor(m => m.TicketEvent.EventHtmlDescription, new { @required = true })<br />
-
             <input type="submit" value=@Localizer["Add"] />
             <hr />
         }
@@ -61,7 +59,6 @@
                 edit.style.display = "none";
                 del.style.display = "none";
             }
-
         }
         function del() {
             var del = document.getElementById("deleteVenue");
@@ -73,9 +70,7 @@
                 add.style.display = "none";
                 edit.style.display = "none";
             }
-
         }
-
         function dropdown(value) {
             window.location.href = "/Venues/DropDownChanged?id=" + value;
         }
