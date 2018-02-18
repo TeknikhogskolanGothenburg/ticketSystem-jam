@@ -4,7 +4,10 @@ items:
   commentId: N:Admin.Controllers
   id: Admin.Controllers
   children:
+  - Admin.Controllers.CustomersController
+  - Admin.Controllers.EventsController
   - Admin.Controllers.HomeController
+  - Admin.Controllers.TicketEventDatesController
   - Admin.Controllers.VenuesController
   langs:
   - csharp
@@ -16,12 +19,30 @@ items:
   assemblies:
   - Admin
 references:
+- uid: Admin.Controllers.CustomersController
+  commentId: T:Admin.Controllers.CustomersController
+  isExternal: false
+  name: CustomersController
+  nameWithType: CustomersController
+  fullName: Admin.Controllers.CustomersController
+- uid: Admin.Controllers.EventsController
+  commentId: T:Admin.Controllers.EventsController
+  isExternal: false
+  name: EventsController
+  nameWithType: EventsController
+  fullName: Admin.Controllers.EventsController
 - uid: Admin.Controllers.HomeController
   commentId: T:Admin.Controllers.HomeController
   isExternal: false
   name: HomeController
   nameWithType: HomeController
   fullName: Admin.Controllers.HomeController
+- uid: Admin.Controllers.TicketEventDatesController
+  commentId: T:Admin.Controllers.TicketEventDatesController
+  isExternal: false
+  name: TicketEventDatesController
+  nameWithType: TicketEventDatesController
+  fullName: Admin.Controllers.TicketEventDatesController
 - uid: Admin.Controllers.VenuesController
   commentId: T:Admin.Controllers.VenuesController
   isExternal: false

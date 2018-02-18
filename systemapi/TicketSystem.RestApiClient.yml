@@ -25,6 +25,7 @@ references:
   fullName: TicketSystem.RestApiClient.ITicketApi
 - uid: TicketSystem.RestApiClient.TicketApi
   commentId: T:TicketSystem.RestApiClient.TicketApi
+  parent: TicketSystem.RestApiClient
   isExternal: false
   name: TicketApi
   nameWithType: TicketApi

@@ -5,6 +5,7 @@ items:
   id: AllModels
   parent: ClassLibrary
   children:
+  - ClassLibrary.AllModels.EventSummaries
   - ClassLibrary.AllModels.ticketEvent
   - ClassLibrary.AllModels.ticketEventDate
   - ClassLibrary.AllModels.value
@@ -166,6 +167,37 @@ items:
     return:
       type: ClassLibrary.Venue
     content.vb: Public venue As Venue
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: ClassLibrary.AllModels.EventSummaries
+  commentId: F:ClassLibrary.AllModels.EventSummaries
+  id: EventSummaries
+  parent: ClassLibrary.AllModels
+  langs:
+  - csharp
+  - vb
+  name: EventSummaries
+  nameWithType: AllModels.EventSummaries
+  fullName: ClassLibrary.AllModels.EventSummaries
+  type: Field
+  source:
+    remote:
+      path: src/ClassLibrary/AllModels.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
+    id: EventSummaries
+    path: src/ClassLibrary/AllModels.cs
+    startLine: 14
+  assemblies:
+  - ClassLibrary
+  namespace: ClassLibrary
+  syntax:
+    content: public List<EventSummary> EventSummaries
+    return:
+      type: System.Collections.Generic.List{ClassLibrary.EventSummary}
+    content.vb: Public EventSummaries As List(Of EventSummary)
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -497,3 +529,90 @@ references:
   name: Venue
   nameWithType: Venue
   fullName: ClassLibrary.Venue
+- uid: System.Collections.Generic.List{ClassLibrary.EventSummary}
+  commentId: T:System.Collections.Generic.List{ClassLibrary.EventSummary}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<EventSummary>
+  nameWithType: List<EventSummary>
+  fullName: System.Collections.Generic.List<ClassLibrary.EventSummary>
+  nameWithType.vb: List(Of EventSummary)
+  fullName.vb: System.Collections.Generic.List(Of ClassLibrary.EventSummary)
+  name.vb: List(Of EventSummary)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: ClassLibrary.EventSummary
+    name: EventSummary
+    nameWithType: EventSummary
+    fullName: ClassLibrary.EventSummary
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: ClassLibrary.EventSummary
+    name: EventSummary
+    nameWithType: EventSummary
+    fullName: ClassLibrary.EventSummary
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: false
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic

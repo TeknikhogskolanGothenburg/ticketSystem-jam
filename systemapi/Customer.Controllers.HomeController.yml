@@ -5,11 +5,7 @@ items:
   id: HomeController
   parent: Customer.Controllers
   children:
-  - Customer.Controllers.HomeController.About
-  - Customer.Controllers.HomeController.Contact
-  - Customer.Controllers.HomeController.Error
-  - Customer.Controllers.HomeController.Index
-  - Customer.Controllers.HomeController.Shop
+  - Customer.Controllers.HomeController.Home
   langs:
   - csharp
   - vb
@@ -216,162 +212,34 @@ items:
   modifiers.vb:
   - Public
   - Class
-- uid: Customer.Controllers.HomeController.Index
-  commentId: M:Customer.Controllers.HomeController.Index
-  id: Index
+- uid: Customer.Controllers.HomeController.Home
+  commentId: M:Customer.Controllers.HomeController.Home
+  id: Home
   parent: Customer.Controllers.HomeController
   langs:
   - csharp
   - vb
-  name: Index()
-  nameWithType: HomeController.Index()
-  fullName: Customer.Controllers.HomeController.Index()
+  name: Home()
+  nameWithType: HomeController.Home()
+  fullName: Customer.Controllers.HomeController.Home()
   type: Method
   source:
     remote:
       path: src/Customer/Controllers/HomeController.cs
       branch: master
       repo: https://github.com/agngus/ticketSystem-jam.git
-    id: Index
+    id: Home
     path: src/Customer/Controllers/HomeController.cs
     startLine: 10
   assemblies:
   - Customer
   namespace: Customer.Controllers
   syntax:
-    content: public IActionResult Index()
+    content: public IActionResult Home()
     return:
       type: Microsoft.AspNetCore.Mvc.IActionResult
-    content.vb: Public Function Index As IActionResult
-  overload: Customer.Controllers.HomeController.Index*
-  modifiers.csharp:
-  - public
-  modifiers.vb:
-  - Public
-- uid: Customer.Controllers.HomeController.About
-  commentId: M:Customer.Controllers.HomeController.About
-  id: About
-  parent: Customer.Controllers.HomeController
-  langs:
-  - csharp
-  - vb
-  name: About()
-  nameWithType: HomeController.About()
-  fullName: Customer.Controllers.HomeController.About()
-  type: Method
-  source:
-    remote:
-      path: src/Customer/Controllers/HomeController.cs
-      branch: master
-      repo: https://github.com/agngus/ticketSystem-jam.git
-    id: About
-    path: src/Customer/Controllers/HomeController.cs
-    startLine: 15
-  assemblies:
-  - Customer
-  namespace: Customer.Controllers
-  syntax:
-    content: public IActionResult About()
-    return:
-      type: Microsoft.AspNetCore.Mvc.IActionResult
-    content.vb: Public Function About As IActionResult
-  overload: Customer.Controllers.HomeController.About*
-  modifiers.csharp:
-  - public
-  modifiers.vb:
-  - Public
-- uid: Customer.Controllers.HomeController.Contact
-  commentId: M:Customer.Controllers.HomeController.Contact
-  id: Contact
-  parent: Customer.Controllers.HomeController
-  langs:
-  - csharp
-  - vb
-  name: Contact()
-  nameWithType: HomeController.Contact()
-  fullName: Customer.Controllers.HomeController.Contact()
-  type: Method
-  source:
-    remote:
-      path: src/Customer/Controllers/HomeController.cs
-      branch: master
-      repo: https://github.com/agngus/ticketSystem-jam.git
-    id: Contact
-    path: src/Customer/Controllers/HomeController.cs
-    startLine: 22
-  assemblies:
-  - Customer
-  namespace: Customer.Controllers
-  syntax:
-    content: public IActionResult Contact()
-    return:
-      type: Microsoft.AspNetCore.Mvc.IActionResult
-    content.vb: Public Function Contact As IActionResult
-  overload: Customer.Controllers.HomeController.Contact*
-  modifiers.csharp:
-  - public
-  modifiers.vb:
-  - Public
-- uid: Customer.Controllers.HomeController.Error
-  commentId: M:Customer.Controllers.HomeController.Error
-  id: Error
-  parent: Customer.Controllers.HomeController
-  langs:
-  - csharp
-  - vb
-  name: Error()
-  nameWithType: HomeController.Error()
-  fullName: Customer.Controllers.HomeController.Error()
-  type: Method
-  source:
-    remote:
-      path: src/Customer/Controllers/HomeController.cs
-      branch: master
-      repo: https://github.com/agngus/ticketSystem-jam.git
-    id: Error
-    path: src/Customer/Controllers/HomeController.cs
-    startLine: 29
-  assemblies:
-  - Customer
-  namespace: Customer.Controllers
-  syntax:
-    content: public IActionResult Error()
-    return:
-      type: Microsoft.AspNetCore.Mvc.IActionResult
-    content.vb: Public Function Error As IActionResult
-  overload: Customer.Controllers.HomeController.Error*
-  modifiers.csharp:
-  - public
-  modifiers.vb:
-  - Public
-- uid: Customer.Controllers.HomeController.Shop
-  commentId: M:Customer.Controllers.HomeController.Shop
-  id: Shop
-  parent: Customer.Controllers.HomeController
-  langs:
-  - csharp
-  - vb
-  name: Shop()
-  nameWithType: HomeController.Shop()
-  fullName: Customer.Controllers.HomeController.Shop()
-  type: Method
-  source:
-    remote:
-      path: src/Customer/Controllers/HomeController.cs
-      branch: master
-      repo: https://github.com/agngus/ticketSystem-jam.git
-    id: Shop
-    path: src/Customer/Controllers/HomeController.cs
-    startLine: 34
-  assemblies:
-  - Customer
-  namespace: Customer.Controllers
-  syntax:
-    content: public IActionResult Shop()
-    return:
-      type: Microsoft.AspNetCore.Mvc.IActionResult
-    content.vb: Public Function Shop As IActionResult
-  overload: Customer.Controllers.HomeController.Shop*
+    content.vb: Public Function Home As IActionResult
+  overload: Customer.Controllers.HomeController.Home*
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -10453,12 +10321,12 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: Customer.Controllers.HomeController.Index*
-  commentId: Overload:Customer.Controllers.HomeController.Index
+- uid: Customer.Controllers.HomeController.Home*
+  commentId: Overload:Customer.Controllers.HomeController.Home
   isExternal: false
-  name: Index
-  nameWithType: HomeController.Index
-  fullName: Customer.Controllers.HomeController.Index
+  name: Home
+  nameWithType: HomeController.Home
+  fullName: Customer.Controllers.HomeController.Home
 - uid: Microsoft.AspNetCore.Mvc.IActionResult
   commentId: T:Microsoft.AspNetCore.Mvc.IActionResult
   parent: Microsoft.AspNetCore.Mvc
@@ -10466,27 +10334,3 @@ references:
   name: IActionResult
   nameWithType: IActionResult
   fullName: Microsoft.AspNetCore.Mvc.IActionResult
-- uid: Customer.Controllers.HomeController.About*
-  commentId: Overload:Customer.Controllers.HomeController.About
-  isExternal: false
-  name: About
-  nameWithType: HomeController.About
-  fullName: Customer.Controllers.HomeController.About
-- uid: Customer.Controllers.HomeController.Contact*
-  commentId: Overload:Customer.Controllers.HomeController.Contact
-  isExternal: false
-  name: Contact
-  nameWithType: HomeController.Contact
-  fullName: Customer.Controllers.HomeController.Contact
-- uid: Customer.Controllers.HomeController.Error*
-  commentId: Overload:Customer.Controllers.HomeController.Error
-  isExternal: false
-  name: Error
-  nameWithType: HomeController.Error
-  fullName: Customer.Controllers.HomeController.Error
-- uid: Customer.Controllers.HomeController.Shop*
-  commentId: Overload:Customer.Controllers.HomeController.Shop
-  isExternal: false
-  name: Shop
-  nameWithType: HomeController.Shop
-  fullName: Customer.Controllers.HomeController.Shop

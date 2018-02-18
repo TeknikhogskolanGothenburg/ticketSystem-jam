@@ -5,11 +5,36 @@ items:
   id: TicketApi
   parent: TicketSystem.RestApiClient
   children:
-  - TicketSystem.RestApiClient.TicketApi.EventGet
+  - TicketSystem.RestApiClient.TicketApi.AddTicketBuyer(ClassLibrary.TicketToTransaction)
+  - TicketSystem.RestApiClient.TicketApi.DeleteEvent(System.Int32)
+  - TicketSystem.RestApiClient.TicketApi.DeleteEventDates(System.Int32)
+  - TicketSystem.RestApiClient.TicketApi.DeleteTicketTransaction(System.Int32)
+  - TicketSystem.RestApiClient.TicketApi.DeleteVenues(System.Int32)
+  - TicketSystem.RestApiClient.TicketApi.EventDatesAdd(ClassLibrary.TicketEventDate)
+  - TicketSystem.RestApiClient.TicketApi.EventDatesUpdate(System.Int32,ClassLibrary.TicketEventDate)
+  - TicketSystem.RestApiClient.TicketApi.EventsAdd(ClassLibrary.TicketEvent)
+  - TicketSystem.RestApiClient.TicketApi.EventsUpdate(System.Int32,ClassLibrary.TicketEvent)
+  - TicketSystem.RestApiClient.TicketApi.FindTicketBuyer(System.Int32)
+  - TicketSystem.RestApiClient.TicketApi.GetAllEventDates
+  - TicketSystem.RestApiClient.TicketApi.GetAllEvents
+  - TicketSystem.RestApiClient.TicketApi.GetAllSummary
+  - TicketSystem.RestApiClient.TicketApi.GetAllTicketTransactions
+  - TicketSystem.RestApiClient.TicketApi.GetAllVenues
+  - TicketSystem.RestApiClient.TicketApi.GetCustomer(System.String)
+  - TicketSystem.RestApiClient.TicketApi.GetEventDates(System.Int32)
+  - TicketSystem.RestApiClient.TicketApi.GetEvents(System.Int32)
+  - TicketSystem.RestApiClient.TicketApi.GetSearchSummary(System.String)
+  - TicketSystem.RestApiClient.TicketApi.GetSummary(System.Int32)
+  - TicketSystem.RestApiClient.TicketApi.GetTicketTransactions(System.Int32)
+  - TicketSystem.RestApiClient.TicketApi.GetVenues(System.Int32)
+  - TicketSystem.RestApiClient.TicketApi.PurchasedSeats(ClassLibrary.EventSummary)
+  - TicketSystem.RestApiClient.TicketApi.PurchasedTickets(ClassLibrary.SeatsAtEventDate)
   - TicketSystem.RestApiClient.TicketApi.TicketGet
   - TicketSystem.RestApiClient.TicketApi.TicketTicketIdGet(System.Int32)
-  - TicketSystem.RestApiClient.TicketApi.VenueDelete(System.Int32)
-  - TicketSystem.RestApiClient.TicketApi.VenueGet
+  - TicketSystem.RestApiClient.TicketApi.TicketTransactionAdd(ClassLibrary.TicketTransaction)
+  - TicketSystem.RestApiClient.TicketApi.TicketTransactionUpdate(System.Int32,ClassLibrary.TicketTransaction)
+  - TicketSystem.RestApiClient.TicketApi.VenueAdd(ClassLibrary.Venue)
+  - TicketSystem.RestApiClient.TicketApi.VenuesUpdate(System.Int32,ClassLibrary.Venue)
   langs:
   - csharp
   - vb
@@ -24,7 +49,7 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: TicketApi
     path: src/RestApiClient/TicketApi.cs
-    startLine: 8
+    startLine: 9
   assemblies:
   - RestApiClient
   namespace: TicketSystem.RestApiClient
@@ -51,6 +76,715 @@ items:
   modifiers.vb:
   - Public
   - Class
+- uid: TicketSystem.RestApiClient.TicketApi.GetAllEvents
+  commentId: M:TicketSystem.RestApiClient.TicketApi.GetAllEvents
+  id: GetAllEvents
+  parent: TicketSystem.RestApiClient.TicketApi
+  langs:
+  - csharp
+  - vb
+  name: GetAllEvents()
+  nameWithType: TicketApi.GetAllEvents()
+  fullName: TicketSystem.RestApiClient.TicketApi.GetAllEvents()
+  type: Method
+  source:
+    remote:
+      path: src/RestApiClient/TicketApi.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
+    id: GetAllEvents
+    path: src/RestApiClient/TicketApi.cs
+    startLine: 16
+  assemblies:
+  - RestApiClient
+  namespace: TicketSystem.RestApiClient
+  syntax:
+    content: public List<TicketEvent> GetAllEvents()
+    return:
+      type: System.Collections.Generic.List{ClassLibrary.TicketEvent}
+    content.vb: Public Function GetAllEvents As List(Of TicketEvent)
+  overload: TicketSystem.RestApiClient.TicketApi.GetAllEvents*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TicketSystem.RestApiClient.TicketApi.GetEvents(System.Int32)
+  commentId: M:TicketSystem.RestApiClient.TicketApi.GetEvents(System.Int32)
+  id: GetEvents(System.Int32)
+  parent: TicketSystem.RestApiClient.TicketApi
+  langs:
+  - csharp
+  - vb
+  name: GetEvents(Int32)
+  nameWithType: TicketApi.GetEvents(Int32)
+  fullName: TicketSystem.RestApiClient.TicketApi.GetEvents(System.Int32)
+  type: Method
+  source:
+    remote:
+      path: src/RestApiClient/TicketApi.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
+    id: GetEvents
+    path: src/RestApiClient/TicketApi.cs
+    startLine: 24
+  assemblies:
+  - RestApiClient
+  namespace: TicketSystem.RestApiClient
+  syntax:
+    content: public List<TicketEvent> GetEvents(int id)
+    parameters:
+    - id: id
+      type: System.Int32
+    return:
+      type: System.Collections.Generic.List{ClassLibrary.TicketEvent}
+    content.vb: Public Function GetEvents(id As Integer) As List(Of TicketEvent)
+  overload: TicketSystem.RestApiClient.TicketApi.GetEvents*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TicketSystem.RestApiClient.TicketApi.EventsAdd(ClassLibrary.TicketEvent)
+  commentId: M:TicketSystem.RestApiClient.TicketApi.EventsAdd(ClassLibrary.TicketEvent)
+  id: EventsAdd(ClassLibrary.TicketEvent)
+  parent: TicketSystem.RestApiClient.TicketApi
+  langs:
+  - csharp
+  - vb
+  name: EventsAdd(TicketEvent)
+  nameWithType: TicketApi.EventsAdd(TicketEvent)
+  fullName: TicketSystem.RestApiClient.TicketApi.EventsAdd(ClassLibrary.TicketEvent)
+  type: Method
+  source:
+    remote:
+      path: src/RestApiClient/TicketApi.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
+    id: EventsAdd
+    path: src/RestApiClient/TicketApi.cs
+    startLine: 33
+  assemblies:
+  - RestApiClient
+  namespace: TicketSystem.RestApiClient
+  syntax:
+    content: public void EventsAdd(TicketEvent ticketEvent)
+    parameters:
+    - id: ticketEvent
+      type: ClassLibrary.TicketEvent
+    content.vb: Public Sub EventsAdd(ticketEvent As TicketEvent)
+  overload: TicketSystem.RestApiClient.TicketApi.EventsAdd*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TicketSystem.RestApiClient.TicketApi.EventsUpdate(System.Int32,ClassLibrary.TicketEvent)
+  commentId: M:TicketSystem.RestApiClient.TicketApi.EventsUpdate(System.Int32,ClassLibrary.TicketEvent)
+  id: EventsUpdate(System.Int32,ClassLibrary.TicketEvent)
+  parent: TicketSystem.RestApiClient.TicketApi
+  langs:
+  - csharp
+  - vb
+  name: EventsUpdate(Int32, TicketEvent)
+  nameWithType: TicketApi.EventsUpdate(Int32, TicketEvent)
+  fullName: TicketSystem.RestApiClient.TicketApi.EventsUpdate(System.Int32, ClassLibrary.TicketEvent)
+  type: Method
+  source:
+    remote:
+      path: src/RestApiClient/TicketApi.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
+    id: EventsUpdate
+    path: src/RestApiClient/TicketApi.cs
+    startLine: 42
+  assemblies:
+  - RestApiClient
+  namespace: TicketSystem.RestApiClient
+  syntax:
+    content: public void EventsUpdate(int id, TicketEvent ticketEvent)
+    parameters:
+    - id: id
+      type: System.Int32
+    - id: ticketEvent
+      type: ClassLibrary.TicketEvent
+    content.vb: Public Sub EventsUpdate(id As Integer, ticketEvent As TicketEvent)
+  overload: TicketSystem.RestApiClient.TicketApi.EventsUpdate*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TicketSystem.RestApiClient.TicketApi.DeleteEvent(System.Int32)
+  commentId: M:TicketSystem.RestApiClient.TicketApi.DeleteEvent(System.Int32)
+  id: DeleteEvent(System.Int32)
+  parent: TicketSystem.RestApiClient.TicketApi
+  langs:
+  - csharp
+  - vb
+  name: DeleteEvent(Int32)
+  nameWithType: TicketApi.DeleteEvent(Int32)
+  fullName: TicketSystem.RestApiClient.TicketApi.DeleteEvent(System.Int32)
+  type: Method
+  source:
+    remote:
+      path: src/RestApiClient/TicketApi.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
+    id: DeleteEvent
+    path: src/RestApiClient/TicketApi.cs
+    startLine: 52
+  assemblies:
+  - RestApiClient
+  namespace: TicketSystem.RestApiClient
+  syntax:
+    content: public void DeleteEvent(int id)
+    parameters:
+    - id: id
+      type: System.Int32
+    content.vb: Public Sub DeleteEvent(id As Integer)
+  overload: TicketSystem.RestApiClient.TicketApi.DeleteEvent*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TicketSystem.RestApiClient.TicketApi.GetAllVenues
+  commentId: M:TicketSystem.RestApiClient.TicketApi.GetAllVenues
+  id: GetAllVenues
+  parent: TicketSystem.RestApiClient.TicketApi
+  langs:
+  - csharp
+  - vb
+  name: GetAllVenues()
+  nameWithType: TicketApi.GetAllVenues()
+  fullName: TicketSystem.RestApiClient.TicketApi.GetAllVenues()
+  type: Method
+  source:
+    remote:
+      path: src/RestApiClient/TicketApi.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
+    id: GetAllVenues
+    path: src/RestApiClient/TicketApi.cs
+    startLine: 61
+  assemblies:
+  - RestApiClient
+  namespace: TicketSystem.RestApiClient
+  syntax:
+    content: public List<Venue> GetAllVenues()
+    return:
+      type: System.Collections.Generic.List{ClassLibrary.Venue}
+    content.vb: Public Function GetAllVenues As List(Of Venue)
+  overload: TicketSystem.RestApiClient.TicketApi.GetAllVenues*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TicketSystem.RestApiClient.TicketApi.GetVenues(System.Int32)
+  commentId: M:TicketSystem.RestApiClient.TicketApi.GetVenues(System.Int32)
+  id: GetVenues(System.Int32)
+  parent: TicketSystem.RestApiClient.TicketApi
+  langs:
+  - csharp
+  - vb
+  name: GetVenues(Int32)
+  nameWithType: TicketApi.GetVenues(Int32)
+  fullName: TicketSystem.RestApiClient.TicketApi.GetVenues(System.Int32)
+  type: Method
+  source:
+    remote:
+      path: src/RestApiClient/TicketApi.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
+    id: GetVenues
+    path: src/RestApiClient/TicketApi.cs
+    startLine: 69
+  assemblies:
+  - RestApiClient
+  namespace: TicketSystem.RestApiClient
+  syntax:
+    content: public Venue GetVenues(int id)
+    parameters:
+    - id: id
+      type: System.Int32
+    return:
+      type: ClassLibrary.Venue
+    content.vb: Public Function GetVenues(id As Integer) As Venue
+  overload: TicketSystem.RestApiClient.TicketApi.GetVenues*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TicketSystem.RestApiClient.TicketApi.VenueAdd(ClassLibrary.Venue)
+  commentId: M:TicketSystem.RestApiClient.TicketApi.VenueAdd(ClassLibrary.Venue)
+  id: VenueAdd(ClassLibrary.Venue)
+  parent: TicketSystem.RestApiClient.TicketApi
+  langs:
+  - csharp
+  - vb
+  name: VenueAdd(Venue)
+  nameWithType: TicketApi.VenueAdd(Venue)
+  fullName: TicketSystem.RestApiClient.TicketApi.VenueAdd(ClassLibrary.Venue)
+  type: Method
+  source:
+    remote:
+      path: src/RestApiClient/TicketApi.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
+    id: VenueAdd
+    path: src/RestApiClient/TicketApi.cs
+    startLine: 78
+  assemblies:
+  - RestApiClient
+  namespace: TicketSystem.RestApiClient
+  syntax:
+    content: public void VenueAdd(Venue venue)
+    parameters:
+    - id: venue
+      type: ClassLibrary.Venue
+    content.vb: Public Sub VenueAdd(venue As Venue)
+  overload: TicketSystem.RestApiClient.TicketApi.VenueAdd*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TicketSystem.RestApiClient.TicketApi.VenuesUpdate(System.Int32,ClassLibrary.Venue)
+  commentId: M:TicketSystem.RestApiClient.TicketApi.VenuesUpdate(System.Int32,ClassLibrary.Venue)
+  id: VenuesUpdate(System.Int32,ClassLibrary.Venue)
+  parent: TicketSystem.RestApiClient.TicketApi
+  langs:
+  - csharp
+  - vb
+  name: VenuesUpdate(Int32, Venue)
+  nameWithType: TicketApi.VenuesUpdate(Int32, Venue)
+  fullName: TicketSystem.RestApiClient.TicketApi.VenuesUpdate(System.Int32, ClassLibrary.Venue)
+  type: Method
+  source:
+    remote:
+      path: src/RestApiClient/TicketApi.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
+    id: VenuesUpdate
+    path: src/RestApiClient/TicketApi.cs
+    startLine: 87
+  assemblies:
+  - RestApiClient
+  namespace: TicketSystem.RestApiClient
+  syntax:
+    content: public void VenuesUpdate(int id, Venue venue)
+    parameters:
+    - id: id
+      type: System.Int32
+    - id: venue
+      type: ClassLibrary.Venue
+    content.vb: Public Sub VenuesUpdate(id As Integer, venue As Venue)
+  overload: TicketSystem.RestApiClient.TicketApi.VenuesUpdate*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TicketSystem.RestApiClient.TicketApi.DeleteVenues(System.Int32)
+  commentId: M:TicketSystem.RestApiClient.TicketApi.DeleteVenues(System.Int32)
+  id: DeleteVenues(System.Int32)
+  parent: TicketSystem.RestApiClient.TicketApi
+  langs:
+  - csharp
+  - vb
+  name: DeleteVenues(Int32)
+  nameWithType: TicketApi.DeleteVenues(Int32)
+  fullName: TicketSystem.RestApiClient.TicketApi.DeleteVenues(System.Int32)
+  type: Method
+  source:
+    remote:
+      path: src/RestApiClient/TicketApi.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
+    id: DeleteVenues
+    path: src/RestApiClient/TicketApi.cs
+    startLine: 97
+  assemblies:
+  - RestApiClient
+  namespace: TicketSystem.RestApiClient
+  syntax:
+    content: public void DeleteVenues(int id)
+    parameters:
+    - id: id
+      type: System.Int32
+    content.vb: Public Sub DeleteVenues(id As Integer)
+  overload: TicketSystem.RestApiClient.TicketApi.DeleteVenues*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TicketSystem.RestApiClient.TicketApi.GetAllEventDates
+  commentId: M:TicketSystem.RestApiClient.TicketApi.GetAllEventDates
+  id: GetAllEventDates
+  parent: TicketSystem.RestApiClient.TicketApi
+  langs:
+  - csharp
+  - vb
+  name: GetAllEventDates()
+  nameWithType: TicketApi.GetAllEventDates()
+  fullName: TicketSystem.RestApiClient.TicketApi.GetAllEventDates()
+  type: Method
+  source:
+    remote:
+      path: src/RestApiClient/TicketApi.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
+    id: GetAllEventDates
+    path: src/RestApiClient/TicketApi.cs
+    startLine: 106
+  assemblies:
+  - RestApiClient
+  namespace: TicketSystem.RestApiClient
+  syntax:
+    content: public List<TicketEventDate> GetAllEventDates()
+    return:
+      type: System.Collections.Generic.List{ClassLibrary.TicketEventDate}
+    content.vb: Public Function GetAllEventDates As List(Of TicketEventDate)
+  overload: TicketSystem.RestApiClient.TicketApi.GetAllEventDates*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TicketSystem.RestApiClient.TicketApi.GetEventDates(System.Int32)
+  commentId: M:TicketSystem.RestApiClient.TicketApi.GetEventDates(System.Int32)
+  id: GetEventDates(System.Int32)
+  parent: TicketSystem.RestApiClient.TicketApi
+  langs:
+  - csharp
+  - vb
+  name: GetEventDates(Int32)
+  nameWithType: TicketApi.GetEventDates(Int32)
+  fullName: TicketSystem.RestApiClient.TicketApi.GetEventDates(System.Int32)
+  type: Method
+  source:
+    remote:
+      path: src/RestApiClient/TicketApi.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
+    id: GetEventDates
+    path: src/RestApiClient/TicketApi.cs
+    startLine: 114
+  assemblies:
+  - RestApiClient
+  namespace: TicketSystem.RestApiClient
+  syntax:
+    content: public TicketEventDate GetEventDates(int id)
+    parameters:
+    - id: id
+      type: System.Int32
+    return:
+      type: ClassLibrary.TicketEventDate
+    content.vb: Public Function GetEventDates(id As Integer) As TicketEventDate
+  overload: TicketSystem.RestApiClient.TicketApi.GetEventDates*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TicketSystem.RestApiClient.TicketApi.EventDatesAdd(ClassLibrary.TicketEventDate)
+  commentId: M:TicketSystem.RestApiClient.TicketApi.EventDatesAdd(ClassLibrary.TicketEventDate)
+  id: EventDatesAdd(ClassLibrary.TicketEventDate)
+  parent: TicketSystem.RestApiClient.TicketApi
+  langs:
+  - csharp
+  - vb
+  name: EventDatesAdd(TicketEventDate)
+  nameWithType: TicketApi.EventDatesAdd(TicketEventDate)
+  fullName: TicketSystem.RestApiClient.TicketApi.EventDatesAdd(ClassLibrary.TicketEventDate)
+  type: Method
+  source:
+    remote:
+      path: src/RestApiClient/TicketApi.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
+    id: EventDatesAdd
+    path: src/RestApiClient/TicketApi.cs
+    startLine: 123
+  assemblies:
+  - RestApiClient
+  namespace: TicketSystem.RestApiClient
+  syntax:
+    content: public void EventDatesAdd(TicketEventDate ticketEventDate)
+    parameters:
+    - id: ticketEventDate
+      type: ClassLibrary.TicketEventDate
+    content.vb: Public Sub EventDatesAdd(ticketEventDate As TicketEventDate)
+  overload: TicketSystem.RestApiClient.TicketApi.EventDatesAdd*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TicketSystem.RestApiClient.TicketApi.EventDatesUpdate(System.Int32,ClassLibrary.TicketEventDate)
+  commentId: M:TicketSystem.RestApiClient.TicketApi.EventDatesUpdate(System.Int32,ClassLibrary.TicketEventDate)
+  id: EventDatesUpdate(System.Int32,ClassLibrary.TicketEventDate)
+  parent: TicketSystem.RestApiClient.TicketApi
+  langs:
+  - csharp
+  - vb
+  name: EventDatesUpdate(Int32, TicketEventDate)
+  nameWithType: TicketApi.EventDatesUpdate(Int32, TicketEventDate)
+  fullName: TicketSystem.RestApiClient.TicketApi.EventDatesUpdate(System.Int32, ClassLibrary.TicketEventDate)
+  type: Method
+  source:
+    remote:
+      path: src/RestApiClient/TicketApi.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
+    id: EventDatesUpdate
+    path: src/RestApiClient/TicketApi.cs
+    startLine: 132
+  assemblies:
+  - RestApiClient
+  namespace: TicketSystem.RestApiClient
+  syntax:
+    content: public void EventDatesUpdate(int id, TicketEventDate ticketEventDate)
+    parameters:
+    - id: id
+      type: System.Int32
+    - id: ticketEventDate
+      type: ClassLibrary.TicketEventDate
+    content.vb: Public Sub EventDatesUpdate(id As Integer, ticketEventDate As TicketEventDate)
+  overload: TicketSystem.RestApiClient.TicketApi.EventDatesUpdate*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TicketSystem.RestApiClient.TicketApi.DeleteEventDates(System.Int32)
+  commentId: M:TicketSystem.RestApiClient.TicketApi.DeleteEventDates(System.Int32)
+  id: DeleteEventDates(System.Int32)
+  parent: TicketSystem.RestApiClient.TicketApi
+  langs:
+  - csharp
+  - vb
+  name: DeleteEventDates(Int32)
+  nameWithType: TicketApi.DeleteEventDates(Int32)
+  fullName: TicketSystem.RestApiClient.TicketApi.DeleteEventDates(System.Int32)
+  type: Method
+  source:
+    remote:
+      path: src/RestApiClient/TicketApi.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
+    id: DeleteEventDates
+    path: src/RestApiClient/TicketApi.cs
+    startLine: 142
+  assemblies:
+  - RestApiClient
+  namespace: TicketSystem.RestApiClient
+  syntax:
+    content: public void DeleteEventDates(int id)
+    parameters:
+    - id: id
+      type: System.Int32
+    content.vb: Public Sub DeleteEventDates(id As Integer)
+  overload: TicketSystem.RestApiClient.TicketApi.DeleteEventDates*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TicketSystem.RestApiClient.TicketApi.GetAllTicketTransactions
+  commentId: M:TicketSystem.RestApiClient.TicketApi.GetAllTicketTransactions
+  id: GetAllTicketTransactions
+  parent: TicketSystem.RestApiClient.TicketApi
+  langs:
+  - csharp
+  - vb
+  name: GetAllTicketTransactions()
+  nameWithType: TicketApi.GetAllTicketTransactions()
+  fullName: TicketSystem.RestApiClient.TicketApi.GetAllTicketTransactions()
+  type: Method
+  source:
+    remote:
+      path: src/RestApiClient/TicketApi.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
+    id: GetAllTicketTransactions
+    path: src/RestApiClient/TicketApi.cs
+    startLine: 151
+  assemblies:
+  - RestApiClient
+  namespace: TicketSystem.RestApiClient
+  syntax:
+    content: public List<TicketTransaction> GetAllTicketTransactions()
+    return:
+      type: System.Collections.Generic.List{ClassLibrary.TicketTransaction}
+    content.vb: Public Function GetAllTicketTransactions As List(Of TicketTransaction)
+  overload: TicketSystem.RestApiClient.TicketApi.GetAllTicketTransactions*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TicketSystem.RestApiClient.TicketApi.GetTicketTransactions(System.Int32)
+  commentId: M:TicketSystem.RestApiClient.TicketApi.GetTicketTransactions(System.Int32)
+  id: GetTicketTransactions(System.Int32)
+  parent: TicketSystem.RestApiClient.TicketApi
+  langs:
+  - csharp
+  - vb
+  name: GetTicketTransactions(Int32)
+  nameWithType: TicketApi.GetTicketTransactions(Int32)
+  fullName: TicketSystem.RestApiClient.TicketApi.GetTicketTransactions(System.Int32)
+  type: Method
+  source:
+    remote:
+      path: src/RestApiClient/TicketApi.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
+    id: GetTicketTransactions
+    path: src/RestApiClient/TicketApi.cs
+    startLine: 159
+  assemblies:
+  - RestApiClient
+  namespace: TicketSystem.RestApiClient
+  syntax:
+    content: public TicketTransaction GetTicketTransactions(int id)
+    parameters:
+    - id: id
+      type: System.Int32
+    return:
+      type: ClassLibrary.TicketTransaction
+    content.vb: Public Function GetTicketTransactions(id As Integer) As TicketTransaction
+  overload: TicketSystem.RestApiClient.TicketApi.GetTicketTransactions*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TicketSystem.RestApiClient.TicketApi.TicketTransactionAdd(ClassLibrary.TicketTransaction)
+  commentId: M:TicketSystem.RestApiClient.TicketApi.TicketTransactionAdd(ClassLibrary.TicketTransaction)
+  id: TicketTransactionAdd(ClassLibrary.TicketTransaction)
+  parent: TicketSystem.RestApiClient.TicketApi
+  langs:
+  - csharp
+  - vb
+  name: TicketTransactionAdd(TicketTransaction)
+  nameWithType: TicketApi.TicketTransactionAdd(TicketTransaction)
+  fullName: TicketSystem.RestApiClient.TicketApi.TicketTransactionAdd(ClassLibrary.TicketTransaction)
+  type: Method
+  source:
+    remote:
+      path: src/RestApiClient/TicketApi.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
+    id: TicketTransactionAdd
+    path: src/RestApiClient/TicketApi.cs
+    startLine: 168
+  assemblies:
+  - RestApiClient
+  namespace: TicketSystem.RestApiClient
+  syntax:
+    content: public TicketTransaction TicketTransactionAdd(TicketTransaction ticketTransaction)
+    parameters:
+    - id: ticketTransaction
+      type: ClassLibrary.TicketTransaction
+    return:
+      type: ClassLibrary.TicketTransaction
+    content.vb: Public Function TicketTransactionAdd(ticketTransaction As TicketTransaction) As TicketTransaction
+  overload: TicketSystem.RestApiClient.TicketApi.TicketTransactionAdd*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TicketSystem.RestApiClient.TicketApi.TicketTransactionUpdate(System.Int32,ClassLibrary.TicketTransaction)
+  commentId: M:TicketSystem.RestApiClient.TicketApi.TicketTransactionUpdate(System.Int32,ClassLibrary.TicketTransaction)
+  id: TicketTransactionUpdate(System.Int32,ClassLibrary.TicketTransaction)
+  parent: TicketSystem.RestApiClient.TicketApi
+  langs:
+  - csharp
+  - vb
+  name: TicketTransactionUpdate(Int32, TicketTransaction)
+  nameWithType: TicketApi.TicketTransactionUpdate(Int32, TicketTransaction)
+  fullName: TicketSystem.RestApiClient.TicketApi.TicketTransactionUpdate(System.Int32, ClassLibrary.TicketTransaction)
+  type: Method
+  source:
+    remote:
+      path: src/RestApiClient/TicketApi.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
+    id: TicketTransactionUpdate
+    path: src/RestApiClient/TicketApi.cs
+    startLine: 179
+  assemblies:
+  - RestApiClient
+  namespace: TicketSystem.RestApiClient
+  syntax:
+    content: public void TicketTransactionUpdate(int id, TicketTransaction ticketTransaction)
+    parameters:
+    - id: id
+      type: System.Int32
+    - id: ticketTransaction
+      type: ClassLibrary.TicketTransaction
+    content.vb: Public Sub TicketTransactionUpdate(id As Integer, ticketTransaction As TicketTransaction)
+  overload: TicketSystem.RestApiClient.TicketApi.TicketTransactionUpdate*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TicketSystem.RestApiClient.TicketApi.DeleteTicketTransaction(System.Int32)
+  commentId: M:TicketSystem.RestApiClient.TicketApi.DeleteTicketTransaction(System.Int32)
+  id: DeleteTicketTransaction(System.Int32)
+  parent: TicketSystem.RestApiClient.TicketApi
+  langs:
+  - csharp
+  - vb
+  name: DeleteTicketTransaction(Int32)
+  nameWithType: TicketApi.DeleteTicketTransaction(Int32)
+  fullName: TicketSystem.RestApiClient.TicketApi.DeleteTicketTransaction(System.Int32)
+  type: Method
+  source:
+    remote:
+      path: src/RestApiClient/TicketApi.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
+    id: DeleteTicketTransaction
+    path: src/RestApiClient/TicketApi.cs
+    startLine: 189
+  assemblies:
+  - RestApiClient
+  namespace: TicketSystem.RestApiClient
+  syntax:
+    content: public void DeleteTicketTransaction(int id)
+    parameters:
+    - id: id
+      type: System.Int32
+    content.vb: Public Sub DeleteTicketTransaction(id As Integer)
+  overload: TicketSystem.RestApiClient.TicketApi.DeleteTicketTransaction*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TicketSystem.RestApiClient.TicketApi.GetCustomer(System.String)
+  commentId: M:TicketSystem.RestApiClient.TicketApi.GetCustomer(System.String)
+  id: GetCustomer(System.String)
+  parent: TicketSystem.RestApiClient.TicketApi
+  langs:
+  - csharp
+  - vb
+  name: GetCustomer(String)
+  nameWithType: TicketApi.GetCustomer(String)
+  fullName: TicketSystem.RestApiClient.TicketApi.GetCustomer(System.String)
+  type: Method
+  source:
+    remote:
+      path: src/RestApiClient/TicketApi.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
+    id: GetCustomer
+    path: src/RestApiClient/TicketApi.cs
+    startLine: 197
+  assemblies:
+  - RestApiClient
+  namespace: TicketSystem.RestApiClient
+  syntax:
+    content: public List<TicketTransaction> GetCustomer(string query)
+    parameters:
+    - id: query
+      type: System.String
+    return:
+      type: System.Collections.Generic.List{ClassLibrary.TicketTransaction}
+    content.vb: Public Function GetCustomer(query As String) As List(Of TicketTransaction)
+  overload: TicketSystem.RestApiClient.TicketApi.GetCustomer*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
 - uid: TicketSystem.RestApiClient.TicketApi.TicketGet
   commentId: M:TicketSystem.RestApiClient.TicketApi.TicketGet
   id: TicketGet
@@ -69,7 +803,7 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: TicketGet
     path: src/RestApiClient/TicketApi.cs
-    startLine: 12
+    startLine: 206
   assemblies:
   - RestApiClient
   namespace: TicketSystem.RestApiClient
@@ -85,99 +819,37 @@ items:
   - public
   modifiers.vb:
   - Public
-- uid: TicketSystem.RestApiClient.TicketApi.EventGet
-  commentId: M:TicketSystem.RestApiClient.TicketApi.EventGet
-  id: EventGet
+- uid: TicketSystem.RestApiClient.TicketApi.PurchasedTickets(ClassLibrary.SeatsAtEventDate)
+  commentId: M:TicketSystem.RestApiClient.TicketApi.PurchasedTickets(ClassLibrary.SeatsAtEventDate)
+  id: PurchasedTickets(ClassLibrary.SeatsAtEventDate)
   parent: TicketSystem.RestApiClient.TicketApi
   langs:
   - csharp
   - vb
-  name: EventGet()
-  nameWithType: TicketApi.EventGet()
-  fullName: TicketSystem.RestApiClient.TicketApi.EventGet()
+  name: PurchasedTickets(SeatsAtEventDate)
+  nameWithType: TicketApi.PurchasedTickets(SeatsAtEventDate)
+  fullName: TicketSystem.RestApiClient.TicketApi.PurchasedTickets(ClassLibrary.SeatsAtEventDate)
   type: Method
   source:
     remote:
       path: src/RestApiClient/TicketApi.cs
       branch: master
       repo: https://github.com/agngus/ticketSystem-jam.git
-    id: EventGet
+    id: PurchasedTickets
     path: src/RestApiClient/TicketApi.cs
-    startLine: 19
+    startLine: 214
   assemblies:
   - RestApiClient
   namespace: TicketSystem.RestApiClient
   syntax:
-    content: public List<TicketEvent> EventGet()
-    return:
-      type: System.Collections.Generic.List{ClassLibrary.TicketEvent}
-    content.vb: Public Function EventGet As List(Of TicketEvent)
-  overload: TicketSystem.RestApiClient.TicketApi.EventGet*
-  modifiers.csharp:
-  - public
-  modifiers.vb:
-  - Public
-- uid: TicketSystem.RestApiClient.TicketApi.VenueGet
-  commentId: M:TicketSystem.RestApiClient.TicketApi.VenueGet
-  id: VenueGet
-  parent: TicketSystem.RestApiClient.TicketApi
-  langs:
-  - csharp
-  - vb
-  name: VenueGet()
-  nameWithType: TicketApi.VenueGet()
-  fullName: TicketSystem.RestApiClient.TicketApi.VenueGet()
-  type: Method
-  source:
-    remote:
-      path: src/RestApiClient/TicketApi.cs
-      branch: master
-      repo: https://github.com/agngus/ticketSystem-jam.git
-    id: VenueGet
-    path: src/RestApiClient/TicketApi.cs
-    startLine: 27
-  assemblies:
-  - RestApiClient
-  namespace: TicketSystem.RestApiClient
-  syntax:
-    content: public List<Venue> VenueGet()
-    return:
-      type: System.Collections.Generic.List{ClassLibrary.Venue}
-    content.vb: Public Function VenueGet As List(Of Venue)
-  overload: TicketSystem.RestApiClient.TicketApi.VenueGet*
-  modifiers.csharp:
-  - public
-  modifiers.vb:
-  - Public
-- uid: TicketSystem.RestApiClient.TicketApi.VenueDelete(System.Int32)
-  commentId: M:TicketSystem.RestApiClient.TicketApi.VenueDelete(System.Int32)
-  id: VenueDelete(System.Int32)
-  parent: TicketSystem.RestApiClient.TicketApi
-  langs:
-  - csharp
-  - vb
-  name: VenueDelete(Int32)
-  nameWithType: TicketApi.VenueDelete(Int32)
-  fullName: TicketSystem.RestApiClient.TicketApi.VenueDelete(System.Int32)
-  type: Method
-  source:
-    remote:
-      path: src/RestApiClient/TicketApi.cs
-      branch: master
-      repo: https://github.com/agngus/ticketSystem-jam.git
-    id: VenueDelete
-    path: src/RestApiClient/TicketApi.cs
-    startLine: 35
-  assemblies:
-  - RestApiClient
-  namespace: TicketSystem.RestApiClient
-  syntax:
-    content: public void VenueDelete(int id)
+    content: public Tickets PurchasedTickets(SeatsAtEventDate seatsAtEventDate)
     parameters:
-    - id: id
-      type: System.Int32
-    content.vb: Public Sub VenueDelete(id As Integer)
-  overload: TicketSystem.RestApiClient.TicketApi.VenueDelete*
+    - id: seatsAtEventDate
+      type: ClassLibrary.SeatsAtEventDate
+    return:
+      type: ClassLibrary.Tickets
+    content.vb: Public Function PurchasedTickets(seatsAtEventDate As SeatsAtEventDate) As Tickets
+  overload: TicketSystem.RestApiClient.TicketApi.PurchasedTickets*
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -200,7 +872,7 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: TicketTicketIdGet
     path: src/RestApiClient/TicketApi.cs
-    startLine: 43
+    startLine: 223
   assemblies:
   - RestApiClient
   namespace: TicketSystem.RestApiClient
@@ -215,6 +887,213 @@ items:
   overload: TicketSystem.RestApiClient.TicketApi.TicketTicketIdGet*
   implements:
   - TicketSystem.RestApiClient.ITicketApi.TicketTicketIdGet(System.Int32)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TicketSystem.RestApiClient.TicketApi.GetAllSummary
+  commentId: M:TicketSystem.RestApiClient.TicketApi.GetAllSummary
+  id: GetAllSummary
+  parent: TicketSystem.RestApiClient.TicketApi
+  langs:
+  - csharp
+  - vb
+  name: GetAllSummary()
+  nameWithType: TicketApi.GetAllSummary()
+  fullName: TicketSystem.RestApiClient.TicketApi.GetAllSummary()
+  type: Method
+  source:
+    remote:
+      path: src/RestApiClient/TicketApi.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
+    id: GetAllSummary
+    path: src/RestApiClient/TicketApi.cs
+    startLine: 241
+  assemblies:
+  - RestApiClient
+  namespace: TicketSystem.RestApiClient
+  syntax:
+    content: public List<EventSummary> GetAllSummary()
+    return:
+      type: System.Collections.Generic.List{ClassLibrary.EventSummary}
+    content.vb: Public Function GetAllSummary As List(Of EventSummary)
+  overload: TicketSystem.RestApiClient.TicketApi.GetAllSummary*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TicketSystem.RestApiClient.TicketApi.GetSearchSummary(System.String)
+  commentId: M:TicketSystem.RestApiClient.TicketApi.GetSearchSummary(System.String)
+  id: GetSearchSummary(System.String)
+  parent: TicketSystem.RestApiClient.TicketApi
+  langs:
+  - csharp
+  - vb
+  name: GetSearchSummary(String)
+  nameWithType: TicketApi.GetSearchSummary(String)
+  fullName: TicketSystem.RestApiClient.TicketApi.GetSearchSummary(System.String)
+  type: Method
+  source:
+    remote:
+      path: src/RestApiClient/TicketApi.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
+    id: GetSearchSummary
+    path: src/RestApiClient/TicketApi.cs
+    startLine: 249
+  assemblies:
+  - RestApiClient
+  namespace: TicketSystem.RestApiClient
+  syntax:
+    content: public List<EventSummary> GetSearchSummary(string id)
+    parameters:
+    - id: id
+      type: System.String
+    return:
+      type: System.Collections.Generic.List{ClassLibrary.EventSummary}
+    content.vb: Public Function GetSearchSummary(id As String) As List(Of EventSummary)
+  overload: TicketSystem.RestApiClient.TicketApi.GetSearchSummary*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TicketSystem.RestApiClient.TicketApi.GetSummary(System.Int32)
+  commentId: M:TicketSystem.RestApiClient.TicketApi.GetSummary(System.Int32)
+  id: GetSummary(System.Int32)
+  parent: TicketSystem.RestApiClient.TicketApi
+  langs:
+  - csharp
+  - vb
+  name: GetSummary(Int32)
+  nameWithType: TicketApi.GetSummary(Int32)
+  fullName: TicketSystem.RestApiClient.TicketApi.GetSummary(System.Int32)
+  type: Method
+  source:
+    remote:
+      path: src/RestApiClient/TicketApi.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
+    id: GetSummary
+    path: src/RestApiClient/TicketApi.cs
+    startLine: 259
+  assemblies:
+  - RestApiClient
+  namespace: TicketSystem.RestApiClient
+  syntax:
+    content: public EventSummary GetSummary(int id)
+    parameters:
+    - id: id
+      type: System.Int32
+    return:
+      type: ClassLibrary.EventSummary
+    content.vb: Public Function GetSummary(id As Integer) As EventSummary
+  overload: TicketSystem.RestApiClient.TicketApi.GetSummary*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TicketSystem.RestApiClient.TicketApi.PurchasedSeats(ClassLibrary.EventSummary)
+  commentId: M:TicketSystem.RestApiClient.TicketApi.PurchasedSeats(ClassLibrary.EventSummary)
+  id: PurchasedSeats(ClassLibrary.EventSummary)
+  parent: TicketSystem.RestApiClient.TicketApi
+  langs:
+  - csharp
+  - vb
+  name: PurchasedSeats(EventSummary)
+  nameWithType: TicketApi.PurchasedSeats(EventSummary)
+  fullName: TicketSystem.RestApiClient.TicketApi.PurchasedSeats(ClassLibrary.EventSummary)
+  type: Method
+  source:
+    remote:
+      path: src/RestApiClient/TicketApi.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
+    id: PurchasedSeats
+    path: src/RestApiClient/TicketApi.cs
+    startLine: 268
+  assemblies:
+  - RestApiClient
+  namespace: TicketSystem.RestApiClient
+  syntax:
+    content: public SeatsAtEventDate PurchasedSeats(EventSummary eventSummary)
+    parameters:
+    - id: eventSummary
+      type: ClassLibrary.EventSummary
+    return:
+      type: ClassLibrary.SeatsAtEventDate
+    content.vb: Public Function PurchasedSeats(eventSummary As EventSummary) As SeatsAtEventDate
+  overload: TicketSystem.RestApiClient.TicketApi.PurchasedSeats*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TicketSystem.RestApiClient.TicketApi.AddTicketBuyer(ClassLibrary.TicketToTransaction)
+  commentId: M:TicketSystem.RestApiClient.TicketApi.AddTicketBuyer(ClassLibrary.TicketToTransaction)
+  id: AddTicketBuyer(ClassLibrary.TicketToTransaction)
+  parent: TicketSystem.RestApiClient.TicketApi
+  langs:
+  - csharp
+  - vb
+  name: AddTicketBuyer(TicketToTransaction)
+  nameWithType: TicketApi.AddTicketBuyer(TicketToTransaction)
+  fullName: TicketSystem.RestApiClient.TicketApi.AddTicketBuyer(ClassLibrary.TicketToTransaction)
+  type: Method
+  source:
+    remote:
+      path: src/RestApiClient/TicketApi.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
+    id: AddTicketBuyer
+    path: src/RestApiClient/TicketApi.cs
+    startLine: 278
+  assemblies:
+  - RestApiClient
+  namespace: TicketSystem.RestApiClient
+  syntax:
+    content: public TicketToTransaction AddTicketBuyer(TicketToTransaction ticketToTransaction)
+    parameters:
+    - id: ticketToTransaction
+      type: ClassLibrary.TicketToTransaction
+    return:
+      type: ClassLibrary.TicketToTransaction
+    content.vb: Public Function AddTicketBuyer(ticketToTransaction As TicketToTransaction) As TicketToTransaction
+  overload: TicketSystem.RestApiClient.TicketApi.AddTicketBuyer*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TicketSystem.RestApiClient.TicketApi.FindTicketBuyer(System.Int32)
+  commentId: M:TicketSystem.RestApiClient.TicketApi.FindTicketBuyer(System.Int32)
+  id: FindTicketBuyer(System.Int32)
+  parent: TicketSystem.RestApiClient.TicketApi
+  langs:
+  - csharp
+  - vb
+  name: FindTicketBuyer(Int32)
+  nameWithType: TicketApi.FindTicketBuyer(Int32)
+  fullName: TicketSystem.RestApiClient.TicketApi.FindTicketBuyer(System.Int32)
+  type: Method
+  source:
+    remote:
+      path: src/RestApiClient/TicketApi.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
+    id: FindTicketBuyer
+    path: src/RestApiClient/TicketApi.cs
+    startLine: 288
+  assemblies:
+  - RestApiClient
+  namespace: TicketSystem.RestApiClient
+  syntax:
+    content: public List<EventSummary> FindTicketBuyer(int id)
+    parameters:
+    - id: id
+      type: System.Int32
+    return:
+      type: System.Collections.Generic.List{ClassLibrary.EventSummary}
+    content.vb: Public Function FindTicketBuyer(id As Integer) As List(Of EventSummary)
+  overload: TicketSystem.RestApiClient.TicketApi.FindTicketBuyer*
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -525,6 +1404,393 @@ references:
   name: System
   nameWithType: System
   fullName: System
+- uid: TicketSystem.RestApiClient.TicketApi.GetAllEvents*
+  commentId: Overload:TicketSystem.RestApiClient.TicketApi.GetAllEvents
+  isExternal: false
+  name: GetAllEvents
+  nameWithType: TicketApi.GetAllEvents
+  fullName: TicketSystem.RestApiClient.TicketApi.GetAllEvents
+- uid: System.Collections.Generic.List{ClassLibrary.TicketEvent}
+  commentId: T:System.Collections.Generic.List{ClassLibrary.TicketEvent}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<TicketEvent>
+  nameWithType: List<TicketEvent>
+  fullName: System.Collections.Generic.List<ClassLibrary.TicketEvent>
+  nameWithType.vb: List(Of TicketEvent)
+  fullName.vb: System.Collections.Generic.List(Of ClassLibrary.TicketEvent)
+  name.vb: List(Of TicketEvent)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: ClassLibrary.TicketEvent
+    name: TicketEvent
+    nameWithType: TicketEvent
+    fullName: ClassLibrary.TicketEvent
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: ClassLibrary.TicketEvent
+    name: TicketEvent
+    nameWithType: TicketEvent
+    fullName: ClassLibrary.TicketEvent
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: false
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: TicketSystem.RestApiClient.TicketApi.GetEvents*
+  commentId: Overload:TicketSystem.RestApiClient.TicketApi.GetEvents
+  isExternal: false
+  name: GetEvents
+  nameWithType: TicketApi.GetEvents
+  fullName: TicketSystem.RestApiClient.TicketApi.GetEvents
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: TicketSystem.RestApiClient.TicketApi.EventsAdd*
+  commentId: Overload:TicketSystem.RestApiClient.TicketApi.EventsAdd
+  isExternal: false
+  name: EventsAdd
+  nameWithType: TicketApi.EventsAdd
+  fullName: TicketSystem.RestApiClient.TicketApi.EventsAdd
+- uid: ClassLibrary.TicketEvent
+  commentId: T:ClassLibrary.TicketEvent
+  parent: ClassLibrary
+  isExternal: false
+  name: TicketEvent
+  nameWithType: TicketEvent
+  fullName: ClassLibrary.TicketEvent
+- uid: ClassLibrary
+  commentId: N:ClassLibrary
+  isExternal: false
+  name: ClassLibrary
+  nameWithType: ClassLibrary
+  fullName: ClassLibrary
+- uid: TicketSystem.RestApiClient.TicketApi.EventsUpdate*
+  commentId: Overload:TicketSystem.RestApiClient.TicketApi.EventsUpdate
+  isExternal: false
+  name: EventsUpdate
+  nameWithType: TicketApi.EventsUpdate
+  fullName: TicketSystem.RestApiClient.TicketApi.EventsUpdate
+- uid: TicketSystem.RestApiClient.TicketApi.DeleteEvent*
+  commentId: Overload:TicketSystem.RestApiClient.TicketApi.DeleteEvent
+  isExternal: false
+  name: DeleteEvent
+  nameWithType: TicketApi.DeleteEvent
+  fullName: TicketSystem.RestApiClient.TicketApi.DeleteEvent
+- uid: TicketSystem.RestApiClient.TicketApi.GetAllVenues*
+  commentId: Overload:TicketSystem.RestApiClient.TicketApi.GetAllVenues
+  isExternal: false
+  name: GetAllVenues
+  nameWithType: TicketApi.GetAllVenues
+  fullName: TicketSystem.RestApiClient.TicketApi.GetAllVenues
+- uid: System.Collections.Generic.List{ClassLibrary.Venue}
+  commentId: T:System.Collections.Generic.List{ClassLibrary.Venue}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<Venue>
+  nameWithType: List<Venue>
+  fullName: System.Collections.Generic.List<ClassLibrary.Venue>
+  nameWithType.vb: List(Of Venue)
+  fullName.vb: System.Collections.Generic.List(Of ClassLibrary.Venue)
+  name.vb: List(Of Venue)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: ClassLibrary.Venue
+    name: Venue
+    nameWithType: Venue
+    fullName: ClassLibrary.Venue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: ClassLibrary.Venue
+    name: Venue
+    nameWithType: Venue
+    fullName: ClassLibrary.Venue
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TicketSystem.RestApiClient.TicketApi.GetVenues*
+  commentId: Overload:TicketSystem.RestApiClient.TicketApi.GetVenues
+  isExternal: false
+  name: GetVenues
+  nameWithType: TicketApi.GetVenues
+  fullName: TicketSystem.RestApiClient.TicketApi.GetVenues
+- uid: ClassLibrary.Venue
+  commentId: T:ClassLibrary.Venue
+  parent: ClassLibrary
+  isExternal: false
+  name: Venue
+  nameWithType: Venue
+  fullName: ClassLibrary.Venue
+- uid: TicketSystem.RestApiClient.TicketApi.VenueAdd*
+  commentId: Overload:TicketSystem.RestApiClient.TicketApi.VenueAdd
+  isExternal: false
+  name: VenueAdd
+  nameWithType: TicketApi.VenueAdd
+  fullName: TicketSystem.RestApiClient.TicketApi.VenueAdd
+- uid: TicketSystem.RestApiClient.TicketApi.VenuesUpdate*
+  commentId: Overload:TicketSystem.RestApiClient.TicketApi.VenuesUpdate
+  isExternal: false
+  name: VenuesUpdate
+  nameWithType: TicketApi.VenuesUpdate
+  fullName: TicketSystem.RestApiClient.TicketApi.VenuesUpdate
+- uid: TicketSystem.RestApiClient.TicketApi.DeleteVenues*
+  commentId: Overload:TicketSystem.RestApiClient.TicketApi.DeleteVenues
+  isExternal: false
+  name: DeleteVenues
+  nameWithType: TicketApi.DeleteVenues
+  fullName: TicketSystem.RestApiClient.TicketApi.DeleteVenues
+- uid: TicketSystem.RestApiClient.TicketApi.GetAllEventDates*
+  commentId: Overload:TicketSystem.RestApiClient.TicketApi.GetAllEventDates
+  isExternal: false
+  name: GetAllEventDates
+  nameWithType: TicketApi.GetAllEventDates
+  fullName: TicketSystem.RestApiClient.TicketApi.GetAllEventDates
+- uid: System.Collections.Generic.List{ClassLibrary.TicketEventDate}
+  commentId: T:System.Collections.Generic.List{ClassLibrary.TicketEventDate}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<TicketEventDate>
+  nameWithType: List<TicketEventDate>
+  fullName: System.Collections.Generic.List<ClassLibrary.TicketEventDate>
+  nameWithType.vb: List(Of TicketEventDate)
+  fullName.vb: System.Collections.Generic.List(Of ClassLibrary.TicketEventDate)
+  name.vb: List(Of TicketEventDate)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: ClassLibrary.TicketEventDate
+    name: TicketEventDate
+    nameWithType: TicketEventDate
+    fullName: ClassLibrary.TicketEventDate
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: ClassLibrary.TicketEventDate
+    name: TicketEventDate
+    nameWithType: TicketEventDate
+    fullName: ClassLibrary.TicketEventDate
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TicketSystem.RestApiClient.TicketApi.GetEventDates*
+  commentId: Overload:TicketSystem.RestApiClient.TicketApi.GetEventDates
+  isExternal: false
+  name: GetEventDates
+  nameWithType: TicketApi.GetEventDates
+  fullName: TicketSystem.RestApiClient.TicketApi.GetEventDates
+- uid: ClassLibrary.TicketEventDate
+  commentId: T:ClassLibrary.TicketEventDate
+  parent: ClassLibrary
+  isExternal: false
+  name: TicketEventDate
+  nameWithType: TicketEventDate
+  fullName: ClassLibrary.TicketEventDate
+- uid: TicketSystem.RestApiClient.TicketApi.EventDatesAdd*
+  commentId: Overload:TicketSystem.RestApiClient.TicketApi.EventDatesAdd
+  isExternal: false
+  name: EventDatesAdd
+  nameWithType: TicketApi.EventDatesAdd
+  fullName: TicketSystem.RestApiClient.TicketApi.EventDatesAdd
+- uid: TicketSystem.RestApiClient.TicketApi.EventDatesUpdate*
+  commentId: Overload:TicketSystem.RestApiClient.TicketApi.EventDatesUpdate
+  isExternal: false
+  name: EventDatesUpdate
+  nameWithType: TicketApi.EventDatesUpdate
+  fullName: TicketSystem.RestApiClient.TicketApi.EventDatesUpdate
+- uid: TicketSystem.RestApiClient.TicketApi.DeleteEventDates*
+  commentId: Overload:TicketSystem.RestApiClient.TicketApi.DeleteEventDates
+  isExternal: false
+  name: DeleteEventDates
+  nameWithType: TicketApi.DeleteEventDates
+  fullName: TicketSystem.RestApiClient.TicketApi.DeleteEventDates
+- uid: TicketSystem.RestApiClient.TicketApi.GetAllTicketTransactions*
+  commentId: Overload:TicketSystem.RestApiClient.TicketApi.GetAllTicketTransactions
+  isExternal: false
+  name: GetAllTicketTransactions
+  nameWithType: TicketApi.GetAllTicketTransactions
+  fullName: TicketSystem.RestApiClient.TicketApi.GetAllTicketTransactions
+- uid: System.Collections.Generic.List{ClassLibrary.TicketTransaction}
+  commentId: T:System.Collections.Generic.List{ClassLibrary.TicketTransaction}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<TicketTransaction>
+  nameWithType: List<TicketTransaction>
+  fullName: System.Collections.Generic.List<ClassLibrary.TicketTransaction>
+  nameWithType.vb: List(Of TicketTransaction)
+  fullName.vb: System.Collections.Generic.List(Of ClassLibrary.TicketTransaction)
+  name.vb: List(Of TicketTransaction)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: ClassLibrary.TicketTransaction
+    name: TicketTransaction
+    nameWithType: TicketTransaction
+    fullName: ClassLibrary.TicketTransaction
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: ClassLibrary.TicketTransaction
+    name: TicketTransaction
+    nameWithType: TicketTransaction
+    fullName: ClassLibrary.TicketTransaction
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TicketSystem.RestApiClient.TicketApi.GetTicketTransactions*
+  commentId: Overload:TicketSystem.RestApiClient.TicketApi.GetTicketTransactions
+  isExternal: false
+  name: GetTicketTransactions
+  nameWithType: TicketApi.GetTicketTransactions
+  fullName: TicketSystem.RestApiClient.TicketApi.GetTicketTransactions
+- uid: ClassLibrary.TicketTransaction
+  commentId: T:ClassLibrary.TicketTransaction
+  parent: ClassLibrary
+  isExternal: false
+  name: TicketTransaction
+  nameWithType: TicketTransaction
+  fullName: ClassLibrary.TicketTransaction
+- uid: TicketSystem.RestApiClient.TicketApi.TicketTransactionAdd*
+  commentId: Overload:TicketSystem.RestApiClient.TicketApi.TicketTransactionAdd
+  isExternal: false
+  name: TicketTransactionAdd
+  nameWithType: TicketApi.TicketTransactionAdd
+  fullName: TicketSystem.RestApiClient.TicketApi.TicketTransactionAdd
+- uid: TicketSystem.RestApiClient.TicketApi.TicketTransactionUpdate*
+  commentId: Overload:TicketSystem.RestApiClient.TicketApi.TicketTransactionUpdate
+  isExternal: false
+  name: TicketTransactionUpdate
+  nameWithType: TicketApi.TicketTransactionUpdate
+  fullName: TicketSystem.RestApiClient.TicketApi.TicketTransactionUpdate
+- uid: TicketSystem.RestApiClient.TicketApi.DeleteTicketTransaction*
+  commentId: Overload:TicketSystem.RestApiClient.TicketApi.DeleteTicketTransaction
+  isExternal: false
+  name: DeleteTicketTransaction
+  nameWithType: TicketApi.DeleteTicketTransaction
+  fullName: TicketSystem.RestApiClient.TicketApi.DeleteTicketTransaction
+- uid: TicketSystem.RestApiClient.TicketApi.GetCustomer*
+  commentId: Overload:TicketSystem.RestApiClient.TicketApi.GetCustomer
+  isExternal: false
+  name: GetCustomer
+  nameWithType: TicketApi.GetCustomer
+  fullName: TicketSystem.RestApiClient.TicketApi.GetCustomer
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
 - uid: TicketSystem.RestApiClient.TicketApi.TicketGet*
   commentId: Overload:TicketSystem.RestApiClient.TicketApi.TicketGet
   isExternal: false
@@ -602,160 +1868,26 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: System.Collections.Generic.List`1
-  commentId: T:System.Collections.Generic.List`1
-  isExternal: true
-  name: List<T>
-  nameWithType: List<T>
-  fullName: System.Collections.Generic.List<T>
-  nameWithType.vb: List(Of T)
-  fullName.vb: System.Collections.Generic.List(Of T)
-  name.vb: List(Of T)
-  spec.csharp:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    nameWithType: List
-    fullName: System.Collections.Generic.List
-    isExternal: true
-  - name: <
-    nameWithType: <
-    fullName: <
-  - name: T
-    nameWithType: T
-    fullName: T
-  - name: '>'
-    nameWithType: '>'
-    fullName: '>'
-  spec.vb:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    nameWithType: List
-    fullName: System.Collections.Generic.List
-    isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
-  - name: T
-    nameWithType: T
-    fullName: T
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Collections.Generic
-  commentId: N:System.Collections.Generic
+- uid: TicketSystem.RestApiClient.TicketApi.PurchasedTickets*
+  commentId: Overload:TicketSystem.RestApiClient.TicketApi.PurchasedTickets
   isExternal: false
-  name: System.Collections.Generic
-  nameWithType: System.Collections.Generic
-  fullName: System.Collections.Generic
-- uid: TicketSystem.RestApiClient.TicketApi.EventGet*
-  commentId: Overload:TicketSystem.RestApiClient.TicketApi.EventGet
+  name: PurchasedTickets
+  nameWithType: TicketApi.PurchasedTickets
+  fullName: TicketSystem.RestApiClient.TicketApi.PurchasedTickets
+- uid: ClassLibrary.SeatsAtEventDate
+  commentId: T:ClassLibrary.SeatsAtEventDate
+  parent: ClassLibrary
   isExternal: false
-  name: EventGet
-  nameWithType: TicketApi.EventGet
-  fullName: TicketSystem.RestApiClient.TicketApi.EventGet
-- uid: System.Collections.Generic.List{ClassLibrary.TicketEvent}
-  commentId: T:System.Collections.Generic.List{ClassLibrary.TicketEvent}
-  parent: System.Collections.Generic
-  definition: System.Collections.Generic.List`1
-  name: List<TicketEvent>
-  nameWithType: List<TicketEvent>
-  fullName: System.Collections.Generic.List<ClassLibrary.TicketEvent>
-  nameWithType.vb: List(Of TicketEvent)
-  fullName.vb: System.Collections.Generic.List(Of ClassLibrary.TicketEvent)
-  name.vb: List(Of TicketEvent)
-  spec.csharp:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    nameWithType: List
-    fullName: System.Collections.Generic.List
-    isExternal: true
-  - name: <
-    nameWithType: <
-    fullName: <
-  - uid: ClassLibrary.TicketEvent
-    name: TicketEvent
-    nameWithType: TicketEvent
-    fullName: ClassLibrary.TicketEvent
-  - name: '>'
-    nameWithType: '>'
-    fullName: '>'
-  spec.vb:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    nameWithType: List
-    fullName: System.Collections.Generic.List
-    isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
-  - uid: ClassLibrary.TicketEvent
-    name: TicketEvent
-    nameWithType: TicketEvent
-    fullName: ClassLibrary.TicketEvent
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: TicketSystem.RestApiClient.TicketApi.VenueGet*
-  commentId: Overload:TicketSystem.RestApiClient.TicketApi.VenueGet
+  name: SeatsAtEventDate
+  nameWithType: SeatsAtEventDate
+  fullName: ClassLibrary.SeatsAtEventDate
+- uid: ClassLibrary.Tickets
+  commentId: T:ClassLibrary.Tickets
+  parent: ClassLibrary
   isExternal: false
-  name: VenueGet
-  nameWithType: TicketApi.VenueGet
-  fullName: TicketSystem.RestApiClient.TicketApi.VenueGet
-- uid: System.Collections.Generic.List{ClassLibrary.Venue}
-  commentId: T:System.Collections.Generic.List{ClassLibrary.Venue}
-  parent: System.Collections.Generic
-  definition: System.Collections.Generic.List`1
-  name: List<Venue>
-  nameWithType: List<Venue>
-  fullName: System.Collections.Generic.List<ClassLibrary.Venue>
-  nameWithType.vb: List(Of Venue)
-  fullName.vb: System.Collections.Generic.List(Of ClassLibrary.Venue)
-  name.vb: List(Of Venue)
-  spec.csharp:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    nameWithType: List
-    fullName: System.Collections.Generic.List
-    isExternal: true
-  - name: <
-    nameWithType: <
-    fullName: <
-  - uid: ClassLibrary.Venue
-    name: Venue
-    nameWithType: Venue
-    fullName: ClassLibrary.Venue
-  - name: '>'
-    nameWithType: '>'
-    fullName: '>'
-  spec.vb:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    nameWithType: List
-    fullName: System.Collections.Generic.List
-    isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
-  - uid: ClassLibrary.Venue
-    name: Venue
-    nameWithType: Venue
-    fullName: ClassLibrary.Venue
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: TicketSystem.RestApiClient.TicketApi.VenueDelete*
-  commentId: Overload:TicketSystem.RestApiClient.TicketApi.VenueDelete
-  isExternal: false
-  name: VenueDelete
-  nameWithType: TicketApi.VenueDelete
-  fullName: TicketSystem.RestApiClient.TicketApi.VenueDelete
-- uid: System.Int32
-  commentId: T:System.Int32
-  parent: System
-  isExternal: true
-  name: Int32
-  nameWithType: Int32
-  fullName: System.Int32
+  name: Tickets
+  nameWithType: Tickets
+  fullName: ClassLibrary.Tickets
 - uid: TicketSystem.RestApiClient.TicketApi.TicketTicketIdGet*
   commentId: Overload:TicketSystem.RestApiClient.TicketApi.TicketTicketIdGet
   isExternal: false
@@ -814,3 +1946,95 @@ references:
   name: TicketSystem.RestApiClient.Model
   nameWithType: TicketSystem.RestApiClient.Model
   fullName: TicketSystem.RestApiClient.Model
+- uid: TicketSystem.RestApiClient.TicketApi.GetAllSummary*
+  commentId: Overload:TicketSystem.RestApiClient.TicketApi.GetAllSummary
+  isExternal: false
+  name: GetAllSummary
+  nameWithType: TicketApi.GetAllSummary
+  fullName: TicketSystem.RestApiClient.TicketApi.GetAllSummary
+- uid: System.Collections.Generic.List{ClassLibrary.EventSummary}
+  commentId: T:System.Collections.Generic.List{ClassLibrary.EventSummary}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<EventSummary>
+  nameWithType: List<EventSummary>
+  fullName: System.Collections.Generic.List<ClassLibrary.EventSummary>
+  nameWithType.vb: List(Of EventSummary)
+  fullName.vb: System.Collections.Generic.List(Of ClassLibrary.EventSummary)
+  name.vb: List(Of EventSummary)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: ClassLibrary.EventSummary
+    name: EventSummary
+    nameWithType: EventSummary
+    fullName: ClassLibrary.EventSummary
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: ClassLibrary.EventSummary
+    name: EventSummary
+    nameWithType: EventSummary
+    fullName: ClassLibrary.EventSummary
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TicketSystem.RestApiClient.TicketApi.GetSearchSummary*
+  commentId: Overload:TicketSystem.RestApiClient.TicketApi.GetSearchSummary
+  isExternal: false
+  name: GetSearchSummary
+  nameWithType: TicketApi.GetSearchSummary
+  fullName: TicketSystem.RestApiClient.TicketApi.GetSearchSummary
+- uid: TicketSystem.RestApiClient.TicketApi.GetSummary*
+  commentId: Overload:TicketSystem.RestApiClient.TicketApi.GetSummary
+  isExternal: false
+  name: GetSummary
+  nameWithType: TicketApi.GetSummary
+  fullName: TicketSystem.RestApiClient.TicketApi.GetSummary
+- uid: ClassLibrary.EventSummary
+  commentId: T:ClassLibrary.EventSummary
+  parent: ClassLibrary
+  isExternal: false
+  name: EventSummary
+  nameWithType: EventSummary
+  fullName: ClassLibrary.EventSummary
+- uid: TicketSystem.RestApiClient.TicketApi.PurchasedSeats*
+  commentId: Overload:TicketSystem.RestApiClient.TicketApi.PurchasedSeats
+  isExternal: false
+  name: PurchasedSeats
+  nameWithType: TicketApi.PurchasedSeats
+  fullName: TicketSystem.RestApiClient.TicketApi.PurchasedSeats
+- uid: TicketSystem.RestApiClient.TicketApi.AddTicketBuyer*
+  commentId: Overload:TicketSystem.RestApiClient.TicketApi.AddTicketBuyer
+  isExternal: false
+  name: AddTicketBuyer
+  nameWithType: TicketApi.AddTicketBuyer
+  fullName: TicketSystem.RestApiClient.TicketApi.AddTicketBuyer
+- uid: ClassLibrary.TicketToTransaction
+  commentId: T:ClassLibrary.TicketToTransaction
+  parent: ClassLibrary
+  isExternal: false
+  name: TicketToTransaction
+  nameWithType: TicketToTransaction
+  fullName: ClassLibrary.TicketToTransaction
+- uid: TicketSystem.RestApiClient.TicketApi.FindTicketBuyer*
+  commentId: Overload:TicketSystem.RestApiClient.TicketApi.FindTicketBuyer
+  isExternal: false
+  name: FindTicketBuyer
+  nameWithType: TicketApi.FindTicketBuyer
+  fullName: TicketSystem.RestApiClient.TicketApi.FindTicketBuyer

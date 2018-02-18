@@ -23,7 +23,7 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: Startup
     path: src/TicketAPI/Startup.cs
-    startLine: 13
+    startLine: 16
   assemblies:
   - TicketAPI
   namespace: TicketAPI
@@ -64,7 +64,7 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: .ctor
     path: src/TicketAPI/Startup.cs
-    startLine: 15
+    startLine: 20
   assemblies:
   - TicketAPI
   namespace: TicketAPI
@@ -97,7 +97,7 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: Configuration
     path: src/TicketAPI/Startup.cs
-    startLine: 20
+    startLine: 25
   assemblies:
   - TicketAPI
   namespace: TicketAPI
@@ -132,7 +132,7 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: ConfigureServices
     path: src/TicketAPI/Startup.cs
-    startLine: 23
+    startLine: 31
   assemblies:
   - TicketAPI
   namespace: TicketAPI
@@ -165,7 +165,7 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: Configure
     path: src/TicketAPI/Startup.cs
-    startLine: 29
+    startLine: 57
   assemblies:
   - TicketAPI
   namespace: TicketAPI

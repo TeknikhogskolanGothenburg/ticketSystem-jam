@@ -5,8 +5,13 @@ items:
   id: ClassLibrary
   children:
   - ClassLibrary.AllModels
+  - ClassLibrary.EventSummary
+  - ClassLibrary.SeatsAtEventDate
   - ClassLibrary.TicketEvent
   - ClassLibrary.TicketEventDate
+  - ClassLibrary.Tickets
+  - ClassLibrary.TicketToTransaction
+  - ClassLibrary.TicketTransaction
   - ClassLibrary.Value
   - ClassLibrary.Venue
   langs:
@@ -25,6 +30,20 @@ references:
   name: AllModels
   nameWithType: AllModels
   fullName: ClassLibrary.AllModels
+- uid: ClassLibrary.EventSummary
+  commentId: T:ClassLibrary.EventSummary
+  parent: ClassLibrary
+  isExternal: false
+  name: EventSummary
+  nameWithType: EventSummary
+  fullName: ClassLibrary.EventSummary
+- uid: ClassLibrary.SeatsAtEventDate
+  commentId: T:ClassLibrary.SeatsAtEventDate
+  parent: ClassLibrary
+  isExternal: false
+  name: SeatsAtEventDate
+  nameWithType: SeatsAtEventDate
+  fullName: ClassLibrary.SeatsAtEventDate
 - uid: ClassLibrary.TicketEvent
   commentId: T:ClassLibrary.TicketEvent
   parent: ClassLibrary
@@ -39,6 +58,27 @@ references:
   name: TicketEventDate
   nameWithType: TicketEventDate
   fullName: ClassLibrary.TicketEventDate
+- uid: ClassLibrary.Tickets
+  commentId: T:ClassLibrary.Tickets
+  parent: ClassLibrary
+  isExternal: false
+  name: Tickets
+  nameWithType: Tickets
+  fullName: ClassLibrary.Tickets
+- uid: ClassLibrary.TicketToTransaction
+  commentId: T:ClassLibrary.TicketToTransaction
+  parent: ClassLibrary
+  isExternal: false
+  name: TicketToTransaction
+  nameWithType: TicketToTransaction
+  fullName: ClassLibrary.TicketToTransaction
+- uid: ClassLibrary.TicketTransaction
+  commentId: T:ClassLibrary.TicketTransaction
+  parent: ClassLibrary
+  isExternal: false
+  name: TicketTransaction
+  nameWithType: TicketTransaction
+  fullName: ClassLibrary.TicketTransaction
 - uid: ClassLibrary.Value
   commentId: T:ClassLibrary.Value
   parent: ClassLibrary

@@ -1,37 +1,42 @@
 ### YamlMime:ManagedReference
 items:
-- uid: Admin.Controllers.VenuesController
-  commentId: T:Admin.Controllers.VenuesController
-  id: VenuesController
-  parent: Admin.Controllers
+- uid: Customer.Controllers.CheckoutController
+  commentId: T:Customer.Controllers.CheckoutController
+  id: CheckoutController
+  parent: Customer.Controllers
   children:
-  - Admin.Controllers.VenuesController.AddVenues(ClassLibrary.Venue)
-  - Admin.Controllers.VenuesController.DeleteVenues(System.Int32)
-  - Admin.Controllers.VenuesController.DropdownChanged(System.Int32)
-  - Admin.Controllers.VenuesController.EditVenues(System.Int32,ClassLibrary.Venue)
-  - Admin.Controllers.VenuesController.Venues
+  - Customer.Controllers.CheckoutController.b
+  - Customer.Controllers.CheckoutController.Checkout(System.String)
+  - Customer.Controllers.CheckoutController.DeleteTicketFromCart(System.Int32)
+  - Customer.Controllers.CheckoutController.es
+  - Customer.Controllers.CheckoutController.GoToPayment(ClassLibrary.TicketTransaction)
+  - Customer.Controllers.CheckoutController.Index
+  - Customer.Controllers.CheckoutController.SeatsAtEventDate
+  - Customer.Controllers.CheckoutController.ticketApi
+  - Customer.Controllers.CheckoutController.TicketEvent
+  - Customer.Controllers.CheckoutController.value
   langs:
   - csharp
   - vb
-  name: VenuesController
-  nameWithType: VenuesController
-  fullName: Admin.Controllers.VenuesController
+  name: CheckoutController
+  nameWithType: CheckoutController
+  fullName: Customer.Controllers.CheckoutController
   type: Class
   source:
     remote:
-      path: src/Admin/Controllers/VenuesController.cs
+      path: src/Customer/Controllers/CheckoutController.cs
       branch: master
       repo: https://github.com/agngus/ticketSystem-jam.git
-    id: VenuesController
-    path: src/Admin/Controllers/VenuesController.cs
-    startLine: 11
+    id: CheckoutController
+    path: src/Customer/Controllers/CheckoutController.cs
+    startLine: 12
   assemblies:
-  - Admin
-  namespace: Admin.Controllers
+  - Customer
+  namespace: Customer.Controllers
   syntax:
-    content: 'public class VenuesController : Controller, IActionFilter, IAsyncActionFilter, IFilterMetadata, IDisposable'
+    content: 'public class CheckoutController : Controller, IActionFilter, IAsyncActionFilter, IFilterMetadata, IDisposable'
     content.vb: >-
-      Public Class VenuesController
+      Public Class CheckoutController
           Inherits Controller
           Implements IActionFilter, IAsyncActionFilter, IFilterMetadata, IDisposable
   inheritance:
@@ -216,187 +221,340 @@ items:
   modifiers.vb:
   - Public
   - Class
-- uid: Admin.Controllers.VenuesController.Venues
-  commentId: M:Admin.Controllers.VenuesController.Venues
-  id: Venues
-  parent: Admin.Controllers.VenuesController
+- uid: Customer.Controllers.CheckoutController.value
+  commentId: F:Customer.Controllers.CheckoutController.value
+  id: value
+  parent: Customer.Controllers.CheckoutController
   langs:
   - csharp
   - vb
-  name: Venues()
-  nameWithType: VenuesController.Venues()
-  fullName: Admin.Controllers.VenuesController.Venues()
-  type: Method
+  name: value
+  nameWithType: CheckoutController.value
+  fullName: Customer.Controllers.CheckoutController.value
+  type: Field
   source:
     remote:
-      path: src/Admin/Controllers/VenuesController.cs
+      path: src/Customer/Controllers/CheckoutController.cs
       branch: master
       repo: https://github.com/agngus/ticketSystem-jam.git
-    id: Venues
-    path: src/Admin/Controllers/VenuesController.cs
+    id: value
+    path: src/Customer/Controllers/CheckoutController.cs
+    startLine: 14
+  assemblies:
+  - Customer
+  namespace: Customer.Controllers
+  syntax:
+    content: public static Value value
+    return:
+      type: ClassLibrary.Value
+    content.vb: Public Shared value As Value
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Customer.Controllers.CheckoutController.ticketApi
+  commentId: F:Customer.Controllers.CheckoutController.ticketApi
+  id: ticketApi
+  parent: Customer.Controllers.CheckoutController
+  langs:
+  - csharp
+  - vb
+  name: ticketApi
+  nameWithType: CheckoutController.ticketApi
+  fullName: Customer.Controllers.CheckoutController.ticketApi
+  type: Field
+  source:
+    remote:
+      path: src/Customer/Controllers/CheckoutController.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
+    id: ticketApi
+    path: src/Customer/Controllers/CheckoutController.cs
+    startLine: 15
+  assemblies:
+  - Customer
+  namespace: Customer.Controllers
+  syntax:
+    content: public static TicketApi ticketApi
+    return:
+      type: TicketSystem.RestApiClient.TicketApi
+    content.vb: Public Shared ticketApi As TicketApi
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Customer.Controllers.CheckoutController.SeatsAtEventDate
+  commentId: F:Customer.Controllers.CheckoutController.SeatsAtEventDate
+  id: SeatsAtEventDate
+  parent: Customer.Controllers.CheckoutController
+  langs:
+  - csharp
+  - vb
+  name: SeatsAtEventDate
+  nameWithType: CheckoutController.SeatsAtEventDate
+  fullName: Customer.Controllers.CheckoutController.SeatsAtEventDate
+  type: Field
+  source:
+    remote:
+      path: src/Customer/Controllers/CheckoutController.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
+    id: SeatsAtEventDate
+    path: src/Customer/Controllers/CheckoutController.cs
+    startLine: 16
+  assemblies:
+  - Customer
+  namespace: Customer.Controllers
+  syntax:
+    content: public SeatsAtEventDate SeatsAtEventDate
+    return:
+      type: ClassLibrary.SeatsAtEventDate
+    content.vb: Public SeatsAtEventDate As SeatsAtEventDate
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Customer.Controllers.CheckoutController.TicketEvent
+  commentId: F:Customer.Controllers.CheckoutController.TicketEvent
+  id: TicketEvent
+  parent: Customer.Controllers.CheckoutController
+  langs:
+  - csharp
+  - vb
+  name: TicketEvent
+  nameWithType: CheckoutController.TicketEvent
+  fullName: Customer.Controllers.CheckoutController.TicketEvent
+  type: Field
+  source:
+    remote:
+      path: src/Customer/Controllers/CheckoutController.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
+    id: TicketEvent
+    path: src/Customer/Controllers/CheckoutController.cs
     startLine: 17
   assemblies:
-  - Admin
-  namespace: Admin.Controllers
+  - Customer
+  namespace: Customer.Controllers
   syntax:
-    content: public IActionResult Venues()
+    content: public TicketEvent TicketEvent
     return:
-      type: Microsoft.AspNetCore.Mvc.IActionResult
-    content.vb: Public Function Venues As IActionResult
-  overload: Admin.Controllers.VenuesController.Venues*
+      type: ClassLibrary.TicketEvent
+    content.vb: Public TicketEvent As TicketEvent
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
-- uid: Admin.Controllers.VenuesController.DeleteVenues(System.Int32)
-  commentId: M:Admin.Controllers.VenuesController.DeleteVenues(System.Int32)
-  id: DeleteVenues(System.Int32)
-  parent: Admin.Controllers.VenuesController
+- uid: Customer.Controllers.CheckoutController.b
+  commentId: F:Customer.Controllers.CheckoutController.b
+  id: b
+  parent: Customer.Controllers.CheckoutController
   langs:
   - csharp
   - vb
-  name: DeleteVenues(Int32)
-  nameWithType: VenuesController.DeleteVenues(Int32)
-  fullName: Admin.Controllers.VenuesController.DeleteVenues(System.Int32)
+  name: b
+  nameWithType: CheckoutController.b
+  fullName: Customer.Controllers.CheckoutController.b
+  type: Field
+  source:
+    remote:
+      path: src/Customer/Controllers/CheckoutController.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
+    id: b
+    path: src/Customer/Controllers/CheckoutController.cs
+    startLine: 18
+  assemblies:
+  - Customer
+  namespace: Customer.Controllers
+  syntax:
+    content: public EventSummary b
+    return:
+      type: ClassLibrary.EventSummary
+    content.vb: Public b As EventSummary
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Customer.Controllers.CheckoutController.es
+  commentId: F:Customer.Controllers.CheckoutController.es
+  id: es
+  parent: Customer.Controllers.CheckoutController
+  langs:
+  - csharp
+  - vb
+  name: es
+  nameWithType: CheckoutController.es
+  fullName: Customer.Controllers.CheckoutController.es
+  type: Field
+  source:
+    remote:
+      path: src/Customer/Controllers/CheckoutController.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
+    id: es
+    path: src/Customer/Controllers/CheckoutController.cs
+    startLine: 19
+  assemblies:
+  - Customer
+  namespace: Customer.Controllers
+  syntax:
+    content: public TicketEventDate es
+    return:
+      type: ClassLibrary.TicketEventDate
+    content.vb: Public es As TicketEventDate
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Customer.Controllers.CheckoutController.Index
+  commentId: M:Customer.Controllers.CheckoutController.Index
+  id: Index
+  parent: Customer.Controllers.CheckoutController
+  langs:
+  - csharp
+  - vb
+  name: Index()
+  nameWithType: CheckoutController.Index()
+  fullName: Customer.Controllers.CheckoutController.Index()
   type: Method
   source:
     remote:
-      path: src/Admin/Controllers/VenuesController.cs
+      path: src/Customer/Controllers/CheckoutController.cs
       branch: master
       repo: https://github.com/agngus/ticketSystem-jam.git
-    id: DeleteVenues
-    path: src/Admin/Controllers/VenuesController.cs
-    startLine: 32
+    id: Index
+    path: src/Customer/Controllers/CheckoutController.cs
+    startLine: 22
   assemblies:
-  - Admin
-  namespace: Admin.Controllers
+  - Customer
+  namespace: Customer.Controllers
   syntax:
-    content: public IActionResult DeleteVenues(int id)
+    content: public IActionResult Index()
+    return:
+      type: Microsoft.AspNetCore.Mvc.IActionResult
+    content.vb: Public Function Index As IActionResult
+  overload: Customer.Controllers.CheckoutController.Index*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Customer.Controllers.CheckoutController.Checkout(System.String)
+  commentId: M:Customer.Controllers.CheckoutController.Checkout(System.String)
+  id: Checkout(System.String)
+  parent: Customer.Controllers.CheckoutController
+  langs:
+  - csharp
+  - vb
+  name: Checkout(String)
+  nameWithType: CheckoutController.Checkout(String)
+  fullName: Customer.Controllers.CheckoutController.Checkout(System.String)
+  type: Method
+  source:
+    remote:
+      path: src/Customer/Controllers/CheckoutController.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
+    id: Checkout
+    path: src/Customer/Controllers/CheckoutController.cs
+    startLine: 27
+  assemblies:
+  - Customer
+  namespace: Customer.Controllers
+  syntax:
+    content: public IActionResult Checkout(string buttonclick)
     parameters:
-    - id: id
+    - id: buttonclick
+      type: System.String
+    return:
+      type: Microsoft.AspNetCore.Mvc.IActionResult
+    content.vb: Public Function Checkout(buttonclick As String) As IActionResult
+  overload: Customer.Controllers.CheckoutController.Checkout*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Customer.Controllers.CheckoutController.DeleteTicketFromCart(System.Int32)
+  commentId: M:Customer.Controllers.CheckoutController.DeleteTicketFromCart(System.Int32)
+  id: DeleteTicketFromCart(System.Int32)
+  parent: Customer.Controllers.CheckoutController
+  langs:
+  - csharp
+  - vb
+  name: DeleteTicketFromCart(Int32)
+  nameWithType: CheckoutController.DeleteTicketFromCart(Int32)
+  fullName: Customer.Controllers.CheckoutController.DeleteTicketFromCart(System.Int32)
+  type: Method
+  source:
+    remote:
+      path: src/Customer/Controllers/CheckoutController.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
+    id: DeleteTicketFromCart
+    path: src/Customer/Controllers/CheckoutController.cs
+    startLine: 51
+  assemblies:
+  - Customer
+  namespace: Customer.Controllers
+  syntax:
+    content: public IActionResult DeleteTicketFromCart(int eventID)
+    parameters:
+    - id: eventID
       type: System.Int32
     return:
       type: Microsoft.AspNetCore.Mvc.IActionResult
-    content.vb: Public Function DeleteVenues(id As Integer) As IActionResult
-  overload: Admin.Controllers.VenuesController.DeleteVenues*
+    content.vb: Public Function DeleteTicketFromCart(eventID As Integer) As IActionResult
+  overload: Customer.Controllers.CheckoutController.DeleteTicketFromCart*
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
-- uid: Admin.Controllers.VenuesController.AddVenues(ClassLibrary.Venue)
-  commentId: M:Admin.Controllers.VenuesController.AddVenues(ClassLibrary.Venue)
-  id: AddVenues(ClassLibrary.Venue)
-  parent: Admin.Controllers.VenuesController
+- uid: Customer.Controllers.CheckoutController.GoToPayment(ClassLibrary.TicketTransaction)
+  commentId: M:Customer.Controllers.CheckoutController.GoToPayment(ClassLibrary.TicketTransaction)
+  id: GoToPayment(ClassLibrary.TicketTransaction)
+  parent: Customer.Controllers.CheckoutController
   langs:
   - csharp
   - vb
-  name: AddVenues(Venue)
-  nameWithType: VenuesController.AddVenues(Venue)
-  fullName: Admin.Controllers.VenuesController.AddVenues(ClassLibrary.Venue)
+  name: GoToPayment(TicketTransaction)
+  nameWithType: CheckoutController.GoToPayment(TicketTransaction)
+  fullName: Customer.Controllers.CheckoutController.GoToPayment(ClassLibrary.TicketTransaction)
   type: Method
   source:
     remote:
-      path: src/Admin/Controllers/VenuesController.cs
+      path: src/Customer/Controllers/CheckoutController.cs
       branch: master
       repo: https://github.com/agngus/ticketSystem-jam.git
-    id: AddVenues
-    path: src/Admin/Controllers/VenuesController.cs
-    startLine: 47
+    id: GoToPayment
+    path: src/Customer/Controllers/CheckoutController.cs
+    startLine: 64
   assemblies:
-  - Admin
-  namespace: Admin.Controllers
+  - Customer
+  namespace: Customer.Controllers
   syntax:
-    content: public IActionResult AddVenues(Venue venue)
+    content: public IActionResult GoToPayment(TicketTransaction ticketBuyer)
     parameters:
-    - id: venue
-      type: ClassLibrary.Venue
+    - id: ticketBuyer
+      type: ClassLibrary.TicketTransaction
     return:
       type: Microsoft.AspNetCore.Mvc.IActionResult
-    content.vb: Public Function AddVenues(venue As Venue) As IActionResult
-  overload: Admin.Controllers.VenuesController.AddVenues*
-  modifiers.csharp:
-  - public
-  modifiers.vb:
-  - Public
-- uid: Admin.Controllers.VenuesController.EditVenues(System.Int32,ClassLibrary.Venue)
-  commentId: M:Admin.Controllers.VenuesController.EditVenues(System.Int32,ClassLibrary.Venue)
-  id: EditVenues(System.Int32,ClassLibrary.Venue)
-  parent: Admin.Controllers.VenuesController
-  langs:
-  - csharp
-  - vb
-  name: EditVenues(Int32, Venue)
-  nameWithType: VenuesController.EditVenues(Int32, Venue)
-  fullName: Admin.Controllers.VenuesController.EditVenues(System.Int32, ClassLibrary.Venue)
-  type: Method
-  source:
-    remote:
-      path: src/Admin/Controllers/VenuesController.cs
-      branch: master
-      repo: https://github.com/agngus/ticketSystem-jam.git
-    id: EditVenues
-    path: src/Admin/Controllers/VenuesController.cs
-    startLine: 62
-  assemblies:
-  - Admin
-  namespace: Admin.Controllers
-  syntax:
-    content: public IActionResult EditVenues(int id, Venue venue)
-    parameters:
-    - id: id
-      type: System.Int32
-    - id: venue
-      type: ClassLibrary.Venue
-    return:
-      type: Microsoft.AspNetCore.Mvc.IActionResult
-    content.vb: Public Function EditVenues(id As Integer, venue As Venue) As IActionResult
-  overload: Admin.Controllers.VenuesController.EditVenues*
-  modifiers.csharp:
-  - public
-  modifiers.vb:
-  - Public
-- uid: Admin.Controllers.VenuesController.DropdownChanged(System.Int32)
-  commentId: M:Admin.Controllers.VenuesController.DropdownChanged(System.Int32)
-  id: DropdownChanged(System.Int32)
-  parent: Admin.Controllers.VenuesController
-  langs:
-  - csharp
-  - vb
-  name: DropdownChanged(Int32)
-  nameWithType: VenuesController.DropdownChanged(Int32)
-  fullName: Admin.Controllers.VenuesController.DropdownChanged(System.Int32)
-  type: Method
-  source:
-    remote:
-      path: src/Admin/Controllers/VenuesController.cs
-      branch: master
-      repo: https://github.com/agngus/ticketSystem-jam.git
-    id: DropdownChanged
-    path: src/Admin/Controllers/VenuesController.cs
-    startLine: 77
-  assemblies:
-  - Admin
-  namespace: Admin.Controllers
-  syntax:
-    content: public IActionResult DropdownChanged(int id)
-    parameters:
-    - id: id
-      type: System.Int32
-    return:
-      type: Microsoft.AspNetCore.Mvc.IActionResult
-    content.vb: Public Function DropdownChanged(id As Integer) As IActionResult
-  overload: Admin.Controllers.VenuesController.DropdownChanged*
+    content.vb: Public Function GoToPayment(ticketBuyer As TicketTransaction) As IActionResult
+  overload: Customer.Controllers.CheckoutController.GoToPayment*
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
 references:
-- uid: Admin.Controllers
-  commentId: N:Admin.Controllers
+- uid: Customer.Controllers
+  commentId: N:Customer.Controllers
   isExternal: false
-  name: Admin.Controllers
-  nameWithType: Admin.Controllers
-  fullName: Admin.Controllers
+  name: Customer.Controllers
+  nameWithType: Customer.Controllers
+  fullName: Customer.Controllers
 - uid: System.Object
   commentId: T:System.Object
   parent: System
@@ -10467,12 +10625,66 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: Admin.Controllers.VenuesController.Venues*
-  commentId: Overload:Admin.Controllers.VenuesController.Venues
+- uid: ClassLibrary.Value
+  commentId: T:ClassLibrary.Value
+  parent: ClassLibrary
   isExternal: false
-  name: Venues
-  nameWithType: VenuesController.Venues
-  fullName: Admin.Controllers.VenuesController.Venues
+  name: Value
+  nameWithType: Value
+  fullName: ClassLibrary.Value
+- uid: ClassLibrary
+  commentId: N:ClassLibrary
+  isExternal: false
+  name: ClassLibrary
+  nameWithType: ClassLibrary
+  fullName: ClassLibrary
+- uid: TicketSystem.RestApiClient.TicketApi
+  commentId: T:TicketSystem.RestApiClient.TicketApi
+  parent: TicketSystem.RestApiClient
+  isExternal: false
+  name: TicketApi
+  nameWithType: TicketApi
+  fullName: TicketSystem.RestApiClient.TicketApi
+- uid: TicketSystem.RestApiClient
+  commentId: N:TicketSystem.RestApiClient
+  isExternal: false
+  name: TicketSystem.RestApiClient
+  nameWithType: TicketSystem.RestApiClient
+  fullName: TicketSystem.RestApiClient
+- uid: ClassLibrary.SeatsAtEventDate
+  commentId: T:ClassLibrary.SeatsAtEventDate
+  parent: ClassLibrary
+  isExternal: false
+  name: SeatsAtEventDate
+  nameWithType: SeatsAtEventDate
+  fullName: ClassLibrary.SeatsAtEventDate
+- uid: ClassLibrary.TicketEvent
+  commentId: T:ClassLibrary.TicketEvent
+  parent: ClassLibrary
+  isExternal: false
+  name: TicketEvent
+  nameWithType: TicketEvent
+  fullName: ClassLibrary.TicketEvent
+- uid: ClassLibrary.EventSummary
+  commentId: T:ClassLibrary.EventSummary
+  parent: ClassLibrary
+  isExternal: false
+  name: EventSummary
+  nameWithType: EventSummary
+  fullName: ClassLibrary.EventSummary
+- uid: ClassLibrary.TicketEventDate
+  commentId: T:ClassLibrary.TicketEventDate
+  parent: ClassLibrary
+  isExternal: false
+  name: TicketEventDate
+  nameWithType: TicketEventDate
+  fullName: ClassLibrary.TicketEventDate
+- uid: Customer.Controllers.CheckoutController.Index*
+  commentId: Overload:Customer.Controllers.CheckoutController.Index
+  isExternal: false
+  name: Index
+  nameWithType: CheckoutController.Index
+  fullName: Customer.Controllers.CheckoutController.Index
 - uid: Microsoft.AspNetCore.Mvc.IActionResult
   commentId: T:Microsoft.AspNetCore.Mvc.IActionResult
   parent: Microsoft.AspNetCore.Mvc
@@ -10480,12 +10692,25 @@ references:
   name: IActionResult
   nameWithType: IActionResult
   fullName: Microsoft.AspNetCore.Mvc.IActionResult
-- uid: Admin.Controllers.VenuesController.DeleteVenues*
-  commentId: Overload:Admin.Controllers.VenuesController.DeleteVenues
+- uid: Customer.Controllers.CheckoutController.Checkout*
+  commentId: Overload:Customer.Controllers.CheckoutController.Checkout
   isExternal: false
-  name: DeleteVenues
-  nameWithType: VenuesController.DeleteVenues
-  fullName: Admin.Controllers.VenuesController.DeleteVenues
+  name: Checkout
+  nameWithType: CheckoutController.Checkout
+  fullName: Customer.Controllers.CheckoutController.Checkout
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: Customer.Controllers.CheckoutController.DeleteTicketFromCart*
+  commentId: Overload:Customer.Controllers.CheckoutController.DeleteTicketFromCart
+  isExternal: false
+  name: DeleteTicketFromCart
+  nameWithType: CheckoutController.DeleteTicketFromCart
+  fullName: Customer.Controllers.CheckoutController.DeleteTicketFromCart
 - uid: System.Int32
   commentId: T:System.Int32
   parent: System
@@ -10493,34 +10718,16 @@ references:
   name: Int32
   nameWithType: Int32
   fullName: System.Int32
-- uid: Admin.Controllers.VenuesController.AddVenues*
-  commentId: Overload:Admin.Controllers.VenuesController.AddVenues
+- uid: Customer.Controllers.CheckoutController.GoToPayment*
+  commentId: Overload:Customer.Controllers.CheckoutController.GoToPayment
   isExternal: false
-  name: AddVenues
-  nameWithType: VenuesController.AddVenues
-  fullName: Admin.Controllers.VenuesController.AddVenues
-- uid: ClassLibrary.Venue
-  commentId: T:ClassLibrary.Venue
+  name: GoToPayment
+  nameWithType: CheckoutController.GoToPayment
+  fullName: Customer.Controllers.CheckoutController.GoToPayment
+- uid: ClassLibrary.TicketTransaction
+  commentId: T:ClassLibrary.TicketTransaction
   parent: ClassLibrary
   isExternal: false
-  name: Venue
-  nameWithType: Venue
-  fullName: ClassLibrary.Venue
-- uid: ClassLibrary
-  commentId: N:ClassLibrary
-  isExternal: false
-  name: ClassLibrary
-  nameWithType: ClassLibrary
-  fullName: ClassLibrary
-- uid: Admin.Controllers.VenuesController.EditVenues*
-  commentId: Overload:Admin.Controllers.VenuesController.EditVenues
-  isExternal: false
-  name: EditVenues
-  nameWithType: VenuesController.EditVenues
-  fullName: Admin.Controllers.VenuesController.EditVenues
-- uid: Admin.Controllers.VenuesController.DropdownChanged*
-  commentId: Overload:Admin.Controllers.VenuesController.DropdownChanged
-  isExternal: false
-  name: DropdownChanged
-  nameWithType: VenuesController.DropdownChanged
-  fullName: Admin.Controllers.VenuesController.DropdownChanged
+  name: TicketTransaction
+  nameWithType: TicketTransaction
+  fullName: ClassLibrary.TicketTransaction

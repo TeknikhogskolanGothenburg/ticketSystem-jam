@@ -6,6 +6,7 @@ items:
   children:
   - TicketAPI.Controllers.TicketEventDatesController
   - TicketAPI.Controllers.TicketEventsController
+  - TicketAPI.Controllers.TicketTransactionsController
   - TicketAPI.Controllers.VenuesController
   langs:
   - csharp
@@ -29,6 +30,12 @@ references:
   name: TicketEventsController
   nameWithType: TicketEventsController
   fullName: TicketAPI.Controllers.TicketEventsController
+- uid: TicketAPI.Controllers.TicketTransactionsController
+  commentId: T:TicketAPI.Controllers.TicketTransactionsController
+  isExternal: false
+  name: TicketTransactionsController
+  nameWithType: TicketTransactionsController
+  fullName: TicketAPI.Controllers.TicketTransactionsController
 - uid: TicketAPI.Controllers.VenuesController
   commentId: T:TicketAPI.Controllers.VenuesController
   isExternal: false

@@ -5,6 +5,7 @@ items:
   id: Admin.Models
   children:
   - Admin.Models.ErrorViewModel
+  - Admin.Models.TicketEvent
   langs:
   - csharp
   - vb
@@ -21,3 +22,9 @@ references:
   name: ErrorViewModel
   nameWithType: ErrorViewModel
   fullName: Admin.Models.ErrorViewModel
+- uid: Admin.Models.TicketEvent
+  commentId: T:Admin.Models.TicketEvent
+  isExternal: false
+  name: TicketEvent
+  nameWithType: TicketEvent
+  fullName: Admin.Models.TicketEvent

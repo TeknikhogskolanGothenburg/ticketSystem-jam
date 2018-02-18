@@ -1,37 +1,36 @@
 ### YamlMime:ManagedReference
 items:
-- uid: Admin.Controllers.VenuesController
-  commentId: T:Admin.Controllers.VenuesController
-  id: VenuesController
+- uid: Admin.Controllers.EventsController
+  commentId: T:Admin.Controllers.EventsController
+  id: EventsController
   parent: Admin.Controllers
   children:
-  - Admin.Controllers.VenuesController.AddVenues(ClassLibrary.Venue)
-  - Admin.Controllers.VenuesController.DeleteVenues(System.Int32)
-  - Admin.Controllers.VenuesController.DropdownChanged(System.Int32)
-  - Admin.Controllers.VenuesController.EditVenues(System.Int32,ClassLibrary.Venue)
-  - Admin.Controllers.VenuesController.Venues
+  - Admin.Controllers.EventsController.AddEvents(ClassLibrary.TicketEvent)
+  - Admin.Controllers.EventsController.DeleteEvents(System.Int32)
+  - Admin.Controllers.EventsController.EditEvents(System.Int32,ClassLibrary.TicketEvent)
+  - Admin.Controllers.EventsController.Events
   langs:
   - csharp
   - vb
-  name: VenuesController
-  nameWithType: VenuesController
-  fullName: Admin.Controllers.VenuesController
+  name: EventsController
+  nameWithType: EventsController
+  fullName: Admin.Controllers.EventsController
   type: Class
   source:
     remote:
-      path: src/Admin/Controllers/VenuesController.cs
+      path: src/Admin/Controllers/EventsController.cs
       branch: master
       repo: https://github.com/agngus/ticketSystem-jam.git
-    id: VenuesController
-    path: src/Admin/Controllers/VenuesController.cs
+    id: EventsController
+    path: src/Admin/Controllers/EventsController.cs
     startLine: 11
   assemblies:
   - Admin
   namespace: Admin.Controllers
   syntax:
-    content: 'public class VenuesController : Controller, IActionFilter, IAsyncActionFilter, IFilterMetadata, IDisposable'
+    content: 'public class EventsController : Controller, IActionFilter, IAsyncActionFilter, IFilterMetadata, IDisposable'
     content.vb: >-
-      Public Class VenuesController
+      Public Class EventsController
           Inherits Controller
           Implements IActionFilter, IAsyncActionFilter, IFilterMetadata, IDisposable
   inheritance:
@@ -216,176 +215,141 @@ items:
   modifiers.vb:
   - Public
   - Class
-- uid: Admin.Controllers.VenuesController.Venues
-  commentId: M:Admin.Controllers.VenuesController.Venues
-  id: Venues
-  parent: Admin.Controllers.VenuesController
+- uid: Admin.Controllers.EventsController.Events
+  commentId: M:Admin.Controllers.EventsController.Events
+  id: Events
+  parent: Admin.Controllers.EventsController
   langs:
   - csharp
   - vb
-  name: Venues()
-  nameWithType: VenuesController.Venues()
-  fullName: Admin.Controllers.VenuesController.Venues()
+  name: Events()
+  nameWithType: EventsController.Events()
+  fullName: Admin.Controllers.EventsController.Events()
   type: Method
   source:
     remote:
-      path: src/Admin/Controllers/VenuesController.cs
+      path: src/Admin/Controllers/EventsController.cs
       branch: master
       repo: https://github.com/agngus/ticketSystem-jam.git
-    id: Venues
-    path: src/Admin/Controllers/VenuesController.cs
+    id: Events
+    path: src/Admin/Controllers/EventsController.cs
     startLine: 17
   assemblies:
   - Admin
   namespace: Admin.Controllers
   syntax:
-    content: public IActionResult Venues()
+    content: public IActionResult Events()
     return:
       type: Microsoft.AspNetCore.Mvc.IActionResult
-    content.vb: Public Function Venues As IActionResult
-  overload: Admin.Controllers.VenuesController.Venues*
+    content.vb: Public Function Events As IActionResult
+  overload: Admin.Controllers.EventsController.Events*
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
-- uid: Admin.Controllers.VenuesController.DeleteVenues(System.Int32)
-  commentId: M:Admin.Controllers.VenuesController.DeleteVenues(System.Int32)
-  id: DeleteVenues(System.Int32)
-  parent: Admin.Controllers.VenuesController
+- uid: Admin.Controllers.EventsController.DeleteEvents(System.Int32)
+  commentId: M:Admin.Controllers.EventsController.DeleteEvents(System.Int32)
+  id: DeleteEvents(System.Int32)
+  parent: Admin.Controllers.EventsController
   langs:
   - csharp
   - vb
-  name: DeleteVenues(Int32)
-  nameWithType: VenuesController.DeleteVenues(Int32)
-  fullName: Admin.Controllers.VenuesController.DeleteVenues(System.Int32)
+  name: DeleteEvents(Int32)
+  nameWithType: EventsController.DeleteEvents(Int32)
+  fullName: Admin.Controllers.EventsController.DeleteEvents(System.Int32)
   type: Method
   source:
     remote:
-      path: src/Admin/Controllers/VenuesController.cs
+      path: src/Admin/Controllers/EventsController.cs
       branch: master
       repo: https://github.com/agngus/ticketSystem-jam.git
-    id: DeleteVenues
-    path: src/Admin/Controllers/VenuesController.cs
-    startLine: 32
+    id: DeleteEvents
+    path: src/Admin/Controllers/EventsController.cs
+    startLine: 33
   assemblies:
   - Admin
   namespace: Admin.Controllers
   syntax:
-    content: public IActionResult DeleteVenues(int id)
+    content: public IActionResult DeleteEvents(int id)
     parameters:
     - id: id
       type: System.Int32
     return:
       type: Microsoft.AspNetCore.Mvc.IActionResult
-    content.vb: Public Function DeleteVenues(id As Integer) As IActionResult
-  overload: Admin.Controllers.VenuesController.DeleteVenues*
+    content.vb: Public Function DeleteEvents(id As Integer) As IActionResult
+  overload: Admin.Controllers.EventsController.DeleteEvents*
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
-- uid: Admin.Controllers.VenuesController.AddVenues(ClassLibrary.Venue)
-  commentId: M:Admin.Controllers.VenuesController.AddVenues(ClassLibrary.Venue)
-  id: AddVenues(ClassLibrary.Venue)
-  parent: Admin.Controllers.VenuesController
+- uid: Admin.Controllers.EventsController.AddEvents(ClassLibrary.TicketEvent)
+  commentId: M:Admin.Controllers.EventsController.AddEvents(ClassLibrary.TicketEvent)
+  id: AddEvents(ClassLibrary.TicketEvent)
+  parent: Admin.Controllers.EventsController
   langs:
   - csharp
   - vb
-  name: AddVenues(Venue)
-  nameWithType: VenuesController.AddVenues(Venue)
-  fullName: Admin.Controllers.VenuesController.AddVenues(ClassLibrary.Venue)
+  name: AddEvents(TicketEvent)
+  nameWithType: EventsController.AddEvents(TicketEvent)
+  fullName: Admin.Controllers.EventsController.AddEvents(ClassLibrary.TicketEvent)
   type: Method
   source:
     remote:
-      path: src/Admin/Controllers/VenuesController.cs
+      path: src/Admin/Controllers/EventsController.cs
       branch: master
       repo: https://github.com/agngus/ticketSystem-jam.git
-    id: AddVenues
-    path: src/Admin/Controllers/VenuesController.cs
-    startLine: 47
+    id: AddEvents
+    path: src/Admin/Controllers/EventsController.cs
+    startLine: 49
   assemblies:
   - Admin
   namespace: Admin.Controllers
   syntax:
-    content: public IActionResult AddVenues(Venue venue)
+    content: public IActionResult AddEvents(TicketEvent ticketEvent)
     parameters:
-    - id: venue
-      type: ClassLibrary.Venue
+    - id: ticketEvent
+      type: ClassLibrary.TicketEvent
     return:
       type: Microsoft.AspNetCore.Mvc.IActionResult
-    content.vb: Public Function AddVenues(venue As Venue) As IActionResult
-  overload: Admin.Controllers.VenuesController.AddVenues*
+    content.vb: Public Function AddEvents(ticketEvent As TicketEvent) As IActionResult
+  overload: Admin.Controllers.EventsController.AddEvents*
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
-- uid: Admin.Controllers.VenuesController.EditVenues(System.Int32,ClassLibrary.Venue)
-  commentId: M:Admin.Controllers.VenuesController.EditVenues(System.Int32,ClassLibrary.Venue)
-  id: EditVenues(System.Int32,ClassLibrary.Venue)
-  parent: Admin.Controllers.VenuesController
+- uid: Admin.Controllers.EventsController.EditEvents(System.Int32,ClassLibrary.TicketEvent)
+  commentId: M:Admin.Controllers.EventsController.EditEvents(System.Int32,ClassLibrary.TicketEvent)
+  id: EditEvents(System.Int32,ClassLibrary.TicketEvent)
+  parent: Admin.Controllers.EventsController
   langs:
   - csharp
   - vb
-  name: EditVenues(Int32, Venue)
-  nameWithType: VenuesController.EditVenues(Int32, Venue)
-  fullName: Admin.Controllers.VenuesController.EditVenues(System.Int32, ClassLibrary.Venue)
+  name: EditEvents(Int32, TicketEvent)
+  nameWithType: EventsController.EditEvents(Int32, TicketEvent)
+  fullName: Admin.Controllers.EventsController.EditEvents(System.Int32, ClassLibrary.TicketEvent)
   type: Method
   source:
     remote:
-      path: src/Admin/Controllers/VenuesController.cs
+      path: src/Admin/Controllers/EventsController.cs
       branch: master
       repo: https://github.com/agngus/ticketSystem-jam.git
-    id: EditVenues
-    path: src/Admin/Controllers/VenuesController.cs
-    startLine: 62
+    id: EditEvents
+    path: src/Admin/Controllers/EventsController.cs
+    startLine: 65
   assemblies:
   - Admin
   namespace: Admin.Controllers
   syntax:
-    content: public IActionResult EditVenues(int id, Venue venue)
-    parameters:
-    - id: id
-      type: System.Int32
-    - id: venue
-      type: ClassLibrary.Venue
-    return:
-      type: Microsoft.AspNetCore.Mvc.IActionResult
-    content.vb: Public Function EditVenues(id As Integer, venue As Venue) As IActionResult
-  overload: Admin.Controllers.VenuesController.EditVenues*
-  modifiers.csharp:
-  - public
-  modifiers.vb:
-  - Public
-- uid: Admin.Controllers.VenuesController.DropdownChanged(System.Int32)
-  commentId: M:Admin.Controllers.VenuesController.DropdownChanged(System.Int32)
-  id: DropdownChanged(System.Int32)
-  parent: Admin.Controllers.VenuesController
-  langs:
-  - csharp
-  - vb
-  name: DropdownChanged(Int32)
-  nameWithType: VenuesController.DropdownChanged(Int32)
-  fullName: Admin.Controllers.VenuesController.DropdownChanged(System.Int32)
-  type: Method
-  source:
-    remote:
-      path: src/Admin/Controllers/VenuesController.cs
-      branch: master
-      repo: https://github.com/agngus/ticketSystem-jam.git
-    id: DropdownChanged
-    path: src/Admin/Controllers/VenuesController.cs
-    startLine: 77
-  assemblies:
-  - Admin
-  namespace: Admin.Controllers
-  syntax:
-    content: public IActionResult DropdownChanged(int id)
+    content: public IActionResult EditEvents(int id, TicketEvent ticketEvent)
     parameters:
     - id: id
       type: System.Int32
+    - id: ticketEvent
+      type: ClassLibrary.TicketEvent
     return:
       type: Microsoft.AspNetCore.Mvc.IActionResult
-    content.vb: Public Function DropdownChanged(id As Integer) As IActionResult
-  overload: Admin.Controllers.VenuesController.DropdownChanged*
+    content.vb: Public Function EditEvents(id As Integer, ticketEvent As TicketEvent) As IActionResult
+  overload: Admin.Controllers.EventsController.EditEvents*
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -10467,12 +10431,12 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: Admin.Controllers.VenuesController.Venues*
-  commentId: Overload:Admin.Controllers.VenuesController.Venues
+- uid: Admin.Controllers.EventsController.Events*
+  commentId: Overload:Admin.Controllers.EventsController.Events
   isExternal: false
-  name: Venues
-  nameWithType: VenuesController.Venues
-  fullName: Admin.Controllers.VenuesController.Venues
+  name: Events
+  nameWithType: EventsController.Events
+  fullName: Admin.Controllers.EventsController.Events
 - uid: Microsoft.AspNetCore.Mvc.IActionResult
   commentId: T:Microsoft.AspNetCore.Mvc.IActionResult
   parent: Microsoft.AspNetCore.Mvc
@@ -10480,12 +10444,12 @@ references:
   name: IActionResult
   nameWithType: IActionResult
   fullName: Microsoft.AspNetCore.Mvc.IActionResult
-- uid: Admin.Controllers.VenuesController.DeleteVenues*
-  commentId: Overload:Admin.Controllers.VenuesController.DeleteVenues
+- uid: Admin.Controllers.EventsController.DeleteEvents*
+  commentId: Overload:Admin.Controllers.EventsController.DeleteEvents
   isExternal: false
-  name: DeleteVenues
-  nameWithType: VenuesController.DeleteVenues
-  fullName: Admin.Controllers.VenuesController.DeleteVenues
+  name: DeleteEvents
+  nameWithType: EventsController.DeleteEvents
+  fullName: Admin.Controllers.EventsController.DeleteEvents
 - uid: System.Int32
   commentId: T:System.Int32
   parent: System
@@ -10493,34 +10457,28 @@ references:
   name: Int32
   nameWithType: Int32
   fullName: System.Int32
-- uid: Admin.Controllers.VenuesController.AddVenues*
-  commentId: Overload:Admin.Controllers.VenuesController.AddVenues
+- uid: Admin.Controllers.EventsController.AddEvents*
+  commentId: Overload:Admin.Controllers.EventsController.AddEvents
   isExternal: false
-  name: AddVenues
-  nameWithType: VenuesController.AddVenues
-  fullName: Admin.Controllers.VenuesController.AddVenues
-- uid: ClassLibrary.Venue
-  commentId: T:ClassLibrary.Venue
+  name: AddEvents
+  nameWithType: EventsController.AddEvents
+  fullName: Admin.Controllers.EventsController.AddEvents
+- uid: ClassLibrary.TicketEvent
+  commentId: T:ClassLibrary.TicketEvent
   parent: ClassLibrary
   isExternal: false
-  name: Venue
-  nameWithType: Venue
-  fullName: ClassLibrary.Venue
+  name: TicketEvent
+  nameWithType: TicketEvent
+  fullName: ClassLibrary.TicketEvent
 - uid: ClassLibrary
   commentId: N:ClassLibrary
   isExternal: false
   name: ClassLibrary
   nameWithType: ClassLibrary
   fullName: ClassLibrary
-- uid: Admin.Controllers.VenuesController.EditVenues*
-  commentId: Overload:Admin.Controllers.VenuesController.EditVenues
+- uid: Admin.Controllers.EventsController.EditEvents*
+  commentId: Overload:Admin.Controllers.EventsController.EditEvents
   isExternal: false
-  name: EditVenues
-  nameWithType: VenuesController.EditVenues
-  fullName: Admin.Controllers.VenuesController.EditVenues
-- uid: Admin.Controllers.VenuesController.DropdownChanged*
-  commentId: Overload:Admin.Controllers.VenuesController.DropdownChanged
-  isExternal: false
-  name: DropdownChanged
-  nameWithType: VenuesController.DropdownChanged
-  fullName: Admin.Controllers.VenuesController.DropdownChanged
+  name: EditEvents
+  nameWithType: EventsController.EditEvents
+  fullName: Admin.Controllers.EventsController.EditEvents

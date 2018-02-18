@@ -1,37 +1,36 @@
 ### YamlMime:ManagedReference
 items:
-- uid: Admin.Controllers.VenuesController
-  commentId: T:Admin.Controllers.VenuesController
-  id: VenuesController
+- uid: Admin.Controllers.CustomersController
+  commentId: T:Admin.Controllers.CustomersController
+  id: CustomersController
   parent: Admin.Controllers
   children:
-  - Admin.Controllers.VenuesController.AddVenues(ClassLibrary.Venue)
-  - Admin.Controllers.VenuesController.DeleteVenues(System.Int32)
-  - Admin.Controllers.VenuesController.DropdownChanged(System.Int32)
-  - Admin.Controllers.VenuesController.EditVenues(System.Int32,ClassLibrary.Venue)
-  - Admin.Controllers.VenuesController.Venues
+  - Admin.Controllers.CustomersController.CustomerInfo(System.Int32)
+  - Admin.Controllers.CustomersController.Customers
+  - Admin.Controllers.CustomersController.FindCustomer(System.String)
+  - Admin.Controllers.CustomersController.RemoveCustomerTicket(System.Int32)
   langs:
   - csharp
   - vb
-  name: VenuesController
-  nameWithType: VenuesController
-  fullName: Admin.Controllers.VenuesController
+  name: CustomersController
+  nameWithType: CustomersController
+  fullName: Admin.Controllers.CustomersController
   type: Class
   source:
     remote:
-      path: src/Admin/Controllers/VenuesController.cs
+      path: src/Admin/Controllers/CustomersController.cs
       branch: master
       repo: https://github.com/agngus/ticketSystem-jam.git
-    id: VenuesController
-    path: src/Admin/Controllers/VenuesController.cs
+    id: CustomersController
+    path: src/Admin/Controllers/CustomersController.cs
     startLine: 11
   assemblies:
   - Admin
   namespace: Admin.Controllers
   syntax:
-    content: 'public class VenuesController : Controller, IActionFilter, IAsyncActionFilter, IFilterMetadata, IDisposable'
+    content: 'public class CustomersController : Controller, IActionFilter, IAsyncActionFilter, IFilterMetadata, IDisposable'
     content.vb: >-
-      Public Class VenuesController
+      Public Class CustomersController
           Inherits Controller
           Implements IActionFilter, IAsyncActionFilter, IFilterMetadata, IDisposable
   inheritance:
@@ -216,176 +215,159 @@ items:
   modifiers.vb:
   - Public
   - Class
-- uid: Admin.Controllers.VenuesController.Venues
-  commentId: M:Admin.Controllers.VenuesController.Venues
-  id: Venues
-  parent: Admin.Controllers.VenuesController
+- uid: Admin.Controllers.CustomersController.Customers
+  commentId: M:Admin.Controllers.CustomersController.Customers
+  id: Customers
+  parent: Admin.Controllers.CustomersController
   langs:
   - csharp
   - vb
-  name: Venues()
-  nameWithType: VenuesController.Venues()
-  fullName: Admin.Controllers.VenuesController.Venues()
+  name: Customers()
+  nameWithType: CustomersController.Customers()
+  fullName: Admin.Controllers.CustomersController.Customers()
   type: Method
   source:
     remote:
-      path: src/Admin/Controllers/VenuesController.cs
+      path: src/Admin/Controllers/CustomersController.cs
       branch: master
       repo: https://github.com/agngus/ticketSystem-jam.git
-    id: Venues
-    path: src/Admin/Controllers/VenuesController.cs
+    id: Customers
+    path: src/Admin/Controllers/CustomersController.cs
     startLine: 17
   assemblies:
   - Admin
   namespace: Admin.Controllers
   syntax:
-    content: public IActionResult Venues()
+    content: public ActionResult Customers()
     return:
-      type: Microsoft.AspNetCore.Mvc.IActionResult
-    content.vb: Public Function Venues As IActionResult
-  overload: Admin.Controllers.VenuesController.Venues*
+      type: Microsoft.AspNetCore.Mvc.ActionResult
+    content.vb: Public Function Customers As ActionResult
+  overload: Admin.Controllers.CustomersController.Customers*
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
-- uid: Admin.Controllers.VenuesController.DeleteVenues(System.Int32)
-  commentId: M:Admin.Controllers.VenuesController.DeleteVenues(System.Int32)
-  id: DeleteVenues(System.Int32)
-  parent: Admin.Controllers.VenuesController
+- uid: Admin.Controllers.CustomersController.FindCustomer(System.String)
+  commentId: M:Admin.Controllers.CustomersController.FindCustomer(System.String)
+  id: FindCustomer(System.String)
+  parent: Admin.Controllers.CustomersController
   langs:
   - csharp
   - vb
-  name: DeleteVenues(Int32)
-  nameWithType: VenuesController.DeleteVenues(Int32)
-  fullName: Admin.Controllers.VenuesController.DeleteVenues(System.Int32)
+  name: FindCustomer(String)
+  nameWithType: CustomersController.FindCustomer(String)
+  fullName: Admin.Controllers.CustomersController.FindCustomer(System.String)
   type: Method
   source:
     remote:
-      path: src/Admin/Controllers/VenuesController.cs
+      path: src/Admin/Controllers/CustomersController.cs
       branch: master
       repo: https://github.com/agngus/ticketSystem-jam.git
-    id: DeleteVenues
-    path: src/Admin/Controllers/VenuesController.cs
+    id: FindCustomer
+    path: src/Admin/Controllers/CustomersController.cs
+    startLine: 22
+  assemblies:
+  - Admin
+  namespace: Admin.Controllers
+  syntax:
+    content: public ActionResult FindCustomer(string searchString)
+    parameters:
+    - id: searchString
+      type: System.String
+    return:
+      type: Microsoft.AspNetCore.Mvc.ActionResult
+    content.vb: Public Function FindCustomer(searchString As String) As ActionResult
+  overload: Admin.Controllers.CustomersController.FindCustomer*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Admin.Controllers.CustomersController.CustomerInfo(System.Int32)
+  commentId: M:Admin.Controllers.CustomersController.CustomerInfo(System.Int32)
+  id: CustomerInfo(System.Int32)
+  parent: Admin.Controllers.CustomersController
+  langs:
+  - csharp
+  - vb
+  name: CustomerInfo(Int32)
+  nameWithType: CustomersController.CustomerInfo(Int32)
+  fullName: Admin.Controllers.CustomersController.CustomerInfo(System.Int32)
+  type: Method
+  source:
+    remote:
+      path: src/Admin/Controllers/CustomersController.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
+    id: CustomerInfo
+    path: src/Admin/Controllers/CustomersController.cs
     startLine: 32
   assemblies:
   - Admin
   namespace: Admin.Controllers
   syntax:
-    content: public IActionResult DeleteVenues(int id)
+    content: >-
+      [HttpPost]
+
+      public ActionResult CustomerInfo(int id)
     parameters:
     - id: id
       type: System.Int32
     return:
-      type: Microsoft.AspNetCore.Mvc.IActionResult
-    content.vb: Public Function DeleteVenues(id As Integer) As IActionResult
-  overload: Admin.Controllers.VenuesController.DeleteVenues*
+      type: Microsoft.AspNetCore.Mvc.ActionResult
+    content.vb: >-
+      <HttpPost>
+
+      Public Function CustomerInfo(id As Integer) As ActionResult
+  overload: Admin.Controllers.CustomersController.CustomerInfo*
+  attributes:
+  - type: Microsoft.AspNetCore.Mvc.HttpPostAttribute
+    ctor: Microsoft.AspNetCore.Mvc.HttpPostAttribute.#ctor
+    arguments: []
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
-- uid: Admin.Controllers.VenuesController.AddVenues(ClassLibrary.Venue)
-  commentId: M:Admin.Controllers.VenuesController.AddVenues(ClassLibrary.Venue)
-  id: AddVenues(ClassLibrary.Venue)
-  parent: Admin.Controllers.VenuesController
+- uid: Admin.Controllers.CustomersController.RemoveCustomerTicket(System.Int32)
+  commentId: M:Admin.Controllers.CustomersController.RemoveCustomerTicket(System.Int32)
+  id: RemoveCustomerTicket(System.Int32)
+  parent: Admin.Controllers.CustomersController
   langs:
   - csharp
   - vb
-  name: AddVenues(Venue)
-  nameWithType: VenuesController.AddVenues(Venue)
-  fullName: Admin.Controllers.VenuesController.AddVenues(ClassLibrary.Venue)
+  name: RemoveCustomerTicket(Int32)
+  nameWithType: CustomersController.RemoveCustomerTicket(Int32)
+  fullName: Admin.Controllers.CustomersController.RemoveCustomerTicket(System.Int32)
   type: Method
   source:
     remote:
-      path: src/Admin/Controllers/VenuesController.cs
+      path: src/Admin/Controllers/CustomersController.cs
       branch: master
       repo: https://github.com/agngus/ticketSystem-jam.git
-    id: AddVenues
-    path: src/Admin/Controllers/VenuesController.cs
-    startLine: 47
+    id: RemoveCustomerTicket
+    path: src/Admin/Controllers/CustomersController.cs
+    startLine: 40
   assemblies:
   - Admin
   namespace: Admin.Controllers
   syntax:
-    content: public IActionResult AddVenues(Venue venue)
-    parameters:
-    - id: venue
-      type: ClassLibrary.Venue
-    return:
-      type: Microsoft.AspNetCore.Mvc.IActionResult
-    content.vb: Public Function AddVenues(venue As Venue) As IActionResult
-  overload: Admin.Controllers.VenuesController.AddVenues*
-  modifiers.csharp:
-  - public
-  modifiers.vb:
-  - Public
-- uid: Admin.Controllers.VenuesController.EditVenues(System.Int32,ClassLibrary.Venue)
-  commentId: M:Admin.Controllers.VenuesController.EditVenues(System.Int32,ClassLibrary.Venue)
-  id: EditVenues(System.Int32,ClassLibrary.Venue)
-  parent: Admin.Controllers.VenuesController
-  langs:
-  - csharp
-  - vb
-  name: EditVenues(Int32, Venue)
-  nameWithType: VenuesController.EditVenues(Int32, Venue)
-  fullName: Admin.Controllers.VenuesController.EditVenues(System.Int32, ClassLibrary.Venue)
-  type: Method
-  source:
-    remote:
-      path: src/Admin/Controllers/VenuesController.cs
-      branch: master
-      repo: https://github.com/agngus/ticketSystem-jam.git
-    id: EditVenues
-    path: src/Admin/Controllers/VenuesController.cs
-    startLine: 62
-  assemblies:
-  - Admin
-  namespace: Admin.Controllers
-  syntax:
-    content: public IActionResult EditVenues(int id, Venue venue)
-    parameters:
-    - id: id
-      type: System.Int32
-    - id: venue
-      type: ClassLibrary.Venue
-    return:
-      type: Microsoft.AspNetCore.Mvc.IActionResult
-    content.vb: Public Function EditVenues(id As Integer, venue As Venue) As IActionResult
-  overload: Admin.Controllers.VenuesController.EditVenues*
-  modifiers.csharp:
-  - public
-  modifiers.vb:
-  - Public
-- uid: Admin.Controllers.VenuesController.DropdownChanged(System.Int32)
-  commentId: M:Admin.Controllers.VenuesController.DropdownChanged(System.Int32)
-  id: DropdownChanged(System.Int32)
-  parent: Admin.Controllers.VenuesController
-  langs:
-  - csharp
-  - vb
-  name: DropdownChanged(Int32)
-  nameWithType: VenuesController.DropdownChanged(Int32)
-  fullName: Admin.Controllers.VenuesController.DropdownChanged(System.Int32)
-  type: Method
-  source:
-    remote:
-      path: src/Admin/Controllers/VenuesController.cs
-      branch: master
-      repo: https://github.com/agngus/ticketSystem-jam.git
-    id: DropdownChanged
-    path: src/Admin/Controllers/VenuesController.cs
-    startLine: 77
-  assemblies:
-  - Admin
-  namespace: Admin.Controllers
-  syntax:
-    content: public IActionResult DropdownChanged(int id)
+    content: >-
+      [HttpPost]
+
+      public ActionResult RemoveCustomerTicket(int id)
     parameters:
     - id: id
       type: System.Int32
     return:
-      type: Microsoft.AspNetCore.Mvc.IActionResult
-    content.vb: Public Function DropdownChanged(id As Integer) As IActionResult
-  overload: Admin.Controllers.VenuesController.DropdownChanged*
+      type: Microsoft.AspNetCore.Mvc.ActionResult
+    content.vb: >-
+      <HttpPost>
+
+      Public Function RemoveCustomerTicket(id As Integer) As ActionResult
+  overload: Admin.Controllers.CustomersController.RemoveCustomerTicket*
+  attributes:
+  - type: Microsoft.AspNetCore.Mvc.HttpPostAttribute
+    ctor: Microsoft.AspNetCore.Mvc.HttpPostAttribute.#ctor
+    arguments: []
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -10467,25 +10449,38 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: Admin.Controllers.VenuesController.Venues*
-  commentId: Overload:Admin.Controllers.VenuesController.Venues
+- uid: Admin.Controllers.CustomersController.Customers*
+  commentId: Overload:Admin.Controllers.CustomersController.Customers
   isExternal: false
-  name: Venues
-  nameWithType: VenuesController.Venues
-  fullName: Admin.Controllers.VenuesController.Venues
-- uid: Microsoft.AspNetCore.Mvc.IActionResult
-  commentId: T:Microsoft.AspNetCore.Mvc.IActionResult
+  name: Customers
+  nameWithType: CustomersController.Customers
+  fullName: Admin.Controllers.CustomersController.Customers
+- uid: Microsoft.AspNetCore.Mvc.ActionResult
+  commentId: T:Microsoft.AspNetCore.Mvc.ActionResult
   parent: Microsoft.AspNetCore.Mvc
   isExternal: true
-  name: IActionResult
-  nameWithType: IActionResult
-  fullName: Microsoft.AspNetCore.Mvc.IActionResult
-- uid: Admin.Controllers.VenuesController.DeleteVenues*
-  commentId: Overload:Admin.Controllers.VenuesController.DeleteVenues
+  name: ActionResult
+  nameWithType: ActionResult
+  fullName: Microsoft.AspNetCore.Mvc.ActionResult
+- uid: Admin.Controllers.CustomersController.FindCustomer*
+  commentId: Overload:Admin.Controllers.CustomersController.FindCustomer
   isExternal: false
-  name: DeleteVenues
-  nameWithType: VenuesController.DeleteVenues
-  fullName: Admin.Controllers.VenuesController.DeleteVenues
+  name: FindCustomer
+  nameWithType: CustomersController.FindCustomer
+  fullName: Admin.Controllers.CustomersController.FindCustomer
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: Admin.Controllers.CustomersController.CustomerInfo*
+  commentId: Overload:Admin.Controllers.CustomersController.CustomerInfo
+  isExternal: false
+  name: CustomerInfo
+  nameWithType: CustomersController.CustomerInfo
+  fullName: Admin.Controllers.CustomersController.CustomerInfo
 - uid: System.Int32
   commentId: T:System.Int32
   parent: System
@@ -10493,34 +10488,9 @@ references:
   name: Int32
   nameWithType: Int32
   fullName: System.Int32
-- uid: Admin.Controllers.VenuesController.AddVenues*
-  commentId: Overload:Admin.Controllers.VenuesController.AddVenues
+- uid: Admin.Controllers.CustomersController.RemoveCustomerTicket*
+  commentId: Overload:Admin.Controllers.CustomersController.RemoveCustomerTicket
   isExternal: false
-  name: AddVenues
-  nameWithType: VenuesController.AddVenues
-  fullName: Admin.Controllers.VenuesController.AddVenues
-- uid: ClassLibrary.Venue
-  commentId: T:ClassLibrary.Venue
-  parent: ClassLibrary
-  isExternal: false
-  name: Venue
-  nameWithType: Venue
-  fullName: ClassLibrary.Venue
-- uid: ClassLibrary
-  commentId: N:ClassLibrary
-  isExternal: false
-  name: ClassLibrary
-  nameWithType: ClassLibrary
-  fullName: ClassLibrary
-- uid: Admin.Controllers.VenuesController.EditVenues*
-  commentId: Overload:Admin.Controllers.VenuesController.EditVenues
-  isExternal: false
-  name: EditVenues
-  nameWithType: VenuesController.EditVenues
-  fullName: Admin.Controllers.VenuesController.EditVenues
-- uid: Admin.Controllers.VenuesController.DropdownChanged*
-  commentId: Overload:Admin.Controllers.VenuesController.DropdownChanged
-  isExternal: false
-  name: DropdownChanged
-  nameWithType: VenuesController.DropdownChanged
-  fullName: Admin.Controllers.VenuesController.DropdownChanged
+  name: RemoveCustomerTicket
+  nameWithType: CustomersController.RemoveCustomerTicket
+  fullName: Admin.Controllers.CustomersController.RemoveCustomerTicket

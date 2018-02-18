@@ -5,7 +5,20 @@ items:
   id: Value
   parent: ClassLibrary
   children:
+  - ClassLibrary.Value.BookTicket
+  - ClassLibrary.Value.Cart
+  - ClassLibrary.Value.cartListId
+  - ClassLibrary.Value.CartSummary
   - ClassLibrary.Value.Events
+  - ClassLibrary.Value.EventSummaries
+  - ClassLibrary.Value.TicketBuyer
+  - ClassLibrary.Value.TicketEvent
+  - ClassLibrary.Value.TicketEventDate
+  - ClassLibrary.Value.TicketEventDates
+  - ClassLibrary.Value.Tickets
+  - ClassLibrary.Value.TicketToTransaction
+  - ClassLibrary.Value.TicketTransaction
+  - ClassLibrary.Value.Venue
   - ClassLibrary.Value.Venues
   langs:
   - csharp
@@ -21,7 +34,7 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: Value
     path: src/ClassLibrary/Value.cs
-    startLine: 6
+    startLine: 8
   assemblies:
   - ClassLibrary
   namespace: ClassLibrary
@@ -62,7 +75,7 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: Venues
     path: src/ClassLibrary/Value.cs
-    startLine: 8
+    startLine: 10
   assemblies:
   - ClassLibrary
   namespace: ClassLibrary
@@ -73,6 +86,76 @@ items:
       type: System.Collections.Generic.List{ClassLibrary.Venue}
     content.vb: Public Property Venues As List(Of Venue)
   overload: ClassLibrary.Value.Venues*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: ClassLibrary.Value.Venue
+  commentId: P:ClassLibrary.Value.Venue
+  id: Venue
+  parent: ClassLibrary.Value
+  langs:
+  - csharp
+  - vb
+  name: Venue
+  nameWithType: Value.Venue
+  fullName: ClassLibrary.Value.Venue
+  type: Property
+  source:
+    remote:
+      path: src/ClassLibrary/Value.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
+    id: Venue
+    path: src/ClassLibrary/Value.cs
+    startLine: 12
+  assemblies:
+  - ClassLibrary
+  namespace: ClassLibrary
+  syntax:
+    content: public Venue Venue { get; set; }
+    parameters: []
+    return:
+      type: ClassLibrary.Venue
+    content.vb: Public Property Venue As Venue
+  overload: ClassLibrary.Value.Venue*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: ClassLibrary.Value.TicketEvent
+  commentId: P:ClassLibrary.Value.TicketEvent
+  id: TicketEvent
+  parent: ClassLibrary.Value
+  langs:
+  - csharp
+  - vb
+  name: TicketEvent
+  nameWithType: Value.TicketEvent
+  fullName: ClassLibrary.Value.TicketEvent
+  type: Property
+  source:
+    remote:
+      path: src/ClassLibrary/Value.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
+    id: TicketEvent
+    path: src/ClassLibrary/Value.cs
+    startLine: 14
+  assemblies:
+  - ClassLibrary
+  namespace: ClassLibrary
+  syntax:
+    content: public TicketEvent TicketEvent { get; set; }
+    parameters: []
+    return:
+      type: ClassLibrary.TicketEvent
+    content.vb: Public Property TicketEvent As TicketEvent
+  overload: ClassLibrary.Value.TicketEvent*
   modifiers.csharp:
   - public
   - get
@@ -97,7 +180,7 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: Events
     path: src/ClassLibrary/Value.cs
-    startLine: 10
+    startLine: 16
   assemblies:
   - ClassLibrary
   namespace: ClassLibrary
@@ -108,6 +191,387 @@ items:
     content.vb: Public Events As List(Of TicketEvent)
   modifiers.csharp:
   - public
+  modifiers.vb:
+  - Public
+- uid: ClassLibrary.Value.BookTicket
+  commentId: F:ClassLibrary.Value.BookTicket
+  id: BookTicket
+  parent: ClassLibrary.Value
+  langs:
+  - csharp
+  - vb
+  name: BookTicket
+  nameWithType: Value.BookTicket
+  fullName: ClassLibrary.Value.BookTicket
+  type: Field
+  source:
+    remote:
+      path: src/ClassLibrary/Value.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
+    id: BookTicket
+    path: src/ClassLibrary/Value.cs
+    startLine: 18
+  assemblies:
+  - ClassLibrary
+  namespace: ClassLibrary
+  syntax:
+    content: public List<Tickets> BookTicket
+    return:
+      type: System.Collections.Generic.List{ClassLibrary.Tickets}
+    content.vb: Public BookTicket As List(Of Tickets)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: ClassLibrary.Value.TicketEventDate
+  commentId: P:ClassLibrary.Value.TicketEventDate
+  id: TicketEventDate
+  parent: ClassLibrary.Value
+  langs:
+  - csharp
+  - vb
+  name: TicketEventDate
+  nameWithType: Value.TicketEventDate
+  fullName: ClassLibrary.Value.TicketEventDate
+  type: Property
+  source:
+    remote:
+      path: src/ClassLibrary/Value.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
+    id: TicketEventDate
+    path: src/ClassLibrary/Value.cs
+    startLine: 20
+  assemblies:
+  - ClassLibrary
+  namespace: ClassLibrary
+  syntax:
+    content: public List<TicketEventDate> TicketEventDate { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{ClassLibrary.TicketEventDate}
+    content.vb: Public Property TicketEventDate As List(Of TicketEventDate)
+  overload: ClassLibrary.Value.TicketEventDate*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: ClassLibrary.Value.TicketTransaction
+  commentId: P:ClassLibrary.Value.TicketTransaction
+  id: TicketTransaction
+  parent: ClassLibrary.Value
+  langs:
+  - csharp
+  - vb
+  name: TicketTransaction
+  nameWithType: Value.TicketTransaction
+  fullName: ClassLibrary.Value.TicketTransaction
+  type: Property
+  source:
+    remote:
+      path: src/ClassLibrary/Value.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
+    id: TicketTransaction
+    path: src/ClassLibrary/Value.cs
+    startLine: 22
+  assemblies:
+  - ClassLibrary
+  namespace: ClassLibrary
+  syntax:
+    content: public List<TicketTransaction> TicketTransaction { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{ClassLibrary.TicketTransaction}
+    content.vb: Public Property TicketTransaction As List(Of TicketTransaction)
+  overload: ClassLibrary.Value.TicketTransaction*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: ClassLibrary.Value.EventSummaries
+  commentId: P:ClassLibrary.Value.EventSummaries
+  id: EventSummaries
+  parent: ClassLibrary.Value
+  langs:
+  - csharp
+  - vb
+  name: EventSummaries
+  nameWithType: Value.EventSummaries
+  fullName: ClassLibrary.Value.EventSummaries
+  type: Property
+  source:
+    remote:
+      path: src/ClassLibrary/Value.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
+    id: EventSummaries
+    path: src/ClassLibrary/Value.cs
+    startLine: 24
+  assemblies:
+  - ClassLibrary
+  namespace: ClassLibrary
+  syntax:
+    content: public List<EventSummary> EventSummaries { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{ClassLibrary.EventSummary}
+    content.vb: Public Property EventSummaries As List(Of EventSummary)
+  overload: ClassLibrary.Value.EventSummaries*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: ClassLibrary.Value.TicketEventDates
+  commentId: P:ClassLibrary.Value.TicketEventDates
+  id: TicketEventDates
+  parent: ClassLibrary.Value
+  langs:
+  - csharp
+  - vb
+  name: TicketEventDates
+  nameWithType: Value.TicketEventDates
+  fullName: ClassLibrary.Value.TicketEventDates
+  type: Property
+  source:
+    remote:
+      path: src/ClassLibrary/Value.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
+    id: TicketEventDates
+    path: src/ClassLibrary/Value.cs
+    startLine: 26
+  assemblies:
+  - ClassLibrary
+  namespace: ClassLibrary
+  syntax:
+    content: public TicketEventDate TicketEventDates { get; set; }
+    parameters: []
+    return:
+      type: ClassLibrary.TicketEventDate
+    content.vb: Public Property TicketEventDates As TicketEventDate
+  overload: ClassLibrary.Value.TicketEventDates*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: ClassLibrary.Value.Cart
+  commentId: P:ClassLibrary.Value.Cart
+  id: Cart
+  parent: ClassLibrary.Value
+  langs:
+  - csharp
+  - vb
+  name: Cart
+  nameWithType: Value.Cart
+  fullName: ClassLibrary.Value.Cart
+  type: Property
+  source:
+    remote:
+      path: src/ClassLibrary/Value.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
+    id: Cart
+    path: src/ClassLibrary/Value.cs
+    startLine: 28
+  assemblies:
+  - ClassLibrary
+  namespace: ClassLibrary
+  syntax:
+    content: public List<TicketEventDate> Cart { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{ClassLibrary.TicketEventDate}
+    content.vb: Public Property Cart As List(Of TicketEventDate)
+  overload: ClassLibrary.Value.Cart*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: ClassLibrary.Value.CartSummary
+  commentId: P:ClassLibrary.Value.CartSummary
+  id: CartSummary
+  parent: ClassLibrary.Value
+  langs:
+  - csharp
+  - vb
+  name: CartSummary
+  nameWithType: Value.CartSummary
+  fullName: ClassLibrary.Value.CartSummary
+  type: Property
+  source:
+    remote:
+      path: src/ClassLibrary/Value.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
+    id: CartSummary
+    path: src/ClassLibrary/Value.cs
+    startLine: 30
+  assemblies:
+  - ClassLibrary
+  namespace: ClassLibrary
+  syntax:
+    content: public List<EventSummary> CartSummary { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{ClassLibrary.EventSummary}
+    content.vb: Public Property CartSummary As List(Of EventSummary)
+  overload: ClassLibrary.Value.CartSummary*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: ClassLibrary.Value.TicketBuyer
+  commentId: P:ClassLibrary.Value.TicketBuyer
+  id: TicketBuyer
+  parent: ClassLibrary.Value
+  langs:
+  - csharp
+  - vb
+  name: TicketBuyer
+  nameWithType: Value.TicketBuyer
+  fullName: ClassLibrary.Value.TicketBuyer
+  type: Property
+  source:
+    remote:
+      path: src/ClassLibrary/Value.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
+    id: TicketBuyer
+    path: src/ClassLibrary/Value.cs
+    startLine: 33
+  assemblies:
+  - ClassLibrary
+  namespace: ClassLibrary
+  syntax:
+    content: public TicketTransaction TicketBuyer { get; set; }
+    parameters: []
+    return:
+      type: ClassLibrary.TicketTransaction
+    content.vb: Public Property TicketBuyer As TicketTransaction
+  overload: ClassLibrary.Value.TicketBuyer*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: ClassLibrary.Value.cartListId
+  commentId: P:ClassLibrary.Value.cartListId
+  id: cartListId
+  parent: ClassLibrary.Value
+  langs:
+  - csharp
+  - vb
+  name: cartListId
+  nameWithType: Value.cartListId
+  fullName: ClassLibrary.Value.cartListId
+  type: Property
+  source:
+    remote:
+      path: src/ClassLibrary/Value.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
+    id: cartListId
+    path: src/ClassLibrary/Value.cs
+    startLine: 36
+  assemblies:
+  - ClassLibrary
+  namespace: ClassLibrary
+  syntax:
+    content: public List<int> cartListId { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{System.Int32}
+    content.vb: Public Property cartListId As List(Of Integer)
+  overload: ClassLibrary.Value.cartListId*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: ClassLibrary.Value.TicketToTransaction
+  commentId: P:ClassLibrary.Value.TicketToTransaction
+  id: TicketToTransaction
+  parent: ClassLibrary.Value
+  langs:
+  - csharp
+  - vb
+  name: TicketToTransaction
+  nameWithType: Value.TicketToTransaction
+  fullName: ClassLibrary.Value.TicketToTransaction
+  type: Property
+  source:
+    remote:
+      path: src/ClassLibrary/Value.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
+    id: TicketToTransaction
+    path: src/ClassLibrary/Value.cs
+    startLine: 38
+  assemblies:
+  - ClassLibrary
+  namespace: ClassLibrary
+  syntax:
+    content: public TicketToTransaction TicketToTransaction { get; set; }
+    parameters: []
+    return:
+      type: ClassLibrary.TicketToTransaction
+    content.vb: Public Property TicketToTransaction As TicketToTransaction
+  overload: ClassLibrary.Value.TicketToTransaction*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: ClassLibrary.Value.Tickets
+  commentId: P:ClassLibrary.Value.Tickets
+  id: Tickets
+  parent: ClassLibrary.Value
+  langs:
+  - csharp
+  - vb
+  name: Tickets
+  nameWithType: Value.Tickets
+  fullName: ClassLibrary.Value.Tickets
+  type: Property
+  source:
+    remote:
+      path: src/ClassLibrary/Value.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
+    id: Tickets
+    path: src/ClassLibrary/Value.cs
+    startLine: 40
+  assemblies:
+  - ClassLibrary
+  namespace: ClassLibrary
+  syntax:
+    content: public Tickets Tickets { get; set; }
+    parameters: []
+    return:
+      type: ClassLibrary.Tickets
+    content.vb: Public Property Tickets As Tickets
+  overload: ClassLibrary.Value.Tickets*
+  modifiers.csharp:
+  - public
+  - get
+  - set
   modifiers.vb:
   - Public
 references:
@@ -502,6 +966,32 @@ references:
   name: System.Collections.Generic
   nameWithType: System.Collections.Generic
   fullName: System.Collections.Generic
+- uid: ClassLibrary.Value.Venue*
+  commentId: Overload:ClassLibrary.Value.Venue
+  isExternal: false
+  name: Venue
+  nameWithType: Value.Venue
+  fullName: ClassLibrary.Value.Venue
+- uid: ClassLibrary.Venue
+  commentId: T:ClassLibrary.Venue
+  parent: ClassLibrary
+  isExternal: false
+  name: Venue
+  nameWithType: Venue
+  fullName: ClassLibrary.Venue
+- uid: ClassLibrary.Value.TicketEvent*
+  commentId: Overload:ClassLibrary.Value.TicketEvent
+  isExternal: false
+  name: TicketEvent
+  nameWithType: Value.TicketEvent
+  fullName: ClassLibrary.Value.TicketEvent
+- uid: ClassLibrary.TicketEvent
+  commentId: T:ClassLibrary.TicketEvent
+  parent: ClassLibrary
+  isExternal: false
+  name: TicketEvent
+  nameWithType: TicketEvent
+  fullName: ClassLibrary.TicketEvent
 - uid: System.Collections.Generic.List{ClassLibrary.TicketEvent}
   commentId: T:System.Collections.Generic.List{ClassLibrary.TicketEvent}
   parent: System.Collections.Generic
@@ -544,3 +1034,303 @@ references:
   - name: )
     nameWithType: )
     fullName: )
+- uid: System.Collections.Generic.List{ClassLibrary.Tickets}
+  commentId: T:System.Collections.Generic.List{ClassLibrary.Tickets}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<Tickets>
+  nameWithType: List<Tickets>
+  fullName: System.Collections.Generic.List<ClassLibrary.Tickets>
+  nameWithType.vb: List(Of Tickets)
+  fullName.vb: System.Collections.Generic.List(Of ClassLibrary.Tickets)
+  name.vb: List(Of Tickets)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: ClassLibrary.Tickets
+    name: Tickets
+    nameWithType: Tickets
+    fullName: ClassLibrary.Tickets
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: ClassLibrary.Tickets
+    name: Tickets
+    nameWithType: Tickets
+    fullName: ClassLibrary.Tickets
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ClassLibrary.Value.TicketEventDate*
+  commentId: Overload:ClassLibrary.Value.TicketEventDate
+  isExternal: false
+  name: TicketEventDate
+  nameWithType: Value.TicketEventDate
+  fullName: ClassLibrary.Value.TicketEventDate
+- uid: System.Collections.Generic.List{ClassLibrary.TicketEventDate}
+  commentId: T:System.Collections.Generic.List{ClassLibrary.TicketEventDate}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<TicketEventDate>
+  nameWithType: List<TicketEventDate>
+  fullName: System.Collections.Generic.List<ClassLibrary.TicketEventDate>
+  nameWithType.vb: List(Of TicketEventDate)
+  fullName.vb: System.Collections.Generic.List(Of ClassLibrary.TicketEventDate)
+  name.vb: List(Of TicketEventDate)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: ClassLibrary.TicketEventDate
+    name: TicketEventDate
+    nameWithType: TicketEventDate
+    fullName: ClassLibrary.TicketEventDate
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: ClassLibrary.TicketEventDate
+    name: TicketEventDate
+    nameWithType: TicketEventDate
+    fullName: ClassLibrary.TicketEventDate
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ClassLibrary.Value.TicketTransaction*
+  commentId: Overload:ClassLibrary.Value.TicketTransaction
+  isExternal: false
+  name: TicketTransaction
+  nameWithType: Value.TicketTransaction
+  fullName: ClassLibrary.Value.TicketTransaction
+- uid: System.Collections.Generic.List{ClassLibrary.TicketTransaction}
+  commentId: T:System.Collections.Generic.List{ClassLibrary.TicketTransaction}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<TicketTransaction>
+  nameWithType: List<TicketTransaction>
+  fullName: System.Collections.Generic.List<ClassLibrary.TicketTransaction>
+  nameWithType.vb: List(Of TicketTransaction)
+  fullName.vb: System.Collections.Generic.List(Of ClassLibrary.TicketTransaction)
+  name.vb: List(Of TicketTransaction)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: ClassLibrary.TicketTransaction
+    name: TicketTransaction
+    nameWithType: TicketTransaction
+    fullName: ClassLibrary.TicketTransaction
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: ClassLibrary.TicketTransaction
+    name: TicketTransaction
+    nameWithType: TicketTransaction
+    fullName: ClassLibrary.TicketTransaction
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ClassLibrary.Value.EventSummaries*
+  commentId: Overload:ClassLibrary.Value.EventSummaries
+  isExternal: false
+  name: EventSummaries
+  nameWithType: Value.EventSummaries
+  fullName: ClassLibrary.Value.EventSummaries
+- uid: System.Collections.Generic.List{ClassLibrary.EventSummary}
+  commentId: T:System.Collections.Generic.List{ClassLibrary.EventSummary}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<EventSummary>
+  nameWithType: List<EventSummary>
+  fullName: System.Collections.Generic.List<ClassLibrary.EventSummary>
+  nameWithType.vb: List(Of EventSummary)
+  fullName.vb: System.Collections.Generic.List(Of ClassLibrary.EventSummary)
+  name.vb: List(Of EventSummary)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: ClassLibrary.EventSummary
+    name: EventSummary
+    nameWithType: EventSummary
+    fullName: ClassLibrary.EventSummary
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: ClassLibrary.EventSummary
+    name: EventSummary
+    nameWithType: EventSummary
+    fullName: ClassLibrary.EventSummary
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ClassLibrary.Value.TicketEventDates*
+  commentId: Overload:ClassLibrary.Value.TicketEventDates
+  isExternal: false
+  name: TicketEventDates
+  nameWithType: Value.TicketEventDates
+  fullName: ClassLibrary.Value.TicketEventDates
+- uid: ClassLibrary.TicketEventDate
+  commentId: T:ClassLibrary.TicketEventDate
+  parent: ClassLibrary
+  isExternal: false
+  name: TicketEventDate
+  nameWithType: TicketEventDate
+  fullName: ClassLibrary.TicketEventDate
+- uid: ClassLibrary.Value.Cart*
+  commentId: Overload:ClassLibrary.Value.Cart
+  isExternal: false
+  name: Cart
+  nameWithType: Value.Cart
+  fullName: ClassLibrary.Value.Cart
+- uid: ClassLibrary.Value.CartSummary*
+  commentId: Overload:ClassLibrary.Value.CartSummary
+  isExternal: false
+  name: CartSummary
+  nameWithType: Value.CartSummary
+  fullName: ClassLibrary.Value.CartSummary
+- uid: ClassLibrary.Value.TicketBuyer*
+  commentId: Overload:ClassLibrary.Value.TicketBuyer
+  isExternal: false
+  name: TicketBuyer
+  nameWithType: Value.TicketBuyer
+  fullName: ClassLibrary.Value.TicketBuyer
+- uid: ClassLibrary.TicketTransaction
+  commentId: T:ClassLibrary.TicketTransaction
+  parent: ClassLibrary
+  isExternal: false
+  name: TicketTransaction
+  nameWithType: TicketTransaction
+  fullName: ClassLibrary.TicketTransaction
+- uid: ClassLibrary.Value.cartListId*
+  commentId: Overload:ClassLibrary.Value.cartListId
+  isExternal: false
+  name: cartListId
+  nameWithType: Value.cartListId
+  fullName: ClassLibrary.Value.cartListId
+- uid: System.Collections.Generic.List{System.Int32}
+  commentId: T:System.Collections.Generic.List{System.Int32}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<Int32>
+  nameWithType: List<Int32>
+  fullName: System.Collections.Generic.List<System.Int32>
+  nameWithType.vb: List(Of Int32)
+  fullName.vb: System.Collections.Generic.List(Of System.Int32)
+  name.vb: List(Of Int32)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ClassLibrary.Value.TicketToTransaction*
+  commentId: Overload:ClassLibrary.Value.TicketToTransaction
+  isExternal: false
+  name: TicketToTransaction
+  nameWithType: Value.TicketToTransaction
+  fullName: ClassLibrary.Value.TicketToTransaction
+- uid: ClassLibrary.TicketToTransaction
+  commentId: T:ClassLibrary.TicketToTransaction
+  parent: ClassLibrary
+  isExternal: false
+  name: TicketToTransaction
+  nameWithType: TicketToTransaction
+  fullName: ClassLibrary.TicketToTransaction
+- uid: ClassLibrary.Value.Tickets*
+  commentId: Overload:ClassLibrary.Value.Tickets
+  isExternal: false
+  name: Tickets
+  nameWithType: Value.Tickets
+  fullName: ClassLibrary.Value.Tickets
+- uid: ClassLibrary.Tickets
+  commentId: T:ClassLibrary.Tickets
+  parent: ClassLibrary
+  isExternal: false
+  name: Tickets
+  nameWithType: Tickets
+  fullName: ClassLibrary.Tickets

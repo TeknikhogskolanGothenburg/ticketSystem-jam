@@ -5,11 +5,11 @@ items:
   id: TicketEventsController
   parent: TicketAPI.Controllers
   children:
-  - TicketAPI.Controllers.TicketEventsController.Delete(System.String)
+  - TicketAPI.Controllers.TicketEventsController.Delete(System.Int32)
   - TicketAPI.Controllers.TicketEventsController.Get
-  - TicketAPI.Controllers.TicketEventsController.Get(System.String)
+  - TicketAPI.Controllers.TicketEventsController.Get(System.Int32)
   - TicketAPI.Controllers.TicketEventsController.Post(ClassLibrary.TicketEvent)
-  - TicketAPI.Controllers.TicketEventsController.Put(System.String,ClassLibrary.TicketEvent)
+  - TicketAPI.Controllers.TicketEventsController.Put(System.Int32,ClassLibrary.TicketEvent)
   langs:
   - csharp
   - vb
@@ -257,13 +257,13 @@ items:
     content: >-
       [HttpGet]
 
-      public IEnumerable<string> Get()
+      public List<TicketEvent> Get()
     return:
-      type: System.Collections.Generic.IEnumerable{System.String}
+      type: System.Collections.Generic.List{ClassLibrary.TicketEvent}
     content.vb: >-
       <HttpGet>
 
-      Public Function Get As IEnumerable(Of String)
+      Public Function Get As List(Of TicketEvent)
   overload: TicketAPI.Controllers.TicketEventsController.Get*
   attributes:
   - type: Microsoft.AspNetCore.Mvc.HttpGetAttribute
@@ -273,16 +273,16 @@ items:
   - public
   modifiers.vb:
   - Public
-- uid: TicketAPI.Controllers.TicketEventsController.Get(System.String)
-  commentId: M:TicketAPI.Controllers.TicketEventsController.Get(System.String)
-  id: Get(System.String)
+- uid: TicketAPI.Controllers.TicketEventsController.Get(System.Int32)
+  commentId: M:TicketAPI.Controllers.TicketEventsController.Get(System.Int32)
+  id: Get(System.Int32)
   parent: TicketAPI.Controllers.TicketEventsController
   langs:
   - csharp
   - vb
-  name: Get(String)
-  nameWithType: TicketEventsController.Get(String)
-  fullName: TicketAPI.Controllers.TicketEventsController.Get(System.String)
+  name: Get(Int32)
+  nameWithType: TicketEventsController.Get(Int32)
+  fullName: TicketAPI.Controllers.TicketEventsController.Get(System.Int32)
   type: Method
   source:
     remote:
@@ -299,16 +299,16 @@ items:
     content: >-
       [HttpGet("{id}")]
 
-      public List<TicketEvent> Get(string id)
+      public TicketEvent Get(int id)
     parameters:
     - id: id
-      type: System.String
+      type: System.Int32
     return:
-      type: System.Collections.Generic.List{ClassLibrary.TicketEvent}
+      type: ClassLibrary.TicketEvent
     content.vb: >-
       <HttpGet("{id}")>
 
-      Public Function Get(id As String) As List(Of TicketEvent)
+      Public Function Get(id As Integer) As TicketEvent
   overload: TicketAPI.Controllers.TicketEventsController.Get*
   attributes:
   - type: Microsoft.AspNetCore.Mvc.HttpGetAttribute
@@ -369,16 +369,16 @@ items:
   - public
   modifiers.vb:
   - Public
-- uid: TicketAPI.Controllers.TicketEventsController.Put(System.String,ClassLibrary.TicketEvent)
-  commentId: M:TicketAPI.Controllers.TicketEventsController.Put(System.String,ClassLibrary.TicketEvent)
-  id: Put(System.String,ClassLibrary.TicketEvent)
+- uid: TicketAPI.Controllers.TicketEventsController.Put(System.Int32,ClassLibrary.TicketEvent)
+  commentId: M:TicketAPI.Controllers.TicketEventsController.Put(System.Int32,ClassLibrary.TicketEvent)
+  id: Put(System.Int32,ClassLibrary.TicketEvent)
   parent: TicketAPI.Controllers.TicketEventsController
   langs:
   - csharp
   - vb
-  name: Put(String, TicketEvent)
-  nameWithType: TicketEventsController.Put(String, TicketEvent)
-  fullName: TicketAPI.Controllers.TicketEventsController.Put(System.String, ClassLibrary.TicketEvent)
+  name: Put(Int32, TicketEvent)
+  nameWithType: TicketEventsController.Put(Int32, TicketEvent)
+  fullName: TicketAPI.Controllers.TicketEventsController.Put(System.Int32, ClassLibrary.TicketEvent)
   type: Method
   source:
     remote:
@@ -393,12 +393,12 @@ items:
   namespace: TicketAPI.Controllers
   syntax:
     content: >-
-      [HttpPut("{eventName}")]
+      [HttpPut("{id}")]
 
-      public void Put(string eventName, [FromBody] TicketEvent ticketEvent)
+      public void Put(int id, [FromBody] TicketEvent ticketEvent)
     parameters:
-    - id: eventName
-      type: System.String
+    - id: id
+      type: System.Int32
     - id: ticketEvent
       type: ClassLibrary.TicketEvent
       attributes:
@@ -406,30 +406,30 @@ items:
         ctor: Microsoft.AspNetCore.Mvc.FromBodyAttribute.#ctor
         arguments: []
     content.vb: >-
-      <HttpPut("{eventName}")>
+      <HttpPut("{id}")>
 
-      Public Sub Put(eventName As String, ticketEvent As TicketEvent)
+      Public Sub Put(id As Integer, ticketEvent As TicketEvent)
   overload: TicketAPI.Controllers.TicketEventsController.Put*
   attributes:
   - type: Microsoft.AspNetCore.Mvc.HttpPutAttribute
     ctor: Microsoft.AspNetCore.Mvc.HttpPutAttribute.#ctor(System.String)
     arguments:
     - type: System.String
-      value: '{eventName}'
+      value: '{id}'
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
-- uid: TicketAPI.Controllers.TicketEventsController.Delete(System.String)
-  commentId: M:TicketAPI.Controllers.TicketEventsController.Delete(System.String)
-  id: Delete(System.String)
+- uid: TicketAPI.Controllers.TicketEventsController.Delete(System.Int32)
+  commentId: M:TicketAPI.Controllers.TicketEventsController.Delete(System.Int32)
+  id: Delete(System.Int32)
   parent: TicketAPI.Controllers.TicketEventsController
   langs:
   - csharp
   - vb
-  name: Delete(String)
-  nameWithType: TicketEventsController.Delete(String)
-  fullName: TicketAPI.Controllers.TicketEventsController.Delete(System.String)
+  name: Delete(Int32)
+  nameWithType: TicketEventsController.Delete(Int32)
+  fullName: TicketAPI.Controllers.TicketEventsController.Delete(System.Int32)
   type: Method
   source:
     remote:
@@ -444,23 +444,23 @@ items:
   namespace: TicketAPI.Controllers
   syntax:
     content: >-
-      [HttpDelete("{eventName}")]
+      [HttpDelete("{id}")]
 
-      public void Delete(string eventName)
+      public void Delete(int id)
     parameters:
-    - id: eventName
-      type: System.String
+    - id: id
+      type: System.Int32
     content.vb: >-
-      <HttpDelete("{eventName}")>
+      <HttpDelete("{id}")>
 
-      Public Sub Delete(eventName As String)
+      Public Sub Delete(id As Integer)
   overload: TicketAPI.Controllers.TicketEventsController.Delete*
   attributes:
   - type: Microsoft.AspNetCore.Mvc.HttpDeleteAttribute
     ctor: Microsoft.AspNetCore.Mvc.HttpDeleteAttribute.#ctor(System.String)
     arguments:
     - type: System.String
-      value: '{eventName}'
+      value: '{id}'
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -10548,102 +10548,6 @@ references:
   name: Get
   nameWithType: TicketEventsController.Get
   fullName: TicketAPI.Controllers.TicketEventsController.Get
-- uid: System.Collections.Generic.IEnumerable{System.String}
-  commentId: T:System.Collections.Generic.IEnumerable{System.String}
-  parent: System.Collections.Generic
-  definition: System.Collections.Generic.IEnumerable`1
-  name: IEnumerable<String>
-  nameWithType: IEnumerable<String>
-  fullName: System.Collections.Generic.IEnumerable<System.String>
-  nameWithType.vb: IEnumerable(Of String)
-  fullName.vb: System.Collections.Generic.IEnumerable(Of System.String)
-  name.vb: IEnumerable(Of String)
-  spec.csharp:
-  - uid: System.Collections.Generic.IEnumerable`1
-    name: IEnumerable
-    nameWithType: IEnumerable
-    fullName: System.Collections.Generic.IEnumerable
-    isExternal: true
-  - name: <
-    nameWithType: <
-    fullName: <
-  - uid: System.String
-    name: String
-    nameWithType: String
-    fullName: System.String
-    isExternal: true
-  - name: '>'
-    nameWithType: '>'
-    fullName: '>'
-  spec.vb:
-  - uid: System.Collections.Generic.IEnumerable`1
-    name: IEnumerable
-    nameWithType: IEnumerable
-    fullName: System.Collections.Generic.IEnumerable
-    isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
-  - uid: System.String
-    name: String
-    nameWithType: String
-    fullName: System.String
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Collections.Generic.IEnumerable`1
-  commentId: T:System.Collections.Generic.IEnumerable`1
-  isExternal: true
-  name: IEnumerable<T>
-  nameWithType: IEnumerable<T>
-  fullName: System.Collections.Generic.IEnumerable<T>
-  nameWithType.vb: IEnumerable(Of T)
-  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
-  name.vb: IEnumerable(Of T)
-  spec.csharp:
-  - uid: System.Collections.Generic.IEnumerable`1
-    name: IEnumerable
-    nameWithType: IEnumerable
-    fullName: System.Collections.Generic.IEnumerable
-    isExternal: true
-  - name: <
-    nameWithType: <
-    fullName: <
-  - name: T
-    nameWithType: T
-    fullName: T
-  - name: '>'
-    nameWithType: '>'
-    fullName: '>'
-  spec.vb:
-  - uid: System.Collections.Generic.IEnumerable`1
-    name: IEnumerable
-    nameWithType: IEnumerable
-    fullName: System.Collections.Generic.IEnumerable
-    isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
-  - name: T
-    nameWithType: T
-    fullName: T
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Collections.Generic
-  commentId: N:System.Collections.Generic
-  isExternal: false
-  name: System.Collections.Generic
-  nameWithType: System.Collections.Generic
-  fullName: System.Collections.Generic
-- uid: System.String
-  commentId: T:System.String
-  parent: System
-  isExternal: true
-  name: String
-  nameWithType: String
-  fullName: System.String
 - uid: System.Collections.Generic.List{ClassLibrary.TicketEvent}
   commentId: T:System.Collections.Generic.List{ClassLibrary.TicketEvent}
   parent: System.Collections.Generic
@@ -10725,12 +10629,19 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: TicketAPI.Controllers.TicketEventsController.Post*
-  commentId: Overload:TicketAPI.Controllers.TicketEventsController.Post
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
   isExternal: false
-  name: Post
-  nameWithType: TicketEventsController.Post
-  fullName: TicketAPI.Controllers.TicketEventsController.Post
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
 - uid: ClassLibrary.TicketEvent
   commentId: T:ClassLibrary.TicketEvent
   parent: ClassLibrary
@@ -10744,6 +10655,12 @@ references:
   name: ClassLibrary
   nameWithType: ClassLibrary
   fullName: ClassLibrary
+- uid: TicketAPI.Controllers.TicketEventsController.Post*
+  commentId: Overload:TicketAPI.Controllers.TicketEventsController.Post
+  isExternal: false
+  name: Post
+  nameWithType: TicketEventsController.Post
+  fullName: TicketAPI.Controllers.TicketEventsController.Post
 - uid: TicketAPI.Controllers.TicketEventsController.Put*
   commentId: Overload:TicketAPI.Controllers.TicketEventsController.Put
   isExternal: false

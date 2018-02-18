@@ -1,33 +1,33 @@
 ### YamlMime:ManagedReference
 items:
-- uid: TicketAPI.Program
-  commentId: T:TicketAPI.Program
-  id: Program
-  parent: TicketAPI
+- uid: ClassLibrary.SeatsAtEventDate
+  commentId: T:ClassLibrary.SeatsAtEventDate
+  id: SeatsAtEventDate
+  parent: ClassLibrary
   children:
-  - TicketAPI.Program.BuildWebHost(System.String[])
-  - TicketAPI.Program.Main(System.String[])
+  - ClassLibrary.SeatsAtEventDate.SeatId
+  - ClassLibrary.SeatsAtEventDate.TicketEventDateId
   langs:
   - csharp
   - vb
-  name: Program
-  nameWithType: Program
-  fullName: TicketAPI.Program
+  name: SeatsAtEventDate
+  nameWithType: SeatsAtEventDate
+  fullName: ClassLibrary.SeatsAtEventDate
   type: Class
   source:
     remote:
-      path: src/TicketAPI/Program.cs
+      path: src/ClassLibrary/SeatsAtEventDate.cs
       branch: master
       repo: https://github.com/agngus/ticketSystem-jam.git
-    id: Program
-    path: src/TicketAPI/Program.cs
-    startLine: 15
+    id: SeatsAtEventDate
+    path: src/ClassLibrary/SeatsAtEventDate.cs
+    startLine: 6
   assemblies:
-  - TicketAPI
-  namespace: TicketAPI
+  - ClassLibrary
+  namespace: ClassLibrary
   syntax:
-    content: public class Program
-    content.vb: Public Class Program
+    content: public class SeatsAtEventDate
+    content.vb: Public Class SeatsAtEventDate
   inheritance:
   - System.Object
   inheritedMembers:
@@ -44,91 +44,83 @@ items:
   modifiers.vb:
   - Public
   - Class
-- uid: TicketAPI.Program.Main(System.String[])
-  commentId: M:TicketAPI.Program.Main(System.String[])
-  id: Main(System.String[])
-  parent: TicketAPI.Program
+- uid: ClassLibrary.SeatsAtEventDate.SeatId
+  commentId: P:ClassLibrary.SeatsAtEventDate.SeatId
+  id: SeatId
+  parent: ClassLibrary.SeatsAtEventDate
   langs:
   - csharp
   - vb
-  name: Main(String[])
-  nameWithType: Program.Main(String[])
-  fullName: TicketAPI.Program.Main(System.String[])
-  type: Method
+  name: SeatId
+  nameWithType: SeatsAtEventDate.SeatId
+  fullName: ClassLibrary.SeatsAtEventDate.SeatId
+  type: Property
   source:
     remote:
-      path: src/TicketAPI/Program.cs
+      path: src/ClassLibrary/SeatsAtEventDate.cs
       branch: master
       repo: https://github.com/agngus/ticketSystem-jam.git
-    id: Main
-    path: src/TicketAPI/Program.cs
-    startLine: 17
+    id: SeatId
+    path: src/ClassLibrary/SeatsAtEventDate.cs
+    startLine: 8
   assemblies:
-  - TicketAPI
-  namespace: TicketAPI
+  - ClassLibrary
+  namespace: ClassLibrary
   syntax:
-    content: public static void Main(string[] args)
-    parameters:
-    - id: args
-      type: System.String[]
-    content.vb: Public Shared Sub Main(args As String())
-  overload: TicketAPI.Program.Main*
-  nameWithType.vb: Program.Main(String())
-  modifiers.csharp:
-  - public
-  - static
-  modifiers.vb:
-  - Public
-  - Shared
-  fullName.vb: TicketAPI.Program.Main(System.String())
-  name.vb: Main(String())
-- uid: TicketAPI.Program.BuildWebHost(System.String[])
-  commentId: M:TicketAPI.Program.BuildWebHost(System.String[])
-  id: BuildWebHost(System.String[])
-  parent: TicketAPI.Program
-  langs:
-  - csharp
-  - vb
-  name: BuildWebHost(String[])
-  nameWithType: Program.BuildWebHost(String[])
-  fullName: TicketAPI.Program.BuildWebHost(System.String[])
-  type: Method
-  source:
-    remote:
-      path: src/TicketAPI/Program.cs
-      branch: master
-      repo: https://github.com/agngus/ticketSystem-jam.git
-    id: BuildWebHost
-    path: src/TicketAPI/Program.cs
-    startLine: 22
-  assemblies:
-  - TicketAPI
-  namespace: TicketAPI
-  syntax:
-    content: public static IWebHost BuildWebHost(string[] args)
-    parameters:
-    - id: args
-      type: System.String[]
+    content: public int SeatId { get; set; }
+    parameters: []
     return:
-      type: Microsoft.AspNetCore.Hosting.IWebHost
-    content.vb: Public Shared Function BuildWebHost(args As String()) As IWebHost
-  overload: TicketAPI.Program.BuildWebHost*
-  nameWithType.vb: Program.BuildWebHost(String())
+      type: System.Int32
+    content.vb: Public Property SeatId As Integer
+  overload: ClassLibrary.SeatsAtEventDate.SeatId*
   modifiers.csharp:
   - public
-  - static
+  - get
+  - set
   modifiers.vb:
   - Public
-  - Shared
-  fullName.vb: TicketAPI.Program.BuildWebHost(System.String())
-  name.vb: BuildWebHost(String())
+- uid: ClassLibrary.SeatsAtEventDate.TicketEventDateId
+  commentId: P:ClassLibrary.SeatsAtEventDate.TicketEventDateId
+  id: TicketEventDateId
+  parent: ClassLibrary.SeatsAtEventDate
+  langs:
+  - csharp
+  - vb
+  name: TicketEventDateId
+  nameWithType: SeatsAtEventDate.TicketEventDateId
+  fullName: ClassLibrary.SeatsAtEventDate.TicketEventDateId
+  type: Property
+  source:
+    remote:
+      path: src/ClassLibrary/SeatsAtEventDate.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
+    id: TicketEventDateId
+    path: src/ClassLibrary/SeatsAtEventDate.cs
+    startLine: 9
+  assemblies:
+  - ClassLibrary
+  namespace: ClassLibrary
+  syntax:
+    content: public int TicketEventDateId { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property TicketEventDateId As Integer
+  overload: ClassLibrary.SeatsAtEventDate.TicketEventDateId*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
 references:
-- uid: TicketAPI
-  commentId: N:TicketAPI
+- uid: ClassLibrary
+  commentId: N:ClassLibrary
   isExternal: false
-  name: TicketAPI
-  nameWithType: TicketAPI
-  fullName: TicketAPI
+  name: ClassLibrary
+  nameWithType: ClassLibrary
+  fullName: ClassLibrary
 - uid: System.Object
   commentId: T:System.Object
   parent: System
@@ -421,53 +413,22 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: TicketAPI.Program.Main*
-  commentId: Overload:TicketAPI.Program.Main
+- uid: ClassLibrary.SeatsAtEventDate.SeatId*
+  commentId: Overload:ClassLibrary.SeatsAtEventDate.SeatId
   isExternal: false
-  name: Main
-  nameWithType: Program.Main
-  fullName: TicketAPI.Program.Main
-- uid: System.String[]
-  name: String[]
-  nameWithType: String[]
-  fullName: System.String[]
-  nameWithType.vb: String()
-  fullName.vb: System.String()
-  name.vb: String()
-  spec.csharp:
-  - uid: System.String
-    name: String
-    nameWithType: String
-    fullName: System.String
-    isExternal: true
-  - name: '[]'
-    nameWithType: '[]'
-    fullName: '[]'
-  spec.vb:
-  - uid: System.String
-    name: String
-    nameWithType: String
-    fullName: System.String
-    isExternal: true
-  - name: ()
-    nameWithType: ()
-    fullName: ()
-- uid: TicketAPI.Program.BuildWebHost*
-  commentId: Overload:TicketAPI.Program.BuildWebHost
-  isExternal: false
-  name: BuildWebHost
-  nameWithType: Program.BuildWebHost
-  fullName: TicketAPI.Program.BuildWebHost
-- uid: Microsoft.AspNetCore.Hosting.IWebHost
-  commentId: T:Microsoft.AspNetCore.Hosting.IWebHost
-  parent: Microsoft.AspNetCore.Hosting
+  name: SeatId
+  nameWithType: SeatsAtEventDate.SeatId
+  fullName: ClassLibrary.SeatsAtEventDate.SeatId
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
   isExternal: true
-  name: IWebHost
-  nameWithType: IWebHost
-  fullName: Microsoft.AspNetCore.Hosting.IWebHost
-- uid: Microsoft.AspNetCore.Hosting
-  commentId: N:Microsoft.AspNetCore.Hosting
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: ClassLibrary.SeatsAtEventDate.TicketEventDateId*
+  commentId: Overload:ClassLibrary.SeatsAtEventDate.TicketEventDateId
   isExternal: false
-  name: Microsoft.AspNetCore.Hosting
-  nameWithType: Microsoft.AspNetCore.Hosting
-  fullName: Microsoft.AspNetCore.Hosting
+  name: TicketEventDateId
+  nameWithType: SeatsAtEventDate.TicketEventDateId
+  fullName: ClassLibrary.SeatsAtEventDate.TicketEventDateId

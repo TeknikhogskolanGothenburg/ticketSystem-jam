@@ -1,37 +1,51 @@
 ### YamlMime:ManagedReference
 items:
-- uid: Admin.Controllers.VenuesController
-  commentId: T:Admin.Controllers.VenuesController
-  id: VenuesController
-  parent: Admin.Controllers
+- uid: TicketAPI.Controllers.TicketTransactionsController
+  commentId: T:TicketAPI.Controllers.TicketTransactionsController
+  id: TicketTransactionsController
+  parent: TicketAPI.Controllers
   children:
-  - Admin.Controllers.VenuesController.AddVenues(ClassLibrary.Venue)
-  - Admin.Controllers.VenuesController.DeleteVenues(System.Int32)
-  - Admin.Controllers.VenuesController.DropdownChanged(System.Int32)
-  - Admin.Controllers.VenuesController.EditVenues(System.Int32,ClassLibrary.Venue)
-  - Admin.Controllers.VenuesController.Venues
+  - TicketAPI.Controllers.TicketTransactionsController.Delete(System.Int32)
+  - TicketAPI.Controllers.TicketTransactionsController.Get
+  - TicketAPI.Controllers.TicketTransactionsController.Get(System.Int32)
+  - TicketAPI.Controllers.TicketTransactionsController.Get(System.String)
+  - TicketAPI.Controllers.TicketTransactionsController.GetTickets(System.Int32)
+  - TicketAPI.Controllers.TicketTransactionsController.Post(ClassLibrary.EventSummary)
+  - TicketAPI.Controllers.TicketTransactionsController.Post(ClassLibrary.SeatsAtEventDate)
+  - TicketAPI.Controllers.TicketTransactionsController.Post(ClassLibrary.TicketToTransaction)
+  - TicketAPI.Controllers.TicketTransactionsController.Post(ClassLibrary.TicketTransaction)
+  - TicketAPI.Controllers.TicketTransactionsController.Put(System.Int32,ClassLibrary.TicketTransaction)
   langs:
   - csharp
   - vb
-  name: VenuesController
-  nameWithType: VenuesController
-  fullName: Admin.Controllers.VenuesController
+  name: TicketTransactionsController
+  nameWithType: TicketTransactionsController
+  fullName: TicketAPI.Controllers.TicketTransactionsController
   type: Class
   source:
     remote:
-      path: src/Admin/Controllers/VenuesController.cs
+      path: src/TicketAPI/Controllers/TicketTransactionsController.cs
       branch: master
       repo: https://github.com/agngus/ticketSystem-jam.git
-    id: VenuesController
-    path: src/Admin/Controllers/VenuesController.cs
+    id: TicketTransactionsController
+    path: src/TicketAPI/Controllers/TicketTransactionsController.cs
     startLine: 11
   assemblies:
-  - Admin
-  namespace: Admin.Controllers
+  - TicketAPI
+  namespace: TicketAPI.Controllers
   syntax:
-    content: 'public class VenuesController : Controller, IActionFilter, IAsyncActionFilter, IFilterMetadata, IDisposable'
+    content: >-
+      [Produces("application/json", new string[]{})]
+
+      [Route("api/TicketTransactions")]
+
+      public class TicketTransactionsController : Controller, IActionFilter, IAsyncActionFilter, IFilterMetadata, IDisposable
     content.vb: >-
-      Public Class VenuesController
+      <Produces("application/json", New String() {})>
+
+      <Route("api/TicketTransactions")>
+
+      Public Class TicketTransactionsController
           Inherits Controller
           Implements IActionFilter, IAsyncActionFilter, IFilterMetadata, IDisposable
   inheritance:
@@ -210,193 +224,508 @@ items:
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
+  attributes:
+  - type: Microsoft.AspNetCore.Mvc.RouteAttribute
+    ctor: Microsoft.AspNetCore.Mvc.RouteAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: api/TicketTransactions
   modifiers.csharp:
   - public
   - class
   modifiers.vb:
   - Public
   - Class
-- uid: Admin.Controllers.VenuesController.Venues
-  commentId: M:Admin.Controllers.VenuesController.Venues
-  id: Venues
-  parent: Admin.Controllers.VenuesController
+- uid: TicketAPI.Controllers.TicketTransactionsController.Get
+  commentId: M:TicketAPI.Controllers.TicketTransactionsController.Get
+  id: Get
+  parent: TicketAPI.Controllers.TicketTransactionsController
   langs:
   - csharp
   - vb
-  name: Venues()
-  nameWithType: VenuesController.Venues()
-  fullName: Admin.Controllers.VenuesController.Venues()
+  name: Get()
+  nameWithType: TicketTransactionsController.Get()
+  fullName: TicketAPI.Controllers.TicketTransactionsController.Get()
   type: Method
   source:
     remote:
-      path: src/Admin/Controllers/VenuesController.cs
+      path: src/TicketAPI/Controllers/TicketTransactionsController.cs
       branch: master
       repo: https://github.com/agngus/ticketSystem-jam.git
-    id: Venues
-    path: src/Admin/Controllers/VenuesController.cs
+    id: Get
+    path: src/TicketAPI/Controllers/TicketTransactionsController.cs
     startLine: 17
   assemblies:
-  - Admin
-  namespace: Admin.Controllers
+  - TicketAPI
+  namespace: TicketAPI.Controllers
   syntax:
-    content: public IActionResult Venues()
+    content: >-
+      [HttpGet]
+
+      public List<TicketTransaction> Get()
     return:
-      type: Microsoft.AspNetCore.Mvc.IActionResult
-    content.vb: Public Function Venues As IActionResult
-  overload: Admin.Controllers.VenuesController.Venues*
+      type: System.Collections.Generic.List{ClassLibrary.TicketTransaction}
+    content.vb: >-
+      <HttpGet>
+
+      Public Function Get As List(Of TicketTransaction)
+  overload: TicketAPI.Controllers.TicketTransactionsController.Get*
+  attributes:
+  - type: Microsoft.AspNetCore.Mvc.HttpGetAttribute
+    ctor: Microsoft.AspNetCore.Mvc.HttpGetAttribute.#ctor
+    arguments: []
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
-- uid: Admin.Controllers.VenuesController.DeleteVenues(System.Int32)
-  commentId: M:Admin.Controllers.VenuesController.DeleteVenues(System.Int32)
-  id: DeleteVenues(System.Int32)
-  parent: Admin.Controllers.VenuesController
+- uid: TicketAPI.Controllers.TicketTransactionsController.Get(System.Int32)
+  commentId: M:TicketAPI.Controllers.TicketTransactionsController.Get(System.Int32)
+  id: Get(System.Int32)
+  parent: TicketAPI.Controllers.TicketTransactionsController
   langs:
   - csharp
   - vb
-  name: DeleteVenues(Int32)
-  nameWithType: VenuesController.DeleteVenues(Int32)
-  fullName: Admin.Controllers.VenuesController.DeleteVenues(System.Int32)
+  name: Get(Int32)
+  nameWithType: TicketTransactionsController.Get(Int32)
+  fullName: TicketAPI.Controllers.TicketTransactionsController.Get(System.Int32)
   type: Method
   source:
     remote:
-      path: src/Admin/Controllers/VenuesController.cs
+      path: src/TicketAPI/Controllers/TicketTransactionsController.cs
       branch: master
       repo: https://github.com/agngus/ticketSystem-jam.git
-    id: DeleteVenues
-    path: src/Admin/Controllers/VenuesController.cs
-    startLine: 32
+    id: Get
+    path: src/TicketAPI/Controllers/TicketTransactionsController.cs
+    startLine: 24
   assemblies:
-  - Admin
-  namespace: Admin.Controllers
+  - TicketAPI
+  namespace: TicketAPI.Controllers
   syntax:
-    content: public IActionResult DeleteVenues(int id)
+    content: >-
+      [HttpGet("{id}")]
+
+      public TicketTransaction Get(int id)
     parameters:
     - id: id
       type: System.Int32
     return:
-      type: Microsoft.AspNetCore.Mvc.IActionResult
-    content.vb: Public Function DeleteVenues(id As Integer) As IActionResult
-  overload: Admin.Controllers.VenuesController.DeleteVenues*
+      type: ClassLibrary.TicketTransaction
+    content.vb: >-
+      <HttpGet("{id}")>
+
+      Public Function Get(id As Integer) As TicketTransaction
+  overload: TicketAPI.Controllers.TicketTransactionsController.Get*
+  attributes:
+  - type: Microsoft.AspNetCore.Mvc.HttpGetAttribute
+    ctor: Microsoft.AspNetCore.Mvc.HttpGetAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: '{id}'
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
-- uid: Admin.Controllers.VenuesController.AddVenues(ClassLibrary.Venue)
-  commentId: M:Admin.Controllers.VenuesController.AddVenues(ClassLibrary.Venue)
-  id: AddVenues(ClassLibrary.Venue)
-  parent: Admin.Controllers.VenuesController
+- uid: TicketAPI.Controllers.TicketTransactionsController.Post(ClassLibrary.TicketTransaction)
+  commentId: M:TicketAPI.Controllers.TicketTransactionsController.Post(ClassLibrary.TicketTransaction)
+  id: Post(ClassLibrary.TicketTransaction)
+  parent: TicketAPI.Controllers.TicketTransactionsController
   langs:
   - csharp
   - vb
-  name: AddVenues(Venue)
-  nameWithType: VenuesController.AddVenues(Venue)
-  fullName: Admin.Controllers.VenuesController.AddVenues(ClassLibrary.Venue)
+  name: Post(TicketTransaction)
+  nameWithType: TicketTransactionsController.Post(TicketTransaction)
+  fullName: TicketAPI.Controllers.TicketTransactionsController.Post(ClassLibrary.TicketTransaction)
   type: Method
   source:
     remote:
-      path: src/Admin/Controllers/VenuesController.cs
+      path: src/TicketAPI/Controllers/TicketTransactionsController.cs
       branch: master
       repo: https://github.com/agngus/ticketSystem-jam.git
-    id: AddVenues
-    path: src/Admin/Controllers/VenuesController.cs
-    startLine: 47
+    id: Post
+    path: src/TicketAPI/Controllers/TicketTransactionsController.cs
+    startLine: 31
   assemblies:
-  - Admin
-  namespace: Admin.Controllers
+  - TicketAPI
+  namespace: TicketAPI.Controllers
   syntax:
-    content: public IActionResult AddVenues(Venue venue)
+    content: >-
+      [HttpPost]
+
+      public TicketTransaction Post([FromBody] TicketTransaction ticketTransaction)
     parameters:
-    - id: venue
-      type: ClassLibrary.Venue
+    - id: ticketTransaction
+      type: ClassLibrary.TicketTransaction
+      attributes:
+      - type: Microsoft.AspNetCore.Mvc.FromBodyAttribute
+        ctor: Microsoft.AspNetCore.Mvc.FromBodyAttribute.#ctor
+        arguments: []
     return:
-      type: Microsoft.AspNetCore.Mvc.IActionResult
-    content.vb: Public Function AddVenues(venue As Venue) As IActionResult
-  overload: Admin.Controllers.VenuesController.AddVenues*
+      type: ClassLibrary.TicketTransaction
+    content.vb: >-
+      <HttpPost>
+
+      Public Function Post(ticketTransaction As TicketTransaction) As TicketTransaction
+  overload: TicketAPI.Controllers.TicketTransactionsController.Post*
+  attributes:
+  - type: Microsoft.AspNetCore.Mvc.HttpPostAttribute
+    ctor: Microsoft.AspNetCore.Mvc.HttpPostAttribute.#ctor
+    arguments: []
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
-- uid: Admin.Controllers.VenuesController.EditVenues(System.Int32,ClassLibrary.Venue)
-  commentId: M:Admin.Controllers.VenuesController.EditVenues(System.Int32,ClassLibrary.Venue)
-  id: EditVenues(System.Int32,ClassLibrary.Venue)
-  parent: Admin.Controllers.VenuesController
+- uid: TicketAPI.Controllers.TicketTransactionsController.Put(System.Int32,ClassLibrary.TicketTransaction)
+  commentId: M:TicketAPI.Controllers.TicketTransactionsController.Put(System.Int32,ClassLibrary.TicketTransaction)
+  id: Put(System.Int32,ClassLibrary.TicketTransaction)
+  parent: TicketAPI.Controllers.TicketTransactionsController
   langs:
   - csharp
   - vb
-  name: EditVenues(Int32, Venue)
-  nameWithType: VenuesController.EditVenues(Int32, Venue)
-  fullName: Admin.Controllers.VenuesController.EditVenues(System.Int32, ClassLibrary.Venue)
+  name: Put(Int32, TicketTransaction)
+  nameWithType: TicketTransactionsController.Put(Int32, TicketTransaction)
+  fullName: TicketAPI.Controllers.TicketTransactionsController.Put(System.Int32, ClassLibrary.TicketTransaction)
   type: Method
   source:
     remote:
-      path: src/Admin/Controllers/VenuesController.cs
+      path: src/TicketAPI/Controllers/TicketTransactionsController.cs
       branch: master
       repo: https://github.com/agngus/ticketSystem-jam.git
-    id: EditVenues
-    path: src/Admin/Controllers/VenuesController.cs
-    startLine: 62
+    id: Put
+    path: src/TicketAPI/Controllers/TicketTransactionsController.cs
+    startLine: 38
   assemblies:
-  - Admin
-  namespace: Admin.Controllers
+  - TicketAPI
+  namespace: TicketAPI.Controllers
   syntax:
-    content: public IActionResult EditVenues(int id, Venue venue)
-    parameters:
-    - id: id
-      type: System.Int32
-    - id: venue
-      type: ClassLibrary.Venue
-    return:
-      type: Microsoft.AspNetCore.Mvc.IActionResult
-    content.vb: Public Function EditVenues(id As Integer, venue As Venue) As IActionResult
-  overload: Admin.Controllers.VenuesController.EditVenues*
-  modifiers.csharp:
-  - public
-  modifiers.vb:
-  - Public
-- uid: Admin.Controllers.VenuesController.DropdownChanged(System.Int32)
-  commentId: M:Admin.Controllers.VenuesController.DropdownChanged(System.Int32)
-  id: DropdownChanged(System.Int32)
-  parent: Admin.Controllers.VenuesController
-  langs:
-  - csharp
-  - vb
-  name: DropdownChanged(Int32)
-  nameWithType: VenuesController.DropdownChanged(Int32)
-  fullName: Admin.Controllers.VenuesController.DropdownChanged(System.Int32)
-  type: Method
-  source:
-    remote:
-      path: src/Admin/Controllers/VenuesController.cs
-      branch: master
-      repo: https://github.com/agngus/ticketSystem-jam.git
-    id: DropdownChanged
-    path: src/Admin/Controllers/VenuesController.cs
-    startLine: 77
-  assemblies:
-  - Admin
-  namespace: Admin.Controllers
-  syntax:
-    content: public IActionResult DropdownChanged(int id)
+    content: >-
+      [HttpPut("{id}")]
+
+      public TicketTransaction Put(int id, [FromBody] TicketTransaction ticketTransaction)
     parameters:
     - id: id
       type: System.Int32
+    - id: ticketTransaction
+      type: ClassLibrary.TicketTransaction
+      attributes:
+      - type: Microsoft.AspNetCore.Mvc.FromBodyAttribute
+        ctor: Microsoft.AspNetCore.Mvc.FromBodyAttribute.#ctor
+        arguments: []
     return:
-      type: Microsoft.AspNetCore.Mvc.IActionResult
-    content.vb: Public Function DropdownChanged(id As Integer) As IActionResult
-  overload: Admin.Controllers.VenuesController.DropdownChanged*
+      type: ClassLibrary.TicketTransaction
+    content.vb: >-
+      <HttpPut("{id}")>
+
+      Public Function Put(id As Integer, ticketTransaction As TicketTransaction) As TicketTransaction
+  overload: TicketAPI.Controllers.TicketTransactionsController.Put*
+  attributes:
+  - type: Microsoft.AspNetCore.Mvc.HttpPutAttribute
+    ctor: Microsoft.AspNetCore.Mvc.HttpPutAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: '{id}'
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TicketAPI.Controllers.TicketTransactionsController.Delete(System.Int32)
+  commentId: M:TicketAPI.Controllers.TicketTransactionsController.Delete(System.Int32)
+  id: Delete(System.Int32)
+  parent: TicketAPI.Controllers.TicketTransactionsController
+  langs:
+  - csharp
+  - vb
+  name: Delete(Int32)
+  nameWithType: TicketTransactionsController.Delete(Int32)
+  fullName: TicketAPI.Controllers.TicketTransactionsController.Delete(System.Int32)
+  type: Method
+  source:
+    remote:
+      path: src/TicketAPI/Controllers/TicketTransactionsController.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
+    id: Delete
+    path: src/TicketAPI/Controllers/TicketTransactionsController.cs
+    startLine: 45
+  assemblies:
+  - TicketAPI
+  namespace: TicketAPI.Controllers
+  syntax:
+    content: >-
+      [HttpDelete("{id}")]
+
+      public void Delete(int id)
+    parameters:
+    - id: id
+      type: System.Int32
+    content.vb: >-
+      <HttpDelete("{id}")>
+
+      Public Sub Delete(id As Integer)
+  overload: TicketAPI.Controllers.TicketTransactionsController.Delete*
+  attributes:
+  - type: Microsoft.AspNetCore.Mvc.HttpDeleteAttribute
+    ctor: Microsoft.AspNetCore.Mvc.HttpDeleteAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: '{id}'
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TicketAPI.Controllers.TicketTransactionsController.Get(System.String)
+  commentId: M:TicketAPI.Controllers.TicketTransactionsController.Get(System.String)
+  id: Get(System.String)
+  parent: TicketAPI.Controllers.TicketTransactionsController
+  langs:
+  - csharp
+  - vb
+  name: Get(String)
+  nameWithType: TicketTransactionsController.Get(String)
+  fullName: TicketAPI.Controllers.TicketTransactionsController.Get(System.String)
+  type: Method
+  source:
+    remote:
+      path: src/TicketAPI/Controllers/TicketTransactionsController.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
+    id: Get
+    path: src/TicketAPI/Controllers/TicketTransactionsController.cs
+    startLine: 51
+  assemblies:
+  - TicketAPI
+  namespace: TicketAPI.Controllers
+  syntax:
+    content: >-
+      [HttpGet("User/{query}")]
+
+      public List<TicketTransaction> Get(string query)
+    parameters:
+    - id: query
+      type: System.String
+    return:
+      type: System.Collections.Generic.List{ClassLibrary.TicketTransaction}
+    content.vb: >-
+      <HttpGet("User/{query}")>
+
+      Public Function Get(query As String) As List(Of TicketTransaction)
+  overload: TicketAPI.Controllers.TicketTransactionsController.Get*
+  attributes:
+  - type: Microsoft.AspNetCore.Mvc.HttpGetAttribute
+    ctor: Microsoft.AspNetCore.Mvc.HttpGetAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: User/{query}
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TicketAPI.Controllers.TicketTransactionsController.GetTickets(System.Int32)
+  commentId: M:TicketAPI.Controllers.TicketTransactionsController.GetTickets(System.Int32)
+  id: GetTickets(System.Int32)
+  parent: TicketAPI.Controllers.TicketTransactionsController
+  langs:
+  - csharp
+  - vb
+  name: GetTickets(Int32)
+  nameWithType: TicketTransactionsController.GetTickets(Int32)
+  fullName: TicketAPI.Controllers.TicketTransactionsController.GetTickets(System.Int32)
+  type: Method
+  source:
+    remote:
+      path: src/TicketAPI/Controllers/TicketTransactionsController.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
+    id: GetTickets
+    path: src/TicketAPI/Controllers/TicketTransactionsController.cs
+    startLine: 57
+  assemblies:
+  - TicketAPI
+  namespace: TicketAPI.Controllers
+  syntax:
+    content: >-
+      [HttpGet("Ticket/{id}")]
+
+      public List<EventSummary> GetTickets(int id)
+    parameters:
+    - id: id
+      type: System.Int32
+    return:
+      type: System.Collections.Generic.List{ClassLibrary.EventSummary}
+    content.vb: >-
+      <HttpGet("Ticket/{id}")>
+
+      Public Function GetTickets(id As Integer) As List(Of EventSummary)
+  overload: TicketAPI.Controllers.TicketTransactionsController.GetTickets*
+  attributes:
+  - type: Microsoft.AspNetCore.Mvc.HttpGetAttribute
+    ctor: Microsoft.AspNetCore.Mvc.HttpGetAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: Ticket/{id}
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TicketAPI.Controllers.TicketTransactionsController.Post(ClassLibrary.EventSummary)
+  commentId: M:TicketAPI.Controllers.TicketTransactionsController.Post(ClassLibrary.EventSummary)
+  id: Post(ClassLibrary.EventSummary)
+  parent: TicketAPI.Controllers.TicketTransactionsController
+  langs:
+  - csharp
+  - vb
+  name: Post(EventSummary)
+  nameWithType: TicketTransactionsController.Post(EventSummary)
+  fullName: TicketAPI.Controllers.TicketTransactionsController.Post(ClassLibrary.EventSummary)
+  type: Method
+  source:
+    remote:
+      path: src/TicketAPI/Controllers/TicketTransactionsController.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
+    id: Post
+    path: src/TicketAPI/Controllers/TicketTransactionsController.cs
+    startLine: 63
+  assemblies:
+  - TicketAPI
+  namespace: TicketAPI.Controllers
+  syntax:
+    content: >-
+      [HttpPost("Seat")]
+
+      public SeatsAtEventDate Post([FromBody] EventSummary eventSummary)
+    parameters:
+    - id: eventSummary
+      type: ClassLibrary.EventSummary
+      attributes:
+      - type: Microsoft.AspNetCore.Mvc.FromBodyAttribute
+        ctor: Microsoft.AspNetCore.Mvc.FromBodyAttribute.#ctor
+        arguments: []
+    return:
+      type: ClassLibrary.SeatsAtEventDate
+    content.vb: >-
+      <HttpPost("Seat")>
+
+      Public Function Post(eventSummary As EventSummary) As SeatsAtEventDate
+  overload: TicketAPI.Controllers.TicketTransactionsController.Post*
+  attributes:
+  - type: Microsoft.AspNetCore.Mvc.HttpPostAttribute
+    ctor: Microsoft.AspNetCore.Mvc.HttpPostAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: Seat
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TicketAPI.Controllers.TicketTransactionsController.Post(ClassLibrary.SeatsAtEventDate)
+  commentId: M:TicketAPI.Controllers.TicketTransactionsController.Post(ClassLibrary.SeatsAtEventDate)
+  id: Post(ClassLibrary.SeatsAtEventDate)
+  parent: TicketAPI.Controllers.TicketTransactionsController
+  langs:
+  - csharp
+  - vb
+  name: Post(SeatsAtEventDate)
+  nameWithType: TicketTransactionsController.Post(SeatsAtEventDate)
+  fullName: TicketAPI.Controllers.TicketTransactionsController.Post(ClassLibrary.SeatsAtEventDate)
+  type: Method
+  source:
+    remote:
+      path: src/TicketAPI/Controllers/TicketTransactionsController.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
+    id: Post
+    path: src/TicketAPI/Controllers/TicketTransactionsController.cs
+    startLine: 70
+  assemblies:
+  - TicketAPI
+  namespace: TicketAPI.Controllers
+  syntax:
+    content: >-
+      [HttpPost("Ticket")]
+
+      public Tickets Post([FromBody] SeatsAtEventDate seatsAtEventDate)
+    parameters:
+    - id: seatsAtEventDate
+      type: ClassLibrary.SeatsAtEventDate
+      attributes:
+      - type: Microsoft.AspNetCore.Mvc.FromBodyAttribute
+        ctor: Microsoft.AspNetCore.Mvc.FromBodyAttribute.#ctor
+        arguments: []
+    return:
+      type: ClassLibrary.Tickets
+    content.vb: >-
+      <HttpPost("Ticket")>
+
+      Public Function Post(seatsAtEventDate As SeatsAtEventDate) As Tickets
+  overload: TicketAPI.Controllers.TicketTransactionsController.Post*
+  attributes:
+  - type: Microsoft.AspNetCore.Mvc.HttpPostAttribute
+    ctor: Microsoft.AspNetCore.Mvc.HttpPostAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: Ticket
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TicketAPI.Controllers.TicketTransactionsController.Post(ClassLibrary.TicketToTransaction)
+  commentId: M:TicketAPI.Controllers.TicketTransactionsController.Post(ClassLibrary.TicketToTransaction)
+  id: Post(ClassLibrary.TicketToTransaction)
+  parent: TicketAPI.Controllers.TicketTransactionsController
+  langs:
+  - csharp
+  - vb
+  name: Post(TicketToTransaction)
+  nameWithType: TicketTransactionsController.Post(TicketToTransaction)
+  fullName: TicketAPI.Controllers.TicketTransactionsController.Post(ClassLibrary.TicketToTransaction)
+  type: Method
+  source:
+    remote:
+      path: src/TicketAPI/Controllers/TicketTransactionsController.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
+    id: Post
+    path: src/TicketAPI/Controllers/TicketTransactionsController.cs
+    startLine: 76
+  assemblies:
+  - TicketAPI
+  namespace: TicketAPI.Controllers
+  syntax:
+    content: >-
+      [HttpPost("TicketBuyer")]
+
+      public TicketToTransaction Post([FromBody] TicketToTransaction ticketToTransaction)
+    parameters:
+    - id: ticketToTransaction
+      type: ClassLibrary.TicketToTransaction
+      attributes:
+      - type: Microsoft.AspNetCore.Mvc.FromBodyAttribute
+        ctor: Microsoft.AspNetCore.Mvc.FromBodyAttribute.#ctor
+        arguments: []
+    return:
+      type: ClassLibrary.TicketToTransaction
+    content.vb: >-
+      <HttpPost("TicketBuyer")>
+
+      Public Function Post(ticketToTransaction As TicketToTransaction) As TicketToTransaction
+  overload: TicketAPI.Controllers.TicketTransactionsController.Post*
+  attributes:
+  - type: Microsoft.AspNetCore.Mvc.HttpPostAttribute
+    ctor: Microsoft.AspNetCore.Mvc.HttpPostAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: TicketBuyer
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
 references:
-- uid: Admin.Controllers
-  commentId: N:Admin.Controllers
+- uid: TicketAPI.Controllers
+  commentId: N:TicketAPI.Controllers
   isExternal: false
-  name: Admin.Controllers
-  nameWithType: Admin.Controllers
-  fullName: Admin.Controllers
+  name: TicketAPI.Controllers
+  nameWithType: TicketAPI.Controllers
+  fullName: TicketAPI.Controllers
 - uid: System.Object
   commentId: T:System.Object
   parent: System
@@ -10467,25 +10796,99 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: Admin.Controllers.VenuesController.Venues*
-  commentId: Overload:Admin.Controllers.VenuesController.Venues
+- uid: TicketAPI.Controllers.TicketTransactionsController.Get*
+  commentId: Overload:TicketAPI.Controllers.TicketTransactionsController.Get
   isExternal: false
-  name: Venues
-  nameWithType: VenuesController.Venues
-  fullName: Admin.Controllers.VenuesController.Venues
-- uid: Microsoft.AspNetCore.Mvc.IActionResult
-  commentId: T:Microsoft.AspNetCore.Mvc.IActionResult
-  parent: Microsoft.AspNetCore.Mvc
+  name: Get
+  nameWithType: TicketTransactionsController.Get
+  fullName: TicketAPI.Controllers.TicketTransactionsController.Get
+- uid: System.Collections.Generic.List{ClassLibrary.TicketTransaction}
+  commentId: T:System.Collections.Generic.List{ClassLibrary.TicketTransaction}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<TicketTransaction>
+  nameWithType: List<TicketTransaction>
+  fullName: System.Collections.Generic.List<ClassLibrary.TicketTransaction>
+  nameWithType.vb: List(Of TicketTransaction)
+  fullName.vb: System.Collections.Generic.List(Of ClassLibrary.TicketTransaction)
+  name.vb: List(Of TicketTransaction)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: ClassLibrary.TicketTransaction
+    name: TicketTransaction
+    nameWithType: TicketTransaction
+    fullName: ClassLibrary.TicketTransaction
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: ClassLibrary.TicketTransaction
+    name: TicketTransaction
+    nameWithType: TicketTransaction
+    fullName: ClassLibrary.TicketTransaction
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
   isExternal: true
-  name: IActionResult
-  nameWithType: IActionResult
-  fullName: Microsoft.AspNetCore.Mvc.IActionResult
-- uid: Admin.Controllers.VenuesController.DeleteVenues*
-  commentId: Overload:Admin.Controllers.VenuesController.DeleteVenues
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
   isExternal: false
-  name: DeleteVenues
-  nameWithType: VenuesController.DeleteVenues
-  fullName: Admin.Controllers.VenuesController.DeleteVenues
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
 - uid: System.Int32
   commentId: T:System.Int32
   parent: System
@@ -10493,34 +10896,117 @@ references:
   name: Int32
   nameWithType: Int32
   fullName: System.Int32
-- uid: Admin.Controllers.VenuesController.AddVenues*
-  commentId: Overload:Admin.Controllers.VenuesController.AddVenues
-  isExternal: false
-  name: AddVenues
-  nameWithType: VenuesController.AddVenues
-  fullName: Admin.Controllers.VenuesController.AddVenues
-- uid: ClassLibrary.Venue
-  commentId: T:ClassLibrary.Venue
+- uid: ClassLibrary.TicketTransaction
+  commentId: T:ClassLibrary.TicketTransaction
   parent: ClassLibrary
   isExternal: false
-  name: Venue
-  nameWithType: Venue
-  fullName: ClassLibrary.Venue
+  name: TicketTransaction
+  nameWithType: TicketTransaction
+  fullName: ClassLibrary.TicketTransaction
 - uid: ClassLibrary
   commentId: N:ClassLibrary
   isExternal: false
   name: ClassLibrary
   nameWithType: ClassLibrary
   fullName: ClassLibrary
-- uid: Admin.Controllers.VenuesController.EditVenues*
-  commentId: Overload:Admin.Controllers.VenuesController.EditVenues
+- uid: TicketAPI.Controllers.TicketTransactionsController.Post*
+  commentId: Overload:TicketAPI.Controllers.TicketTransactionsController.Post
   isExternal: false
-  name: EditVenues
-  nameWithType: VenuesController.EditVenues
-  fullName: Admin.Controllers.VenuesController.EditVenues
-- uid: Admin.Controllers.VenuesController.DropdownChanged*
-  commentId: Overload:Admin.Controllers.VenuesController.DropdownChanged
+  name: Post
+  nameWithType: TicketTransactionsController.Post
+  fullName: TicketAPI.Controllers.TicketTransactionsController.Post
+- uid: TicketAPI.Controllers.TicketTransactionsController.Put*
+  commentId: Overload:TicketAPI.Controllers.TicketTransactionsController.Put
   isExternal: false
-  name: DropdownChanged
-  nameWithType: VenuesController.DropdownChanged
-  fullName: Admin.Controllers.VenuesController.DropdownChanged
+  name: Put
+  nameWithType: TicketTransactionsController.Put
+  fullName: TicketAPI.Controllers.TicketTransactionsController.Put
+- uid: TicketAPI.Controllers.TicketTransactionsController.Delete*
+  commentId: Overload:TicketAPI.Controllers.TicketTransactionsController.Delete
+  isExternal: false
+  name: Delete
+  nameWithType: TicketTransactionsController.Delete
+  fullName: TicketAPI.Controllers.TicketTransactionsController.Delete
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: TicketAPI.Controllers.TicketTransactionsController.GetTickets*
+  commentId: Overload:TicketAPI.Controllers.TicketTransactionsController.GetTickets
+  isExternal: false
+  name: GetTickets
+  nameWithType: TicketTransactionsController.GetTickets
+  fullName: TicketAPI.Controllers.TicketTransactionsController.GetTickets
+- uid: System.Collections.Generic.List{ClassLibrary.EventSummary}
+  commentId: T:System.Collections.Generic.List{ClassLibrary.EventSummary}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<EventSummary>
+  nameWithType: List<EventSummary>
+  fullName: System.Collections.Generic.List<ClassLibrary.EventSummary>
+  nameWithType.vb: List(Of EventSummary)
+  fullName.vb: System.Collections.Generic.List(Of ClassLibrary.EventSummary)
+  name.vb: List(Of EventSummary)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: ClassLibrary.EventSummary
+    name: EventSummary
+    nameWithType: EventSummary
+    fullName: ClassLibrary.EventSummary
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: ClassLibrary.EventSummary
+    name: EventSummary
+    nameWithType: EventSummary
+    fullName: ClassLibrary.EventSummary
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ClassLibrary.EventSummary
+  commentId: T:ClassLibrary.EventSummary
+  parent: ClassLibrary
+  isExternal: false
+  name: EventSummary
+  nameWithType: EventSummary
+  fullName: ClassLibrary.EventSummary
+- uid: ClassLibrary.SeatsAtEventDate
+  commentId: T:ClassLibrary.SeatsAtEventDate
+  parent: ClassLibrary
+  isExternal: false
+  name: SeatsAtEventDate
+  nameWithType: SeatsAtEventDate
+  fullName: ClassLibrary.SeatsAtEventDate
+- uid: ClassLibrary.Tickets
+  commentId: T:ClassLibrary.Tickets
+  parent: ClassLibrary
+  isExternal: false
+  name: Tickets
+  nameWithType: Tickets
+  fullName: ClassLibrary.Tickets
+- uid: ClassLibrary.TicketToTransaction
+  commentId: T:ClassLibrary.TicketToTransaction
+  parent: ClassLibrary
+  isExternal: false
+  name: TicketToTransaction
+  nameWithType: TicketToTransaction
+  fullName: ClassLibrary.TicketToTransaction

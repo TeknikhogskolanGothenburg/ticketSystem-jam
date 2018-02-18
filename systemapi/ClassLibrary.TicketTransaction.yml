@@ -1,37 +1,39 @@
 ### YamlMime:ManagedReference
 items:
-- uid: ClassLibrary.Venue
-  commentId: T:ClassLibrary.Venue
-  id: Venue
+- uid: ClassLibrary.TicketTransaction
+  commentId: T:ClassLibrary.TicketTransaction
+  id: TicketTransaction
   parent: ClassLibrary
   children:
-  - ClassLibrary.Venue.Address
-  - ClassLibrary.Venue.City
-  - ClassLibrary.Venue.Country
-  - ClassLibrary.Venue.Seats
-  - ClassLibrary.Venue.VenueId
-  - ClassLibrary.Venue.VenueName
+  - ClassLibrary.TicketTransaction.BuyerAddress
+  - ClassLibrary.TicketTransaction.BuyerCity
+  - ClassLibrary.TicketTransaction.BuyerEmail
+  - ClassLibrary.TicketTransaction.BuyerFirstName
+  - ClassLibrary.TicketTransaction.BuyerLastName
+  - ClassLibrary.TicketTransaction.PaymentReferenceId
+  - ClassLibrary.TicketTransaction.PaymentStatus
+  - ClassLibrary.TicketTransaction.TransactionID
   langs:
   - csharp
   - vb
-  name: Venue
-  nameWithType: Venue
-  fullName: ClassLibrary.Venue
+  name: TicketTransaction
+  nameWithType: TicketTransaction
+  fullName: ClassLibrary.TicketTransaction
   type: Class
   source:
     remote:
-      path: src/ClassLibrary/Venue.cs
+      path: src/ClassLibrary/TicketTransaction.cs
       branch: master
       repo: https://github.com/agngus/ticketSystem-jam.git
-    id: Venue
-    path: src/ClassLibrary/Venue.cs
-    startLine: 8
+    id: TicketTransaction
+    path: src/ClassLibrary/TicketTransaction.cs
+    startLine: 7
   assemblies:
   - ClassLibrary
   namespace: ClassLibrary
   syntax:
-    content: public class Venue
-    content.vb: Public Class Venue
+    content: public class TicketTransaction
+    content.vb: Public Class TicketTransaction
   inheritance:
   - System.Object
   inheritedMembers:
@@ -48,220 +50,280 @@ items:
   modifiers.vb:
   - Public
   - Class
-- uid: ClassLibrary.Venue.VenueId
-  commentId: P:ClassLibrary.Venue.VenueId
-  id: VenueId
-  parent: ClassLibrary.Venue
+- uid: ClassLibrary.TicketTransaction.TransactionID
+  commentId: P:ClassLibrary.TicketTransaction.TransactionID
+  id: TransactionID
+  parent: ClassLibrary.TicketTransaction
   langs:
   - csharp
   - vb
-  name: VenueId
-  nameWithType: Venue.VenueId
-  fullName: ClassLibrary.Venue.VenueId
+  name: TransactionID
+  nameWithType: TicketTransaction.TransactionID
+  fullName: ClassLibrary.TicketTransaction.TransactionID
   type: Property
   source:
     remote:
-      path: src/ClassLibrary/Venue.cs
+      path: src/ClassLibrary/TicketTransaction.cs
       branch: master
       repo: https://github.com/agngus/ticketSystem-jam.git
-    id: VenueId
-    path: src/ClassLibrary/Venue.cs
+    id: TransactionID
+    path: src/ClassLibrary/TicketTransaction.cs
+    startLine: 9
+  assemblies:
+  - ClassLibrary
+  namespace: ClassLibrary
+  syntax:
+    content: public int TransactionID { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property TransactionID As Integer
+  overload: ClassLibrary.TicketTransaction.TransactionID*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: ClassLibrary.TicketTransaction.BuyerLastName
+  commentId: P:ClassLibrary.TicketTransaction.BuyerLastName
+  id: BuyerLastName
+  parent: ClassLibrary.TicketTransaction
+  langs:
+  - csharp
+  - vb
+  name: BuyerLastName
+  nameWithType: TicketTransaction.BuyerLastName
+  fullName: ClassLibrary.TicketTransaction.BuyerLastName
+  type: Property
+  source:
+    remote:
+      path: src/ClassLibrary/TicketTransaction.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
+    id: BuyerLastName
+    path: src/ClassLibrary/TicketTransaction.cs
     startLine: 10
   assemblies:
   - ClassLibrary
   namespace: ClassLibrary
   syntax:
-    content: public int VenueId { get; set; }
+    content: public string BuyerLastName { get; set; }
     parameters: []
     return:
-      type: System.Int32
-    content.vb: Public Property VenueId As Integer
-  overload: ClassLibrary.Venue.VenueId*
+      type: System.String
+    content.vb: Public Property BuyerLastName As String
+  overload: ClassLibrary.TicketTransaction.BuyerLastName*
   modifiers.csharp:
   - public
   - get
   - set
   modifiers.vb:
   - Public
-- uid: ClassLibrary.Venue.VenueName
-  commentId: P:ClassLibrary.Venue.VenueName
-  id: VenueName
-  parent: ClassLibrary.Venue
+- uid: ClassLibrary.TicketTransaction.BuyerFirstName
+  commentId: P:ClassLibrary.TicketTransaction.BuyerFirstName
+  id: BuyerFirstName
+  parent: ClassLibrary.TicketTransaction
   langs:
   - csharp
   - vb
-  name: VenueName
-  nameWithType: Venue.VenueName
-  fullName: ClassLibrary.Venue.VenueName
+  name: BuyerFirstName
+  nameWithType: TicketTransaction.BuyerFirstName
+  fullName: ClassLibrary.TicketTransaction.BuyerFirstName
   type: Property
   source:
     remote:
-      path: src/ClassLibrary/Venue.cs
+      path: src/ClassLibrary/TicketTransaction.cs
       branch: master
       repo: https://github.com/agngus/ticketSystem-jam.git
-    id: VenueName
-    path: src/ClassLibrary/Venue.cs
+    id: BuyerFirstName
+    path: src/ClassLibrary/TicketTransaction.cs
+    startLine: 11
+  assemblies:
+  - ClassLibrary
+  namespace: ClassLibrary
+  syntax:
+    content: public string BuyerFirstName { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property BuyerFirstName As String
+  overload: ClassLibrary.TicketTransaction.BuyerFirstName*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: ClassLibrary.TicketTransaction.BuyerAddress
+  commentId: P:ClassLibrary.TicketTransaction.BuyerAddress
+  id: BuyerAddress
+  parent: ClassLibrary.TicketTransaction
+  langs:
+  - csharp
+  - vb
+  name: BuyerAddress
+  nameWithType: TicketTransaction.BuyerAddress
+  fullName: ClassLibrary.TicketTransaction.BuyerAddress
+  type: Property
+  source:
+    remote:
+      path: src/ClassLibrary/TicketTransaction.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
+    id: BuyerAddress
+    path: src/ClassLibrary/TicketTransaction.cs
     startLine: 12
   assemblies:
   - ClassLibrary
   namespace: ClassLibrary
   syntax:
-    content: >-
-      [Required]
-
-      public string VenueName { get; set; }
+    content: public string BuyerAddress { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: >-
-      <Required>
-
-      Public Property VenueName As String
-  overload: ClassLibrary.Venue.VenueName*
-  attributes:
-  - type: System.ComponentModel.DataAnnotations.RequiredAttribute
-    ctor: System.ComponentModel.DataAnnotations.RequiredAttribute.#ctor
-    arguments: []
+    content.vb: Public Property BuyerAddress As String
+  overload: ClassLibrary.TicketTransaction.BuyerAddress*
   modifiers.csharp:
   - public
   - get
   - set
   modifiers.vb:
   - Public
-- uid: ClassLibrary.Venue.Address
-  commentId: P:ClassLibrary.Venue.Address
-  id: Address
-  parent: ClassLibrary.Venue
+- uid: ClassLibrary.TicketTransaction.BuyerCity
+  commentId: P:ClassLibrary.TicketTransaction.BuyerCity
+  id: BuyerCity
+  parent: ClassLibrary.TicketTransaction
   langs:
   - csharp
   - vb
-  name: Address
-  nameWithType: Venue.Address
-  fullName: ClassLibrary.Venue.Address
+  name: BuyerCity
+  nameWithType: TicketTransaction.BuyerCity
+  fullName: ClassLibrary.TicketTransaction.BuyerCity
   type: Property
   source:
     remote:
-      path: src/ClassLibrary/Venue.cs
+      path: src/ClassLibrary/TicketTransaction.cs
       branch: master
       repo: https://github.com/agngus/ticketSystem-jam.git
-    id: Address
-    path: src/ClassLibrary/Venue.cs
+    id: BuyerCity
+    path: src/ClassLibrary/TicketTransaction.cs
+    startLine: 13
+  assemblies:
+  - ClassLibrary
+  namespace: ClassLibrary
+  syntax:
+    content: public string BuyerCity { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property BuyerCity As String
+  overload: ClassLibrary.TicketTransaction.BuyerCity*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: ClassLibrary.TicketTransaction.BuyerEmail
+  commentId: P:ClassLibrary.TicketTransaction.BuyerEmail
+  id: BuyerEmail
+  parent: ClassLibrary.TicketTransaction
+  langs:
+  - csharp
+  - vb
+  name: BuyerEmail
+  nameWithType: TicketTransaction.BuyerEmail
+  fullName: ClassLibrary.TicketTransaction.BuyerEmail
+  type: Property
+  source:
+    remote:
+      path: src/ClassLibrary/TicketTransaction.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
+    id: BuyerEmail
+    path: src/ClassLibrary/TicketTransaction.cs
     startLine: 14
   assemblies:
   - ClassLibrary
   namespace: ClassLibrary
   syntax:
-    content: public string Address { get; set; }
+    content: public string BuyerEmail { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Property Address As String
-  overload: ClassLibrary.Venue.Address*
+    content.vb: Public Property BuyerEmail As String
+  overload: ClassLibrary.TicketTransaction.BuyerEmail*
   modifiers.csharp:
   - public
   - get
   - set
   modifiers.vb:
   - Public
-- uid: ClassLibrary.Venue.City
-  commentId: P:ClassLibrary.Venue.City
-  id: City
-  parent: ClassLibrary.Venue
+- uid: ClassLibrary.TicketTransaction.PaymentStatus
+  commentId: P:ClassLibrary.TicketTransaction.PaymentStatus
+  id: PaymentStatus
+  parent: ClassLibrary.TicketTransaction
   langs:
   - csharp
   - vb
-  name: City
-  nameWithType: Venue.City
-  fullName: ClassLibrary.Venue.City
+  name: PaymentStatus
+  nameWithType: TicketTransaction.PaymentStatus
+  fullName: ClassLibrary.TicketTransaction.PaymentStatus
   type: Property
   source:
     remote:
-      path: src/ClassLibrary/Venue.cs
+      path: src/ClassLibrary/TicketTransaction.cs
       branch: master
       repo: https://github.com/agngus/ticketSystem-jam.git
-    id: City
-    path: src/ClassLibrary/Venue.cs
+    id: PaymentStatus
+    path: src/ClassLibrary/TicketTransaction.cs
     startLine: 15
   assemblies:
   - ClassLibrary
   namespace: ClassLibrary
   syntax:
-    content: public string City { get; set; }
+    content: public string PaymentStatus { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Property City As String
-  overload: ClassLibrary.Venue.City*
+    content.vb: Public Property PaymentStatus As String
+  overload: ClassLibrary.TicketTransaction.PaymentStatus*
   modifiers.csharp:
   - public
   - get
   - set
   modifiers.vb:
   - Public
-- uid: ClassLibrary.Venue.Country
-  commentId: P:ClassLibrary.Venue.Country
-  id: Country
-  parent: ClassLibrary.Venue
+- uid: ClassLibrary.TicketTransaction.PaymentReferenceId
+  commentId: P:ClassLibrary.TicketTransaction.PaymentReferenceId
+  id: PaymentReferenceId
+  parent: ClassLibrary.TicketTransaction
   langs:
   - csharp
   - vb
-  name: Country
-  nameWithType: Venue.Country
-  fullName: ClassLibrary.Venue.Country
+  name: PaymentReferenceId
+  nameWithType: TicketTransaction.PaymentReferenceId
+  fullName: ClassLibrary.TicketTransaction.PaymentReferenceId
   type: Property
   source:
     remote:
-      path: src/ClassLibrary/Venue.cs
+      path: src/ClassLibrary/TicketTransaction.cs
       branch: master
       repo: https://github.com/agngus/ticketSystem-jam.git
-    id: Country
-    path: src/ClassLibrary/Venue.cs
+    id: PaymentReferenceId
+    path: src/ClassLibrary/TicketTransaction.cs
     startLine: 16
   assemblies:
   - ClassLibrary
   namespace: ClassLibrary
   syntax:
-    content: public string Country { get; set; }
+    content: public string PaymentReferenceId { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Property Country As String
-  overload: ClassLibrary.Venue.Country*
-  modifiers.csharp:
-  - public
-  - get
-  - set
-  modifiers.vb:
-  - Public
-- uid: ClassLibrary.Venue.Seats
-  commentId: P:ClassLibrary.Venue.Seats
-  id: Seats
-  parent: ClassLibrary.Venue
-  langs:
-  - csharp
-  - vb
-  name: Seats
-  nameWithType: Venue.Seats
-  fullName: ClassLibrary.Venue.Seats
-  type: Property
-  source:
-    remote:
-      path: src/ClassLibrary/Venue.cs
-      branch: master
-      repo: https://github.com/agngus/ticketSystem-jam.git
-    id: Seats
-    path: src/ClassLibrary/Venue.cs
-    startLine: 17
-  assemblies:
-  - ClassLibrary
-  namespace: ClassLibrary
-  syntax:
-    content: public int Seats { get; set; }
-    parameters: []
-    return:
-      type: System.Int32
-    content.vb: Public Property Seats As Integer
-  overload: ClassLibrary.Venue.Seats*
+    content.vb: Public Property PaymentReferenceId As String
+  overload: ClassLibrary.TicketTransaction.PaymentReferenceId*
   modifiers.csharp:
   - public
   - get
@@ -567,12 +629,12 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: ClassLibrary.Venue.VenueId*
-  commentId: Overload:ClassLibrary.Venue.VenueId
+- uid: ClassLibrary.TicketTransaction.TransactionID*
+  commentId: Overload:ClassLibrary.TicketTransaction.TransactionID
   isExternal: false
-  name: VenueId
-  nameWithType: Venue.VenueId
-  fullName: ClassLibrary.Venue.VenueId
+  name: TransactionID
+  nameWithType: TicketTransaction.TransactionID
+  fullName: ClassLibrary.TicketTransaction.TransactionID
 - uid: System.Int32
   commentId: T:System.Int32
   parent: System
@@ -580,12 +642,12 @@ references:
   name: Int32
   nameWithType: Int32
   fullName: System.Int32
-- uid: ClassLibrary.Venue.VenueName*
-  commentId: Overload:ClassLibrary.Venue.VenueName
+- uid: ClassLibrary.TicketTransaction.BuyerLastName*
+  commentId: Overload:ClassLibrary.TicketTransaction.BuyerLastName
   isExternal: false
-  name: VenueName
-  nameWithType: Venue.VenueName
-  fullName: ClassLibrary.Venue.VenueName
+  name: BuyerLastName
+  nameWithType: TicketTransaction.BuyerLastName
+  fullName: ClassLibrary.TicketTransaction.BuyerLastName
 - uid: System.String
   commentId: T:System.String
   parent: System
@@ -593,27 +655,39 @@ references:
   name: String
   nameWithType: String
   fullName: System.String
-- uid: ClassLibrary.Venue.Address*
-  commentId: Overload:ClassLibrary.Venue.Address
+- uid: ClassLibrary.TicketTransaction.BuyerFirstName*
+  commentId: Overload:ClassLibrary.TicketTransaction.BuyerFirstName
   isExternal: false
-  name: Address
-  nameWithType: Venue.Address
-  fullName: ClassLibrary.Venue.Address
-- uid: ClassLibrary.Venue.City*
-  commentId: Overload:ClassLibrary.Venue.City
+  name: BuyerFirstName
+  nameWithType: TicketTransaction.BuyerFirstName
+  fullName: ClassLibrary.TicketTransaction.BuyerFirstName
+- uid: ClassLibrary.TicketTransaction.BuyerAddress*
+  commentId: Overload:ClassLibrary.TicketTransaction.BuyerAddress
   isExternal: false
-  name: City
-  nameWithType: Venue.City
-  fullName: ClassLibrary.Venue.City
-- uid: ClassLibrary.Venue.Country*
-  commentId: Overload:ClassLibrary.Venue.Country
+  name: BuyerAddress
+  nameWithType: TicketTransaction.BuyerAddress
+  fullName: ClassLibrary.TicketTransaction.BuyerAddress
+- uid: ClassLibrary.TicketTransaction.BuyerCity*
+  commentId: Overload:ClassLibrary.TicketTransaction.BuyerCity
   isExternal: false
-  name: Country
-  nameWithType: Venue.Country
-  fullName: ClassLibrary.Venue.Country
-- uid: ClassLibrary.Venue.Seats*
-  commentId: Overload:ClassLibrary.Venue.Seats
+  name: BuyerCity
+  nameWithType: TicketTransaction.BuyerCity
+  fullName: ClassLibrary.TicketTransaction.BuyerCity
+- uid: ClassLibrary.TicketTransaction.BuyerEmail*
+  commentId: Overload:ClassLibrary.TicketTransaction.BuyerEmail
   isExternal: false
-  name: Seats
-  nameWithType: Venue.Seats
-  fullName: ClassLibrary.Venue.Seats
+  name: BuyerEmail
+  nameWithType: TicketTransaction.BuyerEmail
+  fullName: ClassLibrary.TicketTransaction.BuyerEmail
+- uid: ClassLibrary.TicketTransaction.PaymentStatus*
+  commentId: Overload:ClassLibrary.TicketTransaction.PaymentStatus
+  isExternal: false
+  name: PaymentStatus
+  nameWithType: TicketTransaction.PaymentStatus
+  fullName: ClassLibrary.TicketTransaction.PaymentStatus
+- uid: ClassLibrary.TicketTransaction.PaymentReferenceId*
+  commentId: Overload:ClassLibrary.TicketTransaction.PaymentReferenceId
+  isExternal: false
+  name: PaymentReferenceId
+  nameWithType: TicketTransaction.PaymentReferenceId
+  fullName: ClassLibrary.TicketTransaction.PaymentReferenceId
