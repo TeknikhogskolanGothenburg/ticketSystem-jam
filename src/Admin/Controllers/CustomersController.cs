@@ -9,6 +9,7 @@ using TicketSystem.RestApiClient;
 
 namespace Admin.Controllers
 {
+   
     public class CustomersController : Controller
     {
         TicketApi ticketApi = new TicketApi();
@@ -20,6 +21,11 @@ namespace Admin.Controllers
             return View();
         }
 
+        /// <summary>
+        /// Method searches the stringinput with a SELECT - LIKE query, returning all hit-results.
+        /// </summary>
+        /// <param name="searchString"></param>
+        /// <returns>Returns every Customer that matches the inputstring.</returns>
         public ActionResult FindCustomer(string searchString)
         {
             value = new Value();
@@ -29,7 +35,11 @@ namespace Admin.Controllers
             }
             return View(value);
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpPost]
         public ActionResult CustomerInfo(int id)
         {

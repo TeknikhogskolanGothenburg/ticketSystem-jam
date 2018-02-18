@@ -56,6 +56,12 @@
     <EmbeddedResource Update="Resources\Views.Checkout.PurchaseCompleted.sv-SE.resx">
       <Generator>ResXFileCodeGenerator</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Views.Home.Home.en.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Views.Home.Home.sv-SE.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Resources\Views.Tickets.Tickets.en.resx">
       <Generator>ResXFileCodeGenerator</Generator>
     </EmbeddedResource>

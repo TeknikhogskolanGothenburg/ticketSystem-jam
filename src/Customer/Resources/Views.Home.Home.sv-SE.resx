@@ -117,61 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Buy" xml:space="preserve">
-    <value>Köp</value>
+  <data name="Home" xml:space="preserve">
+    <value>Hem</value>
   </data>
-  <data name="Checkout" xml:space="preserve">
-    <value>Slutför köp</value>
+  <data name="JAM" xml:space="preserve">
+    <value>S Y L T</value>
   </data>
-  <data name="ChooseTicket" xml:space="preserve">
-    <value>Välj Biljett</value>
+  <data name="made" xml:space="preserve">
+    <value>skapad av: Jakob, Agneta &amp; Martin</value>
   </data>
-  <data name="ContinueShopping" xml:space="preserve">
-    <value>Fortsatt handla</value>
-  </data>
-  <data name="CustomerInformation" xml:space="preserve">
-    <value>Kund Information</value>
-  </data>
-  <data name="Date" xml:space="preserve">
-    <value>Datum</value>
-  </data>
-  <data name="Description" xml:space="preserve">
-    <value>Beskrivning</value>
-  </data>
-  <data name="Event" xml:space="preserve">
-    <value>Event</value>
-  </data>
-  <data name="GoToShipping" xml:space="preserve">
-    <value>Gå till TransportInformation</value>
-  </data>
-  <data name="It" xml:space="preserve">
-    <value>Det var ett noje att gora affarer med dig</value>
-  </data>
-  <data name="Payment" xml:space="preserve">
-    <value>Ga till betalning</value>
-  </data>
-  <data name="PurchaseCompleted" xml:space="preserve">
-    <value>Genomford Bestallning</value>
-  </data>
-  <data name="Remove" xml:space="preserve">
-    <value>Ta bort</value>
-  </data>
-  <data name="RemoveTicket" xml:space="preserve">
-    <value>Ta bort biljett</value>
-  </data>
-  <data name="Search" xml:space="preserve">
-    <value>Leta</value>
-  </data>
-  <data name="ShoppingCart" xml:space="preserve">
-    <value>Kundkorg</value>
-  </data>
-  <data name="Thank" xml:space="preserve">
-    <value>Tack for att du lade din bestallning hos SYLT</value>
-  </data>
-  <data name="Ticketshop" xml:space="preserve">
-    <value>Biljettshop</value>
-  </data>
-  <data name="Venue" xml:space="preserve">
-    <value>Arena</value>
+  <data name="TicketShop" xml:space="preserve">
+    <value>Biljett Shop</value>
   </data>
 </root>

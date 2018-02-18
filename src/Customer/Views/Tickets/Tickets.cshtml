@@ -35,8 +35,7 @@
             @foreach (var row in db)
             {
                 <tr>
-                    <td id="infoTD"><a id="infoLink" href="/Tickets/ShowInfo?id=@row.TicketEventDateID" data-assigned-id="@row.TicketEventDateID" >            @Localizer["i"]</a></td>
-
+                    <td id="infoTD"><a id="infoLink" href="/Tickets/ShowInfo?id=@row.TicketEventDateID" data-assigned-id="@row.TicketEventDateID" >@Localizer["i"]</a></td>
                     <td>@row.EventName</td>
                     <td>@row.VenueName</td>
                     <td>@row.EventStartDateTime</td>
