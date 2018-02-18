@@ -1,7 +1,12 @@
 ﻿@model ClassLibrary.Value;
-@*@{
-        ViewData["Title"] = "Checkout";
-    }*@
+@using Microsoft.AspNetCore.Mvc.Localization
+
+@inject IViewLocalizer Localizer
+
+
+@{
+        ViewData["Title"] = Localizer["Checkout"];
+    }
 @{
     var cart = Model.CartSummary;
 
@@ -9,17 +14,17 @@
 
 <div id="content">
 
-    <h1 style="font-family: 'Agency FB'">Shopping Cart</h1>
+    <h1 style="font-family: 'Agency FB'">@Localizer["ShoppingCart"]</h1>
     <hr />
     <div id="tableDiv" style="display:block">
         <table id="shoppingCartTable">
 
             <tr>
-                <th>Event</th>
-                <th>Venue</th>
-                <th>Description</th>
-                <th>Date</th>
-                <th>Remove Ticket</th>
+                <th>@Localizer["Event"]</th>
+                <th>@Localizer["Venue"]</th>
+                <th>@Localizer["Description"]</th>
+                <th>@Localizer["Date"]</th>
+                <th>@Localizer["RemoveTicket"]</th>
             </tr>
             @for (int i = 0; i < cart.Count; i++)
         {
@@ -28,22 +33,22 @@
                 <td>@cart[i].EventHtmlDescription</td>
                 <td>@cart[i].VenueName</td>
                 <td>@cart[i].EventStartDateTime</td>
-                <td id="btnTD"><a href="/Checkout/DeleteTicketFromCart?eventID=@i" id="deleteBtn">Remove</a></td>
+                <td id="btnTD"><a href="/Checkout/DeleteTicketFromCart?eventID=@i" id="deleteBtn">@Localizer["Remove"]</a></td>
             </tr>
     }
 
         </table>
     </div>
     <div id="cartButtons">
-        <button class="checkOutBtn"  onclick="location.href='@Url.Action("Tickets", "Tickets")'" type="submit">Continue Shopping</button>
+        <button class="checkOutBtn"  onclick="location.href='@Url.Action("Tickets", "Tickets")'" type="submit">@Localizer["ContinueShopping"]</button>
 
-        <button class="checkOutBtn" id="@Model.CartSummary" onclick="dropDown()" value="2" name="cart" type="submit">Go To Payment</button>
+        <button class="checkOutBtn" id="@Model.CartSummary" onclick="dropDown()" value="2" name="cart" type="submit">@Localizer["GoToShipping"]</button>
     </div>
 
     <div id="pic"><img src="~/images/jammy.png" /></div>
     <div id="customerInfo" style="display:none">
         <hr />
-        <h3>Customer Information</h3>
+        <h3>@Localizer["CustomerInformation"]</h3>
         <hr />
 
         @using (Html.BeginForm("GoToPayment", "Checkout", FormMethod.Post))
@@ -58,7 +63,7 @@
             @Html.TextBoxFor(m => m.TicketBuyer.BuyerAddress, new { type = "text", placeholder = "Jam Street 1337", @required = true })<br />
             @Html.LabelFor(m => m.TicketBuyer.BuyerCity, "City")<br />
             @Html.TextBoxFor(m => m.TicketBuyer.BuyerCity, new { type = "text", placeholder = "Gothenburg", @required = true })<br />
-            <input type="submit" style="background-color:dodgerblue" />
+            <input type="submit" style="background-color:dodgerblue"  />  @*value=@Localizer["Payment"]*@
         }
     </div>
 
