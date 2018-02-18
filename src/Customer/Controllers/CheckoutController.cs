@@ -24,6 +24,11 @@ namespace Customer.Controllers
         {
             return View();
         }
+        /// <summary>
+        /// Puts chosen ticket (= eventSummary) in the Checkout view and saves it in a CartSummary-object.
+        /// </summary>
+        /// <param name="buttonclick"></param>
+        /// <returns> Returns actual cart to the buyer.</returns>
 
         public IActionResult Checkout(string buttonclick)
         {
@@ -48,6 +53,11 @@ namespace Customer.Controllers
                 return View("Checkout", value);
             }
         }
+        /// <summary>
+        /// On buttonclick, the ticket is removed from the view and removed from the CartSummary-object.
+        /// </summary>
+        /// <param name="eventID"></param>
+        /// <returns>Returns to the Checkout view with the updated tickets.</returns>
 
         public IActionResult DeleteTicketFromCart(int eventID)
         {
@@ -62,6 +72,12 @@ namespace Customer.Controllers
             return View("Checkout", value);
         }
 
+        /// <summary>
+        /// On GoToPayment-buttonclick, the shippinginformation stored in TicketBuyer is sent to SQL and given a TransactionID. Then we loop the Shoppingcart in three steps: 
+        /// Adding a seatID to the ticketeventdate. Adding a ticketID to the seatID. Last, connecting the ticketID to the TransactionID.
+        /// </summary>
+        /// <param name="ticketBuyer"></param>
+        /// <returns>Returns an orderconfirmation.</returns>
         public IActionResult GoToPayment(TicketTransaction ticketBuyer)
         {
 
