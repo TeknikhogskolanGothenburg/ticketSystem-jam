@@ -17,39 +17,38 @@
         <input type="search" id="searchTextBox" name="searchText" />
         <input type="submit" id="searchBtn" value=@Localizer["Search"] />
     }
+   
+        <div id="information">@ViewBag.InfoMessage </div>
     <table id="shoppingCartTable">
 
         @using (Html.BeginForm("Checkout", "Checkout"))
         {
             <tr>
-<<<<<<< HEAD
-                <th>Event</th>
-                <th>Venue</th>
-                <th>Information</th>
-                <th>Date</th>
-                <th>Choose Ticket</th>
-=======
+                <th>@Localizer["Info"]</th>
                 <th>@Localizer["Event"]</th>
                 <th>@Localizer["Venue"]</th>
-                <th>@Localizer["Description"]</th>
                 <th>@Localizer["Date"]</th>
                 <th>@Localizer["ChooseTicket"]</th>
->>>>>>> upstream/master
+
             </tr>
+
             @foreach (var row in db)
             {
                 <tr>
+                    <td id="infoTD"><a id="infoLink" href="/Tickets/ShowInfo?id=@row.TicketEventDateID" data-assigned-id="@row.TicketEventDateID" >            @Localizer["i"]</a></td>
+
                     <td>@row.EventName</td>
                     <td>@row.VenueName</td>
-                    <td>@row.EventHtmlDescription</td>
                     <td>@row.EventStartDateTime</td>
-                    <td id="btnTD"><button class="addToCartBtn" type="submit" value="@row.TicketEventDateID" name="buttonclick">@Localizer["Buy"]</button></td>
+                    <td><button class="addToCartBtn" type="submit" value="@row.TicketEventDateID" name="buttonclick">@Localizer["Buy"]</button></td>
                 </tr>
-
+     
             }
         }
-    </table>
+    </table >
+   
 </div>
+
 
 
 
@@ -61,6 +60,8 @@
             window.location.href = "/Shop/DropDownChanged?id=" + value;
         }
 
-        
+        function whatsup(elem) {
+          
+        }
     </script>
 }

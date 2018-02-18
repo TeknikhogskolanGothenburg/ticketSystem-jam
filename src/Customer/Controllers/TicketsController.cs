@@ -11,6 +11,8 @@ namespace Customer.Controllers
         public static TicketApi ticketApi;
         public SeatsAtEventDate SeatsAtEventDate;
         public TicketEvent TicketEvent;
+        public static int infoNumber;
+        public static string infoMessage;
 
 
         public IActionResult Index()
@@ -34,6 +36,27 @@ namespace Customer.Controllers
             return View(value);
         }
 
+        public IActionResult ShowInfo(int id)
+        {
+            if(id == infoNumber) {
+                infoMessage = "";
+                infoNumber = 0;
+                return View("Tickets", value);
+            }
+
+            infoNumber = id;
+            infoMessage = "";
+
+            foreach (EventSummary x in value.EventSummaries)
+            {
+                if(x.TicketEventDateID == id)
+                {
+                    infoMessage = x.EventHtmlDescription;
+                    ViewBag.InfoMessage = infoMessage;
+                }
+            }
+            return View("Tickets", value);
+        }
         public IActionResult Search(string searchText)
         {
             if (searchText != null)
