@@ -147,7 +147,12 @@ tr td:hover > .addToCartBtn {
     opacity:1;
 }
 
-
+#information {
+    width:50%;
+    padding:10px;
+    margin:10px auto;
+   
+}
 .addToCartBtn, #deleteBtn {
     border: none;
     color: black;
@@ -177,7 +182,19 @@ tr td:hover > .addToCartBtn {
     font-size: 600%;
 }
 
-
+#infoTD {
+    padding:0px;
+}
+#infoLink {
+    height:20px;
+    padding:20px;
+    text-decoration:none;
+    color:black;
+    font-weight:bold;
+}
+#infoLink:hover {
+    cursor:pointer;
+}
 #backGround {
     height: 650px;
     overflow: auto;

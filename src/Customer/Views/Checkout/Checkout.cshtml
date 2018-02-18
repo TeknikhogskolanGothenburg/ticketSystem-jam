@@ -22,7 +22,6 @@
             <tr>
                 <th>@Localizer["Event"]</th>
                 <th>@Localizer["Venue"]</th>
-                <th>@Localizer["Description"]</th>
                 <th>@Localizer["Date"]</th>
                 <th>@Localizer["RemoveTicket"]</th>
             </tr>
@@ -30,7 +29,6 @@
         {
             <tr>
                 <td>@cart[i].EventName</td>
-                <td>@cart[i].EventHtmlDescription</td>
                 <td>@cart[i].VenueName</td>
                 <td>@cart[i].EventStartDateTime</td>
                 <td id="btnTD"><a href="/Checkout/DeleteTicketFromCart?eventID=@i" id="deleteBtn">@Localizer["Remove"]</a></td>
