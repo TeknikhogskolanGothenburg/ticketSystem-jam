@@ -635,7 +635,7 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: Post
     path: src/TicketAPI/Controllers/TicketTransactionsController.cs
-    startLine: 70
+    startLine: 69
   assemblies:
   - TicketAPI
   namespace: TicketAPI.Controllers
@@ -686,7 +686,7 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: Post
     path: src/TicketAPI/Controllers/TicketTransactionsController.cs
-    startLine: 76
+    startLine: 75
   assemblies:
   - TicketAPI
   namespace: TicketAPI.Controllers

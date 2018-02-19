@@ -234,14 +234,17 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: Venues
     path: src/Admin/Controllers/VenuesController.cs
-    startLine: 17
+    startLine: 22
   assemblies:
   - Admin
   namespace: Admin.Controllers
+  summary: "\nMethod that creates a venueobject and uploads all existing Venues.\n"
+  example: []
   syntax:
     content: public IActionResult Venues()
     return:
       type: Microsoft.AspNetCore.Mvc.IActionResult
+      description: Return the view for further choises.
     content.vb: Public Function Venues As IActionResult
   overload: Admin.Controllers.VenuesController.Venues*
   modifiers.csharp:
@@ -266,17 +269,21 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: DeleteVenues
     path: src/Admin/Controllers/VenuesController.cs
-    startLine: 32
+    startLine: 42
   assemblies:
   - Admin
   namespace: Admin.Controllers
+  summary: "\nMethod that takes an id and deletes that Venue in the database. Then it returns an updates list to the view.\n"
+  example: []
   syntax:
     content: public IActionResult DeleteVenues(int id)
     parameters:
     - id: id
       type: System.Int32
+      description: ''
     return:
       type: Microsoft.AspNetCore.Mvc.IActionResult
+      description: Returns an updated venuelist after delete is made.
     content.vb: Public Function DeleteVenues(id As Integer) As IActionResult
   overload: Admin.Controllers.VenuesController.DeleteVenues*
   modifiers.csharp:
@@ -301,17 +308,21 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: AddVenues
     path: src/Admin/Controllers/VenuesController.cs
-    startLine: 47
+    startLine: 62
   assemblies:
   - Admin
   namespace: Admin.Controllers
+  summary: "\nMethod that adds a Venueobject to the database, and then returns a list of venues to the view.\n"
+  example: []
   syntax:
     content: public IActionResult AddVenues(Venue venue)
     parameters:
     - id: venue
       type: ClassLibrary.Venue
+      description: ''
     return:
       type: Microsoft.AspNetCore.Mvc.IActionResult
+      description: Returns all venues.
     content.vb: Public Function AddVenues(venue As Venue) As IActionResult
   overload: Admin.Controllers.VenuesController.AddVenues*
   modifiers.csharp:
@@ -336,19 +347,24 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: EditVenues
     path: src/Admin/Controllers/VenuesController.cs
-    startLine: 62
+    startLine: 83
   assemblies:
   - Admin
   namespace: Admin.Controllers
+  summary: "\nMethod that takes the selected id and edited input and stores it in the database. Then it returns an updated list to the view.\n"
+  example: []
   syntax:
     content: public IActionResult EditVenues(int id, Venue venue)
     parameters:
     - id: id
       type: System.Int32
+      description: ''
     - id: venue
       type: ClassLibrary.Venue
+      description: ''
     return:
       type: Microsoft.AspNetCore.Mvc.IActionResult
+      description: Returns a fresh venuelist after editing.
     content.vb: Public Function EditVenues(id As Integer, venue As Venue) As IActionResult
   overload: Admin.Controllers.VenuesController.EditVenues*
   modifiers.csharp:
@@ -373,17 +389,21 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: DropdownChanged
     path: src/Admin/Controllers/VenuesController.cs
-    startLine: 77
+    startLine: 102
   assemblies:
   - Admin
   namespace: Admin.Controllers
+  summary: "\nMethod that takes the selected id and redirects it to the EditVenue-method.\n"
+  example: []
   syntax:
     content: public IActionResult DropdownChanged(int id)
     parameters:
     - id: id
       type: System.Int32
+      description: ''
     return:
       type: Microsoft.AspNetCore.Mvc.IActionResult
+      description: Redirects the Administrator to the Editview.
     content.vb: Public Function DropdownChanged(id As Integer) As IActionResult
   overload: Admin.Controllers.VenuesController.DropdownChanged*
   modifiers.csharp:

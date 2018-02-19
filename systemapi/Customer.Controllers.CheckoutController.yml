@@ -461,17 +461,21 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: Checkout
     path: src/Customer/Controllers/CheckoutController.cs
-    startLine: 27
+    startLine: 32
   assemblies:
   - Customer
   namespace: Customer.Controllers
+  summary: "\nPuts chosen ticket (= eventSummary) in the Checkout view and saves it in a CartSummary-object.\n"
+  example: []
   syntax:
     content: public IActionResult Checkout(string buttonclick)
     parameters:
     - id: buttonclick
       type: System.String
+      description: ''
     return:
       type: Microsoft.AspNetCore.Mvc.IActionResult
+      description: Returns actual cart to the buyer.
     content.vb: Public Function Checkout(buttonclick As String) As IActionResult
   overload: Customer.Controllers.CheckoutController.Checkout*
   modifiers.csharp:
@@ -496,17 +500,21 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: DeleteTicketFromCart
     path: src/Customer/Controllers/CheckoutController.cs
-    startLine: 51
+    startLine: 61
   assemblies:
   - Customer
   namespace: Customer.Controllers
+  summary: "\nOn buttonclick, the ticket is removed from the view and removed from the CartSummary-object.\n"
+  example: []
   syntax:
     content: public IActionResult DeleteTicketFromCart(int eventID)
     parameters:
     - id: eventID
       type: System.Int32
+      description: ''
     return:
       type: Microsoft.AspNetCore.Mvc.IActionResult
+      description: Returns to the Checkout view with the updated tickets.
     content.vb: Public Function DeleteTicketFromCart(eventID As Integer) As IActionResult
   overload: Customer.Controllers.CheckoutController.DeleteTicketFromCart*
   modifiers.csharp:
@@ -531,17 +539,21 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: GoToPayment
     path: src/Customer/Controllers/CheckoutController.cs
-    startLine: 64
+    startLine: 80
   assemblies:
   - Customer
   namespace: Customer.Controllers
+  summary: "\nOn GoToPayment-buttonclick, the shippinginformation stored in TicketBuyer is sent to SQL and given a TransactionID. Then we loop the Shoppingcart in three steps: \nAdding a seatID to the ticketeventdate. Adding a ticketID to the seatID. Last, connecting the ticketID to the TransactionID.\n"
+  example: []
   syntax:
     content: public IActionResult GoToPayment(TicketTransaction ticketBuyer)
     parameters:
     - id: ticketBuyer
       type: ClassLibrary.TicketTransaction
+      description: ''
     return:
       type: Microsoft.AspNetCore.Mvc.IActionResult
+      description: Returns an orderconfirmation.
     content.vb: Public Function GoToPayment(ticketBuyer As TicketTransaction) As IActionResult
   overload: Customer.Controllers.CheckoutController.GoToPayment*
   modifiers.csharp:

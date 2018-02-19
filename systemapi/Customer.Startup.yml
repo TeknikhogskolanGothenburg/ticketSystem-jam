@@ -23,7 +23,7 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: Startup
     path: src/Customer/Startup.cs
-    startLine: 15
+    startLine: 16
   assemblies:
   - Customer
   namespace: Customer
@@ -64,7 +64,7 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: .ctor
     path: src/Customer/Startup.cs
-    startLine: 17
+    startLine: 18
   assemblies:
   - Customer
   namespace: Customer
@@ -97,7 +97,7 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: Configuration
     path: src/Customer/Startup.cs
-    startLine: 22
+    startLine: 23
   assemblies:
   - Customer
   namespace: Customer
@@ -132,7 +132,7 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: ConfigureServices
     path: src/Customer/Startup.cs
-    startLine: 25
+    startLine: 26
   assemblies:
   - Customer
   namespace: Customer
@@ -165,7 +165,7 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: Configure
     path: src/Customer/Startup.cs
-    startLine: 52
+    startLine: 58
   assemblies:
   - Customer
   namespace: Customer

@@ -29,8 +29,6 @@
 - uid: ClassLibrary
   name: ClassLibrary
   items:
-  - uid: ClassLibrary.AllModels
-    name: AllModels
   - uid: ClassLibrary.EventSummary
     name: EventSummary
   - uid: ClassLibrary.SeatsAtEventDate
