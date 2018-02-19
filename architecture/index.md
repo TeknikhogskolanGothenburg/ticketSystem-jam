@@ -1,4 +1,4 @@
- 
+
 # Ticket system architecture
 
 ## TicketShop
@@ -35,12 +35,35 @@ GetAllEvent returns all events in a dropdown list. Administrator selects which t
 GetAllEvent returns all events in a dropdown list. Administrator selects which to delete. On buttonclick DeleteEvents is called deleting it from the database. GetAllEvent then returns an updates list in the dropdown list.
 
 #### EventDates
+
+* Here are two choises:
+1. Add TicketEventDate.
+GetAllEvents is called, showing it in a dropdown list. GetAllVenues is called, showing it in a second dropdown list. A calender is added to the view. The Administrator then selects one item in every list. EventDatesAdd is then called, connecting all three to one TicketEventDate-object.
+2. Delete TicketEventDate.
+GetAllSummary is called, showing all TicketEventDate in the view. On buttonclick, selected row is deleted by calling RemoveTicketEventDate method. Then GetAllSummary is called again showing the updated list.
+
 #### Venues
+
+* Here there are three choises:
+1. Add Venue.
+A form appears that requests input to a Venue object. On click, AddVenues is called posting the object to the database. 
+2. Edit Venue.
+EditVenues is called, returning all venues in a dropdown list. Selected venue and an updated form, sends the object to the database replacing the former information to the new.
+3. Delete Venue.
+DeleteVenues is called requesting GetAllVenues, returning all venues to a dropdown list. Selected item is on buttonclick removed from the database by the DeleteVenues-request. GetAllVenues is then returning a fresh venuelist.
+
 #### Customer
+
+* Here there is one choice:
+1. Find Customer.
+The Administrator enters a string, representing the name, or part of the name. The querystring is then sent to the database through the GetCustomer method, returning all Customers, that has the string in their first or lastname.
 
 
 
 * Which components does your application consist of?
+
+See Docfx.
+
 
 # Context diagram
 
