@@ -44,7 +44,9 @@ items:
       <Route("api/TicketEventDates")>
 
       Public Class TicketEventDatesController
+
           Inherits Controller
+
           Implements IActionFilter, IAsyncActionFilter, IFilterMetadata, IDisposable
   inheritance:
   - System.Object
