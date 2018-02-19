@@ -19,7 +19,6 @@
 
 * When the method is done a sendEmail-function is called, sending an E-mail to the Customer, who is then returned to the Purchased Completed view, which shows a thankyou greeting on the screen. 
 
-
 ## Backoffice
 
 * The Administrator is directed to the Home view. Here are four choises:
@@ -60,7 +59,7 @@ The Administrator enters a string, representing the name, or part of the name. T
 
 
 
-* Which components does your application consist of?
+## Which components does your application consist of?
 
 See Docfx.
 
