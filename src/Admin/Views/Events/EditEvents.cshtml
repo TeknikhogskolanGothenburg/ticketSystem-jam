@@ -27,9 +27,9 @@
                              "Text"))
 
             @Html.LabelFor(m => m.TicketEvent.EventName, "Name")<br />
-            @Html.TextBoxFor(m => m.TicketEvent.EventName)<br />
+            @Html.TextBoxFor(m => m.TicketEvent.EventName, new { @required = true })<br />
             @Html.LabelFor(m => m.TicketEvent.EventHtmlDescription, "Description")<br />
-            @Html.TextBoxFor(m => m.TicketEvent.EventHtmlDescription)<br />
+            @Html.TextBoxFor(m => m.TicketEvent.EventHtmlDescription, new { @required = true })<br />
             <input type="submit" style="background-color:dodgerblue" value=@Localizer["Edit"] />
         }
         <hr />
