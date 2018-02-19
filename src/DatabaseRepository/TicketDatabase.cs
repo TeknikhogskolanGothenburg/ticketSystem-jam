@@ -26,7 +26,6 @@ namespace TicketSystem.DatabaseRepository
         {
             using (var connection = new SqlConnection(connectionString))
             {
-                //string queryString = "SELECT * FROM TicketEvents WHERE EventName like '%" + query + "%' OR EventHtmlDescription like '%" + query + "%'";
                 string queryString = "SELECT * FROM TicketEvents WHERE TicketEventID = @ID";
                 connection.Open();
                 return connection.Query<TicketEvent>(queryString, new { ID = id }).First();
@@ -37,7 +36,7 @@ namespace TicketSystem.DatabaseRepository
         {
             using (var connection = new SqlConnection(connectionString))
             {
-                string queryString = "insert into TicketEvents(EventName, EventHtmlDescription) values(@Name, @Description)";
+                string queryString = "INSERT INTO TicketEvents(EventName, EventHtmlDescription) VALUES(@Name, @Description)";
                 connection.Open();
                 connection.Query(queryString, new { Name = ticketEvent.EventName, Description = ticketEvent.EventHtmlDescription });
                 var addedEventQuery = connection.Query<int>("SELECT IDENT_CURRENT ('TicketEvents') AS Current_Identity").First();
@@ -151,7 +150,7 @@ namespace TicketSystem.DatabaseRepository
         {
             using (var connection = new SqlConnection(connectionString))
             {
-                string queryString = "insert into TicketEventDates([TicketEventID],[VenueId],[EventStartDateTime]) values(@TicketEventID,@VenueId, @EventStartDateTime)";
+                string queryString = "INSERT INTO TicketEventDates([TicketEventID],[VenueId],[EventStartDateTime]) VALUES(@TicketEventID,@VenueId, @EventStartDateTime)";
                 connection.Open();
                 connection.Query(queryString, new { TicketEventID = ticketEventDate.TicketEventID, VenueId = ticketEventDate.VenueId, EventStartDateTime = ticketEventDate.EventStartDateTime });
                 var addedTicketEventDateQuery = connection.Query<int>("SELECT IDENT_CURRENT ('TicketEventDates') AS Current_Identity").First();
@@ -200,19 +199,6 @@ namespace TicketSystem.DatabaseRepository
             }
         }
 
-        //public TicketTransaction TicketTransactionsAdd(TicketTransaction ticketTransaction)
-        //{
-        //    using (var connection = new SqlConnection(connectionString))
-        //    {
-        //        string queryString = "INSERT INTO TicketTransactions(BuyerLastName, BuyerFirstName, BuyerAddress, BuyerCity, PaymentStatus, PaymentReferenceId)" +
-        //            "VALUES (@LastName, @FirstName, @Address, @City, @Status, @ReferenceID)";
-        //        connection.Open();
-        //        connection.Query(queryString, new { LastName = ticketTransaction.BuyerLastName, FirstName = ticketTransaction.BuyerFirstName, Address = ticketTransaction.BuyerAddress, City = ticketTransaction.BuyerCity, Status = ticketTransaction.PaymentStatus, ReferenceID = ticketTransaction.PaymentReferenceId });
-        //        var addedTicketEventDateQuery = connection.Query<int>("SELECT IDENT_CURRENT ('TicketTransactions') AS Current_Identity").First();
-        //        return connection.Query<TicketTransaction>("SELECT * FROM TicketTransactions WHERE TransactionID=@Id", new { Id = addedTicketEventDateQuery }).First();
-        //    }
-        //}
-
         public TicketTransaction TicketTransactionsAdd(TicketTransaction ticketTransaction)
         {
             using (var connection = new SqlConnection(connectionString))
@@ -234,7 +220,7 @@ namespace TicketSystem.DatabaseRepository
                     + "BuyerCity = @City, " + "PaymentStatus = @Status, " + "PaymentReferenceId = @ReferenceID " + "WHERE TransactionID = @ID";
                 connection.Open();
                 connection.Query(queryString, new { LastName = ticketTransaction.BuyerLastName, FirstName = ticketTransaction.BuyerFirstName, Address = ticketTransaction.BuyerAddress, City = ticketTransaction.BuyerAddress, Status = ticketTransaction.PaymentStatus, ReferenceID = ticketTransaction.PaymentReferenceId, ID = id });
-                return connection.Query<TicketTransaction>("SELECT * from TicketTransactions WHERE TransactionID=@Id", new { ID = id }).First();
+                return connection.Query<TicketTransaction>("SELECT * FROM TicketTransactions WHERE TransactionID=@Id", new { ID = id }).First();
             }
         }
 
@@ -263,13 +249,12 @@ namespace TicketSystem.DatabaseRepository
         {
             using (var connection = new SqlConnection(connectionString))
             {
-                string queryStringTicket = "insert into Tickets(SeatID) values(@SeatID)";
+                string queryStringTicket = "INSERT INTO Tickets(SeatID) values(@SeatID)";
                 connection.Open();
                 connection.Query(queryStringTicket, new { SeatID = seatsAtEventDate.SeatId });
                 var addedTicketsQuery = connection.Query<int>("SELECT IDENT_CURRENT ('Tickets') AS Current_Identity").First();
                 return connection.Query<Tickets>("SELECT * FROM Tickets WHERE TicketID=@Id", new { Id = addedTicketsQuery }).First();
             }
-
         }
 
         public SeatsAtEventDate PurchasedSeats(EventSummary eventSummary)
@@ -294,7 +279,6 @@ namespace TicketSystem.DatabaseRepository
                     " TicketEventDates" +
                     " JOIN TicketEvents ON TicketEventDates.TicketEventID = TicketEvents.TicketEventID" +
                     " JOIN Venues ON TicketEventDates.VenueID = Venues.VenueID";
-                //+ " WHERE TicketEventDates.TicketEventDateID = @ID";
                 connection.Open();
                 var response = connection.Query<EventSummary>(queryString).ToList();
                 return response;
@@ -329,9 +313,7 @@ namespace TicketSystem.DatabaseRepository
                 var response = connection.Query<EventSummary>(queryString, new { ID = id }).ToList();
                 return response;
             }
-        }
-
-        //public void AddTicketBuyer(TicketToTransaction   ticketToTransaction)
+        }               
 
         public TicketToTransaction AddTicketBuyer(TicketToTransaction ticketToTransaction)
 
@@ -363,5 +345,4 @@ namespace TicketSystem.DatabaseRepository
             }
         }
     }
-
 }

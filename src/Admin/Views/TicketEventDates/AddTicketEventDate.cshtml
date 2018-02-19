@@ -33,32 +33,17 @@
         <th></th>
     </tr>
     @foreach (var row in Model.EventSummaries)
-                {
-                    <tr>
-                        <td>@row.EventName</td>
-                        <td>@row.VenueName</td>
-                        <td>@row.EventHtmlDescription</td>
-                        <td>@row.EventStartDateTime</td>
-                    </tr>
-                }
-
+    {
+        <tr>
+            <td>@row.EventName</td>
+            <td>@row.VenueName</td>
+            <td>@row.EventHtmlDescription</td>
+            <td>@row.EventStartDateTime</td>
+        </tr>
+    }
 </table>
 
-@*@using (Html.BeginForm("DeleteTicketEventDate", "TicketEventDates", FormMethod.Post))
-    {
-        @foreach (var row in Model.EventSummaries)
-        {
-            <table align="center" >
-                <tr>
-                    <td>@row.EventName</td>
-                    <td>@row.VenueName</td>
-                    <td>@row.EventHtmlDescription</td>
-                    <td>@row.EventStartDateTime</td>
-                </tr>
-            </table>
-            <br />
-        }
-    }*@
+
 
 
 

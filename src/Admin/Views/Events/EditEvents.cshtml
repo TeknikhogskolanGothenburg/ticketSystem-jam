@@ -5,7 +5,7 @@
 @model ClassLibrary.Value;
 @using Microsoft.AspNetCore.Mvc.Localization
 
-@inject IViewLocalizer Localizer 
+@inject IViewLocalizer Localizer
 
 
 <h1>@ViewBag.Message</h1>
@@ -19,19 +19,19 @@
         <h3>@Localizer["EditEvent"]</h3>
         <hr />
         @using (Html.BeginForm("EditEvents", "Events", FormMethod.Post))
-    {
-        @Html.DropDownList(
-                    "id",
-                    new SelectList(Model.Events.Select(x => new { Value = x.TicketEventId, Text = x.EventName }),
-                    "Value",
-                    "Text"))
+        {
+            @Html.DropDownList(
+                             "id",
+                             new SelectList(Model.Events.Select(x => new { Value = x.TicketEventId, Text = x.EventName }),
+                             "Value",
+                             "Text"))
 
-        @Html.LabelFor(m => m.TicketEvent.EventName, "Name")<br />
-        @Html.TextBoxFor(m => m.TicketEvent.EventName)<br />
-        @Html.LabelFor(m => m.TicketEvent.EventHtmlDescription, "Description")<br />
-        @Html.TextBoxFor(m => m.TicketEvent.EventHtmlDescription)<br />
-        <input type="submit" style="background-color:dodgerblue" value=@Localizer["Edit"] />
-}
+            @Html.LabelFor(m => m.TicketEvent.EventName, "Name")<br />
+            @Html.TextBoxFor(m => m.TicketEvent.EventName)<br />
+            @Html.LabelFor(m => m.TicketEvent.EventHtmlDescription, "Description")<br />
+            @Html.TextBoxFor(m => m.TicketEvent.EventHtmlDescription)<br />
+            <input type="submit" style="background-color:dodgerblue" value=@Localizer["Edit"] />
+        }
         <hr />
     </div>
 </div>

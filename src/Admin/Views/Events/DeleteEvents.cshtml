@@ -5,7 +5,7 @@
 @model ClassLibrary.Value;
 @using Microsoft.AspNetCore.Mvc.Localization
 
-    @inject IViewLocalizer Localizer 
+@inject IViewLocalizer Localizer
 
 
 <h1>@ViewBag.Message</h1>
@@ -18,15 +18,15 @@
         <h3>@Localizer["DeleteEvents"]</h3>
         <hr />
         @using (Html.BeginForm("DeleteEvents", "Events", FormMethod.Post))
-    {
-        @Html.DropDownList(
-                                   "id",
-                                   new SelectList(Model.Events.Select(x => new { Value = x.TicketEventId, Text = x.EventName }),
-                                   "Value",
-                                   "Text"))
+        {
+            @Html.DropDownList(
+                                            "id",
+                                            new SelectList(Model.Events.Select(x => new { Value = x.TicketEventId, Text = x.EventName }),
+                                            "Value",
+                                            "Text"))
 
-        <input type="submit" value=@Localizer["Delete"] style="background-color:red" value=@Localizer["Delete"] />
-}
+            <input type="submit" value=@Localizer["Delete"] style="background-color:red" value=@Localizer["Delete"] />
+        }
     </div>
 </div>
 

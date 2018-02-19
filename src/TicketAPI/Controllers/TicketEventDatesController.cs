@@ -66,6 +66,5 @@ namespace TicketAPI.Controllers
         {
             return tdb.GetSearchSummary(id);
         }
-
     }
 }

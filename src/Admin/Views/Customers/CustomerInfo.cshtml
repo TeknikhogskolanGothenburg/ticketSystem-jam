@@ -14,7 +14,6 @@
     <tr>
         <th>@Localizer["Event"]</th>
         <th>@Localizer["Venue"]</th>
-        <th>@Localizer["Description"]</th>
         <th>@Localizer["Date"]</th>
         <th></th>
     </tr>
@@ -22,27 +21,11 @@
     {
         <tr>
             <td>@row.EventName</td>
-            <td>@row.VenueName</td>            
+            <td>@row.VenueName</td>
             <td>@row.EventStartDateTime</td>
         </tr>
     }
 </table>
 
-    @*@foreach (var row in Model.EventSummaries)
-        {
-            @using (Html.BeginForm("RemoveCustomerTicket", "Customers", FormMethod.Post))
-            {
-                <table align="center">
-                    <tr>
-                        <td>@row.EventName</td>
-                        <td>@row.VenueName</td>
-                        <td>@row.EventHtmlDescription</td>
-                        <td>@row.EventStartDateTime</td>
-                    </tr>
-                </table>
-                <center><button type="submit" name="id" style="color:crimson" value=@row.TicketEventDateID>Delete</button></center>
-            }
-            <br />
-        }*@
 
 
