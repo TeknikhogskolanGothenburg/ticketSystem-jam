@@ -23,7 +23,7 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: Startup
     path: src/Admin/Startup.cs
-    startLine: 15
+    startLine: 16
   assemblies:
   - Admin
   namespace: Admin
@@ -64,7 +64,7 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: .ctor
     path: src/Admin/Startup.cs
-    startLine: 17
+    startLine: 18
   assemblies:
   - Admin
   namespace: Admin
@@ -97,7 +97,7 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: Configuration
     path: src/Admin/Startup.cs
-    startLine: 22
+    startLine: 23
   assemblies:
   - Admin
   namespace: Admin
@@ -132,7 +132,7 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: ConfigureServices
     path: src/Admin/Startup.cs
-    startLine: 25
+    startLine: 26
   assemblies:
   - Admin
   namespace: Admin
@@ -165,7 +165,7 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: Configure
     path: src/Admin/Startup.cs
-    startLine: 71
+    startLine: 77
   assemblies:
   - Admin
   namespace: Admin

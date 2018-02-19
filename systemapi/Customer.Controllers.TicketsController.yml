@@ -7,8 +7,11 @@ items:
   children:
   - Customer.Controllers.TicketsController.GetAllEventDates
   - Customer.Controllers.TicketsController.Index
+  - Customer.Controllers.TicketsController.infoMessage
+  - Customer.Controllers.TicketsController.infoNumber
   - Customer.Controllers.TicketsController.Search(System.String)
   - Customer.Controllers.TicketsController.SeatsAtEventDate
+  - Customer.Controllers.TicketsController.ShowInfo(System.Int32)
   - Customer.Controllers.TicketsController.ticketApi
   - Customer.Controllers.TicketsController.TicketEvent
   - Customer.Controllers.TicketsController.Tickets
@@ -347,6 +350,72 @@ items:
   - public
   modifiers.vb:
   - Public
+- uid: Customer.Controllers.TicketsController.infoNumber
+  commentId: F:Customer.Controllers.TicketsController.infoNumber
+  id: infoNumber
+  parent: Customer.Controllers.TicketsController
+  langs:
+  - csharp
+  - vb
+  name: infoNumber
+  nameWithType: TicketsController.infoNumber
+  fullName: Customer.Controllers.TicketsController.infoNumber
+  type: Field
+  source:
+    remote:
+      path: src/Customer/Controllers/TicketsController.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
+    id: infoNumber
+    path: src/Customer/Controllers/TicketsController.cs
+    startLine: 13
+  assemblies:
+  - Customer
+  namespace: Customer.Controllers
+  syntax:
+    content: public static int infoNumber
+    return:
+      type: System.Int32
+    content.vb: Public Shared infoNumber As Integer
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Customer.Controllers.TicketsController.infoMessage
+  commentId: F:Customer.Controllers.TicketsController.infoMessage
+  id: infoMessage
+  parent: Customer.Controllers.TicketsController
+  langs:
+  - csharp
+  - vb
+  name: infoMessage
+  nameWithType: TicketsController.infoMessage
+  fullName: Customer.Controllers.TicketsController.infoMessage
+  type: Field
+  source:
+    remote:
+      path: src/Customer/Controllers/TicketsController.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
+    id: infoMessage
+    path: src/Customer/Controllers/TicketsController.cs
+    startLine: 14
+  assemblies:
+  - Customer
+  namespace: Customer.Controllers
+  syntax:
+    content: public static string infoMessage
+    return:
+      type: System.String
+    content.vb: Public Shared infoMessage As String
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
 - uid: Customer.Controllers.TicketsController.Index
   commentId: M:Customer.Controllers.TicketsController.Index
   id: Index
@@ -365,7 +434,7 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: Index
     path: src/Customer/Controllers/TicketsController.cs
-    startLine: 15
+    startLine: 17
   assemblies:
   - Customer
   namespace: Customer.Controllers
@@ -397,16 +466,58 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: Tickets
     path: src/Customer/Controllers/TicketsController.cs
-    startLine: 20
+    startLine: 27
   assemblies:
   - Customer
   namespace: Customer.Controllers
+  summary: "\nChecks if there is an existing purchaseobject. If not, a purchaseobject (value) and an Apiobject, is created.\nThen the database is called and existing Events is returned.\n"
+  example: []
   syntax:
     content: public IActionResult Tickets()
     return:
       type: Microsoft.AspNetCore.Mvc.IActionResult
+      description: Returns the Eventobjects to the view.
     content.vb: Public Function Tickets As IActionResult
   overload: Customer.Controllers.TicketsController.Tickets*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Customer.Controllers.TicketsController.ShowInfo(System.Int32)
+  commentId: M:Customer.Controllers.TicketsController.ShowInfo(System.Int32)
+  id: ShowInfo(System.Int32)
+  parent: Customer.Controllers.TicketsController
+  langs:
+  - csharp
+  - vb
+  name: ShowInfo(Int32)
+  nameWithType: TicketsController.ShowInfo(Int32)
+  fullName: Customer.Controllers.TicketsController.ShowInfo(System.Int32)
+  type: Method
+  source:
+    remote:
+      path: src/Customer/Controllers/TicketsController.cs
+      branch: master
+      repo: https://github.com/agngus/ticketSystem-jam.git
+    id: ShowInfo
+    path: src/Customer/Controllers/TicketsController.cs
+    startLine: 50
+  assemblies:
+  - Customer
+  namespace: Customer.Controllers
+  summary: "\nGives the customer a more detailed description on buttonclick.\nIf the Id is clicked for the first time, a loop is getting its description from the EventSummaries-object.\nIt it is clicked for the second time, message and number id deleted and the description is deleted from the view.\n"
+  example: []
+  syntax:
+    content: public IActionResult ShowInfo(int id)
+    parameters:
+    - id: id
+      type: System.Int32
+      description: ''
+    return:
+      type: Microsoft.AspNetCore.Mvc.IActionResult
+      description: Returns a description to the Customer.
+    content.vb: Public Function ShowInfo(id As Integer) As IActionResult
+  overload: Customer.Controllers.TicketsController.ShowInfo*
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -429,17 +540,21 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: Search
     path: src/Customer/Controllers/TicketsController.cs
-    startLine: 36
+    startLine: 78
   assemblies:
   - Customer
   namespace: Customer.Controllers
+  summary: "\nSearchfield. If the Customer want to search for specific event, input is made and checked by a LIKE-sql query, \nreturning every event with the same lettercombination. If no comparison, it returns empty.\n"
+  example: []
   syntax:
     content: public IActionResult Search(string searchText)
     parameters:
     - id: searchText
       type: System.String
+      description: ''
     return:
       type: Microsoft.AspNetCore.Mvc.IActionResult
+      description: Return every event that matches the inputstring.
     content.vb: Public Function Search(searchText As String) As IActionResult
   overload: Customer.Controllers.TicketsController.Search*
   modifiers.csharp:
@@ -464,7 +579,7 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: GetAllEventDates
     path: src/Customer/Controllers/TicketsController.cs
-    startLine: 49
+    startLine: 91
   assemblies:
   - Customer
   namespace: Customer.Controllers
@@ -10595,6 +10710,20 @@ references:
   name: TicketEvent
   nameWithType: TicketEvent
   fullName: ClassLibrary.TicketEvent
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
 - uid: Customer.Controllers.TicketsController.Index*
   commentId: Overload:Customer.Controllers.TicketsController.Index
   isExternal: false
@@ -10614,19 +10743,18 @@ references:
   name: Tickets
   nameWithType: TicketsController.Tickets
   fullName: Customer.Controllers.TicketsController.Tickets
+- uid: Customer.Controllers.TicketsController.ShowInfo*
+  commentId: Overload:Customer.Controllers.TicketsController.ShowInfo
+  isExternal: false
+  name: ShowInfo
+  nameWithType: TicketsController.ShowInfo
+  fullName: Customer.Controllers.TicketsController.ShowInfo
 - uid: Customer.Controllers.TicketsController.Search*
   commentId: Overload:Customer.Controllers.TicketsController.Search
   isExternal: false
   name: Search
   nameWithType: TicketsController.Search
   fullName: Customer.Controllers.TicketsController.Search
-- uid: System.String
-  commentId: T:System.String
-  parent: System
-  isExternal: true
-  name: String
-  nameWithType: String
-  fullName: System.String
 - uid: Customer.Controllers.TicketsController.GetAllEventDates*
   commentId: Overload:Customer.Controllers.TicketsController.GetAllEventDates
   isExternal: false

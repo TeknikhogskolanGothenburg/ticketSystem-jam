@@ -234,14 +234,17 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: TicketEventDates
     path: src/Admin/Controllers/TicketEventDatesController.cs
-    startLine: 17
+    startLine: 21
   assemblies:
   - Admin
   namespace: Admin.Controllers
+  summary: "\nMethod that uploads all Events and Venues for further action from the Administrator.\n"
+  example: []
   syntax:
     content: public ActionResult TicketEventDates()
     return:
       type: Microsoft.AspNetCore.Mvc.ActionResult
+      description: Returns the view for further choices.
     content.vb: Public Function TicketEventDates As ActionResult
   overload: Admin.Controllers.TicketEventDatesController.TicketEventDates*
   modifiers.csharp:
@@ -266,14 +269,17 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: AddTicketEventDate
     path: src/Admin/Controllers/TicketEventDatesController.cs
-    startLine: 34
+    startLine: 42
   assemblies:
   - Admin
   namespace: Admin.Controllers
+  summary: "\nMethod that uploads all existing TicketEvents.\n"
+  example: []
   syntax:
     content: public ActionResult AddTicketEventDate()
     return:
       type: Microsoft.AspNetCore.Mvc.ActionResult
+      description: Returns all TicketEvents to the Administrator.
     content.vb: Public Function AddTicketEventDate As ActionResult
   overload: Admin.Controllers.TicketEventDatesController.AddTicketEventDate*
   modifiers.csharp:
@@ -298,10 +304,12 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: CreateTicketEventDate
     path: src/Admin/Controllers/TicketEventDatesController.cs
-    startLine: 40
+    startLine: 55
   assemblies:
   - Admin
   namespace: Admin.Controllers
+  summary: "\nMethod that connects an event with a venue and a date, and saves it in the database.\n"
+  example: []
   syntax:
     content: >-
       [HttpPost]
@@ -310,12 +318,16 @@ items:
     parameters:
     - id: eventID
       type: System.Int32
+      description: ''
     - id: venueID
       type: System.Int32
+      description: ''
     - id: dateTime
       type: System.DateTime
+      description: ''
     return:
       type: Microsoft.AspNetCore.Mvc.ActionResult
+      description: Returns to the AddTicketEventDate method, that shows all ticketevents.
     content.vb: >-
       <HttpPost>
 
@@ -347,14 +359,17 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: DeleteTicketEventDate
     path: src/Admin/Controllers/TicketEventDatesController.cs
-    startLine: 53
+    startLine: 72
   assemblies:
   - Admin
   namespace: Admin.Controllers
+  summary: "\nMethod that uploads all TicketEventDates to the view.\n"
+  example: []
   syntax:
     content: public ActionResult DeleteTicketEventDate()
     return:
       type: Microsoft.AspNetCore.Mvc.ActionResult
+      description: 'Returns an actual TicketEventDates list. '
     content.vb: Public Function DeleteTicketEventDate As ActionResult
   overload: Admin.Controllers.TicketEventDatesController.DeleteTicketEventDate*
   modifiers.csharp:
@@ -379,10 +394,12 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: RemoveTicketEventDate
     path: src/Admin/Controllers/TicketEventDatesController.cs
-    startLine: 59
+    startLine: 83
   assemblies:
   - Admin
   namespace: Admin.Controllers
+  summary: "\nMethod that deletes selcted TicketEventDate from the database.\n"
+  example: []
   syntax:
     content: >-
       [HttpPost]
@@ -391,8 +408,10 @@ items:
     parameters:
     - id: id
       type: System.Int32
+      description: ''
     return:
       type: Microsoft.AspNetCore.Mvc.ActionResult
+      description: Returns an updated list.
     content.vb: >-
       <HttpPost>
 

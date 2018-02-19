@@ -23,7 +23,7 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: CustomersController
     path: src/Admin/Controllers/CustomersController.cs
-    startLine: 11
+    startLine: 12
   assemblies:
   - Admin
   namespace: Admin.Controllers
@@ -233,7 +233,7 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: Customers
     path: src/Admin/Controllers/CustomersController.cs
-    startLine: 17
+    startLine: 18
   assemblies:
   - Admin
   namespace: Admin.Controllers
@@ -265,17 +265,21 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: FindCustomer
     path: src/Admin/Controllers/CustomersController.cs
-    startLine: 22
+    startLine: 28
   assemblies:
   - Admin
   namespace: Admin.Controllers
+  summary: "\nMethod searches the stringinput with a SELECT - LIKE query, returning all hit-results.\n"
+  example: []
   syntax:
     content: public ActionResult FindCustomer(string searchString)
     parameters:
     - id: searchString
       type: System.String
+      description: ''
     return:
       type: Microsoft.AspNetCore.Mvc.ActionResult
+      description: Returns every Customer that matches the inputstring.
     content.vb: Public Function FindCustomer(searchString As String) As ActionResult
   overload: Admin.Controllers.CustomersController.FindCustomer*
   modifiers.csharp:
@@ -300,10 +304,12 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: CustomerInfo
     path: src/Admin/Controllers/CustomersController.cs
-    startLine: 32
+    startLine: 42
   assemblies:
   - Admin
   namespace: Admin.Controllers
+  summary: "\n\n"
+  example: []
   syntax:
     content: >-
       [HttpPost]
@@ -312,8 +318,10 @@ items:
     parameters:
     - id: id
       type: System.Int32
+      description: ''
     return:
       type: Microsoft.AspNetCore.Mvc.ActionResult
+      description: ''
     content.vb: >-
       <HttpPost>
 
@@ -345,7 +353,7 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: RemoveCustomerTicket
     path: src/Admin/Controllers/CustomersController.cs
-    startLine: 40
+    startLine: 50
   assemblies:
   - Admin
   namespace: Admin.Controllers

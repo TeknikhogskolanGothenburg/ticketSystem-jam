@@ -94,14 +94,17 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: GetAllEvents
     path: src/RestApiClient/TicketApi.cs
-    startLine: 16
+    startLine: 20
   assemblies:
   - RestApiClient
   namespace: TicketSystem.RestApiClient
+  summary: "\nGet all Events from the database.\n"
+  example: []
   syntax:
     content: public List<TicketEvent> GetAllEvents()
     return:
       type: System.Collections.Generic.List{ClassLibrary.TicketEvent}
+      description: EventID, Name , Description
     content.vb: Public Function GetAllEvents As List(Of TicketEvent)
   overload: TicketSystem.RestApiClient.TicketApi.GetAllEvents*
   modifiers.csharp:
@@ -126,17 +129,21 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: GetEvents
     path: src/RestApiClient/TicketApi.cs
-    startLine: 24
+    startLine: 32
   assemblies:
   - RestApiClient
   namespace: TicketSystem.RestApiClient
+  summary: "\nGets a specific Event returned based on the input id.\n"
+  example: []
   syntax:
     content: public List<TicketEvent> GetEvents(int id)
     parameters:
     - id: id
       type: System.Int32
+      description: ''
     return:
       type: System.Collections.Generic.List{ClassLibrary.TicketEvent}
+      description: 'Specific EventID, Name , Description '
     content.vb: Public Function GetEvents(id As Integer) As List(Of TicketEvent)
   overload: TicketSystem.RestApiClient.TicketApi.GetEvents*
   modifiers.csharp:
@@ -161,15 +168,18 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: EventsAdd
     path: src/RestApiClient/TicketApi.cs
-    startLine: 33
+    startLine: 44
   assemblies:
   - RestApiClient
   namespace: TicketSystem.RestApiClient
+  summary: "\nAdds an Event - EventID, Name , Description - To the database\n"
+  example: []
   syntax:
     content: public void EventsAdd(TicketEvent ticketEvent)
     parameters:
     - id: ticketEvent
       type: ClassLibrary.TicketEvent
+      description: ''
     content.vb: Public Sub EventsAdd(ticketEvent As TicketEvent)
   overload: TicketSystem.RestApiClient.TicketApi.EventsAdd*
   modifiers.csharp:
@@ -194,17 +204,21 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: EventsUpdate
     path: src/RestApiClient/TicketApi.cs
-    startLine: 42
+    startLine: 59
   assemblies:
   - RestApiClient
   namespace: TicketSystem.RestApiClient
+  summary: "\nUpdates chosen properties to an existing Event, based on input EventID.\n"
+  example: []
   syntax:
     content: public void EventsUpdate(int id, TicketEvent ticketEvent)
     parameters:
     - id: id
       type: System.Int32
+      description: EventID
     - id: ticketEvent
       type: ClassLibrary.TicketEvent
+      description: Properties in Class TicketEvent
     content.vb: Public Sub EventsUpdate(id As Integer, ticketEvent As TicketEvent)
   overload: TicketSystem.RestApiClient.TicketApi.EventsUpdate*
   modifiers.csharp:
@@ -229,15 +243,18 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: DeleteEvent
     path: src/RestApiClient/TicketApi.cs
-    startLine: 52
+    startLine: 73
   assemblies:
   - RestApiClient
   namespace: TicketSystem.RestApiClient
+  summary: "\nDeletes chosen Event based on selected EventID.\n"
+  example: []
   syntax:
     content: public void DeleteEvent(int id)
     parameters:
     - id: id
       type: System.Int32
+      description: EventID
     content.vb: Public Sub DeleteEvent(id As Integer)
   overload: TicketSystem.RestApiClient.TicketApi.DeleteEvent*
   modifiers.csharp:
@@ -262,14 +279,17 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: GetAllVenues
     path: src/RestApiClient/TicketApi.cs
-    startLine: 61
+    startLine: 86
   assemblies:
   - RestApiClient
   namespace: TicketSystem.RestApiClient
+  summary: "\nGet all Venues from the database.\n"
+  example: []
   syntax:
     content: public List<Venue> GetAllVenues()
     return:
       type: System.Collections.Generic.List{ClassLibrary.Venue}
+      description: VenueID, Address, City, Country, Seats
     content.vb: Public Function GetAllVenues As List(Of Venue)
   overload: TicketSystem.RestApiClient.TicketApi.GetAllVenues*
   modifiers.csharp:
@@ -294,17 +314,22 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: GetVenues
     path: src/RestApiClient/TicketApi.cs
-    startLine: 69
+    startLine: 100
   assemblies:
   - RestApiClient
   namespace: TicketSystem.RestApiClient
+  summary: "\nGet a specific Venue based on the selected VenueID\n"
+  example: []
   syntax:
     content: public Venue GetVenues(int id)
     parameters:
     - id: id
       type: System.Int32
+      description: VenueID
     return:
       type: ClassLibrary.Venue
+      description: >
+        Selected VenueID, Address, City, Country, Seats
     content.vb: Public Function GetVenues(id As Integer) As Venue
   overload: TicketSystem.RestApiClient.TicketApi.GetVenues*
   modifiers.csharp:
@@ -329,15 +354,18 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: VenueAdd
     path: src/RestApiClient/TicketApi.cs
-    startLine: 78
+    startLine: 112
   assemblies:
   - RestApiClient
   namespace: TicketSystem.RestApiClient
+  summary: "\nPosts a new Venue object to the database. - Selected VenueID, Address, City, Country, Seats\n"
+  example: []
   syntax:
     content: public void VenueAdd(Venue venue)
     parameters:
     - id: venue
       type: ClassLibrary.Venue
+      description: ''
     content.vb: Public Sub VenueAdd(venue As Venue)
   overload: TicketSystem.RestApiClient.TicketApi.VenueAdd*
   modifiers.csharp:
@@ -362,17 +390,21 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: VenuesUpdate
     path: src/RestApiClient/TicketApi.cs
-    startLine: 87
+    startLine: 126
   assemblies:
   - RestApiClient
   namespace: TicketSystem.RestApiClient
+  summary: "\nUpdates a specific Venue object based on the selected VenueID.\n"
+  example: []
   syntax:
     content: public void VenuesUpdate(int id, Venue venue)
     parameters:
     - id: id
       type: System.Int32
+      description: VenueID
     - id: venue
       type: ClassLibrary.Venue
+      description: VenueID, Address, City, Country, Seats
     content.vb: Public Sub VenuesUpdate(id As Integer, venue As Venue)
   overload: TicketSystem.RestApiClient.TicketApi.VenuesUpdate*
   modifiers.csharp:
@@ -397,15 +429,18 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: DeleteVenues
     path: src/RestApiClient/TicketApi.cs
-    startLine: 97
+    startLine: 140
   assemblies:
   - RestApiClient
   namespace: TicketSystem.RestApiClient
+  summary: "\nDeletes a Venue objcet based on selected VenueID.\n"
+  example: []
   syntax:
     content: public void DeleteVenues(int id)
     parameters:
     - id: id
       type: System.Int32
+      description: VenueID
     content.vb: Public Sub DeleteVenues(id As Integer)
   overload: TicketSystem.RestApiClient.TicketApi.DeleteVenues*
   modifiers.csharp:
@@ -430,14 +465,17 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: GetAllEventDates
     path: src/RestApiClient/TicketApi.cs
-    startLine: 106
+    startLine: 154
   assemblies:
   - RestApiClient
   namespace: TicketSystem.RestApiClient
+  summary: "\nGet all TicketEventDates from the database.\n"
+  example: []
   syntax:
     content: public List<TicketEventDate> GetAllEventDates()
     return:
       type: System.Collections.Generic.List{ClassLibrary.TicketEventDate}
+      description: TicketEventDateID, TicketEventID, VenueId, EventStartDateTime
     content.vb: Public Function GetAllEventDates As List(Of TicketEventDate)
   overload: TicketSystem.RestApiClient.TicketApi.GetAllEventDates*
   modifiers.csharp:
@@ -462,17 +500,21 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: GetEventDates
     path: src/RestApiClient/TicketApi.cs
-    startLine: 114
+    startLine: 166
   assemblies:
   - RestApiClient
   namespace: TicketSystem.RestApiClient
+  summary: "\nGet a specific Event on a certain place and date, selected by a TicketEventDateID.\n"
+  example: []
   syntax:
     content: public TicketEventDate GetEventDates(int id)
     parameters:
     - id: id
       type: System.Int32
+      description: TicketEventDateID
     return:
       type: ClassLibrary.TicketEventDate
+      description: selected TicketEventDateID, TicketEventID, VenueId, EventStartDateTime
     content.vb: Public Function GetEventDates(id As Integer) As TicketEventDate
   overload: TicketSystem.RestApiClient.TicketApi.GetEventDates*
   modifiers.csharp:
@@ -497,15 +539,18 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: EventDatesAdd
     path: src/RestApiClient/TicketApi.cs
-    startLine: 123
+    startLine: 178
   assemblies:
   - RestApiClient
   namespace: TicketSystem.RestApiClient
+  summary: "\nAdds a new TicketEventDate object to the database. \n"
+  example: []
   syntax:
     content: public void EventDatesAdd(TicketEventDate ticketEventDate)
     parameters:
     - id: ticketEventDate
       type: ClassLibrary.TicketEventDate
+      description: TicketEventDateID, TicketEventID, VenueId, EventStartDateTime
     content.vb: Public Sub EventDatesAdd(ticketEventDate As TicketEventDate)
   overload: TicketSystem.RestApiClient.TicketApi.EventDatesAdd*
   modifiers.csharp:
@@ -530,17 +575,21 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: EventDatesUpdate
     path: src/RestApiClient/TicketApi.cs
-    startLine: 132
+    startLine: 191
   assemblies:
   - RestApiClient
   namespace: TicketSystem.RestApiClient
+  summary: "\nUpdates a specific TicketEventDate object, selected by the TicketEventDateID.\n"
+  example: []
   syntax:
     content: public void EventDatesUpdate(int id, TicketEventDate ticketEventDate)
     parameters:
     - id: id
       type: System.Int32
+      description: TicketEventDateID
     - id: ticketEventDate
       type: ClassLibrary.TicketEventDate
+      description: TicketEventDateID, TicketEventID, VenueId, EventStartDateTime
     content.vb: Public Sub EventDatesUpdate(id As Integer, ticketEventDate As TicketEventDate)
   overload: TicketSystem.RestApiClient.TicketApi.EventDatesUpdate*
   modifiers.csharp:
@@ -565,15 +614,18 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: DeleteEventDates
     path: src/RestApiClient/TicketApi.cs
-    startLine: 142
+    startLine: 204
   assemblies:
   - RestApiClient
   namespace: TicketSystem.RestApiClient
+  summary: "\nDeletes a TicketEventDate object from the database, based on selected TicketEventDateID.\n"
+  example: []
   syntax:
     content: public void DeleteEventDates(int id)
     parameters:
     - id: id
       type: System.Int32
+      description: TicketEventDateID
     content.vb: Public Sub DeleteEventDates(id As Integer)
   overload: TicketSystem.RestApiClient.TicketApi.DeleteEventDates*
   modifiers.csharp:
@@ -598,14 +650,17 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: GetAllTicketTransactions
     path: src/RestApiClient/TicketApi.cs
-    startLine: 151
+    startLine: 217
   assemblies:
   - RestApiClient
   namespace: TicketSystem.RestApiClient
+  summary: "\nGet all TicketTransactions from the database.\n"
+  example: []
   syntax:
     content: public List<TicketTransaction> GetAllTicketTransactions()
     return:
       type: System.Collections.Generic.List{ClassLibrary.TicketTransaction}
+      description: TransactionID, BuyerLastName, BuyerFirstName, BuyerAddress, BuyerCity, BuyerEmail, PaymentStatus, PaymentReferenceId
     content.vb: Public Function GetAllTicketTransactions As List(Of TicketTransaction)
   overload: TicketSystem.RestApiClient.TicketApi.GetAllTicketTransactions*
   modifiers.csharp:
@@ -630,17 +685,21 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: GetTicketTransactions
     path: src/RestApiClient/TicketApi.cs
-    startLine: 159
+    startLine: 230
   assemblies:
   - RestApiClient
   namespace: TicketSystem.RestApiClient
+  summary: "\nGet a specific TicketTransaction from the database, based on selected TransactionID.\n"
+  example: []
   syntax:
     content: public TicketTransaction GetTicketTransactions(int id)
     parameters:
     - id: id
       type: System.Int32
+      description: TransactionID
     return:
       type: ClassLibrary.TicketTransaction
+      description: TransactionID, BuyerLastName, BuyerFirstName, BuyerAddress, BuyerCity, BuyerEmail, PaymentStatus, PaymentReferenceId
     content.vb: Public Function GetTicketTransactions(id As Integer) As TicketTransaction
   overload: TicketSystem.RestApiClient.TicketApi.GetTicketTransactions*
   modifiers.csharp:
@@ -665,17 +724,21 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: TicketTransactionAdd
     path: src/RestApiClient/TicketApi.cs
-    startLine: 168
+    startLine: 243
   assemblies:
   - RestApiClient
   namespace: TicketSystem.RestApiClient
+  summary: "\nAdds a new TicketTransaction to the database.\n"
+  example: []
   syntax:
     content: public TicketTransaction TicketTransactionAdd(TicketTransaction ticketTransaction)
     parameters:
     - id: ticketTransaction
       type: ClassLibrary.TicketTransaction
+      description: TransactionID, BuyerLastName, BuyerFirstName, BuyerAddress, BuyerCity, BuyerEmail, PaymentStatus, PaymentReferenceId
     return:
       type: ClassLibrary.TicketTransaction
+      description: TransactionID, BuyerLastName, BuyerFirstName, BuyerAddress, BuyerCity, BuyerEmail, PaymentStatus, PaymentReferenceId
     content.vb: Public Function TicketTransactionAdd(ticketTransaction As TicketTransaction) As TicketTransaction
   overload: TicketSystem.RestApiClient.TicketApi.TicketTransactionAdd*
   modifiers.csharp:
@@ -700,17 +763,21 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: TicketTransactionUpdate
     path: src/RestApiClient/TicketApi.cs
-    startLine: 179
+    startLine: 258
   assemblies:
   - RestApiClient
   namespace: TicketSystem.RestApiClient
+  summary: "\nUpdates a chosen TicketTransaction, based on selected TransactionID.\n"
+  example: []
   syntax:
     content: public void TicketTransactionUpdate(int id, TicketTransaction ticketTransaction)
     parameters:
     - id: id
       type: System.Int32
+      description: TransactionID
     - id: ticketTransaction
       type: ClassLibrary.TicketTransaction
+      description: TransactionID, BuyerLastName, BuyerFirstName, BuyerAddress, BuyerCity, BuyerEmail, PaymentStatus, PaymentReferenceId
     content.vb: Public Sub TicketTransactionUpdate(id As Integer, ticketTransaction As TicketTransaction)
   overload: TicketSystem.RestApiClient.TicketApi.TicketTransactionUpdate*
   modifiers.csharp:
@@ -735,15 +802,18 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: DeleteTicketTransaction
     path: src/RestApiClient/TicketApi.cs
-    startLine: 189
+    startLine: 271
   assemblies:
   - RestApiClient
   namespace: TicketSystem.RestApiClient
+  summary: "\nDeletes a chosen TicketTransaction from the database, selected by the TransactionID.\n"
+  example: []
   syntax:
     content: public void DeleteTicketTransaction(int id)
     parameters:
     - id: id
       type: System.Int32
+      description: TransactionID
     content.vb: Public Sub DeleteTicketTransaction(id As Integer)
   overload: TicketSystem.RestApiClient.TicketApi.DeleteTicketTransaction*
   modifiers.csharp:
@@ -768,17 +838,21 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: GetCustomer
     path: src/RestApiClient/TicketApi.cs
-    startLine: 197
+    startLine: 284
   assemblies:
   - RestApiClient
   namespace: TicketSystem.RestApiClient
+  summary: "\nGet all TicketTransactions (Customers) based on a querystring, containing the letters from part of the Customername.\n"
+  example: []
   syntax:
     content: public List<TicketTransaction> GetCustomer(string query)
     parameters:
     - id: query
       type: System.String
+      description: BuyerLastName, BuyerFirstName
     return:
       type: System.Collections.Generic.List{ClassLibrary.TicketTransaction}
+      description: BuyerLastName, BuyerFirstName, BuyerAddress, BuyerCity
     content.vb: Public Function GetCustomer(query As String) As List(Of TicketTransaction)
   overload: TicketSystem.RestApiClient.TicketApi.GetCustomer*
   modifiers.csharp:
@@ -803,14 +877,18 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: TicketGet
     path: src/RestApiClient/TicketApi.cs
-    startLine: 206
+    startLine: 298
   assemblies:
   - RestApiClient
   namespace: TicketSystem.RestApiClient
+  summary: "\nGet all Tickets from the database.\n"
+  example: []
   syntax:
     content: public List<Ticket> TicketGet()
     return:
       type: System.Collections.Generic.List{TicketSystem.RestApiClient.Model.Ticket}
+      description: >
+        TicketId, SeatId
     content.vb: Public Function TicketGet As List(Of Ticket)
   overload: TicketSystem.RestApiClient.TicketApi.TicketGet*
   implements:
@@ -837,17 +915,21 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: PurchasedTickets
     path: src/RestApiClient/TicketApi.cs
-    startLine: 214
+    startLine: 310
   assemblies:
   - RestApiClient
   namespace: TicketSystem.RestApiClient
+  summary: "\nPosts information from SeatsAtEventDate to the Tickets table in the database.\n"
+  example: []
   syntax:
     content: public Tickets PurchasedTickets(SeatsAtEventDate seatsAtEventDate)
     parameters:
     - id: seatsAtEventDate
       type: ClassLibrary.SeatsAtEventDate
+      description: SeatId
     return:
       type: ClassLibrary.Tickets
+      description: TicketId, SeatId
     content.vb: Public Function PurchasedTickets(seatsAtEventDate As SeatsAtEventDate) As Tickets
   overload: TicketSystem.RestApiClient.TicketApi.PurchasedTickets*
   modifiers.csharp:
@@ -872,17 +954,21 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: TicketTicketIdGet
     path: src/RestApiClient/TicketApi.cs
-    startLine: 223
+    startLine: 324
   assemblies:
   - RestApiClient
   namespace: TicketSystem.RestApiClient
+  summary: "\nGets a Ticket from the database, based on a selected TicketId. Throws an exception if ticket don&apos;t exist.\n"
+  example: []
   syntax:
     content: public Ticket TicketTicketIdGet(int ticketId)
     parameters:
     - id: ticketId
       type: System.Int32
+      description: TicketId
     return:
       type: TicketSystem.RestApiClient.Model.Ticket
+      description: TicketId, SeatId
     content.vb: Public Function TicketTicketIdGet(ticketId As Integer) As Ticket
   overload: TicketSystem.RestApiClient.TicketApi.TicketTicketIdGet*
   implements:
@@ -909,14 +995,17 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: GetAllSummary
     path: src/RestApiClient/TicketApi.cs
-    startLine: 241
+    startLine: 344
   assemblies:
   - RestApiClient
   namespace: TicketSystem.RestApiClient
+  summary: "\nGet all EventSummary from the database.\n"
+  example: []
   syntax:
     content: public List<EventSummary> GetAllSummary()
     return:
       type: System.Collections.Generic.List{ClassLibrary.EventSummary}
+      description: TicketEventDateID, EventName, EventHtmlDescription, VenueName, EventStartDateTime
     content.vb: Public Function GetAllSummary As List(Of EventSummary)
   overload: TicketSystem.RestApiClient.TicketApi.GetAllSummary*
   modifiers.csharp:
@@ -941,17 +1030,21 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: GetSearchSummary
     path: src/RestApiClient/TicketApi.cs
-    startLine: 249
+    startLine: 356
   assemblies:
   - RestApiClient
   namespace: TicketSystem.RestApiClient
+  summary: "\nGets a chosen EventSummary, based on selected querystring, from the EventName.\n"
+  example: []
   syntax:
     content: public List<EventSummary> GetSearchSummary(string id)
     parameters:
     - id: id
       type: System.String
+      description: EventName
     return:
       type: System.Collections.Generic.List{ClassLibrary.EventSummary}
+      description: TicketEventDateID, EventName, EventHtmlDescription, VenueName, EventStartDateTime
     content.vb: Public Function GetSearchSummary(id As String) As List(Of EventSummary)
   overload: TicketSystem.RestApiClient.TicketApi.GetSearchSummary*
   modifiers.csharp:
@@ -976,17 +1069,21 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: GetSummary
     path: src/RestApiClient/TicketApi.cs
-    startLine: 259
+    startLine: 370
   assemblies:
   - RestApiClient
   namespace: TicketSystem.RestApiClient
+  summary: "\nGets a chosen EventSummary, based on selected TicketEventDateID.\n"
+  example: []
   syntax:
     content: public EventSummary GetSummary(int id)
     parameters:
     - id: id
       type: System.Int32
+      description: TicketEventDateID
     return:
       type: ClassLibrary.EventSummary
+      description: TicketEventDateID, EventName, EventHtmlDescription, VenueName, EventStartDateTime
     content.vb: Public Function GetSummary(id As Integer) As EventSummary
   overload: TicketSystem.RestApiClient.TicketApi.GetSummary*
   modifiers.csharp:
@@ -1011,17 +1108,21 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: PurchasedSeats
     path: src/RestApiClient/TicketApi.cs
-    startLine: 268
+    startLine: 384
   assemblies:
   - RestApiClient
   namespace: TicketSystem.RestApiClient
+  summary: "\nAdds a SeatAtEventDate to the database.\n"
+  example: []
   syntax:
     content: public SeatsAtEventDate PurchasedSeats(EventSummary eventSummary)
     parameters:
     - id: eventSummary
       type: ClassLibrary.EventSummary
+      description: TicketEventDateId
     return:
       type: ClassLibrary.SeatsAtEventDate
+      description: SeatId, TicketEventDateId
     content.vb: Public Function PurchasedSeats(eventSummary As EventSummary) As SeatsAtEventDate
   overload: TicketSystem.RestApiClient.TicketApi.PurchasedSeats*
   modifiers.csharp:
@@ -1046,17 +1147,21 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: AddTicketBuyer
     path: src/RestApiClient/TicketApi.cs
-    startLine: 278
+    startLine: 399
   assemblies:
   - RestApiClient
   namespace: TicketSystem.RestApiClient
+  summary: "\nAdds a TicketBuyer to the TicketToTransaction table in the database.\n"
+  example: []
   syntax:
     content: public TicketToTransaction AddTicketBuyer(TicketToTransaction ticketToTransaction)
     parameters:
     - id: ticketToTransaction
       type: ClassLibrary.TicketToTransaction
+      description: TicketID, TransactionID
     return:
       type: ClassLibrary.TicketToTransaction
+      description: TicketID, TransactionID
     content.vb: Public Function AddTicketBuyer(ticketToTransaction As TicketToTransaction) As TicketToTransaction
   overload: TicketSystem.RestApiClient.TicketApi.AddTicketBuyer*
   modifiers.csharp:
@@ -1081,17 +1186,21 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: FindTicketBuyer
     path: src/RestApiClient/TicketApi.cs
-    startLine: 288
+    startLine: 413
   assemblies:
   - RestApiClient
   namespace: TicketSystem.RestApiClient
+  summary: "\nGets a specific TicketBuyer, based on selected CustomerID\n"
+  example: []
   syntax:
     content: public List<EventSummary> FindTicketBuyer(int id)
     parameters:
     - id: id
       type: System.Int32
+      description: TransactionID
     return:
       type: System.Collections.Generic.List{ClassLibrary.EventSummary}
+      description: TicketEventDateID, EventName, EventHtmlDescription, VenueName, EventStartDateTime
     content.vb: Public Function FindTicketBuyer(id As Integer) As List(Of EventSummary)
   overload: TicketSystem.RestApiClient.TicketApi.FindTicketBuyer*
   modifiers.csharp:

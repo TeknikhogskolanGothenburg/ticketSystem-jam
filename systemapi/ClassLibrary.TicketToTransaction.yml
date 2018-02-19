@@ -97,7 +97,7 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: TransactionID
     path: src/ClassLibrary/TicketToTransaction.cs
-    startLine: 10
+    startLine: 9
   assemblies:
   - ClassLibrary
   namespace: ClassLibrary
