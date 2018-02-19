@@ -13,11 +13,11 @@
 <div class="venueDiv" id="CreateTicketEventDate" style="display:block">
     @using (Html.BeginForm("CreateTicketEventDate", "TicketEventDates", FormMethod.Post))
     {
-        @Html.DropDownList("eventID", new SelectList(Model.Events.Select(x => new { Value = x.TicketEventId, Text = x.EventName }), "Value", "Text"), "- Select Event")
+        @Html.DropDownList("eventID", new SelectList(Model.Events.Select(x => new { Value = x.TicketEventId, Text = x.EventName }), "Value", "Text"), "- Select Event", new { @required = true })
 
-        @Html.DropDownList("venueID", new SelectList(Model.Venues.Select(x => new { Value = x.VenueId, Text = x.VenueName }), "Value", "Text"), "- Select Venue")
+        @Html.DropDownList("venueID", new SelectList(Model.Venues.Select(x => new { Value = x.VenueId, Text = x.VenueName }), "Value", "Text"), "- Select Venue", new { @required = true })
 
-        @Html.TextBox("dateTime", Model.TicketEventDate, new { @class = "datepicker", @type = "datetime-local" })
+        @Html.TextBox("dateTime", Model.TicketEventDate, new { @class = "datepicker", @type = "datetime-local", @required = true})
 
         <input type="submit" value=@Localizer["Add"] />
     }
