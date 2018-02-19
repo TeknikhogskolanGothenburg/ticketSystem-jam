@@ -36,10 +36,10 @@ namespace Admin.Controllers
             return View(value);
         }
         /// <summary>
-        /// 
+        /// Method that get Customerinfo based on selected TransactionID
         /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
+        /// <param name="id">TransactionID</param>
+        /// <returns>TicketEventDateID, EventName, EventHtmlDescription, VenueName, EventStartDateTime</returns>
         [HttpPost]
         public ActionResult CustomerInfo(int id)
         {
@@ -47,7 +47,12 @@ namespace Admin.Controllers
             value.EventSummaries = ticketApi.FindTicketBuyer(id);
             return View(value);
         }
-                
+        /// <summary>
+        /// Method that deletes Ticket based on selected TicketEventDateID.
+        /// </summary>
+        /// <param name="id">TicketEventDateID</param>
+        /// <returns>Redirects to FindCustomer</returns>
+
         [HttpPost]
         public ActionResult RemoveCustomerTicket(int id)
         {
