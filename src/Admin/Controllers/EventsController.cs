@@ -30,7 +30,7 @@ namespace Admin.Controllers
                 ticketApi = new TicketApi();
             }
 
-         
+
             return View(value);
         }
 
@@ -84,9 +84,10 @@ namespace Admin.Controllers
         /// <param name="ticketEvent"></param>
         /// <returns>Returns an updated eventlist.</returns>
         public IActionResult EditEvents(int id, TicketEvent ticketEvent)
-        {
+        {            
             if (id == 0)
             {
+                value.Events = ticketApi.GetAllEvents();
                 return View(value);
             }
             else
@@ -96,6 +97,5 @@ namespace Admin.Controllers
                 return View(value);
             }
         }
-
     }
 }
