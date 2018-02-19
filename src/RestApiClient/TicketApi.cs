@@ -11,7 +11,7 @@ namespace TicketSystem.RestApiClient
     {
         // Implemented using RestSharp: http://restsharp.org/
 
-        string localhost = "http://localhost:50248/api/";
+        string localhost = "http://localhost:50148/api/";
 
         //TicketEvent Calls
         /// <summary>

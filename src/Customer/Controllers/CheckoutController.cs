@@ -95,6 +95,15 @@ namespace Customer.Controllers
                 ticketApi.AddTicketBuyer(ticketToTransaction);  // Kopplar TicketID + TransactionID  
             }
 
+            Mail m = new Mail();
+            string s = "";
+            string z = "<h1> Here is a summary of your beautiful order!</h1>";
+            foreach (EventSummary e in value.CartSummary)
+            {
+                s =  s +  "<h2>" + e.EventName + "</h2>"  + "[ " + e.VenueName + " - " + e.EventStartDateTime + " ] </li>"  ;
+            }
+            s =  z + s ;
+            m.SendEmail(ticketBuyer.BuyerEmail, ticketBuyer.BuyerFirstName, s);
             return View("PurchaseCompleted", value);
         }
 
