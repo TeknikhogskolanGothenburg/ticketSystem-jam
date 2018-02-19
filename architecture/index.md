@@ -1,7 +1,7 @@
-
+ 
 # Ticket system architecture
 
-* TicketShop
+## TicketShop
 
 * The Program start in the HomeController with a Welcome greeting. The Customer clicks on Ticket, and the Ticket Actionresult is called that returns the Events in the view.
 * For more information the Customer click on the Info- cell and ShowInfo-Actionresult is called returning the Description-property to the view.
@@ -19,6 +19,24 @@
 
 * When the method is done a sendEmail-function is called, sending an E-mail to the Customer, who is then returned to the Purchased Completed view, which shows a thankyou greeting on the screen. 
 
+
+## Backoffice
+
+* The Administrator is directed to the Home view. Here are four choises:
+
+#### Events
+
+* Here there are three choises:
+1. Add Event. 
+The EventAdd-actionresult is called posting an eventobject to the database. GetAllEvent-method is then called returning all events to the the Value- object.
+2. Edit Event.
+GetAllEvent returns all events in a dropdown list. Administrator selects which to edit and inserts changes in the textboxes. EventsUpdate is called, putting the changes in the database.
+3. Delete Event.
+GetAllEvent returns all events in a dropdown list. Administrator selects which to delete. On buttonclick DeleteEvents is called deleting it from the database. GetAllEvent then returns an updates list in the dropdown list.
+
+#### EventDates
+#### Venues
+#### Customer
 
 
 
