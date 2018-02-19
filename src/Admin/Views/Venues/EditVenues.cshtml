@@ -28,28 +28,18 @@
 
 
         @Html.LabelFor(m => m.Venue.VenueName, "Name")<br />
-        @Html.TextBoxFor(m => m.Venue.VenueName)<br />
+        @Html.TextBoxFor(m => m.Venue.VenueName, new { @required = true })<br />
         @Html.LabelFor(m => m.Venue.Address, "Address")<br />
-        @Html.TextBoxFor(m => m.Venue.Address)<br />
+        @Html.TextBoxFor(m => m.Venue.Address, new { @required = true })<br />
         @Html.LabelFor(m => m.Venue.City, "City")<br />
-        @Html.TextBoxFor(m => m.Venue.City)<br />
+        @Html.TextBoxFor(m => m.Venue.City, new { @required = true })<br />
         @Html.LabelFor(m => m.Venue.Country, "Country")<br />
-        @Html.TextBoxFor(m => m.Venue.Country)<br />
+        @Html.TextBoxFor(m => m.Venue.Country, new { @required = true })<br />
         @Html.LabelFor(m => m.Venue.Seats, "Seats")<br />
-        @Html.TextBoxFor(m => m.Venue.Seats)<br />
+        @Html.TextBoxFor(m => m.Venue.Seats, new { @required = true })<br />
         <input type="submit" style="background-color:dodgerblue" value=@Localizer["Add"] />
 }
         <hr />
     </div>
 
 </div>
-@section Scripts
-    {
-    <script>
-        function dropdown(value) {
-            window.location.href = "/Venues/DropDownChanged?id=" + value;
-        }
-    </script>
-}
-
- @*new { @onchange = "dropdown(this.value)" } sätt detta efter ett komma efter "Text" i dropdownlisten*@ 
