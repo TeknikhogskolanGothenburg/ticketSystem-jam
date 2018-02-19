@@ -20,10 +20,12 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: HomeController
     path: src/Customer/Controllers/HomeController.cs
-    startLine: 8
+    startLine: 12
   assemblies:
   - Customer
   namespace: Customer.Controllers
+  summary: "\nShows the StartPage to the Consumer.\n"
+  example: []
   syntax:
     content: 'public class HomeController : Controller, IActionFilter, IAsyncActionFilter, IFilterMetadata, IDisposable'
     content.vb: >-
@@ -230,7 +232,7 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: Home
     path: src/Customer/Controllers/HomeController.cs
-    startLine: 10
+    startLine: 14
   assemblies:
   - Customer
   namespace: Customer.Controllers

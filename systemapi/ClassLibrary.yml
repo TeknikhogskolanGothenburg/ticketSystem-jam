@@ -4,7 +4,6 @@ items:
   commentId: N:ClassLibrary
   id: ClassLibrary
   children:
-  - ClassLibrary.AllModels
   - ClassLibrary.EventSummary
   - ClassLibrary.SeatsAtEventDate
   - ClassLibrary.TicketEvent
@@ -24,12 +23,6 @@ items:
   assemblies:
   - ClassLibrary
 references:
-- uid: ClassLibrary.AllModels
-  commentId: T:ClassLibrary.AllModels
-  isExternal: false
-  name: AllModels
-  nameWithType: AllModels
-  fullName: ClassLibrary.AllModels
 - uid: ClassLibrary.EventSummary
   commentId: T:ClassLibrary.EventSummary
   parent: ClassLibrary

@@ -159,7 +159,7 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: EventsAdd
     path: src/DatabaseRepository/TicketDatabase.cs
-    startLine: 35
+    startLine: 34
   assemblies:
   - DatabaseRepository
   namespace: TicketSystem.DatabaseRepository
@@ -196,7 +196,7 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: EventsUpdate
     path: src/DatabaseRepository/TicketDatabase.cs
-    startLine: 47
+    startLine: 46
   assemblies:
   - DatabaseRepository
   namespace: TicketSystem.DatabaseRepository
@@ -233,7 +233,7 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: DeleteEvents
     path: src/DatabaseRepository/TicketDatabase.cs
-    startLine: 58
+    startLine: 57
   assemblies:
   - DatabaseRepository
   namespace: TicketSystem.DatabaseRepository
@@ -266,7 +266,7 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: GetAllVenues
     path: src/DatabaseRepository/TicketDatabase.cs
-    startLine: 68
+    startLine: 67
   assemblies:
   - DatabaseRepository
   namespace: TicketSystem.DatabaseRepository
@@ -298,7 +298,7 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: GetVenues
     path: src/DatabaseRepository/TicketDatabase.cs
-    startLine: 78
+    startLine: 77
   assemblies:
   - DatabaseRepository
   namespace: TicketSystem.DatabaseRepository
@@ -335,7 +335,7 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: VenuesAdd
     path: src/DatabaseRepository/TicketDatabase.cs
-    startLine: 88
+    startLine: 87
   assemblies:
   - DatabaseRepository
   namespace: TicketSystem.DatabaseRepository
@@ -372,7 +372,7 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: VenuesUpdate
     path: src/DatabaseRepository/TicketDatabase.cs
-    startLine: 107
+    startLine: 106
   assemblies:
   - DatabaseRepository
   namespace: TicketSystem.DatabaseRepository
@@ -409,7 +409,7 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: DeleteVenue
     path: src/DatabaseRepository/TicketDatabase.cs
-    startLine: 118
+    startLine: 117
   assemblies:
   - DatabaseRepository
   namespace: TicketSystem.DatabaseRepository
@@ -442,7 +442,7 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: GetAllEventDates
     path: src/DatabaseRepository/TicketDatabase.cs
-    startLine: 129
+    startLine: 128
   assemblies:
   - DatabaseRepository
   namespace: TicketSystem.DatabaseRepository
@@ -474,7 +474,7 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: GetEventDates
     path: src/DatabaseRepository/TicketDatabase.cs
-    startLine: 139
+    startLine: 138
   assemblies:
   - DatabaseRepository
   namespace: TicketSystem.DatabaseRepository
@@ -509,7 +509,7 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: EventDatesAdd
     path: src/DatabaseRepository/TicketDatabase.cs
-    startLine: 149
+    startLine: 148
   assemblies:
   - DatabaseRepository
   namespace: TicketSystem.DatabaseRepository
@@ -544,7 +544,7 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: EventDatesUpdate
     path: src/DatabaseRepository/TicketDatabase.cs
-    startLine: 161
+    startLine: 160
   assemblies:
   - DatabaseRepository
   namespace: TicketSystem.DatabaseRepository
@@ -581,7 +581,7 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: DeleteEventDates
     path: src/DatabaseRepository/TicketDatabase.cs
-    startLine: 172
+    startLine: 171
   assemblies:
   - DatabaseRepository
   namespace: TicketSystem.DatabaseRepository
@@ -614,7 +614,7 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: GetAllTicketTransactions
     path: src/DatabaseRepository/TicketDatabase.cs
-    startLine: 182
+    startLine: 181
   assemblies:
   - DatabaseRepository
   namespace: TicketSystem.DatabaseRepository
@@ -646,7 +646,7 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: GetTicketTransactions
     path: src/DatabaseRepository/TicketDatabase.cs
-    startLine: 192
+    startLine: 191
   assemblies:
   - DatabaseRepository
   namespace: TicketSystem.DatabaseRepository
@@ -681,7 +681,7 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: TicketTransactionsAdd
     path: src/DatabaseRepository/TicketDatabase.cs
-    startLine: 215
+    startLine: 201
   assemblies:
   - DatabaseRepository
   namespace: TicketSystem.DatabaseRepository
@@ -716,7 +716,7 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: TicketTransactionUpdate
     path: src/DatabaseRepository/TicketDatabase.cs
-    startLine: 228
+    startLine: 214
   assemblies:
   - DatabaseRepository
   namespace: TicketSystem.DatabaseRepository
@@ -753,7 +753,7 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: DeleteTicketTransactions
     path: src/DatabaseRepository/TicketDatabase.cs
-    startLine: 240
+    startLine: 226
   assemblies:
   - DatabaseRepository
   namespace: TicketSystem.DatabaseRepository
@@ -786,7 +786,7 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: GetCustomer
     path: src/DatabaseRepository/TicketDatabase.cs
-    startLine: 250
+    startLine: 236
   assemblies:
   - DatabaseRepository
   namespace: TicketSystem.DatabaseRepository
@@ -821,7 +821,7 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: PurchasedTickets
     path: src/DatabaseRepository/TicketDatabase.cs
-    startLine: 261
+    startLine: 247
   assemblies:
   - DatabaseRepository
   namespace: TicketSystem.DatabaseRepository
@@ -856,7 +856,7 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: PurchasedSeats
     path: src/DatabaseRepository/TicketDatabase.cs
-    startLine: 274
+    startLine: 259
   assemblies:
   - DatabaseRepository
   namespace: TicketSystem.DatabaseRepository
@@ -891,7 +891,7 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: GetAllEventSummary
     path: src/DatabaseRepository/TicketDatabase.cs
-    startLine: 288
+    startLine: 273
   assemblies:
   - DatabaseRepository
   namespace: TicketSystem.DatabaseRepository
@@ -923,7 +923,7 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: GetEventSummary
     path: src/DatabaseRepository/TicketDatabase.cs
-    startLine: 303
+    startLine: 287
   assemblies:
   - DatabaseRepository
   namespace: TicketSystem.DatabaseRepository
@@ -958,7 +958,7 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: GetSearchSummary
     path: src/DatabaseRepository/TicketDatabase.cs
-    startLine: 318
+    startLine: 302
   assemblies:
   - DatabaseRepository
   namespace: TicketSystem.DatabaseRepository
@@ -993,7 +993,7 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: AddTicketBuyer
     path: src/DatabaseRepository/TicketDatabase.cs
-    startLine: 335
+    startLine: 317
   assemblies:
   - DatabaseRepository
   namespace: TicketSystem.DatabaseRepository
@@ -1028,7 +1028,7 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: FindTicketBuyer
     path: src/DatabaseRepository/TicketDatabase.cs
-    startLine: 347
+    startLine: 329
   assemblies:
   - DatabaseRepository
   namespace: TicketSystem.DatabaseRepository

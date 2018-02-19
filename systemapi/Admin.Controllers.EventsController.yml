@@ -233,14 +233,17 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: Events
     path: src/Admin/Controllers/EventsController.cs
-    startLine: 17
+    startLine: 21
   assemblies:
   - Admin
   namespace: Admin.Controllers
+  summary: "\nStartmethod that creates an Eventsobject and Apiobject, and then returns to the view for further action from the Admin.\n"
+  example: []
   syntax:
     content: public IActionResult Events()
     return:
       type: Microsoft.AspNetCore.Mvc.IActionResult
+      description: Returns the Administrator view.
     content.vb: Public Function Events As IActionResult
   overload: Admin.Controllers.EventsController.Events*
   modifiers.csharp:
@@ -265,17 +268,21 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: DeleteEvents
     path: src/Admin/Controllers/EventsController.cs
-    startLine: 33
+    startLine: 42
   assemblies:
   - Admin
   namespace: Admin.Controllers
+  summary: "\nMethod that calls all existing Events to the view, and deletes selected Event, then gets a new Evenlist with the remaining Events.\n"
+  example: []
   syntax:
     content: public IActionResult DeleteEvents(int id)
     parameters:
     - id: id
       type: System.Int32
+      description: ''
     return:
       type: Microsoft.AspNetCore.Mvc.IActionResult
+      description: Returns the actual Eventlist.
     content.vb: Public Function DeleteEvents(id As Integer) As IActionResult
   overload: Admin.Controllers.EventsController.DeleteEvents*
   modifiers.csharp:
@@ -300,17 +307,21 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: AddEvents
     path: src/Admin/Controllers/EventsController.cs
-    startLine: 49
+    startLine: 63
   assemblies:
   - Admin
   namespace: Admin.Controllers
+  summary: "\nMethod that saves input to a ticketEventobject and saves it in SQL.\n"
+  example: []
   syntax:
     content: public IActionResult AddEvents(TicketEvent ticketEvent)
     parameters:
     - id: ticketEvent
       type: ClassLibrary.TicketEvent
+      description: ''
     return:
       type: Microsoft.AspNetCore.Mvc.IActionResult
+      description: Returns an updates Eventlist.
     content.vb: Public Function AddEvents(ticketEvent As TicketEvent) As IActionResult
   overload: Admin.Controllers.EventsController.AddEvents*
   modifiers.csharp:
@@ -335,19 +346,24 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: EditEvents
     path: src/Admin/Controllers/EventsController.cs
-    startLine: 65
+    startLine: 85
   assemblies:
   - Admin
   namespace: Admin.Controllers
+  summary: "\nMethod that updates the existing event in the database, with new inputstring. The updates list is the returned to the view.\n"
+  example: []
   syntax:
     content: public IActionResult EditEvents(int id, TicketEvent ticketEvent)
     parameters:
     - id: id
       type: System.Int32
+      description: ''
     - id: ticketEvent
       type: ClassLibrary.TicketEvent
+      description: ''
     return:
       type: Microsoft.AspNetCore.Mvc.IActionResult
+      description: Returns an updated eventlist.
     content.vb: Public Function EditEvents(id As Integer, ticketEvent As TicketEvent) As IActionResult
   overload: Admin.Controllers.EventsController.EditEvents*
   modifiers.csharp:

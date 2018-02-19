@@ -165,7 +165,7 @@ items:
       repo: https://github.com/agngus/ticketSystem-jam.git
     id: Configure
     path: src/TicketAPI/Startup.cs
-    startLine: 57
+    startLine: 61
   assemblies:
   - TicketAPI
   namespace: TicketAPI
